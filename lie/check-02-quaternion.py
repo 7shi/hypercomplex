@@ -1,13 +1,16 @@
 import numpy as np
 
-# quaternions as 2x2 complex matrices: q = z + wj <-> [[z, -w], [conj(w), conj(z)]]
+# quaternions as 2x2 complex matrices (matches the article): q = z + wj <-> [[z, w], [-conj(w), conj(z)]]
 I2 = np.eye(2, dtype=complex)
 qi = np.array([[1j, 0], [0, -1j]])
-qj = np.array([[0, -1], [1, 0]], dtype=complex)
-qk = np.array([[0, -1j], [-1j, 0]])
+qj = np.array([[0, 1], [-1, 0]], dtype=complex)
+qk = np.array([[0, 1j], [1j, 0]])
 
 def Q(a, b, c, d):
     return a*I2 + b*qi + c*qj + d*qk
+
+def coords(x):  # pure quaternion matrix -> (b, c, d)
+    return np.array([x[0,0].imag, x[0,1].real, x[0,1].imag])
 
 def expm(A, terms=40):
     S, T = np.eye(*A.shape, dtype=complex), np.eye(*A.shape, dtype=complex)
@@ -83,14 +86,14 @@ print("exp(A) in SU(2):",
       np.allclose(UA.conj().T @ UA, I2) and np.isclose(np.linalg.det(UA).real, 1))
 
 # quaternion basis as another basis of su(2)
-print("i = i s3, j = -i s2, k = -i s1:",
-      np.allclose(qi, 1j*s3) and np.allclose(qj, -1j*s2) and np.allclose(qk, -1j*s1))
+print("i = i s3, j = i s2, k = i s1:",
+      np.allclose(qi, 1j*s3) and np.allclose(qj, 1j*s2) and np.allclose(qk, 1j*s1))
 
 # grade 2: quaternion units factor into products of two Pauli matrices
 print("s1 s2 = i s3, s2 s3 = i s1, s3 s1 = i s2:",
       np.allclose(s1@s2, 1j*s3) and np.allclose(s2@s3, 1j*s1) and np.allclose(s3@s1, 1j*s2))
-print("i = s1 s2, j = s1 s3, k = s3 s2:",
-      np.allclose(qi, s1@s2) and np.allclose(qj, s1@s3) and np.allclose(qk, s3@s2))
+print("i = s1 s2, j = s3 s1, k = s2 s3:",
+      np.allclose(qi, s1@s2) and np.allclose(qj, s3@s1) and np.allclose(qk, s2@s3))
 print("anticommute, (s1 s2)^2 = -I:",
       np.allclose(s1@s2, -s2@s1) and np.allclose((s1@s2) @ (s1@s2), -I2))
 
@@ -103,8 +106,6 @@ print("R_q(k) = -j sin + k cos:", np.allclose(R(qk), -np.sin(theta)*qj + np.cos(
 print("R_{-q} = R_q:", np.allclose((-q) @ qj @ (-q).conj().T, R(qj)))
 
 # rotation matrix from R_q is in SO(3)
-def coords(x):  # pure quaternion -> (x,y,z)
-    return np.array([(x[0,0]/1j).real, -x[0,1].real, -(x[0,1]/1j).real])
 Rot = np.column_stack([coords(R(m)) for m in (qi, qj, qk)])
 print("R_q as 3x3: orthogonal, det 1:",
       np.allclose(Rot.T @ Rot, np.eye(3)) and np.isclose(np.linalg.det(Rot), 1))
