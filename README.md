@@ -4,13 +4,6 @@
 
 ## 記事
 
-- [01-oct-left-mul.md](01-oct-left-mul.md) — 八元数の左作用の行列表現。左作用が生成するクリフォード代数$C\ell_{0,6}(\mathbb R)\cong M_8(\mathbb R)$の構造、右作用の左作用による表現、スピノルへの射影$P$とその復元、非結合性が見せる構造について。
-
-## 検証コード
-
-`uv sync` で環境を構築し、`uv run <ファイル名>` で実行します。
-
-- [check-lxp-recovery.py](check-lxp-recovery.py) — 復元式 $L_x = \sum_{j=0}^{7} R_j (L_x P) R_j^{-1}$ の数値検証。各項が$L_x$の第$j$列を再現すること、右作用$R_1$が左作用の積の線形結合で書けることも確認します。
-- [check-p-fano-group.py](check-p-fano-group.py) — 射影行列$P$の8項（$I$とファノ7直線の三重積）が位数8の可換群を成すことの数値検証。群の閉性、単位元の固定、共点3直線の乗積規則、剰余類$L_kG$による64基底の分類を確認します。
-- [check-l1l2p-to-l3.py](check-l1l2p-to-l3.py) — $L_1L_2 \ne L_3$ の具体例で、射影$L_1L_2P = L_3P$と復元式による$L_3$の再構成を行列表示で確認します。
-- [check-p-inline-expand.py](check-p-inline-expand.py) — 行列を使わない代数計算のシミュレート。$L_7$を記号のまま反交換で扱い、$P$をインライン展開した$L_1L_2P$と$L_3P$が同じ8項（分類表の$e_3$行）に一致することを項別に確認します。4文字以上の語は体積関係式$L_1\cdots L_7=-I$で3文字以下の補集合に畳み込みます。
+- [qua/](qua/README.md) — 四元数に関する記事。詳細は qua/README.md を参照。
+- [oct/](oct/README.md) — 八元数の左作用に関する記事と検証コード。詳細は oct/README.md を参照。
+- [lie/](lie/README.md) — リー群とリー代数の記事シリーズ。詳細は lie/README.md を参照。
