@@ -1,3 +1,18 @@
+"""Numerical checks for 04-su3.md.
+
+Properties of the Gell-Mann matrices (Hermitian, traceless,
+normalization tr(la*lb)=2*delta_ab); Lx, Ly, Lz as block placements of
+the so(2) generator; the upper-left block embedding of the Pauli
+matrices; i*lambda_{2,5,7} matching +-L (so(3) subset su(3)); closure
+of the bracket product; exp landing in SU(3)/SO(3); (i*l1)^2 != -I and
+exp(i*theta*l1) not expressible as a real linear combination of
+{I, i*la} (contrast with the SU(2) degeneracy); the structure
+constants f_abc and their total antisymmetry; [l3,l8]=0; the three
+su(2) triples (I-, V-, U-spin); the block embeddings SO(2) subset
+SO(3) and U(1) subset SU(2) subset SU(3); and the conjugation action
+preserving su(3) and giving an 8-dimensional rotation.
+"""
+
 from itertools import permutations
 
 import numpy as np

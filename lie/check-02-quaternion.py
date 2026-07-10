@@ -1,3 +1,14 @@
+"""Numerical checks for 02-su2-so3.md.
+
+Quaternion multiplication table and 2x2 complex matrix representation;
+Sylvester conditions (traceless, det 1, mutually anticommuting); the
+quaternion form of Euler's formula; a counterexample to the exponential
+law; the bracket/cross-product relation [p,q]=2(p x q); the SU(2)
+condition and the general form of su(2), i(x*s1+y*s2+z*s3); rotation
+and double cover via the conjugation action; and the matching structure
+constants of su(2) and so(3).
+"""
+
 import numpy as np
 
 # quaternions as 2x2 complex matrices (matches the article): q = z + wj <-> [[z, w], [-conj(w), conj(z)]]
