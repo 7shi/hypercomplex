@@ -1,9 +1,9 @@
 """Numerical checks for 04-su3.md.
 
 Properties of the Gell-Mann matrices (Hermitian, traceless,
-normalization tr(la*lb)=2*delta_ab); Lx, Ly, Lz as block placements of
+normalization tr(la*lb)=2*delta_ab); Jx, Jy, Jz as block placements of
 the so(2) generator; the upper-left block embedding of the Pauli
-matrices; i*lambda_{2,5,7} matching +-L (so(3) subset su(3)); closure
+matrices; i*lambda_{2,5,7} matching +-J (so(3) subset su(3)); closure
 of the bracket product; exp landing in SU(3)/SO(3); (i*l1)^2 != -I and
 exp(i*theta*l1) not expressible as a real linear combination of
 {I, i*la} (contrast with the SU(2) degeneracy); the structure
@@ -47,18 +47,18 @@ print("tr(la lb) = 2 delta_ab:", np.allclose(G, 2*np.eye(8)))
 
 # so(3) basis: so(2) generator J placed in the three 2x2 blocks (planes 12, 23, 13)
 J = np.array([[0, -1], [1, 0]], dtype=float)
-Lx = np.array([[0, 0, 0], [0, 0, -1], [0, 1, 0]], dtype=float)
-Ly = np.array([[0, 0, 1], [0, 0, 0], [-1, 0, 0]], dtype=float)
-Lz = np.array([[0, -1, 0], [1, 0, 0], [0, 0, 0]], dtype=float)
-print("Lz, Lx = J in blocks (1,2), (2,3); Ly = -J in block (1,3):",
-      np.allclose(Lz[:2, :2], J) and np.allclose(Lx[1:, 1:], J)
-      and np.allclose(Ly[np.ix_([0, 2], [0, 2])], -J))
+Jx = np.array([[0, 0, 0], [0, 0, -1], [0, 1, 0]], dtype=float)
+Jy = np.array([[0, 0, 1], [0, 0, 0], [-1, 0, 0]], dtype=float)
+Jz = np.array([[0, -1, 0], [1, 0, 0], [0, 0, 0]], dtype=float)
+print("Jz, Jx = J in blocks (1,2), (2,3); Jy = -J in block (1,3):",
+      np.allclose(Jz[:2, :2], J) and np.allclose(Jx[1:, 1:], J)
+      and np.allclose(Jy[np.ix_([0, 2], [0, 2])], -J))
 
-# SO(2) embeds in SO(3) as a block: exp(theta Lz) = diag(R(theta), 1)
+# SO(2) embeds in SO(3) as a block: exp(theta Jz) = diag(R(theta), 1)
 theta = 0.7
 c, s = np.cos(theta), np.sin(theta)
 Rz = np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
-print("exp(theta Lz) = block diag(SO(2), 1):", np.allclose(expm(Lz*theta).real, Rz))
+print("exp(theta Jz) = block diag(SO(2), 1):", np.allclose(expm(Jz*theta).real, Rz))
 
 # lambda_1..3 embed the Pauli matrices in the upper-left block
 s1 = np.array([[0, 1], [1, 0]], dtype=complex)
@@ -69,8 +69,8 @@ print("l1,l2,l3 = Pauli in upper-left block:",
           for l, s in zip((l1, l2, l3), (s1, s2, s3))))
 
 # so(3) inside su(3): i*lambda_{2,5,7} are the real rotation generators (up to sign)
-print("i l2 = -Lz, i l5 = Ly, i l7 = -Lx:",
-      np.allclose(1j*l2, -Lz) and np.allclose(1j*l5, Ly) and np.allclose(1j*l7, -Lx))
+print("i l2 = -Jz, i l5 = Jy, i l7 = -Jx:",
+      np.allclose(1j*l2, -Jz) and np.allclose(1j*l5, Jy) and np.allclose(1j*l7, -Jx))
 
 # su(3) basis: i*lambda_a anti-Hermitian traceless
 print("i la anti-Hermitian traceless:",
@@ -147,7 +147,7 @@ print("V3 = diag(1,0,-1):", np.allclose(V3, np.diag([1, 0, -1])))
 
 # SO(3) inside SU(3): exp of a real antisymmetric combo is real orthogonal with det 1
 w = rng.standard_normal(3)
-R3 = expm(w[0]*Lx + w[1]*Ly + w[2]*Lz + 0j)
+R3 = expm(w[0]*Jx + w[1]*Jy + w[2]*Jz + 0j)
 print("exp(so(3) combo) real, orthogonal, det 1 (SO(3) in SU(3)):",
       np.allclose(R3.imag, 0) and np.allclose(R3.T @ R3, I3) and np.isclose(np.linalg.det(R3), 1))
 

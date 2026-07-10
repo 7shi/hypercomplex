@@ -108,28 +108,28 @@ print("i = s1 s2, j = s3 s1, k = s2 s3:",
 print("anticommute, (s1 s2)^2 = -I:",
       np.allclose(s1@s2, -s2@s1) and np.allclose((s1@s2) @ (s1@s2), -I2))
 
-# conjugation R_q(x) = q x q^-1 with q = exp(i theta/2): rotation by theta about i-axis
+# conjugation rho_q(x) = q x q^-1 with q = exp(i theta/2): rotation by theta about i-axis
 q = expm(qi*theta/2)
-def R(x): return q @ x @ q.conj().T  # q^-1 = q^dagger for unit q
-print("R_q(i) = i:", np.allclose(R(qi), qi))
-print("R_q(j) = j cos + k sin:", np.allclose(R(qj), np.cos(theta)*qj + np.sin(theta)*qk))
-print("R_q(k) = -j sin + k cos:", np.allclose(R(qk), -np.sin(theta)*qj + np.cos(theta)*qk))
-print("R_{-q} = R_q:", np.allclose((-q) @ qj @ (-q).conj().T, R(qj)))
+def rho(x): return q @ x @ q.conj().T  # q^-1 = q^dagger for unit q
+print("rho_q(i) = i:", np.allclose(rho(qi), qi))
+print("rho_q(j) = j cos + k sin:", np.allclose(rho(qj), np.cos(theta)*qj + np.sin(theta)*qk))
+print("rho_q(k) = -j sin + k cos:", np.allclose(rho(qk), -np.sin(theta)*qj + np.cos(theta)*qk))
+print("rho_{-q} = rho_q:", np.allclose((-q) @ qj @ (-q).conj().T, rho(qj)))
 
-# rotation matrix from R_q is in SO(3)
-Rot = np.column_stack([coords(R(m)) for m in (qi, qj, qk)])
-print("R_q as 3x3: orthogonal, det 1:",
+# rotation matrix from rho_q is in SO(3)
+Rot = np.column_stack([coords(rho(m)) for m in (qi, qj, qk)])
+print("rho_q as 3x3: orthogonal, det 1:",
       np.allclose(Rot.T @ Rot, np.eye(3)) and np.isclose(np.linalg.det(Rot), 1))
 
-# so(3): [Lx,Ly]=Lz cyclic; i/2 -> Lx etc. matches structure constants
-Lx = np.array([[0,0,0],[0,0,-1],[0,1,0]], dtype=float)
-Ly = np.array([[0,0,1],[0,0,0],[-1,0,0]], dtype=float)
-Lz = np.array([[0,-1,0],[1,0,0],[0,0,0]], dtype=float)
-print("[Lx,Ly]=Lz, [Ly,Lz]=Lx, [Lz,Lx]=Ly:",
-      np.allclose(comm(Lx,Ly), Lz) and np.allclose(comm(Ly,Lz), Lx) and np.allclose(comm(Lz,Lx), Ly))
+# so(3): [Jx,Jy]=Jz cyclic; i/2 -> Jx etc. matches structure constants
+Jx = np.array([[0,0,0],[0,0,-1],[0,1,0]], dtype=float)
+Jy = np.array([[0,0,1],[0,0,0],[-1,0,0]], dtype=float)
+Jz = np.array([[0,-1,0],[1,0,0],[0,0,0]], dtype=float)
+print("[Jx,Jy]=Jz, [Jy,Jz]=Jx, [Jz,Jx]=Jy:",
+      np.allclose(comm(Jx,Jy), Jz) and np.allclose(comm(Jy,Jz), Jx) and np.allclose(comm(Jz,Jx), Jy))
 print("[i/2,j/2]=k/2 etc.:",
       np.allclose(comm(qi/2,qj/2), qk/2) and np.allclose(comm(qj/2,qk/2), qi/2) and np.allclose(comm(qk/2,qi/2), qj/2))
-print("exp(i theta/2) gives rotation exp(theta Lx):", np.allclose(Rot, expm(theta*Lx).real))
+print("exp(i theta/2) gives rotation exp(theta Jx):", np.allclose(Rot, expm(theta*Jx).real))
 
 # det exp(A) = exp(tr A)
 A = Q(0, *rng.standard_normal(3))
