@@ -4,6 +4,6 @@
 
 ## 記事
 
-- [qua/](qua/README.md) — 四元数に関する記事。詳細は qua/README.md を参照。
-- [oct/](oct/README.md) — 八元数の左作用に関する記事と検証コード。詳細は oct/README.md を参照。
-- [lie/](lie/README.md) — リー群とリー代数の記事シリーズ。詳細は lie/README.md を参照。
+- [四元数](qua/README.md) — 四元数に関する記事。
+- [八元数](oct/README.md) — 八元数の左作用に関する記事と検証コード。
+- [リー群・リー代数の初歩](lie/README.md) — リー群とリー代数の記事シリーズ。
