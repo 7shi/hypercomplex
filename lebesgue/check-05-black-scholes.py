@@ -75,6 +75,20 @@ print("Girsanov price independent of real drift mu:",
       np.isclose(mc_girsanov, mc_g2, rtol=0.03)
       and np.isclose(mc_g2, bs_price, rtol=0.03))
 
+# discounted option value is a Q-martingale:
+# E^Q[e^{-r t} V(t, S_t)] = V(0, S_0) for intermediate t
+t_mid = 0.4
+tau = T - t_mid
+S_mid = S0 * np.exp((r - 0.5 * sigma**2) * t_mid
+                    + sigma * rng.normal(0.0, math.sqrt(t_mid), size=paths))
+d1_mid = (np.log(S_mid / K) + (r + 0.5 * sigma**2) * tau) / (
+    sigma * math.sqrt(tau))
+d2_mid = d1_mid - sigma * math.sqrt(tau)
+cdf = np.vectorize(norm_cdf)
+V_mid = S_mid * cdf(d1_mid) - K * math.exp(-r * tau) * cdf(d2_mid)
+print("discounted V(t, S_t) is a Q-martingale:",
+      np.isclose(math.exp(-r * t_mid) * V_mid.mean(), bs_price, rtol=0.02))
+
 # call delta = N(d_1): finite difference of the BS formula
 eps = 1e-4
 c_up, _, _ = bs_call(s0=S0 + eps)
