@@ -124,7 +124,7 @@ $$e^{i(b-a)}=(a_xb_x+a_yb_y)+i(a_xb_y-a_yb_x)$$
 位相差$b-a$を計算することで、実部は内積、虚部は（ウェッジ積の意味での）外積が得られると解釈できます。
 
 &&&def 複素数による内積と外積の計算
-$$a^*b=a\cdot b+i\norm{a\wedge b}$$
+$$a^*b=a\cdot b+i\lVert a\wedge b\rVert$$
 &&&
 
 外積は演算の順序で符号が変わります。偏角を昇順で並べたものを順方向とします。偏角$a,b$を昇順とすれば、位相差は$b-a$として計算するのが自然です。
@@ -138,12 +138,12 @@ $20°, 50°$の順に並んでいれば、位相差は$50°-20°=30°$
 同じことを状態ベクトルとパウリ行列で計算します。
 
 $$\begin{aligned}
-ω&=\pmatrix{α\\β}
-  =\pmatrix{α_0+iα_1\\β_0+iβ_1}
-  =\pmatrix{\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}}
-  =e^{ia}\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}} \\
+ω&=\begin{pmatrix}α\\β\end{pmatrix}
+  =\begin{pmatrix}α_0+iα_1\\β_0+iβ_1\end{pmatrix}
+  =\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
+  =e^{ia}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 q&=e^{-ia} \\
-ωq&=\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}}=:ω'
+ωq&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}=:ω'
 \end{aligned}$$
 
 $ωq$は括り出した係数の消去に相当することが、形式的な操作から浮き彫りになります。
@@ -152,8 +152,8 @@ $ωq$は括り出した係数の消去に相当することが、形式的な操
 
 $$\begin{aligned}
 ω'^\dagger σ_x ω'
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{0&1\\1&0}\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}} \\
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{\sin\fracθ2\,e^{i(b-a)} \\ \cos\fracθ2} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\sin\fracθ2\,e^{i(b-a)} \\ \cos\fracθ2\end{pmatrix} \\
 &=\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + \sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
 &=\cos\fracθ2\sin\fracθ2\,(e^{i(b-a)}+e^{-i(b-a)}) \\
 &=\cos\fracθ2\sin\fracθ2\left\{\cos(b-a)+i\sin(b-a)+\cos(b-a)-i\sin(b-a)\right\} \\
@@ -161,8 +161,8 @@ $$\begin{aligned}
 &=\sinθ\cos(b-a) \\
 
 ω'^\dagger σ_y ω'
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{0&-i\\i&0}\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}} \\
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{-i\sin\fracθ2\,e^{i(b-a)} \\ i\cos\fracθ2} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}-i\sin\fracθ2\,e^{i(b-a)} \\ i\cos\fracθ2\end{pmatrix} \\
 &=-i\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + i\sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
 &=-i\cos\fracθ2\sin\fracθ2\,(e^{i(b-a)}-e^{-i(b-a)}) \\
 &=-i\cos\fracθ2\sin\fracθ2\left\{\cos(b-a)+i\sin(b-a)-\cos(b-a)+i\sin(b-a)\right\} \\
@@ -170,8 +170,8 @@ $$\begin{aligned}
 &=\sinθ\sin(b-a) \\
 
 ω'^\dagger σ_z ω'
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{1&0\\0&-1}\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}} \\
-&=\pmatrix{\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}}\pmatrix{\cos\fracθ2 \\ -\sin\fracθ2\,e^{i(b-a)}} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
+&=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ -\sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\cos^2\fracθ2-\sin^2\fracθ2\,e^{-i(b-a)}e^{i(b-a)} \\
 &=\cosθ
 \end{aligned}$$
@@ -179,8 +179,8 @@ $$\begin{aligned}
 四元数は全成分を一度に計算するためごちゃごちゃしますが、こちらは成分ごとに計算するため冗長になります。どちらが簡単だとは一概には言えませんが、結果だけまとめるのにベクトルはシンプルです。
 
 $$\begin{aligned}
-ω'&=\pmatrix{\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}}
-\mapsto\pmatrix{\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ}
+ω'&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}
+\mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
 $θ$が2倍になって、指数関数が表す$\cos$と$\sin$が別成分に分離されました。これを**ブロッホベクトル**と呼びます。
@@ -188,8 +188,8 @@ $θ$が2倍になって、指数関数が表す$\cos$と$\sin$が別成分に分
 $ω$を計算しても同じ結果になります。
 
 $$\begin{aligned}
-ω&=\pmatrix{\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}}
-\mapsto\pmatrix{\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ}
+ω&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
+\mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
 このように、ブロッホベクトルには$a,b$個々の位相ではなく、位相差$b-a$だけが現れます。量子情報では位相差だけが観測されるという重要な事実を反映しています。
@@ -217,25 +217,25 @@ exterior product<br>wedge product|外積、外部積<br>ウェッジ積、楔積
 （テンソル積の意味での）外積はベクトルから行列を作る計算で、自身との外積は複素共役との積を列挙したものとなります。
 
 $$\begin{aligned}
-ω&=\pmatrix{α\\β}=\pmatrix{\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}} \\
+ω&=\begin{pmatrix}α\\β\end{pmatrix}=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix} \\
 ωω^\dagger
-&=\pmatrix{α\\β}\pmatrix{α^*&β^*} \\
-&=\pmatrix{αα^*&αβ^*\\βα^*&ββ^*} \\
-&=\pmatrix{
+&=\begin{pmatrix}α\\β\end{pmatrix}\begin{pmatrix}α^*&β^*\end{pmatrix} \\
+&=\begin{pmatrix}αα^*&αβ^*\\βα^*&ββ^*\end{pmatrix} \\
+&=\begin{pmatrix}
   \cos\fracθ2\,e^{ia}\cos\fracθ2\,e^{-ia} & \cos\fracθ2\,e^{ia}\sin\fracθ2\,e^{-ib} \\
-  \sin\fracθ2\,e^{ib}\cos\fracθ2\,e^{-ia} & \sin\fracθ2\,e^{ib}\sin\fracθ2\,e^{-ib}} \\
-&=\pmatrix{
+  \sin\fracθ2\,e^{ib}\cos\fracθ2\,e^{-ia} & \sin\fracθ2\,e^{ib}\sin\fracθ2\,e^{-ib}\end{pmatrix} \\
+&=\begin{pmatrix}
   \cos^2\fracθ2 & \cos\fracθ2\sin\fracθ2\,e^{-i(b-a)} \\
-  \cos\fracθ2\sin\fracθ2\,e^{i(b-a)} & \sin^2\fracθ2}
+  \cos\fracθ2\sin\fracθ2\,e^{i(b-a)} & \sin^2\fracθ2\end{pmatrix}
 \end{aligned}$$
 
 成分に見覚えのある形が現れています。半角公式[[half]]などを使って計算を進めます。
 
 $$\begin{aligned}
 ωω^\dagger
-&=\frac12\pmatrix{
+&=\frac12\begin{pmatrix}
   1+\cosθ & \sinθ\left\{\cos(b-a)-i\sin(b-a)\right\} \\
-  \sinθ\left\{\cos(b-a)+i\sin(b-a)\right\} & 1-\cosθ}
+  \sinθ\left\{\cos(b-a)+i\sin(b-a)\right\} & 1-\cosθ\end{pmatrix}
 \end{aligned}$$
 
 対角成分と非対角成分で、それぞれ符号が異なる項が現れています。これらを分離すれば、パウリ行列の線形結合が現れます。
@@ -243,18 +243,18 @@ $$\begin{aligned}
 $$\begin{aligned}
 ωω^\dagger
 &=\frac12\left\{
-  \pmatrix{1&0 \\ 0&1} \\
-  +\sinθ\cos(b-a)\pmatrix{0&1 \\ 1&0} \\
-  +\sinθ\sin(b-a)\pmatrix{0&-i \\ i&0} \\
-  +\cosθ\pmatrix{1&0 \\ 0&-1}\right\} \\
+  \begin{pmatrix}1&0 \\ 0&1\end{pmatrix} \\
+  +\sinθ\cos(b-a)\begin{pmatrix}0&1 \\ 1&0\end{pmatrix} \\
+  +\sinθ\sin(b-a)\begin{pmatrix}0&-i \\ i&0\end{pmatrix} \\
+  +\cosθ\begin{pmatrix}1&0 \\ 0&-1\end{pmatrix}\right\} \\
 &=\frac12\left\{ \mathrm{I} + \sinθ\cos(b-a)σ_x + \sinθ\sin(b-a)σ_y + \cosθ\,σ_z \right\}
 \end{aligned}$$
 
 これは**密度行列**と呼ばれます。スケールを$2$倍してパウリ行列の係数を抜き出せば、ブロッホベクトルと一致します。
 
 $$\begin{aligned}
-ω&=\pmatrix{\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}}
-\mapsto\pmatrix{\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ}
+ω&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
+\mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
 &&&rem 始点

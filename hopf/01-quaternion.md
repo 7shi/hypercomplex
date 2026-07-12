@@ -222,7 +222,7 @@ $$
 
 &&&def 複素ベクトル Ψ とそのエルミート共役
 $$
-\Psi=\pmatrix{α\\β},\ \Psi^\dagger=\pmatrix{α^*&β^*}
+\Psi=\begin{pmatrix}α\\β\end{pmatrix},\ \Psi^\dagger=\begin{pmatrix}α^*&β^*\end{pmatrix}
 $$
 &&&
 
@@ -239,16 +239,16 @@ $$
 \begin{alignedat}{5}
 x
  &=&&α^*β+β^*α &
- &=\pmatrix{α^*&β^*}\pmatrix{β\\α} &
- &=\pmatrix{α^*&β^*}\pmatrix{0&1\\1&0}\pmatrix{α\\β} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}β\\α\end{pmatrix} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
  &=\Psi^\dagger\sigma_x\Psi \\
 y&=-i(&&α^*β-β^*α) &
- &=\pmatrix{α^*&β^*}\pmatrix{\begin{array}{r}-iβ\\iα\end{array}} &
- &=\pmatrix{α^*&β^*}\pmatrix{0&-i\\i&0}\pmatrix{α\\β} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}\begin{array}{r}-iβ\\iα\end{array}\end{pmatrix} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
  &=\Psi^\dagger\sigma_y\Psi \\
 z&=&&α^*α-β^*β &
- &=\pmatrix{α^*&β^*}\pmatrix{\begin{array}{r}α\\-β\end{array}} &
- &=\pmatrix{α^*&β^*}\pmatrix{1&0\\0&-1}\pmatrix{α\\β} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}\begin{array}{r}α\\-β\end{array}\end{pmatrix} &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
  &=\Psi^\dagger\sigma_z\Psi \\
 \end{alignedat}
 $$
@@ -257,19 +257,19 @@ $$
 
 &&&def パウリ行列
 $$
-\sigma_x=\pmatrix{0&1\\1&0}
-,\ \sigma_y=\pmatrix{0&-i\\i&0}
-,\ \sigma_z=\pmatrix{1&0\\0&-1}
+\sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+,\ \sigma_y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}
+,\ \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 $$
 &&&
 
 パウリ行列による計算は、$ω\mathbf{k}ω^*$と同等の計算を形式的かつ簡潔にまとめます。
 
 &&&fml パウリ行列による座標変換
-$$\Psi\mapsto\pmatrix{
+$$\Psi\mapsto\begin{pmatrix}
   \Psi^\dagger\sigma_x\Psi \\
   \Psi^\dagger\sigma_y\Psi \\
-  \Psi^\dagger\sigma_z\Psi}$$
+  \Psi^\dagger\sigma_z\Psi\end{pmatrix}$$
 &&&
 
 量子情報では、$\Psi$を**状態ベクトル**、パウリ行列による座標変換によって構成される単位球を**ブロッホ球**と呼びます。

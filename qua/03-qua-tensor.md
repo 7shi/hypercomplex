@@ -311,7 +311,7 @@ $$
 
 $$
 \begin{aligned}
-\norm{a+bi+cj+dk}^2
+\lVert a+bi+cj+dk\rVert^2
 &=(a+bi+cj+dk)(a+bi+cj+dk)^* \\
 &=(a+bi+cj+dk)(a-bi-cj-dk) \\
 &=a^2+b^2-c^2-d^2
