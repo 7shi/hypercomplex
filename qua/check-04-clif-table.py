@@ -17,6 +17,19 @@ Also checks the isomorphisms quoted in the tensor-rule section and the
 8-periodicity section: H' (x) H = H(2), C (x) H = C (x) H' = C(2),
 H (x) H = H' (x) H' = R(4), H(2) (x) H(2) = R(16), and the type-by-
 (p-q mod 8) row stated at the end of the article.
+
+Finally, checks the later sections:
+
+- pseudoscalar: omega is central iff n = p+q is odd, omega^2 =
+  (-1)^(n(n-1)/2+q) depends only on p-q mod 4, and for odd n the sign of
+  omega^2 matches the table (direct-sum types when +1, type C when -1);
+  verified by direct blade arithmetic.
+- even subalgebra: the generators f_i = e_i e_n square/anticommute as
+  claimed (blade arithmetic), and the resulting table symmetry
+  Cl_{p,q} = Cl_{q+1,p-1} holds in the table.
+- complexification: kF(n) (x) C, computed with R(x)C=C, C(x)C=2C,
+  H(x)C=C(2), depends only on p+q and matches Cl_n(C) with its
+  2-periodicity Cl_{n+2}(C) = Cl_n(C) (x) C(2).
 """
 
 # an algebra "k F(n)" is represented as (k, F, n); k in {1, 2}
@@ -115,3 +128,106 @@ stated = "R 2R R C H 2H H C".split()
 ok = all(classify(p, q)[:2] == parse(stated[(p - q) % 8])[:2]
          for p in range(9) for q in range(9))
 print("type depends only on p-q mod 8 as stated:", ok)
+
+# --- pseudoscalar section: blade arithmetic ----------------------------------
+def blade_mul(a, b, sq):
+    """Product of basis blades a, b (sorted tuples of generator indices);
+    sq[i] = e_i^2 = +1/-1. Returns (sign, blade)."""
+    sign, out = 1, list(a)
+    for g in b:
+        pos = len(out)
+        while pos > 0 and out[pos - 1] > g:
+            pos -= 1
+            sign = -sign
+        if pos > 0 and out[pos - 1] == g:
+            sign *= sq[g]
+            out.pop(pos - 1)
+        else:
+            out.insert(pos, g)
+    return sign, tuple(out)
+
+def omega_checks():
+    for p in range(9):
+        for q in range(9):
+            n = p + q
+            if n == 0:
+                continue
+            sq = [1] * p + [-1] * q
+            omega = tuple(range(n))
+            s, b = blade_mul(omega, omega, sq)
+            assert b == ()
+            # omega^2 = (-1)^(n(n-1)/2+q), +1 iff p-q = 0,1 mod 4
+            assert s == (-1) ** (n * (n - 1) // 2 + q)
+            assert (s == 1) == ((p - q) % 4 in (0, 1))
+            # omega central iff n odd: e_i omega = (-1)^(n-1) omega e_i
+            for i in range(n):
+                sl, bl = blade_mul((i,), omega, sq)
+                sr, br = blade_mul(omega, (i,), sq)
+                assert bl == br and sl == (-1) ** (n - 1) * sr
+            # center structure matches the table's type
+            k, f, _ = parse(article[p][q])
+            if n % 2 == 1:
+                if s == 1:
+                    assert k == 2                # direct sum: 2R or 2H
+                else:
+                    assert (k, f) == (1, "C")    # complex type
+            else:
+                assert k == 1 and f in ("R", "H")
+    return True
+
+print("pseudoscalar centrality and omega^2 explain the types:", omega_checks())
+
+# --- even subalgebra section --------------------------------------------------
+# f_i = e_i e_last: f_i^2 = -e_i^2 e_last^2, f_i f_j = -f_j f_i (blades)
+def even_gen_checks():
+    for p in range(9):
+        for q in range(9):
+            n = p + q
+            if n < 2:
+                continue
+            sq = [1] * p + [-1] * q
+            # e_last squares to -1 (index n-1) if q >= 1, to +1 (index 0) if p >= 1
+            for last in ([n - 1] if q >= 1 else []) + ([0] if p >= 1 else []):
+                fs = [blade_mul((i,), (last,), sq)
+                      for i in range(n) if i != last]
+                for si, bi in fs:
+                    s, b = blade_mul(bi, bi, sq)
+                    i = bi[0] if bi[1] == last else bi[1]
+                    assert (si * si * s, b) == (-sq[i] * sq[last], ())
+                for si, bi in fs:
+                    for sj, bj in fs:
+                        if bi == bj:
+                            continue
+                        s1, b1 = blade_mul(bi, bj, sq)
+                        s2, b2 = blade_mul(bj, bi, sq)
+                        assert b1 == b2 and s1 == -s2
+    return True
+
+print("even-subalgebra generators f_i = e_i e_n behave as claimed:",
+      even_gen_checks())
+
+# resulting table symmetry Cl_{p,q} = Cl_{q+1,p-1} (from Cl^0_{p,q+1})
+ok = all(parse(article[p][q]) == parse(article[q + 1][p - 1])
+         for p in range(1, 9) for q in range(8))
+print("table symmetry Cl_{p,q} = Cl_{q+1,p-1}:", ok)
+
+# examples quoted in the article: Cl^0_{3,0} = Cl_{0,2} = H, Cl^0_{4,0} = Cl_{0,3} = 2H
+print("Cl_{0,2} = H, Cl_{0,3} = 2H:",
+      parse(article[0][2]) == parse("H") and parse(article[0][3]) == parse("2H"))
+
+# --- complexification section --------------------------------------------------
+def complexify(a):  # kF(n) (x) C, using R(x)C=C, C(x)C=2C, H(x)C=C(2)
+    k, f, n = a
+    return {"R": (k, "C", n), "C": (2 * k, "C", n), "H": (k, "C", 2 * n)}[f]
+
+def classify_c(m):  # Cl_m(C): C(2^(m/2)) if m even, 2C(2^((m-1)/2)) if m odd
+    return (1 if m % 2 == 0 else 2, "C", 2 ** (m // 2))
+
+ok = all(complexify(parse(article[p][q])) == classify_c(p + q)
+         for p in range(9) for q in range(9))
+print("complexification depends only on p+q and matches Cl_n(C):", ok)
+
+# 2-periodicity: Cl_{n+2}(C) = Cl_n(C) (x) C(2)
+ok = all(classify_c(m + 2) == (classify_c(m)[0], "C", 2 * classify_c(m)[2])
+         for m in range(17))
+print("complex 2-periodicity Cl_{n+2}(C) = Cl_n(C) (x) C(2):", ok)
