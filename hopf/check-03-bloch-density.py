@@ -20,6 +20,9 @@ Verifies numerically (random parameters, numpy):
    (r = 0), also obtained from the ±x antipodal pair; the superposition
    ω+ = (1,1)ᵀ/√2 gives ½(I+σx) (r = (1,0,0)) — same diagonal,
    different off-diagonal.
+7. Measurement: tr(ρ(n·σ)) = n·r for a random unit n (pure and mixed),
+   and z-measurement probabilities p0 = (1+z)/2 = αα*, p1 = (1-z)/2 = ββ*
+   match the diagonal of ρ.
 """
 
 import numpy as np
@@ -111,6 +114,17 @@ for _ in range(100):
     assert np.allclose(bloch(np.outer(vec[:, 0], vec[:, 0].conj())), -r_mix / rn)
     assert np.allclose(sum(lam[i] * np.outer(vec[:, i], vec[:, i].conj())
                            for i in range(2)), rho_mix)
+
+    # 7. measurement: tr(ρ(n·σ)) = n·r, z-probabilities (1±z)/2
+    nvec = rng.normal(size=3)
+    nvec /= np.linalg.norm(nvec)
+    a_n = sum(nvec[i] * paulis[i] for i in range(3))
+    assert np.isclose(np.trace(rho @ a_n).real, nvec @ r)
+    assert np.isclose(np.trace(rho_mix @ a_n).real, nvec @ r_mix)
+    p0, p1 = (1 + r[2]) / 2, (1 - r[2]) / 2
+    assert np.isclose(p0, abs(alpha)**2)
+    assert np.isclose(p1, abs(beta)**2)
+    assert np.allclose(np.diag(rho).real, [p0, p1])
 
 # 6. mixture vs superposition example
 w0 = np.array([1, 0], dtype=complex)

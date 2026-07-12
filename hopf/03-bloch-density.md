@@ -151,7 +151,7 @@ $$
 
 このように 1 つの状態ベクトルから作られる密度行列を**純粋状態**と呼びます。
 
-## べき等性
+## 冪等性
 
 純粋状態の密度行列は 2 乗しても変わりません。$ω^\daggerω=|α|^2+|β|^2=1$がスカラーであることから直ちに従います。
 
@@ -179,7 +179,7 @@ $$
 =\frac14\{(1+|\boldsymbol r|^2)\,\mathrm I+2\,\boldsymbol r\cdot\boldsymbol σ\}
 $$
 
-$ρ^2=ρ$となる条件は$\frac14(1+|\boldsymbol r|^2)=\frac12$、つまり$|\boldsymbol r|=1$です。べき等性は、ブロッホベクトルが単位球面上にあることと同値です。初回に$ω\mathbf kω^*$の係数の 2 乗和が$1$となることを確認しましたが、それをパウリ行列の言葉で言い直したことになります。
+$ρ^2=ρ$となる条件は$\frac14(1+|\boldsymbol r|^2)=\frac12$、つまり$|\boldsymbol r|=1$です。冪等性は、ブロッホベクトルが単位球面上にあることと同値です。初回に$ω\mathbf kω^*$の係数の 2 乗和が$1$となることを確認しましたが、それをパウリ行列の言葉で言い直したことになります。
 
 ## 位相の消去
 
@@ -238,7 +238,11 @@ $$
 
 ブロッホベクトルは原点（球の中心）を指します。これを**最大混合状態**と呼びます。
 
-一方、等係数の重ね合わせは 1 本の状態ベクトルなので純粋状態です。
+一方、$ω_0$と$ω_1$を等係数$c$で重ね合わせると
+$$
+cω_0+cω_1 = \begin{pmatrix}c\\c\end{pmatrix}
+$$
+となります。規格化条件$|c|^2+|c|^2=1$から$c=\frac1{\sqrt2}$です。これは 1 本の状態ベクトルなので純粋状態です。
 
 $$
 ω_+=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}
@@ -253,7 +257,7 @@ $$
 
 ## 純粋度
 
-べき等性の計算で使った式は、混合状態でもそのまま成り立ちます。
+冪等性の計算で使った式は、混合状態でもそのまま成り立ちます。
 
 $$
 ρ^2=\frac14\{(1+|\boldsymbol r|^2)\,\mathrm I+2\,\boldsymbol r\cdot\boldsymbol σ\}
@@ -271,13 +275,23 @@ $$
 
 ## 固有分解
 
-$(\boldsymbol r\cdot\boldsymbol σ)^2=|\boldsymbol r|^2\,\mathrm I$かつ$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より、$\boldsymbol r\cdot\boldsymbol σ$の固有値は$\pm|\boldsymbol r|$です。したがって$ρ=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)$の固有値は次のようになります。
+$(\boldsymbol r\cdot\boldsymbol σ)^2=|\boldsymbol r|^2\,\mathrm I$かつ$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より、$\boldsymbol r\cdot\boldsymbol σ$の固有値は$\pm|\boldsymbol r|$です。
+
+&&&prf
+固有値を$\lambda$、対応する固有ベクトルを$v$とすると$(\boldsymbol r\cdot\boldsymbol σ)v=\lambda v$。両辺に左から$\boldsymbol r\cdot\boldsymbol σ$を掛けると
+$$
+(\boldsymbol r\cdot\boldsymbol σ)^2v=\lambda^2v
+$$
+左辺は$|\boldsymbol r|^2\mathrm I\,v=|\boldsymbol r|^2v$なので$\lambda^2=|\boldsymbol r|^2$、つまり$\lambda=\pm|\boldsymbol r|$。さらに$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より 2 つの固有値の和が$0$なので、固有値は$+|\boldsymbol r|$と$-|\boldsymbol r|$の対である。
+&&&
+
+したがって$ρ=\dfrac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)$の固有値は次のようになります。
 
 $$
 λ_\pm=\frac12(1\pm|\boldsymbol r|)
 $$
 
-対応する固有ベクトルは、$\pm\dfrac{\boldsymbol r}{|\boldsymbol r|}$方向のブロッホベクトルを持つ純粋状態、つまり球面上の対蹠点のペアです。これらを$ρ_\pm$とすれば、$\boldsymbol r\ne\boldsymbol 0$の混合状態は直交する 2 つの純粋状態の混合として書けます。
+対応する純粋状態は、ブロッホベクトルが$\boldsymbol r$方向と$-\boldsymbol r$方向に向いており、ブロッホ球面上の対蹠点です。これらを$ρ_\pm$とすれば、$\boldsymbol r\ne\boldsymbol 0$の混合状態は直交する 2 つの純粋状態の混合として書けます。
 
 $$
 ρ_\pm=\frac12\Bigl(\mathrm I\pm\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\Bigr)
@@ -289,27 +303,51 @@ $$
 
 &&&rem 分解の非一意性
 同じ密度行列を与える混合の作り方は 1 通りではありません。例えば最大混合状態$\frac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$ω_\pm=\frac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。密度行列は「どう混ぜたか」の情報を持たず、統計的に区別できない混合を同じ 1 点で表します。
+
+これは上の$ρ_\pm$の式で$\boldsymbol r=\boldsymbol 0$とした極限に対応します。このとき$λ_+=λ_-=\frac12$と縮退し、$\boldsymbol r/|\boldsymbol r|$も定義できないため式はそのままでは使えませんが、任意の単位ベクトル$\boldsymbol n$について$\frac12(\mathrm I+\boldsymbol n\cdot\boldsymbol σ)$と$\frac12(\mathrm I-\boldsymbol n\cdot\boldsymbol σ)$の等確率混合が常に$\frac12\mathrm I$を再現します。分解の自由度が最大になるケースです。
 &&&
 
 # 測定との関係
 
-量子情報では、エルミート行列$A$で表される観測量の期待値が密度行列から計算されます。
+方向を表す単位ベクトル$\boldsymbol n=(n_x,n_y,n_z)$への測定結果の**期待値**（平均値）は、ブロッホベクトル$\boldsymbol r$を$\boldsymbol n$へ射影した長さ、つまり内積$\boldsymbol n\cdot\boldsymbol r$で与えられます。
+
+この内積は行列の側でも計算できます。方向$\boldsymbol n$を行列$A=\boldsymbol n\cdot\boldsymbol σ$で表せば、密度行列$ρ$との積のトレースが内積となります。
 
 $$
-\langle A\rangle=\mathrm{tr}(ρA)
+\mathrm{tr}(ρA)
+=\mathrm{tr}\Bigl(\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)(\boldsymbol n\cdot\boldsymbol σ)\Bigr)
+=\boldsymbol n\cdot\boldsymbol r
 $$
 
-純粋状態では$\mathrm{tr}(ωω^\dagger A)=ω^\dagger Aω$となり、前回計算した$ω^\dagger\sigma_xω$などと同じ形です。特にパウリ行列を観測量とすれば、期待値はブロッホベクトルの成分そのものです。
+&&&rem
+$\mathrm{tr}\,\sigma_i=0$と$\mathrm{tr}(\sigma_i\sigma_j)=2\delta_{ij}$を使いました。
+&&&
+
+特に、$\boldsymbol n$として$x$軸、$y$軸、$z$軸それぞれの単位ベクトルを取れば、$A$はパウリ行列$\sigma_x,\sigma_y,\sigma_z$そのものになり、期待値はブロッホベクトルの各成分と一致します。
 
 $$
-\langle\sigma_x\rangle=\mathrm{tr}(ρ\sigma_x)=x
+\mathrm{tr}(ρ\sigma_x)=x
 ,\quad
-\langle\sigma_y\rangle=\mathrm{tr}(ρ\sigma_y)=y
+\mathrm{tr}(ρ\sigma_y)=y
 ,\quad
-\langle\sigma_z\rangle=\mathrm{tr}(ρ\sigma_z)=z
+\mathrm{tr}(ρ\sigma_z)=z
 $$
 
-また、$ω_0$と$ω_1$のどちらであるかを判別する測定（$z$測定）の確率は、対角成分から得られます。
+ここで期待値は、1 回の測定結果そのものではありません。$z$方向の測定では、1 回ごとの結果は$+1$または$-1$のどちらかの値として確率的に観測され、同じ状態を多数回測定したときの平均が期待値$z$です。$+1$が出る確率を$p_0$、$-1$が出る確率を$p_1$とすれば、期待値は「値×確率」の総和として定義されるので
+
+$$
+z=(+1)\,p_0+(-1)\,p_1=p_0-p_1
+$$
+
+が成り立ちます。これは期待値の定義を$\pm1$の2値確率変数に当てはめただけです。これに確率の規格化条件を合わせれば、次の連立方程式が得られます。
+
+$$
+p_0-p_1=z
+,\quad
+p_0+p_1=1
+$$
+
+これを解くことは、期待値の範囲$[-1,1]$を確率の範囲$[0,1]$へ写すスケール調整に相当します。
 
 $$
 p_0=\frac{1+z}2
@@ -317,12 +355,27 @@ p_0=\frac{1+z}2
 p_1=\frac{1-z}2
 $$
 
-ブロッホベクトルとは、パウリ行列で表される観測量の期待値を並べた座標だと言えます。
+北極（$z=1$）なら確実に$+1$、南極（$z=-1$）なら確実に$-1$、中心（$z=0$）なら半々です。成分で書けば$z=αα^*-ββ^*$と$αα^*+ββ^*=1$より
+
+$$
+\begin{aligned}
+p_0&=\frac{1+z}2=\frac{(αα^*+ββ^*)+(αα^*-ββ^*)}2=\frac{2αα^*}2=αα^* \\
+p_1&=\frac{1-z}2=\frac{(αα^*+ββ^*)-(αα^*-ββ^*)}2=\frac{2ββ^*}2=ββ^*
+\end{aligned}
+$$
+
+となり、確率は密度行列$ρ=ωω^\dagger$の対角成分と一致します。
+
+&&&rem
+結果$+1,-1$に対応する状態は、ブロッホベクトルが北極・南極を指す純粋状態、つまり$ω_0,ω_1$です。物理では、測定後に状態がこのどちらかへ変化すると考えます。
+&&&
+
+$x,y,z$軸に限らず、任意の方向$\boldsymbol n$への測定の期待値が$\boldsymbol n\cdot\boldsymbol r$という内積 1 つで求まる点に、ブロッホベクトルの意味があります。
 
 # まとめ
 
 単位行列とパウリ行列は$2\times2$エルミート行列の基底で、パウリ行列の係数が 3 次元の座標を与えます。純粋状態の密度行列はブロッホ球の表面を指し、位相（ファイバー）が潰れることから、ホップファイブレーションの像の行列表現とみなせます。混合状態はブロッホベクトルの重み付き平均としてブロッホ球の内部に広がり、ファイブレーションの枠組みの外側の世界を表します。
 
 &&&rem
-パウリ行列の係数として取り出される情報（位相差、混合の度合い）が観測量の期待値と一致するという点に、この表現が量子情報で使われる理由があります。
+パウリ行列の係数として取り出される情報（位相差、混合の度合い）が測定の期待値と一致するという点に、この表現が量子情報で使われる理由があります。
 &&&
