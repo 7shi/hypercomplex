@@ -32,4 +32,4 @@
 
 - [check-02-quaternion.py](check-02-quaternion.py) — 02-su2-so3.md の数式の数値検証。四元数の行列表現とシルベスター条件、括弧積と外積の関係、共役作用による$\operatorname{SO}(3)$の2重被覆、$\mathfrak{su}(2)\cong\mathfrak{so}(3)$の構造定数の一致を確認します。
 - [check-03-spin.py](check-03-spin.py) — 03-spin.md の数式の数値検証。スピノルの2重被覆性、パウリ行列によるグレード分解、両側作用$pxq^{-1}$による$\operatorname{SO}(4)$の2重被覆と$\mathfrak{so}(4)\cong\mathfrak{sp}(1)\oplus\mathfrak{sp}(1)$、左右作用の行列表現$L_uR_v$が張る$C\ell_{4,0}\cong M_4(\mathbb{R})$、射影とスピノルの復元式を確認します。
-- [check-04-su3.py](check-04-su3.py) — 04-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つことを確認します。
+- [check-04-su3.py](check-04-su3.py) — 04-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、パウリ行列から引き継がれる役割と引き継がれない役割（スピノル外積・クリフォード関係・クロック＆シフト行列）、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つこと、$C\ell(6,0)$の半スピノル表現によるスピノル固定部分群$\operatorname{SU}(3) \subset \operatorname{Spin}(6) \cong \operatorname{SU}(4)$を確認します。
