@@ -13,7 +13,7 @@
 
 ## 検証コード
 
-プロジェクトルートで `uv sync` により環境を構築し、`uv run lebesgue/<ファイル名>` で実行します。
+プロジェクトルートで `uv run lebesgue/<ファイル名>` により実行します。
 
 - [check-01-measure-integral.py](check-01-measure-integral.py) — 01-measure-integral.md の数式の数値検証。ディリクレ関数のリーマン和の不一致、$\varepsilon/2^n$被覆の等比級数、単関数近似の単調収束（$x^2$の積分$1/3$）、極限と積分が交換できない関数列$n\,\mathbb{1}_{(0,1/n)}$と優関数の非存在、sophomore's dreamの項別積分を確認します。
 - [check-02-l2-hilbert.py](check-02-l2-hilbert.py) — 02-l2-hilbert.md の数式の数値検証。ランプ関数列が$L^2$のコーシー列なのに極限が階段関数となる完備性の破れ、$\varepsilon/2^n$被覆で有理数を太らせた稠密で測度の小さい開集合、平行四辺形の法則（$L^2$で成立・$L^1$で不成立）、三角関数系の正規直交性、$f(x)=x$のフーリエ係数とベッセル・パーセバル、フーリエ部分和の最良近似性、バーゼル問題$\sum 1/n^2 = \pi^2/6$を確認します。

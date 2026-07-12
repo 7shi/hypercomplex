@@ -15,6 +15,10 @@ q&=u+v\mathbf{k}&&(u^2+v^2=1)
 $q\mathbf kq^*=\mathbf k$より$(ωq)\mathbf k(ωq)^*=ω\mathbf kω^*$
 &&&
 
+&&&rem 前回との関係
+前回のまとめでは$ω=(α_0\mathbf{k}+α_1)+\mathbf{j}(β_0\mathbf{k}+β_1)$としました。今回の$ω$はそれに右から$-\mathbf{k}$を掛けたもので、$-\mathbf{k}$は$\mathbf{k}$を固定するため、両者は同じファイバー上にあり$ω\mathbf{k}ω^*$も一致します。この形を採用したのは、複素数の埋め込みが$α\mapsto α_0-α_1\mathbf{k}$となり、後述の$e^{-a\,\mathbf{k}}$の形に揃うためです。
+&&&
+
 $ωq$を計算します。
 
 $$\begin{aligned}
@@ -41,12 +45,14 @@ $$\begin{aligned}
 成分計算だけではイメージが湧きにくいため、三角関数でパラメーター表示します。[[7shi-c]]
 
 &&&def 回転子の三角関数表示
+$$
 \begin{aligned}
 ω&=\cosθ\,(\cos a-\sin a\,\mathbf{k})+\sinθ\,\mathbf{j}(\cos b-\sin b\,\mathbf{k}) \\
  &=\cosθ\,e^{-a\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{-b\,\mathbf{k}} \\
 q&=\cos c+\sin c\,\mathbf{k} \\
  &=e^{c\,\mathbf{k}}
 \end{aligned}
+$$
 &&&
 
 $ωq$を計算します。
@@ -60,16 +66,18 @@ $a=c$のとき
 
 $$\begin{aligned}
 ωq&=\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}} \\
-  &=\cosθ+\sinθ\,\mathbf{j}\left\{\cos(a-b)-\sin(a-b)\,\mathbf{k}\right\} \\
-  &=\cosθ+\sinθ\left\{\cos(a-b)\,\mathbf{j}-\sin(a-b)\,\mathbf{i}\right\}
+  &=\cosθ+\sinθ\,\mathbf{j}\left\{\cos(a-b)+\sin(a-b)\,\mathbf{k}\right\} \\
+  &=\cosθ+\sinθ\left\{\cos(a-b)\,\mathbf{j}+\sin(a-b)\,\mathbf{i}\right\}
 \end{aligned}$$
 
 よって、$q$が$e^{-a\,\mathbf{k}}$を打ち消すとき、$\mathbf k$の項が消えます。これを$ω'$とします。
 
 &&&def k のない回転子
+$$
 \begin{aligned}
 ω'&=\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}} \\
 \end{aligned}
+$$
 &&&
 
 ## 回転
@@ -135,7 +143,7 @@ $20°, 50°$の順に並んでいれば、位相差は$50°-20°=30°$
 
 # 状態ベクトルとパウリ行列
 
-同じことを状態ベクトルとパウリ行列で計算します。
+同じことを状態ベクトルとパウリ行列で計算します。回転子を表す2成分の複素ベクトルは**スピノル**とも呼ばれます。
 
 $$\begin{aligned}
 ω&=\begin{pmatrix}α\\β\end{pmatrix}
@@ -151,7 +159,7 @@ $ωq$は括り出した係数の消去に相当することが、形式的な操
 パウリ行列でブロッホ球上の座標に変換します。
 
 $$\begin{aligned}
-ω'^\dagger σ_x ω'
+ω'^\dagger \sigma_x ω'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\sin\fracθ2\,e^{i(b-a)} \\ \cos\fracθ2\end{pmatrix} \\
 &=\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + \sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
@@ -160,7 +168,7 @@ $$\begin{aligned}
 &=2\cos\fracθ2\sin\fracθ2\cos(b-a) \\
 &=\sinθ\cos(b-a) \\
 
-ω'^\dagger σ_y ω'
+ω'^\dagger \sigma_y ω'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}-i\sin\fracθ2\,e^{i(b-a)} \\ i\cos\fracθ2\end{pmatrix} \\
 &=-i\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + i\sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
@@ -169,7 +177,7 @@ $$\begin{aligned}
 &=2\cos\fracθ2\sin\fracθ2\sin(b-a) \\
 &=\sinθ\sin(b-a) \\
 
-ω'^\dagger σ_z ω'
+ω'^\dagger \sigma_z ω'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ -\sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\cos^2\fracθ2-\sin^2\fracθ2\,e^{-i(b-a)}e^{i(b-a)} \\
@@ -247,7 +255,7 @@ $$\begin{aligned}
   +\sinθ\cos(b-a)\begin{pmatrix}0&1 \\ 1&0\end{pmatrix} \\
   +\sinθ\sin(b-a)\begin{pmatrix}0&-i \\ i&0\end{pmatrix} \\
   +\cosθ\begin{pmatrix}1&0 \\ 0&-1\end{pmatrix}\right\} \\
-&=\frac12\left\{ \mathrm{I} + \sinθ\cos(b-a)σ_x + \sinθ\sin(b-a)σ_y + \cosθ\,σ_z \right\}
+&=\frac12\left\{ \mathrm{I} + \sinθ\cos(b-a)\sigma_x + \sinθ\sin(b-a)\sigma_y + \cosθ\,\sigma_z \right\}
 \end{aligned}$$
 
 これは**密度行列**と呼ばれます。スケールを$2$倍してパウリ行列の係数を抜き出せば、ブロッホベクトルと一致します。
@@ -258,7 +266,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 &&&rem 始点
-四元数による回転の始点を$k$としたのは、外積から計算される成分と一致させるためです。
+四元数による回転の始点を$\mathbf k$としたのは、外積から計算される成分と一致させるためです。
 &&&
 
 &&&rem 密度行列
@@ -269,6 +277,8 @@ $$\begin{aligned}
 
 # まとめ
 
-四元数での回転によるモデルを導入して、線形代数でその結果を利用する流れを示しました。量子情報への導入とすることを意識しています。
+四元数での回転によるモデルを導入して、線形代数でその結果を利用する流れを示しました。量子情報への導入とすることを意図しています。
 
-他にも射影平面による定式化があり、こちらの方がより一般的です。[[dim7-8]]
+&&&rem
+ホップファイブレーションの定式化はいくつかあり、射影直線によるものが一般的です。[[dim7-8]]
+&&&
