@@ -1,4 +1,4 @@
-"""Checks for 04-clif-str-repr.md.
+"""Checks for 01-representation.md.
 
 Verifies the complete classification table of Cl_{p,q}(R) (0 <= p,q <= 8)
 in two independent ways:

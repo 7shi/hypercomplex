@@ -1,4 +1,4 @@
-"""Checks for 05-4d-bsqua.md.
+"""Checks for 04-4d-bsqua.md.
 
 Verifies the split-biquaternion correspondence for 4D quaternion rotation:
 
