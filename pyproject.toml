@@ -1,7 +1,7 @@
 [project]
-name = "docs-hypercomplex"
+name = "hypercomplex"
 version = "0.1.0"
-description = "Add your description here"
+description = "Articles and verification code related to hypercomplex numbers (e.g., octonions)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
