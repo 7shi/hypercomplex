@@ -4,7 +4,7 @@
 
 改訂履歴：
 
-- 2026.07.13 「全体位相の基準依存性」を追記
+- 2026.07.14 回転子の定義を調整、回転と内積・外積を削除、基準依存性を追記
 
 # パラメーターの調整
 
@@ -12,8 +12,7 @@
 
 &&&def 単位四元数による回転子
 $$\begin{aligned}
-ω&=(α_0-α_1\mathbf{k})+(β_0\mathbf{j}-β_1\mathbf{i})&&(α_0^2+α_1^2+β_0^2+β_1^2=1) \\
- &=(α_0-α_1\mathbf{k})+\mathbf{j}(β_0-β_1\mathbf{k}) \\
+ω&=(α_0\mathbf{k}+α_1)+\mathbf{j}(β_0\mathbf{k}+β_1)&&(α_0^2+α_1^2+β_0^2+β_1^2=1) \\
 q&=u+v\mathbf{k}&&(u^2+v^2=1)
 \end{aligned}$$
 &&&
@@ -24,29 +23,23 @@ $$
 (ωq)\mathbf k(ωq)^*=ω\mathbf kω^*
 $$
 
-となります。
-
-&&&rem 前回との関係
-前回のまとめでは$ω=(α_0\mathbf{k}+α_1)+\mathbf{j}(β_0\mathbf{k}+β_1)$としました。今回の$ω$はそれに右から$-\mathbf{k}$を掛けたもので、$-\mathbf{k}$は$u=0,v=-1$とした$q$の一種であり$\mathbf{k}$を固定するため、両者は同じファイバー上にあり$ω\mathbf{k}ω^*$も一致します。
-&&&
-
-ここではこの自由度を使って、$ω$の$\mathbf k$の項を消去した標準形を作ります。
+となります。この自由度を使って、$ω$の$\mathbf k$の項を消去した標準形を作ります。
 
 $ωq$を計算します。
 
 $$\begin{aligned}
-ωq&=\{(α_0-α_1\mathbf{k})+\mathbf{j}(β_0-β_1\mathbf{k})\}(u+v\mathbf{k}) \\
-&=(α_0-α_1\mathbf{k})(u+v\mathbf{k})+\mathbf{j}(β_0-β_1\mathbf{k})(u+v\mathbf{k})
+ωq&=\{(α_0\mathbf{k}+α_1)+\mathbf{j}(β_0\mathbf{k}+β_1)\}(u+v\mathbf{k}) \\
+&=(α_0\mathbf{k}+α_1)(u+v\mathbf{k})+\mathbf{j}(β_0\mathbf{k}+β_1)(u+v\mathbf{k})
 \end{aligned}$$
 
 $u,v$を調整すれば、$\mathbf k$を消すことができます。
 
 $$\begin{aligned}
-α_0-α_1\mathbf{k}&=γ(α_0'-α_1'\mathbf{k})&&(α_0'^2+α_1'^2=1) \\
-u+v\mathbf{k}&=α_0'+α_1'\mathbf{k}
+α_0\mathbf{k}+α_1&=γ(α_0'\mathbf{k}+α_1')&&(α_0'^2+α_1'^2=1) \\
+u+v\mathbf{k}&=-α_0'\mathbf{k}+α_1'
 \end{aligned}$$
 $$\begin{aligned}
-ωq&=γ(α_0'-α_1'\mathbf{k})(α_0'+α_1'\mathbf{k})+\mathbf{j}(β_0-β_1\mathbf{k})(α_0'+α_1'\mathbf{k}) \\
+ωq&=γ(α_0'\mathbf{k}+α_1')(-α_0'\mathbf{k}+α_1')+\mathbf{j}(β_0\mathbf{k}+β_1)(-α_0'\mathbf{k}+α_1') \\
   &=γ(α_0'^2+α_1'^2)+\mathbf{j}\{(β_0α_0'+β_1α_1')+(β_0α_1'-β_1α_0')\mathbf{k}\} \\
   &=γ+(β_0α_0'+β_1α_1')\mathbf{j}+(β_0α_1'-β_1α_0')\mathbf{i} \\
 \end{aligned}$$
@@ -60,8 +53,8 @@ $$\begin{aligned}
 &&&def 回転子の三角関数表示
 $$
 \begin{aligned}
-ω&=\cosθ\,(\cos a-\sin a\,\mathbf{k})+\sinθ\,\mathbf{j}(\cos b-\sin b\,\mathbf{k}) \\
- &=\cosθ\,e^{-a\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{-b\,\mathbf{k}} \\
+ω&=\cosθ\,(\sin a\,\mathbf{k}+\cos a)+\sinθ\,\mathbf{j}(\sin b\,\mathbf{k}+\cos b) \\
+ &=\cosθ\,e^{a\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{b\,\mathbf{k}} \\
 q&=\cos c+\sin c\,\mathbf{k} \\
  &=e^{c\,\mathbf{k}}
 \end{aligned}
@@ -70,82 +63,29 @@ $$
 
 $ωq$を計算します。
 
+$$
+\begin{aligned}
+ωq&=(\cosθ\,e^{a\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{b\,\mathbf{k}})e^{c\,\mathbf{k}} \\
+  &=\cosθ\,e^{(a+c)\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{(b+c)\,\mathbf{k}}
+\end{aligned}
+$$
+
+$c=-a$のとき
+
 $$\begin{aligned}
-ωq&=(\cosθ\,e^{-a\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{-b\,\mathbf{k}})e^{c\,\mathbf{k}} \\
-  &=\cosθ\,e^{(c-a)\,\mathbf{k}}+\sinθ\,\mathbf{j}\,e^{(c-b)\,\mathbf{k}}
+ωq&=\cosθ+\sinθ\,\mathbf{j}\,e^{(b-a)\,\mathbf{k}} \\
+  &=\cosθ+\sinθ\,\mathbf{j}\left\{\cos(b-a)+\sin(b-a)\,\mathbf{k}\right\} \\
+  &=\cosθ+\sinθ\left\{\cos(b-a)\,\mathbf{j}+\sin(b-a)\,\mathbf{i}\right\}
 \end{aligned}$$
 
-$a=c$のとき
-
-$$\begin{aligned}
-ωq&=\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}} \\
-  &=\cosθ+\sinθ\,\mathbf{j}\left\{\cos(a-b)+\sin(a-b)\,\mathbf{k}\right\} \\
-  &=\cosθ+\sinθ\left\{\cos(a-b)\,\mathbf{j}+\sin(a-b)\,\mathbf{i}\right\}
-\end{aligned}$$
-
-よって、$q$が$e^{-a\,\mathbf{k}}$を打ち消すとき、$\mathbf k$の項が消えます。これを$ω'$とします。
+よって、$q$が$e^{a\,\mathbf{k}}$を打ち消すとき、$\mathbf k$の項が消えます。これを$ω'$とします。
 
 &&&def k のない回転子
 $$
 \begin{aligned}
-ω'&=\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}} \\
+ω'&=\cosθ+\sinθ\,\mathbf{j}\,e^{(b-a)\,\mathbf{k}} \\
 \end{aligned}
 $$
-&&&
-
-## 回転
-
-$ω'$で$\mathbf k$を回転させます。
-
-$$\begin{aligned}
-ω'\mathbf kω'^*
-&=(\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}})\mathbf{k}(\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}})^* \\
-&=(\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}})\mathbf{k}(\cosθ-\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}}) \\
-&=(\cosθ+\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}})^2\,\mathbf{k} \\
-&=(\cos^2θ+2\cosθ\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}}
-  +\sin^2θ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}}\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}})\mathbf{k} \\
-&=(\cos^2θ+2\cosθ\sinθ\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}}
-  +\sin^2θ\,\mathbf{j}^2\,e^{-(a-b)\,\mathbf{k}}e^{(a-b)\,\mathbf{k}})\mathbf{k} \\
-&=2\cosθ\sinθ\,\mathbf{i}\left\{\cos(a-b)+\sin(a-b)\mathbf{k}\right\}
-  +(\cos^2θ-\sin^2θ)\mathbf{k} \\
-&=\sin2θ\left\{\cos(a-b)\mathbf{i}-\sin(a-b)\mathbf{j}\right\}+\cos2θ\,\mathbf{k} \\
-&=\sin2θ\left\{\cos(b-a)\mathbf{i}+\sin(b-a)\mathbf{j}\right\}+\cos2θ\,\mathbf{k} \\
-\end{aligned}$$
-
-左右から回転子で挟むため、回転角が2倍の$2θ$になります。
-
-&&&rem
-一般的には回転子の側で角度を半分にして、回転角が$θ$となるように調整します。
-$$ω''=\cos\fracθ2+\sin\fracθ2\,\mathbf{j}\,e^{(a-b)\,\mathbf{k}}$$
-ここでは敢えて、理由を説明する前に天下りで導入するのを避けました。
-&&&
-
-三角関数の引数を$b-a$とした理由は、次で説明します。
-
-## 内積と外積
-
-前回[[7shi-h]]、複素数$α,β$について、内積と外積が次のように得られることを確認しました。
-
-&&&def 複素数による内積と外積の計算
-$$α^*β=α\cdot β+\star(α\wedge β)i$$
-&&&
-
-ここでは$α=e^{ia},β=e^{ib}$のように位相だけの単位複素数に当てはめます。
-
-$$\begin{aligned}
-α^*β
-&=(e^{ia})^*e^{ib} \\
-&=e^{-ia}e^{ib} \\
-&=e^{i(b-a)} \\
-&=\cos(b-a)+i\sin(b-a)
-\end{aligned}$$
-
-位相差$b-a$を計算することで、実部は内積、虚部は（ウェッジ積の意味での）外積が得られると解釈できます。
-
-外積は演算の順序で符号が変わります。偏角を昇順で並べたものを順方向とします。偏角$a,b$を昇順とすれば、位相差は$b-a$として計算するのが自然です。
-
-&&&ex 位相差
-$20°, 50°$の順に並んでいれば、位相差は$50°-20°=30°$
 &&&
 
 # 状態ベクトルとパウリ行列
@@ -232,7 +172,7 @@ $$
 $A,B$を複素ベクトルとして、$A^\dagger B$は内積となります。エルミート共役を逆にした$AB^\dagger$は外積と呼ばれます。
 
 &&&rem 外積[[7shi-p]]
-既に出て来たウェッジ積や、ベクトル解析で一般的なベクトル積（クロス積）とは別の外積で、テンソル積（クロネッカー積）の特殊な場合です。ややこしいですが、英語では区別があります。
+ベクトル解析で一般的なベクトル積（クロス積）や、ウェッジ積とは別の外積で、テンソル積（クロネッカー積）の特殊な場合です。ややこしいですが、英語では区別があります。
 
 英語|日本語|備考
 ----|----|----
