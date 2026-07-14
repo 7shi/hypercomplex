@@ -1,4 +1,4 @@
-前回[[7shi-s]]、状態ベクトルとパウリ行列からブロッホベクトルと密度行列を導出しました。今回はパウリ行列によって何が表現されるかという視点から、純粋状態と混合状態を説明します。量子情報への接続は予備知識程度にとどめます。
+前回[[7shi-s]]、状態ベクトルとパウリ行列からブロッホベクトルと密度行列を導出しました。今回はパウリ行列によって表現される純粋状態と混合状態を説明します。量子情報への接続は予備知識程度に留めます。
 
 シリーズ: [ホップファイブレーション](https://mathlog.info/series/sKmD4S7IQSBnq4CvOVlU)
 
@@ -8,9 +8,9 @@
 
 &&&def パウリ行列
 $$
-\sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix}
-,\ \sigma_y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}
-,\ \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+σ_x=\begin{pmatrix}0&1\\1&0\end{pmatrix}, \quad
+σ_y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}, \quad
+σ_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 $$
 &&&
 
@@ -34,95 +34,132 @@ $$
 
 &&&fml エルミート行列の展開
 $$
-A=w\,\mathrm I+x\,\sigma_x+y\,\sigma_y+z\,\sigma_z\quad(w,x,y,z\in\mathbb R)
+A=w\,\mathrm I+x\,σ_x+y\,σ_y+z\,σ_z\quad(w,x,y,z\in\mathbb R)
 $$
 &&&
 
 逆に、この形の行列は常にエルミートです。つまり単位行列とパウリ行列は、$2\times2$エルミート行列がなす実 4 次元空間の基底です。パウリ行列の係数$(x,y,z)$が 3 次元の座標を与えるというのが、前回までの計算の背景にある構造です。
 
-## トレースによる係数の抽出
+&&&rem ベクトルの行列表現
+単位行列$\mathrm I$がスカラー$1$の行列表現であるのに対し、パウリ行列$σ_x,σ_y,σ_z$は3次元空間の基底ベクトル$(1,0,0),(0,1,0),(0,0,1)$の行列表現とみなせます。線形結合$x\,σ_x+y\,σ_y+z\,σ_z$は、この対応のもとでベクトル$(x,y,z)$を行列として表現したものです。
 
-行列から係数を取り出すには、トレース（対角成分の和）を使います。準備としてパウリ行列の積を確認します。
+ブロッホベクトルは、この対応によりパウリ行列の線形結合と同一視されたベクトルです。
+&&&
+
+## パウリ行列の積
+
+パウリ行列の積を確認します。
 
 &&&fml パウリ行列の積
 $$
-\sigma_x^2=\sigma_y^2=\sigma_z^2=\mathrm I
+σ_x^2=σ_y^2=σ_z^2=\mathrm I
 ,\quad
-\sigma_x\sigma_y=i\sigma_z
+σ_xσ_y=iσ_z
 ,\quad
-\sigma_y\sigma_z=i\sigma_x
+σ_yσ_z=iσ_x
 ,\quad
-\sigma_z\sigma_x=i\sigma_y
+σ_zσ_x=iσ_y
 $$
 順序を入れ替えると符号が反転します（反交換性）。
 $$
-\sigma_y\sigma_x=-i\sigma_z
+σ_yσ_x=-iσ_z
 ,\quad
-\sigma_z\sigma_y=-i\sigma_x
+σ_zσ_y=-iσ_x
 ,\quad
-\sigma_x\sigma_z=-i\sigma_y
+σ_xσ_z=-iσ_y
 $$
 &&&
 
 &&&rem 四元数との関係
-$-i$を掛けた$-i\sigma_x,\ -i\sigma_y,\ -i\sigma_z$は$\mathbf i,\mathbf j,\mathbf k$と同じ積の規則に従います。例えば$(-i\sigma_x)(-i\sigma_y)=-\sigma_x\sigma_y=-i\sigma_z$は$\mathbf{ij}=\mathbf k$に、$(-i\sigma_x)^2=-\sigma_x^2=-\mathrm I$は$\mathbf i^2=-1$に対応します。
+$-i$を掛けた$-iσ_x,\ -iσ_y,\ -iσ_z$は$\mathbf i,\mathbf j,\mathbf k$と同じ積の規則に従います。
+$$
+(-iσ_x)(-iσ_y)=-σ_xσ_y=-iσ_z
+\quad\Leftrightarrow\quad
+\mathbf{ij}=\mathbf k
+$$
+
+これは複素数$\mathbb{C}$と四元数$\mathbb{H}$のテンソル積である双四元数$\mathbb{C}\otimes\mathbb{H}$の構造を反映しています。[[7shi-bq]]
+$$
+h \cong σ_xσ_yσ_z=iI,\quad h^2=-1
+$$
+$$
+h\mathbf i \cong i(-iσ_x) = σ_x, \quad
+h\mathbf j \cong i(-iσ_y) = σ_y, \quad
+h\mathbf k \cong i(-iσ_z) = σ_z
+$$
+$$
+(h\mathbf i)(h\mathbf j)=h(h\mathbf k)
+\quad\Leftrightarrow\quad
+σ_xσ_y=iσ_z
+$$
 &&&
+
+## トレースによる係数の抽出
 
 パウリ行列はトレースがゼロです。積のトレースは、同じもの同士では$\mathrm{tr}\,\mathrm I=2$、異なるもの同士ではパウリ行列の$\pm i$倍となるためゼロです。
 
 $$
-\mathrm{tr}\,\sigma_x=\mathrm{tr}\,\sigma_y=\mathrm{tr}\,\sigma_z=0
+\mathrm{tr}\,σ_x=\mathrm{tr}\,σ_y=\mathrm{tr}\,σ_z=0
 ,\quad
-\mathrm{tr}(\sigma_i\sigma_j)=2\delta_{ij}\quad(i,j=x,y,z)
+\mathrm{tr}(σ_iσ_j)=2\delta_{ij}\quad(i,j=x,y,z)
 $$
 
-これを使えば、展開した行列の右からパウリ行列を掛けてトレースを取ることで、対応する係数だけが残ります。
+行列から係数を取り出すには、トレース（対角成分の和）を使用します。上で確認した積とトレースの関係を使えば、展開した行列の右からパウリ行列を掛けてトレースを取ることで、対応する係数だけが残ります。
 
 $$
-\mathrm{tr}(A\sigma_x)
-=\mathrm{tr}(w\,\sigma_x+x\,\mathrm I-iy\,\sigma_z+iz\,\sigma_y)
+\mathrm{tr}(Aσ_x)
+=\mathrm{tr}(w\,σ_x+x\,\mathrm I-iy\,σ_z+iz\,σ_y)
 =2x
 $$
 
 &&&fml 係数の抽出
 $$
-w=\frac12\mathrm{tr}\,A
-,\quad
-x=\frac12\mathrm{tr}(A\sigma_x)
-,\quad
-y=\frac12\mathrm{tr}(A\sigma_y)
-,\quad
-z=\frac12\mathrm{tr}(A\sigma_z)
+w=\frac12\mathrm{tr}\,A, \quad
+x=\frac12\mathrm{tr}(Aσ_x), \quad
+y=\frac12\mathrm{tr}(Aσ_y), \quad
+z=\frac12\mathrm{tr}(Aσ_z)
+$$
+&&&
+
+&&&rem
+双四元数において、トレースは実部の2倍に対応します。
+$$
+A = w + xh\mathbf i + yh\mathbf j + zh\mathbf k
+$$
+$$
+2\,\mathrm{Re}(Ah\mathbf i)
+=2\,\mathrm{Re}(wh\mathbf i + x + y\mathbf k - z\mathbf j)
+=2x
 $$
 &&&
 
 # 純粋状態
 
-前回導出した密度行列を、この視点から見直します。状態ベクトル$ω$から作った密度行列はエルミート行列です。
+前回導出した密度行列を、この視点から見直します。状態ベクトル$\Psi$から作った密度行列はエルミート行列です。
 
 $$
-ρ=ωω^\dagger
+ρ=\Psi\Psi^\dagger
 =\begin{pmatrix}α\\β\end{pmatrix}\begin{pmatrix}α^*&β^*\end{pmatrix}
 =\begin{pmatrix}αα^*&αβ^*\\βα^*&ββ^*\end{pmatrix}
 \quad(|α|^2+|β|^2=1)
 $$
 
-係数を抽出します。
+ρは単位行列とパウリ行列の線形結合として書けますが、単位行列の係数が$\frac12$になっている分だけ、ブロッホベクトルとはスケールが異なります。パウリ行列の自乗のトレースは$2$なので、トレースを取るとこのスケールの違いがちょうど相殺され、ブロッホベクトルのスケールに合わせて成分をそのまま抽出できます。
 
 $$
-\begin{alignedat}{2}
-\frac12\mathrm{tr}\,ρ&=\frac12(αα^*+ββ^*)&&=\frac12 \\
-\frac12\mathrm{tr}(ρ\sigma_x)&=\frac12(αβ^*+βα^*)&&=\frac12(α^*β+β^*α) \\
-\frac12\mathrm{tr}(ρ\sigma_y)&=\frac i2(αβ^*-βα^*)&&=-\frac i2(α^*β-β^*α) \\
-\frac12\mathrm{tr}(ρ\sigma_z)&=\frac12(αα^*-ββ^*)&&=\frac12(α^*α-β^*β)
+\begin{alignedat}{3}
+&\mathrm{tr}\,ρ   &&=αα^*+ββ^*&&=1 \\
+&\mathrm{tr}(ρσ_x)&&=αβ^*+βα^*&&=α^*β+β^*α \\
+&\mathrm{tr}(ρσ_y)&&=i(αβ^*-βα^*)&&=-i(α^*β-β^*α) \\
+&\mathrm{tr}(ρσ_z)&&=αα^*-ββ^*&&=α^*α-β^*β
 \end{alignedat}
 $$
 
-パウリ行列の係数として、初回[[7shi-h]]に$ω\mathbf kω^*$の係数として求めた$x,y,z$の$\frac12$倍が現れました。
+パウリ行列の係数として、初回[[7shi-h]]に$ω\mathbf kω^*$の係数として求めた$x,y,z$がそのまま現れました。
 
 &&&fml 純粋状態の密度行列
 $$
-ρ=ωω^\dagger=\frac12(\mathrm I+x\,\sigma_x+y\,\sigma_y+z\,\sigma_z)
+ρ=\Psi\Psi^\dagger=\frac12(\mathrm I+x\,σ_x+y\,σ_y+z\,σ_z)
 $$
 $(x,y,z)$はブロッホベクトル
 $$
@@ -140,23 +177,29 @@ $$
 $$
 \boldsymbol r=(x,y,z)
 ,\quad
-\boldsymbol σ=(\sigma_x,\sigma_y,\sigma_z)
+\boldsymbol σ=(σ_x,σ_y,σ_z)
 ,\quad
-\boldsymbol r\cdot\boldsymbol σ=x\,\sigma_x+y\,\sigma_y+z\,\sigma_z
+\boldsymbol r\cdot\boldsymbol σ=x\,σ_x+y\,σ_y+z\,σ_z
 $$
 $$
 ρ=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)
 $$
 &&&
 
+&&&rem 記法の比較
+$\boldsymbol r\cdot\boldsymbol σ$は、アインシュタインの縮約記法による$r^iσ_i$に対応します。前者は添字を隠した書き方、後者は明示した書き方です。
+
+なお、後で$\boldsymbol r_i$という表記も登場しますが、そちらの添字$i$は成分ではなく、複数のブロッホベクトルを区別する番号です。
+&&&
+
 このように 1 つの状態ベクトルから作られる密度行列を**純粋状態**と呼びます。
 
 ## 冪等性
 
-純粋状態の密度行列は 2 乗しても変わりません。$ω^\daggerω=|α|^2+|β|^2=1$がスカラーであることから直ちに従います。
+純粋状態の密度行列は 2 乗しても変わりません。$\Psi^\dagger\Psi=|α|^2+|β|^2=1$がスカラーであることから直ちに従います。
 
 $$
-ρ^2=(ωω^\dagger)(ωω^\dagger)=ω(ω^\daggerω)ω^\dagger=ωω^\dagger=ρ
+ρ^2=(\Psi\Psi^\dagger)(\Psi\Psi^\dagger)=\Psi(\Psi^\dagger\Psi)\Psi^\dagger=\Psi\Psi^\dagger=ρ
 $$
 
 同じことをブロッホベクトルの側から見ます。反交換性により交差項が消えるため、$\boldsymbol r\cdot\boldsymbol σ$の 2 乗はスカラー倍になります。
@@ -164,8 +207,8 @@ $$
 $$
 \begin{aligned}
 (\boldsymbol r\cdot\boldsymbol σ)^2
-&=x^2\sigma_x^2+y^2\sigma_y^2+z^2\sigma_z^2 \\
-&\quad+xy(\sigma_x\sigma_y+\sigma_y\sigma_x)+yz(\sigma_y\sigma_z+\sigma_z\sigma_y)+zx(\sigma_z\sigma_x+\sigma_x\sigma_z) \\
+&=x^2σ_x^2+y^2σ_y^2+z^2σ_z^2 \\
+&\quad+xy(σ_xσ_y+σ_yσ_x)+yz(σ_yσ_z+σ_zσ_y)+zx(σ_zσ_x+σ_xσ_z) \\
 &=(x^2+y^2+z^2)\,\mathrm I \\
 &=|\boldsymbol r|^2\,\mathrm I
 \end{aligned}
@@ -181,25 +224,29 @@ $$
 
 $ρ^2=ρ$となる条件は$\frac14(1+|\boldsymbol r|^2)=\frac12$、つまり$|\boldsymbol r|=1$です。冪等性は、ブロッホベクトルが単位球面上にあることと同値です。初回に$ω\mathbf kω^*$の係数の 2 乗和が$1$となることを確認しましたが、それをパウリ行列の言葉で言い直したことになります。
 
+&&&rem 単位行列の役割
+$ρ$に含まれる単位行列$\mathrm I$の係数$\frac12$は、ブロッホベクトルに追加された自由度ではありません。パウリ行列は無トレースなので、$\mathrm{tr}\,ρ=1$（規格化条件$|α|^2+|β|^2=1$）から常に$\frac12$に固定される値です。状態の向きの情報はすべて$x,y,z$側が担っています。
+&&&
+
 ## 位相の消去
 
 状態ベクトルに位相$e^{ic}$（絶対値$1$の複素数）を掛けても、密度行列は変わりません。
 
 $$
-(ωe^{ic})(ωe^{ic})^\dagger=ω\,e^{ic}e^{-ic}\,ω^\dagger=ωω^\dagger=ρ
+(\Psi e^{ic})(\Psi e^{ic})^\dagger=\Psi\,e^{ic}e^{-ic}\,\Psi^\dagger=\Psi\Psi^\dagger=ρ
 $$
 
 &&&rem ホップファイブレーションとの関係
-状態ベクトル$ω$は$S^3$上の点で、位相$e^{ic}$の自由度がファイバーの円周に対応します。密度行列ではこの円周が最初から潰れており、$ρ$はファイバーを区別せず底空間$S^2$（ブロッホ球面）の点を直接表します。つまり純粋状態の密度行列とは、ホップファイブレーションの像を行列で表現したものです。
+状態ベクトル$\Psi$は$S^3$上の点で、位相$e^{ic}$の自由度がファイバーの円周に対応します。密度行列ではこの円周が最初から潰れており、$ρ$はファイバーを区別せず底空間$S^2$（ブロッホ球面）の点を直接表します。つまり純粋状態の密度行列とは、ホップファイブレーションの像を行列で表現したものです。
 &&&
 
 # 混合状態
 
-複数の純粋状態を古典的な確率で混ぜた状態を考えます。重ね合わせ（状態ベクトルの和）ではなく、確率$p_i$で状態$ω_i$が用意されているという状況です。
+複数の純粋状態$\Psi_i$を古典的な確率$p_i$で混ぜた状態を考えます。
 
 &&&def 混合状態の密度行列
 $$
-ρ=\sum_i p_i\,ω_iω_i^\dagger\quad\Bigl(p_i>0,\ \sum_i p_i=1\Bigr)
+ρ=\sum_i p_i\,\Psi_i\Psi_i^\dagger\quad\Bigl(p_i>0,\ \sum_i p_i=1\Bigr)
 $$
 &&&
 
@@ -216,43 +263,75 @@ $$
 \boldsymbol r=\sum_i p_i\boldsymbol r_i
 $$
 
-単位ベクトルの重み付き平均は、方向が異なれば長さが$1$未満になります（三角不等式）。純粋状態がブロッホ球の表面を指すのに対して、混合状態は内部を指します。[[quantumuniverse]]
+単位ベクトルの重み付き平均は、方向が異なれば長さが$1$未満になります（三角不等式）。純粋状態がブロッホ球の表面を指すのに対して、混合状態は内部を指します。
 
-&&&ex 混合と重ね合わせ
-基底となる 2 つの状態を用意します（量子情報の記法では$|0\rangle,|1\rangle$と書かれます）。
+## 混合と重ね合わせ
 
-$$
-ω_0=\begin{pmatrix}1\\0\end{pmatrix}
-,\quad
-ω_1=\begin{pmatrix}0\\1\end{pmatrix}
-$$
+「2 つの状態を半々で組み合わせる」という操作には 2 通りの意味があります。密度行列を確率で混ぜる**混合**と、状態ベクトルを足し合わせる**重ね合わせ**です。混ぜる対象（行列かベクトルか）が異なるため、結果も異なります。具体例で確認します。
 
-ブロッホベクトルはそれぞれ$(0,0,1),(0,0,-1)$、つまり北極と南極です。等確率$\frac12$ずつで混合します。
+基底となる 2 つの状態を用意します。対応するブロッホベクトルも示します。
 
 $$
-ρ=\frac12ω_0ω_0^\dagger+\frac12ω_1ω_1^\dagger
+\begin{aligned}
+\Psi_\uparrow&=\begin{pmatrix}1\\0\end{pmatrix}, && \boldsymbol r_\uparrow=(0,0,1) \\
+\\
+\Psi_\downarrow&=\begin{pmatrix}0\\1\end{pmatrix}, && \boldsymbol r_\downarrow=(0,0,-1)
+\end{aligned}
+$$
+
+&&&rem
+量子情報の記法では$|\uparrow\rangle,|\downarrow\rangle$または$|0\rangle,|1\rangle$と書かれます
+&&&
+
+これらのブロッホベクトルはそれぞれ北極と南極を指します。
+
+&&&rem 北極が基準になる理由
+$\Psi_\uparrow$が北極に対応するのは偶然ではありません。初回[[7shi-h]]の冒頭で、ホップファイブレーションは$\mathbf k$を固定点として$ω\mathbf kω^*$と定義されていました。恒等回転$ω=1$（$ω_0=1$，他は$0$）はこの固定点$\mathbf k$（北極）をそのまま返します。このとき$α=i,\ β=0$となり、位相を除けば$\Psi_\uparrow=(1,0)$と同一視できます。つまり$\Psi_\uparrow$が北極を指すのは、$\mathbf k$を起点に選んだホップファイブレーションの定義がそのまま反映された結果です。
+&&&
+
+### 混合
+
+密度行列そのものを確率$\frac12$ずつで混ぜます。
+
+$$
+ρ_{\mathrm{mix}}=\frac12\Psi_\uparrow\Psi_\uparrow^\dagger+\frac12\Psi_\downarrow\Psi_\downarrow^\dagger
 =\frac12\begin{pmatrix}1&0\\0&1\end{pmatrix}
 ,\quad
 \boldsymbol r=(0,0,0)
 $$
 
-ブロッホベクトルは原点（球の中心）を指します。これを**最大混合状態**と呼びます。
+ブロッホベクトルは原点（球の中心）を指します。これを**最大混合状態**と呼びます。$\Psi_\uparrow,\Psi_\downarrow$という 2 つの純粋状態のうちどちらか一方が確率$\frac12$で実現している、という古典的な不確実性を表します。
 
-一方、$ω_0$と$ω_1$を等係数$c$で重ね合わせると
-$$
-cω_0+cω_1 = \begin{pmatrix}c\\c\end{pmatrix}
-$$
-となります。規格化条件$|c|^2+|c|^2=1$から$c=\frac1{\sqrt2}$です。これは 1 本の状態ベクトルなので純粋状態です。
+### 重ね合わせ
+
+一方、状態ベクトル$\Psi_\uparrow$と$\Psi_\downarrow$自体を等係数$c$で足し合わせます。
 
 $$
-ω_+=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}
-,\quad
-ρ_+=ω_+ω_+^\dagger=\frac12\begin{pmatrix}1&1\\1&1\end{pmatrix}=\frac12(\mathrm I+\sigma_x)
+\Psi_{\mathrm{sup}}=c\Psi_\uparrow+c\Psi_\downarrow = \begin{pmatrix}c\\c\end{pmatrix}\quad(c>0)
+$$
+
+規格化条件$|c|^2+|c|^2=1$から$c=\frac1{\sqrt2}$です。
+
+$$
+\Psi_{\mathrm{sup}}=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}
+$$
+
+これは1本の状態ベクトルなので純粋状態です。
+
+$$
+ρ_{\mathrm{sup}}=\Psi_{\mathrm{sup}}\Psi_{\mathrm{sup}}^\dagger=\frac12\begin{pmatrix}1&1\\1&1\end{pmatrix}=\frac12(\mathrm I+σ_x)
 ,\quad
 \boldsymbol r=(1,0,0)
 $$
 
-対角成分（$z$成分の情報）はどちらも同じですが、非対角成分（$x,y$成分）が異なります。混合でも重ね合わせでも「半々」であることは共通していて、その違いはパウリ行列の係数の違いとして現れます。
+ブロッホベクトルは$x$軸上の球面を指します。混合状態の$\boldsymbol r=(0,0,0)$とは異なる、確定した1つの向きです。
+
+### 比較
+
+対角成分（$z$成分の情報）は$ρ_{\mathrm{mix}}$と$ρ_{\mathrm{sup}}$で同じですが、非対角成分（$x,y$成分）が異なります。混合では非対角成分が消えて原点（球の内部）を指すのに対し、重ね合わせでは非対角成分が残り球面上の点を指します。「半々」という確率的な言葉は共通していても、混合は密度行列の線形結合、重ね合わせは状態ベクトルの線形結合であり、両者は演算として別物です。
+
+&&&rem
+混合と重ね合わせがどのように異なる結果を与えるかは、後で測定によって確認します。今の段階では密度行列が異なることを認識すれば十分です。
 &&&
 
 ## 純粋度
@@ -275,6 +354,8 @@ $$
 
 ## 固有分解
 
+純粋度が$1$未満の混合状態も、直交する2つの純粋状態の混合として表せます。それには$ρ$を対角化し、固有値・固有ベクトルを求めます。
+
 $(\boldsymbol r\cdot\boldsymbol σ)^2=|\boldsymbol r|^2\,\mathrm I$かつ$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より、$\boldsymbol r\cdot\boldsymbol σ$の固有値は$\pm|\boldsymbol r|$です。
 
 &&&prf
@@ -291,91 +372,119 @@ $$
 λ_\pm=\frac12(1\pm|\boldsymbol r|)
 $$
 
-対応する純粋状態は、ブロッホベクトルが$\boldsymbol r$方向と$-\boldsymbol r$方向に向いており、ブロッホ球面上の対蹠点です。これらを$ρ_\pm$とすれば、$\boldsymbol r\ne\boldsymbol 0$の混合状態は直交する 2 つの純粋状態の混合として書けます。
+対応する純粋状態は、ブロッホベクトルが$\boldsymbol r$方向と$-\boldsymbol r$方向に向いており、ブロッホ球面上の対蹠点です。これらを$ρ_\pm$とすれば、$\boldsymbol r\ne\boldsymbol 0$の混合状態は直交する2つの純粋状態の混合として書けます。
 
 $$
-ρ_\pm=\frac12\Bigl(\mathrm I\pm\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\Bigr)
-,\quad
-λ_+ρ_++λ_-ρ_-
-=\frac12\{(λ_++λ_-)\,\mathrm I+(λ_+-λ_-)\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\}
-=ρ
+\begin{aligned}
+ρ_\pm &= \frac12\Bigl(\mathrm I\pm\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\Bigr) \\
+ρ &= λ_+ρ_++λ_-ρ_-
+=\frac12\left\{(λ_++λ_-)\,\mathrm I+(λ_+-λ_-)\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\right\}
+\end{aligned}
 $$
 
 &&&rem 分解の非一意性
-同じ密度行列を与える混合の作り方は 1 通りではありません。例えば最大混合状態$\frac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$ω_\pm=\frac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。密度行列は「どう混ぜたか」の情報を持たず、統計的に区別できない混合を同じ 1 点で表します。
+密度行列は「どう混ぜたか」の情報を持たないため、同じ密度行列を与える混合のさせ方は1通りではありません。
 
-これは上の$ρ_\pm$の式で$\boldsymbol r=\boldsymbol 0$とした極限に対応します。このとき$λ_+=λ_-=\frac12$と縮退し、$\boldsymbol r/|\boldsymbol r|$も定義できないため式はそのままでは使えませんが、任意の単位ベクトル$\boldsymbol n$について$\frac12(\mathrm I+\boldsymbol n\cdot\boldsymbol σ)$と$\frac12(\mathrm I-\boldsymbol n\cdot\boldsymbol σ)$の等確率混合が常に$\frac12\mathrm I$を再現します。分解の自由度が最大になるケースです。
+例えば最大混合状態$\frac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$\dfrac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。
 &&&
 
 # 測定との関係
 
-方向を表す単位ベクトル$\boldsymbol n=(n_x,n_y,n_z)$への測定結果の**期待値**（平均値）は、ブロッホベクトル$\boldsymbol r$を$\boldsymbol n$へ射影した長さ、つまり内積$\boldsymbol n\cdot\boldsymbol r$で与えられます。
+密度行列が表す系に対して、ある方向を選んで**測定**を行うと、その方向を向いているか・向いていないかに対応する二値の結果（$+1$または$-1$）が確率的に得られます。まず、多数回測定したときの平均である**期待値**から見ていきます。
+
+単位ベクトル$\boldsymbol n=(n_x,n_y,n_z)$が指す方向への測定結果の期待値は、ブロッホベクトル$\boldsymbol r$を$\boldsymbol n$へ射影した長さ、つまり内積$\boldsymbol r\cdot\boldsymbol n$で与えられます。
 
 この内積は行列の側でも計算できます。方向$\boldsymbol n$を行列$A=\boldsymbol n\cdot\boldsymbol σ$で表せば、密度行列$ρ$との積のトレースが内積となります。
 
 $$
 \mathrm{tr}(ρA)
 =\mathrm{tr}\Bigl(\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)(\boldsymbol n\cdot\boldsymbol σ)\Bigr)
-=\boldsymbol n\cdot\boldsymbol r
+=\boldsymbol r\cdot\boldsymbol n
 $$
 
 &&&rem
-$\mathrm{tr}\,\sigma_i=0$と$\mathrm{tr}(\sigma_i\sigma_j)=2\delta_{ij}$を使いました。
+$\mathrm{tr}\,σ_i=0$と$\mathrm{tr}(σ_iσ_j)=2\delta_{ij}$を使いました。
 &&&
 
-特に、$\boldsymbol n$として$x$軸、$y$軸、$z$軸それぞれの単位ベクトルを取れば、$A$はパウリ行列$\sigma_x,\sigma_y,\sigma_z$そのものになり、期待値はブロッホベクトルの各成分と一致します。
+特に、$\boldsymbol n$として$x$軸、$y$軸、$z$軸それぞれの単位ベクトルを取れば、$A$はパウリ行列$σ_x,σ_y,σ_z$そのものになり、期待値はブロッホベクトルの各成分と一致します。
 
 $$
-\mathrm{tr}(ρ\sigma_x)=x
+\mathrm{tr}(ρσ_x)=x
 ,\quad
-\mathrm{tr}(ρ\sigma_y)=y
+\mathrm{tr}(ρσ_y)=y
 ,\quad
-\mathrm{tr}(ρ\sigma_z)=z
+\mathrm{tr}(ρσ_z)=z
 $$
 
-ここで期待値は、1 回の測定結果そのものではありません。$z$方向の測定では、1 回ごとの結果は$+1$または$-1$のどちらかの値として確率的に観測され、同じ状態を多数回測定したときの平均が期待値$z$です。$+1$が出る確率を$p_0$、$-1$が出る確率を$p_1$とすれば、期待値は「値×確率」の総和として定義されるので
+ここで期待値は、1 回の測定結果そのものではありません。$z$方向の測定では、1 回ごとの結果は$+1$または$-1$のどちらかの値として確率的に観測され、同じ状態を多数回測定したときの平均が期待値$z$です。$+1$が出る確率を$p_+$、$-1$が出る確率を$p_-$とすれば、期待値は「値×確率」の総和として定義されるので
 
 $$
-z=(+1)\,p_0+(-1)\,p_1=p_0-p_1
+z=(+1)\,p_+ +(-1)\,p_-=p_+-p_-
 $$
 
-が成り立ちます。これは期待値の定義を$\pm1$の2値確率変数に当てはめただけです。これに確率の規格化条件を合わせれば、次の連立方程式が得られます。
+が成り立ちます。これに確率の規格化条件を合わせれば、次の連立方程式が得られます。
 
 $$
-p_0-p_1=z
+p_+-p_-=z
 ,\quad
-p_0+p_1=1
+p_++p_-=1
 $$
 
 これを解くことは、期待値の範囲$[-1,1]$を確率の範囲$[0,1]$へ写すスケール調整に相当します。
 
 $$
-p_0=\frac{1+z}2
+p_+=\frac{1+z}2
 ,\quad
-p_1=\frac{1-z}2
+p_-=\frac{1-z}2
 $$
 
 北極（$z=1$）なら確実に$+1$、南極（$z=-1$）なら確実に$-1$、中心（$z=0$）なら半々です。成分で書けば$z=αα^*-ββ^*$と$αα^*+ββ^*=1$より
 
 $$
 \begin{aligned}
-p_0&=\frac{1+z}2=\frac{(αα^*+ββ^*)+(αα^*-ββ^*)}2=\frac{2αα^*}2=αα^* \\
-p_1&=\frac{1-z}2=\frac{(αα^*+ββ^*)-(αα^*-ββ^*)}2=\frac{2ββ^*}2=ββ^*
+p_+&=\frac{1+z}2=\frac{(αα^*+ββ^*)+(αα^*-ββ^*)}2=\frac{2αα^*}2=αα^* \\
+p_-&=\frac{1-z}2=\frac{(αα^*+ββ^*)-(αα^*-ββ^*)}2=\frac{2ββ^*}2=ββ^*
 \end{aligned}
 $$
 
-となり、確率は密度行列$ρ=ωω^\dagger$の対角成分と一致します。
+となり、確率は密度行列$ρ=\Psi\Psi^\dagger$の対角成分と一致します。
 
 &&&rem
-結果$+1,-1$に対応する状態は、ブロッホベクトルが北極・南極を指す純粋状態、つまり$ω_0,ω_1$です。物理では、測定後に状態がこのどちらかへ変化すると考えます。
+結果$+1,-1$に対応する状態は、ブロッホベクトルが北極・南極を指す純粋状態、つまり$\Psi_\uparrow,\Psi_\downarrow$です。物理では、測定後に状態がこのどちらかへ変化すると考えます。
 &&&
 
-$x,y,z$軸に限らず、任意の方向$\boldsymbol n$への測定の期待値が$\boldsymbol n\cdot\boldsymbol r$という内積 1 つで求まる点に、ブロッホベクトルの意味があります。
+$x,y,z$軸に限らず、任意の方向$\boldsymbol n$への測定の期待値が$\boldsymbol r\cdot\boldsymbol n$という内積で求まる点に、ブロッホベクトルの意味があります。
+
+## 混合と重ね合わせの違い
+
+混合と重ね合わせの例に戻り、測定の期待値$\boldsymbol r\cdot\boldsymbol n$を使って両者を比較します。混合状態$ρ_{\mathrm{mix}}=\frac12\mathrm I$のブロッホベクトルは$\boldsymbol r=(0,0,0)$、重ね合わせ$ρ_{\mathrm{sup}}$のブロッホベクトルは$\boldsymbol r=(1,0,0)$でした。
+
+$z$軸方向の期待値はどちらも$0$で一致します。
+
+$$
+\mathrm{tr}(ρ_{\mathrm{mix}}σ_z)=0
+,\quad
+\mathrm{tr}(ρ_{\mathrm{sup}}σ_z)=0
+$$
+
+ところが$x$軸方向の期待値は一致しません。
+
+$$
+\mathrm{tr}(ρ_{\mathrm{mix}}σ_x)=0
+,\quad
+\mathrm{tr}(ρ_{\mathrm{sup}}σ_x)=1
+$$
+
+確率で言い換えると、$z$軸方向の測定結果はどちらの状態でも$p_+=p_-=\frac12$（半々）です。$x$軸方向では、重ね合わせは$p_+=1,\ p_-=0$、つまり確実に$+1$が観測されるのに対し、混合状態は$x$軸でも$p_+=p_-=\frac12$のままです。
+
+&&&rem
+$p_+=\frac{1+z}2$は$z$軸専用の式に見えますが、導出は$\boldsymbol r\cdot\boldsymbol n$の一般式に基づくため、$\boldsymbol n$をどの方向に選んでも$p_+=\frac{1+\boldsymbol r\cdot\boldsymbol n}2$がそのまま成り立ちます。
+&&&
+
+$\boldsymbol r=(0,0,0)$より、混合状態は$\boldsymbol r\cdot\boldsymbol n=0$がどの$\boldsymbol n$についても成り立ちます。つまり$z$軸で半々だったのは$x$軸でもたまたま同じ確率になったわけではなく、**どの方向に測定しても**半々になるという、最大混合状態の性質です。「北極と南極の混合」という材料からは$z$軸方向の不確実性しか見えませんが、$ρ_{\mathrm{mix}}$自体はその材料の情報を持たず、あらゆる方向について不定です。一方、重ね合わせ$ρ_{\mathrm{sup}}$は$x$軸方向を向いた確定状態であり、$z$軸方向でだけ半々に見えていたに過ぎません。
 
 # まとめ
 
-単位行列とパウリ行列は$2\times2$エルミート行列の基底で、パウリ行列の係数が 3 次元の座標を与えます。純粋状態の密度行列はブロッホ球の表面を指し、位相（ファイバー）が潰れることから、ホップファイブレーションの像の行列表現とみなせます。混合状態はブロッホベクトルの重み付き平均としてブロッホ球の内部に広がり、ファイブレーションの枠組みの外側の世界を表します。
+単位行列とパウリ行列は$2\times2$エルミート行列の基底で、パウリ行列の係数が3次元の座標を与えます。純粋状態の密度行列はブロッホ球の表面を指し、位相（ファイバー）が潰れることから、ホップファイブレーションの像の行列表現とみなせます。混合状態はブロッホベクトルの重み付き平均としてブロッホ球の内部に広がり、ホップファイブレーションの枠組みの外側の世界を表します。
 
-&&&rem
 パウリ行列の係数として取り出される情報（位相差、混合の度合い）が測定の期待値と一致するという点に、この表現が量子情報で使われる理由があります。
-&&&
