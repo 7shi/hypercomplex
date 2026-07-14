@@ -354,38 +354,62 @@ $$
 
 ## 固有分解
 
-純粋度が$1$未満の混合状態も、直交する2つの純粋状態の混合として表せます。それには$ρ$を対角化し、固有値・固有ベクトルを求めます。
+混合状態$ρ$は、2つの純粋状態$ρ_+,ρ_-$を重み$λ_\pm$で混合したものとして書けます。
 
-$(\boldsymbol r\cdot\boldsymbol σ)^2=|\boldsymbol r|^2\,\mathrm I$かつ$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より、$\boldsymbol r\cdot\boldsymbol σ$の固有値は$\pm|\boldsymbol r|$です。
-
-&&&prf
-固有値を$\lambda$、対応する固有ベクトルを$v$とすると$(\boldsymbol r\cdot\boldsymbol σ)v=\lambda v$。両辺に左から$\boldsymbol r\cdot\boldsymbol σ$を掛けると
+&&&def 固有分解
 $$
-(\boldsymbol r\cdot\boldsymbol σ)^2v=\lambda^2v
+ρ=λ_+ρ_++λ_-ρ_-
 $$
-左辺は$|\boldsymbol r|^2\mathrm I\,v=|\boldsymbol r|^2v$なので$\lambda^2=|\boldsymbol r|^2$、つまり$\lambda=\pm|\boldsymbol r|$。さらに$\mathrm{tr}(\boldsymbol r\cdot\boldsymbol σ)=0$より 2 つの固有値の和が$0$なので、固有値は$+|\boldsymbol r|$と$-|\boldsymbol r|$の対である。
 &&&
 
-したがって$ρ=\dfrac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)$の固有値は次のようになります。
+&&&rem 「固有分解」という名前の由来
+$ρ_\pm$は純粋状態なので、正規化された状態ベクトル$\Psi_\pm$を使って$ρ_\pm=\Psi_\pm\Psi_\pm^\dagger$と書けます。このとき上の式は
 
+$$
+ρ=λ_+\Psi_+\Psi_+^\dagger+λ_-\Psi_-\Psi_-^\dagger
+$$
+
+となり、これは$ρ$を固有値$λ_\pm$と固有ベクトル$\Psi_\pm$で分解した形となるため、**固有分解**と呼ばれます。
+
+固有ベクトルから作ったブロッホベクトルは、密度行列$ρ$のブロッホベクトルと同じまたは逆の方向を向いています。そのため、固有ベクトルの計算は省略できます。
+&&&
+
+密度行列$ρ$のブロッホベクトルを$\boldsymbol r$とします。
+
+$$
+ρ=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)
+$$
+
+正規化したブロッホベクトル$\boldsymbol n=\boldsymbol r/|\boldsymbol r|$を使って、対蹠点方向の密度行列$ρ_\pm$を定義します。
+
+$$
+ρ_\pm=\frac12(\mathrm I\pm\boldsymbol n\cdot\boldsymbol σ)
+$$
+
+$(\boldsymbol n\cdot\boldsymbol σ)^2=\mathrm I$より、$ρ_\pm$は冪等（$ρ_\pm^2=ρ_\pm$）かつトレース$1$なので、ブロッホベクトル$\pm\boldsymbol n$を持つ純粋状態の密度行列です。
+
+重み$λ_\pm$で$ρ_+,ρ_-$を混ぜたときのブロッホベクトルは、$ρ_\pm$のブロッホベクトルが$\pm\boldsymbol n$であることから
+$$
+λ_+\boldsymbol n-λ_-\boldsymbol n=\boldsymbol r
+$$
+を満たす必要があります。これと規格化条件$λ_++λ_-=1$より
 $$
 λ_\pm=\frac12(1\pm|\boldsymbol r|)
 $$
+が求まります。これは$ρ$の固有値と一致します。
 
-対応する純粋状態は、ブロッホベクトルが$\boldsymbol r$方向と$-\boldsymbol r$方向に向いており、ブロッホ球面上の対蹠点です。これらを$ρ_\pm$とすれば、$\boldsymbol r\ne\boldsymbol 0$の混合状態は直交する2つの純粋状態の混合として書けます。
+実際に混合を計算してみると、元の密度行列$ρ$が得られます。
 
 $$
-\begin{aligned}
-ρ_\pm &= \frac12\Bigl(\mathrm I\pm\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\Bigr) \\
-ρ &= λ_+ρ_++λ_-ρ_-
-=\frac12\left\{(λ_++λ_-)\,\mathrm I+(λ_+-λ_-)\frac{\boldsymbol r}{|\boldsymbol r|}\cdot\boldsymbol σ\right\}
-\end{aligned}
+λ_+ρ_++λ_-ρ_-
+=\frac12\left\{(λ_++λ_-)\,\mathrm I+(λ_+-λ_-)\,\boldsymbol n\cdot\boldsymbol σ\right\}
+=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)=ρ
 $$
 
 &&&rem 分解の非一意性
 密度行列は「どう混ぜたか」の情報を持たないため、同じ密度行列を与える混合のさせ方は1通りではありません。
 
-例えば最大混合状態$\frac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$\dfrac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。
+例えば最大混合状態$\dfrac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$\dfrac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。
 &&&
 
 # 測定との関係
@@ -475,16 +499,14 @@ $$
 \mathrm{tr}(ρ_{\mathrm{sup}}σ_x)=1
 $$
 
-確率で言い換えると、$z$軸方向の測定結果はどちらの状態でも$p_+=p_-=\frac12$（半々）です。$x$軸方向では、重ね合わせは$p_+=1,\ p_-=0$、つまり確実に$+1$が観測されるのに対し、混合状態は$x$軸でも$p_+=p_-=\frac12$のままです。
+確率で言い換えると、$z$軸方向の測定結果はどちらの状態でも$p_+=p_-=1/2$（半々）です。$x$軸方向では、重ね合わせは$p_+=1,\ p_-=0$、つまり確実に$+1$が観測されるのに対し、混合状態は$x$軸でも$p_+=p_-=1/2$のままです。
 
-&&&rem
-$p_+=\frac{1+z}2$は$z$軸専用の式に見えますが、導出は$\boldsymbol r\cdot\boldsymbol n$の一般式に基づくため、$\boldsymbol n$をどの方向に選んでも$p_+=\frac{1+\boldsymbol r\cdot\boldsymbol n}2$がそのまま成り立ちます。
-&&&
+最大混合状態は、$\boldsymbol r=(0,0,0)$より$\boldsymbol r\cdot\boldsymbol n=0$がどの$\boldsymbol n$についても成り立ちます。つまり$z$軸で半々だったのは$x$軸でもたまたま同じ確率になったわけではなく、どの方向に測定しても半々になります。「北極と南極の混合」という材料からは$z$軸方向の不確実性しか見えませんが、$ρ_{\mathrm{mix}}$自体はあらゆる方向に対して不定です。
 
-$\boldsymbol r=(0,0,0)$より、混合状態は$\boldsymbol r\cdot\boldsymbol n=0$がどの$\boldsymbol n$についても成り立ちます。つまり$z$軸で半々だったのは$x$軸でもたまたま同じ確率になったわけではなく、**どの方向に測定しても**半々になるという、最大混合状態の性質です。「北極と南極の混合」という材料からは$z$軸方向の不確実性しか見えませんが、$ρ_{\mathrm{mix}}$自体はその材料の情報を持たず、あらゆる方向について不定です。一方、重ね合わせ$ρ_{\mathrm{sup}}$は$x$軸方向を向いた確定状態であり、$z$軸方向でだけ半々に見えていたに過ぎません。
+一方、重ね合わせ$ρ_{\mathrm{sup}}$は$x$軸方向を向いた確定状態であり、$z$軸方向でだけ半々に見えていたに過ぎません。
 
 # まとめ
 
-単位行列とパウリ行列は$2\times2$エルミート行列の基底で、パウリ行列の係数が3次元の座標を与えます。純粋状態の密度行列はブロッホ球の表面を指し、位相（ファイバー）が潰れることから、ホップファイブレーションの像の行列表現とみなせます。混合状態はブロッホベクトルの重み付き平均としてブロッホ球の内部に広がり、ホップファイブレーションの枠組みの外側の世界を表します。
+単位行列とパウリ行列は2×2エルミート行列の基底で、パウリ行列の係数が3次元の座標を与えます。純粋状態の密度行列はブロッホ球の表面を指し、位相（ファイバー）が潰れることから、ホップファイブレーションの像の行列表現とみなせます。混合状態はブロッホベクトルの重み付き平均としてブロッホ球の内部に広がります。
 
 パウリ行列の係数として取り出される情報（位相差、混合の度合い）が測定の期待値と一致するという点に、この表現が量子情報で使われる理由があります。
