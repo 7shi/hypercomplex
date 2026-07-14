@@ -123,20 +123,20 @@ $$
 同じことを状態ベクトルとパウリ行列で計算します。この複素ベクトルは**スピノル**とも呼ばれます。
 
 $$\begin{aligned}
-ω&=\begin{pmatrix}α\\β\end{pmatrix}
+\Psi&=\begin{pmatrix}α\\β\end{pmatrix}
   =\begin{pmatrix}α_0+iα_1\\β_0+iβ_1\end{pmatrix}
   =\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
   =e^{ia}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 q&=e^{-ia} \\
-ωq&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}=:ω'
+\Psi q&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}=:\Psi'
 \end{aligned}$$
 
-$ωq$は括り出した係数の消去に相当することが、形式的な操作から浮き彫りになります。
+$\Psi q$は括り出した係数の消去に相当することが、形式的な操作から浮き彫りになります。
 
 パウリ行列でブロッホ球上の座標に変換します。
 
 $$\begin{aligned}
-ω'^\dagger \sigma_x ω'
+\Psi'^\dagger \sigma_x \Psi'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\sin\fracθ2\,e^{i(b-a)} \\ \cos\fracθ2\end{pmatrix} \\
 &=\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + \sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
@@ -145,7 +145,7 @@ $$\begin{aligned}
 &=2\cos\fracθ2\sin\fracθ2\cos(b-a) \\
 &=\sinθ\cos(b-a) \\
 
-ω'^\dagger \sigma_y ω'
+\Psi'^\dagger \sigma_y \Psi'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}-i\sin\fracθ2\,e^{i(b-a)} \\ i\cos\fracθ2\end{pmatrix} \\
 &=-i\cos\fracθ2\sin\fracθ2\,e^{i(b-a)} + i\sin\fracθ2\,e^{-i(b-a)}\cos\fracθ2 \\
@@ -154,7 +154,7 @@ $$\begin{aligned}
 &=2\cos\fracθ2\sin\fracθ2\sin(b-a) \\
 &=\sinθ\sin(b-a) \\
 
-ω'^\dagger \sigma_z ω'
+\Psi'^\dagger \sigma_z \Psi'
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\begin{pmatrix}\cos\fracθ2 & \sin\fracθ2\,e^{-i(b-a)}\end{pmatrix}\begin{pmatrix}\cos\fracθ2 \\ -\sin\fracθ2\,e^{i(b-a)}\end{pmatrix} \\
 &=\cos^2\fracθ2-\sin^2\fracθ2\,e^{-i(b-a)}e^{i(b-a)} \\
@@ -164,16 +164,16 @@ $$\begin{aligned}
 四元数は全成分を一度に計算するためごちゃごちゃしますが、こちらは成分ごとに計算するため冗長になります。どちらが簡単だとは一概には言えませんが、結果だけまとめるのにベクトルはシンプルです。
 
 $$\begin{aligned}
-ω'&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}
+\Psi'&=\begin{pmatrix}\cos\fracθ2 \\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}
 \mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
 $θ$が2倍になって、指数関数が表す$\cos$と$\sin$が別成分に分離されました。これを**ブロッホベクトル**と呼びます。
 
-$ω$を計算しても同じ結果になります。
+$\Psi$を計算しても同じ結果になります。
 
 $$\begin{aligned}
-ω&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
+\Psi&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
 \mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
@@ -184,20 +184,20 @@ $$\begin{aligned}
 状態ベクトル全体に位相$e^{iφ}$を掛けると、
 
 $$
-e^{iφ}ω=\begin{pmatrix}\cos\fracθ2\,e^{i(a+φ)} \\ \sin\fracθ2\,e^{i(b+φ)}\end{pmatrix}
+e^{iφ}\Psi=\begin{pmatrix}\cos\fracθ2\,e^{i(a+φ)} \\ \sin\fracθ2\,e^{i(b+φ)}\end{pmatrix}
 $$
 
 となり、$a,b$がともに$φ$だけ動きます。位相差$b-a$は変わらないため、ブロッホベクトルも変わりません。
 
-これは$ωq$におけるファイバー自由度$q$に対応します。つまり状態ベクトルに全体位相を掛ける操作は、ホップファイブレーションのファイバーに沿って点を動かす操作に対応します。ブロッホベクトルがこの操作で変わらないのは、ファイバー上の点$ωq$（$q$を動かして得られる各点）がすべて同じ$S^2$上の点に写ることの表れです。
+これは$\Psi q$におけるファイバー自由度$q$に対応します。つまり状態ベクトルに全体位相を掛ける操作は、ホップファイブレーションのファイバーに沿って点を動かす操作に対応します。ブロッホベクトルがこの操作で変わらないのは、ファイバー上の点$\Psi q$（$q$を動かして得られる各点）がすべて同じ$S^2$上の点に写ることの表れです。
 
 &&&rem
-「ファイバー」という用語は、ホップファイブレーションの構造として抽象的に円周$S^1$を指す場合と、$S^3$内に埋め込まれた具体的な部分集合$\{ωq:q\in S^1\}$を指す場合の両方に使われます。$q$は$S^1$上を動くパラメーターで、$ωq$は$S^3$上の点です。
+「ファイバー」という用語は、ホップファイブレーションの構造として抽象的に円周$S^1$を指す場合と、$S^3$内に埋め込まれた具体的な部分集合$\{\Psi q:q\in S^1\}$を指す場合の両方に使われます。$q$は$S^1$上を動くパラメーターで、$\Psi q$は$S^3$上の点です。
 &&&
 
 ## まとめて計算
 
-ここまでは成分ごとに座標を求めましたが、パウリ行列を使えば全成分をまとめて計算することもできます。この計算は、テンソル積（外積）によってスピノル$ω$からベクトル（ブロッホベクトル）を作り出す操作になっています。
+ここまでは成分ごとに座標を求めましたが、パウリ行列を使えば全成分をまとめて計算することもできます。この計算は、テンソル積（外積）によってスピノル$\Psi$からベクトル（ブロッホベクトル）を作り出す操作になっています。
 
 $A,B$を複素ベクトルとして、$A^\dagger B$は内積となります。エルミート共役を逆にした$AB^\dagger$は外積と呼ばれます。
 
@@ -214,8 +214,8 @@ exterior product<br>wedge product|外積、外部積<br>ウェッジ積、楔積
 （テンソル積の意味での）外積はベクトルから行列を作る計算で、自身との外積は複素共役との積を列挙したものとなります。
 
 $$\begin{aligned}
-ω&=\begin{pmatrix}α\\β\end{pmatrix}=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix} \\
-ωω^\dagger
+\Psi&=\begin{pmatrix}α\\β\end{pmatrix}=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix} \\
+\Psi\Psi^\dagger
 &=\begin{pmatrix}α\\β\end{pmatrix}\begin{pmatrix}α^*&β^*\end{pmatrix} \\
 &=\begin{pmatrix}αα^*&αβ^*\\βα^*&ββ^*\end{pmatrix} \\
 &=\begin{pmatrix}
@@ -229,7 +229,7 @@ $$\begin{aligned}
 成分に見覚えのある形が現れています。半角公式[[half]]などを使って計算を進めます。
 
 $$\begin{aligned}
-ωω^\dagger
+\Psi\Psi^\dagger
 &=\frac12\begin{pmatrix}
   1+\cosθ & \sinθ\left\{\cos(b-a)-i\sin(b-a)\right\} \\
   \sinθ\left\{\cos(b-a)+i\sin(b-a)\right\} & 1-\cosθ\end{pmatrix}
@@ -238,7 +238,7 @@ $$\begin{aligned}
 対角成分と非対角成分で、それぞれ符号が異なる項が現れています。これらを分離すれば、パウリ行列の線形結合が現れます。
 
 $$\begin{aligned}
-ωω^\dagger
+\Psi\Psi^\dagger
 &=\frac12\left\{
   \begin{pmatrix}1&0 \\ 0&1\end{pmatrix} \\
   +\sinθ\cos(b-a)\begin{pmatrix}0&1 \\ 1&0\end{pmatrix} \\
@@ -250,7 +250,7 @@ $$\begin{aligned}
 これは**密度行列**と呼ばれます。スケールを$2$倍してパウリ行列の係数を抜き出せば、ブロッホベクトルと一致します。
 
 $$\begin{aligned}
-ω&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
+\Psi&=\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
 \mapsto\begin{pmatrix}\sinθ\cos(b-a) \\ \sinθ\sin(b-a) \\ \cosθ\end{pmatrix}
 \end{aligned}$$
 
@@ -258,9 +258,9 @@ $$\begin{aligned}
 四元数による回転の始点を$\mathbf k$としたのは、外積から計算される成分と一致させるためです。
 &&&
 
-$ωω^\dagger$は密度行列という形を取っていますが、中身はスケールの違いを除けばブロッホベクトルと同じ情報です。つまりテンソル積$ωω^\dagger$は、ベクトルの別の表現に過ぎません。
+$\Psi\Psi^\dagger$は密度行列という形を取っていますが、中身はスケールの違いを除けばブロッホベクトルと同じ情報です。つまりテンソル積$\Psi\Psi^\dagger$は、ベクトルの別の表現に過ぎません。
 
-この見方に立つと、ベクトルは**スピノルのテンソル積**として得られる派生的な対象であり、スピノル$ω$の方がより基本的な対象だと言えます。実際、$ω$に全体位相$e^{iφ}$を掛けても$ωω^\dagger$は変わらないため、$ω$はブロッホベクトルよりも多くの情報（全体位相）を持っています。逆にブロッホベクトルからスピノルを復元しようとしても、全体位相の分だけ情報が不足していて一意に定まりません。
+この見方に立つと、ベクトルは**スピノルのテンソル積**として得られる派生的な対象であり、スピノル$\Psi$の方がより基本的な対象だと言えます。実際、$\Psi$に全体位相$e^{iφ}$を掛けても$\Psi\Psi^\dagger$は変わらないため、$\Psi$はブロッホベクトルよりも多くの情報（全体位相）を持っています。逆にブロッホベクトルからスピノルを復元しようとしても、全体位相の分だけ情報が不足していて一意に定まりません。
 
 &&&rem 密度行列の状態
 スピノルを変換した密度行列は1つのブロッホベクトルの情報しか含まないため、**純粋状態**と呼ばれます。それに対して、複数のブロッホベクトルに対応する密度行列を重み付けして足し合わせたものは、**混合状態**と呼ばれます。
@@ -275,13 +275,13 @@ $ωω^\dagger$は密度行列という形を取っていますが、中身はス
 先ほど見た通り、状態ベクトルから位相を括り出すことで、片方の成分を実数にできます。
 
 $$
-ω
+\Psi
 =\begin{pmatrix}\cos\fracθ2\,e^{ia} \\ \sin\fracθ2\,e^{ib}\end{pmatrix}
 =e^{ia}\begin{pmatrix}\cos\fracθ2\\ \sin\fracθ2\,e^{i(b-a)}\end{pmatrix}
 =e^{ib}\begin{pmatrix}\cos\fracθ2\,e^{-i(b-a)}\\ \sin\fracθ2\end{pmatrix}
 $$
 
-ただし、$ω$の第1成分が$0$になるとき、$e^{ia}$は不明のため括り出すことはできません。同様に、$ω$の第2成分が$0$になるとき、$e^{ib}$を括り出すことはできません。これらを踏まえて定義域から除外した上で、括り出したベクトルに名前を付けます。
+ただし、$\Psi$の第1成分が$0$になるとき、$e^{ia}$は不明のため括り出すことはできません。同様に、$\Psi$の第2成分が$0$になるとき、$e^{ib}$を括り出すことはできません。これらを踏まえて定義域から除外した上で、括り出したベクトルに名前を付けます。
 
 &&&def 北側・南側の基準ベクトル
 $0 \le θ/2 < 2π$より$0 \le θ < 4π$とします。
@@ -319,7 +319,7 @@ $$
 
 四元数の回転子$ω$はファイバー方向の自由度$q$を持ち、この自由度を使って$\mathbf k$の項を持たない標準形$ω'$を示しました。$q$による$ωq$の調整は、状態ベクトルから全体位相$e^{iφ}$を括り出す操作と同じ構造であり、標準形$ω'$は状態ベクトル$(\cos\fracθ2,\ \sin\fracθ2\,e^{i(b-a)})$と一致します。パウリ行列によってブロッホベクトルへ変換すると、四元数による回転と状態ベクトルによる記述が同じ数学的構造を共有していることが分かります。
 
-成分ごとの計算とテンソル積$ωω^\dagger$による一括計算の両方を行い、後者が密度行列の形を与え、スケールを除けばブロッホベクトルと一致することを確認しました。ここから、ベクトル（ブロッホベクトル）はスピノル$ω$のテンソル積として得られる派生的な対象であり、全体位相の情報を保持するスピノルの方がより基本的な対象であることが分かりました。
+成分ごとの計算とテンソル積$\Psi\Psi^\dagger$による一括計算の両方を行い、後者が密度行列の形を与え、スケールを除けばブロッホベクトルと一致することを確認しました。ここから、ベクトル（ブロッホベクトル）はスピノル$\Psi$のテンソル積として得られる派生的な対象であり、全体位相の情報を保持するスピノルの方がより基本的な対象であることが分かりました。
 
 さらに全体位相の括り出しには基準依存性があり、北側・南側いずれの基準も球面上の一点（それぞれ南極・北極）では定義できないこと、両者を結ぶ補正がブロッホベクトルの方位角そのものであることを示しました。これは、ホップファイブレーションが与える束$S^1\hookrightarrow S^3\to S^2$が単純な直積$S^2\times S^1$にはならないという事実の、具体的な現れです。
 
