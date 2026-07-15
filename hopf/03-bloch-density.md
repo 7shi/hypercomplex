@@ -265,6 +265,10 @@ $$
 
 単位ベクトルの重み付き平均は、方向が異なれば長さが$1$未満になります（三角不等式）。純粋状態がブロッホ球の表面を指すのに対して、混合状態は内部を指します。
 
+&&&rem
+最初に述べた「ベクトルの行列表現」に対応させると、混合は単位行列の係数$\frac12$を保ったまま、パウリ行列側の係数だけを$\sum_i p_i\boldsymbol r_i$に置き換える操作です。行列としては複雑に見えても、ベクトル表現では$\boldsymbol r_i$を重み$p_i$で足し合わせているだけであり、上で述べた「長さが$1$未満になる」という性質も、単位ベクトルの加重平均が一般に短くなるという素朴なベクトルの性質がそのまま現れたものです。
+&&&
+
 ## 混合と重ね合わせ
 
 「2 つの状態を半々で組み合わせる」という操作には 2 通りの意味があります。密度行列を確率で混ぜる**混合**と、状態ベクトルを足し合わせる**重ね合わせ**です。混ぜる対象（行列かベクトルか）が異なるため、結果も異なります。具体例で確認します。
@@ -380,10 +384,10 @@ $$
 ρ=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)
 $$
 
-正規化したブロッホベクトル$\boldsymbol n=\boldsymbol r/|\boldsymbol r|$を使って、対蹠点方向の密度行列$ρ_\pm$を定義します。
+正規化したブロッホベクトル$\boldsymbol n$を使って、対蹠点方向の密度行列$ρ_\pm$を定義します。
 
 $$
-ρ_\pm=\frac12(\mathrm I\pm\boldsymbol n\cdot\boldsymbol σ)
+ρ_\pm=\frac12(\mathrm I\pm\boldsymbol n\cdot\boldsymbol σ) \quad \left(\boldsymbol n=\frac{\boldsymbol r}{|\boldsymbol r|},\ |\boldsymbol r|\neq 0\right)
 $$
 
 $(\boldsymbol n\cdot\boldsymbol σ)^2=\mathrm I$より、$ρ_\pm$は冪等（$ρ_\pm^2=ρ_\pm$）かつトレース$1$なので、ブロッホベクトル$\pm\boldsymbol n$を持つ純粋状態の密度行列です。
@@ -391,12 +395,22 @@ $(\boldsymbol n\cdot\boldsymbol σ)^2=\mathrm I$より、$ρ_\pm$は冪等（$ρ
 重み$λ_\pm$で$ρ_+,ρ_-$を混ぜたときのブロッホベクトルは、$ρ_\pm$のブロッホベクトルが$\pm\boldsymbol n$であることから
 $$
 λ_+\boldsymbol n-λ_-\boldsymbol n=\boldsymbol r
+\quad\Leftrightarrow\quad
+λ_+-λ_-=|\boldsymbol r|
 $$
 を満たす必要があります。これと規格化条件$λ_++λ_-=1$より
 $$
 λ_\pm=\frac12(1\pm|\boldsymbol r|)
 $$
-が求まります。これは$ρ$の固有値と一致します。
+が求まります。
+
+&&&rem
+$λ_\pm$は$ρ$の固有値と一致します。
+
+$\boldsymbol r\neq\boldsymbol 0$のとき$λ_+\neq λ_-$なので、固有値は非退化であり、対応する固有空間はそれぞれ1次元で、$ρ_\pm$がその固有ベクトル方向を表します。
+
+$\boldsymbol r=\boldsymbol 0$（最大混合状態）の場合は$\boldsymbol n=\boldsymbol r/|\boldsymbol r|$が定義できず、特定の軸$\boldsymbol n$が存在しません。このとき$ρ=\frac12\mathrm I$となって固有値は$λ_+=λ_-=\frac12$に縮退し、固有空間は特定の方向を持ちません。
+&&&
 
 実際に混合を計算してみると、元の密度行列$ρ$が得られます。
 
@@ -406,10 +420,18 @@ $$
 =\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol σ)=ρ
 $$
 
-&&&rem 分解の非一意性
 密度行列は「どう混ぜたか」の情報を持たないため、同じ密度行列を与える混合のさせ方は1通りではありません。
 
-例えば最大混合状態$\dfrac12\mathrm I$は、北極と南極の等確率混合としても、$x$軸上の対蹠点$\dfrac1{\sqrt2}\begin{pmatrix}1\\\pm1\end{pmatrix}$の等確率混合としても得られます。
+&&&ex
+$\boldsymbol r_1=(1,0,0)$（$x$軸）と$\boldsymbol r_2=(0,0,1)$（北極）を確率$\frac12$ずつで混合すると
+$$
+\frac12ρ_1+\frac12ρ_2=\frac14(\mathrm I+σ_x)+\frac14(\mathrm I+σ_z)=\frac12\mathrm I+\frac14(σ_x+σ_z)
+$$
+となり、ブロッホベクトルは$\boldsymbol r=\bigl(\frac12,0,\frac12\bigr)$です。この$ρ$を固有分解すると、軸は$\boldsymbol n=\boldsymbol r/|\boldsymbol r|=\frac1{\sqrt2}(1,0,1)$となり、$\boldsymbol r_1,\boldsymbol r_2$のどちらとも異なります。$ρ$だけを見ても、それが$x$軸と$z$軸の混合から作られたことは分からず、混合に使った元の方向の情報は失われています。
+&&&
+
+&&&rem
+この例のブロッホベクトル$\boldsymbol r=\bigl(\frac12,0,\frac12\bigr)$は、$\boldsymbol r=\frac12\boldsymbol r_1+\frac12\boldsymbol r_2$から直接求まります。行列を展開して計算するまでもなく、混合状態のブロッホベクトルが重み付き平均であるという一般則そのままです。
 &&&
 
 # 測定との関係
