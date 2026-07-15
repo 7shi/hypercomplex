@@ -4,6 +4,7 @@
 
 改訂履歴：
 
+- 2026.07.15 複素数ホップファイブレーションを定義、まとめを追加
 - 2026.07.13 ノルムの乗法性の注記を追加、ファイバーの行間を補完
 - 2025.01.24 符号調整を行わずに内積・外積と対応付けるよう修正
 
@@ -151,7 +152,7 @@ $$
 
 よく使われる形のホップファイブレーションの表式が四元数によって得られました。
 
-## まとめ
+## 結果まとめ
 
 ここまでの結果をまとめます。
 
@@ -204,6 +205,21 @@ $$
 &=2\mathrm{Re}(α^*β)\mathbf{i}+2\mathrm{Im}(α^*β)\mathbf{j}+(|α|^2-|β|^2)\mathbf{k}
 \end{aligned}
 $$
+
+計算の過程で、$α_ω,β_ω$を展開する直前で、以下の結果が得られています。
+
+$$
+ω\mathbf{k}ω^*=2α_ωβ_ω^*\mathbf{i}+(|α|^2-|β|^2)\mathbf{k}
+$$
+
+この結果より、複素数のペア$(α,β)$から$(2αβ^*,|α|^2-|β|^2)$への写像として複素数ホップファイブレーションを定義します。
+
+&&&def 複素数ホップファイブレーション
+単位球面上の点 $|\alpha|^2 + |\beta|^2 = 1$ は、以下の写像によって2次元球面上の点に射影されます。
+$$
+H(\alpha, \beta) = \left(2\alpha \beta^*, |\alpha|^2 - |\beta|^2\right)
+$$
+&&&
 
 # 実部と虚部の分離
 
@@ -330,10 +346,85 @@ $$
 \underbrace{S^{1}}_{q}
 \hookrightarrow
 \underbrace{S^{3}}_{ω}
-\xrightarrow{\ \text{Hopf} \,}
+\xrightarrow{H}
 \underbrace{S^{2}}_{ω\mathbf{k}ω^*}
 $$
 
 &&&rem
-この束は、超球面$S^3$上の各点を、球面$S^2$上の点と円周$S^1$上の点の組として一意に分解できるような、単純な直積$S^2\times S^1$ではありません。
+この束は、「超球面$S^3$上の点」を「球面$S^2$上の点」と「円周$S^1$上の点」の組として一意に分解できるような、単純な直積$S^2\times S^1$ではありません。
+&&&
+
+# まとめ
+
+単位四元数$ω$を2つの埋め込まれた複素数$α_ω,β_ω$で表現して、回転$ω\mathbf{k}ω^*$を成分展開します。
+
+$$
+ω\mathbf{k}ω^*
+=2α_ωβ_ω^*\mathbf{i}+(|α|^2-|β|^2)\mathbf{k}
+$$
+
+この結果より、複素数のペアから複素数と実数のペアへの写像として複素数ホップファイブレーションを定義します。
+
+$$
+H(\alpha, \beta) = \left(2\alpha \beta^*, |\alpha|^2 - |\beta|^2\right)
+$$
+
+$α_ω,β_ω$を成分展開して計算を続ければ、結果が2つの複素数$α,β$の内積・外積として書けます。
+
+$$
+ω\mathbf{k}ω^*
+=2\,\underbrace{\mathrm{Re}(α^*β)}_{\text{内積}}\,\mathbf{i}+2\,\underbrace{\mathrm{Im}(α^*β)}_{\text{外積}}\,\mathbf{j}+(|α|^2-|β|^2)\mathbf{k}
+$$
+
+$\mathrm{Re},\mathrm{Im}$を展開して、虚数単位$\mathbf{i},\mathbf{j},\mathbf{k}$の係数から$x,y,z$成分を求めます。
+
+$$
+\begin{aligned}
+ω\mathbf{k}ω^*
+&=(α^*β+β^*α)\mathbf{i}-i(α^*β-β^*α)\mathbf{j}+(α^*α-β^*β)\mathbf{k} \\
+(x,y,z)
+&=(α^*β+β^*α,-i(α^*β-β^*α),α^*α-β^*β)
+\end{aligned}
+$$
+
+複素ベクトル$\Psi=(α,β)^T$とそのエルミート共役$\Psi^\dagger$による内積$\Psi^\dagger\sigma_i\Psi$として整理すると、変換行列としてパウリ行列$\sigma_x,\sigma_y,\sigma_z$が現れます。
+
+$$
+\begin{alignedat}{3}
+x&=\Psi^\dagger\sigma_x\Psi &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
+ &=α^*β+β^*α \\
+y&=\Psi^\dagger\sigma_y\Psi &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
+ &=-i(α^*β-β^*α) \\
+z&=\Psi^\dagger\sigma_z\Psi &
+ &=\begin{pmatrix}α^*&β^*\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}α\\β\end{pmatrix} &
+ &=α^*α-β^*β \\
+\end{alignedat}
+$$
+
+単位純虚四元数$p$は、単位四元数$q=u+vp\ (u^2+v^2=1)$による回転で固定されます。
+
+$$
+qpq^* = p
+$$
+
+$ωq$による回転は、$ω$による回転と同じ点に移されます。
+
+$$
+(ωq)p(ωq)^* = ω(qpq^*)ω^* = ωpω^*
+$$
+
+$q$は円周をなす自由度であり、$ωq$は$ω$と同じ点$ωpω^*$に写されます。したがって$ωq$の軌跡がその点の逆像（ファイバー）である円周となり、超球面$S^3$は球面$S^2$上に円周$S^1$を貼り付けたファイバー束として捉えられます。
+
+$$
+\underbrace{S^{1}}_{q}
+\hookrightarrow
+\underbrace{S^{3}}_{ω}
+\xrightarrow{H}
+\underbrace{S^{2}}_{ω\mathbf{k}ω^*}
+$$
+
+&&&rem
+ホップファイブレーションの定式化はいくつかあり、射影直線によるものが一般的です。[[dim7-8]][[7shi-hc]]
 &&&
