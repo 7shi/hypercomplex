@@ -18,3 +18,4 @@
   - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
+- [mathlog_copy.url](mathlog_copy.url) — Mathlog記事編集ページの本文をクリップボードにコピーするブックマークレット。

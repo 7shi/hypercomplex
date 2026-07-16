@@ -1,0 +1,1 @@
+javascript:(async()=>{const texts=Array.from(document.getElementsByClassName("ProseMirror")[0].getElementsByTagName("p")).map(p=>p.innerText.trimEnd()).join("\n");await navigator.clipboard.writeText(texts);alert("%E3%82%B3%E3%83%94%E3%83%BC%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F ("+texts.split("\n").length+" %E8%A1%8C)");})();
