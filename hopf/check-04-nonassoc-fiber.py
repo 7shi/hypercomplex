@@ -5,7 +5,8 @@ Verifies the concrete example in the article:
 1. Right multiplication by a unit octonion q does NOT preserve the fiber:
    H(αq, βq) != H(α, β) for α = e1/√2, β = e4/√2, q = e2.
 2. The fiber over (p, 0) is parametrized by left multiplication:
-   β = -pα gives H(α, β) = (p, 0) for any α with |α| = 1/√2.
+   β = p*α gives H(α, β) = (p, 0) for any α with |α| = 1/√2,
+   for a general unit octonion p (real part allowed).
 """
 
 import sys
@@ -54,8 +55,8 @@ print()
 print("--- external (left-mult) parametrization of the same fiber ---")
 
 def fiber_point(alpha, p):
-    # beta = -p * alpha  (p: unit imaginary octonion = target point on S^8, real part 0)
-    beta = -mul(p, alpha)
+    # beta = p* * alpha  (p: general unit octonion = target point (p, 0) on S^8)
+    beta = mul(conj(p), alpha)
     return alpha, beta
 
 p = -e(5)  # target point on S^8 found above: H_O(alpha,beta) = (-e5, 0)
@@ -64,6 +65,21 @@ for label, a in [("alpha = e1/sqrt2", alpha), ("a2 = (e1+e2)/2", (e(1)+e(2))/2)]
     al, be = fiber_point(a, p)
     img, real = H_O(al, be)
     print(f"{label:20s} -> H_O = {img}, {real}")
+
+print()
+print("--- same construction with p having a real part ---")
+
+rng0 = np.random.default_rng(1)
+p2 = rng0.normal(size=8)
+p2 /= np.linalg.norm(p2)  # general unit octonion, p2[0] != 0
+assert abs(p2[0]) > 1e-3
+
+for label, a in [("alpha = e1/sqrt2", alpha), ("a2 = (e1+e2)/2", (e(1)+e(2))/2)]:
+    al, be = fiber_point(a, p2)
+    img, real = H_O(al, be)
+    ok = np.allclose(img, p2) and np.isclose(real, 0)
+    print(f"{label:20s} -> H_O = (p2, 0)? {ok}")
+    assert ok
 
 print()
 print("--- general point (c, r) on S^8: |alpha|^2 = (1+r)/2, beta* = alpha* c / (1+r) ---")
