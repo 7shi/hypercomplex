@@ -11,3 +11,10 @@
 - [ホップファイブレーション](hopf/README.md) — ホップファイブレーションに関する記事。
 - [ベクトルから八元数まで](vec-oct/README.md) — ベクトル・複素数・四元数・八元数・クリフォード代数に関する記事。
 - [ルベーグ積分](lebesgue/README.md) — 測度とルベーグ積分に関する記事。
+
+## ツール
+
+- [articles.py](articles.py) — Mathlog記事とREADMEリンクを突き合わせるツール。
+  - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
+  - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
+  - articles.tsv — 両者をタイトルで突き合わせた結果。
