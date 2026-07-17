@@ -455,46 +455,46 @@ $$
 
 ところが、$4 \times 4$実行列の中では$C\ell_{4,0}$は作れません。前節で数え上げた通り、$M_4(\mathbb{R})$の中で反交換する生成元を4つ取ると計量は必ず混ざり、自乗$+I$のものは3つまでしか取れません（$L_iR_i, L_jR_i, L_kR_i$がその例で、この上限は基底に限らず成り立つことが知られています）。生成元4つの積は$2^4 = 16$通りで、次元だけなら$M_4(\mathbb{R})$と同じですが、$C\ell_{4,0}$は$M_4(\mathbb{R})$とは構造の異なる代数であり（後述のrem）、そのスピノル空間は最小でも8次元になることが知られています。
 
-そこで、スピノル空間を四元数2つ分$\mathbb{H} \oplus \mathbb{H} \cong \mathbb{R}^8$に**倍加**します。4次元のベクトル$v$（実部も含む四元数）に対して、左作用の行列を**反対角**に配置した$8 \times 8$実行列を対応させます。
+そこで、成分に四元数を許した$2 \times 2$行列環$M_2(\mathbb{H})$（実次元$2^2 \times 4 = 16$）を舞台にします。4次元のベクトル$v$（実部も含む四元数）に対して、**反対角**に配置した行列を対応させます。
 
 $$
-\gamma(v) = \begin{pmatrix} 0 & L_v \\ L_{v^*} & 0 \end{pmatrix}
+\gamma(v) = \begin{pmatrix} 0 & v \\ v^* & 0 \end{pmatrix} \in M_2(\mathbb{H})
 $$
 
-自乗は、$L_v L_{v^*} = L_{v v^*} = |v|^2 I$より
+自乗は、四元数のノルム$v v^* = |v|^2$より
 
 $$
-\gamma(v)^2 = \begin{pmatrix} L_{v v^*} & 0 \\ 0 & L_{v^* v} \end{pmatrix} = |v|^2 I
+\gamma(v)^2 = \begin{pmatrix} v v^* & 0 \\ 0 & v^* v \end{pmatrix} = |v|^2 I
 $$
 
 と「長さの2乗」になります。これを$u + v$に適用して展開すれば$\gamma(u)\gamma(v) + \gamma(v)\gamma(u) = 2\langle u, v\rangle I$が従い、直交するベクトル同士は反交換します。つまり$\gamma(1), \gamma(i), \gamma(j), \gamma(k)$は、自乗$+I$で互いに反交換する4つの生成元となり、$C\ell_{4,0}(\mathbb{R})$を生成します。
 
-反対角配置の効果は縮退の解消です。奇数個の積は反対角ブロックに、偶数個の積は対角ブロックに現れ、グレード$2$の元は
+反対角配置の効果は縮退の解消です。奇数個の積は反対角成分に、偶数個の積は対角成分に現れ、グレード$2$の元は
 
 $$
-\gamma(u)\gamma(v) = \begin{pmatrix} L_{u v^*} & 0 \\ 0 & L_{u^* v} \end{pmatrix}
+\gamma(u)\gamma(v) = \begin{pmatrix} u v^* & 0 \\ 0 & u^* v \end{pmatrix}
 $$
 
-と、独立な2つの四元数$u v^*$と$u^* v$の左作用を対角に並べた形になります。左作用だけのときは$L_iL_j$が$L_k$に潰れましたが、いまは潰れる先がありません。偶数個の積を集めた偶部分代数は
+と、2つの四元数$u v^*$と$u^* v$がそのまま対角に並んだ形になります。四元数の積だけを使うと代数として四元数自身に留まってしまいますが（前節参照）、ここでは$2 \times 2$の行列の構造そのものが2つの成分を別々の対角スロットに保つため、潰れる先がありません。偶数個の積を集めた偶部分代数は
 
 $$
-\left\{ \begin{pmatrix} L_p & 0 \\ 0 & L_q \end{pmatrix} \;\middle|\; p, q \in \mathbb{H} \right\} \cong \mathbb{H} \oplus \mathbb{H}
+\left\{ \begin{pmatrix} p & 0 \\ 0 & q \end{pmatrix} \;\middle|\; p, q \in \mathbb{H} \right\} \cong \mathbb{H} \oplus \mathbb{H}
 $$
 
-という四元数の直和（8次元）となり、体積要素も$\gamma(1)\gamma(i)\gamma(j)\gamma(k) = \operatorname{diag}(-I, I)$と$\pm I$には潰れません。奇数グレードの8次元と合わせて$2^4 = 16$個の基底が独立に揃い、$C\ell_{4,0}$が忠実に実現されます。
+という四元数の直和（実8次元）となり、体積要素も$\gamma(1)\gamma(i)\gamma(j)\gamma(k) = \operatorname{diag}(-1, 1)$と単位行列の定数倍には潰れません。奇数グレードの8次元と合わせて$2^4 = 16$個の基底が独立に揃い、$C\ell_{4,0}$が忠実に実現されます。
 
-単位ベクトルの偶数個の積を集めると、対角ブロックがちょうど単位四元数の対$(p, q)$を走ることが知られています。これが、クリフォード代数から構成した$\operatorname{Spin}(4)$です。
+単位ベクトルの偶数個の積を集めると、対角成分がちょうど単位四元数の対$(p, q)$を走ることが知られています。これが、クリフォード代数から構成した$\operatorname{Spin}(4)$です。
 
 $$
-\operatorname{Spin}(4) = \left\{ \begin{pmatrix} L_p & 0 \\ 0 & L_q \end{pmatrix} \;\middle|\; |p| = |q| = 1 \right\} \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)
+\operatorname{Spin}(4) = \left\{ \begin{pmatrix} p & 0 \\ 0 & q \end{pmatrix} \;\middle|\; |p| = |q| = 1 \right\} \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)
 $$
 
-この$g = \operatorname{diag}(L_p, L_q)$でグレード$1$のベクトル$\gamma(x)$を挟みます。$g^{-1} = \operatorname{diag}(L_{p^*}, L_{q^*})$と$(pxq^*)^* = q x^* p^*$に注意すると
+この$g = \operatorname{diag}(p, q)$でグレード$1$のベクトル$\gamma(x)$を挟みます。$g^{-1} = \operatorname{diag}(p^*, q^*)$と$(pxq^*)^* = q x^* p^*$に注意すると
 
 $$
 g\,\gamma(x)\,g^{-1}
-= \begin{pmatrix} 0 & L_p L_x L_{q^*} \\ L_q L_{x^*} L_{p^*} & 0 \end{pmatrix}
-= \begin{pmatrix} 0 & L_{pxq^*} \\ L_{(pxq^*)^*} & 0 \end{pmatrix}
+= \begin{pmatrix} 0 & pxq^* \\ qx^*p^* & 0 \end{pmatrix}
+= \begin{pmatrix} 0 & pxq^* \\ (pxq^*)^* & 0 \end{pmatrix}
 = \gamma(pxq^*)
 $$
 
@@ -506,7 +506,7 @@ $$
 
 左右から独立な四元数で挟むという操作は、クリフォード代数の一般的な構成（偶部分代数の元によるグレード$1$への共役作用）から必然的に出てくる形だったのです。
 
-一方、スピノルは、この$8 \times 8$行列が片側から作用する列ベクトル$(\psi_1, \psi_2) \in \mathbb{H} \oplus \mathbb{H}$です。$\operatorname{Spin}(4)$の元は対角ブロックなので、作用は2つの成分で完結して混ざりません。
+一方、スピノルは、この行列が片側から作用する列ベクトル$(\psi_1, \psi_2) \in \mathbb{H} \oplus \mathbb{H}$です。$\operatorname{Spin}(4)$の元は対角成分だけなので、作用は2つの成分で完結して混ざりません。
 
 $$
 \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} \mapsto \begin{pmatrix} p\,\psi_1 \\ q\,\psi_2 \end{pmatrix}
@@ -516,8 +516,8 @@ $$
 
 $\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$の2つの因子は、ベクトルに対しては左右からの挟み込みとして絡み合い、スピノルに対しては2つの半スピノルへの独立な片側作用として分離します。「ベクトルは両側から全角、スピノルは片側から半角」という本記事の対比は、4次元では「1つのベクトル表現と2つの半スピノル表現」に拡張されました。二重被覆の構図も同じです。$(p, q)$と$(-p, -q)$はベクトル$pxq^{-1}$では区別できず、半スピノルだけが$-1$倍の違いを受け取ります。
 
-&&&rem $M_2(\mathbb{H})$とカイラリティ
-$C\ell_{4,0}(\mathbb{R})$は、成分が四元数の$2 \times 2$行列全体$M_2(\mathbb{H})$と同型です。今回の$8 \times 8$実行列は、その四元数成分を左作用$L$で$4 \times 4$実行列に開いたものにほかなりません。また、体積要素$\operatorname{diag}(-I, I)$は2つの半スピノルを符号で区別する演算子で、ディラック理論の$\gamma_5$（カイラリティ）に相当します。
+&&&rem $M_2(\mathbb{H})$と実行列表現
+体積要素$\operatorname{diag}(-1, 1)$は2つの半スピノルを符号で区別する演算子で、ディラック理論の$\gamma_5$（カイラリティ）に相当します。スピノル空間$\mathbb{H} \oplus \mathbb{H}$は実8次元の列ベクトルなので、各成分の四元数を左作用$L$で$4 \times 4$実行列に展開すれば、$\gamma(v)$は$L_v$を反対角に配置した$8 \times 8$実行列となり、実行列だけで具体的に計算したい場合にはこの表示が使えます。
 &&&
 
 &&&rem 計量の符号の流儀
