@@ -72,10 +72,11 @@
 
 1. [複素数とSO(2)](lie/01-u1-so2.md) — $\operatorname{U}(1)$を例にリー群・リー代数の基本概念を導入。
 2. [四元数とSU(2)](lie/02-su2-so3.md) — $\operatorname{Sp}(1) \cong \operatorname{SU}(2)$と$\operatorname{SO}(3)$の2重被覆。
-3. [クリフォード代数とSpin(3)](lie/03-spin.md) — $\operatorname{Spin}(3)$とスピノル、4次元への拡張$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$。
-4. [SO(3)の複素化とSU(3)](lie/04-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。
+3. [クリフォード代数とSpin(3)](lie/03-spin.md) — $\operatorname{Spin}(3)$とスピノル。パウリ行列が生成するクリフォード代数の偶部分代数として四元数を構成し直す。
+4. [Spin(4)とSO(4)](lie/04-spin4.md) — 四元数の左右独立作用による$\operatorname{SO}(4)$の構成と、2重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$。
+5. [SO(3)の複素化とSU(3)](lie/05-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。
 
-今後05〜08（BCH公式、八元数と$S^7$、$G_2$、$\operatorname{Spin}(7)$と三対性）が予定されており、八元数編・oct/03との合流が構想されています（詳細は[lie/README.md](lie/README.md)）。
+今後06〜09（BCH公式、八元数と$S^7$、$G_2$、$\operatorname{Spin}(7)$と三対性）が予定されており、八元数編・oct/03との合流が構想されています（詳細は[lie/README.md](lie/README.md)）。
 
 関連: 03で構成した左右作用・射影$P$による復元式は、四元数版の単発記事[四元数の左作用・右作用とスピノルの左イデアル](qua/spinor-ideal.md)（テーマ2）として独立記事に切り出し、[八元数の左作用とクリフォード代数](oct/03-oct-left-mul.md)（八元数版）と対を成す。
 

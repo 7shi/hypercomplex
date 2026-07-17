@@ -23,7 +23,8 @@ lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率過程量子化
 lie/01-u1-so2.md	複素数とSO(2)
 lie/02-su2-so3.md	四元数とSU(2)
 lie/03-spin.md	クリフォード代数とSpin(3)
-lie/04-su3.md	SO(3)の複素化とSU(3)
+lie/04-spin4.md	Spin(4)とSO(4)
+lie/05-su3.md	SO(3)の複素化とSU(3)
 lie/magma-to-group.md	代数的構造の初歩：マグマから群へ
 misc/energy-quantize-zeta.md	エネルギーの量子化とゼータ関数
 misc/epsilon-euler-lagrange.md	εパラメーターを用いたオイラー＝ラグランジュ方程式

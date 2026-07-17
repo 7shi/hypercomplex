@@ -46,7 +46,8 @@ date	url	md	title
 		lebesgue/05-black-scholes.md	ブラック＝ショールズ方程式
 		lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率過程量子化
 		lie/03-spin.md	クリフォード代数とSpin(3)
-		lie/04-su3.md	SO(3)の複素化とSU(3)
+		lie/04-spin4.md	Spin(4)とSO(4)
+		lie/05-su3.md	SO(3)の複素化とSU(3)
 		qua/04-4d-bsqua.md	4次元回転と双四元数：SO(4)とSpin(4)
 		qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
 		qua/cd/grok45.md	複素数の行列表現から四元数へ：発見法的な導出
