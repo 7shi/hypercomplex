@@ -48,6 +48,7 @@ qua/cd/memo.md	元になったツイートスレッド
 qua/cd/real-to-cmatrix.md	四元数の実行列表現から複素行列表現へ
 qua/real-pauli-trace.md	実パウリ行列とトレース
 qua/spherical-trig.md	四元数と球面三角法
+qua/spinor-ideal.md	四元数の左作用・右作用とスピノルの左イデアル
 qua/tensor-from-complex.md	複素数の拡張で学ぶテンソル積
 vec-oct/01-reflection.md	鏡映：ベクトルから八元数まで
 vec-oct/02-rotation.md	回転：ベクトルから八元数まで
