@@ -1,10 +1,16 @@
 md	title
+PLAN.md	全体構想
+THEMES.md	テーマ別記事リスト
 clif/01-representation.md	クリフォード代数の構造と表現
 clif/02-split-complex.md	分解型複素数の冪等元と直和分解
+clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
+clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係
+clif/05-schrodinger.md	離散ラプラシアンの連続極限：シュレーディンガー方程式の導出
 hopf/01-quaternion.md	四元数からの生成
 hopf/02-spinor-tensor.md	スピノルのテンソル積
 hopf/03-bloch-density.md	ブロッホ球と密度行列
 hopf/04-extension.md	四元数・八元数への拡張
+hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
 hopf/c2-to-s2.md	複素2次元ベクトルから2次元球面への射影
 hopf/homogeneous.md	同次座標とホップファイブレーション
 lebesgue/01-measure-integral.md	測度とルベーグ積分

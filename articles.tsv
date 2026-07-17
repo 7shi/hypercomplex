@@ -29,9 +29,15 @@ date	url	md	title
 2024/05/24	/articles/co6jC5vshPXR0EgmAjX3	hopf/02-spinor-tensor.md	四元数とホップファイブレーション 2 スピノルのテンソル積
 2024/05/21	/articles/2HkSkfawcYJYgE6rVgu6	misc/spherical-coords.md	一般次元における球座標系のバリエーション
 2024/05/14	/articles/enXfjr4Xvas6pfXLQddc	hopf/01-quaternion.md	四元数とホップファイブレーション 1 四元数からの生成
+		PLAN.md	全体構想
+		THEMES.md	テーマ別記事リスト
 		clif/01-representation.md	クリフォード代数の構造と表現
 		clif/02-split-complex.md	分解型複素数の冪等元と直和分解
+		clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
+		clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係
+		clif/05-schrodinger.md	離散ラプラシアンの連続極限：シュレーディンガー方程式の導出
 		hopf/04-extension.md	四元数・八元数への拡張
+		hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
 		lebesgue/01-measure-integral.md	測度とルベーグ積分
 		lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 		lebesgue/03-probability.md	測度論的確率論
