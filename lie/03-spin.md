@@ -381,6 +381,8 @@ $$
 
 とこの行列代数の中に収まります。四元数それ自身（左作用）は$M_4(\mathbb{R})$のわずか4次元を占めるにすぎず、残りの自由度は左右の組み合わせではじめて埋まるのです。
 
+この「左右の組み合わせではじめて全体が埋まる」という事情は、代数として言い換えれば$M_4(\mathbb{R})\cong\mathbb H\otimes\mathbb H$という同型に対応します。$\{L_u\}$は$L_iL_j=L_k$より四元数体$\mathbb H$そのものと同型な部分代数で、$\{R_v\}$は$R_uR_v=R_{vu}$と積の順序が反転するため反対代数$\mathbb H^{\mathrm{op}}$（共役をとれば$\mathbb H^{\mathrm{op}}\cong\mathbb H$）と同型です。両者は可換なので、$M_4(\mathbb{R})$全体は独立な2つの$\mathbb H$のテンソル積として実現されており、これは分類表の結果$\mathbb H\otimes\mathbb H\cong\mathbb R(4)$[[clif-rep]]の具体的な現れです。前節で見た直和分解$\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$がリー環（無限小変換）のレベルでの「左右の分離」だとすれば、$M_4(\mathbb{R})\cong\mathbb H\otimes\mathbb H$は、それを生成する結合代数そのもののレベルでの同じ分離です。
+
 ## クリフォード代数$C\ell_{3,1}$としての$M_4(\mathbb{R})$
 
 左右を合わせて張った$M_4(\mathbb{R})$は、実はそれ自身が1つのクリフォード代数です。基底$L_uR_v$の自乗と反交換関係を数え上げて確かめましょう。
@@ -532,4 +534,4 @@ $\operatorname{SU}(2)$の行列が片側から作用する複素ベクトル$\ma
 
 四元数全体を4次元空間と見て、左右から独立な単位四元数で挟む両側作用$pxq^{-1}$は、片側作用に付きまとう等傾回転の制限を解除して$\operatorname{SO}(4)$のすべての回転を与えます。対応は2対1で、$\operatorname{Sp}(1) \times \operatorname{Sp}(1)$は$\operatorname{SO}(4)$の二重被覆となり、リー代数では直和分解$\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)$が成り立ちます。この左右の独立性は結合律の帰結です。
 
-行列表現の言葉では、左作用は結合律の縮退（$L_iL_j = L_k$）のため4次元（四元数自身）に留まり、右作用と合わせてはじめて$4 \times 4$実行列全体の16次元を張ります。この$M_4(\mathbb{R})$は、基底$L_uR_v$の自乗と反交換関係を数え上げると、生成元$L_iR_i, L_jR_i, L_kR_i, R_j$によるミンコフスキー型のクリフォード代数$C\ell_{3,1}(\mathbb{R})$そのものであり、そのスピノルは四元数自身です。一方、4次元ユークリッド空間の舞台$C\ell_{4,0}(\mathbb{R})$は、スピノル空間を$\mathbb{H} \oplus \mathbb{H}$へ倍加し、ベクトル$v$に反対角行列$\gamma(v)$を対応させることで構成されます。その偶部分代数は$\mathbb{H} \oplus \mathbb{H}$で、単位四元数の対$(p, q)$が$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$をなし、グレード$1$への共役作用が両側作用$pxq^{-1}$を再現して、二重被覆の正体が$\operatorname{Spin}(4)$として確定します。スピノル側では$(p, q)$が2つの**半スピノル**へ別々に片側作用し、左作用と右作用の分離は半スピノル表現の分離として現れます。
+行列表現の言葉では、左作用は結合律の縮退（$L_iL_j = L_k$）のため4次元（四元数自身）に留まり、右作用と合わせてはじめて$4 \times 4$実行列全体の16次元を張ります。この分離は代数として$M_4(\mathbb{R})\cong\mathbb H\otimes\mathbb H$（$L$側の$\mathbb H$と$R$側の$\mathbb H$）と言い換えられ、直和分解$\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$の背後にある結合代数レベルの構造です。$M_4(\mathbb{R})$は、基底$L_uR_v$の自乗と反交換関係を数え上げると、生成元$L_iR_i, L_jR_i, L_kR_i, R_j$によるミンコフスキー型のクリフォード代数$C\ell_{3,1}(\mathbb{R})$そのものであり、そのスピノルは四元数自身です。一方、4次元ユークリッド空間の舞台$C\ell_{4,0}(\mathbb{R})$は、スピノル空間を$\mathbb{H} \oplus \mathbb{H}$へ倍加し、ベクトル$v$に反対角行列$\gamma(v)$を対応させることで構成されます。その偶部分代数は$\mathbb{H} \oplus \mathbb{H}$で、単位四元数の対$(p, q)$が$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$をなし、グレード$1$への共役作用が両側作用$pxq^{-1}$を再現して、二重被覆の正体が$\operatorname{Spin}(4)$として確定します。スピノル側では$(p, q)$が2つの**半スピノル**へ別々に片側作用し、左作用と右作用の分離は半スピノル表現の分離として現れます。
