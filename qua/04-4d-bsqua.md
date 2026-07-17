@@ -1,4 +1,4 @@
-四元数は実部も含めた4成分で4次元空間を表現でき、回転は左右2つの単位四元数による挟み込み$r_L\,q\,r_R$で表されます。本記事では、この左右からの作用が$\mathbb H\otimes\mathbb H\cong\operatorname{Cl}_{3,1}(\mathbb R)$の中で$\mathrm{SO}(4)\cong\mathrm{SU}(2)\otimes\mathrm{SU}(2)$の回転行列を直接構成することを出発点として、二重被覆$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$の置き場所である偶部分代数（分解型双四元数）への降下を辿り、$\operatorname{Cl}_{4,0}(\mathbb R)$の回転子（6成分）と$r_L,r_R$（$3+3$成分）の対応を準同型写像として与える、中嶋慧氏による方法をまとめます。[[nakajima]]
+四元数は実部も含めた4成分で4次元空間を表現でき、回転は左右2つの単位四元数による挟み込み$r_L\,q\,r_R$で表されます。この左右からの作用が$\mathbb H\otimes\mathbb H\cong\operatorname{Cl}_{3,1}(\mathbb R)$の中で$\mathrm{SO}(4)\cong\mathrm{SU}(2)\otimes\mathrm{SU}(2)$の回転行列を直接構成することを出発点として、二重被覆$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$の置き場所である偶部分代数（分解型双四元数）への降下を辿り、$\operatorname{Cl}_{4,0}(\mathbb R)$の回転子（6成分）と$r_L,r_R$（$3+3$成分）の対応を準同型写像として与える、中嶋慧氏による方法をまとめます。[[nakajima]]
 
 四元数とクリフォード代数の基本的な演算は既知とします。
 
@@ -44,7 +44,7 @@ $$
 | 3    | $L_iR_j,\ L_jR_j,\ L_kR_j,\ R_i$   | 4  |
 | 4    | $R_k$                              | 1  |
 
-この構成の詳細は別記事で扱っています。
+この構成の詳細は別記事で扱っています。[[7shi-spin]]
 
 ## $\mathrm{SO}(4)$の直接構成
 
