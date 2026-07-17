@@ -11,6 +11,7 @@ hopf/02-spinor-tensor.md	スピノルのテンソル積
 hopf/03-bloch-density.md	ブロッホ球と密度行列
 hopf/04-extension.md	四元数・八元数への拡張
 hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
+hopf/06-clifford-gates.md	量子ゲートを回転子として読み直す
 hopf/c2-to-s2.md	複素2次元ベクトルから2次元球面への射影
 hopf/homogeneous.md	同次座標とホップファイブレーション
 lebesgue/01-measure-integral.md	測度とルベーグ積分

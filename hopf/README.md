@@ -14,6 +14,7 @@
 3. [ブロッホ球と密度行列](03-bloch-density.md) — パウリ行列を基底として純粋状態・混合状態を密度行列で表し、混合と重ね合わせの違い、測定の期待値との関係まで見ます。
 4. [四元数・八元数への拡張](04-extension.md) — 複素数によるホップファイブレーションを四元数$S^7\to S^4$・八元数$S^{15}\to S^8$に拡大し、対応する写像を構成します。非結合性がどこで効くかを確認します。
 5. [2・3量子ビットのもつれとホップファイブレーション](05-entanglement.md) — 2量子ビットの状態空間$S^7$と$H_{\mathbb{H}}$、3量子ビットの$S^{15}$と$H_{\mathbb{O}}$を対応させ、分離可能性がホップ像の成分の消失と同値であることを示します。ファイバーが残りの量子ビットの状態空間に対応すること、複素構造を固定する八元数の自己同型群として$\operatorname{SU}(3)$が現れることも確認します。
+6. [量子ゲートを回転子として読み直す](06-clifford-gates.md) — 1量子ビットゲートを位相×回転子に分解し、パウリ群の正規化群としてクリフォードゲートを導入します。位相を除けば正八面体の回転群と一致すること、CNOTによるもつれの生成が軸の行き先から読めることを確認します。
 
 ## 検証コード
 
@@ -26,6 +27,8 @@
 - [check-04-nonassoc-fiber.py](check-04-nonassoc-fiber.py) — 八元数で右乗算がファイバーを保存しない具体例（$\alpha=e_1/\sqrt2$等）と、左乗算$\beta=-p\alpha$によるファイバーの構成、一般の点$(c, r)$への拡張の検証。
 - [check-05-two-qubit.py](check-05-two-qubit.py) — $\mathbb{C}^4\cong\mathbb{H}^2$の詰め込みと$q_1q_2^*$の成分公式、分離可能⟺$\alpha\delta-\beta\gamma=0$⟺$\mathbf j,\mathbf k$成分の消失、関係式$x_A^2+y_A^2+z_A^2+C^2=1$、ベル状態の像と全体位相・ファイバーの検証。
 - [check-05-three-qubit.py](check-05-three-qubit.py) — $\mathbb{C}^4\cong\mathbb{O}$の複素基底$\{1,e_2,e_4,e_6\}$による詰め込みと左$\mathbb{C}$-線形性、A|BC分離可能⟺$e_2,\dots,e_7$成分の消失、GHZ・W状態の像、ファイバー$S^7$の分離可能性、$e_1$を固定する自己同型群$\operatorname{SU}(3)$の検証。
+- [check-06-single-qubit.py](check-06-single-qubit.py) — 回転子$R_{\boldsymbol n}(\theta)$の共役作用とロドリゲスの回転公式の一致、6ゲートの回転子分解、パウリ群と四元数群$Q_8$の対応、$\langle H,S\rangle$が位数24の正八面体の回転群を生成すること、6状態の軌道、$T$が非クリフォードであることの検証。
+- [check-06-cnot.py](check-06-cnot.py) — CNOTの共役作用表と15軸の符号付き置換、局所ゲートでの$C$の不変性ともつれの生成、ベル回路$\mathrm{CNOT}(H\otimes\mathrm I)|00\rangle=\Phi_+$とホップ像$-\mathbf j$、軸の追跡$Z\otimes\mathrm I\mapsto X\otimes X$、密度行列の15成分展開の検証。
 
 ## 方針
 

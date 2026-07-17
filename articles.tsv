@@ -38,6 +38,7 @@ date	url	md	title
 		clif/05-schrodinger.md	離散ラプラシアンの連続極限：シュレーディンガー方程式の導出
 		hopf/04-extension.md	四元数・八元数への拡張
 		hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
+		hopf/06-clifford-gates.md	量子ゲートを回転子として読み直す
 		lebesgue/01-measure-integral.md	測度とルベーグ積分
 		lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 		lebesgue/03-probability.md	測度論的確率論
