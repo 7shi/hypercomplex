@@ -2,40 +2,50 @@
 
 Verifies the article's claims numerically with numpy:
 
-1. Pauli matrices: the general 2x2 Hermitian matrix decomposes over the
-   basis {I, sx, sy, sz}; the Pauli matrices square to I, anticommute,
-   and satisfy sx sy sz = iI; -i sx, -i sy, -i sz satisfy the quaternion
+1. Pauli matrices: the Hermitian condition on a general (a, b; c, d)
+   forces a, d real and c = conj(b); the trace split t = (a+d)/2,
+   z = (a-d)/2 leaves a traceless Hermitian part, and with b = x - iy
+   the matrix decomposes over the basis {I, sx, sy, sz}; the Pauli
+   matrices square to I, anticommute, and satisfy sx sy sz = iI;
+   the opposite convention b = x + iy replaces sy by -sy and flips the
+   cyclic products to -i; -i sx, -i sy, -i sz satisfy the quaternion
    relations i^2 = j^2 = k^2 = ijk = -1.
-2. Clock and shift matrices (n = 2..6): X^n = Z^n = I, ZX = w XZ with
+2. Biquaternion: with h = iI and i, j, k = -i sx, -i sy, -i sz, h commutes
+   with i, j, k and h^2 = -1; the products hi, hj, hk square to +I and
+   reproduce sx, sy, sz; sx sy sz = h; multiplying by -h strips h
+   (-h(hi) = i etc.); and the 8 elements
+   {1, h, i, hi, j, hj, k, hk} are linearly independent over R, hence a
+   real basis of M_2(C) = C (x) H.
+3. Clock and shift matrices (n = 2..6): X^n = Z^n = I, ZX = w XZ with
    w = exp(2 pi i/n); the n^2 monomials X^a Z^b are trace-orthogonal and
    traceless except for I, hence a basis of M_n(C); the power formula
    (X^a Z^b)^n = w^(ab n(n-1)/2) I holds.
-3. n = 2 reduction: X = sx, Z = sz, i XZ = sy.
-4. Nonion correspondence (n = 3, rho = w): u = ZX and v = Z^2 X reproduce
+4. n = 2 reduction: X = sx, Z = sz, i XZ = sy.
+5. Nonion correspondence (n = 3, rho = w): u = ZX and v = Z^2 X reproduce
    Sylvester's generators, satisfy vu = rho uv, u^3 = v^3 = 1 and
    det(zI + yu + xv) = z^3 + y^3 + x^3 (random samples); rho^2 uv is
    the shift matrix quoted in the nonion article (= X^2 = X^(-1)); and
    every monomial u^a v^b is a phase multiple of X^(a+b) Z^(a+2b).
-5. Generalized Clifford algebra: the extension rule -- attach (x) Z^(n-1)
+6. Generalized Clifford algebra: the extension rule -- attach (x) Z^(n-1)
    to the old generators and append 1 (x) X and 1 (x) c XZ with
    c = exp(-pi i (n-1)/n), c^n (XZ)^n = I -- yields generators satisfying
    e_i^n = 1 and e_j e_i = w e_i e_j (i < j) for n = 2..5, m = 2, 4, 6;
    the n^m monomials e_1^(a_1) ... e_m^(a_m) are linearly independent,
    so the algebra is the full matrix ring M_(n^(m/2))(C).
-6. n = 2 case of the extension is the Jordan-Wigner construction (up to
+7. n = 2 case of the extension is the Jordan-Wigner construction (up to
    slot ordering): sigma_z strings with heads (sx, sz) for the first pair
    and (sx, -sy) for the appended pairs (c = -i).
-7. Odd numbers of generators: the product e_1 ... e_m exchanges with e_i
+8. Odd numbers of generators: the product e_1 ... e_m exchanges with e_i
    as w^(m+1-2i) e_i (e_1 ... e_m), so it is not central for n > 2; the
    alternating product zeta = e_1 e_2^(n-1) e_3 ... e_m (m odd) is
    central, zeta^n is a root of unity, and e_m is recovered as
    (e_1 e_2^(n-1) ... e_(m-1)^(n-1))^(-1) zeta.
-8. Odd classification Cl_m = n M_(n^((m-1)/2))(C): the idempotents
+9. Odd classification Cl_m = n M_(n^((m-1)/2))(C): the idempotents
    eps_k = (1/n) sum_j w^(-jk) (zeta/mu)^j (mu^n = zeta^n) are central,
    orthogonal, and sum to 1; the n^m monomials are linearly independent;
    and on each eigenspace of zeta the monomials span the full matrix
    ring of size n^((m-1)/2).
-9. m = 1 and Fleury's multicomplex numbers: F = exp(i pi/n) Z satisfies
+10. m = 1 and Fleury's multicomplex numbers: F = exp(i pi/n) Z satisfies
    F^n = -I (the complexified relation e^n = -1), generates the same
    commutative algebra as Z, and the idempotents eps_k split it into nC.
 """
@@ -61,9 +71,17 @@ sz = np.array([[1, 0], [0, -1]], dtype=complex)
 def pauli_checks():
     rng = np.random.default_rng(0)
     for _ in range(10):
-        t, x, y, z = rng.normal(size=4)
-        h = np.array([[t + z, x - 1j * y], [x + 1j * y, t - z]])
-        if not (close(h, h.conj().T) and
+        # general form with a, d real, c = conj(b) is Hermitian
+        a, d = rng.normal(size=2)
+        b = rng.normal() + 1j * rng.normal()
+        h = np.array([[a, b], [b.conjugate(), d]])
+        if not close(h, h.conj().T):
+            return False
+        # trace split and coefficients from b = x - iy
+        t, z = (a + d) / 2, (a - d) / 2
+        x, y = b.real, -b.imag
+        h0 = h - t * I2
+        if not (close(h0, h0.conj().T) and abs(np.trace(h0)) < 1e-12 and
                 close(h, t * I2 + x * sx + y * sy + z * sz)):
             return False
     ps = [sx, sy, sz]
@@ -74,12 +92,44 @@ def pauli_checks():
         return False
     if not close(sx @ sy @ sz, 1j * I2):
         return False
+    # opposite convention b = x + iy: sy -> -sy, cyclic products flip to -i
+    sy2 = -sy
+    if not (close(sx @ sy2, -1j * sz) and close(sy2 @ sz, -1j * sx)
+            and close(sz @ sx, -1j * sy2)):
+        return False
     qi, qj, qk = -1j * sx, -1j * sy, -1j * sz
     return (all(close(q @ q, -I2) for q in (qi, qj, qk))
             and close(qi @ qj @ qk, -I2) and close(qi @ qj, qk))
 
 print("Pauli basis of Hermitian matrices, relations, quaternions:",
       pauli_checks())
+
+# --- biquaternion C (x) H --------------------------------------------------------
+def biquaternion_checks():
+    h = 1j * I2
+    qi, qj, qk = -1j * sx, -1j * sy, -1j * sz
+    # h commutes with i, j, k and h^2 = -1
+    if not (close(h @ h, -I2)
+            and all(close(h @ q, q @ h) for q in (qi, qj, qk))):
+        return False
+    # hi, hj, hk square to +I and reproduce the Pauli matrices
+    pairs = [(h @ qi, sx), (h @ qj, sy), (h @ qk, sz)]
+    if not all(close(a, b) and close(a @ a, I2) for a, b in pairs):
+        return False
+    # sx sy sz = h: the complex coefficient i is h inside the biquaternion
+    if not close(sx @ sy @ sz, h):
+        return False
+    # multiplying by -h strips h: -h(hi) = i etc.
+    if not all(close(-h @ s, q) for s, q in [(sx, qi), (sy, qj), (sz, qk)]):
+        return False
+    # {1, h, i, hi, j, hj, k, hk} is a real basis of M_2(C)
+    basis = [I2, h, qi, h @ qi, qj, h @ qj, qk, h @ qk]
+    stack = np.array([np.concatenate([m.flatten().real, m.flatten().imag])
+                      for m in basis])
+    return np.linalg.matrix_rank(stack) == 8
+
+print("biquaternion: h central, hi/hj/hk = Pauli, real basis of M_2(C):",
+      biquaternion_checks())
 
 # --- clock and shift matrices ---------------------------------------------------
 def clock_shift_checks(n):

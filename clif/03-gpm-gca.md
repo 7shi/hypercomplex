@@ -6,19 +6,37 @@ $\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(
 
 # パウリ行列
 
-## エルミート行列の分解
-
-成分の複素共役を取って転置しても変わらない行列（$A^\dagger=A$）を**エルミート行列**と呼びます。2×2エルミート行列の一般形は、対角成分が実数、非対角成分が互いに複素共役であることから、4つの実パラメーター$t,x,y,z$で書けます。
+一般の2×2複素行列と、その成分の複素共役を取って転置した行列（エルミート共役）を考えます。
 
 $$
-\begin{pmatrix} t+z & x-iy \\ x+iy & t-z \end{pmatrix}
-= t\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
-+ x\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}, \quad
+A^\dagger = \begin{pmatrix} a^* & c^* \\ b^* & d^* \end{pmatrix}
+$$
+
+エルミート共役で変わらない行列（$A^\dagger=A$）を**エルミート行列**と呼びます。成分を比較すると、条件は対角成分$a,d$が実数であること、非対角成分が互いに複素共役であること（$b=c^*$）です。実パラメーターで数えると計4つです。
+
+このエルミート行列を、トレースを担う部分（単位行列の実数倍）と、トレースが$0$の部分に分解します。
+
+$$
+w=\dfrac{a+d}2,\ z=\dfrac{a-d}2
+$$
+とおくと
+$$
+\begin{pmatrix} a & c^* \\ c & d \end{pmatrix}
+= w\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
++ \begin{pmatrix} z & c^* \\ c & -z \end{pmatrix}
+$$
+
+$w,z$は実数なので、どちらの部分もエルミート性を保ちます。$c=x+iy$とおいて成分ごとに行列を取り出します。
+
+$$
+\begin{pmatrix} z & x-iy \\ x+iy & -z \end{pmatrix}
+= x\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 + y\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
 + z\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
 $$
 
-右辺に現れる単位行列以外の3つの行列が**パウリ行列**です。
+ここに現れる3つの行列が**パウリ行列**です。
 
 &&&def パウリ行列
 $$
@@ -34,36 +52,13 @@ $$
 
 $$
 \sigma_x^2 = \sigma_y^2 = \sigma_z^2 = I, \quad
-\sigma_x\sigma_y = -\sigma_y\sigma_x = i\sigma_z \ (x,y,z\text{は巡回}), \quad
 \sigma_x\sigma_y\sigma_z = iI
 $$
-
-## 四元数との関係
-
-パウリ行列は2乗すると$+I$ですが、$-i$倍すると2乗が$-I$に反転します。
-
 $$
-(-i\sigma_x)^2 = (-i\sigma_y)^2 = (-i\sigma_z)^2 = -I
+\sigma_x\sigma_y = -\sigma_y\sigma_x = i\sigma_z, \quad
+\sigma_y\sigma_z = -\sigma_z\sigma_y = i\sigma_x, \quad
+\sigma_z\sigma_x = -\sigma_x\sigma_z = i\sigma_y
 $$
-
-積を計算すると
-
-$$
-(-i\sigma_x)(-i\sigma_y) = -\sigma_x\sigma_y = -i\sigma_z, \quad
-(-i\sigma_x)(-i\sigma_y)(-i\sigma_z) = (-i)^3(iI) = -I
-$$
-
-となり、四元数の関係式$i^2=j^2=k^2=ijk=-1,\ ij=k$がそのまま再現されます。
-
-&&&fml 四元数の行列表現
-$$
-i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
-$$
-&&&
-
-&&&rem
-2乗して$+I$になるエルミートなパウリ行列と、2乗して$-1$になる四元数の虚数単位は、$\pm i$倍で行き来します。この対応を双四元数（$\mathbb C \otimes \mathbb H$）として整理した詳細は、以前の記事を参照してください。[[pauli-qua]]
-&&&
 
 ## クリフォード代数の表現として
 
@@ -81,11 +76,92 @@ $$
 \operatorname{Cl}_2(\mathbb C) \cong \mathbb C(2)
 $$
 
-に対応します。この「複素係数では2個の生成元」という見方が、次節の一般化の出発点です。
+に対応します。
+
+## 双四元数との関係
+
+係数を複素数に広げると生成元2個で足りるという見方は、前々回の分類と対応しています。2個の生成元からなる実クリフォード代数$\operatorname{Cl}_{0,2}(\mathbb R)$は四元数体$\mathbb H$と同型であり、複素クリフォード代数は実クリフォード代数の複素化として得られました。[[clif-rep]] これらを合わせると、次の同型が得られます。
+
+$$
+\operatorname{Cl}_2(\mathbb C)
+\cong \mathbb C \otimes \operatorname{Cl}_{0,2}(\mathbb R)
+\cong \mathbb C \otimes \mathbb H
+$$
+
+この$\mathbb C \otimes \mathbb H$は**双四元数 (biquaternion)** と呼ばれます。[[pauli-qua]] 複素数と四元数の虚数単位を区別するため、複素数の虚数単位を$h$と書き、テンソル積の記号は省略します。$h$は係数側の元なので四元数の$i,j,k$と可換で、$h^2=-1$を満たします。一般の双四元数は実8次元の元
+
+$$
+a_0+a_1h+a_2i+a_3hi+a_4j+a_5hj+a_6k+a_7hk
+\quad (a_0,\dots,a_7 \in \mathbb R)
+$$
+
+として表されます。
+
+パウリ行列は2乗が$+I$でした。双四元数の側でこれに対応するのは、2乗が$+1$となる元です。
+
+$$
+(hi)^2 = h^2i^2 = (-1)(-1) = 1
+$$
+
+$hj,hk$も同様なので、次の対応が得られます。
+
+&&&fml パウリ行列と双四元数の対応
+$$
+\sigma_x \cong hi, \quad \sigma_y \cong hj, \quad \sigma_z \cong hk
+$$
+&&&
+
+冒頭で確認した関係式は、この対応によって成分計算なしに再現できます。
+
+$$
+\begin{aligned}
+\sigma_x\sigma_y &\cong (hi)(hj) = h^2(ij) = -k = h(hk) \cong i\sigma_z \\
+\sigma_x\sigma_y\sigma_z &\cong (hi)(hj)(hk) = h^3(ijk) = (-h)(-1) = h \cong iI
+\end{aligned}
+$$
+
+2行目は、複素係数の$i$が双四元数では$h$に対応することを示しています。
+
+双四元数の基底のうち$1,i,j,k$が張る実部分代数は、四元数$\mathbb H$そのものです。つまり双四元数の中には四元数が含まれています。これをパウリ行列の側から取り出します。
+
+## 四元数との関係
+
+四元数の虚数単位$i,j,k$は、対応$\sigma_x \cong hi,\ \sigma_y \cong hj,\ \sigma_z \cong hk$から$h$を取り除けば得られます。$h^2=-1$より、$-h$を掛ければ$h$が消えます。
+
+$$
+-h(hi) = -h^2i = i, \quad -h(hj) = j, \quad -h(hk) = k
+$$
+
+複素係数の$i$が双四元数の$h$に対応していたので、$-h$を掛けることはパウリ行列を$-i$倍することに対応します。
+
+&&&fml 四元数の行列表現
+$$
+i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
+$$
+&&&
+
+行列の側で直接確認すると、2乗は$-I$に反転し
+
+$$
+(-i\sigma_x)^2 = (-i\sigma_y)^2 = (-i\sigma_z)^2 = -I
+$$
+
+積は
+
+$$
+(-i\sigma_x)(-i\sigma_y) = -\sigma_x\sigma_y = -i\sigma_z, \quad
+(-i\sigma_x)(-i\sigma_y)(-i\sigma_z) = (-i)^3(iI) = -I
+$$
+
+となり、四元数の関係式$i^2=j^2=k^2=ijk=-1,\ ij=k$がそのまま再現されます。
+
+&&&rem
+2乗して$+I$になるエルミートなパウリ行列と、2乗して$-1$になる四元数の虚数単位は、このように$\pm h$倍（$\pm i$倍）で行き来します。詳細は以前の記事を参照してください。[[pauli-qua]]
+&&&
 
 # クロック行列とシフト行列
 
-$\sigma_z,\sigma_x$を、成分の形ではなく基底ベクトル$e_0,e_1$への作用で捉え直します。
+複素係数では$\sigma_x,\sigma_z$の2個の生成元で足りるという見方を出発点に、一般化を進めます。まず$\sigma_z,\sigma_x$を、成分の形ではなく基底ベクトル$e_0,e_1$への作用で捉え直します。
 
 - $\sigma_z$は$e_0,e_1$を$\pm1$倍します。$\pm1$は1の平方根です。
 - $\sigma_x$は$e_0,e_1$を入れ替えます。すなわち巡回シフトです。
@@ -180,7 +256,7 @@ $$
 
 $n=2$の一般化パウリ行列は$I,\ \sigma_x,\ \sigma_z,\ \sigma_x\sigma_z=-i\sigma_y$で、位相（1の冪根や$\pm i$倍）を除けば単位行列とパウリ行列に一致します。
 
-## 九元数との対応
+## シルベスターの九元数との対応
 
 $n=3$の場合を、シルベスターの九元数と比較します。[[qua-nonion]] 九元数の記事では$\rho=e^{2\pi i/3}$として、関係式
 
@@ -483,18 +559,15 @@ $$
 &&&
 パウリ行列：トレースが$0$の2×2エルミート行列の実基底
 $$
-i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z, \quad
-\operatorname{Cl}_{3,0}(\mathbb R) \cong \mathbb C(2)
+i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
+$$
+$$
+\operatorname{Cl}_{3,0}(\mathbb R) \cong \mathbb C(2) \cong \operatorname{Cl}_2(\mathbb C) \cong \mathbb C \otimes \mathbb H
 $$
 一般化パウリ行列：$\mathbb C(n)$の複素基底
 $$
 X^n = Z^n = I, \quad ZX = \omega XZ, \quad
 X^aZ^b \ (0 \le a,b < n)
-$$
-九元数（$n=3$）
-$$
-u = ZX, \quad v = Z^2X, \quad
-\text{九元数} \cong \mathbb C(3)
 $$
 一般化クリフォード代数
 $$
