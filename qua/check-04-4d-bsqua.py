@@ -10,6 +10,10 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
    subalgebra, and each summand is a quaternion algebra (so the
    split-biquaternion is isomorphic to 2H).
 4. T is a homomorphism on the even subalgebra: T(xy) = T(x)T(y).
+   The diagonal (pair) representation X' + omega X'' -> diag(X'+X'', X'-X''):
+   pair(x) = (T(x), T(x^dagger)) multiplies componentwise, pair(omega) =
+   (1, -1), pair((1+omega)/2) = (1, 0) (a literal projection matrix), and
+   dagger swaps the two components.
 5. For random unit vectors m, n (r = mn, r_L = nm*, r_R = m*n):
    - the quaternion rotation r_L q r_R matches the Clifford rotation
      (nm)v(mn) under 1 <-> e1, i <-> e2, j <-> e3, k <-> e4;
@@ -28,12 +32,17 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
    to -1 and anticommute; u2u3 = e4e3 (=i), u3u1 = e2e4 (=j),
    u1u2 = e3e2 (=k), u1u2u3 = -omega; and omega*i = e1e2 = u1 etc., so
    grade 1 of Cl_{0,3} carries omega*i, omega*j, omega*k.
-8. Double rotations: omega swaps paired bivectors, so the sums/differences
-   e1e2 +- e4e3 are invariant/sign-flipped (self-dual/anti-self-dual); the
-   normal-form rotation with angles (t1, t2) in the e1e2/e4e3 planes equals
-   exp((t1-t2)/2 i) q exp((t1+t2)/2 i); and for a general bivector B,
-   exp(-B) v exp(B) matches r_L q r_R with r_R = exp(T(B)),
-   r_L = exp(-T(B^dagger)).
+8. Double rotations: left multiplication by exp(a i) rotates the (1,i) and
+   (j,k) planes both by a (isoclinic), right multiplication by exp(b i)
+   rotates (1,i) by b and (j,k) by -b, so exp(a i) q exp(b i) rotates (1,i)
+   by a+b and (j,k) by a-b; omega swaps paired bivectors, so the
+   sums/differences e1e2 +- e4e3 are invariant/sign-flipped
+   (self-dual/anti-self-dual); the normal-form rotation with angles (t1, t2)
+   in the e1e2/e4e3 planes rotates e1 -> e2 by t1 and e4 -> e3 by t2 and
+   equals exp((t1-t2)/2 i) q exp((t1+t2)/2 i); replacing t1 by t1 + 2 pi
+   keeps the rotation but flips both r_L and r_R (double cover); and for a
+   general bivector B, exp(-B) v exp(B) matches r_L q r_R with
+   r_R = exp(T(B)), r_L = exp(-T(B^dagger)).
 9. L_p R_{q*} for unit quaternions p, q is an SO(4) matrix (orthogonal,
    determinant 1), and (p, q), (-p, -q) give the same matrix: the tensor
    product SU(2) (x) SU(2) = SO(4) collapses the sign of the pair.
@@ -172,6 +181,22 @@ for _ in range(100):
     y = {b: random.uniform(-1, 1) for b in even_basis}
     assert qeq(T(mul(x, y)), qmul(T(x), T(y)))
 
+# the diagonal (pair) representation: X'+omega X'' -> diag(X'+X'', X'-X'')
+def pair(x):  # (sum, difference) components of an even element
+    return T(x), T(dagger(x))
+
+assert qeq(pair(OMEGA)[0], (1, 0, 0, 0)) and qeq(pair(OMEGA)[1], (-1, 0, 0, 0))
+assert qeq(pair(smul(0.5, add(ONE, OMEGA)))[0], (1, 0, 0, 0))  # eps -> diag(1,0)
+assert qeq(pair(smul(0.5, add(ONE, OMEGA)))[1], (0, 0, 0, 0))
+for _ in range(50):
+    x = {b: random.uniform(-1, 1) for b in even_basis}
+    y = {b: random.uniform(-1, 1) for b in even_basis}
+    xy = mul(x, y)  # componentwise product: diag(A,B) diag(C,D) = diag(AC,BD)
+    assert qeq(pair(xy)[0], qmul(pair(x)[0], pair(y)[0]))
+    assert qeq(pair(xy)[1], qmul(pair(x)[1], pair(y)[1]))
+    assert qeq(pair(dagger(x))[0], pair(x)[1])  # dagger swaps the components
+    assert qeq(pair(dagger(x))[1], pair(x)[0])
+
 # --- check 5: rotation r_L q r_R matches (nm)v(mn), and rotor formulas ------
 
 def rand_unit():
@@ -290,6 +315,18 @@ def qexp_im(v):  # exp of a pure-imaginary quaternion
     s = math.sin(t) / t
     return (math.cos(t), s * v[1], s * v[2], s * v[3])
 
+def rot2(t):
+    return np.array([[math.cos(t), -math.sin(t)], [math.sin(t), math.cos(t)]])
+
+# isoclinic composition: exp(a i) q exp(b i) rotates the (1,i) plane by a+b
+# and the (j,k) plane by a-b (each one-sided factor is isoclinic)
+for _ in range(20):
+    a, b = random.uniform(-3, 3), random.uniform(-3, 3)
+    want = np.zeros((4, 4))
+    want[:2, :2], want[2:, 2:] = rot2(a + b), rot2(a - b)
+    got = Lmat(qexp_im((0, a, 0, 0))) @ Rmat(qexp_im((0, b, 0, 0)))
+    assert np.allclose(got, want)
+
 BIVECTORS = [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
 for _ in range(50):
     # normal form: angles t1 in the e1e2 plane, t2 in the e4e3 plane
@@ -303,6 +340,17 @@ for _ in range(50):
     want = mul(mul(rinv, vec(v)), r)
     got = qmul(qmul(rl, tuple(v)), rr)
     assert all(abs(want.get((a + 1,), 0) - got[a]) < 1e-7 for a in range(4))
+
+    # the normal form rotates e1 -> e2 by t1 and e4 -> e3 by t2
+    got1 = mul(mul(rinv, E(1)), r)
+    assert eq(got1, add(smul(math.cos(t1), E(1)), smul(math.sin(t1), E(2))))
+    got4 = mul(mul(rinv, E(4)), r)
+    assert eq(got4, add(smul(math.cos(t2), E(4)), smul(math.sin(t2), E(3))))
+
+    # t1 -> t1 + 2 pi: same rotation, but both rotors flip sign
+    rl2 = qexp_im((0, (t1 + 2 * math.pi - t2) / 2, 0, 0))
+    rr2 = qexp_im((0, (t1 + 2 * math.pi + t2) / 2, 0, 0))
+    assert qeq(rl2, tuple(-c for c in rl)) and qeq(rr2, tuple(-c for c in rr))
 
     # general rotor exp(B): r_R = exp(T(B)), r_L = exp(-T(B^dagger))
     B = {b: random.uniform(-1, 1) for b in BIVECTORS}
