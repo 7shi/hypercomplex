@@ -11,7 +11,7 @@
 1. [複素数とSO(2)](01-u1-so2.md) — 複素数から構成されるリー群$\operatorname{U}(1)$を例に、リー群とリー代数の基本概念（指数写像、基底、括弧積）を説明します。複素数の行列表現を通じて$\operatorname{SO}(2)$との同型を示します。
 2. [四元数とSU(2)](02-su2-so3.md) — 四元数から構成されるリー群$\operatorname{Sp}(1) \cong \operatorname{SU}(2)$。非可換な括弧積が外積と一致することを見て、共役作用による$\operatorname{SO}(3)$の2重被覆とリー代数の同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$を示します。
 3. [クリフォード代数とSpin(3)](03-spin.md) — 四元数の背後にあるクリフォード代数と$\operatorname{Spin}$群を導入し、$\operatorname{SO}(3)$の2重被覆$\operatorname{Spin}(3)$とスピノルを扱います。パウリ行列が生成するクリフォード代数の偶部分代数として、四元数と$\operatorname{Spin}(3)$を具体的に構成し直します。
-4. [Spin(4)とSO(4)](04-spin4.md) — 四元数を4次元空間として左右から独立に挟む作用によって、$\operatorname{SO}(4)$のすべての回転を構成します。二重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$が、$\operatorname{Cl}_{3,1}(\mathbb{R}) \cong M_4(\mathbb{R})$と$\operatorname{Cl}_{4,0}(\mathbb{R}) \cong M_2(\mathbb{H})$という2つのクリフォード代数のそれぞれにどう現れるかを見ます。
+4. [Spin(4)とSO(4)](04-spin4.md) — 四元数を4次元空間として左右から独立に挟む作用によって、$\operatorname{SO}(4)$のすべての回転を構成します。二重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$が、$C\ell_{3,1}(\mathbb{R}) \cong M_4(\mathbb{R})$と$C\ell_{4,0}(\mathbb{R}) \cong M_2(\mathbb{H})$という2つのクリフォード代数のそれぞれにどう現れるかを見ます。
 5. [SO(3)の複素化とSU(3)](05-su3.md) — $\operatorname{SO}(3)$の構造を複素化して$\operatorname{SU}(3)$を構成する、数体系に頼らない初めてのリー群です。ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$、構造定数について扱います。
 
 ## 今後の予定
@@ -59,4 +59,4 @@
 - [check-02-quaternion.py](check-02-quaternion.py) — 02-su2-so3.md の数式の数値検証。四元数の行列表現とシルベスター条件、括弧積と外積の関係、共役作用による$\operatorname{SO}(3)$の2重被覆、$\mathfrak{su}(2)\cong\mathfrak{so}(3)$の構造定数の一致を確認します。
 - [check-03-spin.py](check-03-spin.py) — 03-spin.md の数式の数値検証。スピノルの2重被覆性、外積からのパウリ行列の抽出と単位ベクトルへの対応、パウリ行列によるグレード分解と偶部分代数が四元数と同型になることを確認します。
 - [check-04-spin4.py](check-04-spin4.py) — 04-spin4.md の数式の数値検証。両側作用$pxq^{-1}$による$\operatorname{SO}(4)$の2重被覆と$\mathfrak{so}(4)\cong\mathfrak{sp}(1)\oplus\mathfrak{sp}(1)$、$L_pR_{q^{-1}}$が具体的なブロック対角の$\operatorname{SO}(4)$回転行列になること（$q=p$の特殊化で02の$\operatorname{SO}(3)$回転行列に一致）、左右作用の行列表現$L_uR_v$が張る$C\ell_{3,1}\cong M_4(\mathbb{R})$、射影とスピノルの復元式、$\gamma(v)$による$C\ell_{4,0}\cong M_2(\mathbb{H})$の構成と半スピノルへの分裂を確認します。
-- [check-05-su3.py](check-05-su3.py) — 05-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、パウリ行列から引き継がれる役割と引き継がれない役割（スピノル外積・クリフォード関係・クロック＆シフト行列）、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つこと、$C\ell(6,0)$の半スピノル表現によるスピノル固定部分群$\operatorname{SU}(3) \subset \operatorname{Spin}(6) \cong \operatorname{SU}(4)$を確認します。
+- [check-05-su3.py](check-05-su3.py) — 05-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、パウリ行列から引き継がれる役割と引き継がれない役割（スピノル外積・クリフォード関係・クロック＆シフト行列）、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つこと、$C\ell_{6,0}(\mathbb{R})$の半スピノル表現によるスピノル固定部分群$\operatorname{SU}(3) \subset \operatorname{Spin}(6) \cong \operatorname{SU}(4)$を確認します。
