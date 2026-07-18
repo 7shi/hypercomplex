@@ -6,7 +6,9 @@ giving the same rotation (double cover); the left/right generators
 commuting and totaling 6 dimensions (so(4) = sp(1) + sp(1)); the 4x4
 matrix representations of left/right action (Lu*Lv=Luv, Ru*Rv=Rvu,
 left-right commutativity) and the 16 products Lu*Rv spanning M4(R);
-p*x*q^-1 = Lp*R(q^-1); the signs of the squares of the basis Lu*Rv (6
+p*x*q^-1 = Lp*R(q^-1) as the explicit block-diagonal SO(4) rotation matrix
+(angles alpha-beta, alpha+beta), whose q=p specialization embeds the SO(3)
+matrix exp(theta*Jx) from 02-su2-so3.md; the signs of the squares of the basis Lu*Rv (6
 one-sided give -I, 9 two-sided give +I); that mutually anticommuting
 sets have size at most 5 (by exhaustive search); the generators (LiRi,
 LjRi, LkRi, Rj) forming Cl(3,1) = M4(R) with volume element -Rk; the
@@ -116,6 +118,24 @@ prods = [a@b for a in (I4, Li, Lj, Lk) for b in (I4, Ri, Rj, Rk)]
 print("16 products L_u R_v are linearly independent (span M_4(R)):",
       np.linalg.matrix_rank(np.column_stack([m.flatten() for m in prods])) == 16)
 print("p x q^{-1} = L_p R_{q^-1} as matrices:", np.allclose(M4, L(P) @ Rr(R.conj().T)))
+
+# L_p R_{q^-1} with p=exp(i alpha), q=exp(i beta) is a block-diagonal SO(4) rotation:
+# (1,i)-plane by alpha-beta, (j,k)-plane by alpha+beta; beta=alpha embeds an SO(3) rotation
+Lp, Rqinv = L(expm(qi*alpha)), Rr(expm(-qi*beta))
+block = np.array([
+    [np.cos(alpha-beta), -np.sin(alpha-beta), 0, 0],
+    [np.sin(alpha-beta),  np.cos(alpha-beta), 0, 0],
+    [0, 0,  np.cos(alpha+beta), -np.sin(alpha+beta)],
+    [0, 0,  np.sin(alpha+beta),  np.cos(alpha+beta)],
+])
+print("L_p R_{q^-1} is the block-diagonal SO(4) rotation matrix (angles alpha-beta, alpha+beta):",
+      np.allclose(Lp @ Rqinv, block))
+theta = 2*alpha
+Jx = np.array([[0,0,0],[0,0,-1],[0,1,0]], dtype=float)  # acts on (i,j,k), fixes i
+so3_embed = np.eye(4)
+so3_embed[1:, 1:] = expm(theta*Jx).real  # embeds into (1,i,j,k), also fixing scalar 1
+print("beta=alpha (conjugation) embeds the SO(3) matrix exp(theta Jx) fixing (1,i):",
+      np.allclose(L(expm(qi*alpha)) @ Rr(expm(-qi*alpha)), so3_embed))
 
 # neutral-signature Clifford algebra: (L_i, L_j, L_kR_i, L_kR_j) generate Cl_{2,2} = M_4(R)
 def subset_products(gens):
