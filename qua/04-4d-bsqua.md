@@ -532,7 +532,7 @@ r_R=\exp\left(\frac\theta2T(\varphi(p))\right)=T(\varphi(r)),\quad
 r_L=\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right)=T(\varphi(r)^{\dagger})^{-1}
 $$
 
-が成り立つ。回転子が$\cos\frac\theta2+\sin\frac\theta2\,p$と書ける場合、すなわち$p^2=-1$のときは、準同型性より$q_R^2=T(\varphi(p^2))=-1$、同様に$q_L^2=-1$となるため、$q_L,q_R$は単位虚四元数で、指数関数は$r_L=\cos\frac\theta2+\sin\frac\theta2\,q_L$、$r_R=\cos\frac\theta2+\sin\frac\theta2\,q_R$を与える。
+が成り立つ。
 &&&
 
 &&&rem 左右の回転子と直和分解
@@ -595,9 +595,9 @@ r_L=\exp\left(\frac\theta2\,q_L\right), \quad
 r_R=\exp\left(\frac\theta2\,q_R\right)
 $$
 $$
-\begin{alignedat}{3}
-q_L&=-&&T(\varphi(p)^{\dagger})&&=(p_{12}-p_{43})i+(p_{13}-p_{24})j+(p_{14}-p_{32})k \\
-q_R&= &&T(\varphi(p))&&=(p_{12}+p_{43})i+(p_{13}+p_{24})j+(p_{14}+p_{32})k
+\begin{alignedat}{2}
+q_L&=T(\varphi(p)^{\dagger})^{-1}&&=(p_{12}-p_{43})i+(p_{13}-p_{24})j+(p_{14}-p_{32})k \\
+q_R&= T(\varphi(p))&&=(p_{12}+p_{43})i+(p_{13}+p_{24})j+(p_{14}+p_{32})k
 \end{alignedat}
 $$
 &&&
