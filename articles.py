@@ -114,7 +114,8 @@ def extract_md() -> list[tuple[str, str]]:
             except ValueError:
                 continue
             key = rel.as_posix()
-            if key.endswith("README.md") or key in seen:
+            stem = Path(key).stem
+            if stem.isupper() or key in seen:
                 continue
             seen.add(key)
             rows.append((key, title.strip()))

@@ -29,8 +29,6 @@ date	url	md	title
 2024/05/24	/articles/co6jC5vshPXR0EgmAjX3	hopf/02-spinor-tensor.md	四元数とホップファイブレーション 2 スピノルのテンソル積
 2024/05/21	/articles/2HkSkfawcYJYgE6rVgu6	misc/spherical-coords.md	一般次元における球座標系のバリエーション
 2024/05/14	/articles/enXfjr4Xvas6pfXLQddc	hopf/01-quaternion.md	四元数とホップファイブレーション 1 四元数からの生成
-		PLAN.md	全体構想
-		THEMES.md	テーマ別記事リスト
 		clif/01-representation.md	クリフォード代数の構造と表現
 		clif/02-split-complex.md	分解型複素数の冪等元と直和分解
 		clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
@@ -49,6 +47,7 @@ date	url	md	title
 		lie/04-spin4.md	Spin(4)とSO(4)
 		lie/05-su3.md	SO(3)の複素化とSU(3)
 		qua/04-4d-bsqua.md	4次元回転と双四元数：SO(4)とSpin(4)
+		qua/05-dual-qua.md	二重四元数と剛体変換
 		qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
 		qua/cd/grok45.md	複素数の行列表現から四元数へ：発見法的な導出
 		qua/cd/memo.md	元になったツイートスレッド
