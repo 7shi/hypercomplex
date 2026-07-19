@@ -52,6 +52,22 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
     square to -1 and anticommute, generating Cl_{0,2} = H; in Cl_{0,4},
     u_a = e1 e_{a+1} square to -1 and anticommute (Cl_{0,3}) and
     omega^2 = +1, matching Cl_{4,0}.
+11. Isoclinic rotors for a general axis u = xi + yj + zk: with b = e1 n
+    (n = x e2 + y e3 + z e4) and omega b its orthogonal complement,
+    b^2 = (omega b)^2 = -1 and b (omega b) = (omega b) b = -omega;
+    exp(al/2 (1-omega) b) realizes the left action exp(al u) q and
+    exp(be/2 (1+omega) b) the right action q exp(be u); their product in
+    either order is the double rotation exp((al+be)/2 b + (be-al)/2 omega b);
+    and (1-omega)B1 (1+omega)B2 = 0 in both orders for any bivectors B1, B2,
+    so left and right isoclinic rotors commute even for different axes.
+12. The frame lemma and the +-omega split behind the shortened proof: for
+    orthonormal pure u, w with m = uw, the frame product e1 n w^ m^ equals
+    omega and omega b = m^ w^ (the second plane oriented uw -> w);
+    exp(a u) w = cos a w + sin a uw and (uw) exp(c u) = cos c uw + sin c w;
+    a general exponent B collapses as (1-omega)B = (1-omega)bL and
+    (1+omega)B = (1+omega)bR where bL, bR carry the q_L, q_R components,
+    exp(B) factors into the two isoclinic rotors, and the rotation acts as
+    the left/right multiplications by exp of those components.
 """
 
 import math
@@ -395,5 +411,109 @@ for a in range(3):
     for b in range(a + 1, 3):
         assert eq(mul(us[a], us[b], sq04), smul(-1, mul(us[b], us[a], sq04)))
 assert eq(mul(OMEGA, OMEGA, sq04), ONE)
+
+# --- check 11: isoclinic rotors for a general axis u -------------------------
+
+for _ in range(50):
+    xyz = [random.gauss(0, 1) for _ in range(3)]
+    nrm = sum(c * c for c in xyz) ** 0.5
+    x, y, z = (c / nrm for c in xyz)
+    b = {(1, 2): x, (1, 3): y, (1, 4): z}  # b = e1 n, the (1,u) plane
+    wb = mul(OMEGA, b)                     # its orthogonal complement
+    assert eq(wb, {(3, 4): -x, (2, 4): y, (2, 3): -z})  # x e4e3 + y e2e4 + z e3e2
+    assert eq(mul(b, b), smul(-1, ONE))
+    assert eq(mul(wb, wb), smul(-1, ONE))
+    assert eq(mul(b, wb), mul(wb, b))
+    assert eq(mul(b, wb), smul(-1, OMEGA))
+
+    al, be = random.uniform(-3, 3), random.uniform(-3, 3)
+    rm = cl_exp(smul(al / 2, sub(b, wb)))  # exp(al/2 (1-omega) b): left
+    rp = cl_exp(smul(be / 2, add(b, wb)))  # exp(be/2 (1+omega) b): right
+    v = rand_unit()
+
+    # left isoclinic rotation: exp(al u) q
+    got = qmul(qexp_im((0, al * x, al * y, al * z)), tuple(v))
+    want = mul(mul(cl_exp(smul(-al / 2, sub(b, wb))), vec(v)), rm)
+    assert all(abs(want.get((a + 1,), 0) - got[a]) < 1e-7 for a in range(4))
+
+    # right isoclinic rotation: q exp(be u)
+    got = qmul(tuple(v), qexp_im((0, be * x, be * y, be * z)))
+    want = mul(mul(cl_exp(smul(-be / 2, add(b, wb))), vec(v)), rp)
+    assert all(abs(want.get((a + 1,), 0) - got[a]) < 1e-7 for a in range(4))
+
+    # composition: the rotors commute and the exponents add up to the
+    # double rotation with t1 = al + be, t2 = be - al
+    comp = cl_exp(add(smul((al + be) / 2, b), smul((be - al) / 2, wb)))
+    assert eq(mul(rm, rp), comp, tol=1e-7)
+    assert eq(mul(rp, rm), comp, tol=1e-7)
+
+# (1-omega)B1 and (1+omega)B2 multiply to zero in both orders, so left and
+# right isoclinic rotors commute even for different axes
+for _ in range(20):
+    B1 = {b2: random.uniform(-1, 1) for b2 in BIVECTORS}
+    B2 = {b2: random.uniform(-1, 1) for b2 in BIVECTORS}
+    Xm = mul(sub(ONE, OMEGA), B1)
+    Xp = mul(add(ONE, OMEGA), B2)
+    assert eq(mul(Xm, Xp), {}) and eq(mul(Xp, Xm), {})
+    assert eq(mul(cl_exp(Xm), cl_exp(Xp)), mul(cl_exp(Xp), cl_exp(Xm)), tol=1e-7)
+
+# --- check 12: frame lemma and the +-omega split of a general rotor ----------
+
+# frame lemma: for orthonormal pure u, w with m = uw, e1 n w^ m^ = omega and
+# omega b = m^ w^, so the second plane is (w, uw) oriented uw -> w; the
+# quaternion actions on that plane are the stated plane rotations
+for _ in range(30):
+    u3 = [random.gauss(0, 1) for _ in range(3)]
+    nrm = sum(c * c for c in u3) ** 0.5
+    u3 = [c / nrm for c in u3]
+    while True:
+        t3 = [random.gauss(0, 1) for _ in range(3)]
+        d = sum(s * t for s, t in zip(u3, t3))
+        t3 = [t - d * s for s, t in zip(u3, t3)]
+        nrm = sum(c * c for c in t3) ** 0.5
+        if nrm > 1e-6:
+            break
+    w3 = [c / nrm for c in t3]
+    uq, wq = (0, *u3), (0, *w3)
+    mq = qmul(uq, wq)  # m = uw, orthonormal to 1, u, w
+    n, wv, mv = vec(list(uq)), vec(list(wq)), vec(list(mq))
+    assert eq(mul(mul(mul(E(1), n), wv), mv), OMEGA)
+    b = mul(E(1), n)
+    assert eq(mul(OMEGA, b), mul(mv, wv))
+
+    a, c = random.uniform(-3, 3), random.uniform(-3, 3)
+    ea = qexp_im((0, a * u3[0], a * u3[1], a * u3[2]))
+    ec = qexp_im((0, c * u3[0], c * u3[1], c * u3[2]))
+    # exp(a u) w = cos a w + sin a uw: the left action rotates w -> uw by a
+    want = tuple(math.cos(a) * s + math.sin(a) * t for s, t in zip(wq, mq))
+    assert qeq(qmul(ea, wq), want)
+    # (uw) exp(c u) = cos c uw + sin c w: the right action rotates uw -> w by c
+    want = tuple(math.cos(c) * s + math.sin(c) * t for s, t in zip(mq, wq))
+    assert qeq(qmul(mq, ec), want)
+
+# +-omega split: (1-omega)B = (1-omega)bL and (1+omega)B = (1+omega)bR where
+# bL, bR carry the difference/sum (q_L, q_R) components; exp(B) factors into
+# the left and right isoclinic rotors, which act as one-sided multiplications
+for _ in range(30):
+    B = {b2: random.uniform(-1, 1) for b2 in BIVECTORS}
+    c12, c13, c14 = B[(1, 2)], B[(1, 3)], B[(1, 4)]
+    c23, c24, c34 = B[(2, 3)], B[(2, 4)], B[(3, 4)]
+    bL = {(1, 2): c12 + c34, (1, 3): c13 - c24, (1, 4): c14 + c23}
+    bR = {(1, 2): c12 - c34, (1, 3): c13 + c24, (1, 4): c14 - c23}
+    assert eq(mul(sub(ONE, OMEGA), B), mul(sub(ONE, OMEGA), bL))
+    assert eq(mul(add(ONE, OMEGA), B), mul(add(ONE, OMEGA), bR))
+
+    r = cl_exp(B)
+    fL = cl_exp(smul(0.5, mul(sub(ONE, OMEGA), bL)))
+    fR = cl_exp(smul(0.5, mul(add(ONE, OMEGA), bR)))
+    assert eq(mul(fL, fR), r, tol=1e-7)
+    assert eq(mul(fR, fL), r, tol=1e-7)
+
+    rl = qexp_im((0, bL[(1, 2)], bL[(1, 3)], bL[(1, 4)]))
+    rr = qexp_im((0, bR[(1, 2)], bR[(1, 3)], bR[(1, 4)]))
+    v = rand_unit()
+    want = mul(mul(cl_exp(smul(-1, B)), vec(v)), r)
+    got = qmul(qmul(rl, tuple(v)), rr)
+    assert all(abs(want.get((a2 + 1,), 0) - got[a2]) < 1e-7 for a2 in range(4))
 
 print("All checks passed.")
