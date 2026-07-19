@@ -1,0 +1,744 @@
+["clif/01-representation.md"]
+
+slugs = [
+  "qua-tensor",
+  "pauli-qua",
+  "wiki-clif",
+]
+
+["clif/03-gpm-gca.md"]
+
+slugs = [
+  "pauli-qua",
+  "qua-nonion",
+  "gpm",
+  "gca",
+  "qua-tensor",
+  "clif-rep",
+  "clif-sc",
+  "wiki-fmc",
+]
+
+["clif/04-weyl-algebra.md"]
+
+slugs = [
+  "wiki-ccr",
+  "wiki-weyl-alg",
+  "gpm",
+  "lie-u1",
+  "gca",
+  "wiki-svn",
+  "weyl-qm",
+  "schwinger-uob",
+  "qua-nonion",
+]
+
+["clif/05-schrodinger.md"]
+
+slugs = [
+  "weyl-alg",
+  "wiki-schrodinger",
+  "gca",
+  "wiki-stone",
+  "gpm",
+  "wiki-tight-binding",
+  "wiki-qwalk",
+  "wiki-ehrenfest",
+  "nelson-sqm",
+]
+
+["hopf/01-quaternion.md"]
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+[["hopf/01-quaternion.md".refs]]
+slug = "7shi"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+
+[["hopf/01-quaternion.md".refs]]
+slug = "wikipedia"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Hopf_fibration"
+
+[["hopf/01-quaternion.md".refs]]
+slug = "dim7-8"
+type = "website"
+url = "https://www.dimensions-math.org/Dim_CH7_JP.htm"
+
+[["hopf/01-quaternion.md".refs]]
+slug = "7shi-hc"
+type = "mathlog"
+url = "https://mathlog.info/articles/f5v2F6yOFhqtnpDtFtcP"
+
+["hopf/02-spinor-tensor.md"]
+url = "https://mathlog.info/articles/co6jC5vshPXR0EgmAjX3"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "7shi-h"
+type = "mathlog"
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "7shi-c"
+type = "mathlog"
+url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "7shi-p"
+type = "website"
+url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "wikipedia-dp"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "dp"
+type = "website"
+url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "half"
+type = "website"
+url = "https://w3e.kanazawa-it.ac.jp/math/category/sankakukansuu/kahouteiri/henkan-tex.cgi?target=/math/category/sankakukansuu/kahouteiri/hankaku-no-kousiki.html"
+
+[["hopf/02-spinor-tensor.md".refs]]
+slug = "quantumuniverse"
+type = "website"
+url = "https://note.com/quantumuniverse/n/nfe6b404fe172"
+
+["hopf/03-bloch-density.md"]
+url = "https://mathlog.info/articles/aUC0EotUv0bdyXzusvAT"
+
+[["hopf/03-bloch-density.md".refs]]
+slug = "7shi-s"
+type = "mathlog"
+url = "https://mathlog.info/articles/co6jC5vshPXR0EgmAjX3"
+
+[["hopf/03-bloch-density.md".refs]]
+slug = "7shi-bq"
+type = "mathlog"
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
+
+[["hopf/03-bloch-density.md".refs]]
+slug = "7shi-h"
+type = "mathlog"
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+["hopf/04-extension.md"]
+
+slugs = [
+  "7shi-h",
+  "7shi-oct",
+]
+
+["hopf/05-entanglement.md"]
+
+slugs = [
+  "7shi-ext",
+  "7shi-s",
+  "7shi-bd",
+  "7shi-tensor",
+  "7shi-h",
+  "7shi-oct",
+  "lie-su3",
+  "mosseri",
+  "bernevig",
+]
+
+["hopf/06-clifford-gates.md"]
+
+slugs = [
+  "7shi-ent",
+  "7shi-s",
+  "7shi-bd",
+  "7shi-spin",
+  "7shi-su2",
+  "7shi-rot",
+  "pauli-qua",
+  "brw",
+  "nielsen-chuang",
+  "7shi-tensor",
+  "gottesman",
+  "gpm",
+  "weyl-alg",
+]
+
+["hopf/c2-to-s2.md"]
+url = "https://mathlog.info/articles/OHZI3f5bQ4hB0S7dn6lv"
+
+[["hopf/c2-to-s2.md".refs]]
+slug = "7shi-hopf1"
+type = "mathlog"
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+["hopf/homogeneous.md"]
+url = "https://mathlog.info/articles/f5v2F6yOFhqtnpDtFtcP"
+
+[["hopf/homogeneous.md".refs]]
+slug = "hopf1931"
+type = "paper"
+
+[["hopf/homogeneous.md".refs]]
+slug = "7shi-mobius"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2025/01/01/071325"
+
+[["hopf/homogeneous.md".refs]]
+slug = "7shi-qhopf1"
+type = "mathlog"
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+["lie/01-u1-so2.md"]
+url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
+
+[["lie/01-u1-so2.md".refs]]
+slug = "7shi-group"
+type = "mathlog"
+url = "https://mathlog.info/articles/e4aD1MZfKjQKcNO4ilRG"
+
+["lie/02-su2-so3.md"]
+url = "https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj"
+
+[["lie/02-su2-so3.md".refs]]
+slug = "7shi-lie1"
+type = "mathlog"
+url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
+
+[["lie/02-su2-so3.md".refs]]
+slug = "7shi-qmat"
+type = "mathlog"
+url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
+
+[["lie/02-su2-so3.md".refs]]
+slug = "7shi-qrot"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+
+["lie/03-spin.md"]
+
+slugs = [
+  "7shi-lie2",
+  "7shi-hopf1",
+  "7shi-su2",
+]
+
+["lie/04-spin4.md"]
+
+slugs = [
+  "7shi-spin",
+  "7shi-su2",
+]
+
+["misc/epsilon-euler-lagrange.md"]
+url = "https://mathlog.info/articles/XYc7CpVJFqivkuseQCQS"
+
+[["misc/epsilon-euler-lagrange.md".refs]]
+slug = "wiki-en-eleq"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation"
+
+[["misc/epsilon-euler-lagrange.md".refs]]
+slug = "7shi-ibp"
+type = "mathlog"
+url = "https://mathlog.info/articles/hdHs4JasRbf9uSo26mFd"
+
+[["misc/epsilon-euler-lagrange.md".refs]]
+slug = "7shi-diff"
+type = "mathlog"
+url = "https://mathlog.info/articles/ndkq7Dj2xrcnT7oiRYey"
+
+["misc/exp-maclaurin-integral.md"]
+url = "https://mathlog.info/articles/uxSj6AJC0J03WRk0h3r7"
+
+[["misc/exp-maclaurin-integral.md".refs]]
+slug = "rn-picard"
+type = "website"
+url = "https://math-note.xyz/analysis/differential-equation/picard-iteration/"
+
+[["misc/exp-maclaurin-integral.md".refs]]
+slug = "wiki-picard"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%BC%E3%83%AB%E3%81%AE%E9%80%90%E6%AC%A1%E8%BF%91%E4%BC%BC%E6%B3%95"
+
+[["misc/exp-maclaurin-integral.md".refs]]
+slug = "masuo-maclaurin"
+type = "website"
+url = "https://manabitimes.jp/math/570"
+
+["misc/integration-by-parts.md"]
+url = "https://mathlog.info/articles/hdHs4JasRbf9uSo26mFd"
+
+[["misc/integration-by-parts.md".refs]]
+slug = "wiki-df"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%95%B0%E3%81%AE%E5%BE%AE%E5%88%86"
+
+["misc/spherical-coords.md"]
+url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
+
+[["misc/spherical-coords.md".refs]]
+slug = "wikipedia"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
+
+[["misc/spherical-coords.md".refs]]
+slug = "wikipedia-s3"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
+
+[["misc/spherical-coords.md".refs]]
+slug = "7shi"
+type = "mathlog"
+url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
+
+[["misc/spherical-coords.md".refs]]
+slug = "7shi-2"
+type = "mathlog"
+url = "https://mathlog.info/articles/co6jC5vshPXR0EgmAjX3"
+
+["misc/variable-dependence.md"]
+url = "https://mathlog.info/articles/ndkq7Dj2xrcnT7oiRYey"
+
+[["misc/variable-dependence.md".refs]]
+slug = "7shi-eleq"
+type = "mathlog"
+url = "https://mathlog.info/articles/XYc7CpVJFqivkuseQCQS"
+
+["oct/01-octonion.md"]
+url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
+
+[["oct/01-octonion.md".refs]]
+slug = "oct-7rot"
+type = "mathlog"
+url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
+
+[["oct/01-octonion.md".refs]]
+slug = "wiki-norm"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%83%A0%E5%A4%9A%E5%85%83%E4%BD%93"
+
+[["oct/01-octonion.md".refs]]
+slug = "7shi-480"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+
+[["oct/01-octonion.md".refs]]
+slug = "oct-nonassoc"
+type = "mathlog"
+url = "https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN"
+
+[["oct/01-octonion.md".refs]]
+slug = "oct-cl6"
+type = "mathlog"
+url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
+
+["oct/02-7d-3rot.md"]
+url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "oct"
+type = "mathlog"
+url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "7shi-oct"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2017/12/04/235635"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "7shi-rot"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "nakajima"
+type = "website"
+url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "7shi-coord"
+type = "mathlog"
+url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "wiki-alt"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "7shi-rod"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
+
+[["oct/02-7d-3rot.md".refs]]
+slug = "7shi-gist"
+type = "website"
+url = "https://x.com/7shi/status/1805277382703751383"
+
+["oct/03-oct-left-mul.md"]
+url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "oct"
+type = "mathlog"
+url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "ref1"
+type = "paper"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "ref2"
+type = "paper"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "furey1"
+type = "website"
+url = "https://www.youtube.com/watch?v=Vs01SH8tlX0"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "furey2"
+type = "paper"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "q-rm"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/02/24/042840"
+
+[["oct/03-oct-left-mul.md".refs]]
+slug = "7shi-qrot"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+
+["oct/nonassociativity.md"]
+url = "https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN"
+
+[["oct/nonassociativity.md".refs]]
+slug = "7shi-oct480"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+
+[["oct/nonassociativity.md".refs]]
+slug = "wiki-alt"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+
+["qua/01-pauli-qua.md"]
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "wiki-bc"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "wiki-bq"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Biquaternion"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-qcl"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2018/08/27/054921"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-vec3"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/10/03/182512"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-pcoord"
+type = "mathlog"
+url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-vge"
+type = "mathlog"
+url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-mir"
+type = "mathlog"
+url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
+
+[["qua/01-pauli-qua.md".refs]]
+slug = "7shi-versor"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2022/09/10/015946"
+
+["qua/02-nonion.md"]
+url = "https://mathlog.info/articles/3gMUAXJD714J2LtlfIqU"
+
+[["qua/02-nonion.md".refs]]
+slug = "nonion"
+type = "paper"
+
+[["qua/02-nonion.md".refs]]
+slug = "sylvester"
+type = "website"
+url = "https://name.umdl.umich.edu/aas8085.0003.001"
+
+[["qua/02-nonion.md".refs]]
+slug = "kindai1"
+type = "book"
+
+[["qua/02-nonion.md".refs]]
+slug = "gpm"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
+
+[["qua/02-nonion.md".refs]]
+slug = "gca"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
+
+["qua/03-qua-tensor.md"]
+url = "https://mathlog.info/articles/Q2gHpZNKhnCki6ipol4F"
+
+[["qua/03-qua-tensor.md".refs]]
+slug = "7shi-tp"
+type = "mathlog"
+url = "https://mathlog.info/articles/OunyiPffmIKhwwdmSrsA"
+
+[["qua/03-qua-tensor.md".refs]]
+slug = "7shi-colab-cl"
+type = "website"
+url = "https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+
+[["qua/03-qua-tensor.md".refs]]
+slug = "wiki-clif"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Clifford_algebra"
+
+[["qua/03-qua-tensor.md".refs]]
+slug = "wiki-sq"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Split-quaternion"
+
+["qua/04-4d-bsqua.md"]
+
+slugs = [
+  "nakajima",
+]
+
+["qua/05-dual-qua.md"]
+
+slugs = [
+  "clifford-biq",
+  "tao-h",
+]
+
+["qua/cd/cd-to-matrix.md"]
+url = "https://mathlog.info/articles/I6V2YAJa3waOOYs01tUS"
+
+[["qua/cd/cd-to-matrix.md".refs]]
+slug = "wiki-cd"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%9D%E3%83%87%E3%82%A3%E3%82%AF%E3%82%BD%E3%83%B3%E3%81%AE%E6%A7%8B%E6%88%90%E6%B3%95"
+
+[["qua/cd/cd-to-matrix.md".refs]]
+slug = "7shi-qcm"
+type = "mathlog"
+url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
+
+["qua/cd/grok45.md"]
+
+slugs = [
+  "7shi-su2",
+  "wiki-bc",
+]
+
+["qua/cd/heuristic-cmatrix.md"]
+url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
+
+[["qua/cd/heuristic-cmatrix.md".refs]]
+slug = "7shi-qp"
+type = "mathlog"
+url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
+
+["qua/cd/matrix-to-pauli.md"]
+url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
+
+[["qua/cd/matrix-to-pauli.md".refs]]
+slug = "7shi-bq"
+type = "mathlog"
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
+
+["qua/cd/real-to-cmatrix.md"]
+url = "https://mathlog.info/articles/WemNx889eIXX9PCuUnEG"
+
+[["qua/cd/real-to-cmatrix.md".refs]]
+slug = "7shi-qrc-colab"
+type = "website"
+url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+
+[["qua/cd/real-to-cmatrix.md".refs]]
+slug = "7shi-qp"
+type = "mathlog"
+url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
+
+["qua/real-pauli-trace.md"]
+url = "https://mathlog.info/articles/Ale2XUWFasqCiU2V5Q7p"
+
+[["qua/real-pauli-trace.md".refs]]
+slug = "7shi-pbq"
+type = "mathlog"
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
+
+["qua/spherical-trig.md"]
+url = "https://mathlog.info/articles/J3DiMC0oXiq4NoszAcIL"
+
+[["qua/spherical-trig.md".refs]]
+slug = "tao-h"
+type = "website"
+url = "https://terrytao.wordpress.com/2024/12/19/quaternions-and-spherical-trigonometry/"
+
+[["qua/spherical-trig.md".refs]]
+slug = "wiki-trick"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF"
+
+["qua/spinor-ideal.md"]
+
+slugs = [
+  "7shi-oct-left-mul",
+  "clif-rep",
+]
+
+["qua/tensor-from-complex.md"]
+url = "https://mathlog.info/articles/OunyiPffmIKhwwdmSrsA"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-bc"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-bc-en"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Bicomplex_number"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-q"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%85%83%E6%95%B0"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-0d"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E9%9B%B6%E5%9B%A0%E5%AD%90"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-tp"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%BD%E3%83%AB%E7%A9%8D"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-smc"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E3%82%BB%E3%82%B0%E3%83%AC%E3%81%AE%E5%A4%9A%E9%87%8D%E8%A4%87%E7%B4%A0%E6%95%B0"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "7shi-mc"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/08/30/234952"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-bq"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Biquaternion"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "7shi-pdq"
+type = "mathlog"
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-o"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%85%83%E6%95%B0"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "wiki-bo"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E5%85%AB%E5%85%83%E6%95%B0"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "7shi-qc1"
+type = "website"
+url = "https://qiita.com/7shi/items/3504d8fa2c868620f57a"
+
+[["qua/tensor-from-complex.md".refs]]
+slug = "7shi-qc2"
+type = "website"
+url = "https://qiita.com/7shi/items/1704b58f8828601a0e6c"
+
+["vec-oct/01-reflection.md"]
+url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "7shi-ip"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2018/08/05/011022"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "proj"
+type = "website"
+url = "https://manabitimes.jp/math/2486"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "7shi-480"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "7shi-ort"
+type = "mathlog"
+url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "wiki-alt"
+type = "website"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "nakajima"
+type = "website"
+url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "7shi-hc"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2024/06/13/015329"
+
+[["vec-oct/01-reflection.md".refs]]
+slug = "wiki-clif"
+type = "website"
+url = "https://en.wikipedia.org/wiki/Clifford_algebra"
+
+["vec-oct/02-rotation.md"]
+
+slugs = [
+  "wiki-alt",
+  "nakajima",
+]
+
+["vec-oct/geometric-product-exp.md"]
+url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
+
+[["vec-oct/geometric-product-exp.md".refs]]
+slug = "7shi-clrt"
+type = "website"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+
+[["vec-oct/geometric-product-exp.md".refs]]
+slug = "7shi-vo"
+type = "mathlog"
+url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
+
+[["vec-oct/geometric-product-exp.md".refs]]
+slug = "7shi-pdq"
+type = "mathlog"
+url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"

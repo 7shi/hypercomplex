@@ -1,0 +1,10 @@
+https://7shi.hateblo.jp/entry/2020/03/07/071242 = 7shi-rot, 7shi-clrt
+https://7shi.hateblo.jp/entry/2020/09/10/054059 = 7shi, 7shi-qrot
+https://7shi.hateblo.jp/entry/2024/03/11/063519 = 7shi-480, 7shi-oct480
+https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6 = 7shi-c, 7shi-coord, 7shi-pcoord
+https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO = 7shi-qmat, 7shi-qcm
+https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0 = oct-7rot, 7shi-ort
+https://mathlog.info/articles/co6jC5vshPXR0EgmAjX3 = 7shi-s, 7shi-2
+https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc = 7shi-h, 7shi-hopf1, 7shi-qhopf1, 7shi
+https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji = 7shi-bq, 7shi-pbq, 7shi-pdq
+https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4 = 7shi-mir, 7shi-vo
