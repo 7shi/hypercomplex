@@ -17,12 +17,12 @@ Verifies dual quaternions H (x) D and their rigid-motion representation:
    (negative check); composition sigma2 sigma1 realizes the SE(3) product
    (r2 r1, t2 + r2 t1 bar(r2)); +-sigma give the same action; and
    sigma bar(sigma) = 1.
-5. Master equation with formal eps: for a planar triangle (angle sum pi,
-   sides from the law of sines) the six-factor product
-   e^{i(pi-alpha)/2} (1 + k eps b/2) e^{i(pi-gamma)/2} (1 + k eps a/2)
-   e^{i(pi-beta)/2} (1 + k eps c/2) equals -1 exactly; perturbing one side
-   or one angle breaks it (negative checks); and tracing a point 1 + eps x
-   through the six motions returns it to the start.
+5. Tangent-plane model: i + eps x with x in span(j, k) is exactly unit;
+   plain conjugation by the eps-angle rotor 1 + (eps/2) t (t in span(j, k))
+   translates x by t x i (e^{k eps a/2} by a j, e^{j eps b/2} by -b k);
+   conjugation by e^{i theta/2} fixes the base point i and rotates x in
+   the tangent plane; a finite-angle rotor about k moves the base point
+   off i (negative check).
 6. Screw motion: exp((theta + eps d)/2 (l + eps m)) matches both the
    closed form cos(theta^/2) + sin(theta^/2) L (expanded by the f(x+eps y)
    rule) and the series exp; L^2 = -1; it equals the composition
@@ -233,39 +233,36 @@ for _ in range(50):
     comp = motion(qmul(r2, r), qadd(t2, qmul(qmul(r2, t), qconj(r2))))
     assert deq(dmul(s2, s), comp)
 
-# --- check 5: the master equation holds exactly in the plane -----------------
+# --- check 5: rotations become translations in the tangent plane -------------
 
-def turn(phi):  # e^{i phi/2} as a dual quaternion
-    return (qexp_pure((0, phi / 2, 0, 0)), Q0)
+def tpoint(x):  # i + eps x with x in span(j, k)
+    return ((0, 1, 0, 0), x)
 
-def edge(x):  # 1 + k eps x/2: translation by the vector k x
-    return ((1, 0, 0, 0), (0, 0, 0, x / 2))
+def tact(s, x):  # plain conjugation sandwich s (i + eps x) bar(s)
+    return dmul(dmul(s, tpoint(x)), dbar(s))
 
-def master(alpha, beta, gamma, a, b, c):
-    m = D1
-    for f in (turn(math.pi - alpha), edge(b), turn(math.pi - gamma),
-              edge(a), turn(math.pi - beta), edge(c)):
-        m = dmul(m, f)
-    return m
-
-MINUS1 = (qsmul(-1, Q1), Q0)
+I_AXIS = (0, 1, 0, 0)
 for _ in range(50):
-    alpha = random.uniform(0.2, 2.0)
-    beta = random.uniform(0.2, min(2.0, math.pi - alpha - 0.2))
-    gamma = math.pi - alpha - beta
-    scale = random.uniform(0.5, 3.0)  # law of sines: a/sin(alpha) = const
-    a, b, c = (scale * math.sin(x) for x in (alpha, beta, gamma))
-    assert deq(master(alpha, beta, gamma, a, b, c), MINUS1)
-    # negative checks: perturb one side, or one angle
-    assert not deq(master(alpha, beta, gamma, a, b, c + 0.1), MINUS1)
-    assert not deq(master(alpha + 0.1, beta, gamma, a, b, c), MINUS1)
-    # tracing a point through the six motions returns it to the start
-    x = rand_vec()
-    y = x
-    for f in (edge(c), turn(math.pi - beta), edge(a), turn(math.pi - gamma),
-              edge(b), turn(math.pi - alpha)):  # applied right to left
-        y = act(f, y)[1]
-    assert qeq(y, x)
+    x = (0, 0, random.gauss(0, 1), random.gauss(0, 1))
+    # i + eps x is exactly unit
+    assert deq(dmul(tpoint(x), dbar(tpoint(x))), D1)
+    # eps-angle rotor about k translates by a j
+    a = random.gauss(0, 1)
+    assert deq(tact((Q1, (0, 0, 0, a / 2)), x), tpoint(qadd(x, (0, 0, a, 0))))
+    # eps-angle rotor about j translates by -b k
+    b = random.gauss(0, 1)
+    assert deq(tact((Q1, (0, 0, b / 2, 0)), x), tpoint(qadd(x, (0, 0, 0, -b))))
+    # general eps-angle rotor 1 + (eps/2) t, t in span(j, k): shift by t x i
+    t = (0, 0, random.gauss(0, 1), random.gauss(0, 1))
+    assert deq(tact((Q1, qsmul(0.5, t)), x), tpoint(qadd(x, cross(t, I_AXIS))))
+    # rotor about i fixes the base point and rotates x in the tangent plane
+    theta = random.uniform(-3, 3)
+    r = qexp_pure((0, theta / 2, 0, 0))
+    assert deq(tact((r, Q0), x), tpoint(qmul(qmul(r, x), qconj(r))))
+    # negative check: a finite-angle rotor about k moves the base point off i
+    rk = qexp_pure((0, 0, 0, theta / 2))
+    if abs(math.sin(theta)) > 0.1:
+        assert not qeq(tact((rk, Q0), x)[0], I_AXIS)
 
 # --- check 6: screw motions --------------------------------------------------
 
