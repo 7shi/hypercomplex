@@ -1,4 +1,4 @@
-四元数は実部も含めた4成分で4次元空間の点を表せ、その回転は左右2つの単位四元数で挟む$r_L\,q\,r_R$という形で書けます。一方、クリフォード代数$C\ell_{4,0}(\mathbb R)$では回転子で挟んで回転を表します。本記事では、この2つの「挟み込み」の対応を、二重回転の2つの回転角を和と差に組み替える操作として与える、中嶋慧氏による方法をまとめます。[[nakajima]]
+四元数は実部も含めた4成分で4次元空間の点を表せ、その回転は左右2つの単位四元数で挟む$r_L\,q\,r_R$という形で書けます。一方、クリフォード代数$C\ell_{4,0}(\mathbb R)$では回転子で挟んで回転を表します。本記事では、この2つの「挟み込み」の対応を、二重回転の2つの回転角を和と差に組み替える操作として与える、中嶋慧氏による方法をまとめます。[[nakajima-4d-rot]]
 
 四元数とクリフォード代数の基本的な演算は既知とします。
 
@@ -127,7 +127,7 @@ $$
 ここでベクトル$v=q_0e_1+q_1e_2+q_2e_3+q_3e_4$は四元数$q=q_0+q_1i+q_2j+q_3k$と同一視します。回転面$p$は6成分の2ベクトルです。
 
 $$
-p=p_1e_1e_2+p_2e_1e_3+p_3e_1e_4+p_4e_4e_3+p_5e_2e_4+p_6e_3e_2
+p=p_{12}e_1e_2+p_{13}e_1e_3+p_{14}e_1e_4+p_{43}e_4e_3+p_{24}e_2e_4+p_{32}e_3e_2
 $$
 
 &&&rem
@@ -175,7 +175,7 @@ $$
 
 # 分解型双四元数とのマッピング
 
-$C\ell_{0,3}$のグレード2の3つの元は、2乗が$-1$で循環的な積の関係$(f_2f_3)(f_3f_1)=f_1f_2$を満たすため、グレード$\{0,2\}$（偶部分）は再び四元数$\mathbb H$をなします。グレード$\{1,3\}$はその$\omega$倍です。$C\ell_{4,0}(\mathbb R)$全体（16次元）は分解型双四元数（8次元）と同型ではないため、変換は偶部分代数からの同型写像$\varphi$として明示し、暗黙の同一視は避けます。$\varphi$はグレード2の基底を四元数の基底$i,j,k$へ、擬スカラー$\omega=e_1e_2e_3e_4$を分解型双四元数の$\omega$へ移します。
+$C\ell_{0,3}$のグレード2の3つの元は、2乗が$-1$で循環的な積の関係$(f_2f_3)(f_3f_1)=f_1f_2$を満たすため、グレード$\{0,2\}$（偶部分）は再び四元数$\mathbb H$をなします。グレード$\{1,3\}$はその$\omega$倍です。$C\ell_{4,0}(\mathbb R)$全体（16次元）は分解型双四元数（8次元）と同型ではないため、変換は偶部分代数からの同型写像$\varphi$として明示し、暗黙の同一視は避けます。$\varphi$はグレード2の基底を四元数の基底$i,j,k$へ、擬スカラー$e_1e_2e_3e_4$を分解型双四元数の$\omega$へ移します。
 
 &&&def 偶部分代数から分解型双四元数への同型写像
 $$
@@ -197,56 +197,67 @@ $$
 
 # 射影としての準同型写像
 
-以上の準備のもとで、回転子から$r_L,r_R$を取り出す中嶋慧氏の方法を説明します。目標は「二重回転と2つの回転角」で見た構図、すなわち左右の回転角が二重回転の2つの回転角の**和と差**になるという構図の再現です。そこで、$C\ell_{4,0}(\mathbb R)$の偶部分代数を同型写像$\varphi$で分解型双四元数へ移したうえで、回転子の情報から「和」の成分と「差」の成分を取り出す操作を作ります。その正体が、直和分解$\mathbb H\oplus\mathbb H$の各成分への射影です。詳細はこちらの資料の(3.10)式を参照してください。[[nakajima]]
+以上の準備のもとで、回転子から$r_L,r_R$を取り出す中嶋慧氏の方法を説明します。目標は「二重回転と2つの回転角」で見た構図、すなわち左右の回転角が二重回転の2つの回転角の**和と差**になるという構図の再現です。そこで、$C\ell_{4,0}(\mathbb R)$の偶部分代数を同型写像$\varphi$で分解型双四元数へ移したうえで、回転子の情報から「和」の成分と「差」の成分を取り出す操作を作ります。その正体が、直和分解$\mathbb H\oplus\mathbb H$の各成分への射影です。
+
+&&&ref
+詳細は参考資料の(3.10)式を参照してください。[[nakajima-4d-rot]]
+&&&
 
 ## 直和の行列表現と射影行列
 
-分解型双四元数の元$X=X'+\omega X''$（$X',X''\in\mathbb H$）を、和$X'+X''$と差$X'-X''$を対角に並べた、四元数係数の対角行列で表します。
-
-$$
-X'+\omega X''\mapsto
-\begin{pmatrix}X'+X''&0\\0&X'-X''\end{pmatrix},\quad
-\omega\mapsto
-\begin{pmatrix}1&0\\0&-1\end{pmatrix}
-$$
-
-$\omega$の行き先は$\omega^2=1$を満たす対角行列で、$\omega$を固有値$\pm1$で対角化した形です。この対応は積を保ちます。すなわち、和成分と差成分はそれぞれ独立に積をなし、対角行列の積の規則$\operatorname{diag}(A,B)\operatorname{diag}(C,D)=\operatorname{diag}(AC,BD)$がそのまま成り立ちます。直和分解$\mathbb H\oplus\mathbb H$の2つの成分とは、この2つの対角成分$(X'+X'',\ X'-X'')$のことです。
-
-&&&prf
-$\omega$が中心的（$\mathbb H$の元と可換）で$\omega^2=1$を満たすことを用いて、$X=X'+\omega X''$と$Y=Y'+\omega Y''$の積を展開する。
-
-$$
-XY=(X'+\omega X'')(Y'+\omega Y'')
-=(X'Y'+X''Y'')+\omega(X'Y''+X''Y')
-$$
-
-積$XY$の和成分と差成分を計算すると
-
-$$
-\begin{aligned}
-(X'Y'+X''Y'')+(X'Y''+X''Y')&=(X'+X'')(Y'+Y'') \\
-(X'Y'+X''Y'')-(X'Y''+X''Y')&=(X'-X'')(Y'-Y'')
-\end{aligned}
-$$
-
-と、それぞれ$X,Y$の和成分同士・差成分同士の積に因数分解される。よって上の対応は積を保ち、積は対角成分ごとに閉じている。
-&&&
-
-この表現では、冪等元$\varepsilon=\dfrac{1+\omega}2$は文字通りの**射影行列**になります。
-
-$$
-\varepsilon=\frac{1+\omega}2\mapsto
-\begin{pmatrix}1&0\\0&0\end{pmatrix}
-$$
-
-冪等性と「$\varepsilon$の上では$\omega$が$1$になる」ことは、行列の形からも、$\omega^2=1$を使った代数の計算からも確かめられます。
+まず冪等元を作ります。$\omega^2=1$なので、$\varepsilon=\dfrac{1+\omega}2$は冪等元です。冪等性に加えて、$\varepsilon$の上では$\omega$が$1$として振る舞うことも確かめられます。
 
 $$
 \varepsilon^2=\frac{1+2\omega+\omega^2}4=\frac{1+\omega}2=\varepsilon,\quad
 \omega\varepsilon=\frac{\omega+\omega^2}2=\varepsilon
 $$
 
-もう1つの冪等元$\dfrac{1-\omega}2\mapsto\operatorname{diag}(0,1)$は差成分への射影で、2つの射影は互いに直交し、足すと$1$になります。$X$に$\varepsilon$を掛けると
+もう1つの冪等元$1-\varepsilon=\dfrac{1-\omega}2$も同様に冪等で、こちらの上では逆に$\omega$が$-1$として振る舞います。
+
+$$
+(1-\varepsilon)^2=1-\varepsilon, \quad
+\omega(1-\varepsilon)=-(1-\varepsilon)
+$$
+
+2つは直交し（$\varepsilon(1-\varepsilon)=0$）、足すと$1$になります。$\omega$が2つの冪等元の上でそれぞれ$\pm1$になることが、後で見る対角行列$\omega\mapsto\operatorname{diag}(1,-1)$の根拠です。
+
+分解型双四元数の元$X=X'+\omega X''$（$X',X''\in\mathbb H$）は、この2つの冪等元の線形結合として書き直せます。
+
+$$
+X=(X'+X'')\varepsilon+(X'-X'')(1-\varepsilon)
+$$
+
+&&&prf
+$2\varepsilon-1=\omega$に注意して右辺を展開する。
+
+$$
+(X'+X'')\varepsilon+(X'-X'')(1-\varepsilon)
+=X'+X''(2\varepsilon-1)=X'+\omega X''
+$$
+&&&
+
+つまり$X$は、和成分$X'+X''$を$\varepsilon$に、差成分$X'-X''$を$1-\varepsilon$に掛けた形に分解されます。$\varepsilon,\ 1-\varepsilon$を対角行列$\operatorname{diag}(1,0),\ \operatorname{diag}(0,1)$へ対応させる、四元数係数の対角行列でこれを表せば、$\varepsilon,\ 1-\varepsilon$は文字通りの**射影行列**になります。
+
+$$
+\varepsilon\mapsto\begin{pmatrix}1&0\\0&0\end{pmatrix},\quad
+1-\varepsilon\mapsto\begin{pmatrix}0&0\\0&1\end{pmatrix},\quad
+\omega=2\varepsilon-1\mapsto\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+$$
+
+このとき$X=(X'+X'')\varepsilon+(X'-X'')(1-\varepsilon)$の行き先は、和$X'+X''$と差$X'-X''$を対角に並べた形になります。
+
+$$
+X'+\omega X''\mapsto
+\begin{pmatrix}X'+X''&0\\0&X'-X''\end{pmatrix}
+$$
+
+この対応は積を保ちます。すなわち、和成分と差成分はそれぞれ独立に積をなし、対角行列の積の規則
+$$
+\begin{pmatrix}A&0\\0&B\end{pmatrix}\begin{pmatrix}C&0\\0&D\end{pmatrix}=\begin{pmatrix}AC&0\\0&BD\end{pmatrix}
+$$
+がそのまま成り立ちます。直和分解$\mathbb H\oplus\mathbb H$の2つの成分とは、この2つの対角成分$(X'+X'',\ X'-X'')$のことです。
+
+$X$に$\varepsilon$を掛けると
 
 $$
 \varepsilon X=\varepsilon X'+\varepsilon\omega X''=\varepsilon(X'+X'')
@@ -274,7 +285,7 @@ $$
 
 つまり$T$の準同型性は、「射影行列で片方の対角成分だけを見る」ことの帰結です。
 
-もう一方の成分（差$X'-X''$）も、同じ$T$で読み出せます。$\omega$共役${}^{\dagger}$（$\omega\mapsto-\omega$、$X'+\omega X''\mapsto X'-\omega X''$）は、行列表現では2つの対角成分の入れ替え$\operatorname{diag}(A,B)\mapsto\operatorname{diag}(B,A)$なので、差成分は$T(X^{\dagger})=X'-X''$として得られます。
+もう一方の成分（差$X'-X''$）も、同じ$T$で読み出せます。$\omega$共役を$\omega^\dagger=-\omega$と表記すれば、行列表現では2つの対角成分の入れ替え$\operatorname{diag}(A,B)\mapsto\operatorname{diag}(B,A)$なので、差成分は$T(X^{\dagger})=X'-X''$として得られます。
 
 ## 回転軸への変換
 
@@ -282,12 +293,12 @@ $$
 
 $$
 \begin{aligned}
-p&=p_1e_1e_2+p_2e_1e_3+p_3e_1e_4+p_4e_4e_3+p_5e_2e_4+p_6e_3e_2 \\
-\varphi(p)&=p_1\omega i+p_2\omega j+p_3\omega k+p_4i+p_5j+p_6k \\
- &=(p_1\omega+p_4)i+(p_2\omega+p_5)j+(p_3\omega+p_6)k \\
+p&=p_{12}e_1e_2+p_{13}e_1e_3+p_{14}e_1e_4+p_{43}e_4e_3+p_{24}e_2e_4+p_{32}e_3e_2 \\
+\varphi(p)&=p_{12}\omega i+p_{13}\omega j+p_{14}\omega k+p_{43}i+p_{24}j+p_{32}k \\
+ &=(p_{12}\omega+p_{43})i+(p_{13}\omega+p_{24})j+(p_{14}\omega+p_{32})k \\
 q_R
 &=T(\varphi(p)) \\
-&=(p_1+p_4)i+(p_2+p_5)j+(p_3+p_6)k
+&=(p_{12}+p_{43})i+(p_{13}+p_{24})j+(p_{14}+p_{32})k
 \end{aligned}
 $$
 
@@ -297,9 +308,9 @@ $$
 \begin{aligned}
 q_L
 &=-T(\varphi(p)^{\dagger}) \\
-&=-T(-\omega(p_1i+p_2j+p_3k)+p_4i+p_5j+p_6k) \\
-&=p_1i+p_2j+p_3k-p_4i-p_5j-p_6k \\
-&=(p_1-p_4)i+(p_2-p_5)j+(p_3-p_6)k
+&=-T(-\omega(p_{12}i+p_{13}j+p_{14}k)+p_{43}i+p_{24}j+p_{32}k) \\
+&=p_{12}i+p_{13}j+p_{14}k-p_{43}i-p_{24}j-p_{32}k \\
+&=(p_{12}-p_{43})i+(p_{13}-p_{24})j+(p_{14}-p_{32})k
 \end{aligned}
 $$
 
@@ -309,27 +320,53 @@ $$
 r_L=\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right),\quad r_R=\exp\left(\frac\theta2T(\varphi(p))\right)
 $$
 
+回転させるベクトル$v$はグレード1で、そのままでは偶部分代数に入らないため、$\varphi$で移せません。そこで$e_1$を掛けます。$e_1e_1$は相殺してグレード0（スカラー）になり、それ以外はグレード2（2ベクトル）になるため、偶部分代数に収まります。これによってベクトルも分解型双四元数経由で四元数に移せます。
+
+$$
+\begin{aligned}
+T(\varphi(e_1v))
+&=T(\varphi(e_1(v_0e_1+v_1e_2+v_2e_3+v_3e_4))) \\
+&=T(\varphi(v_0+v_1e_1e_2+v_2e_1e_3+v_3e_1e_4)) \\
+&=T(v_0+v_1\omega i+v_2 \omega j+v_3\omega k) \\
+&=v_0+v_1i+v_2j+v_3k
+\end{aligned}
+$$
+
+よって、回転は次のように分解型双四元数に移せます。
+
+$$
+\begin{aligned}
+r^{-1}vr
+&=\exp\left(-\frac\theta2p\right)v\exp\left(\frac\theta2p\right) \\
+&\mapsto
+\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right)
+T(\varphi(e_1v))
+\exp\left(\frac\theta2T(\varphi(p))\right)
+\end{aligned}
+$$
+
 まとめると、$C\ell_{4,0}(\mathbb R)$の回転$v'=r^{-1}vr$と同じ回転が、四元数では次のように表されます。
 
 $$
 \begin{aligned}
 q'&=r_L\,q\,r_R \\
-r_L&=\cos\frac\theta2+\sin\frac\theta2\,q_L,&q_L&=(p_1-p_4)i+(p_2-p_5)j+(p_3-p_6)k \\
-r_R&=\cos\frac\theta2+\sin\frac\theta2\,q_R,&q_R&=(p_1+p_4)i+(p_2+p_5)j+(p_3+p_6)k
+r_L&=\exp\left(\frac\theta2\,q_L\right),&q_L&=(p_{12}-p_{43})i+(p_{13}-p_{24})j+(p_{14}-p_{32})k \\
+r_R&=\exp\left(\frac\theta2\,q_R\right),&q_R&=(p_{12}+p_{43})i+(p_{13}+p_{24})j+(p_{14}+p_{32})k
 \end{aligned}
 $$
 
-成分を見ると、対をなす成分の和が$q_R$、差が$q_L$——二重回転の節で回転角に見た「和と差への組み替え」が、回転面の6成分全体に広がった形です。
+成分を見ると、対をなす成分の和が$q_R$、差が$q_L$となり、二重回転の節で回転角に見た「和と差への組み替え」が、回転面の6成分全体に広がった形です。
 
-&&&prf
-ベクトルと四元数の対応から確認する。$v$自体はグレード1なので$\varphi$の定義域に入らないが、奇数グレード同士の積は偶数グレードになるため、$e_1$を掛けた$e_1v$は偶部分代数の元となり、$\varphi$で移せる。$e_1^2=1$に注意すると
+&&&prf $q'=r_L\,q\,r_R$が同じ回転を表すこと
+本文で述べたのは、回転を構成する部品（回転面$p$とベクトル$v$）がそれぞれ$T\circ\varphi$で四元数に移せるということであり、部品ごとの対応だけでは、移した部品を組み合わせた式が元と同じ回転を表すことはまだ保証されない。示すべきことは、ベクトルと四元数の対応$q=T(\varphi(e_1v))$のもとで、回転後のベクトル$v'=r^{-1}vr$に対応する四元数が、部品ごとに移して組み立てた挟み込みの式に一致することである。
 
 $$
-e_1v=q_0+q_1e_1e_2+q_2e_1e_3+q_3e_1e_4,\quad
-\varphi(e_1v)=q_0+\omega(q_1i+q_2j+q_3k)
+T(\varphi(e_1v'))=r_L\,q\,r_R,\quad
+r_L=\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right),\quad
+r_R=\exp\left(\frac\theta2T(\varphi(p))\right)
 $$
 
-となり、$T(\varphi(e_1v))=q_0+q_1i+q_2j+q_3k=q$が得られる。$\varphi(e_1v)$は「$X'$が実部、$X''$が虚部」という形をしており、この形の元は$T$の像から一意に復元できるため、ベクトル$v$と四元数$q=T(\varphi(e_1v))$は1対1に対応する。
+まず、対応$q=T(\varphi(e_1v))$が1対1であることを確認する。本文の計算より$\varphi(e_1v)=v_0+\omega(v_1i+v_2j+v_3k)$は「$X'$が実部、$X''$が虚部」という形をしており、この形の元は$T$の像$v_0+v_1i+v_2j+v_3k$から一意に復元できる。したがってベクトル$v$と四元数$q$は1対1に対応し、四元数側の計算結果から回転後のベクトル$v'$が一意に定まる。
 
 次に、偶部分代数における$e_1$による共役が、$\varphi$を通して$\omega$共役に対応することを示す。
 
@@ -339,13 +376,13 @@ $$
 
 基底ごとに確認する。スカラー$1$は不変で、$\dagger$でも不変。$e_1$を含まない2ベクトル$e_me_n$（$m,n\ne1$）は、$e_1$と2回の反交換を経て可換となるため不変で、行き先$i,j,k$も$\dagger$で不変。$e_1$を含む2ベクトルは$e_1(e_1e_a)e_1=e_ae_1=-e_1e_a$と符号が反転し、行き先$\omega i,\omega j,\omega k$も$\dagger$で反転。$\omega=e_1e_2e_3e_4$は$e_1$を1つ含むため$e_1$と反交換し、$e_1\omega e_1=-\omega$と反転する。すなわち両辺はどの基底でも一致し、いずれも$X'+\omega X''\mapsto X'-\omega X''$として作用する。
 
-以上を組み合わせる。回転子$r$と逆元$r^{-1}$は偶部分代数の元だから、回転$v'=r^{-1}vr$の両辺に$e_1$を掛けて$e_1^2=1$を挟むと
+以上を組み合わせる。回転子$r$と逆元$r^{-1}$はグレードが偶数だが、回転後のベクトル$v'=r^{-1}vr$はグレード1で奇数のため、そのままでは$\varphi$で移せない。両辺に$e_1$を掛けて$e_1^2=1$を挟むと
 
 $$
 e_1v'=e_1r^{-1}vr=(e_1r^{-1}e_1)(e_1v)r
 $$
 
-となる。右辺の3つの因子はすべて偶元なので$\varphi$で移せて、先の補題より
+と、すべてグレードが偶数の元の積に書き直せる。$\varphi$で移すと、先の補題より
 
 $$
 \varphi(e_1v')=\varphi(r^{-1})^{\dagger}\,\varphi(e_1v)\,\varphi(r)
@@ -355,10 +392,10 @@ $$
 となる。ここで$\dagger$は$\omega\mapsto-\omega$による代数の自己同型なので、逆元を取る操作と可換であることを用いた。準同型$T$を適用すれば
 
 $$
-q'=T(\varphi(e_1v'))=T(\varphi(r)^{\dagger})^{-1}\,q\,T(\varphi(r))
+T(\varphi(e_1v'))=T(\varphi(r)^{\dagger})^{-1}\,q\,T(\varphi(r))
 $$
 
-となり、クリフォード代数の回転は四元数の挟み込み$q'=r_L\,q\,r_R$として実現される。
+となり、クリフォード代数の回転は四元数の挟み込みとして実現される。
 
 $$
 r_L=T(\varphi(r)^{\dagger})^{-1},\quad r_R=T(\varphi(r))
@@ -372,7 +409,7 @@ r_L=\exp\left(\frac\theta2T(\varphi(p)^{\dagger})\right)^{-1}
 =\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right)
 $$
 
-となり、$q_R=T(\varphi(p))$と$q_L=-T(\varphi(p)^{\dagger})$が本文の式を与える。回転子が$\cos\frac\theta2+\sin\frac\theta2\,p$と書ける場合、すなわち$p^2=-1$のときは、準同型性より$q_R^2=T(\varphi(p^2))=-1$、同様に$q_L^2=-1$となるため、$q_L,q_R$は単位虚四元数で、指数関数は$r_L=\cos\frac\theta2+\sin\frac\theta2\,q_L$、$r_R=\cos\frac\theta2+\sin\frac\theta2\,q_R$を与える。
+となり、冒頭に掲げた式が示された。$q_R=T(\varphi(p))$と$q_L=-T(\varphi(p)^{\dagger})$とおけば、本文の$q_L,q_R$による表示となる。回転子が$\cos\frac\theta2+\sin\frac\theta2\,p$と書ける場合、すなわち$p^2=-1$のときは、準同型性より$q_R^2=T(\varphi(p^2))=-1$、同様に$q_L^2=-1$となるため、$q_L,q_R$は単位虚四元数で、指数関数は$r_L=\cos\frac\theta2+\sin\frac\theta2\,q_L$、$r_R=\cos\frac\theta2+\sin\frac\theta2\,q_R$を与える。
 &&&
 
 &&&rem 左右の回転子と直和分解
@@ -380,7 +417,7 @@ $$
 &&&
 
 &&&rem 3次元回転
-4次元回転の一部としての3次元回転は、$p_1=p_2=p_3=0$（回転面が$e_1$を含まない）より$q_L=-q_R$として得られます。このとき$r_L=r_R^*$となり、挟み込み$rqr^*$の形に帰着します。
+4次元回転の一部としての3次元回転は、$p_{12}=p_{13}=p_{14}=0$（回転面が$e_1$を含まない）より$q_L=-q_R$として得られます。このとき$r_L=r_R^*$となり、挟み込み$rqr^*$の形に帰着します。
 &&&
 
 ## 二重回転との整合
@@ -406,7 +443,7 @@ $$
 
 と、二重回転の節の式が確かに再現されます。この証明では$\omega=\pm1$成分への射影という代数の分解によって、等傾回転の合成と同じ和と差への組み替えが再現されます。
 
-自由度の勘定も成分のレベルで裏付けられます。和$(p_1+p_4,\ p_2+p_5,\ p_3+p_6)$と差$(p_1-p_4,\ p_2-p_5,\ p_3-p_6)$から元の6成分は復元できるため、この組み替えで情報は失われません。回転角だけでなく回転面の向きも独立に選べるため、和と差の各3成分（回転面の向き2＋回転角1）が、そのまま単位四元数$r_R,r_L$の3自由度に対応します。$3+3=6$が$\mathrm{SO}(4)$の次元と一致するのは、この可逆な組み替えの反映です。
+自由度の勘定も成分のレベルで裏付けられます。和$(p_{12}+p_{43},\ p_{13}+p_{24},\ p_{14}+p_{32})$と差$(p_{12}-p_{43},\ p_{13}-p_{24},\ p_{14}-p_{32})$から元の6成分は復元できるため、この組み替えで情報は失われません。回転角だけでなく回転面の向きも独立に選べるため、和と差の各3成分（回転面の向き2＋回転角1）が、そのまま単位四元数$r_R,r_L$の3自由度に対応します。$3+3=6$が$\mathrm{SO}(4)$の次元と一致するのは、この可逆な組み替えの反映です。
 
 &&&rem 自己双対分解
 和と差への組み替えは、2ベクトルの言葉では対をなす基底の和と差$e_1e_2\pm e_4e_3$などへの組み替えです。$\omega$を掛けると対をなす2ベクトルが入れ替わるため（$\omega\,e_1e_2=e_4e_3$）、和は不変で、差は符号が反転します。2ベクトルに$\omega$を掛ける操作はホッジ双対に相当し、不変な2ベクトルは**自己双対**、反転するものは**反自己双対**と呼ばれます。この分解はリー代数の分解$\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$（$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$のリー代数版）そのものです。
