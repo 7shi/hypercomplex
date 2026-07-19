@@ -1,0 +1,14 @@
+[wiki-en-eleq]
+type = "website"
+citation = "Euler–Lagrange equation, Wikipedia, 閲覧日 2024年12月13日, https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation"
+url = "https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation"
+accessed = 2024-12-13
+site = "Wikipedia"
+
+[7shi-ibp]
+type = "mathlog"
+citation = "7shi, 部分積分における関数の微分の利用, Mathlog, Wed Dec 11 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-diff]
+type = "mathlog"
+citation = "7shi, 変数の依存関係と微分, Mathlog, Mon Dec 16 2024, アクセス日: Sun Jul 19 2026"

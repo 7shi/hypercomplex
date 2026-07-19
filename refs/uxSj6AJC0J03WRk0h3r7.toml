@@ -1,0 +1,22 @@
+[rn-picard]
+type = "website"
+citation = "山本 拓人, ピカールの逐次近似法｜常微分方程式の解を構成する方法, あーるえぬ, 閲覧日 2025年3月10日, https://math-note.xyz/analysis/differential-equation/picard-iteration/"
+url = "https://math-note.xyz/analysis/differential-equation/picard-iteration/"
+accessed = 2025-03-10
+author = ["山本 拓人"]
+site = "あーるえぬ"
+
+[wiki-picard]
+type = "website"
+citation = "ピカールの逐次近似法, Wikipedia, 閲覧日 2025年3月10日, https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%BC%E3%83%AB%E3%81%AE%E9%80%90%E6%AC%A1%E8%BF%91%E4%BC%BC%E6%B3%95"
+url = "https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%BC%E3%83%AB%E3%81%AE%E9%80%90%E6%AC%A1%E8%BF%91%E4%BC%BC%E6%B3%95"
+accessed = 2025-03-10
+site = "Wikipedia"
+
+[masuo-maclaurin]
+type = "website"
+citation = "難波 博之, マクローリン展開, 高校数学の美しい物語, 閲覧日 2025年3月10日, https://manabitimes.jp/math/570"
+url = "https://manabitimes.jp/math/570"
+accessed = 2025-03-10
+author = ["難波 博之"]
+site = "高校数学の美しい物語"

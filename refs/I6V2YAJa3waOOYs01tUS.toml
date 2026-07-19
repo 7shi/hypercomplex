@@ -1,0 +1,10 @@
+[wiki-cd]
+type = "website"
+citation = "ケーリー＝ディクソンの構成法, Wikipedia, 閲覧日 2025年5月6日, https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%9D%E3%83%87%E3%82%A3%E3%82%AF%E3%82%BD%E3%83%B3%E3%81%AE%E6%A7%8B%E6%88%90%E6%B3%95"
+url = "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%9D%E3%83%87%E3%82%A3%E3%82%AF%E3%82%BD%E3%83%B3%E3%81%AE%E6%A7%8B%E6%88%90%E6%B3%95"
+accessed = 2025-05-06
+site = "Wikipedia"
+
+[7shi-qcm]
+type = "mathlog"
+citation = "7shi, 発見的手法による四元数の複素行列表現の構成, Mathlog, Tue May 06 2025, アクセス日: Sun Jul 19 2026"

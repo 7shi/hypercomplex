@@ -1,0 +1,15 @@
+[7shi-lie1]
+type = "mathlog"
+citation = "7shi, リー群・リー代数の初歩 1 複素数とSO(2), Mathlog, Sun Mar 09 2025, アクセス日: Sun Jul 19 2026"
+
+[7shi-qmat]
+type = "mathlog"
+citation = "7shi, 発見的手法による四元数の複素行列表現の構成, Mathlog, Tue May 06 2025, アクセス日: Sun Jul 19 2026"
+
+[7shi-qrot]
+type = "website"
+citation = "七誌, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2026年7月10日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+accessed = 2026-07-10
+author = ["七誌"]
+site = "七誌の開発日記"

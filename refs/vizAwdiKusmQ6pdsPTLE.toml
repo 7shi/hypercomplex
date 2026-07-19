@@ -1,0 +1,26 @@
+[oct-7rot]
+type = "mathlog"
+citation = "7shi, 単位八元数による7次元三重回転, Mathlog, Wed Jun 26 2024, アクセス日: Sun Jul 19 2026"
+
+[wiki-norm]
+type = "website"
+citation = "ノルム多元体, Wikipedia, 閲覧日 2026年5月23日, https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%83%A0%E5%A4%9A%E5%85%83%E4%BD%93"
+url = "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%83%A0%E5%A4%9A%E5%85%83%E4%BD%93"
+accessed = 2026-05-23
+site = "Wikipedia"
+
+[7shi-480]
+type = "website"
+citation = "七誌, 八元数の定義が 480 通りあることの導出, 七誌の開発日記, 閲覧日 2026年5月23日, https://7shi.hateblo.jp/entry/2024/03/11/063519"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+accessed = 2026-05-23
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[oct-nonassoc]
+type = "mathlog"
+citation = "7shi, 八元数の非結合性, Mathlog, Wed Jan 29 2025, アクセス日: Sun Jul 19 2026"
+
+[oct-cl6]
+type = "mathlog"
+citation = "7shi, 八元数の左作用とクリフォード代数, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"

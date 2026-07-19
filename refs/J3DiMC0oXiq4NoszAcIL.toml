@@ -1,0 +1,14 @@
+[tao-h]
+type = "website"
+citation = "Terence Tao, Quaternions and spherical trigonometry, Updates on my research and expository papers, discussion of open problems, and other maths-related topics. By Terence Tao, 閲覧日 2025年11月29日, https://terrytao.wordpress.com/2024/12/19/quaternions-and-spherical-trigonometry/"
+url = "https://terrytao.wordpress.com/2024/12/19/quaternions-and-spherical-trigonometry/"
+accessed = 2025-11-29
+author = ["Terence Tao"]
+site = "Updates on my research and expository papers, discussion of open problems, and other maths-related topics. By Terence Tao"
+
+[wiki-trick]
+type = "website"
+citation = "プレートトリック, Wikipedia, 閲覧日 2025年11月29日, https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF"
+url = "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF"
+accessed = 2025-11-29
+site = "Wikipedia"

@@ -1,0 +1,19 @@
+[hopf1931]
+type = "paper"
+citation = "Heinz Hopf, Über die Abbildungen der dreidimensionalen Sphäre auf die Kugelfläche, Mathematische Annalen, 1931, 637–665"
+author = ["Heinz Hopf"]
+journal = "Mathematische Annalen"
+pages = "637–665"
+year = 1931
+
+[7shi-mobius]
+type = "website"
+citation = "七誌, メビウス変換の合成と行列の積, 七誌の開発日記, 閲覧日 2025年1月21日, https://7shi.hateblo.jp/entry/2025/01/01/071325"
+url = "https://7shi.hateblo.jp/entry/2025/01/01/071325"
+accessed = 2025-01-21
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-qhopf1]
+type = "mathlog"
+citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"

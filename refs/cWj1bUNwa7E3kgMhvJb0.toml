@@ -1,0 +1,53 @@
+[oct]
+type = "mathlog"
+citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
+
+[7shi-oct]
+type = "website"
+citation = "七誌, 八元数と7次元の外積, 七誌の開発日記, 閲覧日 2024年6月26日, https://7shi.hateblo.jp/entry/2017/12/04/235635"
+url = "https://7shi.hateblo.jp/entry/2017/12/04/235635"
+accessed = 2024-06-26
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-rot]
+type = "website"
+citation = "七誌, クリフォード代数による回転, 七誌の開発日記, 閲覧日 2024年6月26日, https://7shi.hateblo.jp/entry/2020/03/07/071242"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+accessed = 2024-06-26
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[nakajima]
+type = "website"
+citation = "中嶋 慧, 八元数と回転, 閲覧日 2024年6月26日, http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+accessed = 2024-06-26
+author = ["中嶋 慧"]
+
+[7shi-coord]
+type = "mathlog"
+citation = "7shi, 一般次元における球座標系のバリエーション, Mathlog, Tue May 21 2024, アクセス日: Sun Jul 19 2026"
+
+[wiki-alt]
+type = "website"
+citation = "交代代数, Wikipedia, 閲覧日 2024年6月27日, https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+accessed = 2024-06-27
+site = "Wikipedia"
+
+[7shi-rod]
+type = "website"
+citation = "七誌, 四元数によるロドリゲスの回転公式, 七誌の開発日記, 閲覧日 2024年6月26日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
+url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
+accessed = 2024-06-26
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-gist]
+type = "website"
+citation = "七誌, 八元数の計算プログラム, X, 閲覧日 2024年6月26日, https://x.com/7shi/status/1805277382703751383"
+url = "https://x.com/7shi/status/1805277382703751383"
+accessed = 2024-06-26
+author = ["七誌"]
+site = "X"

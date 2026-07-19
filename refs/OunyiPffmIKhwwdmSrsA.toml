@@ -1,0 +1,90 @@
+[wiki-bc]
+type = "website"
+citation = "双複素数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-bc-en]
+type = "website"
+citation = "Bicomplex number, Wikipedia, 閲覧日 2024年11月6日, https://en.wikipedia.org/wiki/Bicomplex_number"
+url = "https://en.wikipedia.org/wiki/Bicomplex_number"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-0d]
+type = "website"
+citation = "零因子, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E9%9B%B6%E5%9B%A0%E5%AD%90"
+url = "https://ja.wikipedia.org/wiki/%E9%9B%B6%E5%9B%A0%E5%AD%90"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-tp]
+type = "website"
+citation = "テンソル積, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%BD%E3%83%AB%E7%A9%8D"
+url = "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%BD%E3%83%AB%E7%A9%8D"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-smc]
+type = "website"
+citation = "セグレの多重複素数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E3%82%BB%E3%82%B0%E3%83%AC%E3%81%AE%E5%A4%9A%E9%87%8D%E8%A4%87%E7%B4%A0%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E3%82%BB%E3%82%B0%E3%83%AC%E3%81%AE%E5%A4%9A%E9%87%8D%E8%A4%87%E7%B4%A0%E6%95%B0"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[7shi-mc]
+type = "website"
+citation = "七誌, 多重複素数入門, 七誌の開発日記, 閲覧日 2024年11月6日, https://7shi.hateblo.jp/entry/2020/08/30/234952"
+url = "https://7shi.hateblo.jp/entry/2020/08/30/234952"
+accessed = 2024-11-06
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[wiki-q]
+type = "website"
+citation = "四元数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%85%83%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%85%83%E6%95%B0"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-bq]
+type = "website"
+citation = "Biquaternion, Wikipedia, 閲覧日 2024年11月6日, https://en.wikipedia.org/wiki/Biquaternion"
+url = "https://en.wikipedia.org/wiki/Biquaternion"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-o]
+type = "website"
+citation = "八元数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E5%85%AB%E5%85%83%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%85%83%E6%95%B0"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[wiki-bo]
+type = "website"
+citation = "双八元数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E5%8F%8C%E5%85%AB%E5%85%83%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E5%85%AB%E5%85%83%E6%95%B0"
+accessed = 2024-11-06
+site = "Wikipedia"
+
+[7shi-pdq]
+type = "mathlog"
+citation = "7shi, パウリ行列と四元数：双四元数による橋渡し, Mathlog, Thu Jul 11 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-qc1]
+type = "website"
+citation = "七誌, 量子コンピューター超入門, Qiita, 閲覧日 2024年11月7日, https://qiita.com/7shi/items/3504d8fa2c868620f57a"
+url = "https://qiita.com/7shi/items/3504d8fa2c868620f57a"
+accessed = 2024-11-07
+author = ["七誌"]
+site = "Qiita"
+
+[7shi-qc2]
+type = "website"
+citation = "七誌, 量子コンピューター超入門2 一般的な表記法, Qiita, 閲覧日 2024年11月7日, https://qiita.com/7shi/items/1704b58f8828601a0e6c"
+url = "https://qiita.com/7shi/items/1704b58f8828601a0e6c"
+accessed = 2024-11-07
+author = ["七誌"]
+site = "Qiita"

@@ -1,0 +1,14 @@
+[7shi-oct480]
+type = "website"
+citation = "七誌, 八元数の定義が 480 通りあることの導出, 七誌の開発日記, 閲覧日 2025年1月29日, https://7shi.hateblo.jp/entry/2024/03/11/063519"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+accessed = 2025-01-29
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[wiki-alt]
+type = "website"
+citation = "交代代数, Wikipedia, 閲覧日 2025年2月1日, https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+accessed = 2025-02-01
+site = "Wikipedia"

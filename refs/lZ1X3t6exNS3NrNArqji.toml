@@ -1,0 +1,124 @@
+[wiki-bq]
+type = "website"
+citation = "Biquaternion, Wikipedia, 閲覧日 2024年7月12日, https://en.wikipedia.org/wiki/Biquaternion"
+url = "https://en.wikipedia.org/wiki/Biquaternion"
+accessed = 2024-07-12
+site = "Wikipedia"
+
+[wiki-hq]
+type = "website"
+citation = "Hyperbolic quaternion, Wikipedia, 閲覧日 2024年7月12日, https://en.wikipedia.org/wiki/Hyperbolic_quaternion"
+url = "https://en.wikipedia.org/wiki/Hyperbolic_quaternion"
+accessed = 2024-07-12
+site = "Wikipedia"
+
+[wiki-bc]
+type = "website"
+citation = "双複素数, Wikipedia, 閲覧日 2024年7月12日, https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+accessed = 2024-07-12
+site = "Wikipedia"
+
+[7shi-qua]
+type = "website"
+citation = "七誌, 表現行列で考える四元数, Qiita, 閲覧日 2024年7月12日, https://qiita.com/7shi/items/e7364e1b2593f24427a5"
+url = "https://qiita.com/7shi/items/e7364e1b2593f24427a5"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "Qiita"
+
+[7shi-clif]
+type = "website"
+citation = "七誌, クリフォード代数で考えるパウリ行列と双四元数, Qiita, 閲覧日 2024年7月12日, https://qiita.com/7shi/items/fafe77f9a5ff2f9651ba"
+url = "https://qiita.com/7shi/items/fafe77f9a5ff2f9651ba"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "Qiita"
+
+[7shi-qmx]
+type = "website"
+citation = "七誌, 四元数とマクスウェル方程式, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2017/12/10/103720"
+url = "https://7shi.hateblo.jp/entry/2017/12/10/103720"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-tbq]
+type = "website"
+citation = "七誌, テンソル積と双四元数, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2018/08/23/024756"
+url = "https://7shi.hateblo.jp/entry/2018/08/23/024756"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-qcl]
+type = "website"
+citation = "七誌, 四元数からクリフォード代数へ, 七誌の開発日記, 閲覧日 2024年7月16日, https://7shi.hateblo.jp/entry/2018/08/27/054921"
+url = "https://7shi.hateblo.jp/entry/2018/08/27/054921"
+accessed = 2024-07-16
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-clrt]
+type = "website"
+citation = "七誌, クリフォード代数による回転, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/03/07/071242"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-qrt]
+type = "website"
+citation = "七誌, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-vec3]
+type = "website"
+citation = "七誌, 四元数によるベクトル三重積とヤコビ恒等式, 七誌の開発日記, 閲覧日 2024年7月13日, https://7shi.hateblo.jp/entry/2020/10/03/182512"
+url = "https://7shi.hateblo.jp/entry/2020/10/03/182512"
+accessed = 2024-07-13
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-rod]
+type = "website"
+citation = "七誌, 四元数によるロドリゲスの回転公式 , 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
+url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-versor]
+type = "website"
+citation = "七誌, 単位純虚四元数の積, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2022/09/10/015946"
+url = "https://7shi.hateblo.jp/entry/2022/09/10/015946"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-hopf]
+type = "mathlog"
+citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-pcoord]
+type = "mathlog"
+citation = "7shi, 一般次元における球座標系のバリエーション, Mathlog, Tue May 21 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-hc]
+type = "website"
+citation = "七誌, NotebookLMで多元数の記事を読む, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2024/06/13/015329"
+url = "https://7shi.hateblo.jp/entry/2024/06/13/015329"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-mir]
+type = "mathlog"
+citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-vge]
+type = "mathlog"
+citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2024, アクセス日: Sun Jul 19 2026"

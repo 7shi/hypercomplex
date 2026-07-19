@@ -1,0 +1,56 @@
+[proj]
+type = "website"
+citation = "難波博之, 射影行列のイメージと楽しい公式, 高校数学の美しい物語, 閲覧日 2024年7月25日, https://manabitimes.jp/math/2486"
+url = "https://manabitimes.jp/math/2486"
+accessed = 2024-07-25
+author = ["難波博之"]
+site = "高校数学の美しい物語"
+
+[7shi-ip]
+type = "website"
+citation = "七誌, 内積の視覚化, 七誌の開発日記, 閲覧日 2024年7月18日, https://7shi.hateblo.jp/entry/2018/08/05/011022"
+url = "https://7shi.hateblo.jp/entry/2018/08/05/011022"
+accessed = 2024-07-18
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-480]
+type = "website"
+citation = "七誌, 八元数の定義が 480 通りあることの導出, 七誌の開発日記, 閲覧日 2024年7月16日, https://7shi.hateblo.jp/entry/2024/03/11/063519"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+accessed = 2024-07-16
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-ort]
+type = "mathlog"
+citation = "7shi, 単位八元数による7次元三重回転, Mathlog, Wed Jun 26 2024, アクセス日: Sun Jul 19 2026"
+
+[wiki-alt]
+type = "website"
+citation = "交代代数, Wikipedia, 閲覧日 2024年7月16日, https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+accessed = 2024-07-16
+site = "Wikipedia"
+
+[nakajima]
+type = "website"
+citation = "中嶋慧, 八元数と回転, 閲覧日 2024年7月16日, http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+accessed = 2024-07-16
+author = ["中嶋慧"]
+
+[7shi-hc]
+type = "website"
+citation = "七誌, NotebookLMで多元数の記事を読む, 七誌の開発日記, 閲覧日 2024年7月16日, https://7shi.hateblo.jp/entry/2024/06/13/015329"
+url = "https://7shi.hateblo.jp/entry/2024/06/13/015329"
+accessed = 2024-07-16
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[wiki-clif]
+type = "website"
+citation = "Clifford algebra, Wikipedia, 閲覧日 2024年7月16日, https://en.wikipedia.org/wiki/Clifford_algebra"
+url = "https://en.wikipedia.org/wiki/Clifford_algebra"
+accessed = 2024-07-16
+site = "Wikipedia"

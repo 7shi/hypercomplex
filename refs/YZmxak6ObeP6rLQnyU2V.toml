@@ -1,0 +1,23 @@
+[7shi-qcl]
+type = "website"
+citation = "七誌, 四元数からクリフォード代数へ, 七誌の開発日記, 閲覧日 2024年7月24日, https://7shi.hateblo.jp/entry/2018/08/27/054921"
+url = "https://7shi.hateblo.jp/entry/2018/08/27/054921"
+accessed = 2024-07-24
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-clrt]
+type = "website"
+citation = "七誌, クリフォード代数による回転, 七誌の開発日記, 閲覧日 2024年7月24日, https://7shi.hateblo.jp/entry/2020/03/07/071242"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+accessed = 2024-07-24
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-pdq]
+type = "mathlog"
+citation = "7shi, パウリ行列と四元数：双四元数による橋渡し, Mathlog, Thu Jul 11 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-vo]
+type = "mathlog"
+citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Sun Jul 19 2026"

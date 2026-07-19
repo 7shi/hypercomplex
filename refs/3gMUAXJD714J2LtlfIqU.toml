@@ -1,0 +1,37 @@
+[nonion]
+type = "paper"
+citation = "James Joseph Sylvester, A Word on Nonions (1882), The collected mathematical papers of James Joseph Sylvester..., 1904, 647-650"
+author = ["James Joseph Sylvester"]
+journal = "The collected mathematical papers of James Joseph Sylvester..."
+pages = "647-650"
+year = 1904
+
+[sylvester]
+type = "website"
+citation = "James Joseph Sylvester, The collected mathematical papers of James Joseph Sylvester..., University of Michigan Library Digital Collections, 閲覧日 2026年5月17日, https://name.umdl.umich.edu/aas8085.0003.001"
+url = "https://name.umdl.umich.edu/aas8085.0003.001"
+accessed = 2026-05-17
+author = ["James Joseph Sylvester"]
+site = "University of Michigan Library Digital Collections"
+
+[kindai1]
+type = "book"
+citation = "近藤基吉, 井関清志, 近代数学 上: 現代数学の黎明期, 日本評論社, 1982, 117"
+author = ["近藤基吉", "井関清志"]
+pages = "117"
+publisher = "日本評論社"
+year = 1982
+
+[gpm]
+type = "website"
+citation = "Generalizations of Pauli matrices, Wikipedia, 閲覧日 2026年5月17日, https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
+url = "https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
+accessed = 2026-05-17
+site = "Wikipedia"
+
+[gca]
+type = "website"
+citation = "Generalized Clifford algebra, Wikipedia, 閲覧日 2026年5月17日, https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
+url = "https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
+accessed = 2026-05-17
+site = "Wikipedia"

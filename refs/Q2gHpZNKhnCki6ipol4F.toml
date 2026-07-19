@@ -1,0 +1,25 @@
+[7shi-tp]
+type = "mathlog"
+citation = "7shi, 複素数の拡張で学ぶテンソル積, Mathlog, Wed Nov 06 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-colab-cl]
+type = "website"
+citation = "7shi, Clifford.ipynb, Google Colab, 閲覧日 2024年11月22日, https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+url = "https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+accessed = 2024-11-22
+author = ["7shi"]
+site = "Google Colab"
+
+[wiki-clif]
+type = "website"
+citation = "Clifford algebra, Wikipedia, 閲覧日 2024年11月22日, https://en.wikipedia.org/wiki/Clifford_algebra"
+url = "https://en.wikipedia.org/wiki/Clifford_algebra"
+accessed = 2024-11-22
+site = "Wikipedia"
+
+[wiki-sq]
+type = "website"
+citation = "Split-quaternion, Wikipedia, 閲覧日 2024年11月22日, https://en.wikipedia.org/wiki/Split-quaternion"
+url = "https://en.wikipedia.org/wiki/Split-quaternion"
+accessed = 2024-11-22
+site = "Wikipedia"

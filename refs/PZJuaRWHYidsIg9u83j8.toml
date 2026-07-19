@@ -1,0 +1,49 @@
+[oct]
+type = "mathlog"
+citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
+
+[ref1]
+type = "paper"
+citation = "Kazuki Hasebe, Hopf Maps, Lowest Landau Level, and Fuzzy Spheres, arXiv, 2010"
+author = ["Kazuki Hasebe"]
+journal = "arXiv"
+year = 2010
+
+[ref2]
+type = "paper"
+citation = "Yongge Tian, Matrix Representations of Octonions and Their Applications, arXiv, 2000"
+author = ["Yongge Tian"]
+journal = "arXiv"
+year = 2000
+
+[furey1]
+type = "website"
+citation = "Cohl Furey, How to get around the non-associativity of the octonions (Video 9/14)., YouTube, 閲覧日 2026年5月23日, https://www.youtube.com/watch?v=Vs01SH8tlX0"
+url = "https://www.youtube.com/watch?v=Vs01SH8tlX0"
+accessed = 2026-05-23
+author = ["Cohl Furey"]
+site = "YouTube"
+published = 2017-10-06
+
+[furey2]
+type = "paper"
+citation = "Cohl Furey, Standard model physics from an algebra?, arXiv, 2016"
+author = ["Cohl Furey"]
+journal = "arXiv"
+year = 2016
+
+[q-rm]
+type = "website"
+citation = "七誌, 四元数の実行列表現を作る, 七誌の開発日記, 閲覧日 2026年5月23日, https://7shi.hateblo.jp/entry/2020/02/24/042840"
+url = "https://7shi.hateblo.jp/entry/2020/02/24/042840"
+accessed = 2026-05-23
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-qrot]
+type = "website"
+citation = "七誌, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2026年6月2日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+accessed = 2026-06-02
+author = ["七誌"]
+site = "七誌の開発日記"

@@ -1,0 +1,11 @@
+[7shi-qrc-colab]
+type = "website"
+citation = "7shi, QuaternionMatrixRepresentation.ipynb, Google Colab, 閲覧日 2025年5月7日, https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+accessed = 2025-05-07
+author = ["7shi"]
+site = "Google Colab"
+
+[7shi-qp]
+type = "mathlog"
+citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Jul 19 2026"

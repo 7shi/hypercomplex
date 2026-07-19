@@ -1,0 +1,45 @@
+[7shi-h]
+type = "mathlog"
+citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"
+
+[7shi-c]
+type = "mathlog"
+citation = "7shi, 一般次元における球座標系のバリエーション, Mathlog, Tue May 21 2024, アクセス日: Sun Jul 19 2026"
+
+[half]
+type = "website"
+citation = "半角の公式, KIT数学ナビゲーション, 閲覧日 2024年5月24日, https://w3e.kanazawa-it.ac.jp/math/category/sankakukansuu/kahouteiri/henkan-tex.cgi?target=/math/category/sankakukansuu/kahouteiri/hankaku-no-kousiki.html"
+url = "https://w3e.kanazawa-it.ac.jp/math/category/sankakukansuu/kahouteiri/henkan-tex.cgi?target=/math/category/sankakukansuu/kahouteiri/hankaku-no-kousiki.html"
+accessed = 2024-05-24
+site = "KIT数学ナビゲーション"
+
+[7shi-p]
+type = "website"
+citation = "7shi, 外積と愉快な仲間たち, Qiita, 閲覧日 2024年5月24日, https://qiita.com/7shi/items/017d2d2c758f76071f23"
+url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
+accessed = 2024-05-24
+author = ["7shi"]
+site = "Qiita"
+
+[wikipedia-dp]
+type = "website"
+citation = "直積 (ベクトル), Wikipedia, 閲覧日 2024年5月24日, https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)"
+url = "https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)"
+accessed = 2024-05-24
+site = "Wikipedia"
+
+[dp]
+type = "website"
+citation = "兵藤哲雄, 直積, 東京都立大学, 閲覧日 2024年5月24日, https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+accessed = 2024-05-24
+author = ["兵藤哲雄"]
+site = "東京都立大学"
+
+[quantumuniverse]
+type = "website"
+citation = "堀田 昌寛, 量子的な混合状態が現れるのは、人間の無知のせいか？, note, 閲覧日 2024年6月8日, https://note.com/quantumuniverse/n/nfe6b404fe172"
+url = "https://note.com/quantumuniverse/n/nfe6b404fe172"
+accessed = 2024-06-08
+author = ["堀田 昌寛"]
+site = "note"
