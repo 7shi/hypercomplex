@@ -1,0 +1,1 @@
+javascript:(async()=>{const html=document.querySelector(".grid.g-cols-1.g-lg-cols-2").outerHTML;await navigator.clipboard.writeText(html);alert("%E3%82%B3%E3%83%94%E3%83%BC%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F ("+html.length+" %E6%96%87%E5%AD%97)");})();
