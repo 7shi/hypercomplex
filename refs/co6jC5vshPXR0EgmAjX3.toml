@@ -15,10 +15,10 @@ site = "KIT数学ナビゲーション"
 
 [7shi-p]
 type = "website"
-citation = "7shi, 外積と愉快な仲間たち, Qiita, 閲覧日 2024年5月24日, https://qiita.com/7shi/items/017d2d2c758f76071f23"
+citation = "七誌, 外積と愉快な仲間たち, Qiita, 閲覧日 2024年5月24日, https://qiita.com/7shi/items/017d2d2c758f76071f23"
 url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
 accessed = 2024-05-24
-author = ["7shi"]
+author = ["七誌"]
 site = "Qiita"
 
 [wiki-dp]
@@ -28,12 +28,12 @@ url = "https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%8
 accessed = 2024-05-24
 site = "Wikipedia"
 
-[dp]
+[hyodo-dp]
 type = "website"
-citation = "兵藤哲雄, 直積, 東京都立大学, 閲覧日 2024年5月24日, https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+citation = "兵藤 哲雄, 直積, 東京都立大学, 閲覧日 2024年5月24日, https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
 url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
 accessed = 2024-05-24
-author = ["兵藤哲雄"]
+author = ["兵藤 哲雄"]
 site = "東京都立大学"
 
 [quantumuniverse]

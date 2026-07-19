@@ -18,7 +18,7 @@
 ## 正準slug管理の運用ルール
 
 - 記事ファイルごとの正準slugはローカルの `slugs.tsv`（md → slug）で管理する。Mathlogには記事にslugを割り振る機能がないため、これが唯一の台帳となる。`slugs.tsv` は `md.tsv` の全ファイルを対象とし、公開予定のないファイルは `NONE` を残置する。
-- 旧slugが見つかった場合は**Mathlog側を手動修正する**（本文の `[[slug]]` と参考文献登録のラベル）。ローカルのmd本文と `refs/*.toml` も同じ内容に合わせて修正する。
+- 旧slugが見つかった場合は**Mathlog側を手動修正する**（本文の `[[slug]]` と参考文献登録のラベル）。ローカルのmd本文と `refs/*.toml` も同じ内容に合わせて修正する。この手動修正作業は `mathlog_fix.md` / `mathlog_fix.sh` で支援する（詳細は関連ファイル・ツール参照）。
 - 同一slugが異なる対象を指す「衝突」は個別に解決が必要。同一対象を指す重複定義（表記揺れ）は統合可能。
 
 ## 残作業
@@ -44,6 +44,8 @@
 ## 関連ファイル・ツール
 
 - `slugs.tsv` — 正準slug台帳（md → slug）。手動管理。
-- `refs_slugs.py` — `build` サブコマンドで `refs.toml`（と任意で `refs-url.txt`/`refs-file.txt`）を生成、`check` サブコマンドで各記事本文の `[[slug]]` と対応する `refs/{ID}.toml` の過不足を検査する。
+- `refs_slugs.py` — `build` サブコマンドで `refs.toml` を生成する。slugごとに見出しを立て、`type`/`url`（定義がなければ省略）と使用元mdファイル一覧（`files`）を持つ。同一slugが異なる`(type, url)`に解決される場合はビルド時にエラーとする。`--url-output`/`--file-output` で `refs-url.txt`（複数slugから引用される同一URLの検出）/ `refs-file.txt`（自著記事が他記事から引用されているslugの一覧）を追加生成できるが、これらは通常のbuildには含めず、必要なチェック時にのみ都度生成する使い捨てファイル。`check` サブコマンドは各記事本文の `[[slug]]` と対応する `refs/{ID}.toml` の過不足を検査する（「未使用」＝tomlにあるが本文にないslugは意図的な保持もあり、必ずしも修正対象ではない）。
 - `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`refs_to_toml.py` で `refs/*.html` から生成）。
+- `mathlog_fix.md` — Mathlog側の参考文献パネルを手動修正する際の作業リスト。何を直すか（表記ゆれの統一先、slug衝突の解消、ラベル改名など）は文脈依存のヒューリスティックな判断が必要で自動生成できないため、都度手で書く使い捨てファイル（処理後に削除する）。記事ごとに `## <mdファイル> — <Mathlog記事URL>` を見出しとし、その下に修正内容を箇条書きする（例: `- <slug>: <field> = <新値>`、改名は `- <旧slug> → <新slug>`）。
+- `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`html_format.py --in-place` で整形する。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`articles.py` で生成・更新。

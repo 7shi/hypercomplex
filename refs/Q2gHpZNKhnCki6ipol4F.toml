@@ -4,10 +4,10 @@ citation = "7shi, 複素数の拡張で学ぶテンソル積, Mathlog, Wed Nov 0
 
 [7shi-colab-cl]
 type = "website"
-citation = "7shi, Clifford.ipynb, Google Colab, 閲覧日 2024年11月22日, https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+citation = "七誌, Clifford.ipynb, Google Colab, 閲覧日 2024年11月22日, https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
 url = "https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
 accessed = 2024-11-22
-author = ["7shi"]
+author = ["七誌"]
 site = "Google Colab"
 
 [wiki-clif]

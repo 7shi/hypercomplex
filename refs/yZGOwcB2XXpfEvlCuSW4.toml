@@ -1,9 +1,9 @@
 [proj]
 type = "website"
-citation = "難波博之, 射影行列のイメージと楽しい公式, 高校数学の美しい物語, 閲覧日 2024年7月25日, https://manabitimes.jp/math/2486"
+citation = "難波 博之, 射影行列のイメージと楽しい公式, 高校数学の美しい物語, 閲覧日 2024年7月25日, https://manabitimes.jp/math/2486"
 url = "https://manabitimes.jp/math/2486"
 accessed = 2024-07-25
-author = ["難波博之"]
+author = ["難波 博之"]
 site = "高校数学の美しい物語"
 
 [7shi-ip]
@@ -33,12 +33,12 @@ url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
 accessed = 2024-07-16
 site = "Wikipedia"
 
-[nakajima]
+[nakajima-oct-rot]
 type = "website"
-citation = "中嶋慧, 八元数と回転, 閲覧日 2024年7月16日, http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
-url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+citation = "中嶋 慧, 八元数と回転, 閲覧日 2024年7月16日, https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
+url = "https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
 accessed = 2024-07-16
-author = ["中嶋慧"]
+author = ["中嶋 慧"]
 
 [7shi-hc]
 type = "website"

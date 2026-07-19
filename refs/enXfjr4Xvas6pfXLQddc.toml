@@ -1,9 +1,9 @@
 [7shi-qrot]
 type = "website"
-citation = "7shi, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2024年5月14日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
+citation = "七誌, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2024年5月14日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
 url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
 accessed = 2024-05-14
-author = ["7shi"]
+author = ["七誌"]
 site = "七誌の開発日記"
 
 [wiki-hopf]

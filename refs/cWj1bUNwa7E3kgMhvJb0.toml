@@ -18,10 +18,10 @@ accessed = 2024-06-26
 author = ["七誌"]
 site = "七誌の開発日記"
 
-[nakajima]
+[nakajima-oct-rot]
 type = "website"
-citation = "中嶋 慧, 八元数と回転, 閲覧日 2024年6月26日, http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
-url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+citation = "中嶋 慧, 八元数と回転, 閲覧日 2024年6月26日, https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
+url = "https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
 accessed = 2024-06-26
 author = ["中嶋 慧"]
 

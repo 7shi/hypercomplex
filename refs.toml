@@ -82,13 +82,24 @@ files = [
 
 ["7shi-colab-cl"]
 type = "website"
-citation = "7shi, Clifford.ipynb, Google Colab, 閲覧日 2024年11月22日, https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+citation = "七誌, Clifford.ipynb, Google Colab, 閲覧日 2024年11月22日, https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
 url = "https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
 accessed = 2024-11-22
-author = ["7shi"]
+author = ["七誌"]
 site = "Google Colab"
 files = [
   "qua/03-qua-tensor.md",
+]
+
+["7shi-colab-qrc"]
+type = "website"
+citation = "七誌, QuaternionMatrixRepresentation.ipynb, Google Colab, 閲覧日 2025年5月7日, https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+accessed = 2025-05-07
+author = ["七誌"]
+site = "Google Colab"
+files = [
+  "qua/cd/real-to-cmatrix.md",
 ]
 
 ["7shi-coord"]
@@ -301,10 +312,10 @@ files = [
 
 ["7shi-p"]
 type = "website"
-citation = "7shi, 外積と愉快な仲間たち, Qiita, 閲覧日 2024年5月24日, https://qiita.com/7shi/items/017d2d2c758f76071f23"
+citation = "七誌, 外積と愉快な仲間たち, Qiita, 閲覧日 2024年5月24日, https://qiita.com/7shi/items/017d2d2c758f76071f23"
 url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
 accessed = 2024-05-24
-author = ["7shi"]
+author = ["七誌"]
 site = "Qiita"
 files = [
   "hopf/02-spinor-tensor.md",
@@ -358,17 +369,6 @@ citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, 
 url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
 files = [
   "qua/cd/heuristic-cmatrix.md",
-  "qua/cd/real-to-cmatrix.md",
-]
-
-["7shi-qrc-colab"]
-type = "website"
-citation = "7shi, QuaternionMatrixRepresentation.ipynb, Google Colab, 閲覧日 2025年5月7日, https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
-url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
-accessed = 2025-05-07
-author = ["7shi"]
-site = "Google Colab"
-files = [
   "qua/cd/real-to-cmatrix.md",
 ]
 
@@ -478,17 +478,6 @@ files = [
   "hopf/01-quaternion.md",
 ]
 
-["dp"]
-type = "website"
-citation = "兵藤哲雄, 直積, 東京都立大学, 閲覧日 2024年5月24日, https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
-url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
-accessed = 2024-05-24
-author = ["兵藤哲雄"]
-site = "東京都立大学"
-files = [
-  "hopf/02-spinor-tensor.md",
-]
-
 ["furey1"]
 type = "website"
 citation = "Cohl Furey, How to get around the non-associativity of the octonions (Video 9/14)., YouTube, 閲覧日 2026年5月23日, https://www.youtube.com/watch?v=Vs01SH8tlX0"
@@ -547,10 +536,21 @@ files = [
   "hopf/homogeneous.md",
 ]
 
+["hyodo-dp"]
+type = "website"
+citation = "兵藤 哲雄, 直積, 東京都立大学, 閲覧日 2024年5月24日, https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+accessed = 2024-05-24
+author = ["兵藤 哲雄"]
+site = "東京都立大学"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
 ["kindai1"]
 type = "book"
-citation = "近藤基吉, 井関清志, 近代数学 上: 現代数学の黎明期, 日本評論社, 1982, 117"
-author = ["近藤基吉", "井関清志"]
+citation = "近藤 基吉, 井関 清志, 近代数学 上: 現代数学の黎明期, 日本評論社, 1982, 117"
+author = ["近藤 基吉", "井関 清志"]
 pages = "117"
 publisher = "日本評論社"
 year = 1982
@@ -574,15 +574,20 @@ files = [
   "hopf/05-entanglement.md",
 ]
 
-["nakajima"]
+["nakajima-4d-rot"]
+files = [
+  "qua/04-4d-bsqua.md",
+  "vec-oct/02-rotation.md",
+]
+
+["nakajima-oct-rot"]
 type = "website"
-citation = "中嶋慧, 八元数と回転, 閲覧日 2024年7月16日, http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
-url = "http://physnakajima.html.xdomain.jp/Octonion_rotation.pdf"
+citation = "中嶋 慧, 八元数と回転, 閲覧日 2024年7月16日, https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
+url = "https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
 accessed = 2024-07-16
-author = ["中嶋慧"]
+author = ["中嶋 慧"]
 files = [
   "oct/02-7d-3rot.md",
-  "qua/04-4d-bsqua.md",
   "vec-oct/01-reflection.md",
   "vec-oct/02-rotation.md",
 ]
@@ -605,10 +610,10 @@ files = [
 
 ["proj"]
 type = "website"
-citation = "難波博之, 射影行列のイメージと楽しい公式, 高校数学の美しい物語, 閲覧日 2024年7月25日, https://manabitimes.jp/math/2486"
+citation = "難波 博之, 射影行列のイメージと楽しい公式, 高校数学の美しい物語, 閲覧日 2024年7月25日, https://manabitimes.jp/math/2486"
 url = "https://manabitimes.jp/math/2486"
 accessed = 2024-07-25
-author = ["難波博之"]
+author = ["難波 博之"]
 site = "高校数学の美しい物語"
 files = [
   "vec-oct/01-reflection.md",

@@ -16,8 +16,8 @@ site = "University of Michigan Library Digital Collections"
 
 [kindai1]
 type = "book"
-citation = "近藤基吉, 井関清志, 近代数学 上: 現代数学の黎明期, 日本評論社, 1982, 117"
-author = ["近藤基吉", "井関清志"]
+citation = "近藤 基吉, 井関 清志, 近代数学 上: 現代数学の黎明期, 日本評論社, 1982, 117"
+author = ["近藤 基吉", "井関 清志"]
 pages = "117"
 publisher = "日本評論社"
 year = 1982

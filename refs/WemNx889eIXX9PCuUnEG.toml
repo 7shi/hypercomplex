@@ -1,9 +1,9 @@
-[7shi-qrc-colab]
+[7shi-colab-qrc]
 type = "website"
-citation = "7shi, QuaternionMatrixRepresentation.ipynb, Google Colab, 閲覧日 2025年5月7日, https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+citation = "七誌, QuaternionMatrixRepresentation.ipynb, Google Colab, 閲覧日 2025年5月7日, https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
 url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
 accessed = 2025-05-07
-author = ["7shi"]
+author = ["七誌"]
 site = "Google Colab"
 
 [7shi-qp]
