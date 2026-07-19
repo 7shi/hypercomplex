@@ -1,4 +1,4 @@
-実数体・複素数体・四元数体と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。拡張公式は前回の記事で導出したものを使用します。[[qua-tensor]] 完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
+実数体・複素数体・四元数体と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。拡張公式は前回の記事で導出したものを使用します。[[7shi-qt]] 完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
 
 &&& 凡例
 以下、代数$A$の直和$A \oplus A$を$2A$と略記し（例：$2\mathbb H \cong \mathbb H \oplus \mathbb H$）、$\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します（例：$\mathbb R(2) \cong M_2(\mathbb R)$）。
@@ -19,7 +19,7 @@ $$
 $$
 
 &&&rem
-$\mathbb H,\mathbb H'$とクリフォード代数の対応は、前回の記事で確認しました。[[qua-tensor]]
+$\mathbb H,\mathbb H'$とクリフォード代数の対応は、前回の記事で確認しました。[[7shi-qt]]
 
 $\mathbb C,\mathbb C'$は生成元が1個のクリフォード代数に対応します。$i^2=-1$となる虚数単位$i$を生成元とすれば$\operatorname{Cl}_{0,1}(\mathbb R)$、$j^2=1$となる虚数単位$j$を生成元とすれば$\operatorname{Cl}_{1,0}(\mathbb R)$が得られます。
 &&&
@@ -87,7 +87,7 @@ $$
 
 # テンソル積による拡張公式
 
-クリフォード代数は、$\mathbb H,\mathbb H'$とのテンソル積によって拡張できます。前回導出した公式を再掲します。[[qua-tensor]]
+クリフォード代数は、$\mathbb H,\mathbb H'$とのテンソル積によって拡張できます。前回導出した公式を再掲します。[[7shi-qt]]
 
 &&&fml クリフォード代数の$⊗\mathbb H$による拡張
 $$
@@ -105,7 +105,7 @@ $$
 &&&
 
 &&&rem
-テンソル積によって、クリフォード代数としての生成元は2個増えます。右辺で$p,q$の位置が入れ替わるのは、拡張時に元の生成元の計量が反転することに由来します。詳細は前回の記事を参照してください。[[qua-tensor]]
+テンソル積によって、クリフォード代数としての生成元は2個増えます。右辺で$p,q$の位置が入れ替わるのは、拡張時に元の生成元の計量が反転することに由来します。詳細は前回の記事を参照してください。[[7shi-qt]]
 &&&
 
 これらの公式を基本構造に繰り返し適用すれば、より高次のクリフォード代数を系統的に構成できます。
@@ -139,9 +139,9 @@ $$
    $$
 
 &&&rem
-1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は前回示した同型です[[qua-tensor]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
+1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は前回示した同型です[[7shi-qt]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
 
-3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$\mathbb{C}(2)$と同型になることを以前の記事で確認しました[[pauli-qua]]。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$となるため、両者は同型です。
+3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$\mathbb{C}(2)$と同型になることを以前の記事で確認しました[[7shi-bq]]。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$となるため、両者は同型です。
 &&&
 
 これらの規則は組み合わせて使用できます。例を示します。
@@ -433,7 +433,7 @@ $$
 $$
 
 &&&rem
-3つ目は双四元数として確認済みです。[[pauli-qua]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$\dfrac{1\pm u}2$による直和分解が起こります。
+3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$\dfrac{1\pm u}2$による直和分解が起こります。
 &&&
 
 拡張公式$\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb H\cong\operatorname{Cl}_{q,p+2}(\mathbb R)$の両辺を複素化すると、$\mathbb H\otimes\mathbb C\cong\mathbb C(2)$より次の周期性が得られます。
@@ -476,7 +476,7 @@ $$
 物理の文献では、この区別を緩めて、クリフォード代数全体の既約表現の元も慣例的に**スピノル**と呼ぶことがよくあります。ピノル空間を偶部分代数に制限すると、スピノル表現そのもの、または2つのスピノル表現の直和が得られるため、両者は同じ空間をどちらの立場から見るかの違いです。
 &&&
 
-例えば$\operatorname{Cl}_{3,0}(\mathbb R)\cong\mathbb C(2)$のピノル空間は$\mathbb C^2$です。これはパウリ行列が作用する空間であり、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$に制限すれば、$\mathrm{SU}(2)$（単位四元数）が作用する2成分スピノル（パウリスピノル）となります。[[pauli-qua]]
+例えば$\operatorname{Cl}_{3,0}(\mathbb R)\cong\mathbb C(2)$のピノル空間は$\mathbb C^2$です。これはパウリ行列が作用する空間であり、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$に制限すれば、$\mathrm{SU}(2)$（単位四元数）が作用する2成分スピノル（パウリスピノル）となります。[[7shi-bq]]
 
 # まとめ
 

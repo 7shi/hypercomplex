@@ -168,7 +168,7 @@ $$
 したがって、$H_{\mathbb{O}}(\alpha q, \beta q) \neq H_{\mathbb{O}}(\alpha, \beta)$となります。
 
 &&&ex
-三つ組$123,145,246,365$[[7shi-oct]]を用いて、等式が成り立たないことを確認します。
+三つ組$123,145,246,365$[[7shi-oct1]]を用いて、等式が成り立たないことを確認します。
 
 $$
 \alpha=e_1/\sqrt2,\quad \beta=e_4/\sqrt2,\quad q=e_2\quad(|q|=1)
