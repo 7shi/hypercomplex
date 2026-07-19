@@ -2,15 +2,28 @@
 
 For each md file (sorted by path) that has a Mathlog url in articles.tsv, its
 per-article reference list refs/{ID}.toml is read and each [[slug]] marker
-found in the md file is resolved to a type and url:
-  - non-mathlog types: url is taken directly from refs/{ID}.toml
-  - type "mathlog": the citation's title is looked up in articles.tsv to
-    find the referenced article's own url
-  - slugs with no matching key in refs/{ID}.toml are listed separately
-    under that file's "undefined" field instead of "refs"
+found in the md file is resolved to its full attribute set from that toml:
+  - non-mathlog types: attributes (type, citation, url, accessed, author,
+    site, journal, pages, year, publisher, ...) are taken directly
+  - type "mathlog": same, plus an explicit "url" added by looking up the
+    citation's title in articles.tsv to find the referenced article's own url
 
-Md files without a Mathlog url (and thus no refs/{ID}.toml) fall back to a
-plain slugs list. Files with no [[slug]] markers are omitted.
+The output is grouped by slug rather than by file: each slug gets its own
+[slug] heading with its merged attributes and a "files" list of every md
+file that uses it. Since slugs are meant to be canonical across the whole
+project, all attributes other than "citation"/"accessed" must match exactly
+across every file that defines the same slug; a mismatch is a naming
+collision. Every slug is checked before reporting — a conflict in one slug
+never stops the scan of the rest, and refs.toml is still written (each
+conflicting slug falls back to its definition with the latest "accessed"
+date) — but afterward all conflicts found are printed together and the
+command exits non-zero, so they can be fixed by hand in refs/{ID}.toml. The
+"citation"/"accessed" fields are excluded from the conflict check itself
+because they legitimately differ by export date.
+
+Md files without a Mathlog url (and thus no refs/{ID}.toml) still contribute
+their [[slug]] markers to the "files" list, unresolved. Files with no
+[[slug]] markers are omitted.
 
 Also writes refs-url.txt: urls referenced under more than one distinct slug
 (the same source cited under different slug names across articles), sorted
@@ -94,26 +107,32 @@ def load_refs_table(article_id: str) -> dict[str, dict]:
 
 def resolve_slug(
     slug: str, refs_table: dict[str, dict], title_urls: dict[str, str]
-) -> tuple[bool, str, str]:
-    """Return (defined, type, url) for slug."""
+) -> tuple[bool, dict]:
+    """Return (defined, entry) for slug, with all attributes from refs/{ID}.toml.
+
+    For type "mathlog", the citation's title is looked up in articles.tsv and
+    the result is added as an explicit "url" key (refs/{ID}.toml itself has no
+    url for mathlog entries).
+    """
     entry = refs_table.get(slug)
     if entry is None:
-        return False, "", ""
-    ref_type = entry.get("type", "")
-    if ref_type == "mathlog":
+        return False, {}
+    entry = dict(entry)
+    if entry.get("type") == "mathlog":
         m = MATHLOG_CITATION_RE.match(entry.get("citation", ""))
         if m:
             title = m.group(2)
-            return True, ref_type, title_urls.get(title, "")
-        return True, ref_type, ""
-    return True, ref_type, entry.get("url", "")
+            url = title_urls.get(title, "")
+            if url:
+                entry["url"] = url
+    return True, entry
 
 
 def collect_slugs_by_file(
     md_entries: list[tuple[Path, str]], title_urls: dict[str, str]
-) -> list[tuple[Path, str, list[tuple[str, bool, str, str]]]]:
-    """Return (md_path, article_url, [(slug, defined, type, url), ...]) per file."""
-    result: list[tuple[Path, str, list[tuple[str, bool, str, str]]]] = []
+) -> list[tuple[Path, str, list[tuple[str, bool, dict]]]]:
+    """Return (md_path, article_url, [(slug, defined, entry), ...]) per file."""
+    result: list[tuple[Path, str, list[tuple[str, bool, dict]]]] = []
     for md_path, article_id in md_entries:
         text = md_path.read_text(encoding="utf-8")
         seen: set[str] = set()
@@ -137,40 +156,103 @@ def toml_string(s: str) -> str:
     return f'"{escaped}"'
 
 
-def render_toml(entries: list[tuple[Path, str, list[tuple[str, bool, str, str]]]]) -> str:
-    blocks: list[str] = []
-    for md_path, article_url, refs in entries:
-        key = toml_string(md_path.relative_to(ROOT).as_posix())
-        lines = [f"[{key}]"]
-        if article_url:
-            lines.append(f"url = {toml_string(article_url)}")
-            undefined = [slug for slug, defined, _, _ in refs if not defined]
-            if undefined:
-                items = ", ".join(toml_string(s) for s in undefined)
-                lines.append(f"undefined = [{items}]")
-        blocks.append("\n".join(lines) + "\n")
+def toml_value(v) -> str:
+    if isinstance(v, str):
+        return toml_string(v)
+    if isinstance(v, list):
+        return "[" + ", ".join(toml_value(x) for x in v) + "]"
+    return str(v)  # int, date: valid as-is in TOML
 
-        if article_url:
-            for slug, defined, ref_type, url in refs:
-                if not defined:
-                    continue
-                r_lines = [f"[[{key}.refs]]", f"slug = {toml_string(slug)}"]
-                if ref_type:
-                    r_lines.append(f"type = {toml_string(ref_type)}")
-                if url:
-                    r_lines.append(f"url = {toml_string(url)}")
-                blocks.append("\n".join(r_lines) + "\n")
-        else:
-            items = ",\n".join(f"  {toml_string(slug)}" for slug, _, _, _ in refs)
-            blocks.append(f"slugs = [\n{items},\n]\n")
+
+# Attributes that legitimately differ across refs/{ID}.toml exports of the
+# same slug (the access date, and the citation string that embeds it) and so
+# are excluded from the cross-file conflict check.
+DATE_KEYS = {"citation", "accessed"}
+
+
+def collect_by_slug(
+    entries: list[tuple[Path, str, list[tuple[str, bool, dict]]]],
+) -> tuple[dict[str, dict], list[str]]:
+    """Group refs by slug into {slug: {**attrs, "files": [...]}}.
+
+    All attributes other than DATE_KEYS must match exactly across every file
+    that defines the slug; a mismatch is a naming collision. Every slug is
+    checked before reporting, so a conflict in one slug never stops the scan
+    of the rest — conflicting slugs are collected into the returned message
+    list instead of being added to the result dict. Among the (otherwise
+    identical) definitions of a slug with no conflict, the one with the
+    latest "accessed" date is kept.
+    """
+    files_by_slug: dict[str, list[str]] = {}
+    defs_by_slug: dict[str, list[tuple[str, dict]]] = {}
+    for md_path, _, refs in entries:
+        rel = md_path.relative_to(ROOT).as_posix()
+        for slug, defined, entry in refs:
+            files = files_by_slug.setdefault(slug, [])
+            if rel not in files:
+                files.append(rel)
+            if defined:
+                defs_by_slug.setdefault(slug, []).append((rel, entry))
+
+    result: dict[str, dict] = {}
+    conflicts: list[str] = []
+    for slug, files in files_by_slug.items():
+        files.sort()
+        defs = defs_by_slug.get(slug, [])
+        if not defs:
+            result[slug] = {"files": files}
+            continue
+
+        base_rel, base_entry = defs[0]
+        base_key = {k: v for k, v in base_entry.items() if k not in DATE_KEYS}
+        mismatches = [
+            (rel, entry)
+            for rel, entry in defs[1:]
+            if {k: v for k, v in entry.items() if k not in DATE_KEYS} != base_key
+        ]
+        if mismatches:
+            lines = [f"slug conflict: {slug!r} differs across files (ignoring {sorted(DATE_KEYS)}):"]
+            lines.append(f"  {base_rel}: {base_entry}")
+            for rel, entry in mismatches:
+                lines.append(f"  {rel}: {entry}")
+            conflicts.append("\n".join(lines))
+            # still merge below (latest "accessed" wins) so the build can
+            # proceed; the conflict is reported, not silently ignored.
+
+        chosen_rel, chosen_entry = base_rel, base_entry
+        chosen_date = chosen_entry.get("accessed")
+        for rel, entry in defs[1:]:
+            date = entry.get("accessed")
+            if date is not None and (chosen_date is None or date > chosen_date):
+                chosen_rel, chosen_entry, chosen_date = rel, entry, date
+
+        merged = dict(chosen_entry)
+        merged["files"] = files
+        result[slug] = merged
+    return result, conflicts
+
+
+def render_toml_by_slug(slug_map: dict[str, dict]) -> str:
+    blocks: list[str] = []
+    for slug in sorted(slug_map):
+        entry = slug_map[slug]
+        lines = [f"[{toml_string(slug)}]"]
+        for key, value in entry.items():
+            if key == "files":
+                continue
+            lines.append(f"{key} = {toml_value(value)}")
+        items = ",\n".join(f"  {toml_string(f)}" for f in entry["files"])
+        lines.append(f"files = [\n{items},\n]")
+        blocks.append("\n".join(lines) + "\n")
     return "\n".join(blocks)
 
 
-def find_shared_urls(entries: list[tuple[Path, str, list[tuple[str, bool, str, str]]]]) -> list[tuple[str, list[str]]]:
+def find_shared_urls(entries: list[tuple[Path, str, list[tuple[str, bool, dict]]]]) -> list[tuple[str, list[str]]]:
     """Return (url, slugs) for urls cited under more than one distinct slug."""
     slugs_by_url: dict[str, list[str]] = {}
     for _, _, refs in entries:
-        for slug, _, _, url in refs:
+        for slug, _, entry in refs:
+            url = entry.get("url", "")
             if not url:
                 continue
             slugs = slugs_by_url.setdefault(url, [])
@@ -187,7 +269,7 @@ def render_shared_urls(shared: list[tuple[str, list[str]]]) -> str:
 
 def find_citing_slugs_by_file(
     md_entries: list[tuple[Path, str]],
-    entries: list[tuple[Path, str, list[tuple[str, bool, str, str]]]],
+    entries: list[tuple[Path, str, list[tuple[str, bool, dict]]]],
 ) -> list[tuple[Path, list[str]]]:
     """For each md file with an article id, the distinct slugs other
     articles use to cite it via type = "mathlog", sorted by md path."""
@@ -195,8 +277,9 @@ def find_citing_slugs_by_file(
     slugs_by_id: dict[str, list[str]] = {aid: [] for aid in id_to_path}
 
     for _, _, refs in entries:
-        for slug, _, ref_type, url in refs:
-            if ref_type != "mathlog" or not url:
+        for slug, _, entry in refs:
+            url = entry.get("url", "")
+            if entry.get("type") != "mathlog" or not url:
                 continue
             article_id = url.rsplit("/", 1)[-1]
             if article_id not in slugs_by_id:
@@ -273,10 +356,10 @@ def build_command(args: argparse.Namespace) -> None:
     md_entries = load_md_entries(ARTICLES_TSV)
     title_urls = load_title_urls(ARTICLES_TSV)
     entries = collect_slugs_by_file(md_entries, title_urls)
-    total = sum(len(refs) for _, _, refs in entries)
+    slug_map, conflicts = collect_by_slug(entries)
 
-    args.output.write_text(render_toml(entries), encoding="utf-8")
-    print(f"wrote {total} slugs across {len(entries)} files to {args.output.relative_to(ROOT)}")
+    args.output.write_text(render_toml_by_slug(slug_map), encoding="utf-8")
+    print(f"wrote {len(slug_map)} slugs to {args.output.relative_to(ROOT)}")
 
     if args.url_output is not None:
         shared = find_shared_urls(entries)
@@ -287,6 +370,11 @@ def build_command(args: argparse.Namespace) -> None:
         citing = find_citing_slugs_by_file(md_entries, entries)
         args.file_output.write_text(render_citing_slugs(citing), encoding="utf-8")
         print(f"wrote {len(citing)} files to {args.file_output.relative_to(ROOT)}")
+
+    if conflicts:
+        print(f"\n{len(conflicts)} slug conflict(s) found (output written using latest \"accessed\" per slug anyway):\n")
+        print("\n\n".join(conflicts))
+        raise SystemExit(1)
 
 
 def check_command(args: argparse.Namespace) -> None:
