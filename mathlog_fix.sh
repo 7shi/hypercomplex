@@ -16,6 +16,7 @@ flush() {
         ref="refs/$(basename "$url").html"
         winclip -o "$ref"
         uv run html_format.py "$ref" --in-place
+        uv run refs_to_toml.py "$ref"
     fi
 }
 
@@ -31,3 +32,5 @@ for line in "${lines[@]}"; do
     fi
 done
 flush
+uv run refs_slugs.py build
+uv run refs_slugs.py check
