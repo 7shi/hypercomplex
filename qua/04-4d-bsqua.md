@@ -36,7 +36,7 @@ e_1^2=1,\quad e_2^2=1,\quad e_3^2=1,\quad e_4^2=-1
 $$
 となるため、ミンコフスキー計量のクリフォード代数$C\ell_{3,1}(\mathbb R)\cong M_4(\mathbb R)$と同一視できます。ただしこれは、本記事で後に使う$C\ell_{4,0}(\mathbb R)$とは異なる代数が、同じ行列環にたまたま同居しているだけで、作用のさせ方も異なります。
 
-次節の$\mathrm{SO}(4)$の構成は行列を四元数（ベクトル）に直接作用させる方式です。これに対し$C\ell_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=r^{-1}vr$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
+次節の$\mathrm{SO}(4)$の構成は行列をベクトルに直接作用させる方式です。これに対し$C\ell_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=r^{-1}vr$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
 &&&
 
 ## $\mathrm{SO}(4)$の構成
@@ -546,14 +546,9 @@ $$
 \mathbb H\otimes\mathbb H\cong M_4(\mathbb R),\quad
 \mathrm{SU}(2)\otimes\mathrm{SU}(2)\cong\mathrm{SO}(4)
 $$
-二重回転の分解（$e_1e_2$面で$\theta_1$、$e_4e_3$面で$\theta_2$の回転）：
+二重回転の分解（$u$を単位純虚四元数、$u^2=-1$として、$(1,u)$平面で$\theta_1$、それと直交する平面で$\theta_2$の回転）：
 $$
-q'=\exp\left(\frac{\theta_1-\theta_2}2i\right)q\exp\left(\frac{\theta_1+\theta_2}2i\right)
-$$
-等傾回転の回転子（$b=e_1n$は$(1,u)$平面、$\omega b$は直交補平面）：
-$$
-q\mapsto e^{\alpha u}q\ \Leftrightarrow\ \exp\left(\frac\alpha2(1-\omega)b\right),\quad
-q\mapsto q\,e^{\beta u}\ \Leftrightarrow\ \exp\left(\frac\beta2(1+\omega)b\right)
+q'=\exp\left(\frac{\theta_1-\theta_2}2u\right)q\exp\left(\frac{\theta_1+\theta_2}2u\right)
 $$
 偶部分代数の階梯とスピン群：
 $$
@@ -583,8 +578,18 @@ T(X'+\omega X'')=X'+X''
 $$
 回転子の対応：
 $$
-r_L=\exp\left(-\frac\theta2T(\varphi(p)^{\dagger})\right),\quad
-r_R=\exp\left(\frac\theta2T(\varphi(p))\right)
+p=p_{12}e_1e_2+p_{13}e_1e_3+p_{14}e_1e_4+p_{43}e_4e_3+p_{24}e_2e_4+p_{32}e_3e_2
+$$
+$$
+q'=r_L\,q\,r_R, \quad
+r_L=\exp\left(\frac\theta2\,q_L\right), \quad
+r_R=\exp\left(\frac\theta2\,q_R\right)
+$$
+$$
+\begin{alignedat}{3}
+q_L&=-&&T(\varphi(p)^{\dagger})&&=(p_{12}-p_{43})i+(p_{13}-p_{24})j+(p_{14}-p_{32})k \\
+q_R&= &&T(\varphi(p))&&=(p_{12}+p_{43})i+(p_{13}+p_{24})j+(p_{14}+p_{32})k
+\end{alignedat}
 $$
 &&&
 
