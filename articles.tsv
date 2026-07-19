@@ -1,4 +1,5 @@
 date	url	md	title
+2026/07/20	/articles/asrMOxuKsJIdPqANfOs3	qua/04-4d-bsqua.md	4次元回転と分解型双四元数
 2026/07/15	/articles/aUC0EotUv0bdyXzusvAT	hopf/03-bloch-density.md	四元数とホップファイブレーション 3 ブロッホ球と密度行列
 2026/07/10	/articles/Utdur1fLLzrWVHOJHifj	lie/02-su2-so3.md	リー群・リー代数の初歩 2 四元数とSU(2)
 2026/05/23	/articles/PZJuaRWHYidsIg9u83j8	oct/03-oct-left-mul.md	八元数の左作用とクリフォード代数
@@ -46,7 +47,6 @@ date	url	md	title
 		lie/03-spin.md	クリフォード代数とSpin(3)
 		lie/04-spin4.md	Spin(4)とSO(4)
 		lie/05-su3.md	SO(3)の複素化とSU(3)
-		qua/04-4d-bsqua.md	4次元回転と双四元数：SO(4)とSpin(4)
 		qua/05-dual-qua.md	二重四元数と剛体変換
 		qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
 		qua/cd/grok45.md	複素数の行列表現から四元数へ：発見法的な導出

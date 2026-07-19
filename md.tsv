@@ -37,7 +37,7 @@ oct/nonassociativity.md	八元数の非結合性
 qua/01-pauli-qua.md	パウリ行列と四元数：双四元数による橋渡し
 qua/02-nonion.md	シルベスターの九元数 (nonion)
 qua/03-qua-tensor.md	四元数のテンソル積とクリフォード代数の構成
-qua/04-4d-bsqua.md	4次元回転と双四元数：SO(4)とSpin(4)
+qua/04-4d-bsqua.md	4次元回転と分解型双四元数
 qua/05-dual-qua.md	二重四元数と剛体変換
 qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
 qua/cd/cd-to-matrix.md	ケイリー＝ディクソンの構成法から四元数の行列表現まで
