@@ -1,21 +1,21 @@
 ["clif/01-representation.md"]
 
 slugs = [
-  "qua-tensor",
-  "pauli-qua",
+  "7shi-qt",
+  "7shi-bq",
   "wiki-clif",
 ]
 
 ["clif/03-gpm-gca.md"]
 
 slugs = [
-  "pauli-qua",
-  "qua-nonion",
-  "gpm",
-  "gca",
-  "qua-tensor",
-  "clif-rep",
-  "clif-sc",
+  "7shi-bq",
+  "7shi-nonion",
+  "wiki-gpm",
+  "wiki-gca",
+  "7shi-qt",
+  "7shi-clif1",
+  "7shi-clif2",
   "wiki-fmc",
 ]
 
@@ -24,39 +24,39 @@ slugs = [
 slugs = [
   "wiki-ccr",
   "wiki-weyl-alg",
-  "gpm",
-  "lie-u1",
-  "gca",
+  "wiki-gpm",
+  "7shi-lie1",
+  "wiki-gca",
   "wiki-svn",
   "weyl-qm",
   "schwinger-uob",
-  "qua-nonion",
+  "7shi-nonion",
 ]
 
 ["clif/05-schrodinger.md"]
 
 slugs = [
-  "weyl-alg",
+  "7shi-clif4",
   "wiki-schrodinger",
-  "gca",
+  "wiki-gca",
   "wiki-stone",
-  "gpm",
+  "wiki-gpm",
   "wiki-tight-binding",
   "wiki-qwalk",
   "wiki-ehrenfest",
-  "nelson-sqm",
+  "7shi-leb6",
 ]
 
 ["hopf/01-quaternion.md"]
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
 [["hopf/01-quaternion.md".refs]]
-slug = "7shi"
+slug = "7shi-qrot"
 type = "website"
 url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
 
 [["hopf/01-quaternion.md".refs]]
-slug = "wikipedia"
+slug = "wiki-hopf"
 type = "website"
 url = "https://en.wikipedia.org/wiki/Hopf_fibration"
 
@@ -66,7 +66,7 @@ type = "website"
 url = "https://www.dimensions-math.org/Dim_CH7_JP.htm"
 
 [["hopf/01-quaternion.md".refs]]
-slug = "7shi-hc"
+slug = "7shi-homog"
 type = "mathlog"
 url = "https://mathlog.info/articles/f5v2F6yOFhqtnpDtFtcP"
 
@@ -79,7 +79,7 @@ type = "mathlog"
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
 [["hopf/02-spinor-tensor.md".refs]]
-slug = "7shi-c"
+slug = "7shi-coord"
 type = "mathlog"
 url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
 
@@ -89,7 +89,7 @@ type = "website"
 url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
 
 [["hopf/02-spinor-tensor.md".refs]]
-slug = "wikipedia-dp"
+slug = "wiki-dp"
 type = "website"
 url = "https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)"
 
@@ -130,19 +130,19 @@ url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
 slugs = [
   "7shi-h",
-  "7shi-oct",
+  "7shi-oct1",
 ]
 
 ["hopf/05-entanglement.md"]
 
 slugs = [
-  "7shi-ext",
+  "7shi-hopfext",
   "7shi-s",
-  "7shi-bd",
-  "7shi-tensor",
+  "7shi-bloch",
+  "7shi-tp",
   "7shi-h",
-  "7shi-oct",
-  "lie-su3",
+  "7shi-oct1",
+  "7shi-lie5",
   "mosseri",
   "bernevig",
 ]
@@ -150,26 +150,26 @@ slugs = [
 ["hopf/06-clifford-gates.md"]
 
 slugs = [
-  "7shi-ent",
+  "7shi-entangle",
   "7shi-s",
-  "7shi-bd",
-  "7shi-spin",
-  "7shi-su2",
-  "7shi-rot",
-  "pauli-qua",
+  "7shi-bloch",
+  "7shi-lie3",
+  "7shi-lie2",
+  "7shi-clrt",
+  "7shi-bq",
   "brw",
   "nielsen-chuang",
-  "7shi-tensor",
+  "7shi-tp",
   "gottesman",
-  "gpm",
-  "weyl-alg",
+  "wiki-gpm",
+  "7shi-clif4",
 ]
 
 ["hopf/c2-to-s2.md"]
 url = "https://mathlog.info/articles/OHZI3f5bQ4hB0S7dn6lv"
 
 [["hopf/c2-to-s2.md".refs]]
-slug = "7shi-hopf1"
+slug = "7shi-h"
 type = "mathlog"
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
@@ -186,7 +186,7 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2025/01/01/071325"
 
 [["hopf/homogeneous.md".refs]]
-slug = "7shi-qhopf1"
+slug = "7shi-h"
 type = "mathlog"
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
@@ -207,7 +207,7 @@ type = "mathlog"
 url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
 
 [["lie/02-su2-so3.md".refs]]
-slug = "7shi-qmat"
+slug = "7shi-qcm"
 type = "mathlog"
 url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
 
@@ -220,15 +220,14 @@ url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
 
 slugs = [
   "7shi-lie2",
-  "7shi-hopf1",
-  "7shi-su2",
+  "7shi-h",
 ]
 
 ["lie/04-spin4.md"]
 
 slugs = [
-  "7shi-spin",
-  "7shi-su2",
+  "7shi-lie3",
+  "7shi-lie2",
 ]
 
 ["misc/epsilon-euler-lagrange.md"]
@@ -279,22 +278,22 @@ url = "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%95%B0%E3%81%AE%E5%BE%AE%E5%88%
 url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
 
 [["misc/spherical-coords.md".refs]]
-slug = "wikipedia"
+slug = "wiki-nsphere"
 type = "website"
 url = "https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
 
 [["misc/spherical-coords.md".refs]]
-slug = "wikipedia-s3"
+slug = "wiki-s3"
 type = "website"
 url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
 
 [["misc/spherical-coords.md".refs]]
-slug = "7shi"
+slug = "7shi-h"
 type = "mathlog"
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 
 [["misc/spherical-coords.md".refs]]
-slug = "7shi-2"
+slug = "7shi-s"
 type = "mathlog"
 url = "https://mathlog.info/articles/co6jC5vshPXR0EgmAjX3"
 
@@ -310,7 +309,7 @@ url = "https://mathlog.info/articles/XYc7CpVJFqivkuseQCQS"
 url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
 
 [["oct/01-octonion.md".refs]]
-slug = "oct-7rot"
+slug = "7shi-7rot"
 type = "mathlog"
 url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
 
@@ -325,12 +324,12 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
 
 [["oct/01-octonion.md".refs]]
-slug = "oct-nonassoc"
+slug = "7shi-nonassoc"
 type = "mathlog"
 url = "https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN"
 
 [["oct/01-octonion.md".refs]]
-slug = "oct-cl6"
+slug = "7shi-cl6"
 type = "mathlog"
 url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 
@@ -338,7 +337,7 @@ url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
 
 [["oct/02-7d-3rot.md".refs]]
-slug = "oct"
+slug = "7shi-oct1"
 type = "mathlog"
 url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
 
@@ -348,7 +347,7 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2017/12/04/235635"
 
 [["oct/02-7d-3rot.md".refs]]
-slug = "7shi-rot"
+slug = "7shi-clrt"
 type = "website"
 url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
 
@@ -381,16 +380,16 @@ url = "https://x.com/7shi/status/1805277382703751383"
 url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 
 [["oct/03-oct-left-mul.md".refs]]
-slug = "oct"
+slug = "7shi-oct1"
 type = "mathlog"
 url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
 
 [["oct/03-oct-left-mul.md".refs]]
-slug = "ref1"
+slug = "hasebe"
 type = "paper"
 
 [["oct/03-oct-left-mul.md".refs]]
-slug = "ref2"
+slug = "tian"
 type = "paper"
 
 [["oct/03-oct-left-mul.md".refs]]
@@ -416,7 +415,7 @@ url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
 url = "https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN"
 
 [["oct/nonassociativity.md".refs]]
-slug = "7shi-oct480"
+slug = "7shi-480"
 type = "website"
 url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
 
@@ -449,7 +448,7 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2020/10/03/182512"
 
 [["qua/01-pauli-qua.md".refs]]
-slug = "7shi-pcoord"
+slug = "7shi-coord"
 type = "mathlog"
 url = "https://mathlog.info/articles/2HkSkfawcYJYgE6rVgu6"
 
@@ -485,12 +484,12 @@ slug = "kindai1"
 type = "book"
 
 [["qua/02-nonion.md".refs]]
-slug = "gpm"
+slug = "wiki-gpm"
 type = "website"
 url = "https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
 
 [["qua/02-nonion.md".refs]]
-slug = "gca"
+slug = "wiki-gca"
 type = "website"
 url = "https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
 
@@ -546,7 +545,7 @@ url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
 ["qua/cd/grok45.md"]
 
 slugs = [
-  "7shi-su2",
+  "7shi-lie2",
   "wiki-bc",
 ]
 
@@ -583,7 +582,7 @@ url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
 url = "https://mathlog.info/articles/Ale2XUWFasqCiU2V5Q7p"
 
 [["qua/real-pauli-trace.md".refs]]
-slug = "7shi-pbq"
+slug = "7shi-bq"
 type = "mathlog"
 url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
 
@@ -603,8 +602,8 @@ url = "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%
 ["qua/spinor-ideal.md"]
 
 slugs = [
-  "7shi-oct-left-mul",
-  "clif-rep",
+  "7shi-cl6",
+  "7shi-clif1",
 ]
 
 ["qua/tensor-from-complex.md"]
@@ -651,7 +650,7 @@ type = "website"
 url = "https://en.wikipedia.org/wiki/Biquaternion"
 
 [["qua/tensor-from-complex.md".refs]]
-slug = "7shi-pdq"
+slug = "7shi-bq"
 type = "mathlog"
 url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
 
@@ -694,7 +693,7 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
 
 [["vec-oct/01-reflection.md".refs]]
-slug = "7shi-ort"
+slug = "7shi-7rot"
 type = "mathlog"
 url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
 
@@ -734,11 +733,11 @@ type = "website"
 url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
 
 [["vec-oct/geometric-product-exp.md".refs]]
-slug = "7shi-vo"
+slug = "7shi-mir"
 type = "mathlog"
 url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
 
 [["vec-oct/geometric-product-exp.md".refs]]
-slug = "7shi-pdq"
+slug = "7shi-bq"
 type = "mathlog"
 url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"

@@ -1,15 +1,15 @@
-[oct]
+[7shi-oct1]
 type = "mathlog"
 citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
 
-[ref1]
+[hasebe]
 type = "paper"
 citation = "Kazuki Hasebe, Hopf Maps, Lowest Landau Level, and Fuzzy Spheres, arXiv, 2010"
 author = ["Kazuki Hasebe"]
 journal = "arXiv"
 year = 2010
 
-[ref2]
+[tian]
 type = "paper"
 citation = "Yongge Tian, Matrix Representations of Octonions and Their Applications, arXiv, 2000"
 author = ["Yongge Tian"]

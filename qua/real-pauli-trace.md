@@ -2,7 +2,7 @@
 
 # パウリ行列
 
-通常のパウリ行列$\sigma_1, \sigma_2, \sigma_3$は以下のように定義されます。[[7shi-pbq]]
+通常のパウリ行列$\sigma_1, \sigma_2, \sigma_3$は以下のように定義されます。[[7shi-bq]]
 
 $$
 \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}

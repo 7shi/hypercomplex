@@ -1,4 +1,4 @@
-[7shi]
+[7shi-qrot]
 type = "website"
 citation = "7shi, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2024年5月14日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
 url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
@@ -6,7 +6,7 @@ accessed = 2024-05-14
 author = ["7shi"]
 site = "七誌の開発日記"
 
-[wikipedia]
+[wiki-hopf]
 type = "website"
 citation = "Hopf fibration, Wikipedia, 閲覧日 2024年5月14日, https://en.wikipedia.org/wiki/Hopf_fibration"
 url = "https://en.wikipedia.org/wiki/Hopf_fibration"
@@ -20,6 +20,6 @@ url = "https://www.dimensions-math.org/Dim_CH7_JP.htm"
 accessed = 2026-07-15
 site = "Dimensions"
 
-[7shi-hc]
+[7shi-homog]
 type = "mathlog"
 citation = "7shi, 同次座標とホップファイブレーション, Mathlog, Tue Jan 21 2025, アクセス日: Sun Jul 19 2026"

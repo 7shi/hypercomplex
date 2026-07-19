@@ -1,21 +1,21 @@
-[wikipedia]
+[wiki-nsphere]
 type = "website"
 citation = "超球面, Wikipedia, 閲覧日 2024年5月20日, https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
 url = "https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
 accessed = 2024-05-20
 site = "Wikipedia"
 
-[wikipedia-s3]
+[wiki-s3]
 type = "website"
 citation = "三次元球面, Wikipedia, 閲覧日 2024年5月21日, https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
 url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
 accessed = 2024-05-21
 site = "Wikipedia"
 
-[7shi]
+[7shi-h]
 type = "mathlog"
 citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"
 
-[7shi-2]
+[7shi-s]
 type = "mathlog"
 citation = "7shi, 四元数とホップファイブレーション 2 スピノルのテンソル積, Mathlog, Fri May 24 2024, アクセス日: Sun Jul 19 2026"

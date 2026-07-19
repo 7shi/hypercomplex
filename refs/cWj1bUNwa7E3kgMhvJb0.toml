@@ -1,4 +1,4 @@
-[oct]
+[7shi-oct1]
 type = "mathlog"
 citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
 
@@ -10,7 +10,7 @@ accessed = 2024-06-26
 author = ["七誌"]
 site = "七誌の開発日記"
 
-[7shi-rot]
+[7shi-clrt]
 type = "website"
 citation = "七誌, クリフォード代数による回転, 七誌の開発日記, 閲覧日 2024年6月26日, https://7shi.hateblo.jp/entry/2020/03/07/071242"
 url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"

@@ -22,9 +22,17 @@ the distinct slugs other articles use to cite it via type = "mathlog"
 article), sorted by md path, one line each as "md_path = slug, slug, ..." or
 "md_path = NONE" when no article cites it.
 
+Also has a "check" subcommand: for each published article (one with a
+refs/{ID}.toml), compares the [[slug]] markers used in the md body against
+the keys defined in refs/{ID}.toml, and reports any mismatch — slugs used in
+the body but not defined in the toml, and keys defined in the toml but not
+used in the body.
+
 Usage:
-  refs_slugs.py                      # write refs.toml, refs-url.txt, refs-file.txt
-  refs_slugs.py -o out.toml
+  refs_slugs.py build                      # write refs.toml only
+  refs_slugs.py build -o out.toml
+  refs_slugs.py build --url-output refs-url.txt --file-output refs-file.txt
+  refs_slugs.py check
 """
 
 from __future__ import annotations
@@ -38,8 +46,6 @@ ROOT = Path(__file__).resolve().parent
 ARTICLES_TSV = ROOT / "articles.tsv"
 REFS_DIR = ROOT / "refs"
 DEFAULT_OUTPUT = ROOT / "refs.toml"
-DEFAULT_URL_OUTPUT = ROOT / "refs-url.txt"
-DEFAULT_FILE_OUTPUT = ROOT / "refs-file.txt"
 MATHLOG_BASE = "https://mathlog.info"
 
 SLUG_RE = re.compile(r"\[\[([^\]]+)\]\]")
@@ -213,12 +219,56 @@ def render_citing_slugs(citing: list[tuple[Path, list[str]]]) -> str:
     return "".join(lines)
 
 
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
-    parser.add_argument("-o", "--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--url-output", type=Path, default=DEFAULT_URL_OUTPUT)
-    parser.add_argument("--file-output", type=Path, default=DEFAULT_FILE_OUTPUT)
-    args = parser.parse_args(argv)
+def find_slug_mismatches(
+    md_entries: list[tuple[Path, str]],
+) -> list[tuple[Path, str, list[str], list[str]]]:
+    """For each published article (has refs/{ID}.toml), return (md_path,
+    article_id, missing, unused) where missing = slugs used in the body but
+    not defined in the toml, unused = toml keys not used in the body.
+    Only entries with at least one mismatch are returned, sorted by md path.
+    """
+    result: list[tuple[Path, str, list[str], list[str]]] = []
+    for md_path, article_id in md_entries:
+        if not article_id:
+            continue
+        refs_path = REFS_DIR / f"{article_id}.toml"
+        if not refs_path.is_file():
+            continue
+        refs_table = load_refs_table(article_id)
+        text = md_path.read_text(encoding="utf-8")
+        seen: set[str] = set()
+        used: list[str] = []
+        for slug in SLUG_RE.findall(text):
+            if slug not in seen:
+                seen.add(slug)
+                used.append(slug)
+        used_set = set(used)
+        defined_set = set(refs_table.keys())
+        missing = sorted(used_set - defined_set)
+        unused = sorted(defined_set - used_set)
+        if missing or unused:
+            result.append((md_path, article_id, missing, unused))
+    result.sort(key=lambda e: e[0].relative_to(ROOT).as_posix())
+    return result
+
+
+def render_mismatches(mismatches: list[tuple[Path, str, list[str], list[str]]]) -> str:
+    lines: list[str] = []
+    for md_path, article_id, missing, unused in mismatches:
+        lines.append(f"== {md_path.relative_to(ROOT).as_posix()} ({article_id}) ==")
+        if missing:
+            lines.append(f"  未定義(本文にあるがtomlにない): {missing}")
+        if unused:
+            lines.append(f"  未使用(tomlにあるが本文にない): {unused}")
+    return "\n".join(lines)
+
+
+def build_command(args: argparse.Namespace) -> None:
+    args.output = args.output.resolve()
+    if args.url_output is not None:
+        args.url_output = args.url_output.resolve()
+    if args.file_output is not None:
+        args.file_output = args.file_output.resolve()
 
     md_entries = load_md_entries(ARTICLES_TSV)
     title_urls = load_title_urls(ARTICLES_TSV)
@@ -228,13 +278,41 @@ def main(argv: list[str] | None = None) -> None:
     args.output.write_text(render_toml(entries), encoding="utf-8")
     print(f"wrote {total} slugs across {len(entries)} files to {args.output.relative_to(ROOT)}")
 
-    shared = find_shared_urls(entries)
-    args.url_output.write_text(render_shared_urls(shared), encoding="utf-8")
-    print(f"wrote {len(shared)} shared urls to {args.url_output.relative_to(ROOT)}")
+    if args.url_output is not None:
+        shared = find_shared_urls(entries)
+        args.url_output.write_text(render_shared_urls(shared), encoding="utf-8")
+        print(f"wrote {len(shared)} shared urls to {args.url_output.relative_to(ROOT)}")
 
-    citing = find_citing_slugs_by_file(md_entries, entries)
-    args.file_output.write_text(render_citing_slugs(citing), encoding="utf-8")
-    print(f"wrote {len(citing)} files to {args.file_output.relative_to(ROOT)}")
+    if args.file_output is not None:
+        citing = find_citing_slugs_by_file(md_entries, entries)
+        args.file_output.write_text(render_citing_slugs(citing), encoding="utf-8")
+        print(f"wrote {len(citing)} files to {args.file_output.relative_to(ROOT)}")
+
+
+def check_command(args: argparse.Namespace) -> None:
+    md_entries = load_md_entries(ARTICLES_TSV)
+    mismatches = find_slug_mismatches(md_entries)
+    if not mismatches:
+        print("mismatch nothing: all published articles match their refs/{ID}.toml")
+        return
+    print(render_mismatches(mismatches))
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    build_parser = subparsers.add_parser("build", help="write refs.toml (and optionally refs-url.txt/refs-file.txt)")
+    build_parser.add_argument("-o", "--output", type=Path, default=DEFAULT_OUTPUT)
+    build_parser.add_argument("--url-output", type=Path, default=None)
+    build_parser.add_argument("--file-output", type=Path, default=None)
+    build_parser.set_defaults(func=build_command)
+
+    check_parser = subparsers.add_parser("check", help="check body [[slug]] markers against refs/{ID}.toml keys")
+    check_parser.set_defaults(func=check_command)
+
+    args = parser.parse_args(argv)
+    args.func(args)
 
 
 if __name__ == "__main__":

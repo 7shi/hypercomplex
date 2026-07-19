@@ -22,14 +22,14 @@ pages = "117"
 publisher = "日本評論社"
 year = 1982
 
-[gpm]
+[wiki-gpm]
 type = "website"
 citation = "Generalizations of Pauli matrices, Wikipedia, 閲覧日 2026年5月17日, https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
 url = "https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
 accessed = 2026-05-17
 site = "Wikipedia"
 
-[gca]
+[wiki-gca]
 type = "website"
 citation = "Generalized Clifford algebra, Wikipedia, 閲覧日 2026年5月17日, https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
 url = "https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
