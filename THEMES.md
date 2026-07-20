@@ -70,16 +70,23 @@
 
 ## 6. リー群・リー代数
 
-数体系から回転群を構成する対応関係を軸にした、意図的に構成された連続シリーズです（詳細は[lie/README.md](lie/README.md)の「記事構成の意図」を参照）。
+数体系から回転群を構成する対応関係を軸にした、意図的に構成された連続シリーズです（詳細は[lie/README.md](lie/README.md)の「記事構成の意図」を参照）。全11記事で完結しています。
 
 1. [複素数とSO(2)](lie/01-u1-so2.md) — $\operatorname{U}(1)$を例にリー群・リー代数の基本概念を導入。
 2. [四元数とSU(2)](lie/02-su2-so3.md) — $\operatorname{Sp}(1) \cong \operatorname{SU}(2)$と$\operatorname{SO}(3)$の2重被覆。
 3. [クリフォード代数とSpin(3)](lie/03-spin.md) — $\operatorname{Spin}(3)$とスピノル。パウリ行列が生成するクリフォード代数の偶部分代数として四元数を構成し直す。
 4. [Spin(4)とSO(4)](lie/04-spin4.md) — 四元数の左右独立作用による$\operatorname{SO}(4)$の構成と、2重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$。
-5. [SO(3)の複素化とSU(3)](lie/05-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。
+5. [SO(3)の複素化とSU(3)](lie/05-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。クロック・シフト行列の共役関係（$\operatorname{Ad}(U), \operatorname{Ad}(V)$の可換性と中心拡大、DFT行列$F$による共役）にも触れる。
 6. [BCH公式と随伴作用](lie/06-bch-adjoint.md) — 指数法則のずれを括弧積で記述するBCH公式、ヤコビ恒等式、共役作用のリー代数版である随伴作用$\operatorname{Ad}/\operatorname{ad}$。
+7. [八元数とS^7](lie/07-s7.md) — 単位八元数のなす$S^7$が積・逆元を持ちながら結合法則を欠くためリー群にならないこと、アルティンの定理、ヤコビ恒等式の破れ、ムーファン・ループ、共役作用による$\operatorname{SO}(7)$の生成、フルヴィッツの定理による数体系の系列の終わり。
+8. [八元数の自己同型群G_2](lie/08-g2.md) — 八元数の積を保つ変換全体としての14次元の例外型リー群$G_2 \subset \operatorname{SO}(7)$、微分$\operatorname{Der}(\mathbb{O})$、分解$\mathfrak{so}(7) = \mathfrak{g}_2 \oplus \{u \times \cdot\}$、$\operatorname{SU}(3)$の再登場。
+9. [Spin(7)と三対性](lie/09-spin7-triality.md) — 純虚八元数の左作用のクリフォード関係から$\operatorname{Spin}(7)$を構成し、八元数自身がスピノルとして半角で回ることを見る。$G_2 = \operatorname{Stab}(1)$、$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$、倍加構成による$\operatorname{Spin}(8)$と三対性。
+10. [ルート系とディンキン図形](lie/10-roots-dynkin.md) — 個々の群の構成から分類へ視点を切り替え、ウェイト・ルート・単純ルート・ディンキン図形を整備して4系列$A_n,B_n,C_n,D_n$と5つの例外型に至る俯瞰。
+11. [例外型ジョルダン代数と魔方陣](lie/11-exceptional.md) — 八元数係数$3\times3$エルミート行列の例外型ジョルダン代数（アルバート代数）から残る例外型$F_4, E_6, E_7, E_8$を構成し、シリーズを総括する。
 
-今後07〜09（八元数と$S^7$、$G_2$、$\operatorname{Spin}(7)$と三対性）が予定されており、八元数編・oct/03との合流が構想されています（詳細は[lie/README.md](lie/README.md)）。
+その他の記事: [二重被覆と単連結性の直観](lie/double-cover.md)（単発） — シリーズで繰り返し現れる2重被覆が位相的に必然であることを、$\operatorname{SO}(3)$のボールモデルとベルトトリックで確かめる。
+
+ケイリー＝ディクソン系列との合流点である十六元数と零因子（モレノの定理、$G_2$との同相）は今後、数体系側の記事として扱う予定です（[PLAN.md](PLAN.md)参照）。
 
 関連: 03で構成した左右作用・射影$P$による復元式は、四元数版の単発記事[四元数の左作用・右作用とスピノルの左イデアル](qua/spinor-ideal.md)（テーマ2）として独立記事に切り出し、[八元数の左作用とクリフォード代数](oct/03-oct-left-mul.md)（八元数版）と対を成す。
 
