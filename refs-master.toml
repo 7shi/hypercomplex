@@ -184,6 +184,17 @@ files = [
   "qua/01-pauli-qua.md",
 ]
 
+["baez"]
+type = "paper"
+title = "The Octonions"
+author = ["John C. Baez"]
+journal = "Bulletin of the American Mathematical Society"
+pages = "145–205"
+year = 2002
+files = [
+  "lie/09-spin7-triality.md",
+]
+
 ["bernevig"]
 type = "paper"
 title = "Geometry of the three-qubit state, entanglement and division algebras"

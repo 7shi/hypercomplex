@@ -16,6 +16,7 @@ type = "mathlog"
 citation = "7shi, 単位八元数による7次元三重回転, Mathlog, Wed Jun 26 2024, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0"
 files = [
+  "lie/07-s7.md",
   "oct/01-octonion.md",
   "vec-oct/01-reflection.md",
 ]
@@ -46,6 +47,9 @@ type = "mathlog"
 citation = "7shi, 八元数の左作用とクリフォード代数, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 files = [
+  "lie/07-s7.md",
+  "lie/08-g2.md",
+  "lie/09-spin7-triality.md",
   "oct/01-octonion.md",
   "qua/spinor-ideal.md",
 ]
@@ -112,6 +116,12 @@ files = [
   "qua/01-pauli-qua.md",
 ]
 
+["7shi-cover"]
+files = [
+  "lie/07-s7.md",
+  "lie/08-g2.md",
+]
+
 ["7shi-diff"]
 type = "mathlog"
 citation = "7shi, 変数の依存関係と微分, Mathlog, Mon Dec 16 2024, アクセス日: Sun Jul 19 2026"
@@ -131,6 +141,8 @@ files = [
 ["7shi-entangle"]
 files = [
   "hopf/06-clifford-gates.md",
+  "lie/07-s7.md",
+  "lie/08-g2.md",
 ]
 
 ["7shi-gist"]
@@ -150,6 +162,7 @@ citation = "7shi, 代数的構造の初歩：マグマから群へ, Mathlog, Sat
 url = "https://mathlog.info/articles/e4aD1MZfKjQKcNO4ilRG"
 files = [
   "lie/01-u1-so2.md",
+  "lie/07-s7.md",
 ]
 
 ["7shi-h"]
@@ -222,6 +235,7 @@ url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
 files = [
   "clif/04-weyl-algebra.md",
   "lie/02-su2-so3.md",
+  "lie/double-cover.md",
 ]
 
 ["7shi-lie2"]
@@ -229,6 +243,7 @@ files = [
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
   "lie/04-spin4.md",
+  "lie/double-cover.md",
   "qua/cd/grok45.md",
 ]
 
@@ -236,11 +251,28 @@ files = [
 files = [
   "hopf/06-clifford-gates.md",
   "lie/04-spin4.md",
+  "lie/double-cover.md",
 ]
 
 ["7shi-lie5"]
 files = [
   "hopf/05-entanglement.md",
+  "lie/06-bch-adjoint.md",
+]
+
+["7shi-lie6"]
+files = [
+  "lie/07-s7.md",
+]
+
+["7shi-lie7"]
+files = [
+  "lie/08-g2.md",
+]
+
+["7shi-lie8"]
+files = [
+  "lie/09-spin7-triality.md",
 ]
 
 ["7shi-mc"]
@@ -279,6 +311,7 @@ type = "mathlog"
 citation = "7shi, 八元数の非結合性, Mathlog, Wed Jan 29 2025, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN"
 files = [
+  "lie/07-s7.md",
   "oct/01-octonion.md",
 ]
 
@@ -306,6 +339,7 @@ url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
 files = [
   "hopf/04-extension.md",
   "hopf/05-entanglement.md",
+  "lie/07-s7.md",
   "oct/02-7d-3rot.md",
   "oct/03-oct-left-mul.md",
 ]
@@ -413,6 +447,11 @@ files = [
   "misc/spherical-coords.md",
 ]
 
+["7shi-strig"]
+files = [
+  "lie/06-bch-adjoint.md",
+]
+
 ["7shi-tp"]
 type = "mathlog"
 citation = "7shi, 複素数の拡張で学ぶテンソル積, Mathlog, Wed Nov 06 2024, アクセス日: Sun Jul 19 2026"
@@ -451,6 +490,16 @@ citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2
 url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
 files = [
   "qua/01-pauli-qua.md",
+]
+
+["7shi-vrot"]
+files = [
+  "lie/08-g2.md",
+]
+
+["baez"]
+files = [
+  "lie/09-spin7-triality.md",
 ]
 
 ["bernevig"]
