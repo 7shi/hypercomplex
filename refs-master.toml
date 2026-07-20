@@ -194,6 +194,7 @@ year = 2002
 files = [
   "lie/09-spin7-triality.md",
   "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
 ]
 
 ["bernevig"]
@@ -661,6 +662,24 @@ url = "https://en.wikipedia.org/wiki/Hopf_fibration"
 site = "Wikipedia"
 files = [
   "hopf/01-quaternion.md",
+]
+
+["wiki-jordan"]
+type = "website"
+title = "Jordan algebra"
+url = "https://en.wikipedia.org/wiki/Jordan_algebra"
+site = "Wikipedia"
+files = [
+  "lie/11-exceptional.md",
+]
+
+["wiki-magic"]
+type = "website"
+title = "Freudenthal magic square"
+url = "https://en.wikipedia.org/wiki/Freudenthal_magic_square"
+site = "Wikipedia"
+files = [
+  "lie/11-exceptional.md",
 ]
 
 ["wiki-norm"]
