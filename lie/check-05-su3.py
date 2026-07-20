@@ -17,7 +17,11 @@ SO(3) and U(1) subset SU(2) subset SU(3); the conjugation action
 preserving su(3) and giving an 8-dimensional rotation; the clock and
 shift matrices generating M_3(C) as a generalized Clifford algebra
 (U^3 = V^3 = I, VU = w UV), with Hermitian combinations returning to
-Gell-Mann matrices; and SU(3) inside Spin(6): the Cl(6,0) half-spinor
+Gell-Mann matrices; <U,V> generating a finite order-27 subgroup of
+SU(3) (extraspecial 3-group); U, V as exp of specific su(3) elements
+(V in the Cartan subalgebra span{l3,l8}, U in the so(3) subalgebra
+span{l2,l5,l7} as a 2pi/3 rotation about axis (1,1,1)); and
+SU(3) inside Spin(6): the Cl(6,0) half-spinor
 representation realizes spin(6) = su(4), and the stabilizer of a
 spinor is an 8-dimensional subalgebra acting on psi^perp as su(3).
 """
@@ -215,6 +219,41 @@ print("U, V in SU(3), unitary but not Hermitian:",
       np.isclose(np.linalg.det(Us), 1) and np.isclose(np.linalg.det(Vc), 1)
       and np.allclose(Us.conj().T @ Us, I3) and np.allclose(Vc.conj().T @ Vc, I3)
       and not np.allclose(Us, Us.conj().T) and not np.allclose(Vc, Vc.conj().T))
+
+# <U,V> generates a finite subgroup of SU(3): order 27 extraspecial group
+def mat_in(m, lst, tol=1e-6):
+    return any(np.allclose(m, o, atol=tol) for o in lst)
+group = [I3]
+frontier = [I3]
+while frontier:
+    nxt = []
+    for g in frontier:
+        for gen in (Us, Vc):
+            for cand in (g @ gen, gen @ g):
+                if not mat_in(cand, group):
+                    group.append(cand)
+                    nxt.append(cand)
+    frontier = nxt
+print("<U,V> has order 27 (extraspecial 3-group, finite subgroup of SU(3)):", len(group) == 27)
+
+# U, V are exp of specific su(3) elements: V in the Cartan subalgebra, U in so(3)
+def su3_log(M):
+    w, P = np.linalg.eig(M)
+    P, _ = np.linalg.qr(P)
+    theta = np.angle(w)
+    theta[-1] -= np.round(theta.sum() / (2*np.pi)) * 2*np.pi  # force exact trace 0
+    return P @ np.diag(1j*theta) @ P.conj().T
+
+Xv, Xu = su3_log(Vc), su3_log(Us)
+print("exp(log V) = V, exp(log U) = U:", np.allclose(expm(Xv), Vc) and np.allclose(expm(Xu), Us))
+cv = np.array([(np.trace(m @ Xv) / (2j)).real for m in lam])
+cu = np.array([(np.trace(m @ Xu) / (2j)).real for m in lam])
+print("log V lies in span(l3, l8) (Cartan):",
+      np.allclose(cv[[0,1,3,4,5,6]], 0) and np.isclose(cv[2], -np.pi/3) and np.isclose(cv[7], np.pi/np.sqrt(3)))
+print("log U lies in span(l2, l5, l7) (so(3) subset su(3)):",
+      np.allclose(cu[[0,2,3,5,7]], 0) and np.allclose(cu[[1,4,6]], 2*np.pi/(3*np.sqrt(3))*np.array([-1,1,-1])))
+print("U's generator = rotation by 2pi/3 about axis (1,1,1):",
+      np.allclose(Xu, (2*np.pi/3)*(Jx+Jy+Jz)/np.sqrt(3) + 0j))
 mono = [np.linalg.matrix_power(Us, a) @ np.linalg.matrix_power(Vc, b)
         for a in range(3) for b in range(3)]
 Gm = np.array([[np.trace(A_.conj().T @ B_) for B_ in mono] for A_ in mono])
