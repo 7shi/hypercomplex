@@ -193,6 +193,7 @@ pages = "145–205"
 year = 2002
 files = [
   "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
 ]
 
 ["bernevig"]
@@ -592,6 +593,15 @@ files = [
   "hopf/02-spinor-tensor.md",
 ]
 
+["wiki-dynkin"]
+type = "website"
+title = "ディンキン図形"
+url = "https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%B3%E3%82%AD%E3%83%B3%E5%9B%B3%E5%BD%A2"
+site = "Wikipedia"
+files = [
+  "lie/10-roots-dynkin.md",
+]
+
 ["wiki-ehrenfest"]
 type = "website"
 title = "エーレンフェストの定理"
@@ -705,6 +715,15 @@ url = "https://ja.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E3%82%A6%E3%82%A9%E3%83%
 site = "Wikipedia"
 files = [
   "clif/05-schrodinger.md",
+]
+
+["wiki-root"]
+type = "website"
+title = "ルート系"
+url = "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%BC%E3%83%88%E7%B3%BB"
+site = "Wikipedia"
+files = [
+  "lie/10-roots-dynkin.md",
 ]
 
 ["wiki-s3"]

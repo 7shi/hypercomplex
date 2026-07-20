@@ -27,6 +27,7 @@ lie/06-bch-adjoint.md	BCH公式と随伴作用
 lie/07-s7.md	八元数とS^7
 lie/08-g2.md	八元数の自己同型群G_2
 lie/09-spin7-triality.md	Spin(7)と三対性
+lie/10-roots-dynkin.md	ルート系とディンキン図形
 lie/double-cover.md	二重被覆と単連結性の直観
 lie/magma-to-group.md	代数的構造の初歩：マグマから群へ
 misc/energy-quantize-zeta.md	エネルギーの量子化とゼータ関数
