@@ -52,3 +52,4 @@
 - `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`html_format.py --in-place` で整形する。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`articles.py` で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
+- `Makefile` — `make md`（`articles.py md`）、`make merge`（`articles.py merge`）、`make check`（`refs_slugs.py check`）のショートカット。`make help` で一覧表示。
