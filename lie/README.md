@@ -15,6 +15,7 @@
 4. [Spin(4)とSO(4)](04-spin4.md) — 四元数を4次元空間として左右から独立に挟む作用によって、$\operatorname{SO}(4)$のすべての回転を構成します。二重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$が、$C\ell_{3,1}(\mathbb{R}) \cong M_4(\mathbb{R})$と$C\ell_{4,0}(\mathbb{R}) \cong M_2(\mathbb{H})$という2つのクリフォード代数のそれぞれにどう現れるかを見ます。
 5. [SO(3)の複素化とSU(3)](05-su3.md) — $\operatorname{SO}(3)$の構造を複素化して$\operatorname{SU}(3)$を構成する、数体系に頼らない初めてのリー群です。ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$、構造定数について扱います。
 6. [BCH公式と随伴作用](06-bch-adjoint.md) — 指数法則のずれを括弧積の言葉で記述するベイカー・キャンベル・ハウスドルフの公式と、共役作用をリー代数の言葉で捉え直す随伴作用$\operatorname{Ad}/\operatorname{ad}$を扱います。ヤコビ恒等式を導入し、02の同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$と二重被覆が随伴表現として整理されることを見ます。
+7. [八元数とS^7](07-s7.md) — 単位八元数のなす球面$S^7$は、積と逆元を持つ滑らかな球面でありながら、結合法則を欠くためリー群になりません。アルティンの定理により2元までは四元数の世界が生き残ること、結合子として現れるヤコビ恒等式の破れ、ムーファン・ループ、共役作用による$\operatorname{SO}(7)$の生成、ケイリー＝ディクソン構成とフルヴィッツの定理による数体系の系列の終わりを扱います。
 
 ## 今後の予定
 
@@ -22,7 +23,6 @@
 
 ### 八元数の対称性
 
-- 07 — 八元数と$S^7$。積と逆元を持ちながら結合性が崩れるためリー群にならない球面。ムーファン・ループ、フルヴィッツの定理。
 - 08 — $G_2$：八元数の自己同型群。リー代数としての微分全体、$G_2 \subset \operatorname{SO}(7)$、虚数単位を固定する部分群として$\operatorname{SU}(3)$が再登場すること。
 - 09 — $\operatorname{Spin}(7)$と三対性。左作用が生成するクリフォード代数とスピノル表現、$\operatorname{Spin}(8)$の三対性。ルートの八元数記事との合流点。
 
@@ -58,4 +58,5 @@
 - [check-04-spin4.py](check-04-spin4.py) — 04-spin4.md の数式の数値検証。両側作用$pxq^{-1}$による$\operatorname{SO}(4)$の2重被覆と$\mathfrak{so}(4)\cong\mathfrak{sp}(1)\oplus\mathfrak{sp}(1)$、$L_pR_{q^{-1}}$が具体的なブロック対角の$\operatorname{SO}(4)$回転行列になること（$q=p$の特殊化で02の$\operatorname{SO}(3)$回転行列に一致）、左右作用の行列表現$L_uR_v$が張る$C\ell_{3,1}\cong M_4(\mathbb{R})$、射影とスピノルの復元式、$\gamma(v)$による$C\ell_{4,0}\cong M_2(\mathbb{H})$の構成と半スピノルへの分裂を確認します。
 - [check-05-su3.py](check-05-su3.py) — 05-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、パウリ行列から引き継がれる役割と引き継がれない役割（スピノル外積・クリフォード関係・クロック＆シフト行列）、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つこと、$C\ell_{6,0}(\mathbb{R})$の半スピノル表現によるスピノル固定部分群$\operatorname{SU}(3) \subset \operatorname{Spin}(6) \cong \operatorname{SU}(4)$を確認します。
 - [check-06-bch-adjoint.py](check-06-bch-adjoint.py) — 06-bch-adjoint.md の数式の数値検証。BCH公式の2次・3次打ち切りの誤差次数、可換なら指数法則が厳密に成り立つこと、群の交換子$\exp(x)\exp(y)\exp(-x)\exp(-y) = \exp([x,y] + \cdots)$とその$\mathfrak{so}(3)$での実例、四元数による厳密な合成則と2次項の外積との一致、ヤコビ恒等式とライプニッツ形式、随伴作用が$\mathfrak{su}(3)$を保ち括弧積を保つこと、$g\exp(y)g^{-1} = \exp(\operatorname{Ad}_g y)$、アダマールの補題$\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)$、$\operatorname{ad}_{i/2} = J_x$と$\operatorname{Ad}_{\exp(\theta i/2)} = \exp(\theta J_x)$、$\ker\operatorname{Ad} = \{\pm 1\}$、$\operatorname{ad}$の行列成分と構造定数の一致、$\operatorname{ad}_{[x,y]} = [\operatorname{ad}_x, \operatorname{ad}_y]$を確認します。
+- [check-07-s7.py](check-07-s7.py) — 07-s7.md の数式の数値検証。ケイリー＝ディクソン構成によるグレイブス＝ケイリーの三つ組の再現、ノルムの乗法性が8次元まで成り立ち16次元で破れること、$S^7$の積の閉性・単位元・逆元と結合法則の破れ、逆元性質とアルティンの定理（2元の生成する部分代数の閉性と結合性）、ムーファン恒等式、オイラーの公式と1パラメータ族・指数写像の全射性、2元の厳密な合成則と3元での結合の破れ、$[x,y] = 2\,(x \times y)$、ヤコビ恒等式の破れ$J(x,y,z) = -6\,(x,y,z)$と三つ組内での成立、マルツェフ恒等式、共役作用が三重回転になることと準同型性・自己同型性の喪失、外積写像の括弧積による閉包が$\mathfrak{so}(7)$の21次元全体を張ること、十六元数の単位ノルム零因子$(e_1 + e_{10})(e_5 + e_{14}) = 0$を確認します。
 - [check-double-cover.py](check-double-cover.py) — double-cover.md の数式の数値検証。軸角表現の冗長性$R(n,\theta)=R(-n,2\pi-\theta)$（ボールモデルのワープ）、単位四元数の共役作用が軸角回転と一致することと$\rho_{-q}=\rho_q$、ベルトトリックのホモトピー$H_s$が全$s$でループのまま順回しと逆回しをつなぐこと、持ち上げの終点（回転1周で$-1$・2周で$+1$、ホモトピーの全域で$-1$に固定）を確認します。

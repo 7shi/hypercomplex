@@ -24,6 +24,7 @@ lie/03-spin.md	クリフォード代数とSpin(3)
 lie/04-spin4.md	Spin(4)とSO(4)
 lie/05-su3.md	SO(3)の複素化とSU(3)
 lie/06-bch-adjoint.md	BCH公式と随伴作用
+lie/07-s7.md	八元数とS^7
 lie/double-cover.md	二重被覆と単連結性の直観
 lie/magma-to-group.md	代数的構造の初歩：マグマから群へ
 misc/energy-quantize-zeta.md	エネルギーの量子化とゼータ関数
