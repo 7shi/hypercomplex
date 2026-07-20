@@ -20,7 +20,11 @@ shift matrices generating M_3(C) as a generalized Clifford algebra
 Gell-Mann matrices; <U,V> generating a finite order-27 subgroup of
 SU(3) (extraspecial 3-group); U, V as exp of specific su(3) elements
 (V in the Cartan subalgebra span{l3,l8}, U in the so(3) subalgebra
-span{l2,l5,l7} as a 2pi/3 rotation about axis (1,1,1)); and
+span{l2,l5,l7} as a 2pi/3 rotation about axis (1,1,1)); the group
+commutator VUV^-1U^-1 = wI landing in the center Z_3 of SU(3), so that
+Ad(U) and Ad(V) commute; U and V sharing the eigenvalues {1, w, w^2}
+and being conjugate via the DFT matrix F (FUF^dagger = V,
+FVF^dagger = U^-1, with e^{i pi/6}F in SU(3)); and
 SU(3) inside Spin(6): the Cl(6,0) half-spinor
 representation realizes spin(6) = su(4), and the stabilizer of a
 spinor is an 8-dimensional subalgebra acting on psi^perp as su(3).
@@ -269,6 +273,28 @@ print("U + U^2 = l1 + l4 + l6, i(U - U^2) = l2 - l5 + l7:",
 print("V + V^2, i(V - V^2) in span of l3, l8 (Cartan):",
       np.allclose(Vc + Vc @ Vc, 1.5*l3 + np.sqrt(3)/2*l8)
       and np.allclose(1j*(Vc - Vc @ Vc), np.sqrt(3)/2*l3 - 1.5*l8))
+
+# group commutator lands in the center of SU(3): VUV^-1U^-1 = wI
+print("VUV^-1U^-1 = w I:",
+      np.allclose(Vc @ Us @ Vc.conj().T @ Us.conj().T, omega * I3))
+print("center elements I, wI, w^2 I contained in <U,V>:",
+      all(mat_in(w_ * I3, group) for w_ in (1, omega, omega**2)))
+# so Ad(U) and Ad(V) commute although U and V do not
+x8 = su3(rng.standard_normal(8))
+print("Ad(U) Ad(V) = Ad(V) Ad(U):",
+      np.allclose(Us @ (Vc @ x8 @ Vc.conj().T) @ Us.conj().T,
+                  Vc @ (Us @ x8 @ Us.conj().T) @ Vc.conj().T))
+
+# U and V are conjugate: same eigenvalues, DFT matrix swaps them
+Fd = np.array([[omega**(j*k) for k in range(3)] for j in range(3)]) / np.sqrt(3)
+print("eigenvalues of U = {1, w, w^2} (same as V):",
+      np.allclose(np.sort_complex(np.linalg.eigvals(Us)), np.sort_complex(np.diag(Vc))))
+print("F unitary, det F = -i, det(e^{i pi/6} F) = 1:",
+      np.allclose(Fd.conj().T @ Fd, I3) and np.isclose(np.linalg.det(Fd), -1j)
+      and np.isclose(np.linalg.det(np.exp(1j*np.pi/6) * Fd), 1))
+print("F U F^dagger = V, F V F^dagger = U^-1:",
+      np.allclose(Fd @ Us @ Fd.conj().T, Vc)
+      and np.allclose(Fd @ Vc @ Fd.conj().T, Us.conj().T))
 
 # SU(3) inside Spin(6): Cl(6,0) via 8x8 gamma matrices
 def kron(*ms):
