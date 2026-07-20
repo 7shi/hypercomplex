@@ -184,6 +184,17 @@ files = [
   "qua/01-pauli-qua.md",
 ]
 
+["bernevig"]
+type = "paper"
+title = "Geometry of the three-qubit state, entanglement and division algebras"
+author = ["Bogdan A. Bernevig", "Han-Dong Chen"]
+journal = "Journal of Physics A: Mathematical and General"
+pages = "8325"
+year = 2003
+files = [
+  "hopf/05-entanglement.md",
+]
+
 ["brw"]
 type = "paper"
 title = "On the Clifford Collineation, Transform and Similarity Groups I, II"
@@ -307,6 +318,17 @@ files = [
   "misc/exp-maclaurin-integral.md",
 ]
 
+["mosseri"]
+type = "paper"
+title = "Geometry of entangled states, Bloch spheres and Hopf fibrations"
+author = ["Rémy Mosseri", "Rossen Dandoloff"]
+journal = "Journal of Physics A: Mathematical and General"
+pages = "10243"
+year = 2001
+files = [
+  "hopf/05-entanglement.md",
+]
+
 ["nakajima-4d-rot"]
 type = "website"
 title = "4次元回転と四元数"
@@ -389,6 +411,17 @@ files = [
   "misc/exp-maclaurin-integral.md",
 ]
 
+["schwinger-uob"]
+type = "paper"
+title = "Unitary Operator Bases"
+author = ["Julian Schwinger"]
+journal = "Proceedings of the National Academy of Sciences"
+pages = "570-579"
+year = 1960
+files = [
+  "clif/04-weyl-algebra.md",
+]
+
 ["shoemake-slerp"]
 type = "paper"
 title = "Animating Rotation with Quaternion Curves"
@@ -428,6 +461,17 @@ journal = "arXiv"
 year = 2000
 files = [
   "oct/03-oct-left-mul.md",
+]
+
+["weyl-qm"]
+type = "paper"
+title = "Quantenmechanik und Gruppentheorie"
+author = ["Hermann Weyl"]
+journal = "Zeitschrift für Physik"
+pages = "1-46"
+year = 1927
+files = [
+  "clif/04-weyl-algebra.md",
 ]
 
 ["wiki-0d"]
@@ -490,6 +534,15 @@ files = [
   "qua/tensor-from-complex.md",
 ]
 
+["wiki-ccr"]
+type = "website"
+title = "交換関係 (量子力学)"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E6%8F%9B%E9%96%A2%E4%BF%82_(%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6)"
+site = "Wikipedia"
+files = [
+  "clif/04-weyl-algebra.md",
+]
+
 ["wiki-cd"]
 type = "website"
 title = "ケーリー＝ディクソンの構成法"
@@ -528,6 +581,15 @@ files = [
   "hopf/02-spinor-tensor.md",
 ]
 
+["wiki-ehrenfest"]
+type = "website"
+title = "エーレンフェストの定理"
+url = "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%BC%E3%83%AC%E3%83%B3%E3%83%95%E3%82%A7%E3%82%B9%E3%83%88%E3%81%AE%E5%AE%9A%E7%90%86"
+site = "Wikipedia"
+files = [
+  "clif/05-schrodinger.md",
+]
+
 ["wiki-en-eleq"]
 type = "website"
 title = "Euler–Lagrange equation"
@@ -535,6 +597,15 @@ url = "https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation"
 site = "Wikipedia"
 files = [
   "misc/epsilon-euler-lagrange.md",
+]
+
+["wiki-fmc"]
+type = "website"
+title = "Nombre multicomplexe (Fleury)"
+url = "https://fr.wikipedia.org/wiki/Nombre_multicomplexe_(Fleury)"
+site = "Wikipédia"
+files = [
+  "clif/03-gpm-gca.md",
 ]
 
 ["wiki-gca"]
@@ -616,6 +687,15 @@ files = [
   "qua/tensor-from-complex.md",
 ]
 
+["wiki-qwalk"]
+type = "website"
+title = "量子ウォーク"
+url = "https://ja.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF"
+site = "Wikipedia"
+files = [
+  "clif/05-schrodinger.md",
+]
+
 ["wiki-s3"]
 type = "website"
 title = "三次元球面"
@@ -623,6 +703,15 @@ url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%
 site = "Wikipedia"
 files = [
   "misc/spherical-coords.md",
+]
+
+["wiki-schrodinger"]
+type = "website"
+title = "シュレーディンガー方程式"
+url = "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%AC%E3%83%BC%E6%96%B9%E7%A8%8B%E5%BC%8F"
+site = "Wikipedia"
+files = [
+  "clif/05-schrodinger.md",
 ]
 
 ["wiki-smc"]
@@ -643,6 +732,33 @@ files = [
   "qua/03-qua-tensor.md",
 ]
 
+["wiki-stone"]
+type = "website"
+title = "Stone's theorem on one-parameter unitary groups"
+url = "https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups"
+site = "Wikipedia"
+files = [
+  "clif/05-schrodinger.md",
+]
+
+["wiki-svn"]
+type = "website"
+title = "Stone–von Neumann theorem"
+url = "https://en.wikipedia.org/wiki/Stone%E2%80%93von_Neumann_theorem"
+site = "Wikipedia"
+files = [
+  "clif/04-weyl-algebra.md",
+]
+
+["wiki-tight-binding"]
+type = "website"
+title = "強結合近似"
+url = "https://ja.wikipedia.org/wiki/%E5%BC%B7%E7%B5%90%E5%90%88%E8%BF%91%E4%BC%BC"
+site = "Wikipedia"
+files = [
+  "clif/05-schrodinger.md",
+]
+
 ["wiki-tp"]
 type = "website"
 title = "テンソル積"
@@ -661,3 +777,11 @@ files = [
   "qua/spherical-trig.md",
 ]
 
+["wiki-weyl-alg"]
+type = "website"
+title = "ワイル代数"
+url = "https://ja.wikipedia.org/wiki/%E3%83%AF%E3%82%A4%E3%83%AB%E4%BB%A3%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "clif/04-weyl-algebra.md",
+]
