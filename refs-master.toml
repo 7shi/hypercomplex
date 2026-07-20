@@ -1,0 +1,663 @@
+["7shi-480"]
+type = "website"
+title = "八元数の定義が 480 通りあることの導出"
+url = "https://7shi.hateblo.jp/entry/2024/03/11/063519"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "oct/01-octonion.md",
+  "oct/nonassociativity.md",
+  "vec-oct/01-reflection.md",
+]
+
+["7shi-clrt"]
+type = "website"
+title = "クリフォード代数による回転"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "hopf/06-clifford-gates.md",
+  "oct/02-7d-3rot.md",
+  "vec-oct/geometric-product-exp.md",
+]
+
+["7shi-colab-cl"]
+type = "website"
+title = "Clifford.ipynb"
+url = "https://colab.research.google.com/drive/1ChTMul2eQ3I7KHTBTZoYRZpL9ERG36FI?usp=sharing"
+author = ["七誌"]
+site = "Google Colab"
+files = [
+  "qua/03-qua-tensor.md",
+]
+
+["7shi-colab-qrc"]
+type = "website"
+title = "QuaternionMatrixRepresentation.ipynb"
+url = "https://colab.research.google.com/drive/1KToyVToC1poKfFaZNLbnWLyLRzYleObA?usp=sharing"
+author = ["七誌"]
+site = "Google Colab"
+files = [
+  "qua/cd/real-to-cmatrix.md",
+]
+
+["7shi-gist"]
+type = "website"
+title = "八元数の計算プログラム"
+url = "https://x.com/7shi/status/1805277382703751383"
+author = ["七誌"]
+site = "X"
+files = [
+  "oct/02-7d-3rot.md",
+]
+
+["7shi-hc"]
+type = "website"
+title = "NotebookLMで多元数の記事を読む"
+url = "https://7shi.hateblo.jp/entry/2024/06/13/015329"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "vec-oct/01-reflection.md",
+]
+
+["7shi-ip"]
+type = "website"
+title = "内積の視覚化"
+url = "https://7shi.hateblo.jp/entry/2018/08/05/011022"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "vec-oct/01-reflection.md",
+]
+
+["7shi-mc"]
+type = "website"
+title = "多重複素数入門"
+url = "https://7shi.hateblo.jp/entry/2020/08/30/234952"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["7shi-mobius"]
+type = "website"
+title = "メビウス変換の合成と行列の積"
+url = "https://7shi.hateblo.jp/entry/2025/01/01/071325"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "hopf/homogeneous.md",
+]
+
+["7shi-oct"]
+type = "website"
+title = "八元数と7次元の外積"
+url = "https://7shi.hateblo.jp/entry/2017/12/04/235635"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "oct/02-7d-3rot.md",
+]
+
+["7shi-p"]
+type = "website"
+title = "外積と愉快な仲間たち"
+url = "https://qiita.com/7shi/items/017d2d2c758f76071f23"
+author = ["七誌"]
+site = "Qiita"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
+["7shi-qc1"]
+type = "website"
+title = "量子コンピューター超入門"
+url = "https://qiita.com/7shi/items/3504d8fa2c868620f57a"
+author = ["七誌"]
+site = "Qiita"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["7shi-qc2"]
+type = "website"
+title = "量子コンピューター超入門2 一般的な表記法"
+url = "https://qiita.com/7shi/items/1704b58f8828601a0e6c"
+author = ["七誌"]
+site = "Qiita"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["7shi-qcl"]
+type = "website"
+title = "四元数からクリフォード代数へ"
+url = "https://7shi.hateblo.jp/entry/2018/08/27/054921"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
+["7shi-qrot"]
+type = "website"
+title = "四元数による回転を実行列表現で考える"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "hopf/01-quaternion.md",
+  "lie/02-su2-so3.md",
+  "oct/03-oct-left-mul.md",
+]
+
+["7shi-rod"]
+type = "website"
+title = "四元数によるロドリゲスの回転公式"
+url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "oct/02-7d-3rot.md",
+]
+
+["7shi-vec3"]
+type = "website"
+title = "四元数によるベクトル三重積とヤコビ恒等式"
+url = "https://7shi.hateblo.jp/entry/2020/10/03/182512"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
+["7shi-versor"]
+type = "website"
+title = "単位純虚四元数の積"
+url = "https://7shi.hateblo.jp/entry/2022/09/10/015946"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
+["brw"]
+type = "paper"
+title = "On the Clifford Collineation, Transform and Similarity Groups I, II"
+author = ["B. Bolt", "T. G. Room", "G. E. Wall"]
+journal = "Journal of the Australian Mathematical Society"
+pages = "60–96"
+year = 1961
+files = [
+  "hopf/06-clifford-gates.md",
+]
+
+["clifford-biq"]
+type = "paper"
+title = "Preliminary Sketch of Biquaternions"
+author = ["William Kingdon Clifford"]
+journal = "Proceedings of the London Mathematical Society"
+pages = "381-395"
+year = 1873
+files = [
+  "qua/05-dual-qua.md",
+]
+
+["dim7-8"]
+type = "website"
+title = "第７章，第８章：ファイブレーション"
+url = "https://www.dimensions-math.org/Dim_CH7_JP.htm"
+site = "Dimensions"
+files = [
+  "hopf/01-quaternion.md",
+]
+
+["furey1"]
+type = "website"
+title = "How to get around the non-associativity of the octonions (Video 9/14)."
+url = "https://www.youtube.com/watch?v=Vs01SH8tlX0"
+author = ["Cohl Furey"]
+site = "YouTube"
+published = 2017-10-06
+files = [
+  "oct/03-oct-left-mul.md",
+]
+
+["furey2"]
+type = "paper"
+title = "Standard model physics from an algebra?"
+author = ["Cohl Furey"]
+journal = "arXiv"
+year = 2016
+files = [
+  "oct/03-oct-left-mul.md",
+]
+
+["gottesman"]
+type = "paper"
+title = "The Heisenberg Representation of Quantum Computers"
+author = ["Daniel Gottesman"]
+journal = "arXiv"
+year = 1998
+files = [
+  "hopf/06-clifford-gates.md",
+]
+
+["half"]
+type = "website"
+title = "半角の公式"
+url = "https://w3e.kanazawa-it.ac.jp/math/category/sankakukansuu/kahouteiri/henkan-tex.cgi?target=/math/category/sankakukansuu/kahouteiri/hankaku-no-kousiki.html"
+site = "KIT数学ナビゲーション"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
+["hasebe"]
+type = "paper"
+title = "Hopf Maps, Lowest Landau Level, and Fuzzy Spheres"
+author = ["Kazuki Hasebe"]
+journal = "arXiv"
+year = 2010
+files = [
+  "oct/03-oct-left-mul.md",
+]
+
+["hopf1931"]
+type = "paper"
+title = "Über die Abbildungen der dreidimensionalen Sphäre auf die Kugelfläche"
+author = ["Heinz Hopf"]
+journal = "Mathematische Annalen"
+pages = "637–665"
+year = 1931
+files = [
+  "hopf/homogeneous.md",
+]
+
+["hyodo-dp"]
+type = "website"
+title = "直積"
+url = "https://hyodo.fpark.tmu.ac.jp/class/2023/QM2/QM2_Note11c.pdf"
+author = ["兵藤 哲雄"]
+site = "東京都立大学"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
+["kindai1"]
+type = "book"
+title = "近代数学 上: 現代数学の黎明期"
+author = ["近藤 基吉", "井関 清志"]
+pages = "117"
+publisher = "日本評論社"
+year = 1982
+files = [
+  "qua/02-nonion.md",
+]
+
+["masuo-maclaurin"]
+type = "website"
+title = "マクローリン展開"
+url = "https://manabitimes.jp/math/570"
+author = ["難波 博之"]
+site = "高校数学の美しい物語"
+files = [
+  "misc/exp-maclaurin-integral.md",
+]
+
+["nakajima-4d-rot"]
+type = "website"
+title = "4次元回転と四元数"
+url = "https://cf096240.cloudfree.jp/4D_rotation.pdf"
+author = ["中嶋 慧"]
+files = [
+  "qua/04-4d-bsqua.md",
+  "vec-oct/02-rotation.md",
+]
+
+["nakajima-oct-rot"]
+type = "website"
+title = "八元数と回転"
+url = "https://cf096240.cloudfree.jp/Octonion_rotation.pdf"
+author = ["中嶋 慧"]
+files = [
+  "oct/02-7d-3rot.md",
+  "vec-oct/01-reflection.md",
+  "vec-oct/02-rotation.md",
+]
+
+["nielsen-chuang"]
+type = "book"
+title = "Quantum Computation and Quantum Information"
+author = ["Michael A. Nielsen", "Isaac L. Chuang"]
+publisher = "Cambridge University Press"
+year = 2010
+files = [
+  "hopf/06-clifford-gates.md",
+]
+
+["nonion"]
+type = "paper"
+title = "A Word on Nonions (1882)"
+author = ["James Joseph Sylvester"]
+journal = "The collected mathematical papers of James Joseph Sylvester..."
+pages = "647-650"
+year = 1904
+files = [
+  "qua/02-nonion.md",
+]
+
+["proj"]
+type = "website"
+title = "射影行列のイメージと楽しい公式"
+url = "https://manabitimes.jp/math/2486"
+author = ["難波 博之"]
+site = "高校数学の美しい物語"
+files = [
+  "vec-oct/01-reflection.md",
+]
+
+["q-rm"]
+type = "website"
+title = "四元数の実行列表現を作る"
+url = "https://7shi.hateblo.jp/entry/2020/02/24/042840"
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "oct/03-oct-left-mul.md",
+]
+
+["quantumuniverse"]
+type = "website"
+title = "量子的な混合状態が現れるのは、人間の無知のせいか？"
+url = "https://note.com/quantumuniverse/n/nfe6b404fe172"
+author = ["堀田 昌寛"]
+site = "note"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
+["rn-picard"]
+type = "website"
+title = "ピカールの逐次近似法｜常微分方程式の解を構成する方法"
+url = "https://math-note.xyz/analysis/differential-equation/picard-iteration/"
+author = ["山本 拓人"]
+site = "あーるえぬ"
+files = [
+  "misc/exp-maclaurin-integral.md",
+]
+
+["shoemake-slerp"]
+type = "paper"
+title = "Animating Rotation with Quaternion Curves"
+author = ["Ken Shoemake"]
+journal = "ACM SIGGRAPH Computer Graphics"
+pages = "245-254"
+year = 1985
+files = [
+  "qua/06-slerp.md",
+]
+
+["sylvester"]
+type = "website"
+title = "The collected mathematical papers of James Joseph Sylvester..."
+url = "https://name.umdl.umich.edu/aas8085.0003.001"
+author = ["James Joseph Sylvester"]
+site = "University of Michigan Library Digital Collections"
+files = [
+  "qua/02-nonion.md",
+]
+
+["tao-h"]
+type = "website"
+title = "Quaternions and spherical trigonometry"
+url = "https://terrytao.wordpress.com/2024/12/19/quaternions-and-spherical-trigonometry/"
+author = ["Terence Tao"]
+site = "Updates on my research and expository papers, discussion of open problems, and other maths-related topics. By Terence Tao"
+files = [
+  "qua/spherical-trig.md",
+]
+
+["tian"]
+type = "paper"
+title = "Matrix Representations of Octonions and Their Applications"
+author = ["Yongge Tian"]
+journal = "arXiv"
+year = 2000
+files = [
+  "oct/03-oct-left-mul.md",
+]
+
+["wiki-0d"]
+type = "website"
+title = "零因子"
+url = "https://ja.wikipedia.org/wiki/%E9%9B%B6%E5%9B%A0%E5%AD%90"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-alt"]
+type = "website"
+title = "交代代数"
+url = "https://ja.wikipedia.org/wiki/%E4%BA%A4%E4%BB%A3%E4%BB%A3%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "oct/02-7d-3rot.md",
+  "oct/nonassociativity.md",
+  "vec-oct/01-reflection.md",
+  "vec-oct/02-rotation.md",
+]
+
+["wiki-bc"]
+type = "website"
+title = "双複素数"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "qua/01-pauli-qua.md",
+  "qua/cd/grok45.md",
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-bc-en"]
+type = "website"
+title = "Bicomplex number"
+url = "https://en.wikipedia.org/wiki/Bicomplex_number"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-bo"]
+type = "website"
+title = "双八元数"
+url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E5%85%AB%E5%85%83%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-bq"]
+type = "website"
+title = "Biquaternion"
+url = "https://en.wikipedia.org/wiki/Biquaternion"
+site = "Wikipedia"
+files = [
+  "qua/01-pauli-qua.md",
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-cd"]
+type = "website"
+title = "ケーリー＝ディクソンの構成法"
+url = "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%9D%E3%83%87%E3%82%A3%E3%82%AF%E3%82%BD%E3%83%B3%E3%81%AE%E6%A7%8B%E6%88%90%E6%B3%95"
+site = "Wikipedia"
+files = [
+  "qua/cd/cd-to-matrix.md",
+]
+
+["wiki-clif"]
+type = "website"
+title = "Clifford algebra"
+url = "https://en.wikipedia.org/wiki/Clifford_algebra"
+site = "Wikipedia"
+files = [
+  "clif/01-representation.md",
+  "qua/03-qua-tensor.md",
+  "vec-oct/01-reflection.md",
+]
+
+["wiki-df"]
+type = "website"
+title = "関数の微分"
+url = "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%95%B0%E3%81%AE%E5%BE%AE%E5%88%86"
+site = "Wikipedia"
+files = [
+  "misc/integration-by-parts.md",
+]
+
+["wiki-dp"]
+type = "website"
+title = "直積 (ベクトル)"
+url = "https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)"
+site = "Wikipedia"
+files = [
+  "hopf/02-spinor-tensor.md",
+]
+
+["wiki-en-eleq"]
+type = "website"
+title = "Euler–Lagrange equation"
+url = "https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation"
+site = "Wikipedia"
+files = [
+  "misc/epsilon-euler-lagrange.md",
+]
+
+["wiki-gca"]
+type = "website"
+title = "Generalized Clifford algebra"
+url = "https://en.wikipedia.org/wiki/Generalized_Clifford_algebra"
+site = "Wikipedia"
+files = [
+  "clif/03-gpm-gca.md",
+  "clif/04-weyl-algebra.md",
+  "clif/05-schrodinger.md",
+  "qua/02-nonion.md",
+]
+
+["wiki-gpm"]
+type = "website"
+title = "Generalizations of Pauli matrices"
+url = "https://en.wikipedia.org/wiki/Generalizations_of_Pauli_matrices"
+site = "Wikipedia"
+files = [
+  "clif/03-gpm-gca.md",
+  "clif/04-weyl-algebra.md",
+  "clif/05-schrodinger.md",
+  "hopf/06-clifford-gates.md",
+  "qua/02-nonion.md",
+]
+
+["wiki-hopf"]
+type = "website"
+title = "Hopf fibration"
+url = "https://en.wikipedia.org/wiki/Hopf_fibration"
+site = "Wikipedia"
+files = [
+  "hopf/01-quaternion.md",
+]
+
+["wiki-norm"]
+type = "website"
+title = "ノルム多元体"
+url = "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%83%A0%E5%A4%9A%E5%85%83%E4%BD%93"
+site = "Wikipedia"
+files = [
+  "oct/01-octonion.md",
+]
+
+["wiki-nsphere"]
+type = "website"
+title = "超球面"
+url = "https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
+site = "Wikipedia"
+files = [
+  "misc/spherical-coords.md",
+]
+
+["wiki-o"]
+type = "website"
+title = "八元数"
+url = "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%85%83%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-picard"]
+type = "website"
+title = "ピカールの逐次近似法"
+url = "https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%BC%E3%83%AB%E3%81%AE%E9%80%90%E6%AC%A1%E8%BF%91%E4%BC%BC%E6%B3%95"
+site = "Wikipedia"
+files = [
+  "misc/exp-maclaurin-integral.md",
+]
+
+["wiki-q"]
+type = "website"
+title = "四元数"
+url = "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%85%83%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-s3"]
+type = "website"
+title = "三次元球面"
+url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
+site = "Wikipedia"
+files = [
+  "misc/spherical-coords.md",
+]
+
+["wiki-smc"]
+type = "website"
+title = "セグレの多重複素数"
+url = "https://ja.wikipedia.org/wiki/%E3%82%BB%E3%82%B0%E3%83%AC%E3%81%AE%E5%A4%9A%E9%87%8D%E8%A4%87%E7%B4%A0%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-sq"]
+type = "website"
+title = "Split-quaternion"
+url = "https://en.wikipedia.org/wiki/Split-quaternion"
+site = "Wikipedia"
+files = [
+  "qua/03-qua-tensor.md",
+]
+
+["wiki-tp"]
+type = "website"
+title = "テンソル積"
+url = "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%BD%E3%83%AB%E7%A9%8D"
+site = "Wikipedia"
+files = [
+  "qua/tensor-from-complex.md",
+]
+
+["wiki-trick"]
+type = "website"
+title = "プレートトリック"
+url = "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF"
+site = "Wikipedia"
+files = [
+  "qua/spherical-trig.md",
+]
+
