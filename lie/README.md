@@ -16,6 +16,7 @@
 5. [SO(3)の複素化とSU(3)](05-su3.md) — $\operatorname{SO}(3)$の構造を複素化して$\operatorname{SU}(3)$を構成する、数体系に頼らない初めてのリー群です。ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$、構造定数について扱います。
 6. [BCH公式と随伴作用](06-bch-adjoint.md) — 指数法則のずれを括弧積の言葉で記述するベイカー・キャンベル・ハウスドルフの公式と、共役作用をリー代数の言葉で捉え直す随伴作用$\operatorname{Ad}/\operatorname{ad}$を扱います。ヤコビ恒等式を導入し、02の同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$と二重被覆が随伴表現として整理されることを見ます。
 7. [八元数とS^7](07-s7.md) — 単位八元数のなす球面$S^7$は、積と逆元を持つ滑らかな球面でありながら、結合法則を欠くためリー群になりません。アルティンの定理により2元までは四元数の世界が生き残ること、結合子として現れるヤコビ恒等式の破れ、ムーファン・ループ、共役作用による$\operatorname{SO}(7)$の生成、ケイリー＝ディクソン構成とフルヴィッツの定理による数体系の系列の終わりを扱います。
+8. [八元数の自己同型群G_2](08-g2.md) — 八元数の積の構造を保つ変換の全体として、14次元の例外型リー群$G_2 \subset \operatorname{SO}(7)$を構成します。リー代数が積の微分法則を満たす微分の全体$\operatorname{Der}(\mathbb{O})$であること、結合子による$\operatorname{ad}$の補正、分解$\mathfrak{so}(7) = \mathfrak{g}_2 \oplus \{u \times \cdot\}$、基本三つ組による次元の勘定$14 = 6 + 5 + 3$、虚数単位を固定する部分群としての$\operatorname{SU}(3)$の再登場を扱います。
 
 ## 今後の予定
 
@@ -23,7 +24,6 @@
 
 ### 八元数の対称性
 
-- 08 — $G_2$：八元数の自己同型群。リー代数としての微分全体、$G_2 \subset \operatorname{SO}(7)$、虚数単位を固定する部分群として$\operatorname{SU}(3)$が再登場すること。
 - 09 — $\operatorname{Spin}(7)$と三対性。左作用が生成するクリフォード代数とスピノル表現、$\operatorname{Spin}(8)$の三対性。ルートの八元数記事との合流点。
 
 ### 分類と例外型リー群
@@ -59,4 +59,5 @@
 - [check-05-su3.py](check-05-su3.py) — 05-su3.md の数式の数値検証。ゲルマン行列の性質と正規化、$\mathfrak{so}(3)\subset\mathfrak{su}(3)$のブロック埋め込み、$\operatorname{SU}(2)$との縮退の対比、パウリ行列から引き継がれる役割と引き継がれない役割（スピノル外積・クリフォード関係・クロック＆シフト行列）、構造定数$f_{abc}$の反対称性、共役作用が$\mathfrak{su}(3)$を保つこと、$C\ell_{6,0}(\mathbb{R})$の半スピノル表現によるスピノル固定部分群$\operatorname{SU}(3) \subset \operatorname{Spin}(6) \cong \operatorname{SU}(4)$を確認します。
 - [check-06-bch-adjoint.py](check-06-bch-adjoint.py) — 06-bch-adjoint.md の数式の数値検証。BCH公式の2次・3次打ち切りの誤差次数、可換なら指数法則が厳密に成り立つこと、群の交換子$\exp(x)\exp(y)\exp(-x)\exp(-y) = \exp([x,y] + \cdots)$とその$\mathfrak{so}(3)$での実例、四元数による厳密な合成則と2次項の外積との一致、ヤコビ恒等式とライプニッツ形式、随伴作用が$\mathfrak{su}(3)$を保ち括弧積を保つこと、$g\exp(y)g^{-1} = \exp(\operatorname{Ad}_g y)$、アダマールの補題$\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)$、$\operatorname{ad}_{i/2} = J_x$と$\operatorname{Ad}_{\exp(\theta i/2)} = \exp(\theta J_x)$、$\ker\operatorname{Ad} = \{\pm 1\}$、$\operatorname{ad}$の行列成分と構造定数の一致、$\operatorname{ad}_{[x,y]} = [\operatorname{ad}_x, \operatorname{ad}_y]$を確認します。
 - [check-07-s7.py](check-07-s7.py) — 07-s7.md の数式の数値検証。ケイリー＝ディクソン構成によるグレイブス＝ケイリーの三つ組の再現、ノルムの乗法性が8次元まで成り立ち16次元で破れること、$S^7$の積の閉性・単位元・逆元と結合法則の破れ、逆元性質とアルティンの定理（2元の生成する部分代数の閉性と結合性）、ムーファン恒等式、オイラーの公式と1パラメータ族・指数写像の全射性、2元の厳密な合成則と3元での結合の破れ、$[x,y] = 2\,(x \times y)$、ヤコビ恒等式の破れ$J(x,y,z) = -6\,(x,y,z)$と三つ組内での成立、マルツェフ恒等式、共役作用が三重回転になることと準同型性・自己同型性の喪失、外積写像の括弧積による閉包が$\mathfrak{so}(7)$の21次元全体を張ること、十六元数の単位ノルム零因子$(e_1 + e_{10})(e_5 + e_{14}) = 0$を確認します。
+- [check-08-g2.py](check-08-g2.py) — 08-g2.md の数式の数値検証。三重回転が自己同型になる条件（回転角$0, \pm 2\pi/3$、$r^3 \in \mathbb{R}$、対角位相$3\theta \equiv 0$）、微分（ライプニッツ則）の解空間が14次元で$1$を消し反対称になり括弧積で閉じること、$\operatorname{ad}_u$の破れ$[u,zw] - [u,z]w - z[u,w] = -3(u,z,w)$と結合子で補正した$D_{x,y}$が微分になり14次元全体を張ること、$\mathfrak{so}(7) = \mathfrak{g}_2 \oplus \{u \times \cdot\}$（$21 = 14 + 7$の直和）、微分の$\exp$が自己同型（直交・行列式$1$・外積の保存）で一般の回転はそうでないこと、基本三つ組が自己同型を一意に定めること（自由かつ推移的な作用）、固定部分群の鎖$14 \to 8 \to 3 \to 0$と軌道次元$6, 5, 3$、$e_1$を固定する微分が$\mathbb{C}^3$上のトレース$0$反エルミート行列（$\mathfrak{su}(3)$）となり$\exp$が$\operatorname{SU}(3)$の元になることを確認します。
 - [check-double-cover.py](check-double-cover.py) — double-cover.md の数式の数値検証。軸角表現の冗長性$R(n,\theta)=R(-n,2\pi-\theta)$（ボールモデルのワープ）、単位四元数の共役作用が軸角回転と一致することと$\rho_{-q}=\rho_q$、ベルトトリックのホモトピー$H_s$が全$s$でループのまま順回しと逆回しをつなぐこと、持ち上げの終点（回転1周で$-1$・2周で$+1$、ホモトピーの全域で$-1$に固定）を確認します。
