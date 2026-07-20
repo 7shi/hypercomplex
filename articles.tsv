@@ -47,6 +47,7 @@ date	url	md	title
 		lie/03-spin.md	クリフォード代数とSpin(3)
 		lie/04-spin4.md	Spin(4)とSO(4)
 		lie/05-su3.md	SO(3)の複素化とSU(3)
+		lie/06-bch-adjoint.md	BCH公式と随伴作用
 		lie/double-cover.md	二重被覆と単連結性の直観
 		qua/05-dual-qua.md	二重四元数と剛体変換
 		qua/06-slerp.md	回転子の補間：SLERP

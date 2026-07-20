@@ -77,8 +77,9 @@
 3. [クリフォード代数とSpin(3)](lie/03-spin.md) — $\operatorname{Spin}(3)$とスピノル。パウリ行列が生成するクリフォード代数の偶部分代数として四元数を構成し直す。
 4. [Spin(4)とSO(4)](lie/04-spin4.md) — 四元数の左右独立作用による$\operatorname{SO}(4)$の構成と、2重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$。
 5. [SO(3)の複素化とSU(3)](lie/05-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。
+6. [BCH公式と随伴作用](lie/06-bch-adjoint.md) — 指数法則のずれを括弧積で記述するBCH公式、ヤコビ恒等式、共役作用のリー代数版である随伴作用$\operatorname{Ad}/\operatorname{ad}$。
 
-今後06〜09（BCH公式、八元数と$S^7$、$G_2$、$\operatorname{Spin}(7)$と三対性）が予定されており、八元数編・oct/03との合流が構想されています（詳細は[lie/README.md](lie/README.md)）。
+今後07〜09（八元数と$S^7$、$G_2$、$\operatorname{Spin}(7)$と三対性）が予定されており、八元数編・oct/03との合流が構想されています（詳細は[lie/README.md](lie/README.md)）。
 
 関連: 03で構成した左右作用・射影$P$による復元式は、四元数版の単発記事[四元数の左作用・右作用とスピノルの左イデアル](qua/spinor-ideal.md)（テーマ2）として独立記事に切り出し、[八元数の左作用とクリフォード代数](oct/03-oct-left-mul.md)（八元数版）と対を成す。
 
