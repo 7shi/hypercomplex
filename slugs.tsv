@@ -39,6 +39,7 @@ qua/02-nonion.md	7shi-nonion
 qua/03-qua-tensor.md	7shi-qt
 qua/04-4d-bsqua.md	7shi-4drot
 qua/05-dual-qua.md	7shi-dualq
+qua/06-slerp.md	7shi-slerp
 qua/cd/bcmp-qua.md	7shi-bcq
 qua/cd/cd-to-matrix.md	7shi-cdm
 qua/cd/grok45.md	NONE

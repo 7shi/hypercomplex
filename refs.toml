@@ -662,6 +662,11 @@ files = [
   "clif/04-weyl-algebra.md",
 ]
 
+["shoemake-slerp"]
+files = [
+  "qua/06-slerp.md",
+]
+
 ["sylvester"]
 type = "website"
 citation = "James Joseph Sylvester, The collected mathematical papers of James Joseph Sylvester..., University of Michigan Library Digital Collections, 閲覧日 2026年5月17日, https://name.umdl.umich.edu/aas8085.0003.001"
