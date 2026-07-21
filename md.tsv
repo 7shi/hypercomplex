@@ -22,8 +22,8 @@ lie/01-u1-so2.md	複素数とSO(2)
 lie/02-su2-so3.md	四元数とSU(2)
 lie/03-spin.md	クリフォード代数とSpin(3)
 lie/04-spin4.md	Spin(4)とSO(4)
-lie/05-su3.md	SO(3)の複素化とSU(3)
-lie/06-bch-adjoint.md	BCH公式と随伴作用
+lie/05-bch-adjoint.md	BCH公式と随伴作用
+lie/06-su3.md	SO(3)の複素化とSU(3)
 lie/07-s7.md	八元数とS^7
 lie/08-g2.md	八元数の自己同型群G_2
 lie/09-spin7-triality.md	Spin(7)と三対性

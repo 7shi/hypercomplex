@@ -77,8 +77,8 @@
 2. [四元数とSU(2)](lie/02-su2-so3.md) — $\operatorname{Sp}(1) \cong \operatorname{SU}(2)$と$\operatorname{SO}(3)$の2重被覆。
 3. [クリフォード代数とSpin(3)](lie/03-spin.md) — $\operatorname{Spin}(3)$とスピノル。パウリ行列が生成するクリフォード代数の偶部分代数として四元数を構成し直す。
 4. [Spin(4)とSO(4)](lie/04-spin4.md) — 四元数の左右独立作用による$\operatorname{SO}(4)$の構成と、2重被覆$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$。
-5. [SO(3)の複素化とSU(3)](lie/05-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。クロック・シフト行列の共役関係（$\operatorname{Ad}(U), \operatorname{Ad}(V)$の可換性と中心拡大、DFT行列$F$による共役）にも触れる。
-6. [BCH公式と随伴作用](lie/06-bch-adjoint.md) — 指数法則のずれを括弧積で記述するBCH公式、ヤコビ恒等式、共役作用のリー代数版である随伴作用$\operatorname{Ad}/\operatorname{ad}$。
+5. [BCH公式と随伴作用](lie/05-bch-adjoint.md) — 指数法則のずれを括弧積で記述するBCH公式、ヤコビ恒等式、共役作用のリー代数版である随伴作用$\operatorname{Ad}/\operatorname{ad}$。
+6. [SO(3)の複素化とSU(3)](lie/06-su3.md) — ゲルマン行列と$\mathfrak{so}(3) \subset \mathfrak{su}(3)$。クロック・シフト行列の共役関係（$\operatorname{Ad}(U), \operatorname{Ad}(V)$の可換性と中心拡大、DFT行列$F$による共役）にも触れる。
 7. [八元数とS^7](lie/07-s7.md) — 単位八元数のなす$S^7$が積・逆元を持ちながら結合法則を欠くためリー群にならないこと、アルティンの定理、ヤコビ恒等式の破れ、ムーファン・ループ、共役作用による$\operatorname{SO}(7)$の生成、フルヴィッツの定理による数体系の系列の終わり。
 8. [八元数の自己同型群G_2](lie/08-g2.md) — 八元数の積を保つ変換全体としての14次元の例外型リー群$G_2 \subset \operatorname{SO}(7)$、微分$\operatorname{Der}(\mathbb{O})$、分解$\mathfrak{so}(7) = \mathfrak{g}_2 \oplus \{u \times \cdot\}$、$\operatorname{SU}(3)$の再登場。
 9. [Spin(7)と三対性](lie/09-spin7-triality.md) — 純虚八元数の左作用のクリフォード関係から$\operatorname{Spin}(7)$を構成し、八元数自身がスピノルとして半角で回ることを見る。$G_2 = \operatorname{Stab}(1)$、$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$、倍加構成による$\operatorname{Spin}(8)$と三対性。

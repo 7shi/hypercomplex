@@ -1,4 +1,4 @@
-"""Numerical checks for 06-bch-adjoint.md.
+"""Numerical checks for 05-bch-adjoint.md.
 
 BCH expansion: the 2nd-order truncation z = x + y + [x,y]/2 leaves an
 O(t^3) residual and the 3rd-order truncation (with the 1/12 terms) an

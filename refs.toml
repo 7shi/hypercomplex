@@ -25,6 +25,7 @@ files = [
 files = [
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
+  "lie/11-exceptional.md",
 ]
 
 ["7shi-bq"]
@@ -51,6 +52,7 @@ files = [
   "lie/08-g2.md",
   "lie/09-spin7-triality.md",
   "oct/01-octonion.md",
+  "oct/04-sedenion.md",
   "qua/spinor-ideal.md",
 ]
 
@@ -63,12 +65,19 @@ files = [
 ["7shi-clif2"]
 files = [
   "clif/03-gpm-gca.md",
+  "oct/04-sedenion.md",
+]
+
+["7shi-clif3"]
+files = [
+  "lie/06-su3.md",
 ]
 
 ["7shi-clif4"]
 files = [
   "clif/05-schrodinger.md",
   "hopf/06-clifford-gates.md",
+  "lie/06-su3.md",
 ]
 
 ["7shi-clrt"]
@@ -202,6 +211,8 @@ files = [
 ["7shi-hopfext"]
 files = [
   "hopf/05-entanglement.md",
+  "lie/11-exceptional.md",
+  "oct/04-sedenion.md",
 ]
 
 ["7shi-ibp"]
@@ -235,7 +246,16 @@ url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
 files = [
   "clif/04-weyl-algebra.md",
   "lie/02-su2-so3.md",
+  "lie/05-bch-adjoint.md",
+  "lie/07-s7.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
   "lie/double-cover.md",
+]
+
+["7shi-lie10"]
+files = [
+  "lie/11-exceptional.md",
 ]
 
 ["7shi-lie2"]
@@ -243,6 +263,12 @@ files = [
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
   "lie/04-spin4.md",
+  "lie/05-bch-adjoint.md",
+  "lie/06-su3.md",
+  "lie/07-s7.md",
+  "lie/08-g2.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
   "lie/double-cover.md",
   "qua/cd/grok45.md",
 ]
@@ -251,28 +277,64 @@ files = [
 files = [
   "hopf/06-clifford-gates.md",
   "lie/04-spin4.md",
+  "lie/05-bch-adjoint.md",
+  "lie/06-su3.md",
+  "lie/07-s7.md",
+  "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
   "lie/double-cover.md",
+]
+
+["7shi-lie4"]
+files = [
+  "lie/05-bch-adjoint.md",
+  "lie/06-su3.md",
+  "lie/07-s7.md",
+  "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
 ]
 
 ["7shi-lie5"]
 files = [
-  "hopf/05-entanglement.md",
-  "lie/06-bch-adjoint.md",
+  "lie/06-su3.md",
+  "lie/07-s7.md",
+  "lie/08-g2.md",
+  "lie/10-roots-dynkin.md",
 ]
 
 ["7shi-lie6"]
 files = [
+  "hopf/05-entanglement.md",
   "lie/07-s7.md",
+  "lie/08-g2.md",
+  "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
 ]
 
 ["7shi-lie7"]
 files = [
   "lie/08-g2.md",
+  "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
+  "oct/04-sedenion.md",
 ]
 
 ["7shi-lie8"]
 files = [
   "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
+  "oct/04-sedenion.md",
+]
+
+["7shi-lie9"]
+files = [
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
 ]
 
 ["7shi-mc"]
@@ -319,6 +381,7 @@ files = [
 files = [
   "clif/03-gpm-gca.md",
   "clif/04-weyl-algebra.md",
+  "oct/04-sedenion.md",
 ]
 
 ["7shi-oct"]
@@ -342,6 +405,7 @@ files = [
   "lie/07-s7.md",
   "oct/02-7d-3rot.md",
   "oct/03-oct-left-mul.md",
+  "oct/04-sedenion.md",
 ]
 
 ["7shi-p"]
@@ -449,7 +513,7 @@ files = [
 
 ["7shi-strig"]
 files = [
-  "lie/06-bch-adjoint.md",
+  "lie/05-bch-adjoint.md",
 ]
 
 ["7shi-tp"]
@@ -459,6 +523,7 @@ url = "https://mathlog.info/articles/OunyiPffmIKhwwdmSrsA"
 files = [
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
+  "oct/04-sedenion.md",
   "qua/03-qua-tensor.md",
 ]
 
@@ -500,6 +565,8 @@ files = [
 ["baez"]
 files = [
   "lie/09-spin7-triality.md",
+  "lie/10-roots-dynkin.md",
+  "lie/11-exceptional.md",
 ]
 
 ["bernevig"]
@@ -525,6 +592,11 @@ accessed = 2026-07-15
 site = "Dimensions"
 files = [
   "hopf/01-quaternion.md",
+]
+
+["eakin-sathaye"]
+files = [
+  "oct/04-sedenion.md",
 ]
 
 ["furey1"]
@@ -616,6 +688,11 @@ author = ["難波 博之"]
 site = "高校数学の美しい物語"
 files = [
   "misc/exp-maclaurin-integral.md",
+]
+
+["moreno"]
+files = [
+  "oct/04-sedenion.md",
 ]
 
 ["mosseri"]
@@ -866,6 +943,11 @@ files = [
   "hopf/02-spinor-tensor.md",
 ]
 
+["wiki-dynkin"]
+files = [
+  "lie/10-roots-dynkin.md",
+]
+
 ["wiki-ehrenfest"]
 files = [
   "clif/05-schrodinger.md",
@@ -923,6 +1005,16 @@ files = [
   "hopf/01-quaternion.md",
 ]
 
+["wiki-jordan"]
+files = [
+  "lie/11-exceptional.md",
+]
+
+["wiki-magic"]
+files = [
+  "lie/11-exceptional.md",
+]
+
 ["wiki-norm"]
 type = "website"
 citation = "ノルム多元体, Wikipedia, 閲覧日 2026年5月23日, https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%AB%E3%83%A0%E5%A4%9A%E5%85%83%E4%BD%93"
@@ -978,6 +1070,11 @@ files = [
   "clif/05-schrodinger.md",
 ]
 
+["wiki-root"]
+files = [
+  "lie/10-roots-dynkin.md",
+]
+
 ["wiki-s3"]
 type = "website"
 citation = "三次元球面, Wikipedia, 閲覧日 2024年5月21日, https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%A2"
@@ -991,6 +1088,11 @@ files = [
 ["wiki-schrodinger"]
 files = [
   "clif/05-schrodinger.md",
+]
+
+["wiki-sedenion"]
+files = [
+  "oct/04-sedenion.md",
 ]
 
 ["wiki-smc"]

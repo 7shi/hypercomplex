@@ -1,4 +1,4 @@
-"""Numerical checks for 05-su3.md.
+"""Numerical checks for 06-su3.md.
 
 Properties of the Gell-Mann matrices (Hermitian, traceless,
 normalization tr(la*lb)=2*delta_ab); Jx, Jy, Jz as block placements of
