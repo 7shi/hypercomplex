@@ -40,6 +40,7 @@ misc/variable-dependence.md	変数の依存関係と微分
 oct/01-octonion.md	八元数の基本事項
 oct/02-7d-3rot.md	単位八元数による7次元三重回転
 oct/03-oct-left-mul.md	八元数の左作用とクリフォード代数
+oct/04-sedenion.md	十六元数と零因子
 oct/nonassociativity.md	八元数の非結合性
 qua/01-pauli-qua.md	パウリ行列と四元数：双四元数による橋渡し
 qua/02-nonion.md	シルベスターの九元数 (nonion)

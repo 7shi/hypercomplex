@@ -239,6 +239,17 @@ files = [
   "hopf/01-quaternion.md",
 ]
 
+["eakin-sathaye"]
+type = "paper"
+title = "On automorphisms and derivations of Cayley-Dickson algebras"
+author = ["Paul Eakin", "Avinash Sathaye"]
+journal = "Journal of Algebra"
+pages = "263–278"
+year = 1990
+files = [
+  "oct/04-sedenion.md",
+]
+
 ["furey1"]
 type = "website"
 title = "How to get around the non-associativity of the octonions (Video 9/14)."
@@ -340,6 +351,17 @@ pages = "10243"
 year = 2001
 files = [
   "hopf/05-entanglement.md",
+]
+
+["moreno"]
+type = "paper"
+title = "The zero divisors of the Cayley-Dickson algebras over the real numbers"
+author = ["Guillermo Moreno"]
+journal = "Boletín de la Sociedad Matemática Mexicana"
+pages = "13–28"
+year = 1998
+files = [
+  "oct/04-sedenion.md",
 ]
 
 ["nakajima-4d-rot"]
@@ -761,6 +783,15 @@ url = "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%
 site = "Wikipedia"
 files = [
   "clif/05-schrodinger.md",
+]
+
+["wiki-sedenion"]
+type = "website"
+title = "十六元数"
+url = "https://ja.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E5%85%83%E6%95%B0"
+site = "Wikipedia"
+files = [
+  "oct/04-sedenion.md",
 ]
 
 ["wiki-smc"]

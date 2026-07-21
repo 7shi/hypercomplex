@@ -54,6 +54,7 @@ date	url	md	title
 		lie/10-roots-dynkin.md	ルート系とディンキン図形
 		lie/11-exceptional.md	例外型ジョルダン代数と魔方陣
 		lie/double-cover.md	二重被覆と単連結性の直観
+		oct/04-sedenion.md	十六元数と零因子
 		qua/05-dual-qua.md	二重四元数と剛体変換
 		qua/06-slerp.md	回転子の補間：SLERP
 		qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
