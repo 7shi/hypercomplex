@@ -4,9 +4,12 @@ BCH expansion: the 2nd-order truncation z = x + y + [x,y]/2 leaves an
 O(t^3) residual and the 3rd-order truncation (with the 1/12 terms) an
 O(t^4) residual; exp(x)exp(y) = exp(x+y) exactly for commuting x, y;
 the group commutator exp(x)exp(y)exp(-x)exp(-y) = exp([x,y] + O(t^3)),
-with the so(3) instance e^{eJx}e^{eJy}e^{-eJx}e^{-eJy} ~ e^{e^2 Jz};
-the exact quaternion composition exp(ua)exp(vb) = exp(wc) with
-cos c = cos a cos b - (u.v) sin a sin b, reproducing exp(i pi/2)
+with the so(3) instance e^{eJx}e^{eJy}e^{-eJx}e^{-eJy} ~ e^{e^2 Jz}, and
+the explicit rotation-matrix product's (1,2),(2,1) entries -> -e^2, e^2;
+exp(i)exp(j) having a nonzero k-component while exp(i+j) has none,
+so exp(i)exp(j) != exp(i+j); the exact quaternion composition
+exp(ua)exp(vb) = exp(wc) with cos c = cos a cos b - (u.v) sin a sin b,
+matching exp(i)exp(j) at u=i, v=j, a=b=1, reproducing exp(i pi/2)
 exp(j pi/2) = k, and its 2nd-order term ab(u x v) = [ua, vb]/2; the
 Jacobi identity and its Leibniz form for random matrices; the adjoint
 action Ad_g x = gxg^{-1} staying in su(3) and preserving brackets;
@@ -84,6 +87,17 @@ def resj(e):
 print("e^{eJx}e^{eJy}e^{-eJx}e^{-eJy} = e^{e^2 Jz} + O(e^3):",
       7 < resj(0.1) / resj(0.05) < 9)
 
+# explicit rotation matrices: product's off-diagonal (1,2)/(2,1) entries -> -e^2, e^2
+def Rx(t):
+    return np.array([[1, 0, 0], [0, np.cos(t), -np.sin(t)], [0, np.sin(t), np.cos(t)]])
+def Ry(t):
+    return np.array([[np.cos(t), 0, np.sin(t)], [0, 1, 0], [-np.sin(t), 0, np.cos(t)]])
+def P(t):
+    return Rx(t) @ Ry(t) @ Rx(-t) @ Ry(-t)
+resq2 = lambda t: abs(P(t)[0, 1] - (-t**2)) + abs(P(t)[1, 0] - t**2)
+print("explicit R_x(e)R_y(e)R_x(-e)R_y(-e) has (1,2),(2,1) entries -e^2, e^2 to O(e^3):",
+      resq2(0.1) / resq2(0.05) > 6)
+
 # quaternions as 4-arrays (w, x, y, z)
 def qmul(p, q):
     (a, b, c, d), (e, f, g, h) = p, q
@@ -92,6 +106,17 @@ def qmul(p, q):
 def qexp(u, a):
     return np.concatenate([[np.cos(a)], np.sin(a)*u])
 qi, qj, qk = np.eye(3)
+
+# exp(i)exp(j) has a k-component while exp(i+j) does not, so they differ
+prod_ij = qmul(qexp(qi, 1), qexp(qj, 1))
+ij_sum = qi + qj
+exp_sum = np.concatenate([[np.cos(np.linalg.norm(ij_sum))],
+                          np.sin(np.linalg.norm(ij_sum)) * ij_sum / np.linalg.norm(ij_sum)])
+print("exp(i)exp(j) real/i/j parts match cos^2 1, sin1cos1, k-component sin^2 1:",
+      np.isclose(prod_ij[0], np.cos(1)**2) and np.allclose(prod_ij[1:3], np.sin(1)*np.cos(1))
+      and np.isclose(prod_ij[3], np.sin(1)**2))
+print("exp(i+j) has no k-component:", np.isclose(exp_sum[3], 0))
+print("exp(i)exp(j) != exp(i+j):", not np.allclose(prod_ij, exp_sum))
 
 # exact composition: exp(ua)exp(vb) = exp(wc) via cos c = cos a cos b - (u.v) sin a sin b
 u = rng.standard_normal(3); u /= np.linalg.norm(u)
@@ -104,6 +129,12 @@ print("exp(ua)exp(vb): real part = cos c, imaginary part = w sin c:",
       np.isclose(prod[0], cosc) and np.allclose(prod[1:], imag)
       and np.isclose(np.linalg.norm(imag), np.sqrt(1 - cosc**2)))
 c = np.arccos(cosc)
+
+# same formula at u=i, v=j, a=b=1 matches the direct exp(i)exp(j) computation above
+cosc_ij = np.cos(1)*np.cos(1) - (qi @ qj)*np.sin(1)*np.sin(1)
+imag_ij = np.sin(1)*np.cos(1)*qi + np.cos(1)*np.sin(1)*qj + np.sin(1)*np.sin(1)*np.cross(qi, qj)
+print("general formula at u=i,v=j,a=b=1 matches direct exp(i)exp(j):",
+      np.isclose(cosc_ij, prod_ij[0]) and np.allclose(imag_ij, prod_ij[1:]))
 print("product = exp(wc) with w = imag/|imag|:",
       np.allclose(prod, qexp(imag/np.linalg.norm(imag), c)))
 
