@@ -218,7 +218,11 @@ BCH公式との整合も確認できます。虚部
 $$
 u\sin\alpha\cos\beta + v\cos\alpha\sin\beta + (u \times v)\sin\alpha\sin\beta
 $$
-で$\alpha, \beta$が小さいとすると、$\sin\alpha\cos\beta \approx \alpha,\ \cos\alpha\sin\beta \approx \beta,\ \sin\alpha\sin\beta \approx \alpha\beta$なので、虚部は$u\alpha + v\beta + (u \times v)\alpha\beta + \cdots$と展開されます。3項目は、括弧積が外積の2倍であることから
+で$\alpha, \beta$が小さいとすると、$\sin\alpha\cos\beta \approx \alpha,\ \cos\alpha\sin\beta \approx \beta,\ \sin\alpha\sin\beta \approx \alpha\beta$より、虚部は
+$$
+u\alpha + v\beta + (u \times v)\alpha\beta + \cdots
+$$
+と展開されます。3項目は、括弧積が外積の2倍であることから
 
 $$
 \frac{1}{2}[u\alpha, v\beta] = \frac{1}{2}\alpha\beta \cdot 2\,(u \times v) = \alpha\beta\,(u \times v)
@@ -238,9 +242,8 @@ $$
 $$
 &&&
 
-証明は展開するだけです。
-
 &&&prf
+括弧積を定義通り展開すると
 $$
 \begin{aligned}
 [x,[y,z]] &= x(yz-zy) - (yz-zy)x = xyz - xzy - yzx + zyx \\
@@ -248,12 +251,13 @@ $$
 [z,[x,y]] &= zxy - zyx - xyz + yxz
 \end{aligned}
 $$
+となります。3つの和を項ごとに見ると、すべての項が符号違いの相手と対になって打ち消し合います。
 &&&
 
-3つを足すと、12個の項が符号を変えてちょうど2個ずつ対になり、すべて打ち消し合って$0$になります。
+この証明は、$xyz$のような3文字の積が括弧の付け方によらず1通りに定まる、つまり積の**結合法則**に依存しています。結合法則が崩れる代数では、この証明は足場ごと崩れます。
 
-&&&rem 結合法則という土台
-この証明が「展開するだけ」で済むのは、$xyz$のような3文字の積が括弧の付け方によらず1通りに定まるから、つまり積の**結合法則**があるからです。結合法則が崩れる代数では、この証明は足場ごと崩れます。
+&&&rem
+証明で使ったのは結合法則だけで、積$xy=yx$のような交換法則は仮定していません。ヤコビ恒等式は非可換な結合代数でも成り立ちます。
 &&&
 
 ## ライプニッツ則としての読み替え
@@ -408,9 +412,9 @@ $$
 
 まとめると、リー代数の元$z$を$\exp$で持ち上げるとリー群の元$\exp z$になり、$z$の括弧積$\operatorname{ad}_z$を$\exp$で持ち上げると$\exp z$の共役作用$\operatorname{Ad}_{\exp z}$になります。元と作用のどちらのレベルでも、同じ指数写像がリー代数とリー群の橋になっています。
 
-## $\mathfrak{su}(2)$での正体 — 半角の種明かし
+## $\mathfrak{su}(2)$での具体形
 
-一般論はここまでにして、$\mathfrak{sp}(1) \cong \mathfrak{su}(2)$で$\operatorname{ad}$の正体を突き止めます。基底$i, j, k$に対する$\operatorname{ad}_{i/2}$の作用を、括弧積$[i,j] = 2k$などから計算します。
+一般論はここまでにして、$\mathfrak{sp}(1) \cong \mathfrak{su}(2)$で$\operatorname{ad}$の具体的な形を求めます。基底$i, j, k$に対する$\operatorname{ad}_{i/2}$の作用を、括弧積$[i,j] = 2k$などから計算します。
 
 $$
 \operatorname{ad}_{i/2}(i) = 0, \quad
@@ -426,9 +430,9 @@ $$
 
 $\mathfrak{so}(3)$の基底$J_x$そのものです。同様に$\operatorname{ad}_{j/2} = J_y$、$\operatorname{ad}_{k/2} = J_z$となります。
 
-以前、対応$i/2 \Leftrightarrow J_x,\ j/2 \Leftrightarrow J_y,\ k/2 \Leftrightarrow J_z$で構造定数が一致することを計算で確認し、同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$を得ました。その対応表の正体が、いま明らかになりました。**この同型対応は、写像$x \mapsto \operatorname{ad}_x$そのものです。**
+以前、対応$i/2 \Leftrightarrow J_x,\ j/2 \Leftrightarrow J_y,\ k/2 \Leftrightarrow J_z$で構造定数が一致することを計算で確認し、同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$を得ました。その対応の背後にある構造が、いま明らかになりました。**この同型対応は、写像$x \mapsto \operatorname{ad}_x$そのものです。**
 
-さらに$\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)$を使えば、先の中心的な結果——共役作用が回転を与えること——が1行で再導出されます。$q = \exp(\theta i/2)$に対して
+さらに$\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)$を使えば、先の中心的な結果（共役作用が回転を与えること）が1行で再導出されます。$q = \exp(\theta i/2)$に対して
 
 $$
 \rho_q = \operatorname{Ad}_q = \operatorname{Ad}_{\exp(\theta i/2)} = \exp(\theta\operatorname{ad}_{i/2}) = \exp(\theta J_x)
