@@ -1,4 +1,4 @@
-.PHONY: help all md merge build check sync
+.PHONY: help all mathlog md merge build check sync
 
 help:
 	@echo "使用可能なターゲット:"
@@ -11,17 +11,8 @@ help:
 
 all: md merge build check
 
-md:
-	uv run articles.py md
+mathlog md merge:
+	uv run articles.py $@
 
-merge:
-	uv run articles.py merge
-
-build:
-	uv run refs_slugs.py build
-
-check:
-	uv run refs_slugs.py check
-
-sync:
-	uv run refs_slugs.py sync
+build check sync:
+	uv run refs_slugs.py $@

@@ -58,23 +58,34 @@ def iter_div_blocks(html: str, open_tag: str):
         else:
             return
 
+SECONDS_AGO_RE = re.compile(r"^(?P<seconds>\d+)秒前$")
+MINUTES_AGO_RE = re.compile(r"^(?P<minutes>\d+)分前$")
 HOURS_AGO_RE = re.compile(r"^(?P<hours>\d+)時間前$")
 DAYS_AGO_RE = re.compile(r"^(?P<days>\d+)日前$")
 MD_DATE_RE = re.compile(r"^(?P<month>\d+)月(?P<day>\d+)日$")
 YMD_RE = re.compile(r"^(?P<year>\d+)年(?P<month>\d+)月(?P<day>\d+)日$")
 
 
-def file_date(path: Path) -> date:
-    """Local calendar date of path's last modification."""
-    return datetime.fromtimestamp(path.stat().st_mtime).date()
+def file_datetime(path: Path) -> datetime:
+    """Local timestamp of path's last modification."""
+    return datetime.fromtimestamp(path.stat().st_mtime)
 
 
-def parse_date(raw: str, ref: date) -> str:
-    """Convert Mathlog date text to yyyy/mm/dd using ref as the base day."""
+def parse_date(raw: str, ref: datetime) -> str:
+    """Convert Mathlog date text to yyyy/mm/dd using ref as the base moment."""
     s = " ".join(raw.split())
 
-    if HOURS_AGO_RE.fullmatch(s):
-        return ref.strftime("%Y/%m/%d")
+    if m := SECONDS_AGO_RE.fullmatch(s):
+        d = ref - timedelta(seconds=int(m.group("seconds")))
+        return d.strftime("%Y/%m/%d")
+
+    if m := MINUTES_AGO_RE.fullmatch(s):
+        d = ref - timedelta(minutes=int(m.group("minutes")))
+        return d.strftime("%Y/%m/%d")
+
+    if m := HOURS_AGO_RE.fullmatch(s):
+        d = ref - timedelta(hours=int(m.group("hours")))
+        return d.strftime("%Y/%m/%d")
 
     if m := DAYS_AGO_RE.fullmatch(s):
         d = ref - timedelta(days=int(m.group("days")))
@@ -91,7 +102,7 @@ def parse_date(raw: str, ref: date) -> str:
     raise ValueError(f"unrecognized date format: {raw!r}")
 
 
-def extract_mathlog(html: str, ref: date) -> list[tuple[str, str, str]]:
+def extract_mathlog(html: str, ref: datetime) -> list[tuple[str, str, str]]:
     rows: list[tuple[str, str, str]] = []
     seen: set[str] = set()
     for block in iter_div_blocks(html, ARTICLE_BLOCK_OPEN):
@@ -113,7 +124,7 @@ def write_tsv(path: Path, header: str, lines: list[str]) -> None:
 
 
 def cmd_mathlog() -> None:
-    ref = file_date(HTML_PATH)
+    ref = file_datetime(HTML_PATH)
     html = HTML_PATH.read_text(encoding="utf-8")
     rows = extract_mathlog(html, ref=ref)
     if not rows:
