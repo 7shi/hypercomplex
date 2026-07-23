@@ -22,9 +22,13 @@ files = [
 ]
 
 ["7shi-bloch"]
+type = "mathlog"
+citation = "7shi, 四元数とホップファイブレーション 3 ブロッホ球と密度行列, Mathlog, Wed Jul 15 2026, アクセス日: Fri Jul 24 2026"
+url = "https://mathlog.info/articles/aUC0EotUv0bdyXzusvAT"
 files = [
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
+  "lie/03-spin.md",
   "lie/11-exceptional.md",
 ]
 
@@ -246,7 +250,6 @@ url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
 files = [
   "clif/04-weyl-algebra.md",
   "lie/02-su2-so3.md",
-  "lie/05-bch-adjoint.md",
   "lie/07-s7.md",
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
@@ -259,6 +262,9 @@ files = [
 ]
 
 ["7shi-lie2"]
+type = "mathlog"
+citation = "7shi, リー群・リー代数の初歩 2 四元数とSU(2), Mathlog, Fri Jul 10 2026, アクセス日: Fri Jul 24 2026"
+url = "https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj"
 files = [
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
@@ -277,7 +283,6 @@ files = [
 files = [
   "hopf/06-clifford-gates.md",
   "lie/04-spin4.md",
-  "lie/05-bch-adjoint.md",
   "lie/06-su3.md",
   "lie/07-s7.md",
   "lie/09-spin7-triality.md",
@@ -288,7 +293,6 @@ files = [
 
 ["7shi-lie4"]
 files = [
-  "lie/05-bch-adjoint.md",
   "lie/06-su3.md",
   "lie/07-s7.md",
   "lie/09-spin7-triality.md",
@@ -350,9 +354,10 @@ files = [
 
 ["7shi-mir"]
 type = "mathlog"
-citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Fri Jul 24 2026"
 url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
 files = [
+  "lie/03-spin.md",
   "qua/01-pauli-qua.md",
   "vec-oct/geometric-product-exp.md",
 ]

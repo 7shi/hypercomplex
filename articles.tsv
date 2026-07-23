@@ -1,6 +1,7 @@
 date	url	md	title
+2026/07/24	/articles/DRbXTeeL31pDcZyG6ml7	lie/03-spin.md	リー群・リー代数の初歩 3 クリフォード代数とSpin(3)
 2026/07/20	/articles/asrMOxuKsJIdPqANfOs3	qua/04-4d-bsqua.md	4次元回転と分解型双四元数
-2026/07/15	/articles/aUC0EotUv0bdyXzusvAT	hopf/03-bloch-density.md	四元数とホップファイブレーション 3 ブロッホ球と密度行列
+2026/07/16	/articles/aUC0EotUv0bdyXzusvAT	hopf/03-bloch-density.md	四元数とホップファイブレーション 3 ブロッホ球と密度行列
 2026/07/10	/articles/Utdur1fLLzrWVHOJHifj	lie/02-su2-so3.md	リー群・リー代数の初歩 2 四元数とSU(2)
 2026/05/23	/articles/PZJuaRWHYidsIg9u83j8	oct/03-oct-left-mul.md	八元数の左作用とクリフォード代数
 2026/05/23	/articles/vizAwdiKusmQ6pdsPTLE	oct/01-octonion.md	八元数の基本事項
@@ -44,7 +45,6 @@ date	url	md	title
 		lebesgue/04-brownian-ito.md	ブラウン運動と伊藤の補題
 		lebesgue/05-black-scholes.md	ブラック＝ショールズ方程式
 		lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率過程量子化
-		lie/03-spin.md	クリフォード代数とSpin(3)
 		lie/04-spin4.md	Spin(4)とSO(4)
 		lie/05-bch-adjoint.md	BCH公式と随伴作用
 		lie/06-su3.md	SO(3)の複素化とSU(3)
