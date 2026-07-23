@@ -771,22 +771,23 @@ def show_command(args: argparse.Namespace) -> None:
     else:
         print(f"{md_rel} ({own_slug})")
     print(f"({len(slugs)} slugs)")
-    for slug in slugs:
+    for i, slug in enumerate(slugs, 1):
+        print()
         if slug in master:
-            print(f"[{slug}] (refs-master.toml)")
+            print(f"{i}. [{slug}] (refs-master.toml)")
             print(render_entry(master[slug]))
         elif slug in refs and has_resolved_info(refs[slug]):
-            print(f"[{slug}] (refs.toml)")
+            print(f"{i}. [{slug}] (refs.toml)")
             print(render_entry(refs[slug]))
         elif slug in slugs_reverse:
             target_md = slugs_reverse[slug]
-            print(f"[{slug}] (slugs.tsv)")
+            print(f"{i}. [{slug}] (slugs.tsv)")
             print(f"  {target_md}")
             url = md_urls.get(target_md)
             if url:
-                print(f"  url = {url}")
+                print(f"  url = {toml_value(url)}")
         else:
-            print(f"[{slug}] 情報なし")
+            print(f"{i}. [{slug}] 情報なし")
 
 
 def main(argv: list[str] | None = None) -> None:
