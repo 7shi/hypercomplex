@@ -335,7 +335,7 @@ Z\otimes\mathrm I
 \ \xrightarrow{H\otimes\mathrm I}\ \mathrm I\otimes Z
 \ \xrightarrow{\mathrm{CNOT}}\ Z\otimes Z
 $$
-となります。つまり$\Phi_+$は$X\otimes X$と$Z\otimes Z$の同時$+1$固有状態です。期待値で言えば$\langle X\otimes X\rangle=\langle Z\otimes Z\rangle=1$、一方で$A$単独の軸$\sigma\otimes\mathrm I$の期待値はすべて0（$\boldsymbol r_A=0$、最大混合[[7shi-entangle]]）です。**個別の量子ビットの軸には何も見えないのに、相関の軸には完全な相関が見える**——前回、ホップ像とブロッホベクトルで見たもつれの姿が、軸の行き先を2本追うだけで再現されました。
+となります。つまり$\Phi_+$は$X\otimes X$と$Z\otimes Z$の同時$+1$固有状態です。期待値で言えば$\langle X\otimes X\rangle=\langle Z\otimes Z\rangle=1$、一方で$A$単独の軸$\sigma\otimes\mathrm I$の期待値はすべて0（$\boldsymbol r_A=0$、最大混合[[7shi-entangle]]）です。**個別の量子ビットの軸には何も見えないのに、相関の軸には完全な相関が見える**。前回、ホップ像とブロッホベクトルで見たもつれの姿が、軸の行き先を2本追うだけで再現されました。
 
 &&&rem ゴッツマン＝クニルの定理
 この「状態ではなく軸を追う」方法は$n$量子ビットに一般化できます。$|0\cdots0\rangle$は$n$本の軸$Z_i$（$i$番目だけ$Z$で他は$\mathrm I$のテンソル積）の同時$+1$固有状態で、クリフォード回路を通した後も、追跡すべきは$n$本の軸の行き先（それぞれ符号付きのパウリのテンソル積）だけです。記録量も更新の手間も$n$の多項式で済むため、**クリフォードゲートと計算基底での測定だけからなる量子回路は、古典計算機で効率よくシミュレートできます**（ゴッツマン＝クニルの定理[[gottesman]]）。もつれを作れるCNOTを含んでいても、軸の置換しか起こさない回路は古典で追えるのです。量子計算が古典計算を超えるには、$T$のようにクリフォード群からはみ出すゲートが欠かせません。
