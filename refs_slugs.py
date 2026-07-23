@@ -76,7 +76,10 @@ Also has a "show" subcommand: given one article (identified by its md path or
 by its canonical slug from slugs.tsv), print the [[slug]] markers found in its
 body in order of first appearance, and for each one, the entry from
 refs-master.toml if defined there (preferred), else from refs.toml if it
-carries any resolved attributes, else a note that no info was found.
+carries any resolved attributes, else the md path from slugs.tsv's reverse
+lookup if the slug is another (possibly unpublished) article's own canonical
+slug (plus its Mathlog url from articles.tsv, if it's published), else a note
+that no info was found.
 
 Usage:
   refs_slugs.py build                      # write refs.toml only
@@ -152,6 +155,23 @@ def load_slugs_tsv(path: Path) -> dict[str, str]:
         if len(cols) < 2:
             continue
         result[cols[0]] = cols[1]
+    return result
+
+
+def load_md_urls(path: Path) -> dict[str, str]:
+    """Map md path (relative, as in articles.tsv) -> full Mathlog url, for
+    every published article in articles.tsv."""
+    lines = path.read_text(encoding="utf-8").splitlines()
+    result: dict[str, str] = {}
+    for line in lines[1:]:
+        if not line.strip():
+            continue
+        cols = line.split("\t")
+        if len(cols) < 3:
+            continue
+        url, md = cols[1], cols[2]
+        if url and md:
+            result[md] = MATHLOG_BASE + url
     return result
 
 
@@ -721,8 +741,17 @@ def render_entry(entry: dict) -> str:
     return "\n".join(lines)
 
 
+def build_slugs_reverse_map(slugs_map: dict[str, str]) -> dict[str, str]:
+    """Return {slug: md_path} from slugs.tsv's {md_path: slug}, excluding
+    "NONE" entries (files with no publication planned, so no canonical
+    slug to reverse-lookup)."""
+    return {slug: md for md, slug in slugs_map.items() if slug != "NONE"}
+
+
 def show_command(args: argparse.Namespace) -> None:
     slugs_map = load_slugs_tsv(SLUGS_TSV)
+    slugs_reverse = build_slugs_reverse_map(slugs_map)
+    md_urls = load_md_urls(ARTICLES_TSV)
     md_path = resolve_show_target(args.target, slugs_map)
     md_rel = md_path.relative_to(ROOT).as_posix()
     slugs = extract_slugs_in_order(md_path)
@@ -749,6 +778,13 @@ def show_command(args: argparse.Namespace) -> None:
         elif slug in refs and has_resolved_info(refs[slug]):
             print(f"[{slug}] (refs.toml)")
             print(render_entry(refs[slug]))
+        elif slug in slugs_reverse:
+            target_md = slugs_reverse[slug]
+            print(f"[{slug}] (slugs.tsv)")
+            print(f"  {target_md}")
+            url = md_urls.get(target_md)
+            if url:
+                print(f"  url = {url}")
         else:
             print(f"[{slug}] 情報なし")
 
