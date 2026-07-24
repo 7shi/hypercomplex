@@ -767,7 +767,7 @@ def show_command(args: argparse.Namespace) -> None:
 
     own_slug = slugs_map.get(md_rel)
     if own_slug is None:
-        print(f"{md_rel} (slugs.tsvに未登録)")
+        print(f"{md_rel} (slugs.tsvに未登録、登録してください)")
     else:
         print(f"{md_rel} ({own_slug})")
     print(f"({len(slugs)} slugs)")
