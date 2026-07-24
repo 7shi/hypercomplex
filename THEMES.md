@@ -106,6 +106,8 @@
 
 方針: 現時点では標準的な計算手法（パウリ行列・トレース）を踏襲していますが、いずれ幾何代数による全面改稿の構想があります（[hopf/README.md](hopf/README.md)参照）。
 
+関連: [ボルンの規則](misc/born-rule.md)（テーマ9）は、03の密度行列の期待値$\boldsymbol r\cdot\boldsymbol n$と対をなす、状態ベクトルの内積による確率の導出を扱う単発記事。
+
 ## 8. ルベーグ積分と確率解析
 
 伊藤の補題への到達を目指す、完結した一本道のシリーズです。
@@ -129,6 +131,7 @@
 - [εパラメーターを用いたオイラー＝ラグランジュ方程式](misc/epsilon-euler-lagrange.md)
 - [部分積分における関数の微分の利用](misc/integration-by-parts.md)
 - [一般次元における球座標系のバリエーション](misc/spherical-coords.md)
+- [ボルンの規則](misc/born-rule.md)
 
 重複なし。
 
