@@ -36,6 +36,7 @@ date	url	md	title
 		clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
 		clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係
 		clif/05-schrodinger.md	離散ラプラシアンの連続極限：シュレーディンガー方程式の導出
+		clif/pga-cga.md	射影幾何代数と共形幾何代数
 		hopf/04-extension.md	四元数・八元数への拡張
 		hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
 		hopf/06-clifford-gates.md	量子ゲートを回転子として読み直す
