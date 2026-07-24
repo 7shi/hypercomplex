@@ -458,7 +458,7 @@ $$
 \begin{aligned}
 \operatorname{Spin}(3)
 &= \{a\,I + b\,\sigma_1\sigma_2 + c\,\sigma_3\sigma_1 + d\,\sigma_2\sigma_3 \ :\ a^2+b^2+c^2+d^2=1\} \\
-&\cong \{a+bi+cj+dk \ :\ |q|=1\}
+&\cong \{a+bi+cj+dk \ :\ a^2+b^2+c^2+d^2=1\}
 \end{aligned}
 $$
 &&&
