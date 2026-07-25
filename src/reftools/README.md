@@ -40,6 +40,14 @@ Mathlogのurlを持たないmdファイル（したがって`refs/{ID}.toml`も�
 3. そのslugが別の（未公開の可能性もある）記事自身の正準slugであれば、`slugs.tsv`の逆引きでmdパスを表示（公開済みなら`articles.tsv`のMathlog urlも添える）
 4. どこにも情報が見つからなければ、その旨を表示する
 
+## format
+
+Mathlogの参考文献パネルのHTMLエクスポート（`refs/*.html`）を、1行1タグの形式に整形する。テキストのみを子に持つ要素（子要素を持たない）は開始・終了タグと一緒に1行にまとめ、要素を子に持つ要素は展開して1段深くインデントする。
+
+## toml
+
+`format`で整形済みの`refs/*.html`を`refs/*.toml`に変換する。アコーディオン項目ごとに1つのTOMLテーブルとなり、そのラベル（記事本文で`[[label]]`として使われるのと同じもの）をキーとする。
+
 ## 使い方
 
 ```
@@ -50,4 +58,6 @@ uv run reftools check
 uv run reftools sync
 uv run reftools show oct/01-octonion.md
 uv run reftools show 7shi-oct1
+uv run reftools format refs/12345.html --in-place
+uv run reftools toml refs/12345.html      # refs/12345.toml を書き出す
 ```

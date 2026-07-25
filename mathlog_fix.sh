@@ -15,8 +15,8 @@ flush() {
         read -p "修正が完了したら[Enter]を押してください。"
         ref="refs/$(basename "$url").html"
         winclip -o "$ref"
-        uv run html_format.py "$ref" --in-place
-        uv run refs_to_toml.py "$ref"
+        uv run reftools format "$ref" --in-place
+        uv run reftools toml "$ref"
     fi
 }
 
@@ -32,5 +32,5 @@ for line in "${lines[@]}"; do
     fi
 done
 flush
-uv run reftool build
-uv run reftool check
+uv run reftools build
+uv run reftools check

@@ -1,19 +1,14 @@
 """Convert a Mathlog references-panel HTML export (refs/*.html) to TOML.
 
-The input is expected to be pre-formatted by html_format.py (one tag per
-line). Each accordion item becomes one TOML table keyed by its label
+The input is expected to be pre-formatted by "reftools html-format" (one tag
+per line). Each accordion item becomes one TOML table keyed by its label
 (the same label used as a [[label]] citation marker in the articles).
-
-Usage:
-  refs_to_toml.py input.html            # write input.toml (extension swapped)
-  refs_to_toml.py input.html -o out.toml
 """
 
 from __future__ import annotations
 
 import argparse
 import re
-from pathlib import Path
 
 TYPE_MAP = {
     "Webサイト": "website",
@@ -133,18 +128,9 @@ def convert(html: str) -> str:
     return render_toml(parse_entries(html))
 
 
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
-    parser.add_argument("input", type=Path, help="formatted refs HTML file")
-    parser.add_argument("-o", "--output", type=Path, help="write result to this file")
-    args = parser.parse_args(argv)
-
+def refs_to_toml_command(args: argparse.Namespace) -> None:
     html = args.input.read_text(encoding="utf-8")
     result = convert(html)
 
     output = args.output or args.input.with_suffix(".toml")
     output.write_text(result, encoding="utf-8")
-
-
-if __name__ == "__main__":
-    main()

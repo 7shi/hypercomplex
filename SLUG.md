@@ -4,7 +4,7 @@
 
 ## 背景
 
-各記事はMathlogで公開されており、Mathlogの参考文献パネル（記事ごとの引用ラベル一覧）を `refs/{記事ID}.toml` としてエクスポートしてある（`html_format.py` + `refs_to_toml.py` で HTML → TOML 変換）。この参照ラベル（slug）はMathlog側で記事ごとに独立して割り当てられているため、同じ実体を指すのに記事ごとに異なるslugが使われる「揺れ」が起こりうる。
+各記事はMathlogで公開されており、Mathlogの参考文献パネル（記事ごとの引用ラベル一覧）を `refs/{記事ID}.toml` としてエクスポートしてある（`reftools format` + `reftools toml` で HTML → TOML 変換）。この参照ラベル（slug）はMathlog側で記事ごとに独立して割り当てられているため、同じ実体を指すのに記事ごとに異なるslugが使われる「揺れ」が起こりうる。
 
 ## 命名規約
 
@@ -48,9 +48,9 @@
     3. 未公開記事（`refs/{ID}.toml` を持たない）本文の `[[slug]]` を、プロジェクト全体で既知のslug（全公開記事の `refs/{ID}.toml` のキー ∪ `refs-master.toml` のキー ∪ `slugs.tsv` に予約された正準slug）と突き合わせ、どこにも定義のないslugを報告する。
     4. `refs.toml`（機械生成）と `refs-master.toml`（手動管理）を突き合わせ、titleおよびその他共有フィールドの矛盾を報告する。
   - `show <mdパス|slug>`: 引数（mdパスまたは`slugs.tsv`の正準slug）で記事を1つ特定し、ファイル名と正準slug（`slugs.tsv`未登録なら未登録である旨）を表示した上で、本文の `[[slug]]` を出現順に列挙する。各slugは `refs-master.toml`（優先）または `refs.toml` の内容があれば表示し、どちらもなければ `slugs.tsv` の逆引き（他記事の正準slugであれば、未公開でもそのmdパス。公開済みなら `articles.tsv` から取得したURLも併記）を試し、それもなければ「情報なし」と表示する。
-- `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`refs_to_toml.py` で `refs/*.html` から生成）。
+- `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`reftools toml` で `refs/*.html` から生成）。
 - `mathlog_fix.md` — Mathlog側の参考文献パネルを手動修正する際の作業リスト。何を直すか（表記ゆれの統一先、slug衝突の解消、ラベル改名など）は文脈依存のヒューリスティックな判断が必要で自動生成できないため、都度手で書く使い捨てファイル（処理後に削除する）。記事ごとに `## <mdファイル> — <Mathlog記事URL>` を見出しとし、その下に修正内容を箇条書きする（例: `- <slug>: <field> = <新値>`、改名は `- <旧slug> → <新slug>`）。
-- `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`html_format.py --in-place` で整形する。
+- `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`reftools format --in-place` で整形する。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`articles.py` で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
 - `Makefile` — `make md`（`articles.py md`）、`make merge`（`articles.py merge`）、`make check`（`reftools check`）のショートカット。`make help` で一覧表示。

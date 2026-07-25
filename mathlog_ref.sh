@@ -11,8 +11,8 @@ for line in "${lines[@]:1}"; do
     winclip "https://mathlog.info$url"
     read -p "$url $title"
     winclip -o "$ref"
-    uv run html_format.py "$ref" --in-place
-    uv run refs_to_toml.py "$ref"
+    uv run reftools format "$ref" --in-place
+    uv run reftools toml "$ref"
 done
-uv run reftool build
-uv run reftool check
+uv run reftools build
+uv run reftools check

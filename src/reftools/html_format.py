@@ -3,18 +3,12 @@
 Elements whose content is text-only (no element children) are kept on a
 single line together with their closing tag; elements with element
 children are expanded, with each child indented one level deeper.
-
-Usage:
-  html_format.py input.html            # print formatted result to stdout
-  html_format.py input.html -o out.html
-  html_format.py input.html --in-place
 """
 
 from __future__ import annotations
 
 import argparse
 from html.parser import HTMLParser
-from pathlib import Path
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -134,14 +128,7 @@ def format_html(html: str) -> str:
     return "\n".join(out) + "\n"
 
 
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
-    parser.add_argument("input", type=Path, help="HTML file to format")
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument("-o", "--output", type=Path, help="write result to this file")
-    group.add_argument("--in-place", action="store_true", help="overwrite the input file")
-    args = parser.parse_args(argv)
-
+def html_format_command(args: argparse.Namespace) -> None:
     html = args.input.read_text(encoding="utf-8")
     formatted = format_html(html)
 
@@ -151,7 +138,3 @@ def main(argv: list[str] | None = None) -> None:
         args.output.write_text(formatted, encoding="utf-8")
     else:
         print(formatted, end="")
-
-
-if __name__ == "__main__":
-    main()

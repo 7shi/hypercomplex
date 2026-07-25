@@ -7,7 +7,9 @@ from pathlib import Path
 
 from reftools.build import build_command
 from reftools.check import check_command, sync_command
+from reftools.html_format import html_format_command
 from reftools.paths import DEFAULT_OUTPUT
+from reftools.refs_to_toml import refs_to_toml_command
 from reftools.show import show_command
 
 
@@ -42,6 +44,24 @@ def main(argv: list[str] | None = None) -> None:
     )
     show_parser.add_argument("target", help="md path or canonical slug (slugs.tsv)")
     show_parser.set_defaults(func=show_command)
+
+    html_format_parser = subparsers.add_parser(
+        "format",
+        help="pretty-print a Mathlog refs-panel HTML export with one tag per line",
+    )
+    html_format_parser.add_argument("input", type=Path, help="HTML file to format")
+    html_format_group = html_format_parser.add_mutually_exclusive_group()
+    html_format_group.add_argument("-o", "--output", type=Path, help="write result to this file")
+    html_format_group.add_argument("--in-place", action="store_true", help="overwrite the input file")
+    html_format_parser.set_defaults(func=html_format_command)
+
+    refs_to_toml_parser = subparsers.add_parser(
+        "toml",
+        help="convert a formatted refs-panel HTML export (refs/*.html) to refs/*.toml",
+    )
+    refs_to_toml_parser.add_argument("input", type=Path, help="formatted refs HTML file")
+    refs_to_toml_parser.add_argument("-o", "--output", type=Path, help="write result to this file")
+    refs_to_toml_parser.set_defaults(func=refs_to_toml_command)
 
     args = parser.parse_args(argv)
     args.func(args)
