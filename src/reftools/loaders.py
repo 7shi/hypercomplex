@@ -6,20 +6,28 @@ from pathlib import Path
 from reftools.paths import MATHLOG_BASE, REFS_DIR, ROOT
 
 
-def load_md_entries(path: Path) -> list[tuple[Path, str]]:
-    """Return (md_path, article_id) pairs; article_id is '' if none."""
+def load_articles(path: Path) -> list[tuple[str, str, str]]:
+    """Parse articles.tsv into (url, md, title) rows, in file order."""
     lines = path.read_text(encoding="utf-8").splitlines()
-    entries: list[tuple[Path, str]] = []
+    rows: list[tuple[str, str, str]] = []
     for line in lines[1:]:
         if not line.strip():
             continue
         cols = line.split("\t")
         url = cols[1] if len(cols) > 1 else ""
         md = cols[2] if len(cols) > 2 else ""
+        title = cols[3] if len(cols) > 3 else ""
         if md:
-            article_id = url.rsplit("/", 1)[-1] if url else ""
-            entries.append((ROOT / md, article_id))
-    return entries
+            rows.append((url, md, title))
+    return rows
+
+
+def load_md_entries(path: Path) -> list[tuple[Path, str]]:
+    """Return (md_path, article_id) pairs; article_id is '' if none."""
+    return [
+        (ROOT / md, url.rsplit("/", 1)[-1] if url else "")
+        for url, md, _ in load_articles(path)
+    ]
 
 
 def load_md_list(path: Path) -> list[str]:
@@ -56,34 +64,29 @@ def load_slugs_tsv(path: Path) -> dict[str, str]:
 def load_md_urls(path: Path) -> dict[str, str]:
     """Map md path (relative, as in articles.tsv) -> full Mathlog url, for
     every published article in articles.tsv."""
-    lines = path.read_text(encoding="utf-8").splitlines()
-    result: dict[str, str] = {}
-    for line in lines[1:]:
-        if not line.strip():
-            continue
-        cols = line.split("\t")
-        if len(cols) < 3:
-            continue
-        url, md = cols[1], cols[2]
-        if url and md:
-            result[md] = MATHLOG_BASE + url
-    return result
+    return {
+        md: MATHLOG_BASE + url
+        for url, md, _ in load_articles(path)
+        if url
+    }
+
+
+def load_md_titles(path: Path) -> dict[str, str]:
+    """Map md path (relative, as in articles.tsv) -> article title."""
+    return {
+        md: title
+        for _, md, title in load_articles(path)
+        if title
+    }
 
 
 def load_title_urls(path: Path) -> dict[str, str]:
     """Map article title -> full Mathlog url, from articles.tsv."""
-    lines = path.read_text(encoding="utf-8").splitlines()
-    result: dict[str, str] = {}
-    for line in lines[1:]:
-        if not line.strip():
-            continue
-        cols = line.split("\t")
-        if len(cols) < 4:
-            continue
-        _, url, _, title = cols[0], cols[1], cols[2], cols[3]
-        if url and title:
-            result[title] = MATHLOG_BASE + url
-    return result
+    return {
+        title: MATHLOG_BASE + url
+        for url, _, title in load_articles(path)
+        if url and title
+    }
 
 
 def load_refs_table(article_id: str) -> dict[str, dict]:

@@ -4,7 +4,7 @@ import argparse
 import tomllib
 from pathlib import Path
 
-from reftools.loaders import load_md_urls, load_slugs_tsv
+from reftools.loaders import load_md_titles, load_md_urls, load_slugs_tsv
 from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, SLUG_RE
 
 
@@ -69,6 +69,7 @@ def show_command(args: argparse.Namespace) -> None:
     slugs_map = load_slugs_tsv(SLUGS_TSV)
     slugs_reverse = build_slugs_reverse_map(slugs_map)
     md_urls = load_md_urls(ARTICLES_TSV)
+    md_titles = load_md_titles(ARTICLES_TSV)
     md_path = resolve_show_target(args.target, slugs_map)
     md_rel = md_path.relative_to(ROOT).as_posix()
     slugs = extract_slugs_in_order(md_path)
@@ -82,6 +83,9 @@ def show_command(args: argparse.Namespace) -> None:
         with DEFAULT_OUTPUT.open("rb") as f:
             refs = tomllib.load(f)
 
+    title = md_titles.get(md_rel)
+    if title:
+        print(title)
     own_slug = slugs_map.get(md_rel)
     if own_slug is None:
         print(f"{md_rel} (slugs.tsvに未登録、登録してください)")
