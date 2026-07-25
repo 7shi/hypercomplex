@@ -6,7 +6,6 @@ from pathlib import Path
 
 from reftools.loaders import load_md_urls, load_slugs_tsv
 from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, SLUG_RE
-from reftools.toml_io import toml_value
 
 
 def resolve_show_target(target: str, slugs_map: dict[str, str]) -> Path:
@@ -39,8 +38,14 @@ def has_resolved_info(entry: dict) -> bool:
     return any(k != "files" for k in entry)
 
 
+def display_value(v) -> str:
+    if isinstance(v, list):
+        return ", ".join(display_value(x) for x in v)
+    return str(v)
+
+
 def render_entry(entry: dict) -> str:
-    lines = [f"  {key} = {toml_value(value)}" for key, value in entry.items() if key != "files"]
+    lines = [f"  {key}: {display_value(value)}" for key, value in entry.items() if key != "files"]
     return "\n".join(lines)
 
 
@@ -97,6 +102,6 @@ def show_command(args: argparse.Namespace) -> None:
             print(f"  {target_md}")
             url = md_urls.get(target_md)
             if url:
-                print(f"  url = {toml_value(url)}")
+                print(f"  url: {url}")
         else:
             print(f"{i}. [{slug}] 情報なし")
