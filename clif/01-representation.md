@@ -249,7 +249,7 @@ $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{
 
 ## 完全な分類表
 
-このようにして得られる完全な分類表は以下のとおりです。[[wiki-clif]]
+このようにして得られる完全な分類表は以下のとおりです。[[wiki-clif-class]]
 
 $$
 \begin{array}{|c|ccccccccc|}

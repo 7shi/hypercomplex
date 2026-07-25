@@ -619,6 +619,15 @@ files = [
   "qua/cd/cd-to-matrix.md",
 ]
 
+["wiki-clif-class"]
+type = "website"
+title = "Classification of Clifford algebras"
+url = "https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras"
+site = "Wikipedia"
+files = [
+  "clif/01-representation.md",
+]
+
 ["wiki-clif"]
 type = "website"
 title = "Clifford algebra"
