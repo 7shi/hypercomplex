@@ -1,4 +1,4 @@
-実数体・複素数体・四元数体と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。拡張公式は前回の記事で導出したものを使用します。[[7shi-qt]] 完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
+実数・複素数・四元数と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。拡張公式は前回の記事で導出したものを使用します。[[7shi-qt]] 完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
 
 &&& 凡例
 以下、代数$A$の直和$A \oplus A$を$2A$と略記し（例：$2\mathbb H \cong \mathbb H \oplus \mathbb H$）、$\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します（例：$\mathbb R(2) \cong M_2(\mathbb R)$）。
@@ -10,10 +10,10 @@
 
 $$
 \begin{alignedat}{3}
-&\mathbb{R} &&\cong \operatorname{Cl}_{0,0}(\mathbb{R}) &&\quad\text{（実数体）} \\
-&\mathbb{C} &&\cong \operatorname{Cl}_{0,1}(\mathbb{R}) &&\quad\text{（複素数体）} \\
+&\mathbb{R} &&\cong \operatorname{Cl}_{0,0}(\mathbb{R}) &&\quad\text{（実数）} \\
+&\mathbb{C} &&\cong \operatorname{Cl}_{0,1}(\mathbb{R}) &&\quad\text{（複素数）} \\
 &\mathbb{C}' &&\cong \operatorname{Cl}_{1,0}(\mathbb{R}) &&\quad\text{（分解型複素数）} \\
-&\mathbb{H} &&\cong \operatorname{Cl}_{0,2}(\mathbb{R}) &&\quad\text{（四元数体）} \\
+&\mathbb{H} &&\cong \operatorname{Cl}_{0,2}(\mathbb{R}) &&\quad\text{（四元数）} \\
 &\mathbb{H}' &&\cong \operatorname{Cl}_{2,0}(\mathbb{R}) \cong \operatorname{Cl}_{1,1}(\mathbb{R}) &&\quad\text{（分解型四元数）}
 \end{alignedat}
 $$
