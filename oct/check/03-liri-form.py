@@ -12,7 +12,7 @@ L_iR_i form still works, just with different (non-equal) coefficients.
 """
 
 import numpy as np
-from octonion import L, R, P
+from common.octonion import L, R, P
 
 n = 7
 LiRi = [L[i] @ R[i] for i in range(1, n + 1)]

@@ -1,10 +1,6 @@
-import sys
-from pathlib import Path
-
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "oct"))
-from octonion import L, R  # 8x8 matrices: L[i]x = e_i x, R[i]x = x e_i (L[0]=R[0]=I)
+from common.octonion import L, R  # 8x8 matrices: L[i]x = e_i x, R[i]x = x e_i (L[0]=R[0]=I)
 
 rng = np.random.default_rng(0)
 

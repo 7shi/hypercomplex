@@ -1,5 +1,5 @@
 import numpy as np
-from octonion import L, R, P
+from common.octonion import L, R, P
 
 rng = np.random.default_rng(0)
 x = rng.standard_normal(8)

@@ -27,11 +27,7 @@ Verifies numerically (random variables, numpy):
 """
 
 import numpy as np
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent / 'oct'))
-from octonion import L
+from common.octonion import L
 
 rng = np.random.default_rng(0)
 

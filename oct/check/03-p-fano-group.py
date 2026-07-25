@@ -1,6 +1,6 @@
 import numpy as np
 from itertools import product
-from octonion import triples, L, P
+from common.octonion import triples, L, P
 
 # the 8 terms of P: identity and -L_a L_b L_c for each Fano line
 G = [np.eye(8)] + [-(L[a] @ L[b] @ L[c]) for a,b,c in triples]

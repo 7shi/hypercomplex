@@ -9,12 +9,8 @@ Verifies the concrete example in the article:
    for a general unit octonion p (real part allowed).
 """
 
-import sys
 import numpy as np
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent / 'oct'))
-from octonion import L
+from common.octonion import L
 
 def mul(x, y):
     M = sum(x[i] * L[i] for i in range(8))

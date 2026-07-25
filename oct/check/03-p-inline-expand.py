@@ -1,4 +1,4 @@
-from octonion import triples
+from common.octonion import triples
 
 # Pure algebraic simulation (no matrices):
 # L_1..L_7 are anticommuting symbols with L_i^2 = -1.

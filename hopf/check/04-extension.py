@@ -12,12 +12,7 @@ Verifies numerically (random variables, numpy) the extension of Hopf fibrations:
 """
 
 import numpy as np
-import sys
-from pathlib import Path
-
-# Add the parent directory's 'oct' folder to sys.path to import octonion
-sys.path.append(str(Path(__file__).parent.parent / 'oct'))
-import octonion as oc
+import common.octonion as oc
 
 rng = np.random.default_rng(42)
 

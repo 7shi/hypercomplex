@@ -1,4 +1,4 @@
-from octonion import L, P
+from common.octonion import L, P
 import numpy as np
 
 # 8P = I - L1L2L3 - L1L4L5 - L1L7L6 - L2L4L6 - L2L5L7 - L3L4L7 - L3L6L5

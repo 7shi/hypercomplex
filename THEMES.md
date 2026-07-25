@@ -74,7 +74,7 @@
 
 **重複・統合候補**: `oct/01-octonion.md`の「非結合性」節（概要レベルの説明と具体例）は`oct/nonassociativity.md`（反結合性・交代性まで踏み込んだ体系的な導出）と内容が重複しています。`01`側の非結合性節を`nonassociativity.md`への導入・要約に置き換え、詳細は後者に一本化する統合が可能です。
 
-検証コード: `check-03-*.py`（射影$P$の数値検証群）は`oct/03-oct-left-mul.md`に、`check-04-sedenion.py`は`oct/04-sedenion.md`に対応。
+検証コード: `oct/check/03-*.py`（射影$P$の数値検証群）は`oct/03-oct-left-mul.md`に、`oct/check/04-sedenion.py`は`oct/04-sedenion.md`に対応。
 
 ## リー群・リー代数
 

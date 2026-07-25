@@ -1,5 +1,5 @@
 import numpy as np
-from octonion import L, R, P, basis_mul
+from common.octonion import L, R, P, basis_mul
 
 # For every pair x,y in 1..7, check:
 #   L_{xy} = sum_j R_j (L_x L_y P) R_j^{-1}   (R_0 = I, R_j^{-1} = -R_j for j>=1)
