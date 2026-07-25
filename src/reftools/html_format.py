@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from html.parser import HTMLParser
+from pathlib import Path
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -126,6 +127,15 @@ def format_html(html: str) -> str:
         else:
             render(child, 0, out)
     return "\n".join(out) + "\n"
+
+
+def add_subparser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser("format", help="pretty-print a Mathlog refs-panel HTML export with one tag per line")
+    parser.add_argument("input", type=Path, help="HTML file to format")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("-o", "--output", type=Path, help="write result to this file")
+    group.add_argument("--in-place", action="store_true", help="overwrite the input file")
+    parser.set_defaults(func=html_format_command)
 
 
 def html_format_command(args: argparse.Namespace) -> None:

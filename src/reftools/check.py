@@ -238,6 +238,23 @@ def sync_master_files(
     return text, changed
 
 
+def add_subparser(subparsers: argparse._SubParsersAction) -> None:
+    check_parser = subparsers.add_parser(
+        "check",
+        help="check body [[slug]] markers against refs/{ID}.toml keys, "
+        "unpublished articles against project-wide known slugs, "
+        "and refs.toml against refs-master.toml",
+    )
+    check_parser.set_defaults(func=check_command)
+
+    sync_parser = subparsers.add_parser(
+        "sync",
+        help="same checks as \"check\", plus sync each slug's \"files\" list in "
+        "refs-master.toml to match refs.toml",
+    )
+    sync_parser.set_defaults(func=sync_command)
+
+
 def check_command(args: argparse.Namespace, sync: bool = False) -> None:
     md_entries = load_md_entries(ARTICLES_TSV)
     mismatches = find_slug_mismatches(md_entries)

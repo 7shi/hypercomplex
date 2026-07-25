@@ -51,6 +51,15 @@ def build_slugs_reverse_map(slugs_map: dict[str, str]) -> dict[str, str]:
     return {slug: md for md, slug in slugs_map.items() if slug != "NONE"}
 
 
+def add_subparser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "show",
+        help="show [[slug]] markers in one article, in order, with their refs.toml/refs-master.toml info",
+    )
+    parser.add_argument("target", help="md path or canonical slug (slugs.tsv)")
+    parser.set_defaults(func=show_command)
+
+
 def show_command(args: argparse.Namespace) -> None:
     slugs_map = load_slugs_tsv(SLUGS_TSV)
     slugs_reverse = build_slugs_reverse_map(slugs_map)

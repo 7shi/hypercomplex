@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 
 from reftools.loaders import load_md_entries, load_title_urls
-from reftools.paths import ARTICLES_TSV, ROOT
+from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, ROOT
 from reftools.resolve import collect_slugs_by_file
 from reftools.toml_io import render_toml_by_slug
 
@@ -129,6 +129,14 @@ def render_citing_slugs(citing: list[tuple[Path, list[str]]]) -> str:
         value = ", ".join(slugs) if slugs else "NONE"
         lines.append(f"{key} = {value}\n")
     return "".join(lines)
+
+
+def add_subparser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser("build", help="write refs.toml (and optionally refs-url.txt/refs-file.txt)")
+    parser.add_argument("-o", "--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--url-output", type=Path, default=None)
+    parser.add_argument("--file-output", type=Path, default=None)
+    parser.set_defaults(func=build_command)
 
 
 def build_command(args: argparse.Namespace) -> None:

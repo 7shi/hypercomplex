@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import re
+from pathlib import Path
 
 TYPE_MAP = {
     "Webサイト": "website",
@@ -126,6 +127,13 @@ def render_toml(entries: list[dict]) -> str:
 
 def convert(html: str) -> str:
     return render_toml(parse_entries(html))
+
+
+def add_subparser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser("toml", help="convert a formatted refs-panel HTML export (refs/*.html) to refs/*.toml")
+    parser.add_argument("input", type=Path, help="formatted refs HTML file")
+    parser.add_argument("-o", "--output", type=Path, help="write result to this file")
+    parser.set_defaults(func=refs_to_toml_command)
 
 
 def refs_to_toml_command(args: argparse.Namespace) -> None:
