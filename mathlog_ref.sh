@@ -14,5 +14,5 @@ for line in "${lines[@]:1}"; do
     uv run html_format.py "$ref" --in-place
     uv run refs_to_toml.py "$ref"
 done
-uv run refs_slugs.py build
-uv run refs_slugs.py check
+uv run reftool build
+uv run reftool check

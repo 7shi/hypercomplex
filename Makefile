@@ -5,9 +5,9 @@ help:
 	@echo "  all    - md merge build check"
 	@echo "  md     - uv run articles.py md"
 	@echo "  merge  - uv run articles.py merge"
-	@echo "  build  - uv run refs_slugs.py build"
-	@echo "  check  - uv run refs_slugs.py check"
-	@echo "  sync   - uv run refs_slugs.py sync"
+	@echo "  build  - uv run reftool build"
+	@echo "  check  - uv run reftool check"
+	@echo "  sync   - uv run reftool sync"
 
 all: md merge build check
 
@@ -15,4 +15,4 @@ mathlog md merge:
 	uv run articles.py $@
 
 build check sync:
-	uv run refs_slugs.py $@
+	uv run reftool $@

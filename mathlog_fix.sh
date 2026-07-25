@@ -32,5 +32,5 @@ for line in "${lines[@]}"; do
     fi
 done
 flush
-uv run refs_slugs.py build
-uv run refs_slugs.py check
+uv run reftool build
+uv run reftool check
