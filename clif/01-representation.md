@@ -32,20 +32,23 @@ $\mathbb C,\mathbb C'$は生成元が1個のクリフォード代数に対応し
 
 この代数は、2つの冪等元
 $$
-e = \dfrac{1+j}{2},\ e^* = \dfrac{1-j}{2}
+e = \frac{1+j}{2},\quad e^* = \frac{1-j}{2}
 $$
 を用いて直和分解することができます。
 
-この冪等元は以下の重要な性質を持ちます：
+この冪等元は以下の重要な性質を持ちます。
 
-- 冪等性：$e^2 = e$, $(e^*)^2 = e^*$
+- 冪等性：$e^2 = e,\ (e^*)^2 = e^*$
 - 直交性：$ee^* = e^*e = 0$
+- 完全性：$e + e^* = 1$
 
 これにより、任意の分解型複素数 $z = x + jy$ は以下のように一意的に分解できます。
 
-$$z = (x+y)e + (x-y)e^*$$
+$$
+z = (x+jy)(e+e^*) = (x+y)e + (x-y)e^*
+$$
 
-この直和分解を用いると、2つの分解型複素数の積は非常に簡単に計算できます。
+この直和分解を用いると、2つの分解型複素数の積は簡単に計算できます。
 
 $$
 (a_1e + b_1e^*)(a_2e + b_2e^*) = a_1a_2e + b_1b_2e^*
@@ -236,7 +239,7 @@ $$
 
 $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{R}(2)$$
 
-つまり、表を対角線（右下）方向に1つ進むごとに行列の次数が2倍になり、型（$\mathbb{R},\mathbb{C},\mathbb{H}$の種別と直和の有無）は変わりません。系列によって得られた第1行と第1列を起点として、対角線方向に空白部分を埋めることができます。例えば：
+つまり、表を対角線（右下）方向に1つ進むごとに行列の次数が2倍になり、型（$\mathbb{R},\mathbb{C},\mathbb{H}$の種別と直和の有無）は変わりません。系列によって得られた第1行と第1列を起点として、対角線方向に空白部分を埋めることができます。
 
 1. $p=1, q=1$ の場合：
    $\operatorname{Cl}_{1,1}(\mathbb{R}) \cong \operatorname{Cl}_{0,0}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R} \otimes \mathbb{R}(2) \cong \mathbb{R}(2)$
@@ -249,7 +252,7 @@ $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{
 
 ## 完全な分類表
 
-このようにして得られる完全な分類表は以下のとおりです。[[wiki-clif-class]]
+このようにして得られる完全な分類表は以下のとおりです。
 
 $$
 \begin{array}{|c|ccccccccc|}
@@ -268,6 +271,10 @@ p \backslash q & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \hline
 \end{array}
 $$
+
+&&&rem
+Wikipediaにも同様な行列表現の一覧表がありますが、三角形に並べる独特な形をしています。上の表と見比べると、対角線方向（$p-q$が一定）に同じ型が並ぶことを利用して、その対角線を1行にまとめていることがわかります。この配置には、同型な代数が横に並ぶという利点があります。[[wiki-clif-class]]
+&&&
 
 ## 8周期性
 
@@ -330,7 +337,7 @@ $$\omega = e_1e_2\cdots e_n \quad (n=p+q)$$
 
 $$e_i\,\omega=(-1)^{n-1}\omega\,e_i$$
 
-となります。つまり$n$が奇数のとき、$\omega$はすべての生成元と可換、すなわち中心的です。一方、$\omega^2$は生成元を並べ替えて計算できます。並べ替えに必要な転倒数は$n(n-1)/2$なので
+となります。つまり$n$が奇数のとき、$\omega$はすべての生成元と可換、すなわち中心的です。一方、$\omega^2$は生成元を並べ替えて計算できます。並べ替えに必要な交換数は$n(n-1)/2$なので
 
 $$\omega^2=(-1)^{n(n-1)/2}\,e_1^2e_2^2\cdots e_n^2=(-1)^{n(n-1)/2+q}$$
 
@@ -339,8 +346,8 @@ $$\omega^2=(-1)^{n(n-1)/2}\,e_1^2e_2^2\cdots e_n^2=(-1)^{n(n-1)/2+q}$$
 $$
 \omega^2=
 \begin{cases}
-+1 & (p-q\equiv0,1 \pmod 4)\\
--1 & (p-q\equiv2,3 \pmod 4)
++1 & \bigl(p-q\equiv0,1 \pmod 4\bigr)\\
+-1 & \bigl(p-q\equiv2,3 \pmod 4\bigr)
 \end{cases}
 $$
 
@@ -348,11 +355,11 @@ $$
 符号数を$(p,q)\to(p+1,q+1)$と変えると、$n\to n+2$より指数の変化は$\{(n+2)(n+1)-n(n-1)\}/2+1=2n+2$で偶数となり、符号は変わらない。また$(p,q)\to(p+4,q)$では指数の変化は$\{(n+4)(n+3)-n(n-1)\}/2=4n+6$で偶数となり、やはり符号は変わらない。したがって符号は$p-q \bmod 4$のみに依存し、代表例$\operatorname{Cl}_{0,0},\operatorname{Cl}_{1,0},\operatorname{Cl}_{2,0},\operatorname{Cl}_{3,0}$での値$+1,+1,-1,-1$から上式が得られる。
 &&&
 
-$n$の偶奇と$\omega^2$の符号によって、中心（すべての元と可換な元のなす部分代数）が決まります：
+$n$の偶奇と$\omega^2$の符号によって、中心（すべての元と可換な元のなす部分代数）が決まります。
 
-- **$n$が偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \bmod 8$の区別）は中心だけでは決まりません。
-- **$n$が奇数で$\omega^2=-1$**（$p-q\equiv3\pmod4$）：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。代数全体が複素行列環となり、$\mathbb C$型が現れます。
-- **$n$が奇数で$\omega^2=+1$**（$p-q\equiv1\pmod4$）：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$\dfrac{1\pm\omega}2$によって代数全体が直和分解され、$2\mathbb R$型・$2\mathbb H$型が現れます。
+- $n$が**偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \bmod 8$の区別）は中心だけでは決まりません。
+- $n$が**奇数**で$\omega^2=-1\ \bigl(p-q\equiv3\pmod4\bigr)$：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。代数全体が複素行列環となり、$\mathbb C$型が現れます。
+- $n$が**奇数**で$\omega^2=+1\ \bigl(p-q\equiv1\pmod4\bigr)$：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$(1\pm\omega)/2$によって代数全体が直和分解され、$2\mathbb R$型・$2\mathbb H$型が現れます。
 
 型の表に中心を並べると、直和型と$\mathbb C$型の出現位置が中心の構造とちょうど一致していることが確認できます。
 
@@ -366,9 +373,9 @@ p-q \bmod 8 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 $$
 
 &&&ex 冪等元による直和分解
-最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$です。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=\dfrac{1+j}2,\ e^*=\dfrac{1-j}2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れです。
+最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$です。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=(1+j)/2,\ e^*=(1-j)/2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れです。
 
-次の例は$\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H$（$p-q\equiv5\pmod8$）です。擬スカラー$\omega=e_1e_2e_3$は中心的で$\omega^2=+1$となり、冪等元$\dfrac{1\pm\omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解されます。
+次の例は$\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H\ \bigl(p-q\equiv5\pmod8\bigr)$です。擬スカラー$\omega=e_1e_2e_3$は中心的で$\omega^2=+1$となり、冪等元$(1\pm\omega)/2$によって$\mathbb H\oplus\mathbb H$へ直和分解されます。
 &&&
 
 # 偶部分代数
@@ -377,10 +384,13 @@ $$
 
 &&&fml 偶部分代数の同型
 $$
+\begin{aligned}
 \operatorname{Cl}_{p,q}^0(\mathbb R)
-\cong\operatorname{Cl}_{p,q-1}(\mathbb R)\ (q\ge1),\quad
+&\cong \operatorname{Cl}_{p,q-1}(\mathbb R) &&(q\ge1)
+\\
 \operatorname{Cl}_{p,q}^0(\mathbb R)
-\cong\operatorname{Cl}_{q,p-1}(\mathbb R)\ (p\ge1)
+&\cong \operatorname{Cl}_{q,p-1}(\mathbb R) &&(p\ge1)
+\end{aligned}
 $$
 &&&
 
@@ -433,7 +443,7 @@ $$
 $$
 
 &&&rem
-3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$\dfrac{1\pm u}2$による直和分解が起こります。
+3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$(1\pm u)/2$による直和分解が起こります。
 &&&
 
 拡張公式$\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb H\cong\operatorname{Cl}_{q,p+2}(\mathbb R)$の両辺を複素化すると、$\mathbb H\otimes\mathbb C\cong\mathbb C(2)$より次の周期性が得られます。
@@ -466,7 +476,7 @@ $$
 分類表の行列環$\mathbb F(n)$は、$n$次元の列ベクトル空間$\mathbb F^n$に作用します。この作用に自明でない不変部分空間はなく、クリフォード代数の既約表現を与えます。
 
 - 単純型$\mathbb F(n)$：既約表現は$\mathbb F^n$のただ1つです。
-- 直和型$2\mathbb F(n)$：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$\dfrac{1\pm\omega}2$のどちらの成分か）で区別されます。
+- 直和型$2\mathbb F(n)$：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$(1\pm\omega)/2$のどちらの成分か）で区別されます。
 
 &&&rem ピノルとスピノル
 クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分けます。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来します。
