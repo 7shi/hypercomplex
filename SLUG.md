@@ -24,23 +24,23 @@
 
 ## 外部文献の統合管理（refs-master.toml）
 
-`refs/*.toml`（記事ごとにバラバラ）は `reftool build` で `refs.toml` に集約されるが、これはあくまで既存記事からの機械的な集約結果であり、正準定義そのものではない。外部文献（type != "mathlog"）の正準定義は `refs-master.toml` に集約し、手動で維持する。
+`refs/*.toml`（記事ごとにバラバラ）は `reftools build` で `refs.toml` に集約されるが、これはあくまで既存記事からの機械的な集約結果であり、正準定義そのものではない。外部文献（type != "mathlog"）の正準定義は `refs-master.toml` に集約し、手動で維持する。
 
 - slugをキーとする。aliasは持たない。
 - `type`/`url`/`author`/`site`/`journal`/`year`/`pages`/`publisher`等に加え、`citation`/`accessed`の代わりに `title` を持つ（`citation` は閲覧日入りの文字列でありマスター管理に不向きなため）。
-- `type` ごとに持つべきフィールドの組み合わせは以下の通り（記事公開後、`refs.toml`の`citation`からこの組み合わせで`title`を機械的に復元できるかを `reftool check` が検証するため、実体と一致させる必要がある）。
+- `type` ごとに持つべきフィールドの組み合わせは以下の通り（記事公開後、`refs.toml`の`citation`からこの組み合わせで`title`を機械的に復元できるかを `reftools check` が検証するため、実体と一致させる必要がある）。
   - `website`: `url`, `author`（任意）, `site`（任意）
   - `paper`: `author`, `journal`, `year`, `pages`（任意）
   - `book`: `author`, `publisher`, `year`, `pages`
 - 自著Mathlog記事へのslug（type = "mathlog"）はここには含めない。定義はMathlog自身が正なので、二重管理しない。
-- 新規の外部参照が未公開記事本文に現れたら、`reftool check` の「未定義」検出をきっかけに、この`refs-master.toml`へ手で追記する。
-- `refs.toml`（機械生成）と矛盾していないかは `reftool check` が自動検証する（後述）。
+- 新規の外部参照が未公開記事本文に現れたら、`reftools check` の「未定義」検出をきっかけに、この`refs-master.toml`へ手で追記する。
+- `refs.toml`（機械生成）と矛盾していないかは `reftools check` が自動検証する（後述）。
 
 ## 関連ファイル・ツール
 
 - `slugs.tsv` — 正準slug台帳（md → slug）。手動管理。
 - `refs-master.toml` — 外部文献（type != "mathlog"）の正準定義。手動管理、自動生成しない。
-- `reftool`（`reftool/` パッケージ、`uv run reftool`で呼び出す） — 以下のサブコマンドを持つ。
+- `reftools`（`src/reftools/` パッケージ、`uv run reftools`で呼び出す） — 以下のサブコマンドを持つ。
   - `build`: `refs.toml` を生成する。slugごとに見出しを立て、`type`/`url`（定義がなければ省略）と使用元mdファイル一覧（`files`）を持つ。同一slugが異なる`(type, url)`に解決される場合はビルド時にエラーとする。`--url-output`/`--file-output` で `refs-url.txt`（複数slugから引用される同一URLの検出）/ `refs-file.txt`（自著記事が他記事から引用されているslugの一覧）を追加生成できるが、これらは通常のbuildには含めず、必要なチェック時にのみ都度生成する使い捨てファイル。
   - `check`: 以下をすべて実行する。
     1. 各公開済み記事本文の `[[slug]]` と対応する `refs/{ID}.toml` の過不足を検査する（「未使用」＝tomlにあるが本文にないslugは意図的な保持もあり、必ずしも修正対象ではない）。
@@ -53,4 +53,4 @@
 - `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`html_format.py --in-place` で整形する。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`articles.py` で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
-- `Makefile` — `make md`（`articles.py md`）、`make merge`（`articles.py merge`）、`make check`（`reftool check`）のショートカット。`make help` で一覧表示。
+- `Makefile` — `make md`（`articles.py md`）、`make merge`（`articles.py merge`）、`make check`（`reftools check`）のショートカット。`make help` で一覧表示。

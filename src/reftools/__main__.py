@@ -5,10 +5,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from reftool.build import build_command
-from reftool.check import check_command, sync_command
-from reftool.paths import DEFAULT_OUTPUT
-from reftool.show import show_command
+from reftools.build import build_command
+from reftools.check import check_command, sync_command
+from reftools.paths import DEFAULT_OUTPUT
+from reftools.show import show_command
 
 
 def main(argv: list[str] | None = None) -> None:

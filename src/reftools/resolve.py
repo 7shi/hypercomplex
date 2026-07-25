@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from reftool.loaders import load_refs_table
-from reftool.paths import MATHLOG_BASE, MATHLOG_CITATION_RE, ROOT, SLUG_RE
+from reftools.loaders import load_refs_table
+from reftools.paths import MATHLOG_BASE, MATHLOG_CITATION_RE, ROOT, SLUG_RE
 
 
 def resolve_slug(

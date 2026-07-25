@@ -3,10 +3,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from reftool.loaders import load_md_entries, load_title_urls
-from reftool.paths import ARTICLES_TSV, ROOT
-from reftool.resolve import collect_slugs_by_file
-from reftool.toml_io import render_toml_by_slug
+from reftools.loaders import load_md_entries, load_title_urls
+from reftools.paths import ARTICLES_TSV, ROOT
+from reftools.resolve import collect_slugs_by_file
+from reftools.toml_io import render_toml_by_slug
 
 # Attributes that legitimately differ across refs/{ID}.toml exports of the
 # same slug (the access date, and the citation string that embeds it) and so

@@ -3,7 +3,7 @@ from __future__ import annotations
 import tomllib
 from pathlib import Path
 
-from reftool.paths import MATHLOG_BASE, REFS_DIR, ROOT
+from reftools.paths import MATHLOG_BASE, REFS_DIR, ROOT
 
 
 def load_md_entries(path: Path) -> list[tuple[Path, str]]:

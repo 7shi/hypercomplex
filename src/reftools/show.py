@@ -4,9 +4,9 @@ import argparse
 import tomllib
 from pathlib import Path
 
-from reftool.loaders import load_md_urls, load_slugs_tsv
-from reftool.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, SLUG_RE
-from reftool.toml_io import toml_value
+from reftools.loaders import load_md_urls, load_slugs_tsv
+from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, SLUG_RE
+from reftools.toml_io import toml_value
 
 
 def resolve_show_target(target: str, slugs_map: dict[str, str]) -> Path:

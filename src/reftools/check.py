@@ -5,9 +5,9 @@ import re
 import tomllib
 from pathlib import Path
 
-from reftool.loaders import load_md_entries, load_md_list, load_refs_table, load_slugs_tsv
-from reftool.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, MD_TSV, REFS_DIR, ROOT, SLUGS_TSV, SLUG_RE
-from reftool.toml_io import toml_string, toml_value
+from reftools.loaders import load_md_entries, load_md_list, load_refs_table, load_slugs_tsv
+from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, MD_TSV, REFS_DIR, ROOT, SLUGS_TSV, SLUG_RE
+from reftools.toml_io import toml_string, toml_value
 
 
 def find_slug_mismatches(

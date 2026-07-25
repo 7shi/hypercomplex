@@ -1,4 +1,4 @@
-# reftool
+# reftools
 
 記事中の`[[slug]]`参照マーカーを、`articles.tsv`が指すmdファイルから集めて1つのTOMLファイルに集約するツール。
 
@@ -43,11 +43,11 @@ Mathlogのurlを持たないmdファイル（したがって`refs/{ID}.toml`も�
 ## 使い方
 
 ```
-uv run reftool build                      # refs.tomlのみを書き出す
-uv run reftool build -o out.toml
-uv run reftool build --url-output refs-url.txt --file-output refs-file.txt
-uv run reftool check
-uv run reftool sync
-uv run reftool show oct/01-octonion.md
-uv run reftool show 7shi-oct1
+uv run reftools build                      # refs.tomlのみを書き出す
+uv run reftools build -o out.toml
+uv run reftools build --url-output refs-url.txt --file-output refs-file.txt
+uv run reftools check
+uv run reftools sync
+uv run reftools show oct/01-octonion.md
+uv run reftools show 7shi-oct1
 ```
