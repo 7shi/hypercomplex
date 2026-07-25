@@ -25,4 +25,4 @@
   - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
-- [src/bookmarklets/](src/bookmarklets/) — Mathlog関連のブックマークレット集。
+- [src/](src/README.md) — 記事執筆・検証・参考文献管理に使うスクリプト類。
