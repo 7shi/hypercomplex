@@ -32,7 +32,7 @@ $\mathbb C,\mathbb C'$は生成元が1個のクリフォード代数に対応し
 
 この代数は、2つの冪等元
 $$
-e = \dfrac{1-j}{2},\ e^* = \dfrac{1+j}{2}
+e = \dfrac{1+j}{2},\ e^* = \dfrac{1-j}{2}
 $$
 を用いて直和分解することができます。
 
@@ -43,7 +43,7 @@ $$
 
 これにより、任意の分解型複素数 $z = x + jy$ は以下のように一意的に分解できます。
 
-$$z = (x-y)e + (x+y)e^*$$
+$$z = (x+y)e + (x-y)e^*$$
 
 この直和分解を用いると、2つの分解型複素数の積は非常に簡単に計算できます。
 
@@ -366,7 +366,7 @@ p-q \bmod 8 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 $$
 
 &&&ex 冪等元による直和分解
-最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$です。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=\dfrac{1-j}2,\ e^*=\dfrac{1+j}2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れです。
+最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$です。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=\dfrac{1+j}2,\ e^*=\dfrac{1-j}2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れです。
 
 次の例は$\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H$（$p-q\equiv5\pmod8$）です。擬スカラー$\omega=e_1e_2e_3$は中心的で$\omega^2=+1$となり、冪等元$\dfrac{1\pm\omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解されます。
 &&&
