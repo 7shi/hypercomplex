@@ -18,12 +18,12 @@ $L(q,\dot q,t)$の引数$\dot q$は、この段階では$q$の時間微分$dq/dt
 
 &&&def 作用積分
 $$
-S[q] = \int_{t_1}^{t_2} L(q(t),\dot{q}(t),t)\, dt
+S[q] = \int_{t_1}^{t_2} L\bigl(q(t),\dot{q}(t),t\bigr)\, dt
 $$
 &&&
 
 &&&rem $L$と$S$における$\dot q$の違い
-先に述べた通り、$L(q,\dot q,t)$における$q,\dot q,t$は、それぞれ独立な名前を持つ3つの引数にすぎません。一方、$S[q,\dot q]$ではなく$S[q]$と表記されているのは、$S$の引数が$q$（経路を表す関数）ただ1つであることを表しています。被積分関数$L(q(t),\dot{q}(t),t)$に現れる$q(t)$と$\dot{q}(t)$は、この1つの引数$q$を「時刻$t$で評価する」「微分してから時刻$t$で評価する」ことで得られる量であり、$\dot{q}(t) = dq(t)/dt$という関係を通じて、いずれも同じ引数$q$から導かれています。この2つの段階の違いを区別しておくと、後の議論が見通しやすくなります。
+先に述べた通り、$L(q,\dot q,t)$における$q,\dot q,t$は、それぞれ独立な名前を持つ3つの引数にすぎません。一方、$S[q,\dot q]$ではなく$S[q]$と表記されているのは、$S$の引数が$q$（経路を表す関数）ただ1つであることを表しています。被積分関数$L\bigl(q(t),\dot{q}(t),t\bigr)$に現れる$q(t)$と$\dot{q}(t)$は、この1つの引数$q$を「時刻$t$で評価する」「微分してから時刻$t$で評価する」ことで得られる量であり、$\dot{q}(t) = dq(t)/dt$という関係を通じて、いずれも同じ引数$q$から導かれています。この2つの段階の違いを区別しておくと、後の議論が見通しやすくなります。
 &&&
 
 つまり、ラグランジアンで各時刻における状態を独立に計算し、それらを作用積分で繋ぎ合わせることで運動を再現するというアプローチです。
@@ -89,7 +89,7 @@ $$
 経路変化後の作用積分
 
 $$
-S[q+\varepsilon\eta] = \int_{t_1}^{t_2} L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t)\, dt
+S[q+\varepsilon\eta] = \int_{t_1}^{t_2} L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr)\, dt
 $$
 
 の$\varepsilon$についての微分は以下のように計算されます。
@@ -97,11 +97,11 @@ $$
 $$
 \begin{aligned}
 \frac{d}{d \varepsilon} S[q+\varepsilon\eta]
-&= \frac{d}{d\varepsilon}\int_{t_1}^{t_2} L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t) \, dt \\
-&= \int_{t_1}^{t_2} \frac{d}{d\varepsilon} L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t) \, dt \\
+&= \frac{d}{d\varepsilon}\int_{t_1}^{t_2} L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr) \, dt \\
+&= \int_{t_1}^{t_2} \frac{d}{d\varepsilon} L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr) \, dt \\
 &= \int_{t_1}^{t_2} \left[
-  \eta(t) \frac{\partial}{\partial {q} }L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t) \right. \\
-&\qquad\quad \left. + \dot{\eta}(t) \frac{\partial}{\partial \dot{q}}L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t)
+  \eta(t) \frac{\partial}{\partial {q} }L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr) \right. \\
+&\qquad\quad \left. + \dot{\eta}(t) \frac{\partial}{\partial \dot{q}}L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr)
 \right] dt
 \end{aligned}
 $$
@@ -110,10 +110,10 @@ $\varepsilon = 0$のとき、$S[q+\varepsilon\eta]$は極値を取るため
 
 $$
 \left.\frac{d}{d \varepsilon} S[q+\varepsilon\eta]\right|_{\varepsilon=0}
-= \int_{t_1}^{t_2} \left[ \eta(t) \frac{\partial}{\partial q}L(q(t),\dot{q}(t),t) + \dot{\eta}(t) \frac{\partial}{\partial \dot{q}}L(q(t),\dot{q}(t),t) \,\right]\,dt = 0
+= \int_{t_1}^{t_2} \left[ \eta(t) \frac{\partial}{\partial q}L\bigl(q(t),\dot{q}(t),t\bigr) + \dot{\eta}(t) \frac{\partial}{\partial \dot{q}}L\bigl(q(t),\dot{q}(t),t\bigr) \,\right]\,dt = 0
 $$
 
-以降、$L(q(t),\dot{q}(t),t)$の引数は変化しないため省略します。
+以降、$L\bigl(q(t),\dot{q}(t),t\bigr)$の引数は変化しないため省略します。
 
 $$
 \left.\frac{d}{d \varepsilon} S[q+\varepsilon\eta]\right|_{\varepsilon=0}
@@ -194,7 +194,7 @@ $$
 $$
 \begin{aligned}
 \left.\frac{d}{d\varepsilon}S[q + \varepsilon\eta]\right|_{\varepsilon=0}
-&= \left. \int_{t_1}^{t_2} \frac{d}{d\varepsilon} L(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t) \, dt \right|_{\varepsilon=0} \\
+&= \left. \int_{t_1}^{t_2} \frac{d}{d\varepsilon} L\bigl(q(t)+\varepsilon\eta(t), \dot{q}(t)+\varepsilon\dot{\eta}(t), t\bigr) \, dt \right|_{\varepsilon=0} \\
 &= \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial {q}}\eta + \frac{\partial L}{\partial \dot{q}} \dot{\eta} \right] dt \\
 &= \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial {q}} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right] \eta \, dt = 0
 \end{aligned} \tag{1}
@@ -202,7 +202,7 @@ $$
 $$
 \begin{aligned}
 \delta S
-&= \int_{t_1}^{t_2} \left[ L(q(t)+\delta q(t), \dot{q}(t)+\delta\dot{q}(t), t) - L(q(t), \dot{q}(t), t)
+&= \int_{t_1}^{t_2} \left[ L\bigl(q(t)+\delta q(t), \dot{q}(t)+\delta\dot{q}(t), t\bigr) - L\bigl(q(t), \dot{q}(t), t\bigr)
 \right] dt \\
 &\approx \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \delta \dot{q} \right] dt \\
 &= \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right] \delta q \, dt = 0
