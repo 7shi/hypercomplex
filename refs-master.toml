@@ -219,6 +219,17 @@ files = [
   "hopf/06-clifford-gates.md",
 ]
 
+["clifford-app"]
+type = "paper"
+title = "Applications of Grassmann's Extensive Algebra"
+author = ["William Kingdon Clifford"]
+journal = "American Journal of Mathematics"
+pages = "350-358"
+year = 1878
+files = [
+  "qua/history.md",
+]
+
 ["clifford-biq"]
 type = "paper"
 title = "Preliminary Sketch of Biquaternions"
@@ -228,6 +239,16 @@ pages = "381-395"
 year = 1873
 files = [
   "qua/05-dual-qua.md",
+]
+
+["crowe"]
+type = "book"
+title = "A History of Vector Analysis: The Evolution of the Idea of a Vectorial System"
+author = ["Michael J. Crowe"]
+publisher = "University of Notre Dame Press"
+year = 1967
+files = [
+  "qua/history.md",
 ]
 
 ["dim7-8"]
@@ -298,6 +319,16 @@ journal = "arXiv"
 year = 2010
 files = [
   "oct/03-oct-left-mul.md",
+]
+
+["hestenes-sta"]
+type = "book"
+title = "Space-Time Algebra"
+author = ["David Hestenes"]
+publisher = "Gordon and Breach"
+year = 1966
+files = [
+  "qua/history.md",
 ]
 
 ["hopf1931"]
@@ -466,6 +497,7 @@ pages = "245-254"
 year = 1985
 files = [
   "qua/06-slerp.md",
+  "qua/history.md",
 ]
 
 ["sylvester"]
@@ -675,6 +707,15 @@ files = [
   "clif/05-schrodinger.md",
   "hopf/06-clifford-gates.md",
   "qua/02-nonion.md",
+]
+
+["wiki-histq"]
+type = "website"
+title = "History of quaternions"
+url = "https://en.wikipedia.org/wiki/History_of_quaternions"
+site = "Wikipedia"
+files = [
+  "qua/history.md",
 ]
 
 ["wiki-hopf"]

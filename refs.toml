@@ -11,6 +11,11 @@ files = [
   "vec-oct/01-reflection.md",
 ]
 
+["7shi-4drot"]
+files = [
+  "qua/history.md",
+]
+
 ["7shi-7rot"]
 type = "mathlog"
 citation = "7shi, 単位八元数による7次元三重回転, Mathlog, Wed Jun 26 2024, アクセス日: Sun Jul 19 2026"
@@ -30,6 +35,7 @@ files = [
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
   "lie/11-exceptional.md",
+  "misc/born-rule.md",
 ]
 
 ["7shi-bq"]
@@ -42,6 +48,7 @@ files = [
   "hopf/03-bloch-density.md",
   "hopf/06-clifford-gates.md",
   "qua/cd/matrix-to-pauli.md",
+  "qua/history.md",
   "qua/real-pauli-trace.md",
   "qua/tensor-from-complex.md",
   "vec-oct/geometric-product-exp.md",
@@ -55,6 +62,7 @@ files = [
   "lie/07-s7.md",
   "lie/08-g2.md",
   "lie/09-spin7-triality.md",
+  "lie/ladder-spinor.md",
   "oct/01-octonion.md",
   "oct/04-sedenion.md",
   "qua/spinor-ideal.md",
@@ -143,6 +151,12 @@ files = [
   "misc/epsilon-euler-lagrange.md",
 ]
 
+["7shi-dualq"]
+files = [
+  "clif/pga-cga.md",
+  "qua/history.md",
+]
+
 ["7shi-eleq"]
 type = "mathlog"
 citation = "7shi, εパラメーターを用いたオイラー＝ラグランジュ方程式, Mathlog, Fri Dec 13 2024, アクセス日: Sun Jul 19 2026"
@@ -209,6 +223,7 @@ type = "mathlog"
 citation = "7shi, 同次座標とホップファイブレーション, Mathlog, Tue Jan 21 2025, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/f5v2F6yOFhqtnpDtFtcP"
 files = [
+  "clif/pga-cga.md",
   "hopf/01-quaternion.md",
 ]
 
@@ -225,6 +240,11 @@ citation = "7shi, 部分積分における関数の微分の利用, Mathlog, Wed
 url = "https://mathlog.info/articles/hdHs4JasRbf9uSo26mFd"
 files = [
   "misc/epsilon-euler-lagrange.md",
+]
+
+["7shi-ideal"]
+files = [
+  "lie/ladder-spinor.md",
 ]
 
 ["7shi-ip"]
@@ -259,6 +279,7 @@ files = [
 ["7shi-lie10"]
 files = [
   "lie/11-exceptional.md",
+  "lie/ladder-spinor.md",
 ]
 
 ["7shi-lie2"]
@@ -289,6 +310,8 @@ files = [
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
   "lie/double-cover.md",
+  "lie/ladder-spinor.md",
+  "qua/history.md",
 ]
 
 ["7shi-lie4"]
@@ -316,6 +339,7 @@ files = [
   "lie/09-spin7-triality.md",
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
+  "lie/ladder-spinor.md",
 ]
 
 ["7shi-lie7"]
@@ -325,6 +349,7 @@ files = [
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
   "oct/04-sedenion.md",
+  "qua/history.md",
 ]
 
 ["7shi-lie8"]
@@ -339,6 +364,7 @@ files = [
 files = [
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
+  "lie/ladder-spinor.md",
 ]
 
 ["7shi-mc"]
@@ -357,8 +383,10 @@ type = "mathlog"
 citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Fri Jul 24 2026"
 url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
 files = [
+  "clif/pga-cga.md",
   "lie/03-spin.md",
   "qua/01-pauli-qua.md",
+  "qua/history.md",
   "vec-oct/geometric-product-exp.md",
 ]
 
@@ -411,6 +439,7 @@ files = [
   "oct/02-7d-3rot.md",
   "oct/03-oct-left-mul.md",
   "oct/04-sedenion.md",
+  "qua/history.md",
 ]
 
 ["7shi-p"]
@@ -422,6 +451,11 @@ author = ["七誌"]
 site = "Qiita"
 files = [
   "hopf/02-spinor-tensor.md",
+]
+
+["7shi-pga"]
+files = [
+  "qua/history.md",
 ]
 
 ["7shi-qc1"]
@@ -516,6 +550,11 @@ files = [
   "misc/spherical-coords.md",
 ]
 
+["7shi-slerp"]
+files = [
+  "qua/history.md",
+]
+
 ["7shi-strig"]
 files = [
   "lie/05-bch-adjoint.md",
@@ -530,6 +569,7 @@ files = [
   "hopf/06-clifford-gates.md",
   "oct/04-sedenion.md",
   "qua/03-qua-tensor.md",
+  "qua/history.md",
 ]
 
 ["7shi-vec3"]
@@ -560,11 +600,14 @@ citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2
 url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
 files = [
   "qua/01-pauli-qua.md",
+  "qua/history.md",
 ]
 
 ["7shi-vrot"]
 files = [
+  "clif/pga-cga.md",
   "lie/08-g2.md",
+  "qua/history.md",
 ]
 
 ["baez"]
@@ -584,9 +627,19 @@ files = [
   "hopf/06-clifford-gates.md",
 ]
 
+["clifford-app"]
+files = [
+  "qua/history.md",
+]
+
 ["clifford-biq"]
 files = [
   "qua/05-dual-qua.md",
+]
+
+["crowe"]
+files = [
+  "qua/history.md",
 ]
 
 ["dim7-8"]
@@ -649,6 +702,11 @@ journal = "arXiv"
 year = 2010
 files = [
   "oct/03-oct-left-mul.md",
+]
+
+["hestenes-sta"]
+files = [
+  "qua/history.md",
 ]
 
 ["hopf1931"]
@@ -796,6 +854,7 @@ files = [
 ["shoemake-slerp"]
 files = [
   "qua/06-slerp.md",
+  "qua/history.md",
 ]
 
 ["sylvester"]
@@ -998,6 +1057,11 @@ files = [
   "clif/05-schrodinger.md",
   "hopf/06-clifford-gates.md",
   "qua/02-nonion.md",
+]
+
+["wiki-histq"]
+files = [
+  "qua/history.md",
 ]
 
 ["wiki-hopf"]
