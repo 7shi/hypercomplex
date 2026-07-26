@@ -1,4 +1,6 @@
-実数・複素数・四元数と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。拡張公式は前回の記事で導出したものを使用します。[[7shi-qt]] 完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
+実数・複素数・四元数と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
+
+拡張公式は以前の記事で導出したものを使用します。[[7shi-qt]]
 
 &&& 凡例
 以下、代数$A$の直和$A \oplus A$を$2A$と略記し（例：$2\mathbb H \cong \mathbb H \oplus \mathbb H$）、$\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します（例：$\mathbb R(2) \cong M_2(\mathbb R)$）。
@@ -8,6 +10,7 @@
 
 クリフォード代数には、5つの基本的な代数構造があります。
 
+&&&thm 5つの基本構造
 $$
 \begin{alignedat}{3}
 &\mathbb{R} &&\cong \operatorname{Cl}_{0,0}(\mathbb{R}) &&\quad\text{（実数）} \\
@@ -17,6 +20,7 @@ $$
 &\mathbb{H}' &&\cong \operatorname{Cl}_{2,0}(\mathbb{R}) \cong \operatorname{Cl}_{1,1}(\mathbb{R}) &&\quad\text{（分解型四元数）}
 \end{alignedat}
 $$
+&&&
 
 &&&rem
 $\mathbb H,\mathbb H'$とクリフォード代数の対応は、前回の記事で確認しました。[[7shi-qt]]
@@ -30,11 +34,11 @@ $\mathbb C,\mathbb C'$は生成元が1個のクリフォード代数に対応し
 
 分解型複素数 $\mathbb{C}'$ は、通常の複素数とは異なる性質を持ちます。その最も基本的な特徴は、虚数単位 $j$ が $j^2 = +1$ を満たすことです（通常の虚数単位 $i$ は $i^2 = -1$ を満たす）。
 
-この代数は、2つの冪等元
+この代数は、2つの冪等元を用いて直和分解することができます。
+
 $$
 e = \frac{1+j}{2},\quad e^* = \frac{1-j}{2}
 $$
-を用いて直和分解することができます。
 
 この冪等元は以下の重要な性質を持ちます。
 
@@ -56,7 +60,11 @@ $$
 
 この計算規則は成分ごとの積に対応しており、分解型複素数が実数の直和と同型であることを示しています。
 
-$$\mathbb{C}' \cong \mathbb{R} \oplus \mathbb{R} \cong 2\mathbb{R}$$
+&&&thm 分解型複素数の直和分解
+$$
+\mathbb{C}' \cong \mathbb{R} \oplus \mathbb{R} \cong 2\mathbb{R}
+$$
+&&&
 
 &&&rem
 代数$A$の直和$A \oplus A$を$2A$と略記します。
@@ -66,7 +74,11 @@ $$\mathbb{C}' \cong \mathbb{R} \oplus \mathbb{R} \cong 2\mathbb{R}$$
 
 分解型四元数 $\mathbb{H}'$ は2次の実行列環と同型です。
 
-$$\mathbb{H}' \cong \mathbb{R}(2)$$
+&&&thm 分解型四元数の行列表現
+$$
+\mathbb{H}' \cong \mathbb{R}(2)
+$$
+&&&
 
 &&&rem
 $\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します。
@@ -79,6 +91,10 @@ i \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
 j \cong \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
 k = ij \cong \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
 $$
+
+&&&rem 複素数と分解型複素数
+$i^2=-1$より$i$は複素数の虚数単位、$j^2=1$より$j$は分解型複素数の虚数単位です。これらの積から$k$は自動的に構成されます。
+&&&
 
 この行列表現により、任意の分解型四元数 $q = a + bi + cj + dk$ は以下の2×2実行列として具体的に表現できます。
 
@@ -117,29 +133,34 @@ $$
 
 公式を適用した結果を行列環として表すために、以下の同型を使用します。
 
-1. 可換性：
+&&&fml 可換性
+$$
+A \otimes B \cong B \otimes A
+$$
+&&&
 
-   $$A \otimes B \cong B \otimes A$$
+&&&fml 行列環とのテンソル積
+$$
+\mathbb{F}(m) \otimes \mathbb{G}(n) \cong (\mathbb{F} \otimes \mathbb{G})(mn)
+$$
+特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$\mathbb{F}(m) \otimes \mathbb{R}(n) \cong \mathbb{F}(mn)$となるため、$\mathbb H' \cong \mathbb R(2)$とのテンソル積は行列表現の次数を2倍にします。
+&&&
 
-2. 行列環とのテンソル積：
+&&&fml 直和との分配性
+$$
+2A \otimes B \cong 2(A \otimes B)
+$$
+&&&
 
-   $$\mathbb{F}(m) \otimes \mathbb{G}(n) \cong (\mathbb{F} \otimes \mathbb{G})(mn)$$
-
-   特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$\mathbb{F}(m) \otimes \mathbb{R}(n) \cong \mathbb{F}(mn)$となるため、$\mathbb H' \cong \mathbb R(2)$とのテンソル積は行列表現の次数を2倍にします。
-
-3. 直和との分配性：
-
-   $$2A \otimes B \cong 2(A \otimes B)$$
-
-4. 四元数とのテンソル積：
-
-   $$
-   \begin{aligned}
-   \mathbb{H} \otimes \mathbb{H} &\cong \mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(4) \\
-   \mathbb{H}' \otimes \mathbb{H} &\cong \mathbb{R}(2) \otimes \mathbb{H} \cong \mathbb{H}(2) \\
-   \mathbb{C} \otimes \mathbb{H} &\cong \mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C}(2)
-   \end{aligned}
-   $$
+&&&fml 四元数とのテンソル積
+$$
+\begin{aligned}
+\mathbb{H} \otimes \mathbb{H} &\cong \mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(4) \\
+\mathbb{H}' \otimes \mathbb{H} &\cong \mathbb{R}(2) \otimes \mathbb{H} \cong \mathbb{H}(2) \\
+\mathbb{C} \otimes \mathbb{H} &\cong \mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C}(2)
+\end{aligned}
+$$
+&&&
 
 &&&rem
 1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は前回示した同型です[[7shi-qt]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
@@ -147,9 +168,11 @@ $$
 3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$\mathbb{C}(2)$と同型になることを以前の記事で確認しました[[7shi-bq]]。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$となるため、両者は同型です。
 &&&
 
-これらの規則は組み合わせて使用できます。例を示します。
+これらの規則は組み合わせて使用できます。
 
+&&&ex 計算規則の組み合わせ
 $$\mathbb{H}(2) \otimes \mathbb{H} \cong (\mathbb{H} \otimes \mathbb{H})(2) \cong \mathbb{R}(4)(2) \cong \mathbb{R}(8)$$
+&&&
 
 # 系列による代数構造の導出
 
@@ -237,10 +260,13 @@ $$
 
 公式2は、$\mathbb H'$とのテンソル積によって符号数が$(p,q)$から$(p+1,q+1)$へ拡張できることを示しています。$\mathbb H' \cong \mathbb R(2)$なので、次の式が成り立ちます。
 
+&&&fml 対角線方向の充填
 $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{R}(2)$$
+&&&
 
 つまり、表を対角線（右下）方向に1つ進むごとに行列の次数が2倍になり、型（$\mathbb{R},\mathbb{C},\mathbb{H}$の種別と直和の有無）は変わりません。系列によって得られた第1行と第1列を起点として、対角線方向に空白部分を埋めることができます。
 
+&&&ex 空白部分の充填
 1. $p=1, q=1$ の場合：
    $\operatorname{Cl}_{1,1}(\mathbb{R}) \cong \operatorname{Cl}_{0,0}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R} \otimes \mathbb{R}(2) \cong \mathbb{R}(2)$
 
@@ -249,6 +275,7 @@ $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{
 
 3. $p=2, q=1$ の場合：
    $\operatorname{Cl}_{2,1}(\mathbb{R}) \cong \operatorname{Cl}_{1,0}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{R} \otimes \mathbb{R}(2) \cong 2\mathbb{R}(2)$
+&&&
 
 ## 完全な分類表
 
@@ -293,11 +320,13 @@ $$
 
 $\mathbb H ⊗ \mathbb H' \cong \mathbb H(2)$より、$p$または$q$を$4$増やすことは$\mathbb H(2)$とのテンソル積に対応します。
 
+&&&fml 4周期の移動
 $$
 \operatorname{Cl}_{p+4,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+4}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{H}(2)
 $$
+&&&
 
 これをもう一度適用すれば、$\mathbb H(2) ⊗ \mathbb H(2) \cong (\mathbb H ⊗ \mathbb H)(4) \cong \mathbb R(16)$より、周期$8$で同じ型に戻ります。
 
@@ -327,11 +356,14 @@ $$
 
 # 擬スカラーと型の判別
 
-分類表の型の並びには、$2\mathbb R,2\mathbb H$（直和型）が$p-q\equiv1\pmod4$に、$\mathbb C$型が$p-q\equiv3\pmod4$に現れるという規則性があります。これは、最高グレードの基底である**擬スカラー**
+分類表の型の並びには、$2\mathbb R,2\mathbb H$（直和型）が$p-q\equiv1\pmod4$に、$\mathbb C$型が$p-q\equiv3\pmod4$に現れるという規則性があります。これは最高グレードの基底の性質から説明できます。
 
+&&&def 擬スカラー
+クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$の生成元をすべて掛け合わせた最高グレードの基底を**擬スカラー**と呼びます。
 $$\omega = e_1e_2\cdots e_n \quad (n=p+q)$$
+&&&
 
-の性質、すなわち中心性（すべての元と可換かどうか）と$\omega^2$の符号から説明できます。
+型の判別に用いるのは、$\omega$の中心性（すべての元と可換かどうか）と$\omega^2$の符号です。
 
 生成元$e_i$を$\omega$の中を通り抜けさせると、自分自身とは可換で、残りの$n-1$個の生成元とは反交換するため
 
@@ -343,6 +375,7 @@ $$\omega^2=(-1)^{n(n-1)/2}\,e_1^2e_2^2\cdots e_n^2=(-1)^{n(n-1)/2+q}$$
 
 となり、この符号は$p-q \bmod 4$だけで決まります。
 
+&&&thm 擬スカラーの2乗
 $$
 \omega^2=
 \begin{cases}
@@ -350,6 +383,7 @@ $$
 -1 & \bigl(p-q\equiv2,3 \pmod 4\bigr)
 \end{cases}
 $$
+&&&
 
 &&&prf
 符号数を$(p,q)\to(p+1,q+1)$と変えると、$n\to n+2$より指数の変化は$\{(n+2)(n+1)-n(n-1)\}/2+1=2n+2$で偶数となり、符号は変わらない。また$(p,q)\to(p+4,q)$では指数の変化は$\{(n+4)(n+3)-n(n-1)\}/2=4n+6$で偶数となり、やはり符号は変わらない。したがって符号は$p-q \bmod 4$のみに依存し、代表例$\operatorname{Cl}_{0,0},\operatorname{Cl}_{1,0},\operatorname{Cl}_{2,0},\operatorname{Cl}_{3,0}$での値$+1,+1,-1,-1$から上式が得られる。
@@ -409,20 +443,26 @@ $e_n^2=+1$となる生成元を選んだ場合（$p\ge1$）は、$f_i^2=-e_i^2$�
 
 2つの公式を組み合わせると、分類表の対称性が得られます。
 
+&&&fml 分類表の対称性
 $$\operatorname{Cl}_{p,q}(\mathbb R)\cong\operatorname{Cl}_{q+1,p-1}(\mathbb R)\quad(p\ge1)$$
+&&&
 
 例えば$\operatorname{Cl}_{4,0}(\mathbb R)\cong\operatorname{Cl}_{1,3}(\mathbb R)\cong\mathbb H(2)$です。また、符号数を反転した$\operatorname{Cl}_{p,q}(\mathbb R)$と$\operatorname{Cl}_{q,p}(\mathbb R)$は一般には同型ではありませんが（例：$\mathbb H'\not\cong\mathbb H$）、偶部分代数は共通です。
 
+&&&fml 偶部分代数の符号反転対称性
 $$\operatorname{Cl}_{p,q}^0(\mathbb R)\cong\operatorname{Cl}_{q,p}^0(\mathbb R)$$
+&&&
 
-偶部分代数の中身は分類表から読み取ることができます。例を示します。
+偶部分代数の中身は分類表から読み取ることができます。
 
+&&&ex 偶部分代数の読み取り
 $$
 \begin{alignedat}{2}
 \operatorname{Cl}_{3,0}^0(\mathbb R)&\cong\operatorname{Cl}_{0,2}(\mathbb R)&&\cong\mathbb H \\
 \operatorname{Cl}_{4,0}^0(\mathbb R)&\cong\operatorname{Cl}_{0,3}(\mathbb R)&&\cong2\mathbb H
 \end{alignedat}
 $$
+&&&
 
 &&&rem
 回転群の二重被覆であるスピン群は偶部分代数の中に住んでおり、この同型は$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$（単位四元数）や$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$（単位四元数の対）の置き場所を与えます。
@@ -432,15 +472,19 @@ $$
 
 係数を複素数体に拡張すると、分類は大幅に単純になります。複素数体上では生成元$e$を$ie$に置き換えることで$e^2$の符号を反転できるため、計量の符号の区別が消え、複素クリフォード代数$\operatorname{Cl}_n(\mathbb C)$は生成元の個数$n$だけで決まります。
 
+&&&fml 複素化
 $$\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C)$$
+&&&
 
 複素化の計算規則は以下のとおりです。
 
+&&&fml 複素化の計算規則
 $$
 \mathbb R\otimes\mathbb C\cong\mathbb C,\quad
 \mathbb C\otimes\mathbb C\cong2\mathbb C,\quad
 \mathbb H\otimes\mathbb C\cong\mathbb C(2)
 $$
+&&&
 
 &&&rem
 3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$(1\pm u)/2$による直和分解が起こります。
