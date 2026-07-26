@@ -23,7 +23,7 @@ $$
 &&&
 
 &&&rem
-$\mathbb H,\mathbb H'$とクリフォード代数の対応は、前回の記事で確認しました。[[7shi-qt]]
+$\mathbb H,\mathbb H'$とクリフォード代数の対応は、以前の記事で確認しました。[[7shi-qt]]
 
 $\mathbb C,\mathbb C'$は生成元が1個のクリフォード代数に対応します。$i^2=-1$となる虚数単位$i$を生成元とすれば$\operatorname{Cl}_{0,1}(\mathbb R)$、$j^2=1$となる虚数単位$j$を生成元とすれば$\operatorname{Cl}_{1,0}(\mathbb R)$が得られます。
 &&&
@@ -106,7 +106,7 @@ $$
 
 # テンソル積による拡張公式
 
-クリフォード代数は、$\mathbb H,\mathbb H'$とのテンソル積によって拡張できます。前回導出した公式を再掲します。[[7shi-qt]]
+クリフォード代数は、$\mathbb H,\mathbb H'$とのテンソル積によって拡張できます。[[7shi-qt]]
 
 &&&fml クリフォード代数の$⊗\mathbb H$による拡張
 $$
@@ -124,7 +124,7 @@ $$
 &&&
 
 &&&rem
-テンソル積によって、クリフォード代数としての生成元は2個増えます。右辺で$p,q$の位置が入れ替わるのは、拡張時に元の生成元の計量が反転することに由来します。詳細は前回の記事を参照してください。[[7shi-qt]]
+テンソル積によって、クリフォード代数としての生成元は2個増えます。右辺で$p,q$の位置が入れ替わるのは、拡張時に元の生成元の計量が反転することに由来します。[[7shi-qt]]
 &&&
 
 これらの公式を基本構造に繰り返し適用すれば、より高次のクリフォード代数を系統的に構成できます。
@@ -163,7 +163,7 @@ $$
 &&&
 
 &&&rem
-1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は前回示した同型です[[7shi-qt]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
+1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は同型です[[7shi-qt]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
 
 3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$\mathbb{C}(2)$と同型になることを以前の記事で確認しました[[7shi-bq]]。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$となるため、両者は同型です。
 &&&
