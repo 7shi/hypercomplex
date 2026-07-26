@@ -1,7 +1,8 @@
 date	url	md	title
+2026/07/26	/articles/aTwHWEwHs7JRLyErT9ww	clif/01-representation.md	クリフォード代数の構造と表現
 2026/07/24	/articles/DRbXTeeL31pDcZyG6ml7	lie/03-spin.md	リー群・リー代数の初歩 3 クリフォード代数とSpin(3)
 2026/07/20	/articles/asrMOxuKsJIdPqANfOs3	qua/04-4d-bsqua.md	4次元回転と分解型双四元数
-2026/07/16	/articles/aUC0EotUv0bdyXzusvAT	hopf/03-bloch-density.md	四元数とホップファイブレーション 3 ブロッホ球と密度行列
+2026/07/15	/articles/aUC0EotUv0bdyXzusvAT	hopf/03-bloch-density.md	四元数とホップファイブレーション 3 ブロッホ球と密度行列
 2026/07/10	/articles/Utdur1fLLzrWVHOJHifj	lie/02-su2-so3.md	リー群・リー代数の初歩 2 四元数とSU(2)
 2026/05/23	/articles/PZJuaRWHYidsIg9u83j8	oct/03-oct-left-mul.md	八元数の左作用とクリフォード代数
 2026/05/23	/articles/vizAwdiKusmQ6pdsPTLE	oct/01-octonion.md	八元数の基本事項
@@ -31,7 +32,6 @@ date	url	md	title
 2024/05/24	/articles/co6jC5vshPXR0EgmAjX3	hopf/02-spinor-tensor.md	四元数とホップファイブレーション 2 スピノルのテンソル積
 2024/05/21	/articles/2HkSkfawcYJYgE6rVgu6	misc/spherical-coords.md	一般次元における球座標系のバリエーション
 2024/05/14	/articles/enXfjr4Xvas6pfXLQddc	hopf/01-quaternion.md	四元数とホップファイブレーション 1 四元数からの生成
-		clif/01-representation.md	クリフォード代数の構造と表現
 		clif/02-split-complex.md	分解型複素数の冪等元と直和分解
 		clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
 		clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係

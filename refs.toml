@@ -40,7 +40,7 @@ files = [
 
 ["7shi-bq"]
 type = "mathlog"
-citation = "7shi, パウリ行列と四元数：双四元数による橋渡し, Mathlog, Thu Jul 11 2024, アクセス日: Sun Jul 19 2026"
+citation = "7shi, パウリ行列と四元数：双四元数による橋渡し, Mathlog, Thu Jul 11 2024, アクセス日: Sun Jul 26 2026"
 url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
 files = [
   "clif/01-representation.md",
@@ -523,6 +523,9 @@ files = [
 ]
 
 ["7shi-qt"]
+type = "mathlog"
+citation = "7shi, 四元数のテンソル積とクリフォード代数の構成, Mathlog, Fri Nov 22 2024, アクセス日: Sun Jul 26 2026"
+url = "https://mathlog.info/articles/Q2gHpZNKhnCki6ipol4F"
 files = [
   "clif/01-representation.md",
   "clif/03-gpm-gca.md",
@@ -977,9 +980,9 @@ files = [
 
 ["wiki-clif"]
 type = "website"
-citation = "Clifford algebra, Wikipedia, 閲覧日 2024年11月22日, https://en.wikipedia.org/wiki/Clifford_algebra"
+citation = "Clifford algebra, Wikipedia, 閲覧日 2026年7月26日, https://en.wikipedia.org/wiki/Clifford_algebra"
 url = "https://en.wikipedia.org/wiki/Clifford_algebra"
-accessed = 2024-11-22
+accessed = 2026-07-26
 site = "Wikipedia"
 files = [
   "clif/01-representation.md",
@@ -988,6 +991,11 @@ files = [
 ]
 
 ["wiki-clif-class"]
+type = "website"
+citation = "Classification of Clifford algebras, Wikipedia, 閲覧日 2026年7月26日, https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras"
+url = "https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras"
+accessed = 2026-07-26
+site = "Wikipedia"
 files = [
   "clif/01-representation.md",
 ]
