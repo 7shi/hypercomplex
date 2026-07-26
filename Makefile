@@ -3,8 +3,8 @@
 help:
 	@echo "使用可能なターゲット:"
 	@echo "  all    - md merge build check"
-	@echo "  md     - uv run articles.py md"
-	@echo "  merge  - uv run articles.py merge"
+	@echo "  md     - uv run articles md"
+	@echo "  merge  - uv run articles merge"
 	@echo "  build  - uv run reftools build"
 	@echo "  sync   - uv run reftools sync"
 	@echo "  check  - uv run reftools check"
@@ -12,7 +12,7 @@ help:
 all: md merge build sync
 
 mathlog md merge:
-	uv run articles.py $@
+	uv run articles $@
 
 build sync check:
 	uv run reftools $@

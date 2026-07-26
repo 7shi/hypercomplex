@@ -2,6 +2,7 @@
 
 記事執筆・検証・参考文献管理に使うスクリプト類をまとめたディレクトリです。
 
+- [articles/](articles/) — Mathlog記事とREADMEリンクを突き合わせるツール。詳細は[articles/README.md](articles/README.md)参照。
 - [common/](common/) — 各記事の検証コードから共有されるPythonモジュール（`octonion.py`など）。
 - [reftools/](reftools/) — 参考文献slugの集約・整合性チェックツール。詳細は[reftools/README.md](reftools/README.md)参照。
 - [bookmarklets/](bookmarklets/) — Mathlog関連のブックマークレット集。

@@ -51,6 +51,6 @@
 - `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`reftools toml` で `refs/*.html` から生成）。
 - `mathlog_fix.md` — Mathlog側の参考文献パネルを手動修正する際の作業リスト。何を直すか（表記ゆれの統一先、slug衝突の解消、ラベル改名など）は文脈依存のヒューリスティックな判断が必要で自動生成できないため、都度手で書く使い捨てファイル（処理後に削除する）。記事ごとに `## <mdファイル> — <Mathlog記事URL>` を見出しとし、その下に修正内容を箇条書きする（例: `- <slug>: <field> = <新値>`、改名は `- <旧slug> → <新slug>`）。
 - `mathlog_fix.sh` — `mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`reftools format --in-place` で整形する。
-- `articles.tsv` — 記事一覧（date, url, md, title）。`articles.py` で生成・更新。
+- `articles.tsv` — 記事一覧（date, url, md, title）。`src/articles/`（`articles`コマンド）で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
-- `Makefile` — `make md`（`articles.py md`）、`make merge`（`articles.py merge`）、`make check`（`reftools check`）のショートカット。`make help` で一覧表示。
+- `Makefile` — `make md`（`articles md`）、`make merge`（`articles merge`）、`make check`（`reftools check`）のショートカット。`make help` で一覧表示。

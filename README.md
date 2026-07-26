@@ -21,7 +21,7 @@
 
 ## ツール
 
-- [articles.py](articles.py) — Mathlog記事とREADMEリンクを突き合わせるツール。
+- [src/articles/](src/articles/README.md) — Mathlog記事とREADMEリンクを突き合わせるツール。
   - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
