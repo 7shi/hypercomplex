@@ -40,6 +40,7 @@ date	url	md	title
 		hopf/04-extension.md	四元数・八元数への拡張
 		hopf/05-entanglement.md	2・3量子ビットのもつれとホップファイブレーション
 		hopf/06-clifford-gates.md	量子ゲートを回転子として読み直す
+		hopf/07-real-qubit.md	実振幅の量子ビットと実数ホップファイブレーション
 		lebesgue/01-measure-integral.md	測度とルベーグ積分
 		lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 		lebesgue/03-probability.md	測度論的確率論

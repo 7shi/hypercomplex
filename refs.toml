@@ -33,9 +33,15 @@ url = "https://mathlog.info/articles/aUC0EotUv0bdyXzusvAT"
 files = [
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
+  "hopf/07-real-qubit.md",
   "lie/03-spin.md",
   "lie/11-exceptional.md",
   "misc/born-rule.md",
+]
+
+["7shi-born"]
+files = [
+  "hopf/07-real-qubit.md",
 ]
 
 ["7shi-bq"]
@@ -168,6 +174,7 @@ files = [
 ["7shi-entangle"]
 files = [
   "hopf/06-clifford-gates.md",
+  "hopf/07-real-qubit.md",
   "lie/07-s7.md",
   "lie/08-g2.md",
 ]
@@ -230,6 +237,7 @@ files = [
 ["7shi-hopfext"]
 files = [
   "hopf/05-entanglement.md",
+  "hopf/07-real-qubit.md",
   "lie/11-exceptional.md",
   "oct/04-sedenion.md",
 ]
@@ -500,6 +508,11 @@ files = [
   "qua/cd/cd-to-matrix.md",
 ]
 
+["7shi-qgate"]
+files = [
+  "hopf/07-real-qubit.md",
+]
+
 ["7shi-qp"]
 type = "mathlog"
 citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Jul 19 2026"
@@ -550,6 +563,7 @@ files = [
   "hopf/03-bloch-density.md",
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
+  "hopf/07-real-qubit.md",
   "misc/spherical-coords.md",
 ]
 

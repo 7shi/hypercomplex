@@ -11,3 +11,5 @@
 - [05-three-qubit.py](05-three-qubit.py) — $\mathbb{C}^4\cong\mathbb{O}$の複素基底$\{1,e_2,e_4,e_6\}$による詰め込みと左$\mathbb{C}$-線形性、A|BC分離可能⟺$e_2,\dots,e_7$成分の消失、GHZ・W状態の像、ファイバー$S^7$の分離可能性、$e_1$を固定する自己同型群$\operatorname{SU}(3)$の検証。
 - [06-single-qubit.py](06-single-qubit.py) — 回転子$R_{\boldsymbol n}(\theta)$の共役作用とロドリゲスの回転公式の一致、6ゲートの回転子分解、パウリ群と四元数群$Q_8$の対応、$\langle H,S\rangle$が位数24の正八面体の回転群を生成すること、6状態の軌道、$T$が非クリフォードであることの検証。
 - [06-cnot.py](06-cnot.py) — CNOTの共役作用表と15軸の符号付き置換、局所ゲートでの$C$の不変性ともつれの生成、ベル回路$\mathrm{CNOT}(H\otimes\mathrm I)|00\rangle=\Phi_+$とホップ像$-\mathbf j$、軸の追跡$Z\otimes\mathrm I\mapsto X\otimes X$、密度行列の15成分展開の検証。
+- [07-real-qubit.py](07-real-qubit.py) — 実振幅のブロッホベクトル$(2\alpha\beta,0,\alpha^2-\beta^2)$と実数ホップ写像の一致、$\zeta^2$による二重被覆、密度行列の第1行が描く半径$\frac12$の円、実振幅のボルンの規則、$O(2)$が底空間の$O(2)$へ2対1に落ちること、実パウリ群$\cong D_4$と$Q_8$の区別、実クリフォード群16元と正八面体群の指数3の部分群、$S,T$が$y=0$平面を保たないことの検証。
+- [07-two-rebit.py](07-two-rebit.py) — 主要ゲートとベル状態が実であること、分離可能性$\alpha\delta-\beta\gamma=0$、実観測量のみでCHSHがツィレルソン限界$2\sqrt2$に到達すること、補助レビットによる複素振幅の符号化$I\otimes A+J\otimes B$、局所観測量が9次元しか張らず$\sigma_y\otimes\sigma_y$が残り1次元を埋めること、$\rho_\pm$が局所測定で区別できないことの検証。
