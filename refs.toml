@@ -935,6 +935,16 @@ files = [
   "vec-oct/02-rotation.md",
 ]
 
+["wiki-antilinear"]
+type = "website"
+citation = "Antilinear map, Wikipedia, 閲覧日 2026年7月27日, https://en.wikipedia.org/wiki/Antilinear_map"
+url = "https://en.wikipedia.org/wiki/Antilinear_map"
+accessed = 2026-07-27
+site = "Wikipedia"
+files = [
+  "hopf/c2-to-s2.md",
+]
+
 ["wiki-bc"]
 type = "website"
 citation = "双複素数, Wikipedia, 閲覧日 2024年11月6日, https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"

@@ -562,6 +562,15 @@ files = [
   "vec-oct/02-rotation.md",
 ]
 
+["wiki-antilinear"]
+type = "website"
+title = "Antilinear map"
+url = "https://en.wikipedia.org/wiki/Antilinear_map"
+site = "Wikipedia"
+files = [
+  "hopf/c2-to-s2.md",
+]
+
 ["wiki-bc"]
 type = "website"
 title = "双複素数"

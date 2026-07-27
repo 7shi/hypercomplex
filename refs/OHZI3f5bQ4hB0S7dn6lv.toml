@@ -1,3 +1,10 @@
 [7shi-h]
 type = "mathlog"
-citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Mon Jul 27 2026"
+
+[wiki-antilinear]
+type = "website"
+citation = "Antilinear map, Wikipedia, 閲覧日 2026年7月27日, https://en.wikipedia.org/wiki/Antilinear_map"
+url = "https://en.wikipedia.org/wiki/Antilinear_map"
+accessed = 2026-07-27
+site = "Wikipedia"
