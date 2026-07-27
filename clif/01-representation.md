@@ -24,6 +24,18 @@ $$
 $$
 &&&
 
+$$
+\begin{array}{|c|ccc|}
+\hline
+p \backslash q & 0 & 1 & 2 \\
+\hline
+0 & \mathbb{R} & \mathbb{C} & \mathbb{H} \\
+1 & \mathbb{C}' & \mathbb{H}' & \\
+2 & \mathbb{H}' & & \\
+\hline
+\end{array}
+$$
+
 &&&rem
 $\mathbb H,\mathbb H'$とクリフォード代数の対応は、以前の記事で確認しました。[[7shi-qt]]
 
