@@ -295,6 +295,7 @@ type = "mathlog"
 citation = "7shi, リー群・リー代数の初歩 2 四元数とSU(2), Mathlog, Fri Jul 10 2026, アクセス日: Fri Jul 24 2026"
 url = "https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj"
 files = [
+  "hopf/04-extension.md",
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
   "lie/04-spin4.md",
