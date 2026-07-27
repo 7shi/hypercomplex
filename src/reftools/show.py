@@ -83,14 +83,17 @@ def show_command(args: argparse.Namespace) -> None:
         with DEFAULT_OUTPUT.open("rb") as f:
             refs = tomllib.load(f)
 
-    title = md_titles.get(md_rel)
-    if title:
-        print(title)
     own_slug = slugs_map.get(md_rel)
     if own_slug is None:
         print(f"{md_rel} (slugs.tsvに未登録、登録してください)")
     else:
         print(f"{md_rel} ({own_slug})")
+    title = md_titles.get(md_rel)
+    if title:
+        print(f"title: {title}")
+    own_url = md_urls.get(md_rel)
+    if own_url:
+        print(f"url: {own_url}")
     print(f"({len(slugs)} slugs)")
     for i, slug in enumerate(slugs, 1):
         print()
