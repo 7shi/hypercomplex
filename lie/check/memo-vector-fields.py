@@ -1,4 +1,4 @@
-"""Checks for MEMO.md (立体射影・微分演算子・角運動量), vector field part.
+"""Checks for lie/MEMO.md (ベクトル場としての生成子と角運動量).
 
 Verifies symbolically (sympy):
 

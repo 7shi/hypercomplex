@@ -1,4 +1,4 @@
-"""Checks for MEMO.md (立体射影・微分演算子・角運動量), spin-j part.
+"""Checks for hopf/MEMO.md (ファイバー方向の重みと半整数スピン).
 
 Verifies symbolically (sympy):
 
