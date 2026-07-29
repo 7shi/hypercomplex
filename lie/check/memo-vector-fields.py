@@ -10,6 +10,8 @@ Verifies symbolically (sympy):
    L3 = -i∂φ, L± = e^{±iφ}(±∂θ + i cotθ ∂φ).
 3. L² = L3² + (L+L- + L-L+)/2 equals -Δ_{S²} and gives
    L² Y_l^m = l(l+1) Y_l^m (l ≤ 2).
+4. The X_a are not orthonormal (|X3| = sinθ) and the orthonormal frame
+   (∂θ, ∂φ/sinθ) is not a coordinate frame: [e1, e2] = -cotθ e2.
 
 The complex coordinate w = β/α and the Möbius side are checked in
 hopf/check/memo-mobius.py.
@@ -74,6 +76,25 @@ def check_killing_fields():
         for x, y in zip(got, KILLING[c]):
             assert is_zero(x + y)
 
+# --- frames ------------------------------------------------------------------
+
+def norm2(V):
+    """Squared length of a vector field in the round metric dθ² + sin²θ dφ²."""
+    dth, dph = V
+    return sp.simplify(dth**2 + sp.sin(th) ** 2 * dph**2)
+
+def check_frames():
+    # the X_a are not unit fields: |X3| = sinθ vanishes at the poles
+    assert is_zero(norm2(KILLING[3]) - sp.sin(th) ** 2)
+    assert not is_zero(norm2(KILLING[1]) - 1)
+    # the orthonormal frame is not a coordinate frame: [e1, e2] = -cotθ e2
+    e1 = (sp.Integer(1), sp.Integer(0))
+    e2 = (sp.Integer(0), 1 / sp.sin(th))
+    assert is_zero(norm2(e1) - 1) and is_zero(norm2(e2) - 1)
+    got = bracket(e1, e2)
+    for x, y in zip(got, e2):
+        assert is_zero(x + sp.cot(th) * y)
+
 # --- angular momentum --------------------------------------------------------
 
 def L(a, f):
@@ -124,6 +145,7 @@ def check_casimir():
 
 if __name__ == "__main__":
     check_killing_fields()
+    check_frames()
     check_angular_momentum()
     check_casimir()
     print("check-memo-vector-fields: all checks passed")
