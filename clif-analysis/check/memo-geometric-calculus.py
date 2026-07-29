@@ -1,4 +1,8 @@
-"""Checks for MEMO.md (geometric calculus in Cl(2,0) and complex analysis).
+"""Checks for MEMO.md, article 01 (Dirac operator and monogenic functions).
+
+Geometric calculus in Cl(2,0) and complex analysis. Articles 02-06 of the
+series (directed integration, Cauchy's theorems, quaternionic analysis,
+Clifford analysis) are not covered here and need their own checks.
 
 Cl(2,0) is realized as M_2(R) with e1 = diag(1,-1), e2 = [[0,1],[1,0]],
 I = e1 e2 (I^2 = -1). Algebra elements are decomposed on the basis
