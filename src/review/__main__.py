@@ -17,12 +17,14 @@ PROMPT = (_DIR / "PROMPT.txt").read_text().strip()
 
 
 REF_HEADER = "以下は参照用の関連記事です。レビュー対象ではなく、用語・記法・構成上の位置づけを確認するための文脈として使ってください。"
+TARGET_HEADER = "ここからが今回のレビュー対象の記事です。上記の参照用記事ではなく、この記事についてレビューしてください。"
 
 
 def review_file(client: Client, text: str, prompt: str, refs: list[str]):
     contents = []
     if refs:
         contents += [REF_HEADER, *refs]
+        contents += [TARGET_HEADER]
     contents += [text, COMMON, prompt]
     response = client(contents)
     if response.usage:
