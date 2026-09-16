@@ -40,10 +40,11 @@ def simple_integral(n):
                for k in range(h))
 
 vals = [simple_integral(n) for n in range(1, 21)]
-print("int s_1 ~ 0.146, int s_2 ~ 0.232:",
+print("int s_1 ~ 0.146, int s_2 ~ 0.232, int s_3 ~ 0.279:",
       np.isclose(vals[0], 0.5 * (1 - 1 / math.sqrt(2)))
       and np.isclose(vals[0], 0.146, atol=5e-4)
-      and np.isclose(vals[1], 0.232, atol=5e-4))
+      and np.isclose(vals[1], 0.232, atol=5e-4)
+      and np.isclose(vals[2], 0.279, atol=5e-4))
 print("int s_n is monotone increasing:",
       all(a < b for a, b in zip(vals, vals[1:])))
 print("int s_n -> 1/3 (monotone convergence to the Riemann value):",
