@@ -15,6 +15,14 @@
 
 各記事の数式を検証するコードは[check/README.md](check/README.md)にまとめています。
 
+## レビュー
+
+[PROMPT.txt](PROMPT.txt)は、このシリーズの方針（直観性重視、一本道の構成、ボックス記法の使い分け、応用例の型）を踏まえたレビュー観点をまとめたプロンプトファイルです。[review](../src/review/README.md)の`-p`オプションに渡すことで、シリーズの方針に沿ったレビューをLLMにさせられます。
+
+```bash
+uv run review lebesgue/01-measure-integral.md -m MODEL -p lebesgue/PROMPT.txt
+```
+
 ## 構想
 
 シリーズの最終目的地は**伊藤の補題**です。ルベーグ積分から出発して、$L^2$空間・測度論的確率論を経由し、確率解析に到達する一本道を構成します。
