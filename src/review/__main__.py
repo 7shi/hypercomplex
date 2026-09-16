@@ -1,8 +1,8 @@
 """Markdown記事をLLMにレビューさせるツールのエントリポイント。詳細はREADME.mdを参照。
 
-Each given .md file is sent to the model in full, along with a review prompt,
-and the response is written to a sibling file with the same stem and a .txt
-extension (e.g. hopf/01.md -> hopf/01.txt).
+指定された.mdファイルはそれぞれ全文がレビュープロンプトとともにモデルへ送られ、
+結果は同じstemで拡張子を.txtに変えたファイルに書き出されます
+（例: hopf/01.md -> hopf/01.txt）。
 """
 
 from __future__ import annotations
@@ -55,8 +55,15 @@ PROMPT = """
 """.strip()
 
 
-def review_file(client: Client, text: str, prompt: str):
-    response = client([text, COMMON, prompt])
+REF_HEADER = "以下は参照用の関連記事です。レビュー対象ではなく、用語・記法・構成上の位置づけを確認するための文脈として使ってください。"
+
+
+def review_file(client: Client, text: str, prompt: str, refs: list[str]):
+    contents = []
+    if refs:
+        contents += [REF_HEADER, *refs]
+    contents += [text, COMMON, prompt]
+    response = client(contents)
     if response.usage:
         print(f"\n{response.usage}")
     return response.text.strip(), response.usage
@@ -64,25 +71,36 @@ def review_file(client: Client, text: str, prompt: str):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.strip())
-    parser.add_argument("files", nargs="+", type=Path, help=".md file(s) to review")
+    parser.add_argument("files", nargs="+", type=Path, help="レビュー対象の.mdファイル（複数指定可）")
     parser.add_argument("-m", "--model", required=True,
-                        help="Model name with optional vendor prefix (e.g. openai:gpt-4.1-mini)")
+                        help="ベンダープレフィックス付きのモデル名（例: openai:gpt-4.1-mini）")
     parser.add_argument("-p", "--prompt", type=Path,
-                        help="Path to a text file with a custom review prompt "
-                             "(default: built-in general-purpose prompt)")
+                        help="レビュー観点を記述したプロンプトファイルのパス"
+                             "（デフォルト: 組み込みの汎用プロンプト）")
+    parser.add_argument("-r", "--ref", type=Path, action="append", default=[],
+                        help="参照文脈として使う.mdファイルのパス"
+                             "（レビュー対象には含めない、複数指定可）")
     args = parser.parse_args()
 
     for path in args.files:
         if path.suffix != ".md":
-            parser.error(f"{path}: not a .md file")
+            parser.error(f"{path}: .mdファイルではありません")
         if not path.exists():
-            parser.error(f"{path}: not found")
+            parser.error(f"{path}: 見つかりません")
+
+    for path in args.ref:
+        if path.suffix != ".md":
+            parser.error(f"{path}: .mdファイルではありません")
+        if not path.exists():
+            parser.error(f"{path}: 見つかりません")
 
     prompt = PROMPT
     if args.prompt:
         if not args.prompt.exists():
-            parser.error(f"{args.prompt}: not found")
+            parser.error(f"{args.prompt}: 見つかりません")
         prompt = args.prompt.read_text().strip()
+
+    refs = [path.read_text() for path in args.ref]
 
     client = Client(model=args.model, show_params=False, keep_history=False)
 
@@ -90,10 +108,10 @@ def main() -> int:
     for path in args.files:
         print()
         print("=" * 40)
-        print(f"{path}: reviewing")
+        print(f"{path}: レビュー中")
         print("=" * 40)
         print()
-        result, usage = review_file(client, path.read_text(), prompt)
+        result, usage = review_file(client, path.read_text(), prompt, refs)
         if usage:
             total_usage = usage if total_usage is None else total_usage + usage
 
