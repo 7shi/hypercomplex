@@ -69,7 +69,7 @@ def main() -> int:
 
     client = Client(model=args.model, show_params=False, keep_history=False)
 
-    total_usage = None
+    usages = []
     for path in args.files:
         print()
         print("=" * 40)
@@ -78,13 +78,14 @@ def main() -> int:
         print()
         result, usage = review_file(client, path.read_text(), prompt, refs)
         if usage:
-            total_usage = usage if total_usage is None else total_usage + usage
+            usages.append(usage)
 
         out_path = path.with_suffix(".txt")
         out_path.write_text(result + "\n")
         print(f"-> {out_path}")
 
-    if total_usage:
+    if usages:
+        total_usage = sum(usages)
         print(f"\n--- Total Usage ---\n{total_usage}")
         append_usage(total_usage)
         print(f"-> {USAGE_PATH}")

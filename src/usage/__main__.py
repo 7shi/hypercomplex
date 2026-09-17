@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-from functools import reduce
 
 from usage import USAGE_PATH, parse_usage_file, today
 
@@ -33,7 +32,7 @@ def main(argv: list[str] | None = None) -> int:
         print(usage)
     print()
     print("# Total")
-    print(reduce(lambda a, b: a + b, totals.values()))
+    print(sum(totals.values()))
     return 0
 
 
