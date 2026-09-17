@@ -15,7 +15,8 @@ section at the end of the article:
 - the same construction on C gives i = (0 -1; 1 0), acting as (x, y) -> (-y, x),
   the +90 degree rotation;
 - ij = diag(-1,1) and ji = diag(1,-1), so ij = -ji, and k = ij satisfies
-  k^2 = +1; together i^2 = -1, j^2 = k^2 = +1, ijk = +1, jk = -i and kj = i
+  k^2 = +1 (the anticommutation comes from this choice of representation: the
+  squares alone do not force it, see the counterexample); together i^2 = -1, j^2 = k^2 = +1, ijk = +1, jk = -i and kj = i
   (so j and k anticommute, as Clifford generators must);
 - a + bi + cj + dk = (a-d, -b+c; b+c, a+d) runs over all of M_2(R), so
   H' = M_2(R) = R(2) in the notation of 01;
@@ -96,6 +97,13 @@ k_ = i_ * j_
 print("ij = diag(-1, 1), ji = diag(1, -1):",
       i_ * j_ == sp.diag(-1, 1) and j_ * i_ == sp.diag(1, -1))
 print("ij = -ji (their sum vanishes):", i_ * j_ + j_ * i_ == sp.zeros(2))
+
+# the anticommutation comes from this choice of representation, not from the
+# squares alone: I0^2 = -I and J0^2 = I but I0 J0 + J0 I0 = I
+I0 = sp.Matrix([[0, -1], [1, 0]])
+J0 = sp.Matrix([[1, 1], [0, -1]])
+print("counterexample I0^2 = -I, J0^2 = I, I0 J0 + J0 I0 = I:",
+      I0**2 == -I2 and J0**2 == I2 and I0 * J0 + J0 * I0 == I2)
 print("i^2 = -1, j^2 = k^2 = 1:", i_**2 == -I2 and j_**2 == I2 and k_**2 == I2)
 print("ijk = +1 (while ijk = -1 in H):", i_ * j_ * k_ == I2)
 print("jk = (0 1; -1 0) = -i:", j_ * k_ == sp.Matrix([[0, 1], [-1, 0]]) == -i_)
