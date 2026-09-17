@@ -17,6 +17,16 @@ Euler-Maruyama samples recover the theoretical variance 1/2 and match
 |psi_0|^2 in histogram L1 distance.  The osmotic relation
 u = nu (log rho)_x is checked on the theoretical density and on a
 smoothed histogram.
+
+The final chapter compares the article with 05.  Writing the
+Black-Scholes price of a European put in tau = T - t and x = log s,
+moving to y = x + (r - sigma^2/2) tau and splitting off e^{-r tau}
+leaves the pure heat equation; the resulting h is reproduced by the
+Gaussian kernel acting on the payoff.  With hbar = sigma^2 and m = 1
+the same function solves the imaginary-time Schrodinger equation with
+constant potential V0 = hbar r.  A free Gaussian packet propagated
+spectrally shows the difference that the Wick rotation hides: real time
+preserves the L2 norm, imaginary time does not.
 """
 
 import math
@@ -163,3 +173,112 @@ print("histogram osmotic velocity tracks u = -x near the origin:",
 
 print("ground energy E_0 = 1/2 in natural units:",
       abs(E0 - 0.5) < 1e-15)
+
+
+# --- Imaginary time: Black-Scholes as a Schrodinger equation ---------------
+# The final chapter rewrites the Black-Scholes equation with tau = T - t and
+# x = log s, removes the drift by moving to y = x + (r - sigma^2/2) tau and
+# splits off the discount via h = e^{r tau} w.  Checks below use the closed
+# form of a European put (bounded payoff, so the heat kernel integral is
+# easy to evaluate on a truncated grid).
+bs_r, bs_sigma, bs_T, bs_K = 0.05, 0.2, 1.0, 100.0
+
+
+def bs_N(z):
+    return 0.5 * (1.0 + np.vectorize(math.erf)(z / math.sqrt(2.0)))
+
+
+def bs_put(tau, s):
+    """European put price at time to maturity tau (tau > 0)."""
+    d1 = ((np.log(s / bs_K) + (bs_r + bs_sigma ** 2 / 2.0) * tau)
+          / (bs_sigma * np.sqrt(tau)))
+    d2 = d1 - bs_sigma * math.sqrt(tau)
+    return bs_K * math.exp(-bs_r * tau) * bs_N(-d2) - s * bs_N(-d1)
+
+
+def bs_u(tau, x):
+    """u(tau, x) = V(T - tau, e^x)."""
+    return bs_put(tau, np.exp(x))
+
+
+def bs_h(tau, y):
+    """h(tau, y) = e^{r tau} u(tau, y - (r - sigma^2/2) tau)."""
+    return math.exp(bs_r * tau) * bs_u(tau, y - (bs_r - bs_sigma ** 2 / 2.0) * tau)
+
+
+def d_tau(f, tau, z, eps=1e-5):
+    return (f(tau + eps, z) - f(tau - eps, z)) / (2.0 * eps)
+
+
+def d_zz(f, tau, z, eps=1e-3):
+    return (f(tau, z + eps) - 2.0 * f(tau, z) + f(tau, z - eps)) / eps ** 2
+
+
+def d_z(f, tau, z, eps=1e-3):
+    return (f(tau, z + eps) - f(tau, z - eps)) / (2.0 * eps)
+
+
+tau0 = 0.5
+y_mid = np.log(bs_K) + np.linspace(-0.5, 0.5, 51)
+
+# (1) chain rule: u_tau = (sigma^2/2) u_xx + (r - sigma^2/2) u_x - r u
+res_u = (d_tau(bs_u, tau0, y_mid)
+         - (bs_sigma ** 2 / 2.0) * d_zz(bs_u, tau0, y_mid)
+         - (bs_r - bs_sigma ** 2 / 2.0) * d_z(bs_u, tau0, y_mid)
+         + bs_r * bs_u(tau0, y_mid))
+print("BS in (tau, x = log s) is a diffusion with drift and discount:",
+      np.max(np.abs(res_u)) < 1e-4)
+
+# (2) moving frame plus discount factor leaves the pure heat equation
+res_h = d_tau(bs_h, tau0, y_mid) - (bs_sigma ** 2 / 2.0) * d_zz(bs_h, tau0, y_mid)
+print("moving frame and e^{r tau} reduce BS to the heat equation:",
+      np.max(np.abs(res_h)) < 1e-4)
+
+# (3) heat kernel: h(tau, .) is the Gaussian convolution of the payoff
+y_quad = np.log(bs_K) + np.linspace(-6.0, 6.0, 24001)
+dy_quad = y_quad[1] - y_quad[0]
+payoff = np.maximum(bs_K - np.exp(y_quad), 0.0)
+std = bs_sigma * math.sqrt(tau0)
+conv = np.array([
+    np.sum(np.exp(-(y - y_quad) ** 2 / (2.0 * std ** 2)) * payoff)
+    * dy_quad / math.sqrt(2.0 * math.pi * std ** 2)
+    for y in y_mid
+])
+print("heat kernel propagates the payoff to h(tau, y):",
+      np.allclose(conv, bs_h(tau0, y_mid), rtol=1e-4, atol=1e-8))
+
+# (4) the dictionary: with hbar_fin = sigma^2 (m = 1) and V0 = hbar_fin * r,
+# w = e^{-r tau} h solves the imaginary-time Schrodinger equation
+# psi_tau = (hbar/2m) psi_yy - (V0/hbar) psi.
+hbar_fin, m_fin = bs_sigma ** 2, 1.0
+V0_fin = hbar_fin * bs_r
+
+
+def bs_w(tau, y):
+    return math.exp(-bs_r * tau) * bs_h(tau, y)
+
+
+res_w = (d_tau(bs_w, tau0, y_mid)
+         - (hbar_fin / (2.0 * m_fin)) * d_zz(bs_w, tau0, y_mid)
+         + (V0_fin / hbar_fin) * bs_w(tau0, y_mid))
+print("BS solves imaginary-time Schrodinger with hbar = sigma^2, V0 = hbar r:",
+      np.max(np.abs(res_w)) < 1e-4)
+print("the matched diffusion coefficients agree, sigma^2/2 = hbar/(2m):",
+      abs(bs_sigma ** 2 / 2.0 - hbar_fin / (2.0 * m_fin)) < 1e-15)
+
+# (5) real versus imaginary time: unitary evolution keeps the L2 norm,
+# the heat semigroup does not.  Free packet, spectral propagation.
+L, n_fft = 40.0, 4096
+y_fft = -L / 2.0 + L * np.arange(n_fft) / n_fft
+k_fft = 2.0 * math.pi * np.fft.fftfreq(n_fft, d=L / n_fft)
+psi0 = np.exp(-y_fft ** 2 / 2.0).astype(complex)
+disp = hbar_fin * k_fft ** 2 / (2.0 * m_fin)
+norm0 = np.sum(np.abs(psi0) ** 2) * (L / n_fft)
+psi_real = np.fft.ifft(np.exp(-1j * disp * tau0) * np.fft.fft(psi0))
+psi_imag = np.fft.ifft(np.exp(-disp * tau0) * np.fft.fft(psi0))
+norm_real = np.sum(np.abs(psi_real) ** 2) * (L / n_fft)
+norm_imag = np.sum(np.abs(psi_imag) ** 2) * (L / n_fft)
+print("real time is unitary (L2 norm preserved):",
+      abs(norm_real - norm0) < 1e-10)
+print("imaginary time dissipates (L2 norm strictly decreases):",
+      norm_imag < norm0 - 1e-3)
