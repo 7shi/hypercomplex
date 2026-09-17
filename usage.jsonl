@@ -1,0 +1,9 @@
+{"timestamp": "2026-09-16T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 72961, "output_tokens": 26229, "reasoning_tokens": 1844, "cached_tokens": 0, "total_tokens": 99190}
+{"timestamp": "2026-09-16T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 17221, "output_tokens": 2225, "reasoning_tokens": 169, "cached_tokens": 0, "total_tokens": 19446}
+{"timestamp": "2026-09-16T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 27100, "output_tokens": 2688, "reasoning_tokens": 447, "cached_tokens": 0, "total_tokens": 29788}
+{"timestamp": "2026-09-16T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 44993, "output_tokens": 164, "reasoning_tokens": 60, "cached_tokens": 0, "total_tokens": 45157}
+{"timestamp": "2026-09-16T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 45022, "output_tokens": 2790, "reasoning_tokens": 516, "cached_tokens": 0, "total_tokens": 47812}
+{"timestamp": "2026-09-17T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 24402, "output_tokens": 1830, "reasoning_tokens": 196, "cached_tokens": 0, "total_tokens": 26232}
+{"timestamp": "2026-09-17T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 79563, "output_tokens": 3087, "reasoning_tokens": 508, "cached_tokens": 0, "total_tokens": 82650}
+{"timestamp": "2026-09-17T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 90839, "output_tokens": 2967, "reasoning_tokens": 1034, "cached_tokens": 0, "total_tokens": 93806}
+{"timestamp": "2026-09-17T00:00:00+00:00", "model": "gpt-6-astra", "input_tokens": 29466, "output_tokens": 3261, "reasoning_tokens": 857, "cached_tokens": 0, "total_tokens": 32727}

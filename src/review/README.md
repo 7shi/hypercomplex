@@ -21,4 +21,4 @@ uv run review <file.md>... -m MODEL [-p PROMPT.txt] [-r REF.md]...
 
 複数ファイルを指定した場合は1ファイルずつ処理し、結果は各ファイルと同じ場所に`<stem>.txt`として保存されます。
 
-実行の最後には全ファイルの合計トークン使用量をリポジトリ直下の`usage.txt`に追記します（詳細は[usage/README.md](../usage/README.md)参照）。
+実行の最後には全ファイルの合計トークン使用量をリポジトリ直下の`usage.jsonl`に追記します（詳細は[usage/README.md](../usage/README.md)参照）。

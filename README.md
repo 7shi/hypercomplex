@@ -28,4 +28,4 @@
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
 - [src/usage/](src/usage/README.md) — LLMのトークン使用量を記録・集計するツール。
-  - usage.txt — 日付ごとのトークン使用量の記録。
+  - usage.jsonl — 日付ごとのトークン使用量の記録。

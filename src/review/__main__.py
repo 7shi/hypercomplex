@@ -87,7 +87,7 @@ def main() -> int:
     if usages:
         total_usage = sum(usages)
         print(f"\n--- Total Usage ---\n{total_usage}")
-        append_usage(total_usage)
+        append_usage(total_usage, args.model)
         print(f"-> {USAGE_PATH}")
     return 0
 

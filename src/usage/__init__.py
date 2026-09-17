@@ -1,68 +1,50 @@
-"""usage.txtにトークン使用量を記録・集計するツール。詳細はREADME.mdを参照。"""
+"""usage.jsonlにトークン使用量を記録・集計するツール。詳細はREADME.mdを参照。"""
 
 from __future__ import annotations
 
-import ast
-import re
-from datetime import datetime
+import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from llm7shi.usage import Usage
 
-USAGE_PATH = Path(__file__).resolve().parents[2] / "usage.txt"
-
-DATE_RE = re.compile(r"^#\s*(\d{4}/\d{2}/\d{2})\s*$")
-USAGE_RE = re.compile(r"^Usage\((\{.*\})\)\s*$")
+USAGE_PATH = Path(__file__).resolve().parents[2] / "usage.jsonl"
 
 
 def today() -> str:
-    """今日の日付を見出しで使う`YYYY/MM/DD`形式で返す。"""
-    return datetime.now().strftime("%Y/%m/%d")
+    """今日の日付をUTCで`YYYY/MM/DD`形式で返す。"""
+    return datetime.now(timezone.utc).strftime("%Y/%m/%d")
 
 
-def parse_usage_file(path: Path = USAGE_PATH) -> dict[str, Usage]:
-    """usage.txtをパースし、日付をkey、その日の合計Usageをvalueとするdictを返す。
+def parse_usage_file(path: Path = USAGE_PATH) -> dict[str, dict[str, Usage]]:
+    """usage.jsonlをパースし、日付をkey、モデル名をkeyとする合計Usageのdictをvalueとするdictを返す。
 
-    日付はファイル内での出現順を保ちます。ファイルが存在しない場合は空のdictを返します。
+    日付は各レコードの`timestamp`をUTCに変換して求める。日付・モデル名はファイル内での出現順を保つ。
+    ファイルが存在しない場合は空のdictを返す。
     """
     if not path.exists():
         return {}
 
-    totals: dict[str, Usage] = {}
-    date = None
+    totals: dict[str, dict[str, Usage]] = {}
     for line in path.read_text().splitlines():
-        if m := DATE_RE.match(line):
-            date = m.group(1)
+        if not line.strip():
             continue
-        if not (m := USAGE_RE.match(line)):
-            continue
-        if date is None:
-            raise ValueError(f"{path}: 日付見出しの前にUsage行があります: {line}")
-        # 手書きのJSON風（"）とreprの出力（'）が混在しうるのでliteral_evalで読む
-        usage = Usage(raw=ast.literal_eval(m.group(1)))
-        totals[date] = usage if date not in totals else totals[date] + usage
+        record = json.loads(line)
+        timestamp = datetime.fromisoformat(record["timestamp"]).astimezone(timezone.utc)
+        date = timestamp.strftime("%Y/%m/%d")
+        model = record["model"]
+        usage = Usage(raw={k: v for k, v in record.items() if k not in ("timestamp", "model")})
+        by_model = totals.setdefault(date, {})
+        by_model[model] = usage if model not in by_model else by_model[model] + usage
     return totals
 
 
-def append_usage(usage: Usage, path: Path = USAGE_PATH, date: str | None = None) -> None:
-    """Usageを指定日（省略時は今日）のセクションに追記する。
+def append_usage(usage: Usage, model: str, path: Path = USAGE_PATH, timestamp: datetime | None = None) -> None:
+    """Usageをモデル名・タイムゾーン付きの生成日時とともにusage.jsonlに1行追記する。
 
-    日付の見出しがなければ末尾に作成し、あればそのセクションの末尾に追記します。
+    timestampを省略した場合は現在時刻（ローカルのタイムゾーン付き）を使う。
     """
-    date = date or today()
-    line = repr(usage)
-
-    lines = path.read_text().splitlines() if path.exists() else []
-
-    start = next((i for i, l in enumerate(lines) if (m := DATE_RE.match(l)) and m.group(1) == date), None)
-    if start is None:
-        if lines and lines[-1].strip():
-            lines.append("")
-        lines += [f"# {date}", line]
-    else:
-        end = next((i for i in range(start + 1, len(lines)) if DATE_RE.match(lines[i])), len(lines))
-        while end > start + 1 and not lines[end - 1].strip():
-            end -= 1
-        lines.insert(end, line)
-
-    path.write_text("\n".join(lines) + "\n")
+    timestamp = timestamp or datetime.now().astimezone()
+    record = {"timestamp": timestamp.isoformat(), "model": model, **usage.to_dict()}
+    with path.open("a") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")

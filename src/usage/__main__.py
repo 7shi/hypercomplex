@@ -1,8 +1,10 @@
-"""usage.txtに記録されたトークン使用量を集計して表示するエントリポイント。詳細はREADME.mdを参照。"""
+"""usage.jsonlに記録されたトークン使用量を集計して表示するエントリポイント。詳細はREADME.mdを参照。"""
 
 from __future__ import annotations
 
 import argparse
+
+from llm7shi.usage import Usage
 
 from usage import USAGE_PATH, parse_usage_file, today
 
@@ -23,16 +25,20 @@ def main(argv: list[str] | None = None) -> int:
         if date not in totals:
             print(f"{date}の記録がありません")
             return 1
-        print(f"# {date}")
-        print(totals[date])
+        print(date)
+        for model, usage in totals[date].items():
+            print(f"  {model} {usage.to_dict()}")
         return 0
 
-    for date, usage in totals.items():
-        print(f"# {date}")
-        print(usage)
-    print()
-    print("# Total")
-    print(sum(totals.values()))
+    model_totals: dict[str, Usage] = {}
+    for date, by_model in totals.items():
+        print(date)
+        for model, usage in by_model.items():
+            print(f"  {model} {usage.to_dict()}")
+            model_totals[model] = usage if model not in model_totals else model_totals[model] + usage
+    print("=" * 10)
+    for model, usage in model_totals.items():
+        print(f"{model} {usage.to_dict()}")
     return 0
 
 
