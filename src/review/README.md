@@ -20,3 +20,5 @@ uv run review <file.md>... -m MODEL [-p PROMPT.txt] [-r REF.md]...
 `-p`を省略すると、[PROMPT.txt](PROMPT.txt)の汎用プロンプト（数式の正しさ・分かりやすさ・用語や記法の一貫性・日本語表現を確認）を使います。ディレクトリごとの編集方針（構成上の位置づけ、記法の使い分けなど）を踏まえたレビューをさせたい場合は、そのディレクトリに`PROMPT.txt`のようなプロンプトファイルを用意し`-p`で指定します（例: [lebesgue/PROMPT.txt](../../lebesgue/PROMPT.txt)）。
 
 複数ファイルを指定した場合は1ファイルずつ処理し、結果は各ファイルと同じ場所に`<stem>.txt`として保存されます。
+
+実行の最後には全ファイルの合計トークン使用量をリポジトリ直下の`usage.txt`に追記します（詳細は[usage/README.md](../usage/README.md)参照）。

@@ -11,6 +11,8 @@ import argparse
 from pathlib import Path
 from llm7shi import Client
 
+from usage import USAGE_PATH, append_usage
+
 _DIR = Path(__file__).parent
 COMMON = (_DIR / "COMMON.txt").read_text().strip()
 PROMPT = (_DIR / "PROMPT.txt").read_text().strip()
@@ -84,6 +86,8 @@ def main() -> int:
 
     if total_usage:
         print(f"\n--- Total Usage ---\n{total_usage}")
+        append_usage(total_usage)
+        print(f"-> {USAGE_PATH}")
     return 0
 
 

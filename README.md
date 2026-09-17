@@ -22,8 +22,10 @@
 
 ## ツール
 
+- [src/](src/README.md) — 記事執筆・検証・参考文献管理に使うスクリプト類。
 - [src/articles/](src/articles/README.md) — Mathlog記事とREADMEリンクを突き合わせるツール。
   - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
-- [src/](src/README.md) — 記事執筆・検証・参考文献管理に使うスクリプト類。
+- [src/usage/](src/usage/README.md) — LLMのトークン使用量を記録・集計するツール。
+  - usage.txt — 日付ごとのトークン使用量の記録。
