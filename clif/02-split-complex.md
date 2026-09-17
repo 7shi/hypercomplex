@@ -1,4 +1,4 @@
-分解型複素数は、通常の複素数の関係式 $i^2 = -1$ を $j^2 = +1$ に置き換えて得られる実2次元の可換代数です。その代数構造は、冪等元と極小イデアルを通じて明快に理解できます。本記事では、分解型複素数の定義から始め、冪等元の直交性や零因子としての性質を調べ、実数環の直和への分解を導きます。
+分解型複素数は、通常の複素数の関係式 $i^2 = -1$ を $j^2 = +1$ に置き換えて得られる実2次元の可換代数です。その代数構造は、冪等元と極小イデアルを通じて明快に理解できます。本記事では、分解型複素数の定義から始め、冪等元の直交性や零因子としての性質を調べ、実数環の直和への分解を導きます。最後に、$j$ と通常の虚数単位 $i$ を $2 \times 2$ 実行列として並べると反交換性が現れ、分解型四元数が自然に構成されることを確認します。
 
 # 分解型複素数の定義
 
@@ -281,12 +281,114 @@ $$
 
 逆写像が存在することから $\Phi$ は全単射であり、$z = (x+y)e + (x-y)e^*$ の基底 $\{e, e^*\}$ に関する係数が、そのまま $\mathbb{R} \oplus \mathbb{R}$ の2成分に対応しています。
 
+# 分解型四元数への拡張
+
+本記事の前半では、計算の見通しが良い対角行列 $j \cong \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ を用いて分解型複素数の構造を調べてきました。しかし、$\mathbb{R}[j]$ を標準的な基底 $\{1, j\}$ をもつ実2次元ベクトル空間とみなし、「$j$ を掛ける」線形変換（正則表現）の表現行列を書き下すと、別の自然な形が現れます。
+
+基底ベクトルへの作用を見ると、
+$$
+j \cdot 1 = 0 \cdot 1 + 1 \cdot j, \qquad j \cdot j = 1 = 1 \cdot 1 + 0 \cdot j
+$$
+より、基底の2つの元が互いに入れ替わります。したがって、その表現行列は次の**交換行列**になります。
+
+$$
+j \cong \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+$$
+
+これは第2節のコラム「非対角の行列表現」で触れた行列そのものです。
+
+全く同じ構成を、通常の複素数 $\mathbb{C}$ に対して適用してみましょう。基底 $\{1, i\}$ に対して「$i$ を掛ける」線形変換を考えると、
+$$
+i \cdot 1 = 0 \cdot 1 + 1 \cdot i, \qquad i \cdot i = -1 = -1 \cdot 1 + 0 \cdot i
+$$
+となるため、次の表現行列が得られます。
+
+$$
+i \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+$$
+
+&&&rem 表現行列の幾何学的意味
+基底 $\{1, j\}$ に関する座標を列ベクトル $\begin{pmatrix} x \\ y \end{pmatrix} \cong x + jy$ とおくと、$j$ の作用は $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} y \\ x \end{pmatrix}$ となり、直線 $y = x$ に関する**鏡映**（座標の入れ替え）を表します。一方、複素数における $i$ の作用は $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -y \\ x \end{pmatrix}$ となり、原点周りの $+90^\circ$ **回転**を表します。
+&&&
+
+ここで興味深い現象が起きます。行列 $i$ と $j$ はどちらも同じ実 $2 \times 2$ 行列の空間 $M_2(\mathbb{R})$ に属するため、両者の積を計算できます。
+
+$$
+ij \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix},
+\quad
+ji \cong \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+$$
+
+2つの積は対角行列となり、符号だけが異なります。すなわち、両者の和はゼロ行列となり、**反交換性**が成り立ちます。なお、ここで現れた $ji \cong \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ は前半で $j$ の表現として用いた対角行列そのものであり、$ij$ はその固有値 $\pm 1$ の位置を入れ替えたものになっています。
+
+&&&fml 反交換性
+$$
+ij = -ji
+$$
+&&&
+
+複素数の単位 $i$ と分解型複素数の単位 $j$ を同じ実行列空間で共存させると、可換ではなく**反交換**になるのです。
+
+ここで新たな元 $k = ij$ を定義しましょう。その2乗を計算すると、
+$$
+k^2 \cong \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}^2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I \cong 1
+$$
+となり、$k$ も2乗が $+1$ となる虚数単位です。こうして $i, j, k$ の代数的関係がすべて出揃います。
+
+&&&def 分解型四元数（split-quaternion）
+$$
+i^2 = -1, \quad j^2 = k^2 = +1, \quad k = ij = -ji
+$$
+
+この関係を満たす $i, j, k$ が実数体 $\mathbb{R}$ 上で生成する4次元代数を**分解型四元数**（split-quaternion）と呼び、$\mathbb{H}'$ と表します。
+&&&
+
+通常のハミルトンの四元数 $\mathbb{H}$ では $i^2 = j^2 = k^2 = ijk = -1$ ですが、分解型四元数 $\mathbb{H}'$ では2つの虚数単位が $j^2 = k^2 = +1$ となり、3つの虚数単位の積も $ijk = k^2 = +1$ と正の符号を持ちます。
+
+$1, i, j, k$ に対応する4つの行列は、実 $2 \times 2$ 行列空間の基底をなします。したがって、一般の分解型四元数は次のように表されます。
+
+&&&ex 一般の分解型四元数の行列表現
+$$
+\begin{aligned}
+q &= a + bi + cj + dk \\
+&\cong a \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + b \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} + c \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} + d \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} a - d & -b + c \\ b + c & a + d \end{pmatrix}
+\end{aligned}
+$$
+
+実数係数 $a, b, c, d$ を動かせば任意の $2 \times 2$ 実行列が得られるため、環同型 $\mathbb{H}' \cong M_2(\mathbb{R})$（記事 [[7shi-clif1]] における記法では $\mathbb{R}(2)$）が成り立ちます。
+&&&
+
+&&&rem クリフォード代数としての生成元
+クリフォード代数 $\operatorname{Cl}_{2,0}(\mathbb{R})$ の生成元は、2乗が $+1$ となる直交基底ベクトルです。したがって生成元には $i$ ではなく $j, k$ を選びます。実際、
+$$
+jk \cong \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = -i
+$$
+より、$j, k$ の積（擬スカラー）として $i$ が得られます（$-jk = i$）。積の順序を入れ替えると $kj = i$ と符号が反転するため、$jk = -kj$ となって $j, k$ は反交換し、生成元の条件を満たします。2乗が $+1$ の生成元2つから、2乗が $-1$ の元 $i$ が自然に生み出される構造になっています。[[7shi-clif1]]
+&&&
+
+&&&rem 可換代数と非可換代数の分岐点
+$\mathbb{H}'$ は通常の複素数環 $\mathbb{C}$（基底 $\{1, i\}$）と分解型複素数環 $\mathbb{C}'$（基底 $\{1, j\}$）をともに部分代数として含んでいます。もし両者が可換（$ij = ji$）になるように結合すると、テンソル積 $\mathbb{C} \otimes_\mathbb{R} \mathbb{C}' \cong \mathbb{C} \oplus \mathbb{C}$（双複素数）という「可換な4次元代数」が得られます。一方、今回のように正則表現の行列空間 $M_2(\mathbb{R})$ の中で出会わせると、反交換性 $ij = -ji$ によって「非可換な行列代数 $\mathbb{H}'$」が立ち現れます。
+&&&
+
+&&&rem パウリ行列との対応
+物理学で用いられるパウリ行列 $\sigma_1, \sigma_2, \sigma_3$ と比較すると、
+$$
+\sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = j, \quad
+\sigma_2 = \begin{pmatrix} 0 & -i_\mathbb{C} \\ i_\mathbb{C} & 0 \end{pmatrix}, \quad
+\sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = -k
+$$
+となり、$j$ と $-k$ は実パウリ行列そのものです。[[7shi-rpt]] また、$-i_\mathbb{C}\sigma_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = i$ であるため、分解型四元数の基底 $\{j, i, -k\}$ は実数成分のみで構成されたパウリ行列の三つ組に対応しています。
+&&&
+
 # まとめ
 
-本記事の内容を3点にまとめます。
+本記事の内容を4点にまとめます。
 
 - **冪等元の性質**：$\mathbb{R}[j]$（$j^2=+1$）の非自明な冪等元は $e = (1+j)/2$ と $e^* = (1-j)/2$ の2つだけであり、直交性 $ee^* = 0$ と完全性 $e + e^* = 1$ を満たします。非自明な冪等元は零因子であるため、$\mathbb{R}[j]$ は整域ではありません。
 
 - **極小イデアルへの直和分解**：$e, e^*$ が生成する $\mathbb{R}e, \mathbb{R}e^*$ はそれぞれ極小イデアルであり、環全体は $\mathbb{R}[j] = \mathbb{R}e \oplus \mathbb{R}e^*$ と直和分解されます。これは「$j$ を掛ける」線形変換の固有空間分解（固有値 $\pm 1$）でもあり、この分解のもとで積が成分ごとに行われるため、環同型 $\mathbb{R}[j] \cong \mathbb{R} \oplus \mathbb{R}$ が成り立ちます。
 
 - **行列表現との対応**：$j \cong \operatorname{diag}(1, -1)$ とする行列表現のもとで、冪等元は射影行列 $e \cong \operatorname{diag}(1, 0),\ e^* \cong \operatorname{diag}(0, 1)$ に、一般の元は $z \cong \operatorname{diag}(x+y,\ x-y)$ に対応します。本記事で導いた代数構造はすべて、対角成分ごとの計算として直感的に理解できます。
+
+- **分解型四元数への拡張**：基底 $\{1, j\}$ に関する「$j$ を掛ける」表現行列は交換行列 $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ となり、複素数における $i \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ と並べることで反交換性 $ij = -ji$ が現れます。積 $k = ij$（$k^2 = +1$）を加えた $\{1, i, j, k\}$ が生成する代数は分解型四元数 $\mathbb{H}'$ であり、実 $2 \times 2$ 行列環 $\mathbb{R}(2)$ と同型になります。
