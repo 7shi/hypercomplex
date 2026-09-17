@@ -19,10 +19,10 @@ u = nu (log rho)_x is checked on the theoretical density and on a
 smoothed histogram.
 
 The final chapter compares the article with 05.  Writing the
-Black-Scholes price of a European put in tau = T - t and x = log s,
-moving to y = x + (r - sigma^2/2) tau and splitting off e^{-r tau}
-leaves the pure heat equation; the resulting h is reproduced by the
-Gaussian kernel acting on the payoff.  With hbar = sigma^2 and m = 1
+Black-Scholes price C of a European put as F(tau, x) with tau = T - t
+and x = log s, moving to G on y = x + (r - sigma^2/2) tau and splitting
+off e^{-r tau} leaves the pure heat equation for H; that H is
+reproduced by the Gaussian kernel acting on the payoff.  With hbar = sigma^2 and m = 1
 the same function solves the imaginary-time Schrodinger equation with
 constant potential V0 = hbar r.  A free Gaussian packet propagated
 spectrally shows the difference that the Wick rotation hides: real time
@@ -178,7 +178,7 @@ print("ground energy E_0 = 1/2 in natural units:",
 # --- Imaginary time: Black-Scholes as a Schrodinger equation ---------------
 # The final chapter rewrites the Black-Scholes equation with tau = T - t and
 # x = log s, removes the drift by moving to y = x + (r - sigma^2/2) tau and
-# splits off the discount via h = e^{r tau} w.  Checks below use the closed
+# splits off the discount via H = e^{r tau} G.  Checks below use the closed
 # form of a European put (bounded payoff, so the heat kernel integral is
 # easy to evaluate on a truncated grid).
 bs_r, bs_sigma, bs_T, bs_K = 0.05, 0.2, 1.0, 100.0
@@ -196,14 +196,14 @@ def bs_put(tau, s):
     return bs_K * math.exp(-bs_r * tau) * bs_N(-d2) - s * bs_N(-d1)
 
 
-def bs_u(tau, x):
-    """u(tau, x) = V(T - tau, e^x)."""
+def bs_F(tau, x):
+    """F(tau, x) = C(T - tau, e^x)."""
     return bs_put(tau, np.exp(x))
 
 
-def bs_h(tau, y):
-    """h(tau, y) = e^{r tau} u(tau, y - (r - sigma^2/2) tau)."""
-    return math.exp(bs_r * tau) * bs_u(tau, y - (bs_r - bs_sigma ** 2 / 2.0) * tau)
+def bs_H(tau, y):
+    """H(tau, y) = e^{r tau} F(tau, y - (r - sigma^2/2) tau)."""
+    return math.exp(bs_r * tau) * bs_F(tau, y - (bs_r - bs_sigma ** 2 / 2.0) * tau)
 
 
 def d_tau(f, tau, z, eps=1e-5):
@@ -221,20 +221,20 @@ def d_z(f, tau, z, eps=1e-3):
 tau0 = 0.5
 y_mid = np.log(bs_K) + np.linspace(-0.5, 0.5, 51)
 
-# (1) chain rule: u_tau = (sigma^2/2) u_xx + (r - sigma^2/2) u_x - r u
-res_u = (d_tau(bs_u, tau0, y_mid)
-         - (bs_sigma ** 2 / 2.0) * d_zz(bs_u, tau0, y_mid)
-         - (bs_r - bs_sigma ** 2 / 2.0) * d_z(bs_u, tau0, y_mid)
-         + bs_r * bs_u(tau0, y_mid))
+# (1) chain rule: F_tau = (sigma^2/2) F_xx + (r - sigma^2/2) F_x - r F
+res_F = (d_tau(bs_F, tau0, y_mid)
+         - (bs_sigma ** 2 / 2.0) * d_zz(bs_F, tau0, y_mid)
+         - (bs_r - bs_sigma ** 2 / 2.0) * d_z(bs_F, tau0, y_mid)
+         + bs_r * bs_F(tau0, y_mid))
 print("BS in (tau, x = log s) is a diffusion with drift and discount:",
-      np.max(np.abs(res_u)) < 1e-4)
+      np.max(np.abs(res_F)) < 1e-4)
 
 # (2) moving frame plus discount factor leaves the pure heat equation
-res_h = d_tau(bs_h, tau0, y_mid) - (bs_sigma ** 2 / 2.0) * d_zz(bs_h, tau0, y_mid)
+res_H = d_tau(bs_H, tau0, y_mid) - (bs_sigma ** 2 / 2.0) * d_zz(bs_H, tau0, y_mid)
 print("moving frame and e^{r tau} reduce BS to the heat equation:",
-      np.max(np.abs(res_h)) < 1e-4)
+      np.max(np.abs(res_H)) < 1e-4)
 
-# (3) heat kernel: h(tau, .) is the Gaussian convolution of the payoff
+# (3) heat kernel: H(tau, .) is the Gaussian convolution of the payoff
 y_quad = np.log(bs_K) + np.linspace(-6.0, 6.0, 24001)
 dy_quad = y_quad[1] - y_quad[0]
 payoff = np.maximum(bs_K - np.exp(y_quad), 0.0)
@@ -244,25 +244,25 @@ conv = np.array([
     * dy_quad / math.sqrt(2.0 * math.pi * std ** 2)
     for y in y_mid
 ])
-print("heat kernel propagates the payoff to h(tau, y):",
-      np.allclose(conv, bs_h(tau0, y_mid), rtol=1e-4, atol=1e-8))
+print("heat kernel propagates the payoff to H(tau, y):",
+      np.allclose(conv, bs_H(tau0, y_mid), rtol=1e-4, atol=1e-8))
 
 # (4) the dictionary: with hbar_fin = sigma^2 (m = 1) and V0 = hbar_fin * r,
-# w = e^{-r tau} h solves the imaginary-time Schrodinger equation
+# G = e^{-r tau} H solves the imaginary-time Schrodinger equation
 # psi_tau = (hbar/2m) psi_yy - (V0/hbar) psi.
 hbar_fin, m_fin = bs_sigma ** 2, 1.0
 V0_fin = hbar_fin * bs_r
 
 
-def bs_w(tau, y):
-    return math.exp(-bs_r * tau) * bs_h(tau, y)
+def bs_G(tau, y):
+    return math.exp(-bs_r * tau) * bs_H(tau, y)
 
 
-res_w = (d_tau(bs_w, tau0, y_mid)
-         - (hbar_fin / (2.0 * m_fin)) * d_zz(bs_w, tau0, y_mid)
-         + (V0_fin / hbar_fin) * bs_w(tau0, y_mid))
+res_G = (d_tau(bs_G, tau0, y_mid)
+         - (hbar_fin / (2.0 * m_fin)) * d_zz(bs_G, tau0, y_mid)
+         + (V0_fin / hbar_fin) * bs_G(tau0, y_mid))
 print("BS solves imaginary-time Schrodinger with hbar = sigma^2, V0 = hbar r:",
-      np.max(np.abs(res_w)) < 1e-4)
+      np.max(np.abs(res_G)) < 1e-4)
 print("the matched diffusion coefficients agree, sigma^2/2 = hbar/(2m):",
       abs(bs_sigma ** 2 / 2.0 - hbar_fin / (2.0 * m_fin)) < 1e-15)
 
