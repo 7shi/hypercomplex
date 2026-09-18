@@ -42,7 +42,7 @@ def main() -> int:
                         help="レビュー観点を記述したプロンプトファイルのパス"
                              "（デフォルト: 組み込みの汎用プロンプト）")
     parser.add_argument("-r", "--ref", type=Path, action="append", default=[],
-                        help="参照文脈として使う.mdファイルのパス"
+                        help="参照文脈として使う.md/.txtファイルのパス"
                              "（レビュー対象には含めない、複数指定可）")
     args = parser.parse_args()
 
@@ -53,8 +53,8 @@ def main() -> int:
             parser.error(f"{path}: 見つかりません")
 
     for path in args.ref:
-        if path.suffix != ".md":
-            parser.error(f"{path}: .mdファイルではありません")
+        if path.suffix not in (".md", ".txt"):
+            parser.error(f"{path}: .md/.txtファイルではありません")
         if not path.exists():
             parser.error(f"{path}: 見つかりません")
 
