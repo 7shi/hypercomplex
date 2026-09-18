@@ -10,8 +10,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from llm7shi import Client
-
-from usage import USAGE_PATH, append_usage
+from llm7shi.usage import append_usage, find_usage_file
 
 _DIR = Path(__file__).parent
 COMMON = (_DIR / "COMMON.txt").read_text().strip()
@@ -87,8 +86,9 @@ def main() -> int:
     if usages:
         total_usage = sum(usages)
         print(f"\n--- Total Usage ---\n{total_usage}")
-        append_usage(total_usage, args.model)
-        print(f"-> {USAGE_PATH}")
+        usage_path = find_usage_file()
+        append_usage(total_usage, args.model, usage_path)
+        print(f"-> {usage_path}")
     return 0
 
 

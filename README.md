@@ -27,5 +27,4 @@
   - mathlog.tsv — mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
-- [src/usage/](src/usage/README.md) — LLMのトークン使用量を記録・集計するツール。
-  - usage.jsonl — 日付ごとのトークン使用量の記録。
+- usage.jsonl — LLMのトークン使用量（[llm7shi](https://github.com/7shi/llm7shi)の`usage`コマンドで記録・集計）の記録。
