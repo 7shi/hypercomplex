@@ -85,7 +85,7 @@ ok("(nm)* = mn", np.allclose(rc, omul(m, n)))
 sandwich = omul(omul(r, v), rc)  # (nm)v(mn)
 ok("n(mvm)n ≠ (nm)v(mn)  [非結合性]", not np.allclose(double_refl(v), sandwich))
 
-# (nm)v(mn) = rvr* は三重回転: 軸 u = Im(nm)/|Im(nm)| を固定し、
+# (nm)v(mn) = rvr* は等傾三重回転: 軸 u = Im(nm)/|Im(nm)| を固定し、
 # 直交6次元は3平面に分かれ、すべて同じ角度で回転（等傾）
 u = r.copy()
 u[0] = 0
@@ -113,11 +113,11 @@ for vq in (m, t, u):
 print("  OK  span(m,n,m×n) 上では n(mvm)n = (nm)v(mn)  [四元数部分代数]")
 
 print()
-print("=== 7D: 三重回転と自己同型（G2） ===")
+print("=== 7D: 等傾三重回転と自己同型（G2） ===")
 for theta, expect in [(0.7, False), (np.pi / 3, False), (np.pi, False),
                       (2 * np.pi / 3, True), (4 * np.pi / 3, True)]:
     nn = unit_imag()
-    rr = exp_imag(theta / 2, nn)  # 回転角 theta の三重回転
+    rr = exp_imag(theta / 2, nn)  # 回転角 theta の等傾三重回転
     x, y = rng.normal(size=8), rng.normal(size=8)
     fx = omul(omul(rr, x), conj(rr))
     fy = omul(omul(rr, y), conj(rr))
@@ -172,15 +172,15 @@ ok(f"閉包 dim: 挟み込み(ad)={d_ad} (=21: SO(7))", d_ad == 21)
 ok(f"閉包 dim: 右乗算={d_r} (=28: SO(8))", d_r == 28)
 ok(f"閉包 dim: 左乗算={d_l} (=28: SO(8))", d_l == 28)
 
-# 三重回転の合成は一般に三重回転ではない
-# （三重回転の固有値は 1 と e^{±iψ}（3重）だが、合成では回転角が分裂する）
+# 等傾三重回転の合成は一般に等傾三重回転ではない
+# （等傾三重回転の固有値は 1 と e^{±iψ}（3重）だが、合成では回転角が分裂する）
 def conj_map(r):
     return map_matrix(lambda x: omul(omul(r, x), conj(r)))
 
 M12 = conj_map(exp_imag(0.35, unit_imag())) @ conj_map(exp_imag(0.6, unit_imag()))
 angles = np.sort(np.abs(np.angle(np.linalg.eigvals(M12))))
 distinct = np.unique(np.round(angles[2:], 8))  # 実部・軸の固有値1を除く6個 → 3組
-ok(f"三重回転の合成は三重回転ではない（回転角が {len(distinct)} 種に分裂）", len(distinct) > 1)
+ok(f"等傾三重回転の合成は等傾三重回転ではない（回転角が {len(distinct)} 種に分裂）", len(distinct) > 1)
 print(f"     分裂した回転角: {[f'{np.degrees(a):.4f}°' for a in distinct]}")
 
 print()
@@ -249,7 +249,7 @@ ok("rxr は (1,n)面のみ 2θ 回転（他6次元は恒等）",
    and np.isclose(e[0] @ Mrr @ e[0], np.cos(2 * theta)))
 Mconj = map_matrix(lambda x: omul(omul(rr, x), conj(rr)))
 sym6 = Mconj + Mconj.T
-ok("rxr* は 1 と n を固定し、直交6次元の3面が 2θ 回転（三重回転）",
+ok("rxr* は 1 と n を固定し、直交6次元の3面が 2θ 回転（等傾三重回転）",
    np.allclose(Mconj @ e[0], e[0]) and np.allclose(Mconj @ nn, nn)
    and np.allclose((np.eye(8) - P1n) @ sym6 @ (np.eye(8) - P1n),
                    2 * np.cos(2 * theta) * (np.eye(8) - P1n)))
