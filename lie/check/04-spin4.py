@@ -20,6 +20,17 @@ the doubled gamma(v) satisfying the Cl(4,0) generating relations with
 16 independent basis elements; the conjugation action
 g*gamma(x)*g^-1=gamma(p*x*q^-1) and the split into half-spinors
 (psi1,psi2) -> (p*psi1, q*psi2).
+
+Additions for the revised proofs: the 16 Lu*Rv are Frobenius-orthogonal
+(tr((LuRv)^T Lu'Rv') = 4 delta delta), hence linearly independent;
+(p,q) -> rho_{p,q} is a group homomorphism (rho_{p,q} rho_{p',q'} =
+rho_{pp',qq'}); exp(t gamma(u)gamma(v)) = gamma(u) gamma(cos t u + sin t v)
+bridges bivector exponentials and even products of unit vectors;
+A = gamma(1)gamma(i) and B = gamma(j)gamma(k) commute, square to -I and give
+diag(i,0) = -(A+B)/2, diag(0,i) = (A-B)/2, so exp(t diag(i,0)) =
+exp(-tA/2) exp(-tB/2) = diag(exp(ti), 1) (and the same for any orthonormal
+pure triple with v w = u); conversely every even product of unit vectors is
+diag(p, q) with |p| = |q| = 1.
 """
 
 import numpy as np
@@ -238,3 +249,59 @@ g8m = np.block([[L(-P), Z4], [Z4, L(-R)]])
 print("(-p, -q): same action on vectors, flips the spinor:",
       np.allclose(g8m @ gamma(X) @ np.linalg.inv(g8m), gamma(P @ X @ R.conj().T)) and
       np.allclose(g8m @ psi, -(g8 @ psi)))
+
+# --- additions for the revised proofs ---------------------------------------
+
+# the 16 L_u R_v are Frobenius-orthogonal, hence linearly independent
+LRs = [L(u) @ Rr(v) for u in basis for v in basis]
+print("tr((L_u R_v)^T L_u' R_v') = 4 delta delta:",
+      all(abs(np.trace(a.T @ b) - (4 if m == n else 0)) < 1e-9
+          for m, a in enumerate(LRs) for n, b in enumerate(LRs)))
+
+# (p, q) -> rho_{p,q}, rho_{p,q}(x) = p x q^{-1}, is a group homomorphism
+def rho(p, q):
+    return L(p) @ Rr(q.conj().T)
+def rand_unit_quat():
+    c = rng.standard_normal(4)
+    return Q(*(c / np.sqrt(np.sum(c**2))))
+P2, R2 = rand_unit_quat(), rand_unit_quat()
+print("rho_{p,q} rho_{p',q'} = rho_{pp', qq'}:",
+      np.allclose(rho(P, R) @ rho(P2, R2), rho(P @ P2, R @ R2)))
+
+# exp(t gamma(u)gamma(v)) = gamma(u) gamma(cos t u + sin t v): a product of two
+# unit vectors, which bridges "exponential of a bivector" and "even product"
+t = 0.7
+print("exp(t gamma(u)gamma(v)) = gamma(u) gamma(cos t u + sin t v):",
+      np.allclose(expm(t * gammas[0] @ gammas[1]),
+                  gammas[0] @ gamma(np.cos(t)*basis[0] + np.sin(t)*basis[1])))
+
+# A = gamma(1)gamma(i), B = gamma(j)gamma(k) split the two diagonal slots
+A8, B8 = gammas[0] @ gammas[1], gammas[2] @ gammas[3]
+diag_i0 = np.block([[L(qi), Z4], [Z4, Z4]])
+diag_0i = np.block([[Z4, Z4], [Z4, L(qi)]])
+print("A^2 = B^2 = -I and AB = BA:",
+      np.allclose(A8 @ A8, -I8) and np.allclose(B8 @ B8, -I8)
+      and np.allclose(A8 @ B8, B8 @ A8))
+print("diag(i,0) = -(A+B)/2, diag(0,i) = (A-B)/2:",
+      np.allclose(diag_i0, -(A8 + B8)/2) and np.allclose(diag_0i, (A8 - B8)/2))
+print("exp(t diag(i,0)) = exp(-tA/2) exp(-tB/2) = diag(exp(ti), 1):",
+      np.allclose(expm(t*diag_i0), expm(-t*A8/2) @ expm(-t*B8/2))
+      and np.allclose(expm(t*diag_i0),
+                      np.block([[L(Q(np.cos(t), np.sin(t), 0, 0)), Z4], [Z4, I4]])))
+
+# the same construction for any orthonormal pure triple with v w = u
+print("diag(u,0) = -(gamma(1)gamma(u) + gamma(v)gamma(w))/2 for v w = u:",
+      all(np.allclose(-(gammas[0] @ gamma(u) + gamma(v) @ gamma(w))/2,
+                      np.block([[L(u), Z4], [Z4, Z4]]))
+          for u, v, w in ((qi, qj, qk), (qj, qk, qi), (qk, qi, qj))))
+
+# conversely, an even product of unit vectors is diag(p, q) with |p| = |q| = 1
+ok = True
+for _ in range(20):
+    m = I8
+    for _ in range(2 * rng.integers(1, 4)):
+        m = m @ gamma(rand_unit_quat())
+    ok = ok and np.allclose(m[:4, 4:], 0) and np.allclose(m[4:, :4], 0)
+    ok = ok and abs(np.linalg.norm(m[:4, 0]) - 1) < 1e-9
+    ok = ok and abs(np.linalg.norm(m[4:, 4]) - 1) < 1e-9
+print("even products of unit vectors are diag(p, q) with |p| = |q| = 1:", ok)

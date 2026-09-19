@@ -23,7 +23,9 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
      r_L = c - T(B^dagger);
    - proof lemmas: T(e1 v) = q pairs vectors with quaternions, and
      e1 x e1 = x^dagger on the even subalgebra (conjugation by e1 is
-     the omega-conjugation).
+     the omega-conjugation);
+   - composition: G(r) = (T(r), T(r^dagger)) = (r_R, r_L^-1) multiplies
+     componentwise, so a product rs has left/right rotors (s_L r_L, r_R s_R).
 6. The L/R multiplication matrices: L_u R_v (16 products) span M4(R);
    e1 = L_iR_i, e2 = L_jR_i, e3 = L_kR_i, e4 = R_j generate Cl_{3,1}
    (squares +,+,+,-, pairwise anticommuting); omega = e1e2e3e4 = -R_k;
@@ -254,6 +256,21 @@ for _ in range(20):
     assert qeq(T(mul(E(1), vec(v))), tuple(v))
     x = {b: random.uniform(-1, 1) for b in even_basis}
     assert eq(mul(mul(E(1), x), E(1)), dagger(x))
+
+# composition: G(r) = (T(r), T(r^dagger)) = (r_R, r_L^-1) multiplies
+# componentwise, so the left/right rotors of a product rs are (s_L r_L, r_R s_R)
+
+def rotor_lr(r):  # (r_L, r_R) for a unit rotor r
+    return qconj(T(dagger(r))), T(r)
+
+for _ in range(50):
+    r = mul(vec(rand_unit()), vec(rand_unit()))
+    s = mul(vec(rand_unit()), vec(rand_unit()))
+    rL, rR = rotor_lr(r)
+    sL, sR = rotor_lr(s)
+    rsL, rsR = rotor_lr(mul(r, s))
+    assert qeq(rsL, qmul(sL, rL))
+    assert qeq(rsR, qmul(rR, sR))
 
 # --- check 6: L/R matrices, M4(R), and the Cl_{3,1} generators --------------
 
