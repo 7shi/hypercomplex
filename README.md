@@ -28,3 +28,25 @@
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
 - usage.jsonl — LLMのトークン使用量（[llm7shi](https://github.com/7shi/llm7shi)の`usage`コマンドで記録・集計）の記録。
+
+## 公開済み記事の修正手順
+
+公開済みの記事を修正して Mathlog と同期する手順です。Mathlog には記事本文を外部から更新する API がないため、Mathlog 側への反映はブラウザ上で行います。
+
+### 1. 本文のみの修正（誤字脱字・数式・説明など）
+
+1. **ローカルの編集**: 対象の Markdown ファイル（例: `clif/01-representation.md`）を修正します。
+2. **Mathlog URL の確認**: `uv run reftools show` を実行して対応する URL を確認します。
+   ```bash
+   uv run reftools show clif/01-representation.md
+   ```
+   出力の先頭に `url: https://mathlog.info/articles/...` が表示されます（[articles.tsv](articles.tsv) を直接参照しても構いません）。
+3. **Mathlog 側の更新**: ブラウザで記事の編集画面を開き、修正内容を手動で反映・保存します。
+   - ※ Mathlog のエディタへのコピペは、Visual Studio Code から行うと改行が崩れません。
+
+### 2. 参考文献（slug）の変更を伴う修正
+
+参考文献ラベル（slug）の改名・重複統一や書誌情報の変更を行う場合は、`refs/*.html` / `refs/*.toml` の同期や整合性検証が必要になります。
+
+- まとめて修正する場合は、作業指示ファイル `mathlog_fix.md` を作成して [src/mathlog_fix.sh](src/mathlog_fix.sh) を利用します。
+- 詳細な運用ルールや各ツールの仕様は [SLUG.md](SLUG.md) を参照してください。
