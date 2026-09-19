@@ -21,12 +21,17 @@ REF_HEADER = "以下は参照用の関連記事です。レビュー対象では
 TARGET_HEADER = "ここからが今回のレビュー対象の記事です。上記の参照用記事ではなく、この記事についてレビューしてください。"
 
 
-def review_file(client: Client, text: str, prompt: str, refs: list[str]):
+def wrap_file(path: Path) -> str:
+    text = path.read_text().strip()
+    return f'<file name="{path.name}">\n{text}\n</file>'
+
+
+def review_file(client: Client, path: Path, prompt: str, refs: list[Path]):
     contents = []
     if refs:
-        contents += [REF_HEADER, *refs]
+        contents += [REF_HEADER, *(wrap_file(ref_path) for ref_path in refs)]
         contents += [TARGET_HEADER]
-    contents += [text, COMMON, prompt]
+    contents += [wrap_file(path), COMMON, prompt]
     response = client(contents)
     if response.usage:
         print(f"\n{response.usage}")
@@ -64,8 +69,6 @@ def main() -> int:
             parser.error(f"{args.prompt}: 見つかりません")
         prompt = args.prompt.read_text().strip()
 
-    refs = [path.read_text() for path in args.ref]
-
     client = Client(model=args.model, show_params=False, keep_history=False)
 
     usages = []
@@ -75,7 +78,7 @@ def main() -> int:
         print(f"{path}: レビュー中")
         print("=" * 40)
         print()
-        result, usage = review_file(client, path.read_text(), prompt, refs)
+        result, usage = review_file(client, path, prompt, args.ref)
         if usage:
             usages.append(usage)
 
