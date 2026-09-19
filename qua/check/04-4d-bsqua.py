@@ -36,16 +36,18 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
    (j,k) planes both by a (isoclinic), right multiplication by exp(b i)
    rotates (1,i) by b and (j,k) by -b, so exp(a i) q exp(b i) rotates (1,i)
    by a+b and (j,k) by a-b; omega swaps paired bivectors, so the
-   sums/differences e1e2 +- e4e3 are invariant/sign-flipped
-   (self-dual/anti-self-dual); the normal-form rotation with angles (t1, t2)
+   sums/differences e1e2 +- e4e3 are invariant/sign-flipped (with the usual
+   Hodge dual *B = -omega B, invariant = anti-self-dual, sign-flipped =
+   self-dual); the normal-form rotation with angles (t1, t2)
    in the e1e2/e4e3 planes rotates e1 -> e2 by t1 and e4 -> e3 by t2 and
    equals exp((t1-t2)/2 i) q exp((t1+t2)/2 i); replacing t1 by t1 + 2 pi
    keeps the rotation but flips both r_L and r_R (double cover); and for a
    general bivector B, exp(-B) v exp(B) matches r_L q r_R with
    r_R = exp(T(B)), r_L = exp(-T(B^dagger)).
 9. L_p R_{q*} for unit quaternions p, q is an SO(4) matrix (orthogonal,
-   determinant 1), and (p, q), (-p, -q) give the same matrix: the tensor
-   product SU(2) (x) SU(2) = SO(4) collapses the sign of the pair.
+   determinant 1), and (p, q), (-p, -q) give the same matrix: the image of
+   the tensor product map collapses the sign of the pair, giving
+   SO(4) = (SU(2) x SU(2)) / {(1,1), (-1,-1)}.
    L_p R_{p*} = I only for p = +-1, so the kernel of the 2-to-1 map
    (r_L, r_R) -> L_{r_L} R_{r_R} is {+-(1,1)}.
 10. The even-subalgebra ladder: in Cl_{3,0} and Cl_{0,3}, e1e3 and e2e3
@@ -65,7 +67,7 @@ Verifies the split-biquaternion correspondence for 4D quaternion rotation:
     omega and omega b = m^ w^ (the second plane oriented uw -> w);
     exp(a u) w = cos a w + sin a uw and (uw) exp(c u) = cos c uw + sin c w;
     a general exponent B collapses as (1-omega)B = (1-omega)bL and
-    (1+omega)B = (1+omega)bR where bL, bR carry the q_L, q_R components,
+    (1+omega)B = (1+omega)bR where bL, bR carry the U_L, U_R components,
     exp(B) factors into the two isoclinic rotors, and the rotation acts as
     the left/right multiplications by exp of those components.
 """
@@ -309,7 +311,7 @@ assert eq(mul(mul(u123[0], u123[1]), u123[2]), smul(-1, OMEGA))
 for u, q in zip(u123, (I, J, K)):    # omega*i = e1e2 = u1 etc. (grade 1)
     assert eq(mul(OMEGA, q), u)
 
-# --- check 8: double rotations and the self-dual decomposition ---------------
+# --- check 8: double rotations and the (anti-)self-dual decomposition --------
 
 # omega swaps paired bivectors: e1e2 +- e4e3 are invariant / sign-flipped
 E43 = {(3, 4): -1}  # e4e3
