@@ -3,12 +3,12 @@
 Markdown記事をLLMにレビューさせ、結果を同名の`.txt`ファイルに保存するツールです。
 
 ```bash
-uv run review <file.md>... -m MODEL [-p PROMPT.txt] [-r REF.md]...
+uv run review <file.md> -m MODEL [-p PROMPT.txt] [-r REF.md]...
 ```
 
 | 引数 | 説明 | デフォルト |
 |---|---|---|
-| `files` | レビュー対象の`.md`ファイル（複数指定可） | 必須 |
+| `file` | レビュー対象の`.md`ファイル | 必須 |
 | `-m`, `--model` | ベンダープレフィックス付きのモデル名（例: `openai:gpt-4.1-mini`） | 必須 |
 | `-p`, `--prompt` | レビュー観点を記述したプロンプトファイル | 組み込みの汎用プロンプト |
 | `-r`, `--ref` | 参照用の`.md`ファイル（複数指定可） | なし |
@@ -19,6 +19,6 @@ uv run review <file.md>... -m MODEL [-p PROMPT.txt] [-r REF.md]...
 
 `-p`を省略すると、[PROMPT.txt](PROMPT.txt)の汎用プロンプト（数式の正しさ・分かりやすさ・用語や記法の一貫性・日本語表現を確認）を使います。ディレクトリごとの編集方針（構成上の位置づけ、記法の使い分けなど）を踏まえたレビューをさせたい場合は、そのディレクトリに`PROMPT.txt`のようなプロンプトファイルを用意し`-p`で指定します（例: [lebesgue/PROMPT.txt](../../lebesgue/PROMPT.txt)）。
 
-複数ファイルを指定した場合は1ファイルずつ処理し、結果は各ファイルと同じ場所に`<stem>.txt`として保存されます。
+結果は指定したファイルと同じ場所に`<stem>.txt`として保存されます。
 
-実行の最後には全ファイルの合計トークン使用量をリポジトリ直下の`usage.jsonl`に追記します（詳細は[usage/README.md](../usage/README.md)参照）。
+実行の最後にはトークン使用量をリポジトリ直下の`usage.jsonl`に追記します（詳細は[usage/README.md](../usage/README.md)参照）。

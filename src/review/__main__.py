@@ -1,6 +1,6 @@
 """Markdown記事をLLMにレビューさせるツールのエントリポイント。詳細はREADME.mdを参照。
 
-指定された.mdファイルはそれぞれ全文がレビュープロンプトとともにモデルへ送られ、
+指定された.mdファイルの全文がレビュープロンプトとともにモデルへ送られ、
 結果は同じstemで拡張子を.txtに変えたファイルに書き出されます
 （例: hopf/01.md -> hopf/01.txt）。
 """
@@ -48,7 +48,7 @@ def review_file(client: Client, path: Path, prompt: str, refs: list[Path]):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.strip())
-    parser.add_argument("files", nargs="+", type=Path, help="レビュー対象の.mdファイル（複数指定可）")
+    parser.add_argument("file", type=Path, help="レビュー対象の.mdファイル")
     parser.add_argument("-m", "--model", required=True,
                         help="ベンダープレフィックス付きのモデル名（例: openai:gpt-4.1-mini）")
     parser.add_argument("-p", "--prompt", type=Path,
@@ -59,11 +59,10 @@ def main() -> int:
                              "（レビュー対象には含めない、複数指定可）")
     args = parser.parse_args()
 
-    for path in args.files:
-        if path.suffix != ".md":
-            parser.error(f"{path}: .mdファイルではありません")
-        if not path.exists():
-            parser.error(f"{path}: 見つかりません")
+    if args.file.suffix != ".md":
+        parser.error(f"{args.file}: .mdファイルではありません")
+    if not args.file.exists():
+        parser.error(f"{args.file}: 見つかりません")
 
     for path in args.ref:
         if path.suffix not in (".md", ".txt"):
@@ -79,26 +78,15 @@ def main() -> int:
 
     client = Client(model=args.model, show_params=False, keep_history=False)
 
-    usages = []
-    for path in args.files:
-        print()
-        print("=" * 40)
-        print(f"{path}: レビュー中")
-        print("=" * 40)
-        print()
-        result, usage = review_file(client, path, prompt, args.ref)
-        if usage:
-            usages.append(usage)
+    result, usage = review_file(client, args.file, prompt, args.ref)
 
-        out_path = path.with_suffix(".txt")
-        out_path.write_text(result + "\n")
-        print(f"-> {out_path}")
+    out_path = args.file.with_suffix(".txt")
+    out_path.write_text(result + "\n")
+    print(f"-> {out_path}")
 
-    if usages:
-        total_usage = sum(usages)
-        print(f"\n--- Total Usage ---\n{total_usage}")
+    if usage:
         usage_path = find_usage_file()
-        append_usage(total_usage, args.model, usage_path)
+        append_usage(usage, args.model, usage_path)
         print(f"-> {usage_path}")
     return 0
 
