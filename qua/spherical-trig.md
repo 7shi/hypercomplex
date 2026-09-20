@@ -274,7 +274,7 @@ $$
 \end{aligned}
 $$
 
-平面三角形では内角の和が$\alpha+\beta+\gamma = \pi$となることを利用します。$\varepsilon$について1次の項まで残します。
+ここで$\alpha,\beta,\gamma$は平面極限での内角です。縮小した球面三角形の内角はこれと$O(\varepsilon^2)$だけ異なりますが（球面過剰は三角形の面積に比例します）、1次までの計算には影響しません。平面三角形では内角の和が$\alpha+\beta+\gamma = \pi$となることを利用します。$\varepsilon$について1次の項まで残します。
 
 $$
 \begin{aligned}

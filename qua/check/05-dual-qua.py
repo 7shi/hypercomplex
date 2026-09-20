@@ -233,6 +233,23 @@ for _ in range(50):
     comp = motion(qmul(r2, r), qadd(t2, qmul(qmul(r2, t), qconj(r2))))
     assert deq(dmul(s2, s), comp)
 
+# every unit dual quaternion decomposes as (1 + eps t/2) r with r = p, t = 2 q bar(p)
+for _ in range(50):
+    p_ = rand_rotor()
+    q0 = (random.gauss(0, 1), random.gauss(0, 1), random.gauss(0, 1), random.gauss(0, 1))
+    q_ = qadd(q0, qsmul(-qdot(q0, p_), p_))  # make <p, q> = 0
+    s = (p_, q_)
+    assert deq(dmul(s, dbar(s)), D1)  # unit
+    t = qsmul(2, qmul(q_, qconj(p_)))
+    assert abs(t[0]) < 1e-9  # t is pure
+    assert deq(motion(p_, t), s)
+
+# the kernel of the action is exactly {+-1}
+for _ in range(50):
+    x = rand_vec()
+    for r in (Q1, qsmul(-1, Q1)):
+        assert deq(act(motion(r, Q0), x), point(x))
+
 # --- check 5: rotations become translations in the tangent plane -------------
 
 def tpoint(x):  # i + eps x with x in span(j, k)
