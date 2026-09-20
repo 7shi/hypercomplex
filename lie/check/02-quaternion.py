@@ -4,7 +4,9 @@ Quaternion multiplication table and 2x2 complex matrix representation;
 Sylvester conditions (traceless, det 1, mutually anticommuting); the
 quaternion form of Euler's formula; a counterexample to the exponential
 law; the bracket/cross-product relation [p,q]=2(p x q); the SU(2)
-condition and the general form of su(2), i(x*s1+y*s2+z*s3); rotation
+condition and the general form of su(2), i(x*s1+y*s2+z*s3); the
+non-injectivity of exp, which is why the SU(2) conditions are imposed
+on the curve exp(tA) rather than at the single point exp(A); rotation
 and double cover via the conjugation action; and the matching structure
 constants of su(2) and so(3).
 """
@@ -134,3 +136,16 @@ print("exp(i theta/2) gives rotation exp(theta Jx):", np.allclose(Rot, expm(thet
 # det exp(A) = exp(tr A)
 A = Q(0, *rng.standard_normal(3))
 print("det exp(A) = exp(tr A) = 1 for traceless A:", np.isclose(np.linalg.det(expm(A)).real, 1))
+
+# exp is not injective: conditions must be imposed on the curve exp(tA), not at one point
+B = np.diag([2j*np.pi, 0])
+print("exp(diag(2 pi i, 0)) = I in SU(2) while tr != 0:",
+      np.allclose(expm(B), I2) and not np.isclose(np.trace(B), 0))
+P = np.array([[1, 1], [0, 1]], dtype=complex)
+C = P @ np.diag([2j*np.pi, -2j*np.pi]) @ np.linalg.inv(P)
+print("exp(C) = I so exp(C^dag) = exp(-C) while C^dag != -C:",
+      np.allclose(expm(C), I2) and np.allclose(expm(C.conj().T), expm(-C))
+      and not np.allclose(C.conj().T, -C))
+ts = rng.standard_normal(5)
+print("the curve condition excludes them: det exp(tB) != 1 for generic t:",
+      all(not np.isclose(np.linalg.det(expm(t*B)), 1) for t in ts))

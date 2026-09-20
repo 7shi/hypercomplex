@@ -9,7 +9,13 @@ the explicit rotation-matrix product's (1,2),(2,1) entries -> -e^2, e^2;
 exp(i)exp(j) having a nonzero k-component while exp(i+j) has none,
 so exp(i)exp(j) != exp(i+j); the exact quaternion composition
 exp(ua)exp(vb) = exp(wc) with cos c = cos a cos b - (u.v) sin a sin b,
-matching exp(i)exp(j) at u=i, v=j, a=b=1, reproducing exp(i pi/2)
+matching exp(i)exp(j) at u=i, v=j, a=b=1, the extraction c =
+atan2(|V|, a) in (0, pi) and w = V/|V| with the exponent z = (c/sin c)V
+differing from the imaginary part V at 3rd order, the S^3 triangle with
+vertices 1, exp(ua), exp(ua)exp(vb) whose sides are a, b, c and whose
+interior angle at exp(ua) is pi - phi, matching the spherical law of
+cosines,
+reproducing exp(i pi/2)
 exp(j pi/2) = k, and its 2nd-order term ab(u x v) = [ua, vb]/2; the
 Jacobi identity and its Leibniz form for random matrices; the adjoint
 action Ad_g x = gxg^{-1} staying in su(3) and preserving brackets;
@@ -137,6 +143,41 @@ print("general formula at u=i,v=j,a=b=1 matches direct exp(i)exp(j):",
       np.isclose(cosc_ij, prod_ij[0]) and np.allclose(imag_ij, prod_ij[1:]))
 print("product = exp(wc) with w = imag/|imag|:",
       np.allclose(prod, qexp(imag/np.linalg.norm(imag), c)))
+
+# extracting angle and direction: c = atan2(|V|, real part) in (0, pi), w = V/|V|
+V = prod[1:]
+c_atan2 = np.arctan2(np.linalg.norm(V), prod[0])
+print("c = atan2(|V|, a) in (0, pi) agrees with arccos:",
+      np.isclose(c_atan2, c) and 0 < c_atan2 < np.pi)
+
+# the exponent z = w c equals (c/sin c) V, differing from V at 3rd order
+z_arg = (c/np.sin(c)) * V
+print("z = (c/sin c) V and exp(z) = product:",
+      np.allclose(z_arg, c*V/np.linalg.norm(V))
+      and np.allclose(qexp(z_arg/np.linalg.norm(z_arg), np.linalg.norm(z_arg)), prod))
+ts = np.array([0.1, 0.05, 0.025])
+diffs = []
+for t in ts:
+    p = qmul(qexp(u, a*t), qexp(v, b*t))
+    g = np.arctan2(np.linalg.norm(p[1:]), p[0])
+    diffs.append(np.linalg.norm((g/np.sin(g) - 1) * p[1:]))
+diffs = np.array(diffs)
+print("z - V is O(t^3):", np.allclose(diffs[:-1]/diffs[1:], 8, rtol=0.2))
+
+# spherical triangle on S^3 with vertices 1, exp(ua), exp(ua)exp(vb):
+# its sides are a, b, c and the interior angle at exp(ua) is pi - phi, phi = angle(u, v)
+phi = np.arccos(u @ v)
+p = qexp(u, a)
+def s3dist(x, y):
+    return np.arccos(np.clip(x @ y, -1, 1))
+print("sides of the S^3 triangle are a, b, c:",
+      np.isclose(s3dist(np.array([1., 0, 0, 0]), p), a)
+      and np.isclose(s3dist(p, prod), b)
+      and np.isclose(s3dist(np.array([1., 0, 0, 0]), prod), c))
+print("interior angle at exp(ua) is pi - phi (angle between -u and v):",
+      np.isclose(np.arccos((-u) @ v), np.pi - phi))
+print("cos a' = cos b' cos c' + sin b' sin c' cos A with a'=c, b'=a, c'=b, A=pi-phi:",
+      np.isclose(np.cos(c), np.cos(a)*np.cos(b) + np.sin(a)*np.sin(b)*np.cos(np.pi - phi)))
 
 # the example: exp(i pi/2) exp(j pi/2) = k = exp(k pi/2)
 print("exp(i pi/2)exp(j pi/2) = k:",
