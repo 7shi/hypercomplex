@@ -6,13 +6,19 @@ the so(2) generator; the upper-left block embedding of the Pauli
 matrices; i*lambda_{2,5,7} matching +-J (so(3) subset su(3)); closure
 of the bracket product; exp landing in SU(3)/SO(3); (i*l1)^2 != -I and
 exp(i*theta*l1) not expressible as a real linear combination of
-{I, i*la} (contrast with the SU(2) degeneracy); the Pauli
+{I, i*la} (contrast with the SU(2) degeneracy) while Cayley-Hamilton
+still keeps it a quadratic polynomial in l1; the Pauli
 representation of quaternions q = aI + b(i*s3) + c(i*s2) + d(i*s1);
 the failure of the Clifford relations for the Gell-Mann matrices
 (l1^2 != I, {l1,l4} = l6); the C^3 spinor outer product
 ww^dagger = I/3 + n_a*la/2 with constant |n|^2 = 4/3; the structure
-constants f_abc and their total antisymmetry; [l3,l8]=0; the three
-su(2) triples (I-, V-, U-spin); the block embeddings SO(2) subset
+constants f_abc and their total antisymmetry, with the normalization
+dependence ([E_a,E_b] = -2 f E_c for E_a = i*la, [T_a,T_b] = f T_c for
+T_a = -i*la/2) and the bracket [i*l3, i*l2] = 2i*l1 producing the third
+generator; [l3,l8]=0; the three su(2) triples (I-, V-, U-spin) whose
+diagonal directions H12, H13, H23 satisfy H13 = H12 + H23 yet span
+three distinct lines, and V = exp(2pi i H23/3) showing that the l8 in
+its generator is an artifact of the standard basis; the block embeddings SO(2) subset
 SO(3) and U(1) subset SU(2) subset SU(3); the conjugation action
 preserving su(3) and giving an 8-dimensional rotation; the clock and
 shift matrices generating M_3(C) as a generalized Clifford algebra
@@ -125,6 +131,11 @@ print("SU(2): exp(x) in real span of {I, i sigma_a}:",
       np.isclose(span_residual(expm(x2), [I2, 1j*s1, 1j*s2, 1j*s3]), 0))
 print("SU(3): exp(i theta l1) NOT in real span of {I, i la}:",
       span_residual(expm(1j*theta*l1), [I3] + [1j*m for m in lam]) > 0.1)
+# ... but Cayley-Hamilton keeps exp a quadratic polynomial (no infinite series needed)
+print("l1^3 = l1, exp(i theta l1) = I + i sin(theta) l1 + (cos(theta)-1) l1^2:",
+      np.allclose(l1 @ l1 @ l1, l1)
+      and np.allclose(expm(1j*theta*l1),
+                      I3 + 1j*np.sin(theta)*l1 + (np.cos(theta)-1)*(l1 @ l1)))
 
 # quaternion representation via Pauli matrices: q = aI + b(i s3) + c(i s2) + d(i s1)
 def qrep(a, b, c, d):
@@ -334,3 +345,33 @@ Ar = np.stack([np.concatenate([B_.real.ravel(), B_.imag.ravel()]) for B_ in rest
 print("restriction to psi^perp: anti-Hermitian traceless on C^3, rank 8 -> su(3):",
       all(np.allclose(B_.conj().T, -B_) and np.isclose(np.trace(B_), 0) for B_ in restr)
       and np.linalg.matrix_rank(Ar) == 8)
+
+# structure constants depend on the normalization of the basis
+f = np.zeros((8, 8, 8))
+for a in range(8):
+    for b in range(8):
+        for c in range(8):
+            f[a, b, c] = (np.trace(comm(lam[a], lam[b]) @ lam[c]) / (4j)).real
+E = [1j*m for m in lam]           # basis used in the article
+T = [-0.5j*m for m in lam]        # basis with f_abc as structure constants
+print("[E_a,E_b] = -2 f_abc E_c:",
+      all(np.allclose(comm(E[a], E[b]), -2*sum(f[a, b, c]*E[c] for c in range(8)))
+          for a in range(8) for b in range(8)))
+print("[T_a,T_b] = f_abc T_c:",
+      all(np.allclose(comm(T[a], T[b]), sum(f[a, b, c]*T[c] for c in range(8)))
+          for a in range(8) for b in range(8)))
+print("[i l3, i l2] = 2 i l1 (bracket gives the third generator):",
+      np.allclose(comm(1j*l3, 1j*l2), 2j*l1))
+
+# the three su(2) diagonal directions: one linear relation, pairwise trivial overlap
+H12, H13, H23 = np.diag([1, -1, 0]), np.diag([1, 0, -1]), np.diag([0, 1, -1])
+print("H13 = H12 + H23, but the three directions are distinct lines:",
+      np.allclose(H13, H12 + H23)
+      and all(np.linalg.matrix_rank(np.column_stack([np.diag(A), np.diag(B_)])) == 2
+              for A, B_ in ((H12, H13), (H12, H23), (H13, H23))))
+print("H13 = (l3 + sqrt3 l8)/2, H23 = (-l3 + sqrt3 l8)/2:",
+      np.allclose(H13, (l3 + np.sqrt(3)*l8)/2) and np.allclose(H23, (-l3 + np.sqrt(3)*l8)/2))
+
+# V is basis-dependent: a single 2-3 block generator suffices
+print("V = exp(2 pi i H23 / 3) (no l8 needed in this basis):",
+      np.allclose(expm(2j*np.pi*H23.astype(complex)/3), Vc))
