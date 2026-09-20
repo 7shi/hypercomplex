@@ -2,6 +2,8 @@
 
 &&& 凡例
 $\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記し（例：$\mathbb C(2) \cong M_2(\mathbb C)$）、代数$A$の$n$個の直和を$nA$と略記します。
+
+テンソル積は係数体によって結果が変わるため、本記事では体を明示します。複素化と双四元数では実数上の$\otimes_{\mathbb R}$、一般化クリフォード代数の拡張では複素数上の$\otimes_{\mathbb C}$を使います。
 &&&
 
 # パウリ行列
@@ -70,7 +72,7 @@ $$
 
 の行列表現そのものです。[[7shi-clif1]]
 
-一方、係数を複素数に広げると、$\sigma_y = i\sigma_x\sigma_z$より$\sigma_y$は$\sigma_x,\sigma_z$の積から作れるため、生成元は$\sigma_x,\sigma_z$の2個で足ります。これは複素クリフォード代数として
+一方、これらの行列の複素係数による積和を考えると、$\sigma_y = i\sigma_x\sigma_z$より$\sigma_y$は$\sigma_x,\sigma_z$の積から作れるため、生成元は$\sigma_x,\sigma_z$の2個で足ります。これは複素クリフォード代数として
 
 $$
 \operatorname{Cl}_2(\mathbb C) \cong \mathbb C(2)
@@ -78,17 +80,29 @@ $$
 
 に対応します。
 
+&&&rem 複素化との違い
+ここで見ているのは「同じ行列たちを複素係数で生成した代数」であって、$\operatorname{Cl}_{3,0}(\mathbb R)$を抽象代数として複素化したものではありません。後者は
+
+$$
+\operatorname{Cl}_{3,0}(\mathbb R) \otimes_{\mathbb R} \mathbb C
+\cong \operatorname{Cl}_3(\mathbb C)
+\cong 2\mathbb C(2)
+$$
+
+であり、$\operatorname{Cl}_2(\mathbb C)$にはなりません。表現の側で$\sigma_y$が$\sigma_x,\sigma_z$の積に潰れる（$\sigma_x\sigma_y\sigma_z=iI$）ため、生成元が1個減っています。
+&&&
+
 ## 双四元数との関係
 
 係数を複素数に広げると生成元2個で足りるという見方は、前々回の分類と対応しています。2個の生成元からなる実クリフォード代数$\operatorname{Cl}_{0,2}(\mathbb R)$は四元数体$\mathbb H$と同型であり、複素クリフォード代数は実クリフォード代数の複素化として得られました。[[7shi-clif1]] これらを合わせると、次の同型が得られます。
 
 $$
 \operatorname{Cl}_2(\mathbb C)
-\cong \mathbb C \otimes \operatorname{Cl}_{0,2}(\mathbb R)
-\cong \mathbb C \otimes \mathbb H
+\cong \mathbb C \otimes_{\mathbb R} \operatorname{Cl}_{0,2}(\mathbb R)
+\cong \mathbb C \otimes_{\mathbb R} \mathbb H
 $$
 
-この$\mathbb C \otimes \mathbb H$は**双四元数 (biquaternion)** と呼ばれます。[[7shi-bq]] 複素数と四元数の虚数単位を区別するため、複素数の虚数単位を$h$と書き、テンソル積の記号は省略します。$h$は係数側の元なので四元数の$i,j,k$と可換で、$h^2=-1$を満たします。一般の双四元数は実8次元の元
+この$\mathbb C \otimes_{\mathbb R} \mathbb H$は**双四元数 (biquaternion)** と呼ばれます。[[7shi-bq]] 複素数と四元数の虚数単位を区別するため、複素数の虚数単位を$h$と書き、テンソル積の記号は省略します。$h$は係数側の元なので四元数の$i,j,k$と可換で、$h^2=-1$を満たします。一般の双四元数は実8次元の元
 
 $$
 a_0+a_1h+a_2i+a_3hi+a_4j+a_5hj+a_6k+a_7hk
@@ -107,16 +121,18 @@ $hj,hk$も同様なので、次の対応が得られます。
 
 &&&fml パウリ行列と双四元数の対応
 $$
-\sigma_x \cong hi, \quad \sigma_y \cong hj, \quad \sigma_z \cong hk
+\sigma_x \leftrightarrow hi, \quad \sigma_y \leftrightarrow hj, \quad \sigma_z \leftrightarrow hk
 $$
+
+（$\leftrightarrow$は同型による元どうしの対応を表します。代数どうしの同型$\cong$と区別します。）
 &&&
 
 冒頭で確認した関係式は、この対応によって成分計算なしに再現できます。
 
 $$
 \begin{aligned}
-\sigma_x\sigma_y &\cong (hi)(hj) = h^2(ij) = -k = h(hk) \cong i\sigma_z \\
-\sigma_x\sigma_y\sigma_z &\cong (hi)(hj)(hk) = h^3(ijk) = (-h)(-1) = h \cong iI
+\sigma_x\sigma_y &\leftrightarrow (hi)(hj) = h^2(ij) = -k = h(hk) \leftrightarrow i\sigma_z \\
+\sigma_x\sigma_y\sigma_z &\leftrightarrow (hi)(hj)(hk) = h^3(ijk) = (-h)(-1) = h \leftrightarrow iI
 \end{aligned}
 $$
 
@@ -126,7 +142,7 @@ $$
 
 ## 四元数との関係
 
-四元数の虚数単位$i,j,k$は、対応$\sigma_x \cong hi,\ \sigma_y \cong hj,\ \sigma_z \cong hk$から$h$を取り除けば得られます。$h^2=-1$より、$-h$を掛ければ$h$が消えます。
+四元数の虚数単位$i,j,k$は、対応$\sigma_x \leftrightarrow hi,\ \sigma_y \leftrightarrow hj,\ \sigma_z \leftrightarrow hk$から$h$を取り除けば得られます。$h^2=-1$より、$-h$を掛ければ$h$が消えます。
 
 $$
 -h(hi) = -h^2i = i, \quad -h(hj) = j, \quad -h(hk) = k
@@ -136,8 +152,10 @@ $$
 
 &&&fml 四元数の行列表現
 $$
-i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
+i \leftrightarrow -i\sigma_x, \quad j \leftrightarrow -i\sigma_y, \quad k \leftrightarrow -i\sigma_z
 $$
+
+左辺の$i,j,k$は四元数の虚数単位、右辺の$-i$の$i$は行列の成分が属する複素数の虚数単位です。
 &&&
 
 行列の側で直接確認すると、2乗は$-I$に反転し
@@ -301,7 +319,7 @@ $$
 となる。
 &&&
 
-さらに一般の単項式$u^av^b$は、位相倍を除いて$X^{a+b}Z^{a+2b}$に一致します。指数の対応$(a,b)\mapsto(a+b,\ a+2b)$は$3$を法として可逆なので、九元数の$9$個の基底は一般化パウリ行列$X^aZ^b$の$9$個と、位相倍を除いて1対1に対応します。すなわち九元数の実体は$\mathbb C(3)$です。
+さらに一般の単項式$u^av^b$は、位相倍を除いて$X^{a+b}Z^{a+2b}$に一致します。指数の対応$(a,b)\mapsto(a+b,\ a+2b)$は$3$を法として可逆なので、九元数の$9$個の基底は一般化パウリ行列$X^aZ^b$の$9$個と、位相倍を除いて1対1に対応します。すなわち九元数を複素係数の代数として見ると、その実体は$\mathbb C(3)$です。
 
 &&&rem
 九元数の記事に現れた「$\rho^2uv$がシフト行列になる」という関係も$\rho^2uv=\rho^2\cdot\omega^{-2}X^2=X^2$と確認できます。$X^2=X^{-1}$は逆向きの巡回シフトで、九元数の記事のシフト行列はこの向きで書かれています。
@@ -309,27 +327,71 @@ $$
 
 四元数がパウリ行列（$\mathbb C(2)$の基底）と結びついたのと同じ形で、九元数は一般化パウリ行列（$\mathbb C(3)$の基底）と結びつきます。
 
+&&&rem 基底の係数体
+$9$個の基底は複素基底であり、$\mathbb C(3)$は実次元では$18$次元です。四元数の実$4$次元と単純に並べられない点に注意してください。$\mathbb C(2)$に行列環として対応するのも、厳密には四元数$\mathbb H$（実$4$次元）そのものではなく双四元数$\mathbb C \otimes_{\mathbb R} \mathbb H$（実$8$次元）でした。
+&&&
+
 # 一般化クリフォード代数
 
 パウリ行列を複素係数で見たとき、生成元$\sigma_x,\sigma_z$は「2乗が$1$」「$-1$倍のねじれで交換」という関係式を満たしました。クロック行列とシフト行列はこれを「$n$乗が$1$」「$\omega$倍のねじれで交換」に置き換えたものです。この関係式を公理として抽象化します。
 
 &&&def 一般化クリフォード代数
-$\omega=e^{2\pi i/n}$とする。$m$個の生成元$e_1,\dots,e_m$が関係式
+$n \ge 2,\ m \ge 0$とし、$\omega=e^{2\pi i/n}$とする。$m$個の文字$e_1,\dots,e_m$が生成する自由結合代数$\mathbb C\langle e_1,\dots,e_m\rangle$を関係式
 
 $$
 e_i^n = 1, \quad e_je_i = \omega e_ie_j \quad (i<j)
 $$
 
-を満たすとき、生成される複素代数を**一般化クリフォード代数**と呼び、$\operatorname{Cl}^{(n)}_m(\mathbb C)$と表記する。[[wiki-gca]]
+で割った商代数
+
+$$
+\operatorname{Cl}^{(n)}_m(\mathbb C)
+:= \mathbb C\langle e_1,\dots,e_m\rangle \big/
+\bigl(e_i^n-1,\ e_je_i-\omega e_ie_j\ (i<j)\bigr)
+$$
+
+を、本記事では**一般化クリフォード代数**と呼ぶ。[[wiki-gca]] 生成元のない$m=0$では$\operatorname{Cl}^{(n)}_0(\mathbb C)=\mathbb C$とする。
 &&&
 
-関係式によって生成元の積は順序を整理できるため、基底は単項式
+&&&rem 関係式を満たす代数との区別
+「一般化クリフォード代数」と呼ばれる代数系は複数あるため、本記事では上の商代数に限定します。
+
+また、「関係式で定義される代数」と「関係式を満たす代数」は区別が必要です。後者は前者の商として現れるため、次元は$n^m$より小さくなりえます。たとえば3個のパウリ行列$\sigma_x,\sigma_y,\sigma_z$は互いに反交換して2乗が$I$なので$n=2,\ m=3$の関係式を満たしますが、これらが複素係数で生成する代数は$\mathbb C(2)$（複素$4$次元）であり、$\operatorname{Cl}^{(2)}_3(\mathbb C)$の複素$8$次元とは一致しません。$\sigma_x\sigma_y\sigma_z=iI$という追加の関係式が入るためです。
+&&&
+
+関係式$e_je_i=\omega e_ie_j$によって生成元の積は添字の昇順に整理でき、$e_i^n=1$によって各指数は$0 \le a_i < n$に落とせます。したがって単項式
 
 $$
 e_1^{a_1}e_2^{a_2}\cdots e_m^{a_m} \quad (0 \le a_i < n)
 $$
 
-の$n^m$個で、次元は$n^m$です。
+の$n^m$個は生成系ですが、これだけでは次元が$n^m$以下と分かるだけです。実際に基底となることを確認します。
+
+&&&lem 単項式の基底
+上の$n^m$個の単項式は$\operatorname{Cl}^{(n)}_m(\mathbb C)$の基底をなし、$\dim\operatorname{Cl}^{(n)}_m(\mathbb C)=n^m$である。
+&&&
+
+&&&prf
+上の順序整理により$\dim \le n^m$である。逆向きの不等号は、関係式を満たす$n^m$次元の代数を実際に構成すれば従う。
+
+$\mathbf a \in (\mathbb Z/n\mathbb Z)^m$で添字付けられた形式的な基底$E_{\mathbf a}$が張る$n^m$次元のベクトル空間に、積
+
+$$
+E_{\mathbf a}E_{\mathbf b}
+= \omega^{\sum_{i<j}a_jb_i}E_{\mathbf a+\mathbf b}
+$$
+
+を定める。指数は$\mathbb Z/n\mathbb Z$の元として定まり（$\omega^n=1$）、$\sigma(\mathbf a,\mathbf b)=\sum_{i<j}a_jb_i$が双線型なので
+
+$$
+\sigma(\mathbf a,\mathbf b)+\sigma(\mathbf a+\mathbf b,\mathbf c)
+= \sigma(\mathbf b,\mathbf c)+\sigma(\mathbf a,\mathbf b+\mathbf c)
+$$
+
+が成り立ち、積は結合的である。$E_{\mathbf 0}$は単位元で、$\mathbf\delta_i$を第$i$成分だけ$1$のベクトルとして$e_i=E_{\mathbf\delta_i}$とおけば、$e_i^n=E_{\mathbf 0}=1$、$i<j$に対して$e_je_i=\omega e_ie_j$（$e_ie_j$には位相が付かない）が確かめられ、$E_{\mathbf a}=e_1^{a_1}\cdots e_m^{a_m}$となる。
+
+よってこの$n^m$次元の代数は関係式を満たし、商代数の普遍性から全射準同型$\operatorname{Cl}^{(n)}_m(\mathbb C) \to$（この代数）が存在するので$\dim \ge n^m$。合わせて$\dim = n^m$であり、生成系である単項式は基底となる。
+&&&
 
 &&&rem $n=2$は複素クリフォード代数
 $n=2$では$\omega=-1$で、関係式は$e_i^2=1$と反交換関係となり、生成元$m$個の複素クリフォード代数に一致します。
@@ -350,7 +412,7 @@ $$
 
 によって$n\mathbb C$へ直和分解されます。
 
-この$m=1$の代数は、$e^n=-1$を満たす生成元による実$n$次元の可換代数**フルーリーの多重複素数**の複素化と同型です。[[wiki-fmc]] 複素係数では$e$を1の$2n$乗根倍で取り直せば$e^n=-1$を$e^n=1$に移せるためです。フルーリーの多重複素数は$n=2$では複素数$\mathbb C$そのもので、$n=3$では三元数（実3次元の多元数）の一例を与えます。複素数を重ねたテンソル積として構成されるセグレの多重複素数[[7shi-qt]]とは別の体系です。
+この$m=1$の代数は、$e^n=-1$を満たす生成元による実$n$次元の可換代数**フルーリーの多重複素数**の複素化と同型です。[[wiki-fmc]] 複素係数では、たとえば$e$を$e^{\pi i/n}e$と取り直せば$e^n=-1$を$e^n=1$に移せるためです。フルーリーの多重複素数は$n=2$では複素数$\mathbb C$そのもので、$n=3$では三元数（実3次元の多元数）の一例を与えます。複素数を重ねたテンソル積として構成されるセグレの多重複素数[[7shi-qt]]とは別の体系です。
 &&&
 
 ## 行列表現
@@ -371,7 +433,7 @@ $n=2$では$\operatorname{Cl}_2(\mathbb C)\cong\mathbb C(2)$（パウリ行列�
 
 # テンソル積による拡張
 
-クリフォード代数では、$\mathbb H,\mathbb H'$とのテンソル積によって生成元を2個ずつ増やせました。[[7shi-qt]] 一般化クリフォード代数でも、生成元を2個増やすことは$\mathbb C(n)$とのテンソル積に対応します。
+クリフォード代数では、$\mathbb H,\mathbb H'$との実数上のテンソル積によって生成元を2個ずつ増やせました。[[7shi-qt]] 一般化クリフォード代数でも、生成元を2個増やすことは$\mathbb C(n)$とのテンソル積に対応します。ただしこちらは複素数上の$\otimes_{\mathbb C}$です。
 
 ## 生成元の構成
 
@@ -384,7 +446,7 @@ $$
 \operatorname{Cl}^{(n)}_m & e_1 & \cdots & e_m
 \end{array} &
 
-\xrightarrow{⊗\,\mathbb C(n)} &
+\xrightarrow{\otimes_{\mathbb C}\,\mathbb C(n)} &
 
 \begin{array}{c|ccccc}
 \operatorname{Cl}^{(n)}_m & e_1 & \cdots & e_m & 1 & 1 \\
@@ -447,31 +509,41 @@ $$
 
 生成元の構成と次元の一致$n^{m+2}=n^m \cdot n^2$から、拡張公式が得られます。
 
-&&&fml 一般化クリフォード代数の$⊗\,\mathbb C(n)$による拡張
+&&&fml 一般化クリフォード代数の$\otimes_{\mathbb C}\,\mathbb C(n)$による拡張
 $$
 \operatorname{Cl}^{(n)}_{m+2}(\mathbb C)
-\cong \operatorname{Cl}^{(n)}_m(\mathbb C) \otimes \mathbb C(n)
+\cong \operatorname{Cl}^{(n)}_m(\mathbb C) \otimes_{\mathbb C} \mathbb C(n)
 $$
 &&&
 
-$\operatorname{Cl}^{(n)}_2(\mathbb C)\cong\mathbb C(n)$を出発点として公式を繰り返し適用すれば、行列環とのテンソル積の規則$\mathbb F(m) \otimes \mathbb F(n) \cong (\mathbb F \otimes \mathbb F)(mn)$より[[7shi-clif1]]、生成元が偶数個の場合の分類が完成します。
+$\operatorname{Cl}^{(n)}_2(\mathbb C)\cong\mathbb C(n)$を出発点として公式を繰り返し適用すれば、複素数上の行列環のテンソル積（クロネッカー積）の規則
+
+$$
+\mathbb C(r) \otimes_{\mathbb C} \mathbb C(s) \cong \mathbb C(rs)
+$$
+
+より、生成元が偶数個の場合の分類が完成します。
 
 &&&thm 偶数個の生成元の行列表現
 $$
 \operatorname{Cl}^{(n)}_{2k}(\mathbb C)
-\cong \mathbb C(n)^{\otimes k}
+\cong \mathbb C(n)^{\otimes_{\mathbb C} k}
 \cong \mathbb C(n^k)
 $$
 &&&
 
-クリフォード代数では基底（生成元）を任意に増やせて、その行列表現は$\mathbb H,\mathbb H'$とのテンソル積で作れました。一般化クリフォード代数でも同じことが起きています。生成元を増やすことは、行列表現のレベルではクロネッカー積で実現され、代数のレベルでは$\mathbb C(n)$とのテンソル積による拡張になっています。
+&&&rem 実数上との違い
+同じ行列環でも実数上のテンソル積では$\mathbb C(r) \otimes_{\mathbb R} \mathbb C(s) \cong 2\,\mathbb C(rs)$となり、直和型が現れて上の分類にはなりません（$\mathbb C \otimes_{\mathbb R} \mathbb C \cong 2\mathbb C$のため）。実クリフォード代数の分類で使った計算規則[[7shi-clif1]]をそのまま持ち込まないよう、係数体に注意が必要です。
+&&&
+
+クリフォード代数では生成元を任意に増やせて、その行列表現は$\mathbb H,\mathbb H'$とのテンソル積で作れました。一般化クリフォード代数でも同じことが起きています。生成元を増やすことは、行列表現のレベルではクロネッカー積で実現され、代数のレベルでは$\mathbb C(n)$とのテンソル積による拡張になっています。
 
 ## 複素クリフォード代数との対応
 
 $n=2$では拡張公式は
 
 $$
-\operatorname{Cl}_{m+2}(\mathbb C) \cong \operatorname{Cl}_m(\mathbb C) \otimes \mathbb C(2)
+\operatorname{Cl}_{m+2}(\mathbb C) \cong \operatorname{Cl}_m(\mathbb C) \otimes_{\mathbb C} \mathbb C(2)
 $$
 
 となり、クリフォード代数の分類で確認した複素の2周期性に一致します。[[7shi-clif1]] このとき生成元の構成を$k=3$（生成元6個）まで繰り返すと、次の形になります（$c=-i$とした場合）。
@@ -490,7 +562,7 @@ $$
 各生成元はパウリ行列1個と、それに続く$\sigma_z$の列（しっぽ）から成ります。
 
 &&&rem
-この形の生成元の構成は、ヨルダン＝ウィグナー変換として知られるものと（しっぽの向きを除いて）同じです。一般の$n$での構成は、その$\omega$版への一般化に相当します。
+この形の生成元の構成は、ヨルダン＝ウィグナー変換として知られるものと、しっぽの向きと最初のテンソル因子におけるパウリ行列の取り方（基底変換）を除いて同じです。上の例では最初の組が$(\sigma_x,\sigma_z)$、後続の組が$(\sigma_x,-\sigma_y)$となっていますが、これは出発点の$\operatorname{Cl}^{(n)}_2(\mathbb C)$の生成元を$(X,Z)$に取ったためで、最初から$(X,cXZ)$を出発点にすれば全組をそろえられます。一般の$n$での構成は、その$\omega$版への一般化に相当します。
 &&&
 
 ## 奇数個の生成元
@@ -503,7 +575,7 @@ $$
 d_i = \sum_{j>i}c_j - \sum_{j<i}c_j
 $$
 
-となります。生成元をすべて掛けた積$e_1e_2\cdots e_m$では$d_i=m+1-2i$です。$n=2$なら$m$が奇数のとき$d_i$は常に偶数となって中心に入りますが、$n>2$では中心に入りません。代わりに中心に入るのは、冪を交互に反転させた積です。
+となります。生成元をすべて掛けた積$e_1e_2\cdots e_m$では$d_i=m+1-2i$です。$n=2$なら$m$が奇数のとき$d_i$は常に偶数となって中心に入りますが、$n>2$では$m=1$を除いて中心に入りません（$m=1$では代数が可換なので$e_1$自身が中心元です）。代わりに中心に入るのは、冪を交互に反転させた積です。
 
 &&&thm 中心元
 $m$が奇数のとき、積
@@ -532,7 +604,7 @@ $\mu^n=\zeta^n$（$=\omega^s$）となる1の冪根$\mu$を取れば$(\mu^{-1}\z
 &&&thm 奇数個の生成元の行列表現
 $$
 \operatorname{Cl}^{(n)}_{2k+1}(\mathbb C)
-\cong \operatorname{Cl}^{(n)}_{2k}(\mathbb C) \otimes n\mathbb C
+\cong \operatorname{Cl}^{(n)}_{2k}(\mathbb C) \otimes_{\mathbb C} n\mathbb C
 \cong n\,\mathbb C(n^k)
 $$
 &&&
@@ -541,7 +613,7 @@ $$
 $m=2k+1$とおく。$e_1,\dots,e_{m-1}$は生成元$m-1$個の関係式を満たすので$\operatorname{Cl}^{(n)}_{m-1}(\mathbb C)$を生成し、また$\zeta^a$は位相倍を除いて単項式$e_1^ae_2^{-a}\cdots e_m^a$なので、$1,\zeta,\dots,\zeta^{n-1}$は線形独立で$\dim\mathbb C[\zeta]=n$となる。$\zeta$は中心元なので、掛け算$x \otimes \zeta^a \mapsto x\zeta^a$は代数準同型
 
 $$
-\operatorname{Cl}^{(n)}_{m-1}(\mathbb C) \otimes \mathbb C[\zeta]
+\operatorname{Cl}^{(n)}_{m-1}(\mathbb C) \otimes_{\mathbb C} \mathbb C[\zeta]
 \to \operatorname{Cl}^{(n)}_m(\mathbb C)
 $$
 
@@ -563,24 +635,24 @@ $$
 &&&
 パウリ行列：トレースが$0$の2×2エルミート行列の実基底
 $$
-i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
+i \leftrightarrow -i\sigma_x, \quad j \leftrightarrow -i\sigma_y, \quad k \leftrightarrow -i\sigma_z
 $$
 $$
-\operatorname{Cl}_{3,0}(\mathbb R) \cong \mathbb C(2) \cong \operatorname{Cl}_2(\mathbb C) \cong \mathbb C \otimes \mathbb H
+\operatorname{Cl}_{3,0}(\mathbb R) \cong \mathbb C(2) \cong \operatorname{Cl}_2(\mathbb C) \cong \mathbb C \otimes_{\mathbb R} \mathbb H
 $$
 一般化パウリ行列：$\mathbb C(n)$の複素基底$X^aZ^b \ (0 \le a,b < n)$
 $$
 X^n = Z^n = I, \quad ZX = \omega XZ\ (\omega=e^{2\pi i/n})
 $$
-一般化クリフォード代数
+一般化クリフォード代数（関係式で定義される商代数、$\dim = n^m$）
 $$
 e_i^n = 1, \quad e_je_i = \omega e_ie_j \ (i<j), \quad
 \operatorname{Cl}^{(n)}_2(\mathbb C) \cong \mathbb C(n)
 $$
-テンソル積による拡張
+テンソル積（複素数上）による拡張
 $$
 \operatorname{Cl}^{(n)}_{m+2}(\mathbb C)
-\cong \operatorname{Cl}^{(n)}_m(\mathbb C) \otimes \mathbb C(n), \quad
+\cong \operatorname{Cl}^{(n)}_m(\mathbb C) \otimes_{\mathbb C} \mathbb C(n), \quad
 \operatorname{Cl}^{(n)}_{2k}(\mathbb C) \cong \mathbb C(n^k)
 $$
 奇数個の生成元：中心元による直和分解

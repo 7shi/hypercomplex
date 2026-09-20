@@ -145,7 +145,7 @@ $$
 
 ## テンソル積の計算規則
 
-公式を適用した結果を行列環として表すために、以下の同型を使用します。
+公式を適用した結果を行列環として表すために、以下の同型を使用します。本節の代数はすべて実代数で、テンソル積は断りのない限り実数上の$\otimes_{\mathbb R}$です。
 
 &&&fml 可換性
 $$
@@ -487,16 +487,20 @@ $$
 係数を複素数に拡張すると、分類は大幅に単純になります。複素数上では生成元$e$を$ie$に置き換えることで$e^2$の符号を反転できるため、計量の符号の区別が消え、複素クリフォード代数$\operatorname{Cl}_n(\mathbb C)$は生成元の個数$n$だけで決まります。
 
 &&&fml 複素化
-$$\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C)$$
+$$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C)$$
+&&&
+
+&&&rem
+係数体が変わると結果も変わるため（たとえば$\mathbb C \otimes_{\mathbb R} \mathbb C \cong 2\mathbb C$に対して$\mathbb C \otimes_{\mathbb C} \mathbb C \cong \mathbb C$）、ここでは体を明示しています。
 &&&
 
 複素化の計算規則は以下のとおりです。
 
 &&&fml 複素化の計算規則
 $$
-\mathbb R\otimes\mathbb C\cong\mathbb C,\quad
-\mathbb C\otimes\mathbb C\cong2\mathbb C,\quad
-\mathbb H\otimes\mathbb C\cong\mathbb C(2)
+\mathbb R\otimes_{\mathbb R}\mathbb C\cong\mathbb C,\quad
+\mathbb C\otimes_{\mathbb R}\mathbb C\cong2\mathbb C,\quad
+\mathbb H\otimes_{\mathbb R}\mathbb C\cong\mathbb C(2)
 $$
 &&&
 
@@ -504,16 +508,28 @@ $$
 3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$(1\pm u)/2$による直和分解が起こります。
 &&&
 
-拡張公式$\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb H\cong\operatorname{Cl}_{q,p+2}(\mathbb R)$の両辺を複素化すると、$\mathbb H\otimes\mathbb C\cong\mathbb C(2)$より次の周期性が得られます。
+拡張公式$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb H\cong\operatorname{Cl}_{q,p+2}(\mathbb R)$の両辺を複素化すると、次の周期性が得られます。
 
 &&&thm 2周期性
 $$
 \operatorname{Cl}_{n+2}(\mathbb C)
-\cong\operatorname{Cl}_n(\mathbb C)\otimes\mathbb C(2)
+\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C}\mathbb C(2)
 $$
 &&&
 
-$\operatorname{Cl}_0(\mathbb C)\cong\mathbb C$と$\operatorname{Cl}_1(\mathbb C)\cong\mathbb C\otimes\mathbb C\cong2\mathbb C$を出発点として、複素の分類表が完成します。
+&&&prf
+拡張公式の左辺を複素化すると、テンソル積の順序を入れ替えて次のように整理できる。複素化した代数どうしのテンソル積は、複素数上の$\otimes_{\mathbb C}$になることに注意する。
+
+$$
+(\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb H)\otimes_{\mathbb R}\mathbb C
+\cong(\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C)
+\otimes_{\mathbb C}(\mathbb H\otimes_{\mathbb R}\mathbb C)
+$$
+
+ここで$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_n(\mathbb C)$（$n=p+q$）、$\mathbb H\otimes_{\mathbb R}\mathbb C\cong\mathbb C(2)$である。一方、右辺$\operatorname{Cl}_{q,p+2}(\mathbb R)$の複素化は$\operatorname{Cl}_{n+2}(\mathbb C)$となる。両者を比較すれば主張を得る。
+&&&
+
+$\operatorname{Cl}_0(\mathbb C)\cong\mathbb C$と$\operatorname{Cl}_1(\mathbb C)\cong\mathbb C\otimes_{\mathbb R}\mathbb C\cong2\mathbb C$を出発点として、複素の分類表が完成します。
 
 $$
 \begin{array}{c|ccccccc}
@@ -561,15 +577,15 @@ $$
 拡張公式：
 $$
 \begin{alignedat}{2}
-\operatorname{Cl}_{p,q}(\mathbb R) &⊗ \mathbb H  &&\cong \operatorname{Cl}_{q,p+2}(\mathbb R) \\
-\operatorname{Cl}_{p,q}(\mathbb R) &⊗ \mathbb H' &&\cong \operatorname{Cl}_{q+2,p}(\mathbb R) \cong \operatorname{Cl}_{p+1,q+1}(\mathbb R)
+\operatorname{Cl}_{p,q}(\mathbb R) &\otimes_{\mathbb R} \mathbb H  &&\cong \operatorname{Cl}_{q,p+2}(\mathbb R) \\
+\operatorname{Cl}_{p,q}(\mathbb R) &\otimes_{\mathbb R} \mathbb H' &&\cong \operatorname{Cl}_{q+2,p}(\mathbb R) \cong \operatorname{Cl}_{p+1,q+1}(\mathbb R)
 \end{alignedat}
 $$
 8周期性：
 $$
 \operatorname{Cl}_{p+8,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+8}(\mathbb{R})
-\cong \operatorname{Cl}_{p,q}(\mathbb{R}) ⊗ \mathbb{R}(16)
+\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes_{\mathbb R} \mathbb{R}(16)
 $$
 偶部分代数：
 $$
@@ -580,8 +596,8 @@ $$
 $$
 複素化と2周期性：
 $$
-\operatorname{Cl}_{p,q}(\mathbb R)\otimes\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C),\quad
-\operatorname{Cl}_{n+2}(\mathbb C)\cong\operatorname{Cl}_n(\mathbb C)\otimes\mathbb C(2)
+\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C),\quad
+\operatorname{Cl}_{n+2}(\mathbb C)\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C}\mathbb C(2)
 $$
 &&&
 
