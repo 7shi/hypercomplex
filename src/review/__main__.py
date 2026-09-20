@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from llm7shi import Client
-from llm7shi.usage import append_usage, find_usage_file
+from llm7shi.usage import append_usage, find_usage_file, format_usage_line, parse_usage_file, today
 
 _DIR = Path(__file__).parent
 COMMON = (_DIR / "COMMON.txt").read_text().strip()
@@ -88,6 +88,12 @@ def main() -> int:
         usage_path = find_usage_file()
         append_usage(usage, args.model, usage_path)
         print(f"-> {usage_path}")
+
+        totals = parse_usage_file(usage_path)
+        date = today()
+        print(f"\n# {date}")
+        for model, model_usage in totals[date].items():
+            print(format_usage_line(model, model_usage))
     return 0
 
 
