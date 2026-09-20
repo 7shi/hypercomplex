@@ -10,25 +10,44 @@ Verifies the article's claims numerically with numpy:
    H0 = (2I - X - X^dag)/(2 eps^2) = F diag(E_k) F^dag with
    E_k = (1 - cos(eps p_k))/eps^2 = D^dag D/2 with the forward
    difference D = (X^dag - I)/eps; E_k does not depend on the
-   momentum wrap, and 0 <= p_k^2/2 - E_k <= eps^2 p_k^4/24.
-3. Second difference converges to the second derivative: for a
-   unit-width Gaussian psi centered mid-circle, the relative error
+   momentum wrap (the comparison target p_k^2/2 does, so p_k is
+   the representative folded to (-n eps/2, n eps/2] as in check-04),
+   and 0 <= p_k^2/2 - E_k <= eps^2 p_k^4/24.
+3. Second difference converges to the second derivative: for the
+   unit-width Gaussian psi_j = exp(-(x_j - c)^2/2) centered mid-circle
+   (c = n eps/2, away from the seam), the relative error
    ||H0 psi - (-psi''/2)||/||psi|| decreases like eps^2 = 2 pi/n
-   (halving per doubling of n) over n = 16, 32, ..., 256.
+   (halving per doubling of n) over n = 16, 32, ..., 256; it is
+   about 1% at n = 64, which is the figure quoted in the article.
+   The denominator matters: dividing by ||-psi''/2|| instead gives
+   about 2.4% at n = 64, matching sqrt(35)/24 eps^2. Both are quoted
+   in the article, so the norm used here is the one to keep.
 4. Diagonal matrices are polynomials in Z: V(Q) = sum_b c_b Z^b with
    inverse-DFT coefficients c_b reconstructs a random diagonal matrix.
 5. Plane waves are stationary states: exp(-itH0) f_k = exp(-iE_k t) f_k
    for every k and several t.
 6. Ehrenfest's theorem on the lattice: harmonic potential
-   V = (x - c)^2/2 centered on the circle, displaced unit-width
-   Gaussian packet (a coherent state).
+   V = (x - c)^2/2 centered on the circle, unit-width Gaussian packet
+   psi_j ~ exp(-(x_j - c - d)^2/2) displaced by d = 1 and given no
+   initial momentum (a coherent state).
+   Note that d<A>/dt = i<[H, A]> itself is exact in finite dimensions;
+   what fails is its reduction to the two continuum equations below.
+   Each figure is the MAXIMUM ABSOLUTE error over one full period
+   0 <= t <= 2 pi (101 samples), under exact evolution exp(-itH) by
+   diagonalization -- not a value at a single time, and not relative.
    - Momentum side: |i<[H, P]> + <V'(Q)>| is tiny (limited only by the
-     seam, like [Q, P]v = iv in check-04) at every sampled time.
+     seam, like [Q, P]v = iv in check-04) at every sampled time;
+     about 1e-13 at n = 64.
    - Position side: |i<[H, Q]> - <P>| = O(eps^2), the lattice
      dispersion correction i[H0, Q] = sin(eps P)/eps = P - eps^2 P^3/6
-     + ..., halving per doubling of n over n = 32..256.
+     + ..., halving per doubling of n over n = 32..256; about 4e-2 at
+     n = 64. Both sides vanish at t = 0 (the initial packet is real,
+     so <P> = 0 there), so the maximum is reached once the packet
+     moves -- around t = 1.6 for n = 64.
    - The packet center <Q> follows the classical trajectory
-     c + d cos t over a full period with O(eps^2) deviation.
+     c + d cos t over a full period with O(eps^2) deviation (below 0.1
+     at n = 64). The harmonic V is what makes this exact in the
+     continuum: <V'(Q)> = V'(<Q>) holds only because V' is linear.
 7. n = 2 (Rabi oscillation): H0 = (I - sigma_x)/pi starting at e_0
    gives occupation |psi_1(t)|^2 = sin^2(t/pi).
 """
@@ -120,9 +139,11 @@ def second_difference_convergence():
     errs = []
     for n in [16, 32, 64, 128, 256]:
         eps, q, p, F, Q, P = lattice_qp(n)
-        c = n * eps / 2
+        c = n * eps / 2  # mid-circle: farthest from the seam at x = 0
         psi = np.exp(-(q - c) ** 2 / 2)
         d2 = ((q - c) ** 2 - 1) * psi  # psi''
+        # relative to ||psi||, as stated in the article; ||d2/2|| in the
+        # denominator would give ~2.4% at n = 64 instead of ~1%
         err = np.linalg.norm(kinetic(n) @ psi + d2 / 2) / np.linalg.norm(psi)
         errs.append(err)
     ok = all(1.8 < x / y < 2.2 for x, y in zip(errs, errs[1:]))
@@ -165,15 +186,17 @@ print("plane waves: exp(-itH0) f_k = exp(-iE_k t) f_k (n = 2..8):",
 # --- Ehrenfest's theorem on the lattice -------------------------------------------
 def ehrenfest_run(n, d=1.0):
     eps, q, p, F, Q, P = lattice_qp(n)
-    c = n * eps / 2
+    c = n * eps / 2  # bottom of the parabola, mid-circle
     Vq = (q - c) ** 2 / 2
     H = kinetic(n) + np.diag(Vq)
+    # real Gaussian displaced by d, no carrier phase: <P> = 0 at t = 0
     psi0 = np.exp(-(q - c - d) ** 2 / 2).astype(complex)
     psi0 /= np.linalg.norm(psi0)
-    w, Vec = np.linalg.eigh(H)
+    w, Vec = np.linalg.eigh(H)  # exact evolution exp(-itH), no time stepping
     coef = Vec.conj().T @ psi0
     HQ, HP = H @ Q - Q @ H, H @ P - P @ H
     dV = np.diag(q - c).astype(complex)  # V'(Q)
+    # errors below are absolute, maximized over one full period
     errQ = errP = errT = 0.0
     for t in np.linspace(0, 2 * np.pi, 101):
         psi = Vec @ (np.exp(-1j * t * w) * coef)
@@ -192,7 +215,8 @@ def ehrenfest_checks():
     return okP and okQ and okT, runs
 
 ok, runs = ehrenfest_checks()
-print("Ehrenfest (harmonic V, coherent packet): d<P>/dt = -<V'> to seam precision,",
+print("Ehrenfest (harmonic V, coherent packet, max over one period):",
+      "d<P>/dt = -<V'> to seam precision,",
       "d<Q>/dt = <P> + O(eps^2), <Q> tracks c + d cos t (n = 32..256):", ok)
 for n, (eQ, eP, eT) in zip([32, 64, 128, 256], runs):
     print(f"  n = {n:3d}: |i<[H,Q]> - <P>| <= {eQ:.2e},",
