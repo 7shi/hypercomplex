@@ -199,7 +199,24 @@ def ccr_convergence_checks():
         v = np.exp(-(q - n * eps / 2) ** 2 / 2)  # away from the seam
         v = v / np.linalg.norm(v)
         errs.append(np.linalg.norm((Q @ P - P @ Q) @ v - 1j * v))
+    # the values quoted in the article, for n = 8, 16, 32, 64
+    quoted = [5.8e-2, 1.8e-4, 1.1e-9, 2.1e-13]
+    if not all(abs(e - x) < 0.1 * x for e, x in zip(errs, quoted)):
+        return False
     return all(x > y for x, y in zip(errs, errs[1:])) and errs[-1] < 1e-8
 
+def ccr_operator_norm_checks():
+    # [Q, P] is close to iI only on localized vectors: in operator norm the
+    # trace identity tr([Q, P] - iI) = -in forces ||[Q, P] - iI|| >= 1
+    for n in [8, 16, 32]:
+        eps, q, p, F, Q, P = lattice_qp(n)
+        D = Q @ P - P @ Q - 1j * np.eye(n)
+        if abs(np.trace(D) + 1j * n) > 1e-9 or np.linalg.norm(D, ord=2) < 1:
+            return False
+    return True
+
 print("CCR in the limit: ||[Q, P]v - iv|| -> 0 for a centered Gaussian,",
-      "tr[Q, P] = 0 at every n:", ccr_convergence_checks())
+      "matching the quoted values, tr[Q, P] = 0 at every n:",
+      ccr_convergence_checks())
+print("but not in operator norm: ||[Q, P] - iI|| >= 1 at every n:",
+      ccr_operator_norm_checks())
