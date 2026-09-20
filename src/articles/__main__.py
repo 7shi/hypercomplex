@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 
-from articles import md, mathlog, merge
+from articles import md, mathlog, merge, pending
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -14,6 +14,7 @@ def main(argv: list[str] | None = None) -> None:
     mathlog.add_subparser(subparsers)
     md.add_subparser(subparsers)
     merge.add_subparser(subparsers)
+    pending.add_subparser(subparsers)
 
     args = parser.parse_args(argv)
     args.func(args)

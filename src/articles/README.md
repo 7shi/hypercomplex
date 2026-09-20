@@ -19,10 +19,15 @@ Mathlog記事とREADMEリンクを突き合わせるツール。
 1. 完全一致
 2. フォールバック: `mathlog_title.endswith(md_title)`（該当する`md_title`のうち最長のものを採用）
 
+## pending
+
+`articles.tsv`から、未公開（Mathlog未掲載でURLなし）かつ未レビュー（対になる`.txt`ファイルが存在しない）の記事一覧を出力する。
+
 ## 使い方
 
 ```
 uv run articles mathlog
 uv run articles md
 uv run articles merge
+uv run articles pending
 ```
