@@ -36,12 +36,14 @@ CGA, Cl(4,1) with null basis no = (e- - e+)/2, ni = e- + e+:
 11. Reflection X -> S X S in the unit sphere at the origin is the
     inversion x -> x/|x|^2; reflection in pi is the ordinary mirror.
 12. Translator T = exp(-t ni/2) = 1 - t ni/2 (the square of t ni is 0)
-    gives P(x) -> P(x+t); the dilator exp(lam/2 no^ni) scales by
-    e^lam; both satisfy V ~V = 1.
+    gives P(x) -> P(x+t); the dilator exp(lam/2 no^ni) sends P(x) to
+    e^-lam P(e^lam x), fixing no and ni up to e^-lam and e^lam;
+    both satisfy V ~V = 1.
 13. Bivector counts: 6 = dim SE(3) in PGA, 10 = dim O(4,1) in CGA.
 14. PGA sits inside CGA: e1, e2, e3, ni generate a subalgebra
-    isomorphic to Cl(3,0,1) (16 linearly independent blades), and the
-    CGA plane n + d ni matches the PGA plane n - d e0.
+    isomorphic to Cl(3,0,1) (16 linearly independent blades). The
+    geometric correspondence is e0 <-> -ni: the CGA plane n + d ni
+    matches the PGA plane n - d e0, and 1 + t e0/2 matches T.
 """
 
 import itertools
@@ -209,6 +211,8 @@ check("M = 1 + (d1-d2) n e0", close(M, pga.scalar(1) + (d1 - d2) * pga.mul(E3, E
 check("(n e0)^2 = 0", close(pga.mul(pga.mul(E3, E0), pga.mul(E3, E0)), pga.zero()))
 check("M ~M = 1", close(pga.mul(M, pga.rev(M)), pga.scalar(1)))
 check("translation by 2(d1-d2) n", close(pga.sandwich(M, point(x)), point(x + 2 * (d1 - d2) * np.array(nz))))
+tpga = 2 * (d1 - d2) * np.array(nz, dtype=float)
+check("M = 1 + t e0/2", close(M, pga.scalar(1) + 0.5 * pga.mul(plane(tpga, 0.0), E0)))
 print("   M =", pga.str(M), "-> P(2,3,5) becomes P(2,3,9)")
 
 print("=== 5. intersecting planes -> rotation ===")
@@ -311,6 +315,10 @@ check("T ~T = 1", close(cga.mul(T, cga.rev(T)), cga.scalar(1)))
 lam = math.log(3)
 D = cga.exp(0.5 * lam * cga.wedge(no, ni))
 check("dilator scales by e^lam", close(unpack(cga.sandwich(D, cpoint(u)))[1], math.exp(lam) * u))
+check("D P(x) ~D = e^-lam P(e^lam x)",
+      close(cga.sandwich(D, cpoint(u)), math.exp(-lam) * cpoint(math.exp(lam) * u)))
+check("D no ~D = e^-lam no", close(cga.sandwich(D, no), math.exp(-lam) * no))
+check("D ni ~D = e^lam ni", close(cga.sandwich(D, ni), math.exp(lam) * ni))
 check("D ~D = 1", close(cga.mul(D, cga.rev(D)), cga.scalar(1)))
 
 print("=== 13-14. dimensions and PGA inside CGA ===")
@@ -333,5 +341,8 @@ cga_image = unpack(cga.mul(cga.mul(pi, cpoint(u)), pi))[1]
 pga_plane = plane(tuple(nrm), -dist0)
 pga_image = pga.mul(pga.mul(pga_plane, point(u)), pga_plane)
 check("CGA plane n + d ni = PGA plane n - d e0", close(pga_image, point(cga_image)))
+# the geometric correspondence is e0 <-> -ni: it matches the translators too
+check("e0 -> -ni sends 1 + t e0/2 to T = 1 - t ni/2",
+      close(cga.scalar(1) + 0.5 * cga.mul(vec(t), -ni), T))
 
 print("\nAll checks passed.")
