@@ -81,7 +81,12 @@ def review_file(client: Client, path: Path, prompt: str, refs: list[Path]):
     return response.text.strip(), response.usage
 
 
+# 出力する場合はパスを入れる
+USAGE_PATH = None
+
+
 def main() -> int:
+    global USAGE_PATH
     parser = argparse.ArgumentParser(description=__doc__.strip())
     parser.add_argument("file", type=Path, help="レビュー対象の.mdファイル")
     parser.add_argument("-m", "--model", required=True,
@@ -94,7 +99,12 @@ def main() -> int:
     parser.add_argument("-r", "--ref", type=Path, action="append", default=[],
                         help="参照文脈として使う.md/.txtファイルのパス"
                              "（レビュー対象には含めない、複数指定可）")
+    parser.add_argument("--save-usage", action="store_true",
+                        help="モデル名によらず使用量を記録する")
     args = parser.parse_args()
+
+    if args.model.startswith("openai:") or args.model.startswith("gpt-") or args.save_usage:
+        USAGE_PATH = find_usage_file()
 
     if args.file.suffix != ".md":
         parser.error(f"{args.file}: .mdファイルではありません")
@@ -148,11 +158,10 @@ def main() -> int:
     out_path.write_text(result + "\n")
     print(f"-> {out_path}")
 
-    if usage:
-        usage_path = find_usage_file()
-        append_usage(usage, args.model, usage_path)
-        print(f"-> {usage_path}\n")
-        print_today_totals(usage_path)
+    if usage and USAGE_PATH is not None:
+        append_usage(usage, args.model, USAGE_PATH)
+        print(f"-> {USAGE_PATH}\n")
+        print_today_totals(USAGE_PATH)
     return 0
 
 
