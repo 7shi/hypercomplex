@@ -20,7 +20,7 @@ $$
 $$
 すなわち共役作用だけです。状態への片側作用が外積への共役作用を誘導するこの構図は、リー群シリーズでスピノルとベクトルの区別として確認したものです。[[7shi-lie3]] $\rho=\frac12(\mathrm I+\boldsymbol r\cdot\boldsymbol\sigma)$[[7shi-bloch]]より、共役作用はブロッホベクトル$\boldsymbol r$の変換として読めます。
 
-その変換の正体が回転です。ユニタリ行列は位相を除けば行列式1にでき、$\mathrm{SU}(2)$の元はトレース0の反エルミート行列の指数関数、すなわちパウリ行列を軸とする回転子として書けるのでした。[[7shi-lie2]]
+この変換は回転です。ユニタリ行列は位相を除けば行列式1にでき、$\mathrm{SU}(2)$の元はトレース0の反エルミート行列の指数関数、すなわちパウリ行列を軸とする回転子として書けるのでした。[[7shi-lie2]]
 
 &&&fml 量子ゲートの回転子分解
 任意の1量子ビットゲートは、単位ベクトル$\boldsymbol n$と角度$\theta$、位相$\varphi$により
@@ -107,7 +107,7 @@ $T$も同様です。
 
 表の上段の4つ（$X,Y,Z,H$）はどれも$\boldsymbol n\cdot\boldsymbol\sigma$の形をしています。この形の行列は、エルミートかつユニタリという二重の性格を持ちます。
 
-&&&fml エルミートかつユニタリな行列
+&&&prop エルミートかつユニタリな行列
 $2$次の行列$A$がエルミートかつユニタリで$A\neq\pm\mathrm I$であることと、単位ベクトル$\boldsymbol n$により$A=\boldsymbol n\cdot\boldsymbol\sigma$と書けることは同値です。このとき共役作用は
 $$
 (\boldsymbol n\cdot\boldsymbol\sigma)(\boldsymbol r\cdot\boldsymbol\sigma)(\boldsymbol n\cdot\boldsymbol\sigma)
@@ -117,35 +117,35 @@ $$
 &&&
 
 &&&prf
-エルミート行列は$A=w\mathrm I+\boldsymbol r\cdot\boldsymbol\sigma$（$w,\boldsymbol r$は実）と展開できます。[[7shi-bloch]] ユニタリ性は$A^2=\mathrm I$と同値で、パウリ行列の反交換関係$\sigma_a\sigma_b+\sigma_b\sigma_a=2\delta_{ab}\mathrm I$より
+エルミート行列は$A=w\mathrm I+\boldsymbol r\cdot\boldsymbol\sigma$（$w,\boldsymbol r$は実）と展開できる。[[7shi-bloch]] ユニタリ性は$A^2=\mathrm I$と同値であり、パウリ行列の反交換関係$\sigma_a\sigma_b+\sigma_b\sigma_a=2\delta_{ab}\mathrm I$より
 $$
 A^2=(w^2+|\boldsymbol r|^2)\mathrm I+2w\,\boldsymbol r\cdot\boldsymbol\sigma=\mathrm I
 $$
-なので$w\boldsymbol r=0$です。$\boldsymbol r=0$なら$A=\pm\mathrm I$、そうでなければ$w=0,\ |\boldsymbol r|=1$となり$A=\boldsymbol n\cdot\boldsymbol\sigma$です。
+なので$w\boldsymbol r=0$である。$\boldsymbol r=0$なら$A=\pm\mathrm I$、そうでなければ$w=0,\ |\boldsymbol r|=1$となり$A=\boldsymbol n\cdot\boldsymbol\sigma$である。
 
-挟み込みの公式は、$\boldsymbol r\cdot\boldsymbol\sigma$を$\boldsymbol n$方向と直交成分に分けます。
+挟み込みの公式は、$\boldsymbol r\cdot\boldsymbol\sigma$を$\boldsymbol n$方向と直交成分に分ける。
 $$
 \boldsymbol r\cdot\boldsymbol\sigma=(\boldsymbol n\cdot\boldsymbol r)(\boldsymbol n\cdot\boldsymbol\sigma)+\boldsymbol m\cdot\boldsymbol\sigma,\quad
 \boldsymbol m=\boldsymbol r-(\boldsymbol n\cdot\boldsymbol r)\boldsymbol n\perp\boldsymbol n
 $$
-反交換関係を線形に組み合わせると$(\boldsymbol n\cdot\boldsymbol\sigma)(\boldsymbol m\cdot\boldsymbol\sigma)+(\boldsymbol m\cdot\boldsymbol\sigma)(\boldsymbol n\cdot\boldsymbol\sigma)=2(\boldsymbol n\cdot\boldsymbol m)\mathrm I$なので、直交する$\boldsymbol n\cdot\boldsymbol\sigma$と$\boldsymbol m\cdot\boldsymbol\sigma$は反交換し、また$(\boldsymbol n\cdot\boldsymbol\sigma)^2=|\boldsymbol n|^2\mathrm I=\mathrm I$です。よって
+反交換関係を線形に組み合わせると$(\boldsymbol n\cdot\boldsymbol\sigma)(\boldsymbol m\cdot\boldsymbol\sigma)+(\boldsymbol m\cdot\boldsymbol\sigma)(\boldsymbol n\cdot\boldsymbol\sigma)=2(\boldsymbol n\cdot\boldsymbol m)\mathrm I$なので、直交する$\boldsymbol n\cdot\boldsymbol\sigma$と$\boldsymbol m\cdot\boldsymbol\sigma$は反交換し、また$(\boldsymbol n\cdot\boldsymbol\sigma)^2=|\boldsymbol n|^2\mathrm I=\mathrm I$である。よって
 $$
 (\boldsymbol n\cdot\boldsymbol\sigma)\{(\boldsymbol n\cdot\boldsymbol r)(\boldsymbol n\cdot\boldsymbol\sigma)+\boldsymbol m\cdot\boldsymbol\sigma\}(\boldsymbol n\cdot\boldsymbol\sigma)
 =(\boldsymbol n\cdot\boldsymbol r)(\boldsymbol n\cdot\boldsymbol\sigma)-\boldsymbol m\cdot\boldsymbol\sigma
 $$
-となり、$\boldsymbol n$成分を保ち直交成分を反転する変換、すなわち$\boldsymbol n$周りの$\pi$回転です。
+となり、$\boldsymbol n$成分を保ち直交成分を反転する変換、すなわち$\boldsymbol n$周りの$\pi$回転である。
 &&&
 
 つまり同じ行列$\boldsymbol n\cdot\boldsymbol\sigma$が3つの役を演じます。
 
-1. **観測量** — 期待値$\Psi^\dagger(\boldsymbol n\cdot\boldsymbol\sigma)\Psi$はブロッホベクトルの$\boldsymbol n$方向成分（$\boldsymbol n$方向の測定[[7shi-bloch]]）
-2. **ゲート** — ユニタリなので状態に掛けられる
-3. **回転子** — 挟めば$\boldsymbol n$周りの$\pi$回転
+1. **観測量**：期待値$\Psi^\dagger(\boldsymbol n\cdot\boldsymbol\sigma)\Psi$はブロッホベクトルの$\boldsymbol n$方向成分（$\boldsymbol n$方向の測定[[7shi-bloch]]）
+2. **ゲート**：ユニタリなので状態に掛けられる
+3. **回転子の位相付き代表**：$-iA=R_{\boldsymbol n}(\pi)$であり、挟めば$\boldsymbol n$周りの$\pi$回転
 
 $X,Y,Z,H$が自分自身の逆元であること（$A^2=\mathrm I$）は、幾何的には「$180°$回転は2回で元に戻る」という当たり前の事実です。
 
 &&&rem 鏡映との関係
-クリフォード代数では、単位ベクトル$n$による挟み込み$-nvn$が超平面鏡映でした。[[7shi-bq]] 符号を外した$+nvn=2(\boldsymbol n\cdot\boldsymbol v)\boldsymbol n-\boldsymbol v$は「$\boldsymbol n$を通る直線に関する鏡映」であり、3次元では$\boldsymbol n$周りの$\pi$回転と同じ変換です。ゲートの共役作用に現れるのは符号を外した後者で、行列式$+1$の回転として扱えます。
+クリフォード代数では、単位ベクトル$n$による挟み込み$-nvn$が超平面鏡映でした。[[7shi-mir]] ここでの$n$は$n^2=+1$を満たすクリフォード代数の単位ベクトルです。四元数の単位純虚元$m$は$m^2=-1$なので、四元数での$-mvm$は直線に関する鏡映となり[[7shi-bq]]、平方の符号の違いによって同じ見た目の挟み込みが別の変換を表します。符号を外した$+nvn=2(\boldsymbol n\cdot\boldsymbol v)\boldsymbol n-\boldsymbol v$は「$\boldsymbol n$を通る直線に関する鏡映」であり、3次元では$\boldsymbol n$周りの$\pi$回転と同じ変換です。ゲートの共役作用に現れるのは符号を外した後者で、行列式$+1$の回転として扱えます。
 &&&
 
 # パウリ群と四元数群
@@ -165,14 +165,14 @@ $$
 \begin{pmatrix}-1&&\\&1&\\&&-1\end{pmatrix},\quad
 \begin{pmatrix}-1&&\\&-1&\\&&1\end{pmatrix}
 $$
-であり、この4つはクラインの四元群をなします。どの2つを合成しても残りの1つになる、最小の非自明な回転の群です。
+であり、この4つはクラインの四元群をなします。恒等元以外の異なる2つを合成すると、残りの非恒等元になります。
 
 &&&rem 四元数群
 $P_1$のうち行列式1のもの、すなわち$\mathrm{SU}(2)$に属する元は
 $$
 P_1\cap\mathrm{SU}(2)=\{\pm\mathrm I,\ \pm i\sigma_x,\ \pm i\sigma_y,\ \pm i\sigma_z\}
 $$
-の8つです。対応$\mathbf i\cong-i\sigma_x,\ \mathbf j\cong-i\sigma_y,\ \mathbf k\cong-i\sigma_z$[[7shi-bloch]]により、これは四元数の単位元$\{\pm1,\pm\mathbf i,\pm\mathbf j,\pm\mathbf k\}$のなす**四元数群**$Q_8$の行列表現です（対応で$i\sigma_x\cong-\mathbf i$と符号は入れ替わりますが、集合としては一致します）。パウリ群の芯にはやはり四元数がいました。
+の8つです。対応$\mathbf i\cong-i\sigma_x,\ \mathbf j\cong-i\sigma_y,\ \mathbf k\cong-i\sigma_z$[[7shi-bloch]]により、これは四元数の単位元$\{\pm1,\pm\mathbf i,\pm\mathbf j,\pm\mathbf k\}$のなす**四元数群**$Q_8$の行列表現です（対応で$i\sigma_x\cong-\mathbf i$と符号は入れ替わりますが、集合としては一致します）。このように、パウリ群は四元数群を部分群として含みます。
 &&&
 
 # クリフォードゲート
@@ -188,7 +188,7 @@ $$
 &&&
 
 &&&rem クリフォード代数との関係
-このクリフォード群は、本シリーズや関連記事で扱ってきたクリフォード代数と同じくW. K. クリフォードにちなみますが、指す対象は別物です。名称は、クリフォード代数の生成元がなす有限群とその正規化群を研究したBolt–Room–Wallの一連の仕事[[brw]]で「クリフォード群」の名が使われたことに遡るとされます。パウリ行列がクリフォード代数の生成元であること[[7shi-bq]]を思い出すと、パウリ群の正規化群にこの名前が付くのは自然な流れです。なおクリフォード代数の理論には、可逆元のなす「クリフォード群（リプシッツ群）」という別の群もあり、そちらとも異なる概念なので注意してください。
+このクリフォード群は、本シリーズや関連記事で扱ってきたクリフォード代数と同じくW. K. クリフォードにちなみますが、指す対象は別物です。名称は、クリフォード代数の生成元がなす有限群とその正規化群を研究したBolt–Room–Wallの一連の仕事[[brw]]で「クリフォード群」の名が使われたことに遡るとされます。パウリ行列がクリフォード代数の生成元であること[[7shi-bq]]を思い出すと、パウリ群の正規化群にこの名前が付くのは自然な流れです。なおクリフォード代数の理論には、所定の共役作用でベクトル空間を保つ可逆元のなす「クリフォード群（リプシッツ群）」という別の群もあり、そちらとも異なる概念なので注意してください。
 &&&
 
 クリフォードゲートは、回転として次のように特徴づけられます。
@@ -203,13 +203,13 @@ $$
 &&&
 
 &&&prf
-1⇒2: $U\sigma_aU^\dagger\in P_1$は、エルミート性（$(UAU^\dagger)^\dagger=UA^\dagger U^\dagger$）とトレース（相似変換で不変）を保ちます。$P_1$の元$i^k\sigma$のうちエルミートなのは$k$が偶数の$\pm\sigma$に限られ、トレース0まで要求すると$\pm\mathrm I$も除かれて$\pm\sigma_b$だけが残ります。よって各座標軸の像は符号付きの座標軸です。
+1⇒2: $U\sigma_aU^\dagger\in P_1$は、エルミート性（$(UAU^\dagger)^\dagger=UA^\dagger U^\dagger$）とトレース（相似変換で不変）を保つ。$P_1$の元$i^k\sigma$のうちエルミートなのは$k$が偶数の$\pm\sigma$に限られ、トレース0まで要求すると$\pm\mathrm I$も除かれて$\pm\sigma_b$だけが残る。よって各座標軸の像は符号付きの座標軸である。共役作用は可逆なので、6つの符号付き座標軸へのこの作用は置換である。
 
-2⇔3: 6つの符号付き座標軸（単位球面上の6点）を頂点とする正多面体が正八面体であり、頂点集合を保つ回転の全体がその回転群です。
+2⇔3: 6つの符号付き座標軸（単位球面上の6点）を頂点とする正多面体が正八面体であり、頂点集合を保つ回転の全体がその回転群である。
 
-3⇒1: 軸の置換となる回転$M\in\mathrm{SO}(3)$に対し、それを共役作用として実現する$U$が位相を除いて一意に存在します（$\mathrm{SU}(2)\to\mathrm{SO}(3)$の全射性[[7shi-lie2]]）。$U\sigma_aU^\dagger=\pm\sigma_b\in P_1$であり、$P_1$の一般の元$i^k\sigma$の像も$i^k(\pm\sigma_b)\in P_1$なので$UP_1U^\dagger=P_1$です。
+3⇒1: $U$の共役作用が6つの符号付き座標軸を置換するなら$U\sigma_aU^\dagger=\pm\sigma_b$であり、$U\mathrm IU^\dagger=\mathrm I$と合わせて$P_1$の一般の元の像も$U(i^k\sigma)U^\dagger=i^k(\pm\sigma_b)\in P_1$である。よって$UP_1U^\dagger\subset P_1$で、共役作用は単射、$P_1$は有限集合なので等号が成り立つ。
 
-個数: 正八面体の回転は「$x$軸の頂点の行き先が6通り、それを固定して残りを回す方法が4通り」で$6\times4=24$個です。
+個数: 正八面体の回転は「$x$軸の頂点の行き先が6通り、それを固定して残りを回す方法が4通り」で$6\times4=24$個である。$\mathrm{SU}(2)\to\mathrm{SO}(3)$は全射なので[[7shi-lie2]]、各回転を共役作用として与えるゲートが位相を除いて一意に存在する。したがってクリフォードゲートも位相を除いて24個である。
 &&&
 
 ## HとSがすべてを生成する
@@ -226,14 +226,14 @@ $$
 ブロッホベクトルの成分では、$S$は$(x,y,z)\mapsto(-y,x,z)$（$z$軸周り$90°$）、$H$は$(x,y,z)\mapsto(z,-y,x)$（$\boldsymbol n_H$周り$180°$、$x$軸と$z$軸の交換）です。
 &&&
 
-どちらも軸を軸に写すので、$H,S$はクリフォードゲートです。しかもこの2つだけで、位相を除いた24個すべてが生成されます。実際、$S$は$z$軸の4回対称を与え、$HSH$の共役作用は$x$軸周りの$90°$回転（$y\mapsto z,\ z\mapsto-y$）で$x$軸の4回対称を与えます。直交する2本の4回軸があれば正八面体のすべての回転が合成できます。例えば$HS$の共役作用は$x\mapsto-y\mapsto z\mapsto x$と3軸を巡回させる位数3の回転（頂点ではなく面の中心を貫く3回軸）です。24個すべての列挙は検証コードで確認します。
+どちらも軸を軸に写すので、$H,S$はクリフォードゲートです。しかもこの2つだけで、位相を除いた24個すべてが生成されます。実際、$S$の共役作用は$z$軸周りの$90°$回転、$HSH$の共役作用は$x$軸周りの$90°$回転（$y\mapsto z,\ z\mapsto-y$）です。後者で$+z\mapsto-y\mapsto-z\mapsto+y$と4頂点に移り、$-y$に前者を施せば$+x$、$+y$からは$-x$が得られるので、$+z$の行き先は6頂点すべてに及びます。一方、$+z$を固定する回転として$S$の生成する4つ（$z$軸周りの$0°,90°,180°,270°$）があります。したがって生成される部分群の位数は$6\times4=24$以上であり、正八面体の回転群全体と一致します。例えば$HS$の共役作用は$x\mapsto-y\mapsto z\mapsto x$と3軸を巡回させる位数3の回転（頂点ではなく面の中心を貫く3回軸）です。
 
 &&&ex 正八面体の頂点と6つの状態
 6つの頂点に対応する状態を挙げます。ブロッホベクトルが$\pm z$の状態は$|0\rangle,|1\rangle$、$\pm x$は$|\pm\rangle=\frac{|0\rangle\pm|1\rangle}{\sqrt2}$、$\pm y$は$|{\pm i}\rangle=\frac{|0\rangle\pm i|1\rangle}{\sqrt2}$です。[[7shi-s]] クリフォードゲートはこの6状態を（位相を除いて）互いに移し、$|0\rangle$に$H,S$を繰り返し施して得られる状態はちょうどこの6つです。例えば$H|0\rangle=|+\rangle$、$S|+\rangle=|{+i}\rangle$です。
 &&&
 
 &&&rem 対称群との同型
-正八面体の回転群は4次対称群$S_4$と同型です。正八面体と双対な立方体で見ると、回転は4本の対角線（$(1,1,1)$方向など）を置換し、逆にこの置換から回転が1つに決まります。$HS$の位数3の回転は、1本の対角線を固定して残り3本を巡回させる置換にあたります。
+正八面体の回転群は4次対称群$S_4$と同型です。正八面体と双対な立方体で見ると、回転は4本の対角線（$(1,1,1)$方向など）を置換します。4本すべてをそれぞれ保つ回転は恒等回転だけなのでこの作用は忠実であり、両群の位数がともに24であることから同型が従います。$HS$の位数3の回転は、1本の対角線を固定して残り3本を巡回させる置換にあたります。
 &&&
 
 # Tゲートと八面体対称性の破れ
@@ -242,7 +242,7 @@ $T$は$z$軸周りの$45°$回転でした。共役作用を計算すると
 $$
 TXT^\dagger=\frac{\sigma_x+\sigma_y}{\sqrt2}
 $$
-となり、$x$軸は$x$軸と$y$軸の中間方向へ写ります。これはパウリの軸ではないので、$T$は**クリフォードゲートではありません**。幾何的には、$45°$回転は正八面体の頂点を辺の中点の方向、つまり頂点でない点へ写します。正八面体の対称性からこぼれる最初のゲートです。
+となり、$x$軸は$x$軸と$y$軸の中間方向へ写ります。これはパウリの軸ではないので、$T$は**クリフォードゲートではありません**。幾何的には、$45°$回転は正八面体の頂点を辺の中点の方向、つまり頂点でない点へ写します。$T$は正八面体の対称性を保たないゲートです。
 
 &&&rem 万能性
 クリフォードゲートだけをいくら合成しても、位相を除けば24個の回転しか作れません。ところが$T$を加えると、$H$と$T$の生成する回転の集合は$\mathrm{SO}(3)$の中で稠密になり、任意の1量子ビットゲートを任意の精度で近似できます。さらに次節のCNOTを加えた$\{H,T,\mathrm{CNOT}\}$は、多量子ビットの任意のゲートを近似できる**万能ゲート集合**となります。[[nielsen-chuang]] 有限の対称性を破る1つのゲートが、有限群と連続群の隔たりを埋めます。
@@ -276,7 +276,7 @@ $$
 \rho=\frac14\sum_{a,b}c_{ab}\,\sigma_a\otimes\sigma_b,\quad
 c_{ab}=\operatorname{tr}\{\rho(\sigma_a\otimes\sigma_b)\}
 $$
-と展開できます（添字は$\mathrm I,x,y,z$を走り、$c_{00}=\operatorname{tr}\rho=1$）。残る15個の実係数$c_{ab}$がブロッホベクトルの2量子ビット版であり、ゲートの共役作用はこの15本の軸を回します。クリフォードゲートの定義も1量子ビットと同文で、$UP_2U^\dagger=P_2$です。
+と展開できます（$\sigma_0=\mathrm I$とし、添字$a,b$は$0,x,y,z$を走ります。$c_{00}=\operatorname{tr}\rho=1$）。残る15個の実係数$c_{ab}$がブロッホベクトルの2量子ビット版であり、ゲートの共役作用はこの15本の軸を回します。ただし1量子ビットの場合と異なり、物理的な密度行列に対応する係数の領域は単純な球ではありません。クリフォードゲートの定義も1量子ビットと同文で、$UP_2U^\dagger=P_2$です。
 
 CNOTの共役作用を求めます。生成元の行き先だけ押さえれば、あとは積で決まります。
 
@@ -302,13 +302,13 @@ $$
 &=X\Pi_1\otimes X+X\Pi_0\otimes X=X\otimes X
 \end{aligned}
 $$
-です。他の行も同様に計算でき（検証コードで全数確認します）、15本の軸はすべて符号付きの軸に写ります。**CNOTはクリフォードゲートです**。
+です。他の行も同様に計算でき、15本の軸はすべて符号付きの軸に写ります。**CNOTはクリフォードゲートです**。
 
 ## もつれの生成
 
 表には、局所的なゲートには決してできないことが現れています。$U\otimes V$の共役作用は$\sigma_a\otimes\mathrm I\mapsto(U\sigma_aU^\dagger)\otimes\mathrm I$のように$A$側と$B$側の軸を別々に回すだけですが、CNOTは$A$側だけの軸$X\otimes\mathrm I$を両側にまたがる軸$X\otimes X$に写しています。
 
-このことは、もつれの生成として確かめられます。前回の判定[[7shi-entangle]]で使った行列$M=\begin{pmatrix}\alpha&\beta\\\gamma&\delta\end{pmatrix}$は、局所ゲート$U\otimes V$のもとで$M\mapsto UMV^T$と変換するため、行列式は$\det U\det V$倍、その絶対値すなわちもつれの深さ$C=2|\alpha\delta-\beta\gamma|$は不変です。局所ゲートはもつれを作りも壊しもしません。一方CNOTは$C$を変えます。
+このことは、もつれの生成として確かめられます。前回の判定[[7shi-entangle]]で使った行列$M=\begin{pmatrix}\alpha&\beta\\\gamma&\delta\end{pmatrix}$は、局所ゲート$U\otimes V$のもとで$M\mapsto UMV^T$と変換するため、行列式は$\det U\det V$倍となります。$|\det U|=|\det V|=1$より行列式の絶対値は不変で、その2倍であるもつれの深さ$C=2|\alpha\delta-\beta\gamma|$も不変です。局所ゲートはもつれを作りも壊しもしません。一方CNOTは$C$を変えます。
 
 &&&ex ベル状態の生成
 $|00\rangle$に$H\otimes\mathrm I$、続いてCNOTを施します。
@@ -317,7 +317,7 @@ $$
 \ \xrightarrow{H\otimes\mathrm I}\ \frac{|00\rangle+|10\rangle}{\sqrt2}
 \ \xrightarrow{\mathrm{CNOT}}\ \frac{|00\rangle+|11\rangle}{\sqrt2}=\Phi_+
 $$
-$\alpha\delta-\beta\gamma=\frac12\neq0$で、$C=1$の最大もつれです。前回の四元数ホップ像では、分離可能な状態の像がなす$S^2$の北極$|00\rangle$から、最大もつれの円上の$-\mathbf j$へ移ります。[[7shi-entangle]] たった2つのゲートで、分離可能な世界からもつれの世界へ渡れました。
+$\alpha\delta-\beta\gamma=\frac12\neq0$で、$C=1$の最大もつれです。前回の四元数ホップ像では、分離可能な状態の像がなす$S^2$の北極$|00\rangle$から、最大もつれの円上の$-\mathbf j$へ移ります。[[7shi-entangle]] 2つのゲートによって、積状態から最大もつれ状態を生成できました。
 &&&
 
 ## 軸の行き先でベル状態を読む
@@ -338,7 +338,7 @@ $$
 となります。つまり$\Phi_+$は$X\otimes X$と$Z\otimes Z$の同時$+1$固有状態です。期待値で言えば$\langle X\otimes X\rangle=\langle Z\otimes Z\rangle=1$、一方で$A$単独の軸$\sigma\otimes\mathrm I$の期待値はすべて0（$\boldsymbol r_A=0$、最大混合[[7shi-entangle]]）です。**個別の量子ビットの軸には何も見えないのに、相関の軸には完全な相関が見える**。前回、ホップ像とブロッホベクトルで見たもつれの姿が、軸の行き先を2本追うだけで再現されました。
 
 &&&thm ゴッツマン＝クニルの定理
-この「状態ではなく軸を追う」方法は$n$量子ビットに一般化できます。$|0\cdots0\rangle$は$n$本の軸$Z_i$（$i$番目だけ$Z$で他は$\mathrm I$のテンソル積）の同時$+1$固有状態で、クリフォード回路を通した後も、追跡すべきは$n$本の軸の行き先（それぞれ符号付きのパウリのテンソル積）だけです。記録量も更新の手間も$n$の多項式で済むため、**クリフォードゲートと計算基底での測定だけからなる量子回路は、古典計算機で効率よくシミュレートできます**（ゴッツマン＝クニルの定理[[gottesman]]）。もつれを作れるCNOTを含んでいても、軸の置換しか起こさない回路は古典で追えるのです。量子計算が古典計算を超えるには、$T$のようにクリフォード群からはみ出すゲートが欠かせません。
+この「状態ではなく軸を追う」方法は$n$量子ビットに一般化できます。$|0\cdots0\rangle$は$n$本の軸$Z_i$（$i$番目だけ$Z$で他は$\mathrm I$のテンソル積）の同時$+1$固有状態で、クリフォード回路を通した後も、追跡すべきは$n$本の軸の行き先（それぞれ符号付きのパウリのテンソル積）だけです。測定を含む場合も、追跡している軸と測定する軸の交換・反交換関係から、測定確率と測定後の軸を効率よく更新できます。記録量も更新の手間も$n$の多項式で済むため、**計算基底状態を入力とし、クリフォードゲートと計算基底での測定だけからなる量子回路は、古典計算機で効率よくシミュレートできます**（ゴッツマン＝クニルの定理[[gottesman]]）。ここでシミュレートとは、測定結果を同じ確率分布に従ってサンプリングできることであり、指数個の確率をすべて列挙することではありません。もつれを作れるCNOTを含んでいても、軸の置換しか起こさない回路は古典で追えるのです。この枠組みではクリフォードゲートだけでは万能にならず、$T$のような非クリフォード資源が欠かせません。
 &&&
 
 &&&rem quditへの一般化

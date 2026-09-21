@@ -253,7 +253,7 @@ $$
 \begin{alignedat}{4}
 \sigma_x\sigma_y &\cong (hi)(hj) &&=hh(ij) &&=h(hk) &&\cong i\sigma_z \\
 \sigma_y\sigma_z &\cong (hj)(hk) &&=hh(jk) &&=h(hi) &&\cong i\sigma_x \\
-\sigma_x\sigma_y &\cong (hk)(hi) &&=hh(ki) &&=h(hj) &&\cong i\sigma_y
+\sigma_z\sigma_x &\cong (hk)(hi) &&=hh(ki) &&=h(hj) &&\cong i\sigma_y
 \end{alignedat}
 $$
 
