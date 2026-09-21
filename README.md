@@ -29,4 +29,3 @@
   - md.tsv — README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv — 両者をタイトルで突き合わせた結果。
 - [src/review/](src/review/README.md) — 記事をLLMにレビューさせるツール（運用手順は[REVIEW.md](REVIEW.md)）。
-- usage.jsonl — LLMのトークン使用量（[llm7shi](https://github.com/7shi/llm7shi)の`usage`コマンドで記録・集計）の記録。

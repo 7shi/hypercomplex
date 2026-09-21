@@ -12,7 +12,7 @@ from pathlib import Path
 
 import yaml
 from llm7shi import Client
-from llm7shi.usage import append_usage, find_usage_file, format_usage_line, parse_usage_file, today
+from llm7shi.usage import append_usage, find_usage_file, print_today_totals
 
 _DIR = Path(__file__).parent
 ROOT = _DIR.resolve().parent.parent
@@ -151,13 +151,8 @@ def main() -> int:
     if usage:
         usage_path = find_usage_file()
         append_usage(usage, args.model, usage_path)
-        print(f"-> {usage_path}")
-
-        totals = parse_usage_file(usage_path)
-        date = today()
-        print(f"\n# {date}")
-        for model, model_usage in totals[date].items():
-            print(format_usage_line(model, model_usage))
+        print(f"-> {usage_path}\n")
+        print_today_totals(usage_path)
     return 0
 
 

@@ -42,7 +42,7 @@ Claude Code で作業する場合は、参照記事の選定とこのファイ�
 uv run review clif/04-weyl-algebra.md -m MODEL
 ```
 
-読み込んだプロンプトと参照記事が`prompt:`・`ref:`として表示されます。結果は対象と同じ場所に`<stem>.txt`（例: `clif/04-weyl-algebra.txt`）として保存され、トークン使用量が`usage.jsonl`に追記されます。
+読み込んだプロンプトと参照記事が`prompt:`・`ref:`として表示されます。結果は対象と同じ場所に`<stem>.txt`（例: `clif/04-weyl-algebra.txt`）として保存され、トークン使用量が`~/.local/state/llm7shi/usage.jsonl`に追記されます。
 
 複数のモデルでレビューする場合は、`.txt`が上書きされるため、必要に応じて前の結果を退避します。
 
