@@ -13,8 +13,11 @@ Verifies numerically (random variables, numpy):
    (all 2x2 minors vanish); generic states have nonzero e2..e7 components.
 7. Concrete examples: |000>, |0>⊗Bell_BC (same image), GHZ -> -e6,
    W -> (2/3)(e2 + e4) with r = 1/3, Bell_AC⊗|0>_B -> -e2, Bell_AB⊗|0>_C -> -e4.
-8. Bloch vector of qubit A via σ ⊗ I_4, and |r_A|² + C² = 1
+8. Bloch vector of qubit A via σ ⊗ I_4, the complex component formula
+   π_C(o1 o2*) = Σ u_k v_k*, and |r_A|² + C² = 1
    with C = |e2..e7 components of the image|.
+8b. The image direction is not an invariant: e^{iπ/4} GHZ and the product
+   state (|0>+i|1>)_B ⊗ Bell_AC share the image (e7; 0).
 9. Fiber over a separable image point (hopf/04 construction): every point
    is A|BC separable with the same r_A; right multiplication does not
    preserve the image.
@@ -168,6 +171,32 @@ def check_examples():
     img, r = H_O(*blocks(state([0, 6], [1, 1])))
     assert np.allclose(img, -e(4)) and np.isclose(r, 0)
 
+def check_image_direction_not_invariant():
+    # e^{iπ/4} GHZ and the product state (|0>+i|1>)_B ⊗ Bell_AC
+    # share the image (e7; 0) although only the former is genuinely 3-way
+    ghz_phase = np.exp(1j * np.pi / 4) * state([0, 7], [1, 1])
+    o1, o2 = blocks(ghz_phase)
+    assert np.allclose(o1, (e(0) + e(1)) / 2)
+    assert np.allclose(o2, (e(6) - e(7)) / 2)
+    img, r = H_O(o1, o2)
+    assert np.allclose(img, e(7)) and np.isclose(r, 0)
+    # (|000> + i|010> + |101> + i|111>)/2
+    prod = state([0, 2, 5, 7], [1, 1j, 1, 1j])
+    B = np.array([1, 1j]) / np.sqrt(2)
+    AC = np.array([1, 0, 0, 1]) / np.sqrt(2)
+    # reorder B ⊗ AC into the ABC ordering: index 4a + 2b + c
+    ref = np.zeros(8, dtype=complex)
+    for a in range(2):
+        for b in range(2):
+            for c in range(2):
+                ref[4 * a + 2 * b + c] = B[b] * AC[2 * a + c]
+    assert np.allclose(prod, ref)
+    o1, o2 = blocks(prod)
+    assert np.allclose(o1, (e(0) + e(5)) / 2)
+    assert np.allclose(o2, (e(2) - e(7)) / 2)
+    img, r = H_O(o1, o2)
+    assert np.allclose(img, e(7)) and np.isclose(r, 0)
+
 def bloch_A(psi):
     sx = np.array([[0, 1], [1, 0]], dtype=complex)
     sy = np.array([[0, -1j], [1j, 0]])
@@ -183,6 +212,10 @@ def check_bloch_vector():
         xA, yA, zA = bloch_A(psi)
         assert np.isclose(img[0] + 1j * img[1], xA - 1j * yA)
         assert np.isclose(r, zA)
+        # π_C(o1 o2*) = Σ u_k v_k* for the blocks Ψ0 = (u_k), Ψ1 = (v_k)
+        o1, o2 = blocks(psi)
+        prod = mul(o1, conj(o2))
+        assert np.isclose(prod[0] + 1j * prod[1], psi[:4] @ psi[4:].conjugate())
         C = np.linalg.norm(img[2:])
         assert np.isclose(xA**2 + yA**2 + zA**2 + C**2, 1)
 
@@ -284,6 +317,7 @@ if __name__ == "__main__":
     check_separable()
     check_converse()
     check_examples()
+    check_image_direction_not_invariant()
     check_bloch_vector()
     check_fiber()
     check_su3()

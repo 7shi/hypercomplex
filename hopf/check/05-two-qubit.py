@@ -17,7 +17,8 @@ Verifies numerically (random variables, numpy):
 7. Concrete examples (Bell states, meridian cos(t)|00> + sin(t)|11>),
    and the global phase e^{iφ} rotating the (j,k) components by 2φ.
 8. Fiber: right multiplication by a unit quaternion preserves the image;
-   on a product state it replaces the state of qubit B; Φ+ · j = Ψ-.
+   on a product state it replaces the state of qubit B; in general it acts
+   as I_2 ⊗ [[u, -v*], [v, u*]] ∈ SU(2) for q = u + v j; Φ+ · j = Ψ-.
 """
 
 import numpy as np
@@ -185,6 +186,19 @@ def check_fiber():
         q1n, q2n = hopf_pair(np.kron(phi_a, phi_b2))
         assert np.allclose(qmul(q1, q), q1n)
         assert np.allclose(qmul(q2, q), q2n)
+    # in general (entangled states included), right multiplication by
+    # q = u + v j acts on the state vector as I_2 ⊗ [[u, -v*], [v, u*]] ∈ SU(2)
+    for _ in range(50):
+        psi = rand_state(4)
+        u, v = rand_state(2)
+        q = c2q(u, v)
+        U_B = np.array([[u, -v.conjugate()], [v, u.conjugate()]])
+        assert np.isclose(np.linalg.det(U_B), 1)
+        assert np.allclose(U_B.conj().T @ U_B, np.eye(2))
+        q1, q2 = hopf_pair(psi)
+        psi2 = np.kron(np.eye(2), U_B) @ psi
+        assert np.allclose(hopf_pair(psi2)[0], qmul(q1, q))
+        assert np.allclose(hopf_pair(psi2)[1], qmul(q2, q))
     # Φ+ · j = Ψ-
     s2 = np.sqrt(2)
     q1, q2 = hopf_pair(np.array([1, 0, 0, 1]) / s2)
