@@ -312,7 +312,7 @@ files = [
   "lie/11-exceptional.md",
   "lie/double-cover.md",
   "qua/06-slerp.md",
-  "qua/cd/grok45.md",
+  "qua/cd/bcmp-qua.md",
 ]
 
 ["7shi-lie3"]
@@ -971,7 +971,7 @@ accessed = 2024-11-06
 site = "Wikipedia"
 files = [
   "qua/01-pauli-qua.md",
-  "qua/cd/grok45.md",
+  "qua/cd/bcmp-qua.md",
   "qua/tensor-from-complex.md",
 ]
 
@@ -1018,6 +1018,7 @@ url = "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%
 accessed = 2025-05-06
 site = "Wikipedia"
 files = [
+  "qua/cd/bcmp-qua.md",
   "qua/cd/cd-to-matrix.md",
 ]
 

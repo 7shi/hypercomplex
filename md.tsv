@@ -54,10 +54,8 @@ qua/05-dual-qua.md	二重四元数と剛体変換
 qua/06-slerp.md	回転子の補間：SLERP
 qua/cd/bcmp-qua.md	ケイリー＝ディクソン構成の分岐点：双複素数と四元数
 qua/cd/cd-to-matrix.md	ケイリー＝ディクソンの構成法から四元数の行列表現まで
-qua/cd/grok45.md	複素数の行列表現から四元数へ：発見法的な導出
 qua/cd/heuristic-cmatrix.md	発見的手法による四元数の複素行列表現の構成
 qua/cd/matrix-to-pauli.md	四元数の行列表現からパウリ行列まで
-qua/cd/memo.md	元になったツイートスレッド
 qua/cd/real-to-cmatrix.md	四元数の実行列表現から複素行列表現へ
 qua/history.md	四元数が脇役になった歴史的経緯
 qua/real-pauli-trace.md	実パウリ行列とトレース
