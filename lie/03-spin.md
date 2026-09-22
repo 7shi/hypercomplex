@@ -465,7 +465,7 @@ $$
 
 この同型により、単位四元数のなす群$\operatorname{Sp}(1)$は$\operatorname{Spin}(3)$そのものであることが分かります。これにより、純虚四元数（リー代数$\mathfrak{sp}(1)$）は、前節で導入した**回転面**（2ベクトル）と対応付けられます。パウリ行列は、四元数をさらに「空間の基底ベクトル」へと因数分解した根本的な部品だと言えます。
 
-ここで視野を一般の次元へ広げます。$n$次元回転群$\operatorname{SO}(n)$に対して、その二重被覆となるリー群が存在し、これを**スピン群**$\operatorname{Spin}(n)$と定義します。単位四元数として構成した群の幾何学的な正体は$\operatorname{Spin}(3)$であり、それを複素行列で表現したのが$\operatorname{SU}(2)$だという関係です。
+ここで視野を一般の次元へ広げます。$n \ge 2$の回転群$\operatorname{SO}(n)$に対して、その連結な二重被覆となるリー群が存在し、これを**スピン群**$\operatorname{Spin}(n)$と定義します（$n \ge 3$では、これは普遍被覆でもあります）。単位四元数として構成した群の幾何学的な正体は$\operatorname{Spin}(3)$であり、それを複素行列で表現したのが$\operatorname{SU}(2)$だという関係です。
 
 $$
 \operatorname{Sp}(1) \cong \operatorname{Spin}(3) \cong \operatorname{SU}(2)
@@ -552,7 +552,7 @@ $$
 
 # まとめ
 
-$\operatorname{SO}(n)$の二重被覆となるリー群を$\operatorname{Spin}(n)$と呼びます。前回構成した$\operatorname{Sp}(1) \cong \operatorname{SU}(2)$の幾何学的な正体は$\operatorname{Spin}(3)$でした。
+$\operatorname{SO}(n)$の連結な二重被覆となるリー群を$\operatorname{Spin}(n)$と呼びます。前回構成した$\operatorname{Sp}(1) \cong \operatorname{SU}(2)$の幾何学的な正体は$\operatorname{Spin}(3)$でした。
 
 $\operatorname{SU}(2)$の行列が片側から作用する複素ベクトル$\mathbb{C}^2$の元を**スピノル**と呼びます。スピノルは回転の半分の角度で変換され、回転1周で$-1$倍、2周ではじめて元に戻ります。単位スピノルの自身との外積$\omega\omega^\dagger$は、片側作用しか受けていないのに共役作用（両側から挟む形）で変換され、その分解からトレース$0$のエルミート行列の基底として**パウリ行列**が取り出されます。外積の係数$(n_1, n_2, n_3)$は3次元の単位ベクトルをなし、スピノルへの片側作用は、このベクトルの回転として現れます。
 
