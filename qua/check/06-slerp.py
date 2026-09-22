@@ -401,6 +401,13 @@ for _ in range(20):
     w1 = add(CL1, u1)
     wn1 = smul(1 / math.sqrt(mul(w1, rev(w1), SQ4)[()]), w1)
     assert eq(mul(wn1, rev(wn1), SQ4), CL1)
+    # the two H components (omega = e1234 acting as +-1) have scalar parts
+    # cos((alpha -+ beta)/2), so c_L - c_R = -2 sin(alpha/2) sin(beta/2)
+    s0, s4 = u.get((), 0), u.get((1, 2, 3, 4), 0)
+    cL, cR = s0 - s4, s0 + s4
+    assert abs(cL - math.cos((al + be) / 2)) < 1e-9
+    assert abs(cR - math.cos((al - be) / 2)) < 1e-9
+    assert abs((cL - cR) + 2 * math.sin(al / 2) * math.sin(be / 2)) < 1e-9
 
 # --- dual quaternions: pairs (p, q) = p + eps q ------------------------------
 
