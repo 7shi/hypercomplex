@@ -14,6 +14,9 @@ def extract_md() -> list[tuple[str, str]]:
     seen: set[str] = set()
 
     for readme in sorted(ROOT.rglob("README.md")):
+        # .venv や .git などの隠しディレクトリ配下は対象外
+        if any(part.startswith(".") for part in readme.relative_to(ROOT).parts):
+            continue
         text = readme.read_text(encoding="utf-8")
         base = readme.parent
         for title, href in LINK_RE.findall(text):
