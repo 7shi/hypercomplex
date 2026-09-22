@@ -127,7 +127,7 @@
 3. [測度論的確率論](lebesgue/03-probability.md) — 確率変数・期待値・条件付き期待値・マルチンゲール。
 4. [ブラウン運動と伊藤の補題](lebesgue/04-brownian-ito.md) — 伊藤積分の構成と伊藤の補題（シリーズの目的地）。
 5. [ブラック＝ショールズ方程式](lebesgue/05-black-scholes.md) — 伊藤の補題の金融への応用。
-6. [ネルソンの確率過程量子化](lebesgue/06-nelson-stochastic-qm.md) — 伊藤の補題の量子力学への応用（シリーズ外への出口）。
+6. [ネルソンの確率力学](lebesgue/06-nelson-stochastic-qm.md) — 伊藤の補題の量子力学への応用（シリーズ外への出口）。
 
 重複なし。詳細な構成意図は[lebesgue/README.md](lebesgue/README.md)の「構想」節を参照。
 

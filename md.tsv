@@ -19,7 +19,7 @@ lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 lebesgue/03-probability.md	測度論的確率論
 lebesgue/04-brownian-ito.md	ブラウン運動と伊藤の補題
 lebesgue/05-black-scholes.md	ブラック＝ショールズ方程式
-lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率過程量子化
+lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率力学
 lie/01-u1-so2.md	複素数とSO(2)
 lie/02-su2-so3.md	四元数とSU(2)
 lie/03-spin.md	クリフォード代数とSpin(3)

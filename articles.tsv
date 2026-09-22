@@ -46,7 +46,7 @@ date	url	md	title
 		lebesgue/03-probability.md	測度論的確率論
 		lebesgue/04-brownian-ito.md	ブラウン運動と伊藤の補題
 		lebesgue/05-black-scholes.md	ブラック＝ショールズ方程式
-		lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率過程量子化
+		lebesgue/06-nelson-stochastic-qm.md	ネルソンの確率力学
 		lie/04-spin4.md	Spin(4)とSO(4)
 		lie/05-bch-adjoint.md	BCH公式と随伴作用
 		lie/06-su3.md	SO(3)の複素化とSU(3)
