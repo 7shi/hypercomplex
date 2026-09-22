@@ -13,7 +13,10 @@ files = [
 
 ["7shi-4drot"]
 files = [
+  "qua/05-dual-qua.md",
+  "qua/06-slerp.md",
   "qua/history.md",
+  "qua/spinor-ideal.md",
 ]
 
 ["7shi-7rot"]
@@ -31,6 +34,7 @@ type = "mathlog"
 citation = "7shi, 四元数とホップファイブレーション 3 ブロッホ球と密度行列, Mathlog, Wed Jul 15 2026, アクセス日: Fri Jul 24 2026"
 url = "https://mathlog.info/articles/aUC0EotUv0bdyXzusvAT"
 files = [
+  "clif/05-schrodinger.md",
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
   "hopf/07-real-qubit.md",
@@ -53,6 +57,7 @@ files = [
   "clif/03-gpm-gca.md",
   "hopf/03-bloch-density.md",
   "hopf/06-clifford-gates.md",
+  "qua/05-dual-qua.md",
   "qua/cd/matrix-to-pauli.md",
   "qua/history.md",
   "qua/real-pauli-trace.md",
@@ -66,7 +71,6 @@ citation = "7shi, 八元数の左作用とクリフォード代数, Mathlog, Sat
 url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 files = [
   "lie/07-s7.md",
-  "lie/08-g2.md",
   "lie/09-spin7-triality.md",
   "lie/ladder-spinor.md",
   "oct/01-octonion.md",
@@ -76,6 +80,7 @@ files = [
 
 ["7shi-clif1"]
 files = [
+  "clif/02-split-complex.md",
   "clif/03-gpm-gca.md",
   "qua/spinor-ideal.md",
 ]
@@ -160,6 +165,7 @@ files = [
 ["7shi-dualq"]
 files = [
   "clif/pga-cga.md",
+  "qua/06-slerp.md",
   "qua/history.md",
 ]
 
@@ -175,7 +181,6 @@ files = [
 files = [
   "hopf/06-clifford-gates.md",
   "hopf/07-real-qubit.md",
-  "lie/07-s7.md",
   "lie/08-g2.md",
 ]
 
@@ -306,6 +311,7 @@ files = [
   "lie/10-roots-dynkin.md",
   "lie/11-exceptional.md",
   "lie/double-cover.md",
+  "qua/06-slerp.md",
   "qua/cd/grok45.md",
 ]
 
@@ -334,6 +340,7 @@ files = [
 
 ["7shi-lie5"]
 files = [
+  "clif/04-weyl-algebra.md",
   "lie/06-su3.md",
   "lie/07-s7.md",
   "lie/08-g2.md",
@@ -393,6 +400,7 @@ citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 1
 url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
 files = [
   "clif/pga-cga.md",
+  "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
@@ -423,6 +431,7 @@ files = [
 files = [
   "clif/03-gpm-gca.md",
   "clif/04-weyl-algebra.md",
+  "lie/06-su3.md",
   "oct/04-sedenion.md",
 ]
 
@@ -543,6 +552,7 @@ url = "https://mathlog.info/articles/Q2gHpZNKhnCki6ipol4F"
 files = [
   "clif/01-representation.md",
   "clif/03-gpm-gca.md",
+  "qua/05-dual-qua.md",
 ]
 
 ["7shi-rod"]
@@ -554,6 +564,11 @@ author = ["七誌"]
 site = "七誌の開発日記"
 files = [
   "oct/02-7d-3rot.md",
+]
+
+["7shi-rpt"]
+files = [
+  "clif/02-split-complex.md",
 ]
 
 ["7shi-s"]
@@ -576,6 +591,8 @@ files = [
 ["7shi-strig"]
 files = [
   "lie/05-bch-adjoint.md",
+  "qua/05-dual-qua.md",
+  "qua/06-slerp.md",
 ]
 
 ["7shi-tp"]
@@ -625,6 +642,7 @@ files = [
 files = [
   "clif/pga-cga.md",
   "lie/08-g2.md",
+  "qua/06-slerp.md",
   "qua/history.md",
 ]
 
