@@ -222,6 +222,70 @@ Mr = np.hstack([M.real, M.imag])  # 実係数で解く
 stab = 15 - np.linalg.matrix_rank(Mr, tol=1e-8)
 print("純粋スピノルを固定する部分代数の次元 =", stab, "（su(3) の次元 8）")
 assert stab == 8
+# 比較：直線 Cψ0 を保つ実部分代数（gψ0 ∈ Cψ0）と、複素係数でベクトルを固定する部分代数
+Mline = np.vstack([Mr, np.hstack([vac, np.zeros(dim)]), np.hstack([(1j * vac).real, (1j * vac).imag])])
+stab_line = Mline.shape[0] - np.linalg.matrix_rank(Mline, tol=1e-8)
+stab_c = 15 - np.linalg.matrix_rank(M, tol=1e-8)
+print("直線 Cψ0 を保つ部分代数の実次元 =", stab_line, "（s(u(1)⊕u(3)) の次元 9）")
+print("sl(4,C) でベクトルを固定する部分代数の複素次元 =", stab_c)
+assert stab_line == 9 and stab_c == 11
+
+print()
+print("=== 実クリフォード代数の射影 P = diag(1,0,…) は純粋スピノルではない ===")
+
+
+def qmul(x, y):
+    x0, x1, x2, x3 = x
+    y0, y1, y2, y3 = y
+    return np.array([x0 * y0 - x1 * y1 - x2 * y2 - x3 * y3,
+                     x0 * y1 + x1 * y0 + x2 * y3 - x3 * y2,
+                     x0 * y2 - x1 * y3 + x2 * y0 + x3 * y1,
+                     x0 * y3 + x1 * y2 - x2 * y1 + x3 * y0])
+
+
+def annihilator_dim(gs, psi):
+    """複素係数のベクトル v = Σ c_a γ_a で vψ = 0 となるものの次元"""
+    return len(gs) - np.linalg.matrix_rank(np.array([g @ psi for g in gs]).T, tol=1e-8)
+
+
+def volume_sq(gs):
+    w = np.eye(len(gs[0]))
+    for g in gs:
+        w = w @ g
+    return w @ w
+
+
+# 四元数の左右作用による Cl_{3,1}(R)：生成元 L_iR_i, L_jR_i, L_kR_i, R_j
+E4 = np.eye(4)
+Lq = [np.array([qmul(E4[u], E4[c]) for c in range(4)]).T for u in range(4)]
+Rq = [np.array([qmul(E4[c], E4[u]) for c in range(4)]).T for u in range(4)]
+g31 = [Lq[1] @ Rq[1], Lq[2] @ Rq[1], Lq[3] @ Rq[1], Rq[2]]
+print("Cl_{3,1} の符号:", [int(round(np.trace(g @ g).real / 4)) for g in g31])
+e0 = np.eye(4)[0].astype(complex)
+d31 = annihilator_dim(g31, e0)
+print("Cl_{3,1}: 体積要素² = -I:", eq(volume_sq(g31), -np.eye(4)),
+      " P の第1列の消滅空間の次元 =", d31, "（極大等方は 2）")
+assert d31 == 1
+
+# 八元数の左作用による Cl_{0,6}(R)：生成元 L_1, …, L_6（e_i e_{i+1} = e_{i+3}）
+T = np.zeros((8, 8, 8))
+for u in range(8):
+    T[0, u, u] = T[u, 0, u] = 1
+for u in range(1, 8):
+    T[u, u, 0] = -1
+for i in range(7):
+    a_, b_, c_ = i + 1, (i + 1) % 7 + 1, (i + 3) % 7 + 1
+    for x, y, z in [(a_, b_, c_), (b_, c_, a_), (c_, a_, b_)]:
+        T[x, y, z], T[y, x, z] = 1, -1
+Lo = [T[u].T for u in range(8)]  # (L_u)_{zy} = T[u, y, z]
+g06 = Lo[1:7]
+assert all(eq(g @ g, -np.eye(8)) for g in g06)
+assert all(eq(anticomm(g06[i], g06[j]), 0) for i in range(6) for j in range(i + 1, 6))
+e0 = np.eye(8)[0].astype(complex)
+d06 = annihilator_dim(g06, e0)
+print("Cl_{0,6}: 体積要素² = -I:", eq(volume_sq(g06), -np.eye(8)),
+      " P の第1列の消滅空間の次元 =", d06, "（極大等方は 3）")
+assert d06 == 0
 
 print()
 print("すべての検証に成功しました。")
