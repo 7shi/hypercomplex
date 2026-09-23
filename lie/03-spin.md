@@ -359,10 +359,10 @@ $$
 
 ### 指数関数による構成
 
-単位2ベクトル$B$（$x_1\sigma_1+y_1\sigma_2$と$x_2\sigma_1+y_2\sigma_2$のウェッジ積を面積$1$に正規化したもの）は、反交換性から
+単位2ベクトル$B$（$x_1\sigma_1+y_1\sigma_2$と$x_2\sigma_1+y_2\sigma_2$のウェッジ積を面積$1$に正規化したもの）は、その平面内の直交する単位ベクトル$u, v$を用いて$B = uv$と書けます。$u^2 = v^2 = I$と反交換性$vu = -uv$から
 
 $$
-B^2 = (x\sigma_1+y\sigma_2)(x\sigma_1+y\sigma_2) = -I \quad (x^2+y^2=1)
+B^2 = uvuv = -uuvv = -u^2v^2 = -I
 $$
 
 のように$2$乗が$-I$になり、虚数単位と同じ振る舞いをします。したがって、四元数のときと同じ形の指数関数が定義できます。
@@ -472,7 +472,7 @@ $$
 $$
 
 &&&rem 低次元の偶然
-$\operatorname{Spin}(n)$が行列のリー群と同型になるのは、低次元に限られた偶然の一致です。$\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$のほかには、次回見る$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$、さらに$\operatorname{Spin}(5) \cong \operatorname{Sp}(2)$と$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$で打ち止めとなります。
+$\operatorname{Spin}(n)$がほかの古典群と同型になるのは、低次元に限られた偶然の一致です。$\operatorname{Spin}(3) \cong \operatorname{Sp}(1)$のほかには、$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$、さらに$\operatorname{Spin}(5) \cong \operatorname{Sp}(2)$と$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$で打ち止めとなります。
 &&&
 
 純虚四元数を3次元ベクトルと同一視すると、括弧積は外積（ベクトル積）の$2$倍に一致しました。
