@@ -354,7 +354,7 @@ $\mathfrak{so}(2n)$と$\mathfrak{so}(2n+1)$の違いは、余った1本の軸の
 - $B_2 = C_2$（$\mathrm{o}\Rightarrow\mathrm{o}$を左右どちらから読むか）。$\mathfrak{so}(5) \cong \mathfrak{sp}(2)$、すなわち$\operatorname{Spin}(5) \cong \operatorname{Sp}(2)$。本シリーズでは登場の機会がありませんでしたが、四元数の$2 \times 2$ユニタリ行列が5次元の回転を担うという、$\operatorname{Sp}(1)$や$\operatorname{Spin}(4)$の親戚にあたる同型です[[7shi-lie2]][[7shi-lie4]]
 - $D_3 = A_3$（直線3点）。$D_n$の三つ又を$n = 3$まで縮めると枝がまっすぐ伸びて$A_3$と同じ直線になります。$\mathfrak{so}(6) \cong \mathfrak{su}(4)$、すなわち$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$です[[7shi-lie6]][[7shi-lie9]]
 
-ランク$4$以上では連結な図形はすべて形が異なるため、一致はここで打ち止めです。以前「低次元の偶然の同型が尽きた最初のスピン群が$\operatorname{Spin}(8)$」と述べたこと[[7shi-lie9]]の裏付けが、この図形のリストです。個別の構成で1つずつ確かめてきた同型たちが、図形を並べるだけで一望できます。
+ランク$4$以上では連結な図形はすべて形が異なるため、一致はここで打ち止めです。以前「低次元の偶然の同型が尽きた最初の偶数次元のスピン群が$\operatorname{Spin}(8)$」と述べたこと[[7shi-lie9]]の裏付けが、この図形のリストです。個別の構成で1つずつ確かめてきた同型たちが、図形を並べるだけで一望できます。
 
 &&&rem 同じ点に複数の群
 図形はリー代数を分類するので、同じ点の上に複数のリー群が載ります。$A_1$の上には$\operatorname{SU}(2)$と$\operatorname{SO}(3)$が、$D_4$の上には$\operatorname{Spin}(8)$と$\operatorname{SO}(8)$が住んでいます。どれが載るかは中心と被覆の選び方[[7shi-lie2]][[7shi-lie5]]で決まり、これは図形には現れない大域的な情報です。
