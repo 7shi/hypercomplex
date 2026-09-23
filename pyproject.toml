@@ -5,7 +5,7 @@ description = "Articles and verification code related to hypercomplex numbers (e
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "llm7shi>=0.19.1",
+    "llm7shi>=0.21.1",
     "numpy>=2.5.0",
     "pyyaml>=6.0.3",
     "sympy>=1.14.0",
