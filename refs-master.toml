@@ -578,7 +578,7 @@ url = "https://ja.wikipedia.org/wiki/%E5%8F%8C%E8%A4%87%E7%B4%A0%E6%95%B0"
 site = "Wikipedia"
 files = [
   "qua/01-pauli-qua.md",
-  "qua/cd/grok45.md",
+  "qua/cd/bcmp-qua.md",
   "qua/tensor-from-complex.md",
 ]
 
@@ -625,6 +625,7 @@ title = "ケーリー＝ディクソンの構成法"
 url = "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%83%AA%E3%83%BC%EF%BC%9D%E3%83%87%E3%82%A3%E3%82%AF%E3%82%BD%E3%83%B3%E3%81%AE%E6%A7%8B%E6%88%90%E6%B3%95"
 site = "Wikipedia"
 files = [
+  "qua/cd/bcmp-qua.md",
   "qua/cd/cd-to-matrix.md",
 ]
 
