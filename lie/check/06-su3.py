@@ -22,15 +22,15 @@ its generator is an artifact of the standard basis; the block embeddings SO(2) s
 SO(3) and U(1) subset SU(2) subset SU(3); the conjugation action
 preserving su(3) and giving an 8-dimensional rotation; the clock and
 shift matrices generating M_3(C) as a generalized Clifford algebra
-(U^3 = V^3 = I, VU = w UV), with Hermitian combinations returning to
-Gell-Mann matrices; <U,V> generating a finite order-27 subgroup of
-SU(3) (extraspecial 3-group); U, V as exp of specific su(3) elements
-(V in the Cartan subalgebra span{l3,l8}, U in the so(3) subalgebra
+(X^3 = Z^3 = I, ZX = w XZ), with Hermitian combinations returning to
+Gell-Mann matrices; <X,Z> generating a finite order-27 subgroup of
+SU(3) (extraspecial 3-group); X, Z as exp of specific su(3) elements
+(Z in the Cartan subalgebra span{l3,l8}, X in the so(3) subalgebra
 span{l2,l5,l7} as a 2pi/3 rotation about axis (1,1,1)); the group
-commutator VUV^-1U^-1 = wI landing in the center Z_3 of SU(3), so that
-Ad(U) and Ad(V) commute; U and V sharing the eigenvalues {1, w, w^2}
-and being conjugate via the DFT matrix F (FUF^dagger = V,
-FVF^dagger = U^-1, with e^{i pi/6}F in SU(3)); and
+commutator ZXZ^-1X^-1 = wI landing in the center Z_3 of SU(3), so that
+Ad(X) and Ad(Z) commute; X and Z sharing the eigenvalues {1, w, w^2}
+and being conjugate via the DFT matrix F (FXF^dagger = Z,
+FZF^dagger = X^-1, with e^{i pi/6}F in SU(3)); and
 SU(3) inside Spin(6): the Cl(6,0) half-spinor
 representation realizes spin(6) = su(4), and the stabilizer of a
 spinor is an 8-dimensional subalgebra acting on psi^perp as su(3).
@@ -224,18 +224,18 @@ print("Ad(U) as 8x8: orthogonal, det 1:",
 
 # clock and shift matrices: generalized Clifford algebra generating M_3(C)
 omega = np.exp(2j*np.pi/3)
-Vc = np.diag([1, omega, omega**2])
-Us = np.array([[0, 0, 1], [1, 0, 0], [0, 1, 0]], dtype=complex)
-print("U^3 = V^3 = I, VU = w UV:",
-      np.allclose(np.linalg.matrix_power(Us, 3), I3)
-      and np.allclose(np.linalg.matrix_power(Vc, 3), I3)
-      and np.allclose(Vc @ Us, omega * Us @ Vc))
-print("U, V in SU(3), unitary but not Hermitian:",
-      np.isclose(np.linalg.det(Us), 1) and np.isclose(np.linalg.det(Vc), 1)
-      and np.allclose(Us.conj().T @ Us, I3) and np.allclose(Vc.conj().T @ Vc, I3)
-      and not np.allclose(Us, Us.conj().T) and not np.allclose(Vc, Vc.conj().T))
+Zc = np.diag([1, omega, omega**2])
+Xs = np.array([[0, 0, 1], [1, 0, 0], [0, 1, 0]], dtype=complex)
+print("X^3 = Z^3 = I, ZX = w XZ:",
+      np.allclose(np.linalg.matrix_power(Xs, 3), I3)
+      and np.allclose(np.linalg.matrix_power(Zc, 3), I3)
+      and np.allclose(Zc @ Xs, omega * Xs @ Zc))
+print("X, Z in SU(3), unitary but not Hermitian:",
+      np.isclose(np.linalg.det(Xs), 1) and np.isclose(np.linalg.det(Zc), 1)
+      and np.allclose(Xs.conj().T @ Xs, I3) and np.allclose(Zc.conj().T @ Zc, I3)
+      and not np.allclose(Xs, Xs.conj().T) and not np.allclose(Zc, Zc.conj().T))
 
-# <U,V> generates a finite subgroup of SU(3): order 27 extraspecial group
+# <X,Z> generates a finite subgroup of SU(3): order 27 extraspecial group
 def mat_in(m, lst, tol=1e-6):
     return any(np.allclose(m, o, atol=tol) for o in lst)
 group = [I3]
@@ -243,15 +243,15 @@ frontier = [I3]
 while frontier:
     nxt = []
     for g in frontier:
-        for gen in (Us, Vc):
+        for gen in (Xs, Zc):
             for cand in (g @ gen, gen @ g):
                 if not mat_in(cand, group):
                     group.append(cand)
                     nxt.append(cand)
     frontier = nxt
-print("<U,V> has order 27 (extraspecial 3-group, finite subgroup of SU(3)):", len(group) == 27)
+print("<X,Z> has order 27 (extraspecial 3-group, finite subgroup of SU(3)):", len(group) == 27)
 
-# U, V are exp of specific su(3) elements: V in the Cartan subalgebra, U in so(3)
+# X, Z are exp of specific su(3) elements: Z in the Cartan subalgebra, X in so(3)
 def su3_log(M):
     w, P = np.linalg.eig(M)
     P, _ = np.linalg.qr(P)
@@ -259,53 +259,53 @@ def su3_log(M):
     theta[-1] -= np.round(theta.sum() / (2*np.pi)) * 2*np.pi  # force exact trace 0
     return P @ np.diag(1j*theta) @ P.conj().T
 
-Xv, Xu = su3_log(Vc), su3_log(Us)
-print("exp(log V) = V, exp(log U) = U:", np.allclose(expm(Xv), Vc) and np.allclose(expm(Xu), Us))
+Xv, Xu = su3_log(Zc), su3_log(Xs)
+print("exp(log Z) = Z, exp(log X) = X:", np.allclose(expm(Xv), Zc) and np.allclose(expm(Xu), Xs))
 cv = np.array([(np.trace(m @ Xv) / (2j)).real for m in lam])
 cu = np.array([(np.trace(m @ Xu) / (2j)).real for m in lam])
-print("log V lies in span(l3, l8) (Cartan):",
+print("log Z lies in span(l3, l8) (Cartan):",
       np.allclose(cv[[0,1,3,4,5,6]], 0) and np.isclose(cv[2], -np.pi/3) and np.isclose(cv[7], np.pi/np.sqrt(3)))
-print("log U lies in span(l2, l5, l7) (so(3) subset su(3)):",
+print("log X lies in span(l2, l5, l7) (so(3) subset su(3)):",
       np.allclose(cu[[0,2,3,5,7]], 0) and np.allclose(cu[[1,4,6]], 2*np.pi/(3*np.sqrt(3))*np.array([-1,1,-1])))
-print("U's generator = rotation by 2pi/3 about axis (1,1,1):",
+print("X's generator = rotation by 2pi/3 about axis (1,1,1):",
       np.allclose(Xu, (2*np.pi/3)*(Jx+Jy+Jz)/np.sqrt(3) + 0j))
-mono = [np.linalg.matrix_power(Us, a) @ np.linalg.matrix_power(Vc, b)
+mono = [np.linalg.matrix_power(Xs, a) @ np.linalg.matrix_power(Zc, b)
         for a in range(3) for b in range(3)]
 Gm = np.array([[np.trace(A_.conj().T @ B_) for B_ in mono] for A_ in mono])
-print("tr((U^a V^b)^dagger U^c V^d) = 3 delta (basis of M_3(C)):",
+print("tr((X^a Z^b)^dagger X^c Z^d) = 3 delta (basis of M_3(C)):",
       np.allclose(Gm, 3*np.eye(9)))
-print("U^a V^b traceless except I:", all(np.isclose(np.trace(M), 0) for M in mono[1:]))
+print("X^a Z^b traceless except I:", all(np.isclose(np.trace(M), 0) for M in mono[1:]))
 # 2x2 analogue: clock = s3, shift = s1, anticommuting (ordinary Clifford)
 print("2x2: clock = s3, shift = s1, s3 s1 = -s1 s3:", np.allclose(s3 @ s1, -s1 @ s3))
 # Hermitian combinations return to Gell-Mann matrices
-print("U + U^2 = l1 + l4 + l6, i(U - U^2) = l2 - l5 + l7:",
-      np.allclose(Us + Us @ Us, l1 + l4 + l6)
-      and np.allclose(1j*(Us - Us @ Us), l2 - l5 + l7))
-print("V + V^2, i(V - V^2) in span of l3, l8 (Cartan):",
-      np.allclose(Vc + Vc @ Vc, 1.5*l3 + np.sqrt(3)/2*l8)
-      and np.allclose(1j*(Vc - Vc @ Vc), np.sqrt(3)/2*l3 - 1.5*l8))
+print("X + X^2 = l1 + l4 + l6, i(X - X^2) = l2 - l5 + l7:",
+      np.allclose(Xs + Xs @ Xs, l1 + l4 + l6)
+      and np.allclose(1j*(Xs - Xs @ Xs), l2 - l5 + l7))
+print("Z + Z^2, i(Z - Z^2) in span of l3, l8 (Cartan):",
+      np.allclose(Zc + Zc @ Zc, 1.5*l3 + np.sqrt(3)/2*l8)
+      and np.allclose(1j*(Zc - Zc @ Zc), np.sqrt(3)/2*l3 - 1.5*l8))
 
-# group commutator lands in the center of SU(3): VUV^-1U^-1 = wI
-print("VUV^-1U^-1 = w I:",
-      np.allclose(Vc @ Us @ Vc.conj().T @ Us.conj().T, omega * I3))
-print("center elements I, wI, w^2 I contained in <U,V>:",
+# group commutator lands in the center of SU(3): ZXZ^-1X^-1 = wI
+print("ZXZ^-1X^-1 = w I:",
+      np.allclose(Zc @ Xs @ Zc.conj().T @ Xs.conj().T, omega * I3))
+print("center elements I, wI, w^2 I contained in <X,Z>:",
       all(mat_in(w_ * I3, group) for w_ in (1, omega, omega**2)))
-# so Ad(U) and Ad(V) commute although U and V do not
+# so Ad(X) and Ad(Z) commute although X and Z do not
 x8 = su3(rng.standard_normal(8))
-print("Ad(U) Ad(V) = Ad(V) Ad(U):",
-      np.allclose(Us @ (Vc @ x8 @ Vc.conj().T) @ Us.conj().T,
-                  Vc @ (Us @ x8 @ Us.conj().T) @ Vc.conj().T))
+print("Ad(X) Ad(Z) = Ad(Z) Ad(X):",
+      np.allclose(Xs @ (Zc @ x8 @ Zc.conj().T) @ Xs.conj().T,
+                  Zc @ (Xs @ x8 @ Xs.conj().T) @ Zc.conj().T))
 
-# U and V are conjugate: same eigenvalues, DFT matrix swaps them
+# X and Z are conjugate: same eigenvalues, DFT matrix swaps them
 Fd = np.array([[omega**(j*k) for k in range(3)] for j in range(3)]) / np.sqrt(3)
-print("eigenvalues of U = {1, w, w^2} (same as V):",
-      np.allclose(np.sort_complex(np.linalg.eigvals(Us)), np.sort_complex(np.diag(Vc))))
+print("eigenvalues of X = {1, w, w^2} (same as Z):",
+      np.allclose(np.sort_complex(np.linalg.eigvals(Xs)), np.sort_complex(np.diag(Zc))))
 print("F unitary, det F = -i, det(e^{i pi/6} F) = 1:",
       np.allclose(Fd.conj().T @ Fd, I3) and np.isclose(np.linalg.det(Fd), -1j)
       and np.isclose(np.linalg.det(np.exp(1j*np.pi/6) * Fd), 1))
-print("F U F^dagger = V, F V F^dagger = U^-1:",
-      np.allclose(Fd @ Us @ Fd.conj().T, Vc)
-      and np.allclose(Fd @ Vc @ Fd.conj().T, Us.conj().T))
+print("F X F^dagger = Z, F Z F^dagger = X^-1:",
+      np.allclose(Fd @ Xs @ Fd.conj().T, Zc)
+      and np.allclose(Fd @ Zc @ Fd.conj().T, Xs.conj().T))
 
 # SU(3) inside Spin(6): Cl(6,0) via 8x8 gamma matrices
 def kron(*ms):
@@ -372,6 +372,36 @@ print("H13 = H12 + H23, but the three directions are distinct lines:",
 print("H13 = (l3 + sqrt3 l8)/2, H23 = (-l3 + sqrt3 l8)/2:",
       np.allclose(H13, (l3 + np.sqrt(3)*l8)/2) and np.allclose(H23, (-l3 + np.sqrt(3)*l8)/2))
 
-# V is basis-dependent: a single 2-3 block generator suffices
-print("V = exp(2 pi i H23 / 3) (no l8 needed in this basis):",
-      np.allclose(expm(2j*np.pi*H23.astype(complex)/3), Vc))
+# Z is basis-dependent: a single 2-3 block generator suffices
+print("Z = exp(2 pi i H23 / 3) (no l8 needed in this basis):",
+      np.allclose(expm(2j*np.pi*H23.astype(complex)/3), Zc))
+
+# Sylvester's nonion generators u = ZX, v = Z^2 X generate the same order-27 group
+un, vn = Zc @ Xs, Zc @ Zc @ Xs
+print("nonion u = ZX, v = Z^2X: u^3 = v^3 = I, vu = w uv:",
+      np.allclose(np.linalg.matrix_power(un, 3), I3)
+      and np.allclose(np.linalg.matrix_power(vn, 3), I3)
+      and np.allclose(vn @ un, omega * un @ vn))
+print("u v^-1 = Z^-1, Z^-1 u = X (same group as <X,Z>):",
+      np.allclose(un @ vn.conj().T, Zc.conj().T) and np.allclose(Zc.conj().T @ un, Xs)
+      and all(mat_in(g, group) for g in (un, vn)))
+
+# su(3) = so(3) + i Sym_0(3,R) as real vector spaces (not as Lie algebras)
+sym = [l1, l3, l4, l6, l8]
+print("l1, l3, l4, l6, l8 real symmetric traceless (basis of Sym_0, dim 5):",
+      all(np.allclose(m.imag, 0) and np.allclose(m, m.T) and np.isclose(np.trace(m), 0) for m in sym)
+      and np.linalg.matrix_rank(np.array([m.real.ravel() for m in sym])) == 5)
+print("[i Sym_0, i Sym_0] lands in so(3) (real antisymmetric):",
+      all(np.allclose(comm(1j*a, 1j*b).imag, 0) and np.allclose(comm(1j*a, 1j*b), -comm(1j*a, 1j*b).T)
+          for a in sym for b in sym))
+
+# fiber bundle SU(3) -> S^5, A -> A e3: stabilizer of e3 is diag(B, 1), B in SU(2)
+e3 = np.array([0, 0, 1])
+A = expm(sum(c*1j*m for c, m in zip([0.3, -0.7, 0.2], [l1, l2, l3])))
+print("diag(B,1) fixes e3, and a unitary fixing e3 has third row e3 too:",
+      np.allclose(A @ e3, e3) and np.allclose(A[2], e3))
+
+# kernel of Ad contains the center: scalar matrices act trivially by conjugation
+x8 = sum(c*1j*m for c, m in zip(np.linspace(0.1, 0.8, 8), lam))
+print("Ad(w^k I) = identity on su(3):",
+      all(np.allclose((omega**k*I3) @ x8 @ (omega**k*I3).conj().T, x8) for k in range(3)))

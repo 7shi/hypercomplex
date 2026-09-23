@@ -11,7 +11,7 @@
 - 虚数単位の左作用$L_i(x) = e_i x$は$8 \times 8$の符号付き置換行列で、$L_i^2 = -I$と反交換関係を満たす。非結合性により$L_1L_2 \ne L_3$のように左作用は左作用に閉じず、$L_1, \dots, L_6$の積が$M_8(\mathbb{R})$の64次元全体を張ってクリフォード代数$C\ell_{0,6}(\mathbb{R}) \cong M_8(\mathbb{R})$を生成する。$L_7 = L_1 \cdots L_6$は体積要素（[[7shi-cl6]]）
 - $\operatorname{Spin}(n)$は単位ベクトルの偶数個の積の全体で、グレード1への共役作用が$\operatorname{SO}(n)$の2重被覆を与える。ベクトルは全角、スピノルは半角で回る[[7shi-lie3]]
 - 四元数$v$を反対角に配置した$\gamma(v)$は$C\ell_{4,0}(\mathbb{R}) \cong M_2(\mathbb{H})$を生成し、$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$の元は対角の対$(p, q)$。ベクトルには$pxq^{-1}$と両側から作用し、2つの**半スピノル**には$p$と$q$が別々に片側から作用する[[7shi-lie4]]
-- $\operatorname{Spin}(6) \cong \operatorname{SU}(4)$であり、スピノルを1本固定する部分群が$\operatorname{SU}(3)$。スピノルの固定は複素構造の選択にあたる[[7shi-lie6]]
+- $\operatorname{Spin}(6) \cong \operatorname{SU}(4)$であり、単位半スピノルを1本固定する部分群が$\operatorname{SU}(3)$。この固定は、$\mathbb{R}^6$に複素構造と、それに適合する複素体積形式を選ぶことにあたる（複素構造だけなら$\operatorname{U}(3)$）[[7shi-lie6]]
 
 # 左作用 — 挟まない作用
 
@@ -133,20 +133,20 @@ $$
 \mathfrak{spin}(6) = \operatorname{span}\{L_iL_j \mid 1 \le i < j \le 6\}
 $$
 
-ここで体積要素$J = L_7 = L_1 \cdots L_6$が中心的な役割を担います。$J^2 = -I$なので、$J$は$\mathbb{R}^8$を複素4次元空間$\mathbb{C}^4$と見なす**複素構造**です（$J$は$1$と$e_7$、および$e_7$を含む3つの三つ組が定める3枚の平面を、それぞれ「実軸と虚軸」のペアにします）。$\mathfrak{spin}(6)$は$J$と可換なので$\mathbb{C}^4$に複素線形に作用し、反対称性と合わせると反エルミートになり、複素トレースも$0$となって、ちょうど$\mathfrak{su}(4)$になります。先に「偶然の同型の最後のひとつ」として触れた[[7shi-lie6]]
+ここで体積要素$J = L_7 = L_1 \cdots L_6$が中心的な役割を担います。$J^2 = -I$なので、$J$は$\mathbb{R}^8$を複素4次元空間$\mathbb{C}^4$と見なす**複素構造**です（$J$は$1$と$e_7$、および$e_7$を含む3つの三つ組が定める3枚の平面を、それぞれ「実軸と虚軸」のペアにします）。$\mathfrak{spin}(6)$は$J$と可換なので$\mathbb{C}^4$に複素線形に作用し、反対称性と合わせると反エルミートになり、複素トレースも$0$となって、ちょうど$\mathfrak{su}(4)$になります。先に低次元の偶然の同型の系列に連なるものとして触れた[[7shi-lie6]]
 
 $$
 \operatorname{Spin}(6) \cong \operatorname{SU}(4)
 $$
 
-が、八元数の左作用の中で具体的な行列として実現されました。スピノル空間$\mathbb{C}^4$の単位球面は$S^7$で、$\operatorname{SU}(4)$がスピノルを1本固定すると$\operatorname{SU}(3)$が残るのでした[[7shi-lie6]]。実際、$\{A \in \mathfrak{spin}(6) \mid A \cdot 1 = 0\}$は8次元で、すべて微分（$\mathfrak{g}_2$の元）であり、$e_7$を固定します。「虚数単位を固定する微分」として得た$\mathfrak{su}(3)$そのものです[[7shi-lie8]]。
+が、八元数の左作用の中で具体的な行列として実現されました。$\operatorname{Spin}(6)$の半スピノル空間$\mathbb{C}^4$の単位球面は$S^7$で、$\operatorname{SU}(4)$が単位半スピノルを1本固定すると$\operatorname{SU}(3)$が残るのでした[[7shi-lie6]]。実際、$\{A \in \mathfrak{spin}(6) \mid A \cdot 1 = 0\}$は8次元で、すべて微分（$\mathfrak{g}_2$の元）であり、$e_7$を固定します。「虚数単位を固定する微分」として得た$\mathfrak{su}(3)$そのものです[[7shi-lie8]]。
 
 整理すると、$\operatorname{Spin}(7)$から$\operatorname{SU}(3)$へ降りる道が2通りあります。
 
 - **ベクトル$e_7$を先に固定**：$\operatorname{Spin}(7) \to \operatorname{Spin}(6) \cong \operatorname{SU}(4) \to \operatorname{SU}(3)$（次元は$21 \xrightarrow{-6} 15 \xrightarrow{-7} 8$、軌道は$S^6$と$S^7$）
 - **スピノル$1$を先に固定**：$\operatorname{Spin}(7) \to G_2 \to \operatorname{SU}(3)$（次元は$21 \xrightarrow{-7} 14 \xrightarrow{-6} 8$、軌道は$S^7$と$S^6$）
 
-どちらの順で固定しても、着地点は同じ$\operatorname{SU}(3)$です。「スピノル1本の固定は複素構造の選択」[[7shi-lie6]]と「虚数単位の固定は複素構造の選択」[[7shi-lie8]]は、この四角形の2辺ずつを言い当てていたことになります。
+どちらの順で固定しても、着地点は同じ$\operatorname{SU}(3)$です。「単位半スピノル1本の固定は、複素構造と複素体積形式の選択」[[7shi-lie6]]と「虚数単位の固定は複素構造の選択」[[7shi-lie8]]は、この四角形の2辺ずつを言い当てていたことになります。
 
 # 倍加 — Spin(8)
 
