@@ -5,7 +5,7 @@ description = "Articles and verification code related to hypercomplex numbers (e
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "llm7shi>=0.21.1",
+    "llm7shi>=0.22.0",
     "numpy>=2.5.0",
     "pyyaml>=6.0.3",
     "sympy>=1.14.0",
@@ -15,7 +15,6 @@ dependencies = [
 articles = "articles.__main__:main"
 reftools = "reftools.__main__:main"
 review = "review.__main__:main"
-usage = "llm7shi.usage:main"
 
 [build-system]
 requires = ["hatchling"]
