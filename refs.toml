@@ -78,6 +78,11 @@ files = [
   "qua/spinor-ideal.md",
 ]
 
+["7shi-cla1"]
+files = [
+  "clif-analysis/02-fundamental-theorem.md",
+]
+
 ["7shi-clif1"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
@@ -234,6 +239,7 @@ files = [
 ["7shi-hist"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "clif-analysis/02-fundamental-theorem.md",
 ]
 
 ["7shi-homog"]

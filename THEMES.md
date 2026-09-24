@@ -135,6 +135,7 @@
 複素解析をディラック作用素の核として組み直し、四元数解析・一般次元のクリフォード解析へ進むシリーズです。構想と検討の経緯は[clif-analysis/README.md](clif-analysis/README.md)・[clif-analysis/MEMO.md](clif-analysis/MEMO.md)を参照。
 
 1. [ディラック作用素とモノジェニック関数](clif-analysis/01-dirac-monogenic.md) — $\operatorname{Cl}_{2,0}(\mathbb R)$の生成元でラプラシアンの平方根$D$を組み、偶部分代数に値を取る関数では$DF=0$がコーシー＝リーマンの方程式と同値になることを示す。関数の値が2成分を持つことを、$D$が作用できる値空間（極小左イデアル）の最小次元として説明する。
+2. [有向積分と幾何微積分の基本定理](clif-analysis/02-fundamental-theorem.md) — $\int_M DF\,dV=\oint_{\partial M}\boldsymbol nF\,dS$を長方形上の1次元の基本定理から示し、グリーンの定理（流束形・循環形）、発散定理と回転の体積分、有向面素による形からストークスの定理を、グレード成分として取り出す。非可換な場合の両側形式も用意する。
 
 関連: 位置ベクトルと複素数の対応は[ベクトルの幾何積と指数関数](vec-oct/geometric-product-exp.md)（[鏡映と回転](#鏡映と回転)）の$e_1e_1$を挟む計算、極小左イデアルとスピノルは[クリフォード代数とSpin(3)](lie/03-spin.md)（[リー群・リー代数](#リー群リー代数)）の射影$P$に基づく。
 
