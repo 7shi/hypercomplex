@@ -80,6 +80,7 @@ files = [
 
 ["7shi-clif1"]
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "clif/02-split-complex.md",
   "clif/03-gpm-gca.md",
   "qua/spinor-ideal.md",
@@ -230,6 +231,11 @@ files = [
   "vec-oct/01-reflection.md",
 ]
 
+["7shi-hist"]
+files = [
+  "clif-analysis/01-dirac-monogenic.md",
+]
+
 ["7shi-homog"]
 type = "mathlog"
 citation = "7shi, 同次座標とホップファイブレーション, Mathlog, Tue Jan 21 2025, アクセス日: Sun Jul 19 2026"
@@ -257,6 +263,7 @@ files = [
 
 ["7shi-ideal"]
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "lie/ladder-spinor.md",
 ]
 
@@ -317,6 +324,7 @@ files = [
 
 ["7shi-lie3"]
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "hopf/06-clifford-gates.md",
   "lie/04-spin4.md",
   "lie/06-su3.md",
@@ -399,6 +407,7 @@ type = "mathlog"
 citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Fri Jul 24 2026"
 url = "https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4"
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "clif/pga-cga.md",
   "hopf/06-clifford-gates.md",
   "lie/03-spin.md",
@@ -639,12 +648,14 @@ type = "mathlog"
 citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2024, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
 ]
 
 ["7shi-vrot"]
 files = [
+  "clif-analysis/01-dirac-monogenic.md",
   "clif/pga-cga.md",
   "lie/08-g2.md",
   "qua/06-slerp.md",

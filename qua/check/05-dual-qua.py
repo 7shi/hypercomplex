@@ -6,17 +6,18 @@ Verifies dual quaternions H (x) D and their rigid-motion representation:
    (x + eps y)^-1 = 1/x - eps y/x^2, exp(eps y) = 1 + eps y exactly, and
    f(x + eps y) = f(x) + eps y f'(x) for a polynomial and for sin/exp
    (evaluated by running the Taylor series in dual arithmetic).
-2. Dual quaternion algebra: eps is central; the three conjugations satisfy
-   bar(st) = bar(t) bar(s) (anti), (st)* = s* t* (homo), and
-   bar((st)*) = bar(t*) bar(s*) (anti).
-3. The norm sigma bar(sigma) is dual-number valued (no i, j, k parts) and
-   multiplicative; sigma bar(sigma) = 1 iff |p| = 1 and <p, q> = 0.
+2. Dual quaternion algebra: eps is central; with s* the quaternion
+   conjugate and bar(s) the dual-number conjugate (the article's notation),
+   the three conjugations satisfy (st)* = t* s* (anti),
+   bar(st) = bar(s) bar(t) (homo), and bar(st)* = bar(t)* bar(s)* (anti).
+3. The norm sigma sigma* is dual-number valued (no i, j, k parts) and
+   multiplicative; sigma sigma* = 1 iff |p| = 1 and <p, q> = 0.
 4. Rigid motion: sigma = r + (eps/2) t r sends 1 + eps x to
-   1 + eps (r x bar(r) + t) under the sandwich with bar(sigma*); the
-   sandwich with plain bar(sigma) drops the translation entirely
+   1 + eps (r x r* + t) under the sandwich with bar(sigma)*; the
+   sandwich with plain sigma* drops the translation entirely
    (negative check); composition sigma2 sigma1 realizes the SE(3) product
-   (r2 r1, t2 + r2 t1 bar(r2)); +-sigma give the same action; and
-   sigma bar(sigma) = 1.
+   (r2 r1, t2 + r2 t1 r2*); +-sigma give the same action; and
+   sigma sigma* = 1.
 5. Tangent-plane model: i + eps x with x in span(j, k) is exactly unit;
    plain conjugation by the eps-angle rotor 1 + (eps/2) t (t in span(j, k))
    translates x by t x i (e^{k eps a/2} by a j, e^{j eps b/2} by -b k);
@@ -113,10 +114,10 @@ def dsmul(c, a):  # scalar c: dual number pair or real
         c = (c, 0)
     return (qsmul(c[0], a[0]), qadd(qsmul(c[0], a[1]), qsmul(c[1], a[0])))
 
-def dbar(a):  # quaternion conjugate
+def dqconj(a):  # quaternion conjugate sigma*
     return (qconj(a[0]), qconj(a[1]))
 
-def dstar(a):  # dual-number conjugate
+def ddconj(a):  # dual-number conjugate bar(sigma)
     return (a[0], qsmul(-1, a[1]))
 
 def deq(a, b, tol=1e-9):
@@ -134,8 +135,8 @@ def motion(r, t):  # rotate by rotor r, then translate by t (world frame)
 def point(x):  # embed a point as 1 + eps x
     return (Q1, x)
 
-def act(s, x):  # sandwich sigma (1 + eps x) bar(sigma*)
-    return dmul(dmul(s, point(x)), dbar(dstar(s)))
+def act(s, x):  # sandwich sigma (1 + eps x) bar(sigma)*
+    return dmul(dmul(s, point(x)), dqconj(ddconj(s)))
 
 # --- check 1: dual numbers ---------------------------------------------------
 
@@ -186,10 +187,10 @@ for _ in range(50):
     s, t = rand_dq(), rand_dq()
     assert deq(dmul(DEPS, s), dmul(s, DEPS))
     st = dmul(s, t)
-    assert deq(dbar(st), dmul(dbar(t), dbar(s)))
-    assert deq(dstar(st), dmul(dstar(s), dstar(t)))
-    assert deq(dbar(dstar(st)), dmul(dbar(dstar(t)), dbar(dstar(s))))
-    assert deq(dbar(dstar(s)), dstar(dbar(s)))
+    assert deq(dqconj(st), dmul(dqconj(t), dqconj(s)))
+    assert deq(ddconj(st), dmul(ddconj(s), ddconj(t)))
+    assert deq(dqconj(ddconj(st)), dmul(dqconj(ddconj(t)), dqconj(ddconj(s))))
+    assert deq(dqconj(ddconj(s)), ddconj(dqconj(s)))
 
 # --- check 3: dual-valued norm and the unit condition ------------------------
 
@@ -199,19 +200,19 @@ def is_dual_scalar(s, tol=1e-9):
 
 for _ in range(50):
     s, t = rand_dq(), rand_dq()
-    ns, nt = dmul(s, dbar(s)), dmul(t, dbar(t))
+    ns, nt = dmul(s, dqconj(s)), dmul(t, dqconj(t))
     assert is_dual_scalar(ns)
     p, q = s
     assert abs(ns[0][0] - qdot(p, p)) < 1e-9        # real part |p|^2
     assert abs(ns[1][0] - 2 * qdot(p, q)) < 1e-9    # dual part 2<p,q>
-    nst = dmul(dmul(s, t), dbar(dmul(s, t)))
+    nst = dmul(dmul(s, t), dqconj(dmul(s, t)))
     assert neq((nst[0][0], nst[1][0]),
                nmul((ns[0][0], ns[1][0]), (nt[0][0], nt[1][0])))
     # unit <=> |p| = 1 and <p,q> = 0
     r = rand_rotor()
     q0 = tuple(random.gauss(0, 1) for _ in range(4))
     q = qadd(q0, qsmul(-qdot(r, q0), r))
-    assert deq(dmul((r, q), dbar((r, q))), D1)
+    assert deq(dmul((r, q), dqconj((r, q))), D1)
 
 # --- check 4: rigid motions and the double cover of SE(3) --------------------
 
@@ -219,11 +220,11 @@ for _ in range(50):
     r = rand_rotor()
     t, x = rand_vec(), rand_vec()
     s = motion(r, t)
-    assert deq(dmul(s, dbar(s)), D1)  # unit
+    assert deq(dmul(s, dqconj(s)), D1)  # unit
     moved = qadd(qmul(qmul(r, x), qconj(r)), t)
     assert deq(act(s, x), point(moved))
-    # plain-bar sandwich drops the translation
-    plain = dmul(dmul(s, point(x)), dbar(s))
+    # plain quaternion-conjugate sandwich drops the translation
+    plain = dmul(dmul(s, point(x)), dqconj(s))
     assert deq(plain, point(qmul(qmul(r, x), qconj(r))))
     # -sigma gives the same action
     assert deq(act(dsmul(-1, s), x), point(moved))
@@ -233,13 +234,13 @@ for _ in range(50):
     comp = motion(qmul(r2, r), qadd(t2, qmul(qmul(r2, t), qconj(r2))))
     assert deq(dmul(s2, s), comp)
 
-# every unit dual quaternion decomposes as (1 + eps t/2) r with r = p, t = 2 q bar(p)
+# every unit dual quaternion decomposes as (1 + eps t/2) r with r = p, t = 2 q p*
 for _ in range(50):
     p_ = rand_rotor()
     q0 = (random.gauss(0, 1), random.gauss(0, 1), random.gauss(0, 1), random.gauss(0, 1))
     q_ = qadd(q0, qsmul(-qdot(q0, p_), p_))  # make <p, q> = 0
     s = (p_, q_)
-    assert deq(dmul(s, dbar(s)), D1)  # unit
+    assert deq(dmul(s, dqconj(s)), D1)  # unit
     t = qsmul(2, qmul(q_, qconj(p_)))
     assert abs(t[0]) < 1e-9  # t is pure
     assert deq(motion(p_, t), s)
@@ -255,14 +256,14 @@ for _ in range(50):
 def tpoint(x):  # i + eps x with x in span(j, k)
     return ((0, 1, 0, 0), x)
 
-def tact(s, x):  # plain conjugation sandwich s (i + eps x) bar(s)
-    return dmul(dmul(s, tpoint(x)), dbar(s))
+def tact(s, x):  # plain conjugation sandwich s (i + eps x) s*
+    return dmul(dmul(s, tpoint(x)), dqconj(s))
 
 I_AXIS = (0, 1, 0, 0)
 for _ in range(50):
     x = (0, 0, random.gauss(0, 1), random.gauss(0, 1))
     # i + eps x is exactly unit
-    assert deq(dmul(tpoint(x), dbar(tpoint(x))), D1)
+    assert deq(dmul(tpoint(x), dqconj(tpoint(x))), D1)
     # eps-angle rotor about k translates by a j
     a = random.gauss(0, 1)
     assert deq(tact((Q1, (0, 0, 0, a / 2)), x), tpoint(qadd(x, (0, 0, a, 0))))
@@ -308,7 +309,7 @@ for _ in range(50):
     arg = dsmul((theta / 2, d / 2), L)
     s = screw(theta, d, l, m)
     assert deq(dexp(arg), s)
-    assert deq(dmul(s, dbar(s)), D1)
+    assert deq(dmul(s, dqconj(s)), D1)
     # equals rotation about the displaced axis, then slide: T(dl) T(x0) R T(-x0)
     R = (qexp_pure(qsmul(theta / 2, l)), Q0)
     comp = dmul(motion(Q1, qsmul(d, l)),

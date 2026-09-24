@@ -4,7 +4,7 @@
 
 最後に、二重四元数が退化した計量を持つクリフォード代数$\operatorname{Cl}_{3,0,1}(\mathbb R)$の偶部分代数と同型であることを示します。これは射影幾何代数 (PGA) や共形幾何代数 (CGA) と呼ばれる枠組みへの入り口となります。
 
-四元数の基本的な演算（共役・指数関数・共役作用による回転）は既知とします。内積は$\langle q,r\rangle:=\mathrm{Re}(q\overline r)$で定め、$|q|=\sqrt{\langle q,q\rangle}$と書きます。
+四元数の基本的な演算（共役・指数関数・共役作用による回転）は既知とします。内積は$\langle q,r\rangle:=\mathrm{Re}(qr^*)$で定め、$|q|=\sqrt{\langle q,q\rangle}$と書きます。
 
 # 回転から並進へ
 
@@ -46,10 +46,10 @@ $$
 i + \varepsilon x
 $$
 
-と表します。四元数共役を係数ごとに施す共役を$\overline{\phantom{q}}$と書くと、$x$が$i$と直交すること（$ix + xi = -2\langle i,x \rangle = 0$）から
+と表します。四元数共役を係数ごとに施す共役を${}^*$と書くと、$x$が$i$と直交すること（$ix + xi = -2\langle i,x \rangle = 0$）から
 
 $$
-(i + \varepsilon x)\overline{(i + \varepsilon x)} = (i + \varepsilon x)(-i - \varepsilon x) = 1 - \varepsilon(ix + xi) = 1
+(i + \varepsilon x)(i + \varepsilon x)^* = (i + \varepsilon x)(-i - \varepsilon x) = 1 - \varepsilon(ix + xi) = 1
 $$
 
 となり、$i + \varepsilon x$は厳密にノルム$1$を保ちます。接平面が、近似としてではなく「球面の$\varepsilon$近傍」として球面上に乗っている形です。ここでの「球面上」は実球面の点であることを指すのではなく、係数を二重数に広げた上でノルムの条件を満たすという意味です。誤差が消えたのは計算の精度が上がったからではなく、計算する代数を取り替えたためです。
@@ -104,10 +104,10 @@ $$
 $$
 &&&
 
-$\varepsilon$は$0$でないのに2乗すると$0$になる冪零元です。そのため二重数には零因子があります（$(\varepsilon a)(\varepsilon b)=0$）。複素数の共役と同様に共役$z^* := x - \varepsilon y$を定めると、$zz^* = x^2$となります。$x \neq 0$のとき、そしてそのときに限り$z$は可逆です。
+$\varepsilon$は$0$でないのに2乗すると$0$になる冪零元です。そのため二重数には零因子があります（$(\varepsilon a)(\varepsilon b)=0$）。複素数の共役と同様に共役$\overline z := x - \varepsilon y$を定めると、$z\overline z = x^2$となります。$x \neq 0$のとき、そしてそのときに限り$z$は可逆です。
 
 $$
-(x + \varepsilon y)^{-1} = \frac{z^*}{zz^*} = \frac1x - \varepsilon \frac{y}{x^2}
+(x + \varepsilon y)^{-1} = \frac{\overline z}{z\overline z} = \frac1x - \varepsilon \frac{y}{x^2}
 $$
 
 ## 関数の拡張
@@ -148,7 +148,7 @@ $$
 
 実数に基底を1つ添加して得られる2次元の代数は、添加する基底の平方によって3種類に分かれます。
 
-| 基底の平方 | 代数 | $e^{\theta \cdot \text{基底}}$の作用 | $zz^*=1$を満たす元 |
+| 基底の平方 | 代数 | $e^{\theta \cdot \text{基底}}$の作用 | 共役との積が$1$の元 |
 |:--:|:--:|:--:|:--:|
 | $i^2 = -1$ | 複素数$\mathbb C$ | 回転 $\cos\theta + i\sin\theta$ | 円 |
 | $j^2 = +1$ | 分解型複素数$\mathbb C'$ | 双曲回転 $\cosh\theta + j\sinh\theta$ | 双曲線 |
@@ -183,7 +183,7 @@ $$
 &&&
 
 &&&rem 記号について
-本稿の$\varepsilon$は$\varepsilon^2=0$を満たす形式的な基底であり、無限小の数ではありません。球面三角法の記事の$\varepsilon$は$0$に近づける実数の展開パラメーター、4次元回転の記事の$\varepsilon = \frac{1+\omega}2$は冪等元（$\varepsilon^2 = \varepsilon$）で、それぞれ別物です。共役の記号も異なり、4次元回転の記事の$q^*$は四元数共役でしたが、本稿では四元数共役を上線で書き、$*$は二重数共役に使います。
+本稿の$\varepsilon$は$\varepsilon^2=0$を満たす形式的な基底であり、無限小の数ではありません。球面三角法の記事の$\varepsilon$は$0$に近づける実数の展開パラメーター、4次元回転の記事の$\varepsilon = \frac{1+\omega}2$は冪等元（$\varepsilon^2 = \varepsilon$）で、それぞれ別物です。共役の記号は4次元回転の記事と同じく$q^*$を四元数共役に使い、二重数共役は上線で書きます。
 &&&
 
 ## 3つの共役
@@ -191,41 +191,41 @@ $$
 二重四元数には、四元数由来の共役と二重数由来の共役という独立な2つの共役があり、その合成を含めて3種類の共役が定まります。$\sigma = p + \varepsilon q$に対して
 
 $$
-\overline\sigma := \overline p + \varepsilon \overline q, \quad
-\sigma^* := p - \varepsilon q, \quad
-\overline{\sigma^*} = \overline p - \varepsilon \overline q
+\sigma^* := p^* + \varepsilon q^*, \quad
+\overline\sigma := p - \varepsilon q, \quad
+\overline\sigma^* = p^* - \varepsilon q^*
 $$
 
-$\overline{(\sigma^*)} = (\overline\sigma)^*$なので、合成の順序は問いません。積との関係は次のようになります。
+$(\overline\sigma)^* = \overline{(\sigma^*)}$なので、合成の順序は問いません。積との関係は次のようになります。
 
 $$
-\overline{\sigma\tau} = \overline\tau\,\overline\sigma, \quad
-(\sigma\tau)^* = \sigma^*\tau^*, \quad
-\overline{(\sigma\tau)^*} = \overline{\tau^*}\,\overline{\sigma^*}
+(\sigma\tau)^* = \tau^*\sigma^*, \quad
+\overline{\sigma\tau} = \overline\sigma\,\overline\tau, \quad
+\overline{\sigma\tau}^* = \overline\tau^*\,\overline\sigma^*
 $$
 
-四元数共役は積の順序を反転し（反準同型）、二重数共役は保ちます（準同型）。したがって合成は反準同型です。3種類も共役があるのは冗長に思えるかもしれませんが、剛体変換の表現では3つ目の$\overline{\sigma^*}$が本質的な役割を果たします。
+四元数共役は積の順序を反転し（反準同型）、二重数共役は保ちます（準同型）。したがって合成は反準同型です。3種類も共役があるのは冗長に思えるかもしれませんが、剛体変換の表現では3つ目の$\overline\sigma^*$が本質的な役割を果たします。
 
 ## ノルムと単位二重四元数
 
 四元数共役とのペアリングで、四元数のノルムの平方に相当する量を定めます。
 
 $$
-\sigma\overline\sigma = (p + \varepsilon q)(\overline p + \varepsilon \overline q)
-= p\overline p + \varepsilon (p\overline q + q\overline p)
+\sigma\sigma^* = (p + \varepsilon q)(p^* + \varepsilon q^*)
+= pp^* + \varepsilon (pq^* + qp^*)
 = |p|^2 + 2\varepsilon \langle p, q \rangle
 $$
 
-結果は実数ではなく**二重数**になることに注意してください。$\tau\overline\tau$が中心的な二重数スカラーであることから、乗法性$(\sigma\tau)\overline{(\sigma\tau)} = \sigma(\tau\overline\tau)\overline\sigma = (\sigma\overline\sigma)(\tau\overline\tau)$が成り立ちます。
+結果は実数ではなく**二重数**になることに注意してください。$\tau\tau^*$が中心的な二重数スカラーであることから、乗法性$(\sigma\tau)(\sigma\tau)^* = \sigma(\tau\tau^*)\sigma^* = (\sigma\sigma^*)(\tau\tau^*)$が成り立ちます。
 
 &&&def 単位二重四元数
-$\sigma\overline\sigma = 1$を満たす二重四元数を**単位二重四元数**と呼びます。上の計算から、この条件は2つの実条件
+$\sigma\sigma^* = 1$を満たす二重四元数を**単位二重四元数**と呼びます。上の計算から、この条件は2つの実条件
 
 $$
 |p| = 1, \quad \langle p, q \rangle = 0
 $$
 
-と同値です。このとき$\sigma^{-1} = \overline\sigma$となります。
+と同値です。このとき$\sigma^{-1} = \sigma^*$となります。
 &&&
 
 8次元から2つの条件で絞られるため、単位二重四元数のなす群は$8-2=6$次元です。これは3次元の剛体変換のなす群$\mathrm{SE}(3)$の次元（回転3＋並進3）と一致します。次節でこの一致が偶然でないことを見ます。
@@ -255,13 +255,13 @@ $$
 をとり、$t$方向の並進を担わせます。ただし、挟み方には修正が必要です。接平面モデルで共役が並進を生んだのは、基点$i$が$j,k$と反交換したからでした。基点$1$はすべての元と可換なので、同じ共役では
 
 $$
-T (1 + \varepsilon x) \overline{T} = 1 + \varepsilon x
+T (1 + \varepsilon x) T^* = 1 + \varepsilon x
 $$
 
-と、点がまったく動きません。ここで3つ目の共役の出番です。$\overline t = -t$より$\overline{T^*} = 1 + \frac\varepsilon2 t = T$となることに注意して、$\overline{T^*}$で挟むと
+と、点がまったく動きません。ここで3つ目の共役の出番です。$t^* = -t$より$\overline T^* = 1 + \frac\varepsilon2 t = T$となることに注意して、$\overline T^*$で挟むと
 
 $$
-T (1 + \varepsilon x) \overline{T^*}
+T (1 + \varepsilon x) \overline T^*
 = \left(1 + \frac\varepsilon2 t\right)(1 + \varepsilon x)\left(1 + \frac\varepsilon2 t\right)
 = 1 + \varepsilon \left(x + \frac t2 + \frac t2\right)
 = 1 + \varepsilon (x + t)
@@ -269,10 +269,10 @@ $$
 
 となり、$t$だけの並進が実現します。係数の$\frac12$は、回転子の半角と同じく「両側から半分ずつ」寄与するために必要です。
 
-回転は通常の回転子$r$（単位四元数）そのままです。$r$は二重部分を持たないので$\overline{r^*} = \overline r$であり
+回転は通常の回転子$r$（単位四元数）そのままです。$r$は二重部分を持たないので$\overline r^* = r^*$であり
 
 $$
-r (1 + \varepsilon x) \overline r = 1 + \varepsilon\, r x \overline r
+r (1 + \varepsilon x) r^* = 1 + \varepsilon\, r x r^*
 $$
 
 と、実部分の$1$を保ったまま$x$だけが回転します。
@@ -289,35 +289,35 @@ $$
 とおくと、$\sigma$は単位二重四元数であり
 
 $$
-\sigma (1 + \varepsilon x) \overline{\sigma^*} = 1 + \varepsilon (r x \overline r + t) \tag{1}
+\sigma (1 + \varepsilon x) \overline\sigma^* = 1 + \varepsilon (r x r^* + t) \tag{1}
 $$
 
 すなわち「$r$で回転してから$t$だけ並進する」剛体変換を表します。
 &&&
 
 &&&prf
-$\overline{(tr)} = \overline r\, \overline t = -\overline r t$より$\overline\sigma = \overline r - \frac\varepsilon2 \overline r t$、二重部分の符号を反転して$\overline{\sigma^*} = \overline r + \frac\varepsilon2 \overline r t$である。まず$\sigma\overline\sigma = 1 + \frac\varepsilon2(t r \overline r - r \overline r t) = 1$なので単位である。挟み込みを直接展開する。
+$(tr)^* = r^*\, t^* = -r^* t$より$\sigma^* = r^* - \frac\varepsilon2 r^* t$、二重部分の符号を反転して$\overline\sigma^* = r^* + \frac\varepsilon2 r^* t$である。まず$\sigma\sigma^* = 1 + \frac\varepsilon2(t r r^* - r r^* t) = 1$なので単位である。挟み込みを直接展開する。
 
 $$
 \begin{aligned}
-\sigma (1 + \varepsilon x) \overline{\sigma^*}
-&= \left(r + \varepsilon \left(r x + \frac{t r}2\right)\right)\left(\overline r + \frac\varepsilon2 \overline r t\right) \\
-&= r \overline r + \varepsilon \left(\frac12 r \overline r t + r x \overline r + \frac12 t r \overline r\right) \\
-&= 1 + \varepsilon (r x \overline r + t)
+\sigma (1 + \varepsilon x) \overline\sigma^*
+&= \left(r + \varepsilon \left(r x + \frac{t r}2\right)\right)\left(r^* + \frac\varepsilon2 r^* t\right) \\
+&= r r^* + \varepsilon \left(\frac12 r r^* t + r x r^* + \frac12 t r r^*\right) \\
+&= 1 + \varepsilon (r x r^* + t)
 \end{aligned}
 $$
 &&&
 
 &&&rem なぜ第3の共役が必要か
-一般の$\sigma$を通常の四元数共役$\overline\sigma$で挟むと、並進が両側から逆符号で寄与して打ち消されてしまいます。
+一般の$\sigma$を通常の四元数共役$\sigma^*$で挟むと、並進が両側から逆符号で寄与して打ち消されてしまいます。
 
 $$
-\sigma (1 + \varepsilon x) \overline{\sigma}
-= \left(r + \varepsilon \left(r x + \frac{t r}2\right)\right)\left(\overline r - \frac\varepsilon2 \overline r t\right)
-= 1 + \varepsilon\, r x \overline r
+\sigma (1 + \varepsilon x) \sigma^*
+= \left(r + \varepsilon \left(r x + \frac{t r}2\right)\right)\left(r^* - \frac\varepsilon2 r^* t\right)
+= 1 + \varepsilon\, r x r^*
 $$
 
-回転だけが残り、並進の情報が完全に失われます。二重数共役$*$を組み合わせて二重部分の符号を反転させることで、両側の寄与が同符号になり、並進が生き残ります。3つの共役の存在意義がここにあります。
+回転だけが残り、並進の情報が完全に失われます。二重数共役（上線）を組み合わせて二重部分の符号を反転させることで、両側の寄与が同符号になり、並進が生き残ります。3つの共役の存在意義がここにあります。
 &&&
 
 ## 合成とSE(3)の二重被覆
@@ -328,33 +328,33 @@ $$
 任意の単位二重四元数$\sigma = p + \varepsilon q$は
 
 $$
-\sigma = \left(1 + \frac\varepsilon2 t\right) r, \quad r := p, \quad t := 2q\overline p
+\sigma = \left(1 + \frac\varepsilon2 t\right) r, \quad r := p, \quad t := 2qp^*
 $$
 
 と一意に書けます。
 &&&
 
 &&&prf
-単位条件から$|p| = 1$なので$\overline p = p^{-1}$であり、$\mathrm{Re}(t) = 2\langle q, p \rangle = 0$より$t$は純虚四元数である。展開すると
+単位条件から$|p| = 1$なので$p^* = p^{-1}$であり、$\mathrm{Re}(t) = 2\langle q, p \rangle = 0$より$t$は純虚四元数である。展開すると
 
 $$
-\left(1 + \frac\varepsilon2 t\right) r = p + \varepsilon\, q \overline p\, p = p + \varepsilon q = \sigma
+\left(1 + \frac\varepsilon2 t\right) r = p + \varepsilon\, q p^*\, p = p + \varepsilon q = \sigma
 $$
 
-となる。逆に$\sigma$がこの形に書けたとすれば、実部分の比較から$r = p$、二重部分の比較から$\frac12 t r = q$、すなわち$t = 2q\overline p$が定まるので、表示は一意である。
+となる。逆に$\sigma$がこの形に書けたとすれば、実部分の比較から$r = p$、二重部分の比較から$\frac12 t r = q$、すなわち$t = 2qp^*$が定まるので、表示は一意である。
 &&&
 
 したがって単位二重四元数の全体が、(1)によって剛体変換に対応します。
 
-2つの剛体変換$\sigma_1 = (1 + \frac\varepsilon2 t_1) r_1$、$\sigma_2 = (1 + \frac\varepsilon2 t_2) r_2$を合成します。操作の順序は回転子と同じく右から左です。$r_2 t_1 = (r_2 t_1 \overline{r_2}) r_2$を使って$r_2$を$t_1$の右へ通過させると
+2つの剛体変換$\sigma_1 = (1 + \frac\varepsilon2 t_1) r_1$、$\sigma_2 = (1 + \frac\varepsilon2 t_2) r_2$を合成します。操作の順序は回転子と同じく右から左です。$r_2 t_1 = (r_2 t_1 r_2^*) r_2$を使って$r_2$を$t_1$の右へ通過させると
 
 $$
-\sigma_2 \sigma_1 = r_2 r_1 + \frac\varepsilon2 (t_2 + r_2 t_1 \overline{r_2})\, r_2 r_1 \tag{2}
+\sigma_2 \sigma_1 = r_2 r_1 + \frac\varepsilon2 (t_2 + r_2 t_1 r_2^*)\, r_2 r_1 \tag{2}
 $$
 
-となります。これは「回転は合成$r_2 r_1$、並進は$t_1$を$r_2$で回してから$t_2$を加える」という$\mathrm{SE}(3)$の合成規則そのものです。実際、(1)を2回適用した結果$x \mapsto r_2(r_1 x \overline{r_1} + t_1)\overline{r_2} + t_2$と一致します。
+となります。これは「回転は合成$r_2 r_1$、並進は$t_1$を$r_2$で回してから$t_2$を加える」という$\mathrm{SE}(3)$の合成規則そのものです。実際、(1)を2回適用した結果$x \mapsto r_2(r_1 x r_1^* + t_1)r_2^* + t_2$と一致します。
 
-また、$-\sigma$は$\sigma$と同じ変換を与えます（(1)で符号が両側から2回掛かるため）。逆に恒等変換を与える$\sigma$は、(1)より$t = 0$かつ任意の$x$で$r x \overline r = x$、すなわち$r = \pm1$に限られます。核が$\{\pm1\}$だけなので、同じ変換を与える単位二重四元数は$\pm\sigma$に限られ、単位二重四元数のなす群から$\mathrm{SE}(3)$への対応は2対1の全射準同型、すなわち単位二重四元数は$\mathrm{SE}(3)$の**二重被覆**をなします。単位四元数が$\mathrm{SO}(3)$を二重被覆する構図が、並進込みでそのまま持ち上がった形です。
+また、$-\sigma$は$\sigma$と同じ変換を与えます（(1)で符号が両側から2回掛かるため）。逆に恒等変換を与える$\sigma$は、(1)より$t = 0$かつ任意の$x$で$r x r^* = x$、すなわち$r = \pm1$に限られます。核が$\{\pm1\}$だけなので、同じ変換を与える単位二重四元数は$\pm\sigma$に限られ、単位二重四元数のなす群から$\mathrm{SE}(3)$への対応は2対1の全射準同型、すなわち単位二重四元数は$\mathrm{SE}(3)$の**二重被覆**をなします。単位四元数が$\mathrm{SO}(3)$を二重被覆する構図が、並進込みでそのまま持ち上がった形です。
 
 球面三角法の記事では「無限小の領域において、回転が並進として扱える」と述べるに留まりました。二重四元数はこの観察を代数として実装したものです。$\varepsilon$を「無限小」と読めば接空間（曲面に接する平面）の中の近似計算ですが、$\varepsilon^2=0$という規則だけを残して形式的に扱えば、接空間への限定は外れ、空間全体で厳密に成り立つ剛体変換の代数が得られます。
 
@@ -536,6 +536,6 @@ $\varepsilon$に対応する擬スカラー$E = e_0e_1e_2e_3$が二重四元数�
 - 「無限小の領域では回転が並進として扱える」という観察は、回転角を$\varepsilon$倍（$\varepsilon^2=0$）に読み替えることで厳密な代数法則に昇格します。角を$\varepsilon$倍した回転子は接平面の点$i + \varepsilon x$を並進させ、基点を通る軸の回転と合わせて、接平面の剛体変換群$\mathrm{SE}(2)$が通常の回転子の共役作用として実現します。
 - 二重数は$\varepsilon^2 = 0$を満たす基底を実数に添加した代数で、$f(x + \varepsilon y) = f(x) + \varepsilon y f'(x)$により「1次で打ち切っても誤差が出ない」無限小計算を厳密に実装します。
 - 四元数の係数を二重数に取り替えた二重四元数$\mathbb H \otimes \mathbb D$は、双四元数$\mathbb H \otimes \mathbb C$・分解型双四元数$\mathbb H \otimes \mathbb C'$と並ぶテンソル積の族の一員です。
-- 基点を$i$から$1$に取り替えた点$1 + \varepsilon x$を、剛体変換$\sigma = (1 + \frac\varepsilon2 t) r$の第3の共役$\overline{\sigma^*}$で挟むことで、3次元全体の「回転＋並進」が実現します。単位二重四元数は$\mathrm{SE}(3)$を二重被覆します。
+- 基点を$i$から$1$に取り替えた点$1 + \varepsilon x$を、剛体変換$\sigma = (1 + \frac\varepsilon2 t) r$の第3の共役$\overline\sigma^*$で挟むことで、3次元全体の「回転＋並進」が実現します。単位二重四元数は$\mathrm{SE}(3)$を二重被覆します。
 - 任意の剛体変換は二重角とねじ軸による指数関数$\exp(\frac{\hat\theta}2 L)$、すなわちねじ運動として書けます（シャールの定理）。純並進は回転角$0$のねじ運動にあたり、軸の位置は定まりません。
 - 二重四元数は退化クリフォード代数の偶部分代数$\operatorname{Cl}_{3,0,1}^0(\mathbb R)$と同型であり、$e_1, e_2, e_3$に加える第4の生成元の平方$-1, +1, 0$に応じて双四元数・分解型双四元数・二重四元数が現れるという三分法が成り立ちます。これはPGA・CGAへの入り口です。

@@ -2,11 +2,11 @@
 
 「四元数は回転や姿勢制御に使われる」とはよく聞く紹介ですが、その中身が語られることは多くありません。結論を先に述べると、単位四元数の全体は4次元空間の中の球面$S^3$をなし、SLERPは$S^3$の上で2つの姿勢を結ぶ大円の弧を等速でたどる補間です。本稿では、この一文に含まれる部品（なす角・対数写像・大円・等速性）を順に定義してSLERPの2つの等価な公式を導出し、最後に一般次元の回転子と二重四元数のScLERPへ接続します。
 
-単位四元数（回転子）$q$の指数表現$e^{\theta n/2} = \cos\frac\theta2 + \sin\frac\theta2\, n$（$n$は単位純虚四元数）、共役作用$v \mapsto qvq^{-1}$が軸$n$回りの角$\theta$の回転を与えること、$q$と$-q$が同じ回転を与えること（二重被覆）は既知とします。内積は$\langle q,r\rangle := \mathrm{Re}(q\overline r)$で定め、$|q| = \sqrt{\langle q,q\rangle}$と書きます。球面三角法の記事で示した随伴性
+単位四元数（回転子）$q$の指数表現$e^{\theta n/2} = \cos\frac\theta2 + \sin\frac\theta2\, n$（$n$は単位純虚四元数）、共役作用$v \mapsto qvq^{-1}$が軸$n$回りの角$\theta$の回転を与えること、$q$と$-q$が同じ回転を与えること（二重被覆）は既知とします。共役を$q^*$と書き、内積は$\langle q,r\rangle := \mathrm{Re}(qr^*)$で定め、$|q| = \sqrt{\langle q,q\rangle}$と書きます。球面三角法の記事で示した随伴性
 
 $$
-\langle qr, s \rangle = \langle q, s\overline{r} \rangle, \quad
-\langle rq, s \rangle = \langle q, \overline{r}s \rangle
+\langle qr, s \rangle = \langle q, sr^* \rangle, \quad
+\langle rq, s \rangle = \langle q, r^*s \rangle
 $$
 
 を使います。[[7shi-strig]]
@@ -68,7 +68,7 @@ $$
 これは$q_0, q_1$を4次元空間の単位ベクトルと見たときの通常のなす角です。内積の随伴性を使うと
 
 $$
-\langle q_0, q_1 \rangle = \langle 1, \overline{q_0}\, q_1 \rangle = \mathrm{Re}(q_0^{-1} q_1)
+\langle q_0, q_1 \rangle = \langle 1, q_0^*q_1 \rangle = \mathrm{Re}(q_0^{-1} q_1)
 $$
 
 となり、なす角は**相対回転子**$q_0^{-1}q_1$だけで決まります。同じ計算により、共通の単位四元数$r$を左または右から掛けても内積は変わりません。
@@ -326,7 +326,7 @@ $$
 を**角速度**と呼びます。
 &&&
 
-$q\overline q = 1$を微分すると$q'\overline q + q\overline{q'} = 0$で、第2項は第1項の共役なので、$q'\overline q = \frac\omega2$は共役で符号が反転する元、すなわち純虚四元数です。姿勢$q(t)$とともに動く点$v(t) = q(t)\, v\, q(t)^{-1}$の速度を計算すると、$(q^{-1})' = -q^{-1}q'q^{-1}$より
+$qq^* = 1$を微分すると$q'q^* + q{q'}^* = 0$で、第2項は第1項の共役なので、$q'q^* = \frac\omega2$は共役で符号が反転する元、すなわち純虚四元数です。姿勢$q(t)$とともに動く点$v(t) = q(t)\, v\, q(t)^{-1}$の速度を計算すると、$(q^{-1})' = -q^{-1}q'q^{-1}$より
 
 $$
 v'(t) = q'q^{-1}\, v(t) - v(t)\, q'q^{-1} = \frac{\omega v(t) - v(t) \omega}2 = \omega \times v(t)

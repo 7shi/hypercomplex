@@ -1,4 +1,5 @@
 md	title
+clif-analysis/01-dirac-monogenic.md	ディラック作用素とモノジェニック関数
 clif/01-representation.md	クリフォード代数の構造と表現
 clif/02-split-complex.md	分解型複素数の冪等元と直和分解
 clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
