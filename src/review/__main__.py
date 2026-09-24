@@ -69,16 +69,14 @@ def wrap_file(path: Path) -> str:
     return f'<file name="{path.name}">\n{text}\n</file>'
 
 
-def review_file(client: Client, path: Path, prompt: str, refs: list[Path]):
+def review_file(client: Client, path: Path, prompt: str, refs: list[Path]) -> str:
     contents = []
     if refs:
         contents += [REF_HEADER, *(wrap_file(ref_path) for ref_path in refs)]
         contents += [TARGET_HEADER]
     contents += [wrap_file(path), COMMON, prompt]
     response = client(contents)
-    if response.usage:
-        print(f"\n{response.usage}")
-    return response.text.strip(), response.usage
+    return response.text.strip()
 
 
 # 出力する場合はパスを入れる
@@ -86,7 +84,6 @@ USAGE_PATH = None
 
 
 def main() -> int:
-    global USAGE_PATH
     parser = argparse.ArgumentParser(description=__doc__.strip())
     parser.add_argument("file", type=Path, help="レビュー対象の.mdファイル")
     parser.add_argument("-m", "--model", required=True,
@@ -103,7 +100,8 @@ def main() -> int:
                         help="モデル名によらず使用量を記録する")
     args = parser.parse_args()
 
-    if args.model.startswith("openai:") or args.model.startswith("gpt-") or args.save_usage:
+    global USAGE_PATH
+    if args.model.startswith(("openai:", "gpt-")) or args.save_usage:
         USAGE_PATH = find_usage_file()
 
     if args.file.suffix != ".md":
@@ -147,20 +145,24 @@ def main() -> int:
         if not path.exists():
             parser.error(f"{path}: 見つかりません")
 
-    client = Client(model=args.model, show_params=False, keep_history=False)
+    client = Client(model=args.model, show_params=False, keep_history=False,
+                    show_usage=True)
 
     for path in refs:
         print(f"ref: {path}")
 
-    result, usage = review_file(client, args.file, prompt, refs)
+    try:
+        result = review_file(client, args.file, prompt, refs)
+        out_path = args.file.with_suffix(".txt")
+        out_path.write_text(result + "\n")
+        print(f"-> {out_path}")
+    finally:
+        # 中断時も消費分を記録する（表示は正常終了時のみ）
+        if client.usages and USAGE_PATH is not None:
+            append_usage(sum(client.usages), args.model, USAGE_PATH)
 
-    out_path = args.file.with_suffix(".txt")
-    out_path.write_text(result + "\n")
-    print(f"-> {out_path}")
-
-    if usage and USAGE_PATH is not None:
-        append_usage(usage, args.model, USAGE_PATH)
-        print(f"-> {USAGE_PATH}\n")
+    if client.usages and USAGE_PATH is not None:
+        print()
         print_today_totals(USAGE_PATH, models=[args.model])
     return 0
 
