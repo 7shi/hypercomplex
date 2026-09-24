@@ -81,6 +81,12 @@ files = [
 ["7shi-cla1"]
 files = [
   "clif-analysis/02-fundamental-theorem.md",
+  "clif-analysis/03-cauchy-residue.md",
+]
+
+["7shi-cla2"]
+files = [
+  "clif-analysis/03-cauchy-residue.md",
 ]
 
 ["7shi-clif1"]
