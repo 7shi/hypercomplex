@@ -583,6 +583,11 @@ files = [
   "misc/spherical-coords.md",
 ]
 
+["7shi-sedenion"]
+files = [
+  "lie/11-exceptional.md",
+]
+
 ["7shi-slerp"]
 files = [
   "qua/history.md",
