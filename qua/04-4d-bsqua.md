@@ -1,4 +1,4 @@
-四元数は実部も含めた4成分で4次元空間の点を表せ、その回転は左右2つの単位四元数で挟む$r_L\,q\,r_R$という形で書けます。一方、クリフォード代数$C\ell_{4,0}(\mathbb R)$では回転子で挟んで回転を表します。本記事では、この2つの「挟み込み」の対応を、二重回転の2つの回転角を和と差に組み替える操作として与える、中嶋慧氏による方法をまとめます。[[nakajima-4d-rot]]
+四元数は実部も含めた4成分で4次元空間の点を表せ、その回転は左右2つの単位四元数で挟む$r_L\,q\,r_R$という形で書けます。一方、クリフォード代数$\operatorname{Cl}_{4,0}(\mathbb R)$では回転子で挟んで回転を表します。本記事では、この2つの「挟み込み」の対応を、二重回転の2つの回転角を和と差に組み替える操作として与える、中嶋慧氏による方法をまとめます。[[nakajima-4d-rot]]
 
 四元数とクリフォード代数の基本的な演算は既知とします。
 
@@ -26,7 +26,7 @@ u\otimes v\longmapsto L_uR_{v^*}
 $$
 &&&
 
-&&&rem $C\ell_{3,1}(\mathbb R)$としての$M_4(\mathbb R)$
+&&&rem $\operatorname{Cl}_{3,1}(\mathbb R)$としての$M_4(\mathbb R)$
 $M_4(\mathbb R)$は、それ自身が1つのクリフォード代数でもあります。生成元を
 $$
 e_1:=L_iR_i,\quad e_2:=L_jR_i,\quad e_3:=L_kR_i,\quad e_4:=R_j
@@ -35,11 +35,11 @@ $$
 $$
 e_1^2=1,\quad e_2^2=1,\quad e_3^2=1,\quad e_4^2=-1
 $$
-です。さらにこれらは互いに反交換し、その積は一次独立な16個の元を与えて$M_4(\mathbb R)$全体を張るため、ミンコフスキー計量のクリフォード代数$C\ell_{3,1}(\mathbb R)\cong M_4(\mathbb R)$と同一視できます。
+です。さらにこれらは互いに反交換し、その積は一次独立な16個の元を与えて$M_4(\mathbb R)$全体を張るため、ミンコフスキー計量のクリフォード代数$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$と同一視できます。
 
-この同型は、$\mathrm{SO}(4)$の回転行列を含む行列環$M_4(\mathbb R)$に、ミンコフスキー型のクリフォード代数構造を与えています。一方、ユークリッド4次元のスピン群を構成する代数は$C\ell_{4,0}(\mathbb R)\cong M_2(\mathbb H)$であり、別の代数です。
+この同型は、$\mathrm{SO}(4)$の回転行列を含む行列環$M_4(\mathbb R)$に、ミンコフスキー型のクリフォード代数構造を与えています。一方、ユークリッド4次元のスピン群を構成する代数は$\operatorname{Cl}_{4,0}(\mathbb R)\cong M_2(\mathbb H)$であり、別の代数です。
 
-次節の$\mathrm{SO}(4)$の構成は行列をベクトルに直接作用させる方式です。これに対し$C\ell_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=r^{-1}vr$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
+次節の$\mathrm{SO}(4)$の構成は行列をベクトルに直接作用させる方式です。これに対し$\operatorname{Cl}_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=r^{-1}vr$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
 &&&
 
 ## $\mathrm{SO}(4)$の構成
@@ -142,17 +142,17 @@ $$
 
 $\theta_1$を$\theta_1+2\pi$に取り替えると（片方の平面だけ1回転追加）、回転としては同じですが、指数の肩が共に$\pi i$だけずれるため、$r_L,r_R$は共に$-1$倍されます。行列$L_{r_L}R_{r_R}$では相殺して見えなくなるこの符号を、対$(r_L,r_R)$は保持しています。1つの回転に対して符号違いの対が2通り対応するこの性質が**二重被覆**です。
 
-## $\mathrm{SO}(4)$と$C\ell_{4,0}(\mathbb R)$
+## $\mathrm{SO}(4)$と$\operatorname{Cl}_{4,0}(\mathbb R)$
 
-$\mathrm{SO}(4)$を回転子の共役作用として扱う枠組み、すなわち$\operatorname{Spin}(4)$の舞台は、4つの生成元がすべて2乗すると$+1$になる$C\ell_{4,0}(\mathbb R)$です。これもテンソル積で表せますが、第2因子は分解型四元数$\mathbb H'\cong M_2(\mathbb R)$となります。
+$\mathrm{SO}(4)$を回転子の共役作用として扱う枠組み、すなわち$\operatorname{Spin}(4)$の舞台は、4つの生成元がすべて2乗すると$+1$になる$\operatorname{Cl}_{4,0}(\mathbb R)$です。これもテンソル積で表せますが、第2因子は分解型四元数$\mathbb H'\cong M_2(\mathbb R)$となります。
 
 $$
-C\ell_{4,0}(\mathbb R)\cong M_2(\mathbb H)\cong\mathbb H\otimes\mathbb H'
+\operatorname{Cl}_{4,0}(\mathbb R)\cong M_2(\mathbb H)\cong\mathbb H\otimes\mathbb H'
 $$
 
-以下の$e_1,\ldots,e_4$は$C\ell_{4,0}(\mathbb R)$の生成元であり、注意「$C\ell_{3,1}(\mathbb R)$としての$M_4(\mathbb R)$」で左右作用から組み立てた同名の生成元とは別物です。特に、そこでは$e_4^2=-1$でしたが、ここでは$e_4^2=+1$です。
+以下の$e_1,\ldots,e_4$は$\operatorname{Cl}_{4,0}(\mathbb R)$の生成元であり、注意「$\operatorname{Cl}_{3,1}(\mathbb R)$としての$M_4(\mathbb R)$」で左右作用から組み立てた同名の生成元とは別物です。特に、そこでは$e_4^2=-1$でしたが、ここでは$e_4^2=+1$です。
 
-$C\ell_{4,0}(\mathbb R)$における回転は、回転子$r$による挟み込みです。
+$\operatorname{Cl}_{4,0}(\mathbb R)$における回転は、回転子$r$による挟み込みです。
 
 $$
 v'=r^{-1}vr
@@ -318,19 +318,19 @@ $$
 
 回転子とスピン群は偶部分代数に住むため、この降下を3次元と4次元で並べると、置き場所の階梯が見えてきます。
 
-- **3次元回転**は$C\ell_{3,0}(\mathbb R)$または$C\ell_{0,3}(\mathbb R)$の中で記述されます。偶部分代数の生成元を$e_1e_3,\ e_2e_3$と取れば、2乗は計量の符号によらず$(e_ae_3)^2=-e_a^2e_3^2=-1$となり、どちらの偶部分代数も$C\ell_{0,2}(\mathbb R)\cong\mathbb H$で、四元数そのものです。そのノルム$1$の元（単位四元数）がなす群が$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$で、単位四元数による挟み込み$rqr^*$はこの構造の現れです。
-- **4次元回転**は$C\ell_{4,0}(\mathbb R)$または$C\ell_{0,4}(\mathbb R)$の中で記述されます。偶部分代数の生成元を$f_a=e_1e_{a+1}$（$a=1,2,3$）と取れば、やはり$f_a^2=-1$となり、どちらの偶部分代数も$C\ell_{0,3}(\mathbb R)$と同型です。偶数グレード$\{0,2,4\}$の$1+6+1=8$次元が、$C\ell_{0,3}(\mathbb R)$の全グレードの$1+3+3+1=8$次元にちょうど対応します。
+- **3次元回転**は$\operatorname{Cl}_{3,0}(\mathbb R)$または$\operatorname{Cl}_{0,3}(\mathbb R)$の中で記述されます。偶部分代数の生成元を$e_1e_3,\ e_2e_3$と取れば、2乗は計量の符号によらず$(e_ae_3)^2=-e_a^2e_3^2=-1$となり、どちらの偶部分代数も$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$で、四元数そのものです。そのノルム$1$の元（単位四元数）がなす群が$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$で、単位四元数による挟み込み$rqr^*$はこの構造の現れです。
+- **4次元回転**は$\operatorname{Cl}_{4,0}(\mathbb R)$または$\operatorname{Cl}_{0,4}(\mathbb R)$の中で記述されます。偶部分代数の生成元を$f_a=e_1e_{a+1}$（$a=1,2,3$）と取れば、やはり$f_a^2=-1$となり、どちらの偶部分代数も$\operatorname{Cl}_{0,3}(\mathbb R)$と同型です。偶数グレード$\{0,2,4\}$の$1+6+1=8$次元が、$\operatorname{Cl}_{0,3}(\mathbb R)$の全グレードの$1+3+3+1=8$次元にちょうど対応します。
 
 | 回転 | 代数 | 偶部分代数 | スピン群 |
 | --- | --- | --- | --- |
-| 3次元 | $C\ell_{3,0}(\mathbb R)$，$C\ell_{0,3}(\mathbb R)$ | $C\ell_{0,2}(\mathbb R)\cong\mathbb H$   | $\operatorname{Spin}(3)\cong\mathrm{SU}(2)$                      |
-| 4次元 | $C\ell_{4,0}(\mathbb R)$，$C\ell_{0,4}(\mathbb R)$ | $C\ell_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$  | $\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$  |
+| 3次元 | $\operatorname{Cl}_{3,0}(\mathbb R)$，$\operatorname{Cl}_{0,3}(\mathbb R)$ | $\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$   | $\operatorname{Spin}(3)\cong\mathrm{SU}(2)$                      |
+| 4次元 | $\operatorname{Cl}_{4,0}(\mathbb R)$，$\operatorname{Cl}_{0,4}(\mathbb R)$ | $\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$  | $\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$  |
 
-3次元回転が記述される$C\ell_{0,3}(\mathbb R)$が、1つ上の4次元では偶部分代数として再登場しています。$C\ell_{0,3}(\mathbb R)$は「四元数と、それに可換な体積要素$\Omega$」という形をしており、4次元では$\Omega^2=e_1^2e_2^2e_3^2e_4^2$となるため、どちらの計量でも$\Omega^2=+1$です。これが**分解型双四元数**$\mathbb C'\otimes\mathbb H$（$\mathbb C'=\mathbb R[\omega]/(\omega^2-1)$は分解型複素数）であり、分解型複素数と同様に冪等元$\dfrac{1\pm\Omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解できます。後で見るように、この2つの四元数成分は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。対は符号ごと保持されるため、単位四元数の対がなすのは商$\mathrm{SO}(4)$ではなく直積$\mathrm{SU}(2)\times\mathrm{SU}(2)\cong\operatorname{Spin}(4)$です。回転行列そのものを構成する$M_4(\mathbb R)$と、対を符号ごと保持する$\mathbb H\oplus\mathbb H$という、2つの表現がここで分岐します。
+3次元回転が記述される$\operatorname{Cl}_{0,3}(\mathbb R)$が、1つ上の4次元では偶部分代数として再登場しています。$\operatorname{Cl}_{0,3}(\mathbb R)$は「四元数と、それに可換な体積要素$\Omega$」という形をしており、4次元では$\Omega^2=e_1^2e_2^2e_3^2e_4^2$となるため、どちらの計量でも$\Omega^2=+1$です。これが**分解型双四元数**$\mathbb C'\otimes\mathbb H$（$\mathbb C'=\mathbb R[\omega]/(\omega^2-1)$は分解型複素数）であり、分解型複素数と同様に冪等元$\dfrac{1\pm\Omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解できます。後で見るように、この2つの四元数成分は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。対は符号ごと保持されるため、単位四元数の対がなすのは商$\mathrm{SO}(4)$ではなく直積$\mathrm{SU}(2)\times\mathrm{SU}(2)\cong\operatorname{Spin}(4)$です。回転行列そのものを構成する$M_4(\mathbb R)$と、対を符号ごと保持する$\mathbb H\oplus\mathbb H$という、2つの表現がここで分岐します。
 
 ## グレードの振り分けと分解型双四元数へのマッピング
 
-前節の生成元$f_1=e_1e_2,\ f_2=e_1e_3,\ f_3=e_1e_4$を用いて、$C\ell_{4,0}(\mathbb R)$の偶部分代数を$C\ell_{0,3}(\mathbb R)$として書き直します。生成元の積は
+前節の生成元$f_1=e_1e_2,\ f_2=e_1e_3,\ f_3=e_1e_4$を用いて、$\operatorname{Cl}_{4,0}(\mathbb R)$の偶部分代数を$\operatorname{Cl}_{0,3}(\mathbb R)$として書き直します。生成元の積は
 
 $$
 f_2f_3=e_1e_3e_1e_4=-e_3e_4=e_4e_3,\quad
@@ -338,24 +338,24 @@ f_3f_1=e_2e_4,\quad
 f_1f_2=e_3e_2
 $$
 
-となります。$C\ell_{0,3}$のグレード2の3つの元は、2乗が$-1$で循環的な積の関係$(f_2f_3)(f_3f_1)=f_1f_2$を満たすため、グレード$\{0,2\}$（偶部分）は再び四元数$\mathbb H$をなします。グレード$\{1,3\}$はその$\Omega$倍で、これが分解型双四元数に対応する構造です。8個の基底の対応をまとめます。
+となります。$\operatorname{Cl}_{0,3}$のグレード2の3つの元は、2乗が$-1$で循環的な積の関係$(f_2f_3)(f_3f_1)=f_1f_2$を満たすため、グレード$\{0,2\}$（偶部分）は再び四元数$\mathbb H$をなします。グレード$\{1,3\}$はその$\Omega$倍で、これが分解型双四元数に対応する構造です。8個の基底の対応をまとめます。
 
-| $C\ell_{4,0}^0(\mathbb R)$ | 基底 | $C\ell_{0,3}(\mathbb R)$ | 基底 | 分解型双四元数 | 2乗 |
+| $\operatorname{Cl}_{4,0}^0(\mathbb R)$ | 基底 | $\operatorname{Cl}_{0,3}(\mathbb R)$ | 基底 | 分解型双四元数 | 2乗 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | グレード0 | $1$                                        | グレード0 | $1$                         | $1$      | $+1$  |
 | グレード2 | $e_1e_2,\ e_1e_3,\ e_1e_4$                 | グレード1 | $f_1,\ f_2,\ f_3$           | $\omega i,\ \omega j,\ \omega k$ | $-1$ |
 | グレード2 | $e_4e_3,\ e_2e_4,\ e_3e_2$                 | グレード2 | $f_2f_3,\ f_3f_1,\ f_1f_2$  | $i,\ j,\ k$ | $-1$ |
 | グレード4 | $-\Omega=-e_1e_2e_3e_4$                    | グレード3 | $f_1f_2f_3$                 | $-\omega$ | $+1$  |
 
-つまり、$C\ell_{4,0}$のグレード2にある回転面の6成分は、$e_1$を含むかどうかで$C\ell_{0,3}$のグレード1と2に3成分ずつ振り分けられ、グレード4の$\Omega$はグレード3（擬スカラー）へ降ります。回転子が動くグレード$\{0,2,4\}$の8成分は、$C\ell_{0,3}$の全グレードをちょうど使い切ります。
+つまり、$\operatorname{Cl}_{4,0}$のグレード2にある回転面の6成分は、$e_1$を含むかどうかで$\operatorname{Cl}_{0,3}$のグレード1と2に3成分ずつ振り分けられ、グレード4の$\Omega$はグレード3（擬スカラー）へ降ります。回転子が動くグレード$\{0,2,4\}$の8成分は、$\operatorname{Cl}_{0,3}$の全グレードをちょうど使い切ります。
 
-ここで$\Omega$は$C\ell_{4,0}(\mathbb R)$の体積要素、$\omega$は行き先の分解型複素単位で、両者は別の代数の元です。最終行のとおり$f_1f_2f_3=-\Omega$なので、$C\ell_{0,3}(\mathbb R)$の体積要素は$-\Omega$、その行き先は$-\omega$になります。
+ここで$\Omega$は$\operatorname{Cl}_{4,0}(\mathbb R)$の体積要素、$\omega$は行き先の分解型複素単位で、両者は別の代数の元です。最終行のとおり$f_1f_2f_3=-\Omega$なので、$\operatorname{Cl}_{0,3}(\mathbb R)$の体積要素は$-\Omega$、その行き先は$-\omega$になります。
 
-$C\ell_{4,0}(\mathbb R)$全体（16次元）は分解型双四元数（8次元）と同型ではないため、変換は偶部分代数からの同型写像$\varphi$として明示し、暗黙の同一視は避けます。上表のとおり、$\varphi$は$e_1$を含まないグレード2の基底を四元数の基底$i,j,k$へ、体積要素$\Omega$を分解型双四元数の$\omega$へ移します。
+$\operatorname{Cl}_{4,0}(\mathbb R)$全体（16次元）は分解型双四元数（8次元）と同型ではないため、変換は偶部分代数からの同型写像$\varphi$として明示し、暗黙の同一視は避けます。上表のとおり、$\varphi$は$e_1$を含まないグレード2の基底を四元数の基底$i,j,k$へ、体積要素$\Omega$を分解型双四元数の$\omega$へ移します。
 
 &&&def 偶部分代数から分解型双四元数への同型写像
 $$
-\varphi:C\ell_{4,0}^0(\mathbb R)\to\mathbb C'\otimes\mathbb H,\quad
+\varphi:\operatorname{Cl}_{4,0}^0(\mathbb R)\to\mathbb C'\otimes\mathbb H,\quad
 e_4e_3\mapsto i,\quad
 e_2e_4\mapsto j,\quad
 e_3e_2\mapsto k,\quad
@@ -373,7 +373,7 @@ $$
 
 # 射影としての準同型写像
 
-以上の準備のもとで、回転子から$r_L,r_R$を取り出す中嶋慧氏の方法を説明します。目標は「二重回転と2つの回転角」で見た構図、すなわち左右の回転角が二重回転の2つの回転角の**和と差**になるという構図の再現です。そこで、$C\ell_{4,0}(\mathbb R)$の偶部分代数を同型写像$\varphi$で分解型双四元数へ移したうえで、回転子の情報から「和」の成分と「差」の成分を取り出す操作を作ります。この操作は、直和分解$\mathbb H\oplus\mathbb H$の各成分への射影にほかなりません。
+以上の準備のもとで、回転子から$r_L,r_R$を取り出す中嶋慧氏の方法を説明します。目標は「二重回転と2つの回転角」で見た構図、すなわち左右の回転角が二重回転の2つの回転角の**和と差**になるという構図の再現です。そこで、$\operatorname{Cl}_{4,0}(\mathbb R)$の偶部分代数を同型写像$\varphi$で分解型双四元数へ移したうえで、回転子の情報から「和」の成分と「差」の成分を取り出す操作を作ります。この操作は、直和分解$\mathbb H\oplus\mathbb H$の各成分への射影にほかなりません。
 
 &&&rem
 詳細は参考資料の(3.10)式を参照してください。[[nakajima-4d-rot]]
@@ -536,7 +536,7 @@ $$
 以上をまとめます。
 
 &&&fml 回転子の対応
-$C\ell_{4,0}(\mathbb R)$の回転$v'=r^{-1}vr$（$r=\exp(B/2)$）と同じ回転が、四元数では次のように表されます。
+$\operatorname{Cl}_{4,0}(\mathbb R)$の回転$v'=r^{-1}vr$（$r=\exp(B/2)$）と同じ回転が、四元数では次のように表されます。
 $$
 q'=r_L\,q\,r_R,\quad q=Q(v),\quad q'=Q(v')
 $$
@@ -566,7 +566,7 @@ $$
 
 &&&prop $e_1$による共役と$\omega$共役
 $$
-\varphi(e_1Xe_1)=\varphi(X)^{\dagger}\quad(X\in C\ell_{4,0}^0(\mathbb R))
+\varphi(e_1Xe_1)=\varphi(X)^{\dagger}\quad(X\in \operatorname{Cl}_{4,0}^0(\mathbb R))
 $$
 &&&
 
@@ -693,15 +693,15 @@ $$
 偶部分代数の階梯とスピン群：
 $$
 \begin{alignedat}{2}
-C\ell_{3,0}^0(\mathbb R)&\cong C\ell_{0,3}^0(\mathbb R)\cong C\ell_{0,2}(\mathbb R)\cong\mathbb H,&\quad
+\operatorname{Cl}_{3,0}^0(\mathbb R)&\cong \operatorname{Cl}_{0,3}^0(\mathbb R)\cong \operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H,&\quad
 \operatorname{Spin}(3)&\cong\mathrm{SU}(2) \\
-C\ell_{4,0}^0(\mathbb R)&\cong C\ell_{0,4}^0(\mathbb R)\cong C\ell_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H,&\quad
+\operatorname{Cl}_{4,0}^0(\mathbb R)&\cong \operatorname{Cl}_{0,4}^0(\mathbb R)\cong \operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H,&\quad
 \operatorname{Spin}(4)&\cong\mathrm{SU}(2)\times\mathrm{SU}(2)
 \end{alignedat}
 $$
 偶部分代数から分解型双四元数への同型写像：
 $$
-\varphi:C\ell_{4,0}^0(\mathbb R)\to\mathbb C'\otimes\mathbb H,\quad
+\varphi:\operatorname{Cl}_{4,0}^0(\mathbb R)\to\mathbb C'\otimes\mathbb H,\quad
 e_4e_3\mapsto i,\quad
 e_2e_4\mapsto j,\quad
 e_3e_2\mapsto k,\quad
@@ -736,6 +736,6 @@ U_R&=T(\varphi(B))&&=(b_{12}+b_{43})i+(b_{13}+b_{24})j+(b_{14}+b_{32})k
 $$
 &&&
 
-四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$C\ell_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$C\ell_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R,r_L^{-1})$として住みます。この対は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。
+四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R,r_L^{-1})$として住みます。この対は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。
 
 4次元の任意の回転は直交2平面の二重回転の標準形にでき、その独立な2つの回転角が和と差に組み替えられて右と左の回転角になることは、等傾回転の合成として四元数だけで確認できました。回転子の側では、左作用か右作用かの違いは因子$1\pm\Omega$に集約され、一般の回転子は可換な左右の等傾回転子の積に因数分解されます。準同型写像$T\circ\varphi$は、この$1\pm\Omega$の成分を四元数として読み出し、和と差への組み替えを一般の2ベクトルの6成分全体へ広げる装置です。その中身は2つの冪等元（行列表現では射影行列$\operatorname{diag}(1,0),\operatorname{diag}(0,1)$）による直和成分への射影であり、2ベクトルの言葉では自己双対・反自己双対分解にあたります。これにより、2ベクトルの6成分が純虚四元数$U_L,U_R$の各3成分に分離され、それらの指数関数から左右の単位四元数$r_L,r_R$が得られます。
