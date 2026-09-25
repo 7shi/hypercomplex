@@ -1,7 +1,7 @@
 """Checks for article 06 (summary: sorting the properties of complex analysis).
 
-Cl_{n,0}(R) with generators e_0..e_{n-1} (e_a^2 = 1) on bitmask blades, as in
-04 and 05. Paravector variable q = e_0 x, units h_0 = 1, h_l = e_0 e_l,
+Cl_{n,0}(R) with generators e_0..e_{n-1} (e_a^2 = 1) on the bitmask blades of
+common.clifford, as in 04 and 05. Paravector variable q = e_0 x, units h_0 = 1, h_l = e_0 e_l,
 Fueter-type operator Dq = e_0 D = sum h_a d_a, right action F Dq = sum (d_a F) h_a.
 
 1. sum_a h_a h_a = 1 - (n-1) = 2 - n, hence Dq q = 2 - n; q^{-1} = x^{-1} e_0 and
@@ -23,98 +23,20 @@ Fueter-type operator Dq = e_0 D = sum h_a d_a, right action F Dq = sum (d_a F) h
    d_2 zeta_1 = 0 != h_2 d_0 zeta_1 = k; zeta_1(zeta_2) = -x_2 i is not regular.
 """
 
-import itertools
-import random
-
-import sympy as sp
+from common.clifford import MV, eq, grade, mv
+from common.clifford import Alg as ClAlg
 
 # ---------------------------------------------------------------- Cl_{n,0}
 
 
-def blade_mul(a, b):
-    """Product of basis blades (bitmasks) in Cl_{n,0}: returns (sign, mask)."""
-    s = 0
-    t = a >> 1
-    while t:
-        s += bin(t & b).count("1")
-        t >>= 1
-    return (-1 if s & 1 else 1), a ^ b
-
-
-def grade(m):
-    return bin(m).count("1")
-
-
-class MV:
-    def __init__(self, d=None):
-        self.d = {k: v for k, v in (d or {}).items() if v != 0}
-
-    def __add__(self, o):
-        o = mv(o)
-        d = dict(self.d)
-        for k, v in o.d.items():
-            d[k] = d.get(k, 0) + v
-        return MV(d)
-
-    __radd__ = __add__
-
-    def __neg__(self):
-        return MV({k: -v for k, v in self.d.items()})
-
-    def __sub__(self, o):
-        return self + (-mv(o))
-
-    def __rsub__(self, o):
-        return mv(o) - self
-
-    def __mul__(self, o):
-        o = mv(o)
-        d = {}
-        for a, x in self.d.items():
-            for b, y in o.d.items():
-                s, m = blade_mul(a, b)
-                d[m] = d.get(m, 0) + s * x * y
-        return MV(d)
-
-    def __rmul__(self, o):
-        return mv(o) * self
-
-    def map(self, f):
-        return MV({k: f(v) for k, v in self.d.items()})
-
-
-def mv(o):
-    return o if isinstance(o, MV) else MV({0: sp.sympify(o)})
-
-
-def zero_expr(v):
-    return sp.cancel(sp.together(sp.expand(v))) == 0
-
-
-def eq(A, B):
-    return all(zero_expr(v) for v in (mv(A) - mv(B)).d.values())
-
-
-class Alg:
+class Alg(ClAlg):
     """Cl_{n,0} with coordinates x_0..x_{n-1}, D and the paravector operator."""
 
     def __init__(self, n):
-        self.n = n
-        self.e = [MV({1 << a: 1}) for a in range(n)]
-        self.X = sp.symbols(f"x0:{n}", real=True)
-        self.x = sum((self.X[a] * self.e[a] for a in range(n)), MV())
+        super().__init__(n)
         self.h = [mv(1)] + [self.e[0] * self.e[l] for l in range(1, n)]
         self.q = self.e[0] * self.x
         self.v = self.q - self.X[0]
-
-    def d(self, F, a):
-        return F.map(lambda t: sp.diff(t, self.X[a]))
-
-    def D(self, F):
-        return sum((self.e[a] * self.d(F, a) for a in range(self.n)), MV())
-
-    def Dr(self, F):
-        return sum((self.d(F, a) * self.e[a] for a in range(self.n)), MV())
 
     def Dq(self, F):
         return sum((self.h[a] * self.d(F, a) for a in range(self.n)), MV())
@@ -123,11 +45,7 @@ class Alg:
         return sum((self.d(F, a) * self.h[a] for a in range(self.n)), MV())
 
     def rnd_even(self, seed, deg=2):
-        rnd = random.Random(seed)
-        mons = [m for m in itertools.product(range(deg + 1), repeat=self.n) if sum(m) <= deg]
-        blades = [b for b in range(1 << self.n) if grade(b) % 2 == 0]
-        return MV({b: sum(rnd.randint(-3, 3) * sp.prod([self.X[a] ** p for a, p in enumerate(m)])
-                          for m in mons) for b in blades})
+        return self.rnd(seed, deg, grades=range(0, self.n + 1, 2))
 
 
 def comm(a, b):

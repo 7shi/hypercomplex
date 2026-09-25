@@ -1,0 +1,5 @@
+# 検証コード
+
+幾何代数による電磁気学の記事の数式を検証するPythonスクリプトです。プロジェクトルートで `uv sync` により環境を構築し、`uv run em/check/<ファイル名>` で実行します。クリフォード代数の実装は`common.clifford`（`src/common/clifford.py`、$\operatorname{Cl}_{p,q}(\mathbb R)$のビットマスク実装）を使います。
+
+- [memo-signature.py](memo-signature.py) — [MEMO.md](../MEMO.md)の構成案の数式。$\operatorname{Cl}_{3,0}(\mathbb R)$で$\mathcal D(\boldsymbol E+Ic\boldsymbol B)$のグレード成分がマクスウェル方程式の4本の式になること（右辺$(\rho-\boldsymbol J/c)/\varepsilon_0$）と連続の式、$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$、$\frac{\varepsilon_0}2FF^\dagger=\frac{\varepsilon_0}2(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)+\varepsilon_0c\,\boldsymbol E\times\boldsymbol B$、パラベクトルのノルム$p\bar p$とワイル表現のガンマ行列が$(+,-,-,-)$を与えること（下のブロックを$-\bar\sigma^\mu$にすると$(-,+,+,+)$）、$\operatorname{Cl}_{1,3}(\mathbb R)$で$\sigma_k=\gamma_k\gamma_0$が$\operatorname{Cl}_{3,0}$の生成元になり$\sigma_1\sigma_2\sigma_3=I$、$\gamma_0D=\partial_0+\sum\sigma_k\partial_k$、$D^2=\partial_0^2-\Delta$（$\operatorname{Cl}_{3,1}$では符号が逆）、時空の2ベクトル$F$で$\gamma_0DF$が$\operatorname{Cl}_{3,0}$の式に戻り$DF=\mu_0cJ$（$J=c\rho\gamma_0+\sum J_k\gamma_k$）となることを確認します。

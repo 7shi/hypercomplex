@@ -1,7 +1,7 @@
 """Checks for article 04 (quaternionic analysis, Fueter regular functions).
 
-Cl_{4,0}(R) with generators e0..e3 (e_a^2 = 1) is implemented directly on
-bitmask blades. The quaternion units are i = e0 e1, j = e0 e2, k = e0 e3, the
+Cl_{4,0}(R) with generators e0..e3 (e_a^2 = 1) uses the bitmask blades of
+common.clifford. The quaternion units are i = e0 e1, j = e0 e2, k = e0 e3, the
 quaternion variable is q = e0 x, and the Fueter operator is
 e0 D = d0 + i d1 + j d2 + k d3 with the vector Dirac operator D = sum e_a d_a.
 Quaternion-valued computations use sympy's Quaternion.
@@ -43,72 +43,7 @@ import numpy as np
 import sympy as sp
 from sympy.algebras.quaternion import Quaternion as Q
 
-# ---------------------------------------------------------------- Cl_{n,0}
-
-
-def blade_mul(a, b):
-    """Product of basis blades (bitmasks) in Cl_{n,0}: returns (sign, mask)."""
-    s = 0
-    t = a >> 1
-    while t:
-        s += bin(t & b).count("1")
-        t >>= 1
-    return (-1 if s & 1 else 1), a ^ b
-
-
-class MV:
-    def __init__(self, d=None):
-        self.d = {k: v for k, v in (d or {}).items() if v != 0}
-
-    def __add__(self, o):
-        o = mv(o)
-        d = dict(self.d)
-        for k, v in o.d.items():
-            d[k] = d.get(k, 0) + v
-        return MV(d)
-
-    __radd__ = __add__
-
-    def __neg__(self):
-        return MV({k: -v for k, v in self.d.items()})
-
-    def __sub__(self, o):
-        return self + (-mv(o))
-
-    def __rsub__(self, o):
-        return mv(o) - self
-
-    def __mul__(self, o):
-        o = mv(o)
-        d = {}
-        for a, x in self.d.items():
-            for b, y in o.d.items():
-                s, m = blade_mul(a, b)
-                d[m] = d.get(m, 0) + s * x * y
-        return MV(d)
-
-    def __rmul__(self, o):
-        return mv(o) * self
-
-    def __truediv__(self, c):
-        return MV({k: v / c for k, v in self.d.items()})
-
-    def map(self, f):
-        return MV({k: f(v) for k, v in self.d.items()})
-
-    def simp(self):
-        return self.map(lambda v: sp.simplify(sp.expand(v)))
-
-    def iszero(self):
-        return not self.simp().d
-
-
-def mv(o):
-    return o if isinstance(o, MV) else MV({0: sp.sympify(o)})
-
-
-def eq(A, B):
-    return (mv(A) - mv(B)).iszero()
+from common.clifford import MV, eq, mv
 
 
 e = [MV({1 << a: 1}) for a in range(4)]

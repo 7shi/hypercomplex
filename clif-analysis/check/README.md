@@ -1,6 +1,6 @@
 # 検証コード
 
-クリフォード解析の記事の数式を検証するPythonスクリプトです。プロジェクトルートで `uv sync` により環境を構築し、`uv run clif-analysis/check/<ファイル名>` で実行します。
+クリフォード解析の記事の数式を検証するPythonスクリプトです。プロジェクトルートで `uv sync` により環境を構築し、`uv run clif-analysis/check/<ファイル名>` で実行します。04〜06のクリフォード代数の実装は`common.clifford`（`src/common/clifford.py`）を使います。
 
 - [01-dirac-monogenic.py](01-dirac-monogenic.py)
 - [02-fundamental-theorem.py](02-fundamental-theorem.py) — [02-fundamental-theorem.md](../02-fundamental-theorem.md)の向きと符号の規約。2次元（正方形・円板）で$\int DF\,dA=\oint\boldsymbol nF\,ds$、$\boldsymbol n\,ds=I\,d\boldsymbol x$、グリーンの定理の流束形・循環形、両側形式、$\oint dz\,F=0$を、3次元（立方体・球）で$\int DF\,dV=\oint\boldsymbol nF\,dS$と発散定理・回転の体積分の定理を、曲面片で$\oint d\boldsymbol x\,F=\int(D\cdot d\boldsymbol X)F$とストークスの定理を厳密積分で確認します。

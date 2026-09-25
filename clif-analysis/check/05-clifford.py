@@ -1,7 +1,7 @@
 """Checks for article 05 (Clifford analysis in general dimension).
 
-Cl_{n,0}(R) with generators e_0..e_{n-1} (e_a^2 = 1) is implemented directly on
-bitmask blades, as in 04. The Dirac operator is D = sum e_a d_a acting on
+Cl_{n,0}(R) with generators e_0..e_{n-1} (e_a^2 = 1) uses the bitmask blades of
+common.clifford, as in 04. The Dirac operator is D = sum e_a d_a acting on
 functions of x in R^n with values in Cl_{n,0}(R).
 
 1. D^2 = Laplacian; sum e_a e_0 e_a = (2 - n) e_0, D x^{-1} = (n - 2)/|x|^2;
@@ -41,122 +41,12 @@ functions of x in R^n with values in Cl_{n,0}(R).
    D . F = -delta F, delta = (-1)^{n(k+1)+1} * d * (n = 3, 4).
 """
 
-import itertools
 import math
-import random
 
 import numpy as np
 import sympy as sp
 
-# ---------------------------------------------------------------- Cl_{n,0}
-
-
-def blade_mul(a, b):
-    """Product of basis blades (bitmasks) in Cl_{n,0}: returns (sign, mask)."""
-    s = 0
-    t = a >> 1
-    while t:
-        s += bin(t & b).count("1")
-        t >>= 1
-    return (-1 if s & 1 else 1), a ^ b
-
-
-def grade(m):
-    return bin(m).count("1")
-
-
-class MV:
-    def __init__(self, d=None):
-        self.d = {k: v for k, v in (d or {}).items() if v != 0}
-
-    def __add__(self, o):
-        o = mv(o)
-        d = dict(self.d)
-        for k, v in o.d.items():
-            d[k] = d.get(k, 0) + v
-        return MV(d)
-
-    __radd__ = __add__
-
-    def __neg__(self):
-        return MV({k: -v for k, v in self.d.items()})
-
-    def __sub__(self, o):
-        return self + (-mv(o))
-
-    def __rsub__(self, o):
-        return mv(o) - self
-
-    def __mul__(self, o):
-        o = mv(o)
-        d = {}
-        for a, x in self.d.items():
-            for b, y in o.d.items():
-                s, m = blade_mul(a, b)
-                d[m] = d.get(m, 0) + s * x * y
-        return MV(d)
-
-    def __rmul__(self, o):
-        return mv(o) * self
-
-    def __truediv__(self, c):
-        return MV({k: v / c for k, v in self.d.items()})
-
-    def map(self, f):
-        return MV({k: f(v) for k, v in self.d.items()})
-
-    def grade(self, k):
-        return MV({m: v for m, v in self.d.items() if grade(m) == k})
-
-    def rev(self):
-        return MV({m: (-v if (grade(m) * (grade(m) - 1) // 2) % 2 else v) for m, v in self.d.items()})
-
-    def scalar(self):
-        return self.d.get(0, 0)
-
-
-def mv(o):
-    return o if isinstance(o, MV) else MV({0: sp.sympify(o)})
-
-
-def zero_expr(v):
-    v = sp.cancel(sp.together(sp.expand(v)))
-    return v == 0 or sp.simplify(v) == 0
-
-
-def eq(A, B):
-    return all(zero_expr(v) for v in (mv(A) - mv(B)).d.values())
-
-
-class Alg:
-    """Cl_{n,0} with coordinates x_0..x_{n-1} and the Dirac operator."""
-
-    def __init__(self, n, name="x"):
-        self.n = n
-        self.e = [MV({1 << a: 1}) for a in range(n)]
-        self.X = sp.symbols(f"{name}0:{n}", real=True)
-        self.x = sum((self.X[a] * self.e[a] for a in range(n)), MV())
-        self.r2 = sum(v**2 for v in self.X)
-        self.I = MV({(1 << n) - 1: 1})
-
-    def d(self, F, a):
-        return F.map(lambda v: sp.diff(v, self.X[a]))
-
-    def D(self, F):
-        return sum((self.e[a] * self.d(F, a) for a in range(self.n)), MV())
-
-    def Dr(self, F):
-        return sum((self.d(F, a) * self.e[a] for a in range(self.n)), MV())
-
-    def lap(self, F):
-        return sum((self.d(self.d(F, a), a) for a in range(self.n)), MV())
-
-    def rnd(self, seed, deg=2, grades=None):
-        rnd = random.Random(seed)
-        mons = [m for m in itertools.product(range(deg + 1), repeat=self.n) if sum(m) <= deg]
-        blades = [b for b in range(1 << self.n) if grades is None or grade(b) in grades]
-        return MV({b: sum(rnd.randint(-3, 3) * sp.prod([self.X[a] ** p for a, p in enumerate(m)])
-                          for m in mons) for b in blades})
+from common.clifford import MV, Alg, blade_mul, eq, mv, zero_expr
 
 
 # ---------------------------------------------------------------- 1.
