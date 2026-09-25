@@ -25,6 +25,9 @@
    I dl -> q u equals u x E_Coulomb/c^2.
 10. J = c rho gamma_0 seen by the boosted observer: rho' = gamma rho, J'_1 = -gamma rho v.
 11. gamma m c^2 = m c^2 + m u^2/2 + O(u^4).
+12. Intuition: gamma'_mu = R gamma_mu R~ satisfy the same relations; R(gamma_0 +- gamma_1)R~
+    = e^{+-eta}(gamma_0 +- gamma_1); dR/dtau = (q/2mc)FR gives m dU/dtau = (q/c)F . U for
+    U = c R gamma_0 R~; hyperbolic motion in uniform E and cyclotron motion in uniform B.
 """
 
 import sympy as sp
@@ -239,3 +242,31 @@ m_, us = sp.symbols("m u", positive=True)
 ser = sp.series(m_ * c**2 / sp.sqrt(1 - us**2 / c**2), us, 0, 4).removeO()
 assert sp.expand(ser - (m_ * c**2 + m_ * us**2 / 2)) == 0
 print("11. gamma m c^2 = m c^2 + m u^2/2 + ...")
+
+# ---------------------------------------------------------------- 12.
+# Intuitive statements: the rotated basis gamma'_mu = R gamma_mu R~ satisfies the same
+# relations; light directions gamma_0 +- gamma_1 are only rescaled by e^{+-eta};
+# the rotor equation dR/dtau = (q/2mc) F R gives m dU/dtau = (q/c) F . U for U = c R gamma_0 R~;
+# uniform E (hyperbolic motion) and uniform B (cyclotron, omega = qB/m in proper time).
+gp = [R * gm * Rt for gm in g]
+for a_ in range(4):
+    assert eq(gp[a_] * gp[a_], g[a_] * g[a_])
+    for b_ in range(a_):
+        assert eq(gp[a_] * gp[b_], -(gp[b_] * gp[a_]))
+for sgn in (1, -1):
+    assert eq(R * (g0 + sgn * g[1]) * Rt, sp.exp(sgn * eta) * (g0 + sgn * g[1]))
+Rs = S.rnd(7, deg=0, grades={0, 2, 4})
+Fs = S.rnd(8, deg=0, grades={2})
+kk = sp.Symbol("k")
+Rdot = kk * Fs * Rs
+assert eq(Rdot * g0 * rev(Rs) + Rs * g0 * rev(Rdot), kk * (Fs * (Rs * g0 * rev(Rs)) - (Rs * g0 * rev(Rs)) * Fs))
+m, E_, B_, tau, h = sp.symbols("m E_0 B_0 tau h", positive=True)
+lor = lambda FF, UU: m * UU.map(lambda w: sp.diff(w, tau)) - q / c * ((FF * UU - UU * FF) / 2)
+al = q * E_ / (m * c)
+assert eq(lor(E_ * sg[0], c * (g0 * sp.cosh(al * tau) + g[1] * sp.sinh(al * tau))), 0)
+om = q * B_ / m
+UB = c * (g0 * sp.cosh(h) + sp.sinh(h) * (g[1] * sp.cos(om * tau) - g[2] * sp.sin(om * tau)))
+assert eq(lor(I * c * B_ * sg[2], UB), 0)
+assert eq((I * c * sg[0]) * g0 - g0 * (I * c * sg[0]), 0)  # magnetic part does not act on c gamma_0
+print("12. gamma'_mu satisfy the same relations; R(g0 +- g1)R~ = e^{+-eta}(g0 +- g1); rotor equation; "
+      "uniform E: rapidity qE tau/mc; uniform B: rotation qB tau/m (clockwise about B)")
