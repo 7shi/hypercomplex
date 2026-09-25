@@ -52,7 +52,7 @@ $$
 \boldsymbol A=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol J(x_0-R,\boldsymbol y)}R\,dV
 $$
 
-である。
+です。
 &&&
 
 &&&prf
@@ -110,7 +110,7 @@ $$
 u(t,\boldsymbol x)=\partial_t\bigl(t\,M_{ct}[g](\boldsymbol x)\bigr)+t\,M_{ct}[h](\boldsymbol x)
 $$
 
-である。
+です。
 &&&
 
 証明は本記事では扱いません。多項式の初期値では、3次元の球面平均が$M_R[p]=\sum_kR^{2k}\Delta^kp/(2k+1)!$と書けることから、右辺が波動方程式と初期条件を満たすことを直接確かめられます。

@@ -63,7 +63,7 @@ $$
 \mathcal DF=\frac1{\varepsilon_0}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
 $$
 
-は[マクスウェル方程式](#fml-maxwell)の4本の式と同値である。
+は[マクスウェル方程式](#fml-maxwell)の4本の式と同値です。
 &&&
 
 &&&prf
@@ -94,7 +94,7 @@ $$
 \Bigl(\partial_0-\sum_la_l\partial_l\Bigr)\Bigl(\partial_0+\sum_la_l\partial_l\Bigr)=\partial_0^2-\sum_la_l^2\,\partial_l^2
 $$
 
-である。
+です。
 &&&
 
 &&&prf

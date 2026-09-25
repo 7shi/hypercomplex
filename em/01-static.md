@@ -53,7 +53,7 @@ $$
 となります。右辺にはベクトル積も擬スカラーも現れず、2つのベクトル$\boldsymbol r$と$\boldsymbol J$が張る向き付きの面の重ね合わせだけが残ります。磁場は、電流とそこへ向かう変位が張る面として、2ベクトルの量で書けます。
 
 &&&rem 擬ベクトルの解消
-[[7shi-hist]]で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換であり、例外的な扱いは要りません。擬ベクトルとしての$\boldsymbol B$は、2ベクトル$Ic\boldsymbol B$を$I$で割ってベクトルと同一視したときにだけ現れます。この同一視が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。
+[[7shi-hist]]で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換で、例外的な扱いは要りません。擬ベクトルとしての$\boldsymbol B$は、2ベクトル$Ic\boldsymbol B$を$I$で割ってベクトルと同一視したときにだけ現れます。この同一視が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。
 &&&
 
 係数の$c$は、$\boldsymbol E$と$c\boldsymbol B$の単位を揃えるために入れています。
@@ -83,7 +83,7 @@ $$
 \int\frac{(\boldsymbol x-\boldsymbol y)\cdot\boldsymbol J(\boldsymbol y)}{|\boldsymbol x-\boldsymbol y|^3}\,dV=0
 $$
 
-が成り立つ。
+が成り立ちます。
 &&&
 
 &&&prf
@@ -106,7 +106,7 @@ $$
 F=\boldsymbol E+Ic\boldsymbol B
 $$
 
-であり、ベクトル部がクーロンの法則の電場、2ベクトル部がビオ＝サバールの法則の磁場の$Ic$倍である。
+で、ベクトル部がクーロンの法則の電場、2ベクトル部がビオ＝サバールの法則の磁場の$Ic$倍です。
 &&&
 
 核は[[7shi-cla5]]のコーシー核$E(\boldsymbol x)=\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合です。記号$E$は電場と紛らわしいので、本記事では核を分数のまま書きます。クーロン定数の$4\pi$は、[[7shi-cla5]]の正規化定数$|S^{n-1}|$の$n=3$の値$|S^2|=4\pi$です。電磁気学では$4\pi$を「全立体角」と説明しますが、それは単位球面の面積のことであり、積分公式の定数として自然に現れます。
@@ -227,7 +227,7 @@ $$
 \boldsymbol A=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol J(\boldsymbol y)}{|\boldsymbol x-\boldsymbol y|}\,dV
 $$
 
-はスカラーポテンシャルとベクトルポテンシャルである（$1/4\pi\varepsilon_0c=\mu_0c/4\pi$）。
+はスカラーポテンシャルとベクトルポテンシャルです（$1/4\pi\varepsilon_0c=\mu_0c/4\pi$）。
 &&&
 
 核$1/|\boldsymbol x-\boldsymbol y|$はスカラーなので、$D$を積分の中に入れても源との順序は問題になりません。

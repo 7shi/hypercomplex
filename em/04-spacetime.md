@@ -11,7 +11,7 @@ $$
 \gamma_0^2=1,\qquad\gamma_k^2=-1\ (k=1,2,3),\qquad\mu\ne\nu\text{ なら }\gamma_\mu\gamma_\nu=-\gamma_\nu\gamma_\mu
 $$
 
-で生成される実クリフォード代数$\operatorname{Cl}_{1,3}(\mathbb R)$を**時空代数**と呼ぶ。
+で生成される実クリフォード代数$\operatorname{Cl}_{1,3}(\mathbb R)$を**時空代数**と呼びます。
 &&&
 
 時空の点を$x_0=ct$と空間座標$x_1,x_2,x_3$で
@@ -56,7 +56,7 @@ $$
 &&&
 
 &&&prop 偶部分代数と$\operatorname{Cl}_{3,0}(\mathbb R)$
-$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$であり、$\sigma_1\sigma_2\sigma_3=\gamma_0\gamma_1\gamma_2\gamma_3$である。$1,\sigma_k,\sigma_k\sigma_l,\sigma_1\sigma_2\sigma_3$は偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の基底をなし、$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)$である。
+$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma_1\sigma_2\sigma_3=\gamma_0\gamma_1\gamma_2\gamma_3$です。$1,\sigma_k,\sigma_k\sigma_l,\sigma_1\sigma_2\sigma_3$は偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の基底をなし、$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)$です。
 &&&
 
 &&&prf
@@ -141,7 +141,7 @@ $$
 DF=\mu_0cJ
 $$
 
-は[[7shi-em2]]の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値である。
+は[[7shi-em2]]の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値です。
 &&&
 
 &&&prf
@@ -183,7 +183,7 @@ $$
 電流の発散は$D\cdot J=\partial_0(c\rho)+\sum_k\partial_kJ_k=\partial_t\rho+\nabla\cdot\boldsymbol J$です。
 
 &&&prop 連続の式
-$D\cdot F=\mu_0cJ$の解について$D\cdot J=0$、すなわち$\partial_t\rho+\nabla\cdot\boldsymbol J=0$が成り立つ。
+$D\cdot F=\mu_0cJ$の解について$D\cdot J=0$、すなわち$\partial_t\rho+\nabla\cdot\boldsymbol J=0$が成り立ちます。
 &&&
 
 &&&prf
@@ -200,7 +200,7 @@ $D$をもう一度掛けると$D^2F=\mu_0c\,DJ=\mu_0c\,(D\cdot J+D\wedge J)=\mu_
 - **前半との接続**：$\operatorname{Cl}_{3,1}(\mathbb R)$では時間の生成元の2乗が$\gamma_0^2=-1$です。$\gamma_k\gamma_0$の2乗は$+1$のままで、偶部分代数はやはり$\operatorname{Cl}_{3,0}(\mathbb R)$と同型ですが、$\gamma_0\gamma_0=-1$のために$D(\gamma_0\gamma_0DH)=-D^2H$となり、$D^2=\Delta-\partial_0^2$と全体の符号が逆になります。[[7shi-cla4]]の$e_0$と同じく2乗が$+1$の生成元を掛けて偶部分に移すという操作をそのまま保てるのは、$\operatorname{Cl}_{1,3}(\mathbb R)$のほうです。
 - **パラベクトルの計量**：[[7shi-em2]]の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$と、パラベクトルのノルム$p\bar p=x_0^2-|\boldsymbol x|^2$は、ともに$(+,-,-,-)$の符号です。
 - **パウリ行列からの拡張**：パウリ行列による$\operatorname{Cl}_{3,0}(\mathbb R)$の表現（[[7shi-bq]]・[[7shi-lie3]]）で、パラベクトル$p$を$\gamma(p)=\begin{pmatrix}0&p\\\bar p&0\end{pmatrix}$と4次の行列に置くと、$\gamma(p)^2=p\bar p$です。$p=1,\sigma_k$の像は、ワイル表現のガンマ行列そのものです。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。
-- **代数としての違い**：[[7shi-clif1]]の分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$であり、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元は$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元の$i$倍にあたります。[[7shi-lie4]]と[[7shi-ideal]]が$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。
+- **代数としての違い**：[[7shi-clif1]]の分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$で、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元は$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元の$i$倍にあたります。[[7shi-lie4]]と[[7shi-ideal]]が$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。
 &&&
 
 $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとしての$\gamma_k$の2乗が$-1$で、[[7shi-em1]]から[[7shi-em3]]の$\boldsymbol x^2=|\boldsymbol x|^2$という規約から外れることです。空間のベクトルは相対ベクトル$\sigma_k$（2乗$+1$）として保たれるので、$\operatorname{Cl}_{3,0}(\mathbb R)$での計算はそのまま使えます。

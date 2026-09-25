@@ -7,7 +7,7 @@
 [[7shi-em4]]の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_0,\gamma_1,\gamma_2,\gamma_3$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、擬スカラーを$I=\gamma_0\gamma_1\gamma_2\gamma_3$、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$とします。時空の元$X$の反転$\tilde X$は、基底の積の順序を逆にする操作です。ベクトルは変えず、2ベクトルの符号を変え、$\widetilde{XY}=\tilde Y\tilde X$を満たします。
 
 &&&def 回転子
-偶部分代数の元$R$で$R\tilde R=1$を満たすものを**回転子**と呼ぶ。
+偶部分代数の元$R$で$R\tilde R=1$を満たすものを**回転子**と呼びます。
 &&&
 
 回転子$R$と時空のベクトル$x$について、$Rx\tilde R$の2乗は
@@ -117,7 +117,7 @@ $$
 \boldsymbol B'_\perp=\gamma\Bigl(\boldsymbol B-\frac1{c^2}\boldsymbol v\times\boldsymbol E\Bigr)_\perp
 $$
 
-ここで$\parallel$は$\sigma_1$方向の成分、$\perp$はそれに垂直な成分である。
+ここで$\parallel$は$\sigma_1$方向の成分、$\perp$はそれに垂直な成分です。
 &&&
 
 &&&prf
@@ -186,7 +186,7 @@ $$
 \frac d{d\tau}(\gamma m\boldsymbol u)=\gamma q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)
 $$
 
-である。
+です。
 &&&
 
 &&&prf

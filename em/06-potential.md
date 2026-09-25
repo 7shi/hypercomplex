@@ -21,7 +21,7 @@ $$
 A=\varphi\,\gamma_0+c\sum_kA_k\gamma_k
 $$
 
-を作る。
+を作ります。
 &&&
 
 $\gamma_0$を掛けると$\gamma_0A=\varphi+c\sum_kA_k\gamma_0\gamma_k=\varphi-c\boldsymbol A$であり、[[7shi-em1]]の$P$が現れます。[[7shi-em4]]の電流$J$と$\gamma_0J=c(\rho-\boldsymbol J/c)$の関係と同じ形です。
@@ -102,14 +102,14 @@ $$
 \square A=\mu_0cJ
 $$
 
-と同値である。成分では
+と同値です。成分では
 
 $$
 \Bigl(\frac1{c^2}\partial_t^2-\Delta\Bigr)\varphi=\frac\rho{\varepsilon_0},\qquad
 \Bigl(\frac1{c^2}\partial_t^2-\Delta\Bigr)\boldsymbol A=\mu_0\boldsymbol J
 $$
 
-である。
+です。
 &&&
 
 &&&prf
@@ -135,9 +135,9 @@ $$
 &&&
 
 &&&prop エネルギー運動量の性質
-(1) ベクトル$a$に対して$T(a)$はベクトルであり、$a\cdot T(b)=b\cdot T(a)$が成り立つ。
+(1) ベクトル$a$に対して$T(a)$はベクトルで、$a\cdot T(b)=b\cdot T(a)$が成り立ちます。
 
-(2) $T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$、すなわち$T(\gamma_0)=u\gamma_0+\sum_k\frac{S_k}c\gamma_k$である。
+(2) $T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$、すなわち$T(\gamma_0)=u\gamma_0+\sum_k\frac{S_k}c\gamma_k$です。
 &&&
 
 &&&prf
@@ -157,13 +157,13 @@ $$
 \sum_\mu\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J
 $$
 
-が成り立つ。ここで$F\cdot J=\frac12(FJ-JF)$であり、
+が成り立ちます。ここで$F\cdot J=\frac12(FJ-JF)$で、
 
 $$
 \frac1cF\cdot J=\frac1c(\boldsymbol J\cdot\boldsymbol E)\,\gamma_0+\sum_k\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_k\gamma_k
 $$
 
-である。
+です。
 &&&
 
 &&&prf

@@ -40,7 +40,7 @@ $$
 \hat{\boldsymbol k}\cdot\boldsymbol E=0,\qquad c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E
 $$
 
-と同値であり、このとき$F=(1+\hat{\boldsymbol k})\boldsymbol E$である。
+と同値で、このとき$F=(1+\hat{\boldsymbol k})\boldsymbol E$です。
 &&&
 
 &&&prf
@@ -74,7 +74,7 @@ $$
 です。スカラー部が$0$であることが$|\boldsymbol E|=c|\boldsymbol B|$に、擬スカラー部が$0$であることが$\boldsymbol E\perp\boldsymbol B$にあたります。$F^2=0$を満たす$0$でない$F$を**零場**と呼びます。
 
 &&&prop 零場は平面波の形
-$F=\boldsymbol E+Ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\boldsymbol k}=\boldsymbol E\times c\boldsymbol B/|\boldsymbol E|^2$は単位ベクトルで、$F=(1+\hat{\boldsymbol k})\boldsymbol E$である。
+$F=\boldsymbol E+Ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\boldsymbol k}=\boldsymbol E\times c\boldsymbol B/|\boldsymbol E|^2$は単位ベクトルで、$F=(1+\hat{\boldsymbol k})\boldsymbol E$です。
 &&&
 
 &&&prf
@@ -177,7 +177,7 @@ $$
 \partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
 $$
 
-が成り立つ。
+が成り立ちます。
 &&&
 
 &&&prf
