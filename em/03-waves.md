@@ -1,4 +1,4 @@
-[[7shi-em2]]では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、一定の背景場を除けば平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の$i$を擬スカラー$I$に置き換えられ、そのまま円偏光の回転が得られます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのスカラー部の保存則がポインティングの定理になることを示します。
+[[7shi-em2]]では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、一定の背景場を除けば平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の$i$を擬スカラー$I$に置き換えられ、そのまま円偏光の回転が得られます。$I$と可換な$\mathcal D$の性質から、$I$を掛ける操作は電場と磁場を入れ替える双対性として働きます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのノルムが$F^2$の絶対値の2乗に等しいことからエネルギーの流れが光速を超えないこと、スカラー部の保存則がポインティングの定理になることを示します。
 
 # 設定
 
@@ -58,6 +58,16 @@ $$
 &&&
 
 電場と磁場はともに進行方向に垂直で互いにも垂直、大きさは$|\boldsymbol E|=c|\boldsymbol B|$です。振動する量が進行方向に垂直な波を**横波**と呼び、電磁波は横波です（空気の疎密が進行方向に沿って伝わる音波は縦波です）。$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$より、$\boldsymbol E$、$\boldsymbol B$、$\hat{\boldsymbol k}$はこの順に右手系をなし、進行方向は$\boldsymbol E\times\boldsymbol B$の向きです。ベクトル解析では、これらの性質を平面波の仮定からマクスウェル方程式の4本の式に代入して1つずつ導きます。ここでは、$F$が冪等元$P_+$の像に入るという1つの条件にまとまっています。逆に、$\hat{\boldsymbol k}$に垂直な値を取る任意の$C^1$級の関数$\boldsymbol E(\xi)$について、$F=(1+\hat{\boldsymbol k})\boldsymbol E(\xi)$は$\mathcal DF=(1-\hat{\boldsymbol k})(1+\hat{\boldsymbol k})\boldsymbol E'=0$を満たす解です。波形は正弦波に限りません。
+
+&&&rem 双曲型の正則関数
+複素解析では、$z=x+iy$の任意の正則関数$f(z)$がコーシー＝リーマンの方程式を満たしました。$\mathcal DF=0$はその双曲型版で、$z$の役割を光的な変数$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$が担います。ただし$\xi$の任意の関数がそのまま解になるのではなく、冪等元$P_+$の像に入ることが必要です。空間1次元（$\mathcal D=\partial_0+e_1\partial_1$）では、$P_\pm=(1\pm e_1)/2$として
+
+$$
+F=P_+f(x_0-x_1)+P_-g(x_0+x_1)
+$$
+
+が一般解で、右向きと左向きに進む波が2つの冪等元の成分に分かれます（ダランベールの解）。分解型複素数（[[7shi-clif2]]）の冪等元による直和分解が、そのまま進行方向による波の分解になっています。楕円型の正則関数と違い、$f,g$は解析的である必要がなく、微分可能でさえあれば任意です。
+&&&
 
 ## $F^2=0$
 
@@ -146,6 +156,24 @@ $$
 
 であり、$\boldsymbol E=\boldsymbol E_0\cos\theta$の直線偏光になります。通常の複素表示で実ベクトル振幅$\boldsymbol E_0$を選んで実部を取ると、$\operatorname{Re}\bigl(\boldsymbol E_0e^{i\theta}\bigr)$は直線偏光です（複素ベクトル振幅を選べば、複素表示でも円偏光を直接表せます）。擬スカラーによる方法では、実振幅$\boldsymbol E_0$のままで指数関数そのものが円偏光になり、直線偏光は逆回りの2つの円偏光の重ね合わせです。回転の向きは指数の$I$の符号で決まります。
 
+## 電気と磁気の双対性
+
+円偏光で使った$e^{I\theta}$は、平面波に限らず真空の場全体に働きます。$I$は$\operatorname{Cl}_{3,0}(\mathbb R)$の中心にあり$\mathcal D$と可換なので、$\mathcal DF=0$なら任意の実数$\alpha$について
+
+$$
+\mathcal D\bigl(Fe^{I\alpha}\bigr)=(\mathcal DF)e^{I\alpha}=0
+$$
+
+です。$\alpha=\pi/2$とすると$FI=(\boldsymbol E+Ic\boldsymbol B)I=-c\boldsymbol B+I\boldsymbol E$なので
+
+$$
+\boldsymbol E\mapsto-c\boldsymbol B,\qquad c\boldsymbol B\mapsto\boldsymbol E
+$$
+
+となり、電場と磁場の役割が入れ替わります。真空のマクスウェル方程式が電場と磁場の入れ替えに対して形を保つこと（電気と磁気の双対性）は、擬スカラーを掛けるという1つの操作として表れます。一般の$\alpha$では電場と磁場が角$\alpha$で混ざり、円偏光の$e^{I\theta}$はこの双対回転を位相として使ったものと読めます。源がある場合は、源も同じ角だけ回す必要があり、磁荷（[[7shi-em1]]）を持ち込まない限りこの対称性は成り立ちません。
+
+双対回転で$F^2$は$F^2e^{2I\alpha}$となり、スカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2Ic\,\boldsymbol E\cdot\boldsymbol B$は複素数の実部と虚部のように混ざります。一方、次節の$FF^\dagger$は$(Fe^{I\alpha})(Fe^{I\alpha})^\dagger=Fe^{I\alpha}e^{-I\alpha}F^\dagger=FF^\dagger$で変わりません。
+
 # エネルギーの流れ
 
 ## 場とその反転の積
@@ -183,6 +211,22 @@ FF^\dagger=(1+\hat{\boldsymbol k})\boldsymbol E\boldsymbol E(1+\hat{\boldsymbol 
 $$
 
 なので、$u=\varepsilon_0|\boldsymbol E|^2$、$\boldsymbol S=cu\,\hat{\boldsymbol k}$です。平面波では電場と磁場のエネルギーが等しく、エネルギーは速さ$c$で進行方向に運ばれます。
+
+一般の場でも、エネルギーが流れる速さは$c$を超えません。
+
+&&&prop エネルギーの流れの速さ
+$$
+u^2-\frac{|\boldsymbol S|^2}{c^2}=\Bigl(\frac{\varepsilon_0}2\Bigr)^2\Bigl(\bigl(|\boldsymbol E|^2-c^2|\boldsymbol B|^2\bigr)^2+4c^2(\boldsymbol E\cdot\boldsymbol B)^2\Bigr)\ge0
+$$
+
+です。したがって$|\boldsymbol S|\le cu$であり、等号はヌル場（$F^2=0$）のときに限ります。
+&&&
+
+&&&prf
+$\boldsymbol S/c=\varepsilon_0c\,\boldsymbol E\times\boldsymbol B$と$|\boldsymbol E\times\boldsymbol B|^2=|\boldsymbol E|^2|\boldsymbol B|^2-(\boldsymbol E\cdot\boldsymbol B)^2$より、$(2/\varepsilon_0)^2(u^2-|\boldsymbol S|^2/c^2)=(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)^2-4c^2|\boldsymbol E|^2|\boldsymbol B|^2+4c^2(\boldsymbol E\cdot\boldsymbol B)^2$であり、第1項と第2項をまとめれば右辺を得る。
+&&&
+
+右辺の括弧は、[場の2乗](#fml-square)$F^2=\alpha+I\beta$の実部と虚部の2乗和$\alpha^2+\beta^2$です。パラベクトル$u+\boldsymbol S/c$のノルム$u^2-|\boldsymbol S|^2/c^2$が$F^2$の「絶対値の2乗」に等しいので、エネルギーの流れの速さ$|\boldsymbol S|/u$が$c$を超えないことは、代数の恒等式から出ます。$c$に達するのは、平面波と同じ代数的な形をしたヌル場だけです。
 
 &&&ex 太陽光の電場
 地球の位置で太陽光に垂直な面が受けるエネルギーは、およそ$1.4\times10^3\ \mathrm{W/m^2}$です。これを振幅$E_0$の直線偏光の正弦波と見なすと、$|\boldsymbol E|^2=E_0^2\cos^2\theta$の時間平均は$E_0^2/2$なので、$|\boldsymbol S|$の時間平均は$c\varepsilon_0E_0^2/2$です。これを$1.4\times10^3\ \mathrm{W/m^2}$と等しいと置くと$E_0\approx1.0\times10^3\ \mathrm{V/m}$、磁場の振幅は$E_0/c\approx3.4\times10^{-6}\ \mathrm T$となります。実際の太陽光はさまざまな振動数と偏光の混ざったものなので、これは大きさの目安です。
@@ -235,4 +279,6 @@ $$
 - **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、一定の背景場を除けば$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
 - **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2Ic\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は、各点で平面波と同じ代数的な形をしています。
 - **擬スカラーの指数関数**：$e^{I\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$I$は左からの作用として2ベクトル$I\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
-- **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルで、そのスカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。
+- **双曲型の正則関数**：真空の解は光的な変数の関数で、冪等元への分解が進行方向による波の分解になります。解析性は要りません。
+- **電気と磁気の双対性**：$I$は$\mathcal D$と可換なので、$Fe^{I\alpha}$も真空の解です。$\alpha=\pi/2$で電場と磁場が入れ替わり、$FF^\dagger$は変わりません。
+- **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルです。そのノルムは$F^2$の絶対値の2乗に等しく、エネルギーの流れの速さは$c$を超えません。スカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。

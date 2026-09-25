@@ -21,6 +21,8 @@
    half-space without being zero (no unique continuation); cos(x_0 - x_3) is
    bounded and nonconstant (no Liouville).
 7. Radiation: (f'/r)^2 4 pi r^2 is independent of r, (f/r^2)^2 4 pi r^2 -> 0.
+8. Radiation: D(x_0 - r) = gamma_0 + n = k (null); for vectors (k ^ a)^2 = (k.a)^2 - k^2 a^2, so
+   k.a = 0 gives (k ^ a)^2 = 0 (the 1/r part of the retarded field is null).
 """
 
 import sympy as sp
@@ -144,3 +146,13 @@ rr_, fp_, f_ = sp.symbols("r fp f", positive=True)
 assert sp.simplify((fp_ / rr_)**2 * 4 * sp.pi * rr_**2 - 4 * sp.pi * fp_**2) == 0
 assert sp.limit((f_ / rr_**2)**2 * 4 * sp.pi * rr_**2, rr_, sp.oo) == 0
 print("7. 1/r part: flux through the sphere independent of r; 1/r^2 part: flux -> 0")
+
+# ---------------------------------------------------------------- 8.
+kk = S.D(mv(Y[0] - rY, S.neg))
+assert eq(kk, g[0] + n)
+Av = sp.symbols("A0:4", real=True)
+av = sum((Av[m_] * g[m_] for m_ in range(4)), S.zero())
+wedge = (kk * av - av * kk) / 2
+dotk = ((kk * av + av * kk) / 2)
+assert eq(wedge * wedge, dotk * dotk - (kk * kk) * (av * av))
+print("8. D(x0 - r) = gamma_0 + n null; (k ^ a)^2 = (k.a)^2 - k^2 a^2, so the radiation part is null")

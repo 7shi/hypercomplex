@@ -28,6 +28,9 @@
 12. Intuition: gamma'_mu = R gamma_mu R~ satisfy the same relations; R(gamma_0 +- gamma_1)R~
     = e^{+-eta}(gamma_0 +- gamma_1); dR/dtau = (q/2mc)FR gives m dU/dtau = (q/c)F . U for
     U = c R gamma_0 R~; hyperbolic motion in uniform E and cyclotron motion in uniform B.
+13. sigma_1 sigma_2 - sigma_2 sigma_1 = 2 I sigma_3; e^{sigma_1 a/2} e^{sigma_2 b/2} has the rotation
+    component I sigma_3 sinh(a/2) sinh(b/2). Canonical form: boosting along S with tanh 2eta = |S|/(cu)
+    makes E' x B' = 0 (random integer fields, numerically).
 """
 
 import sympy as sp
@@ -270,3 +273,33 @@ assert eq(lor(I * c * B_ * sg[2], UB), 0)
 assert eq((I * c * sg[0]) * g0 - g0 * (I * c * sg[0]), 0)  # magnetic part does not act on c gamma_0
 print("12. gamma'_mu satisfy the same relations; R(g0 +- g1)R~ = e^{+-eta}(g0 +- g1); rotor equation; "
       "uniform E: rapidity qE tau/mc; uniform B: rotation qB tau/m (clockwise about B)")
+
+# ---------------------------------------------------------------- 13.
+import random
+assert eq(sg[0] * sg[1] - sg[1] * sg[0], 2 * I * sg[2])
+a_, b_ = sp.symbols("a_ b_", real=True)
+Rab = (sp.cosh(a_ / 2) + sg[0] * sp.sinh(a_ / 2)) * (sp.cosh(b_ / 2) + sg[1] * sp.sinh(b_ / 2))
+assert eq(Rab, sp.cosh(a_ / 2) * sp.cosh(b_ / 2) + sg[0] * sp.sinh(a_ / 2) * sp.cosh(b_ / 2)
+          + sg[1] * sp.cosh(a_ / 2) * sp.sinh(b_ / 2) + I * sg[2] * sp.sinh(a_ / 2) * sp.sinh(b_ / 2))
+rnd = random.Random(3)
+for _ in range(3):
+    Ev = [rnd.randint(-5, 5) for _ in range(3)]
+    Bv = [rnd.randint(-5, 5) for _ in range(3)]
+    Sv = cross(Ev, Bv)
+    uv = (sum(x * x for x in Ev) + sum(x * x for x in Bv)) / 2  # units c = 1
+    sn = sum(x * x for x in Sv) ** 0.5
+    if sn == 0:
+        continue
+    et = 0.5 * float(sp.atanh(sn / uv))
+    nS = sum((Sv[k] / sn * sg[k] for k in range(3)), S.zero())
+    Rn = float(sp.cosh(et / 2)) + nS * float(sp.sinh(et / 2))
+    F4 = sum((Ev[k] * sg[k] + I * Bv[k] * sg[k] for k in range(3)), S.zero())
+    Fp_ = rev(Rn) * F4 * Rn
+    Epn = [float(Fp_.d.get((1 << (k + 1)) | 1, 0)) for k in range(3)]
+    Bpn = []
+    for k in range(3):
+        mask, sgn_ = list((I * sg[k]).d.items())[0]
+        Bpn.append(float(Fp_.d.get(mask, 0)) * float(sgn_))
+    assert max(abs(x) for x in cross(Epn, Bpn)) < 1e-9
+print("13. [sigma_1, sigma_2] = 2 I sigma_3, boost composition has a rotation part; "
+      "boost along S with tanh 2eta = |S|/cu gives E' parallel to B'")

@@ -240,7 +240,9 @@ files = [
 ["7shi-em1"]
 files = [
   "em/02-maxwell.md",
+  "em/03-waves.md",
   "em/04-spacetime.md",
+  "em/05-lorentz.md",
   "em/06-potential.md",
   "em/07-retarded.md",
 ]
@@ -250,6 +252,7 @@ files = [
   "em/03-waves.md",
   "em/04-spacetime.md",
   "em/05-lorentz.md",
+  "em/06-potential.md",
   "em/07-retarded.md",
 ]
 
@@ -271,6 +274,7 @@ files = [
 ["7shi-em5"]
 files = [
   "em/06-potential.md",
+  "em/07-retarded.md",
 ]
 
 ["7shi-em6"]

@@ -19,6 +19,8 @@
 7. Observer split: E = (F - gamma_0 F gamma_0)/2 (planes containing gamma_0, anticommute with
    gamma_0), IcB = (F + gamma_0 F gamma_0)/2 (spatial planes, commute with gamma_0);
    vectors orthogonal to gamma_0 are the observer's space: x gamma_0 = x_0 + x.
+8. I sigma_k is the orthogonal complement of the plane sigma_k: every vector of gamma_1 gamma_0
+   is orthogonal to every vector of gamma_3 gamma_2, and F -> IF swaps the electric and magnetic planes.
 """
 
 import sympy as sp
@@ -152,3 +154,13 @@ for s_ in sg:
 for s_ in sg:
     assert all(not (m & 1) for m in (I * s_).d)  # I sigma_k is a spatial plane
 print("7. E = (F - g0 F g0)/2 on planes containing gamma_0, IcB = (F + g0 F g0)/2 on spatial planes")
+
+# ---------------------------------------------------------------- 8.
+ipv = lambda p_, q_: ((p_ * q_ + q_ * p_) / 2).scalar()
+for (a1, a2), (b1, b2) in (((1, 0), (3, 2)), ((2, 0), (1, 3)), ((3, 0), (2, 1))):
+    for u_ in (g[a1], g[a2]):
+        for v_ in (g[b1], g[b2]):
+            assert ipv(u_, v_) == 0
+IF = I * Fc_
+assert eq((IF - g0 * IF * g0) / 2, -c * svec(Bc_)) and eq((IF + g0 * IF * g0) / 2, I * svec(Ec_))
+print("8. electric plane sigma_k and magnetic plane I sigma_k are orthogonal complements; IF swaps them")

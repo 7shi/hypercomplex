@@ -16,6 +16,9 @@
    u = eps_0|E|^2/2 + |B|^2/(2 mu_0).
 6. Parallel-plate capacitor: charging work Q^2 d/(2 eps_0 S) = (eps_0/2)E^2 S d.
 7. Sunlight 1.4e3 W/m^2: <cos^2> = 1/2 gives E_0 ~ 1.0e3 V/m, B_0 ~ 3.4e-6 T.
+8. Duality: Dq(F e^{I a}) = (Dq F) e^{I a}, F I = -cB + I E, (F e^{Ia})(F e^{Ia})^dagger = F F^dagger,
+   (F e^{Ia})^2 = F^2 e^{2Ia}; u^2 - |S|^2/c^2 = (eps_0/2)^2((|E|^2 - c^2|B|^2)^2 + 4c^2(E.B)^2);
+   1+1 dimensions: P_+ f(x_0 - x_1) + P_- g(x_0 + x_1) solves (d_0 + e_1 d_1)F = 0.
 """
 
 import sympy as sp
@@ -209,3 +212,21 @@ eps0_n, c_n = 8.8541878188e-12, 299792458.0
 E0 = (2 * 1.4e3 / (c_n * eps0_n)) ** 0.5
 assert round(E0, -2) == 1.0e3 and round(E0 / c_n * 1e6, 1) == 3.4
 print(f"7. sunlight 1.4e3 W/m^2: E0 = {E0:.0f} V/m, B0 = {E0 / c_n:.2e} T")
+
+# ---------------------------------------------------------------- 8.
+alpha = sp.Symbol("alpha", real=True)
+eIa = sp.cos(alpha) + I * sp.sin(alpha)
+Fd = F * eIa
+assert eq(Dq(Fd), Dq(F) * eIa)
+assert eq(Fc * I, -c * vec(Bc) + I * vec(Ec))
+assert eq((Fc * eIa) * (Fc * eIa).rev(), Fc * Fc.rev())
+assert eq((Fc * eIa) * (Fc * eIa), Fc * Fc * (sp.cos(2 * alpha) + I * sp.sin(2 * alpha)))
+uu = eps0 / 2 * (dot(Ec, Ec) + c**2 * dot(Bc, Bc))
+SS = [w / mu0 for w in cross(Ec, Bc)]
+assert sp.simplify(uu**2 - dot(SS, SS) / c**2
+                   - (eps0 / 2)**2 * ((dot(Ec, Ec) - c**2 * dot(Bc, Bc))**2 + 4 * c**2 * dot(Ec, Bc)**2)) == 0
+fa, ga = sp.Function("fa"), sp.Function("ga")
+x1 = Xs[0]
+G1 = (1 + e[0]) / 2 * fa(x0 - x1) + (1 - e[0]) / 2 * ga(x0 + x1)
+assert eq(d(G1, x0) + e[0] * d(G1, x1), 0)
+print("8. duality F e^{I a}; u^2 - |S|^2/c^2 = (eps0/2)^2 |F^2|^2 >= 0; 1+1 d'Alembert solution with P_+-")
