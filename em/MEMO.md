@@ -32,7 +32,7 @@
 
 # シリーズ構成
 
-全7回の予定です。01〜03は[クリフォード解析](../clif-analysis/README.md)の結果を3次元で使う回、04〜06は符号数を替える回、07は[[7shi-cla6]]と対をなす総括です。
+全7回です（全回の下書きを作成済み、レビューは未実施）。01〜03は[クリフォード解析](../clif-analysis/README.md)の結果を3次元で使う回、04〜06は符号数を替える回、07は[[7shi-cla6]]と対をなす総括です。
 
 | # | ファイル（予定） | slug | 内容 | 到達点 |
 |---|---|---|---|---|
@@ -41,7 +41,7 @@
 | 03 | `03-waves.md` | `7shi-em3` | 電磁波とエネルギーの流れ | 平面波は$F^2=0$、指数関数の$i$は擬スカラー$I$。$\frac{\varepsilon_0}2FF^\dagger$がエネルギー密度とポインティングベクトルのパラベクトル |
 | 04 | `04-spacetime.md` | `7shi-em4` | 時空代数とマクスウェル方程式 | $DF=J$。$\gamma_0$を掛けると02の式に戻る。楕円型と双曲型は空間の生成元の2乗の符号で分かれる |
 | 05 | `05-lorentz.md` | `7shi-em5` | ローレンツ変換と回転子 | 2乗が$+1$の2ベクトルの指数関数がブースト。$F\mapsto RF\tilde R$で電場と磁場が混ざる。ローレンツ力 |
-| 06 | `06-potential.md` | `7shi-em6` | ポテンシャルとゲージ | $F=D\wedge A$、$D\cdot A$がゲージの自由度、$D^2A=J$。エネルギー運動量の時空版 |
+| 06 | `06-potential.md` | `7shi-em6` | ポテンシャルとエネルギー運動量 | $F=D\wedge A$、$D\cdot A$がゲージの自由度、$D^2A=J$。エネルギー運動量の時空版 |
 | 07 | `07-retarded.md` | `7shi-em7` | 双曲型の基本解と性質の仕分け | 遅延ポテンシャル。clif-analysisの性質のうち、符号数を替えて残るものと失われるもの |
 
 03（電磁波）は04の前、$\operatorname{Cl}_{3,0}$の側に置く。$F^2=0$などは時空版のほうが自然だが、前半を$\operatorname{Cl}_{3,0}$で完結させたほうがclif-analysisの読者は入りやすい。04以降で時空版に言い直すときは、03への後方参照にする。
@@ -52,9 +52,10 @@
 
 - **導入の順序**。クーロンの法則とビオ＝サバールの法則（実験則）を出発点とし、両者が1つの式$F(\boldsymbol x)=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}\bigl(\rho-\boldsymbol J/c\bigr)(\boldsymbol y)\,dV$にまとまることを示す。核は[[7shi-cla5]]の$n=3$の核、$4\pi=|S^2|$。$D$を掛けると基本解の性質（[[7shi-cla3]]・[[7shi-cla5]]の`&&&rem`）から$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$となり、そのグレード成分が静的な4本の式になる
 - **磁場は2ベクトル**。$(\boldsymbol x-\boldsymbol y)\wedge\boldsymbol J$から$Ic\boldsymbol B$が出る。[[7shi-hist]]の「ベクトル積は擬ベクトル」の扱いを、$\boldsymbol B$がもともと2ベクトルであることで解消する
-- **確認事項**。積分の$(\boldsymbol x-\boldsymbol y)\cdot\boldsymbol J$（スカラー部）が$\nabla\cdot\boldsymbol J=0$と無限遠での減衰で消えること。消えないと$F$にスカラー部が残る
+- **確認済み**。積分の$(\boldsymbol x-\boldsymbol y)\cdot\boldsymbol J$（スカラー部）は、$\boldsymbol x-\boldsymbol y=|\boldsymbol x-\boldsymbol y|^3\nabla_{\boldsymbol y}|\boldsymbol x-\boldsymbol y|^{-1}$と部分積分により$\nabla\cdot\boldsymbol J=0$から消える（源は有界な台を仮定し、特異点は小球を除いて処理）。記事では`&&&prop`とし、ポテンシャルの節でこれが$\nabla\cdot\boldsymbol A=0$と同じことだと述べた。$\nabla\cdot\boldsymbol J\ne0$ならスカラー部$\Phi$が残り、アンペールの法則が$\nabla\Phi$だけずれることを`&&&rem`にした（[check/01-static.py](check/01-static.py)）
 - **積分形**。ガウスの法則とアンペールの法則の積分形は、[[7shi-cla2]]の領域の基本定理と曲面版のグレード成分
-- **ポテンシャル**。$D|\boldsymbol x|^{-1}=-\boldsymbol x/|\boldsymbol x|^3$（[[7shi-cla5]]の`&&&fml`）でクーロンのポテンシャルに触れるか、06に回すか
+- **ポテンシャル（決定）**。01の最後の節に入れた。$P=\varphi-c\boldsymbol A$で$F=-DP$、スカラー部は$c\,\nabla\cdot\boldsymbol A$。ゲージの自由度は「本記事では扱いません」とし、06で時空版として扱う
+- **核の表記（決定）**。[[7shi-cla5]]の$E=\boldsymbol x/|\boldsymbol x|^n$は電場$\boldsymbol E$と紛らわしいので、01では核を分数のまま書き、係数$1/4\pi\varepsilon_0$を積分の外に置いた
 
 ## 02 マクスウェル方程式
 
@@ -76,6 +77,7 @@
 - $DF=J$を$D\cdot F=J$と$D\wedge F=0$の2本に分ける。02の単位に合わせると$DF=\mu_0cJ$、$J=c\rho\gamma_0+\sum J_k\gamma_k$（確認済み）。係数の置き方（$\mu_0c$を$J$に含めるか）は記事で決める
 - 「$\gamma_0$を掛ける」が[[7shi-cla4]]の「$e_0$を掛ける」と同じ操作で、空間の生成元の2乗の符号だけが違うこと。この対比をシリーズの軸として本文で明示する
 - 符号数の`&&&rem`（上記「符号数の選択」の代償と対処）
+- **決定**。係数は$DF=\mu_0cJ$（$J=c\rho\gamma_0+\sum J_k\gamma_k$）とした。符号数の`&&&rem`を書く際、$\operatorname{Cl}_{3,1}$でも$(\gamma_k\gamma_0)^2=+1$で偶部分は$\operatorname{Cl}_{3,0}$と同型である点に注意。違いは$\gamma_0^2=-1$による$D^2$の全体の符号と、$e_0$と同じ「2乗が$+1$の生成元を掛ける」操作が保てるかどうか
 
 ## 05 ローレンツ変換と回転子
 
@@ -83,23 +85,24 @@
 - $F\mapsto RF\tilde R$で電場と磁場が混ざる。不変量$F^2=(|\boldsymbol E|^2-c^2|\boldsymbol B|^2)+2cI\,\boldsymbol E\cdot\boldsymbol B$（スカラー部と擬スカラー部）
 - ローレンツ力$\dot p=qF\cdot v$
 - $R$と$-R$が同じ変換を与えること（二重被覆）は「本記事では扱いません」とする
+- 下書きでは、平面波を進行方向にブーストすると振幅と振動数が$e^{-\varphi}$倍（ドップラー因子）になる`&&&ex`を加えた。観測者の見る場は$\tilde RFR$（$\gamma_0'=R\gamma_0\tilde R$）とし、ローレンツ力は$m\,dv/d\tau=\frac qcF\cdot v$（$F\cdot v=\frac12(Fv-vF)$）
 - 関連候補：[分解型複素数の冪等元と直和分解](../clif/02-split-complex.md)（2乗が$+1$の単位）。既存記事にcosh・sinhによる回転を扱ったものはない（`qua/05-dual-qua.md`に語が出るのみ）
 
 ## 06 ポテンシャルとゲージ
 
 - $F=D\wedge A$。$D\cdot A$がゲージの自由度で、$D\cdot A=0$（ローレンツゲージ）なら$F=DA$、$D^2A=J$
 - 静的な場合は[[7shi-cla5]]の$D|\boldsymbol x|^{2-n}=(2-n)\boldsymbol x/|\boldsymbol x|^n$（$n=3$）に戻る
-- エネルギー運動量$T(a)=-\frac12FaF$（係数と符号は要確認）。03の$FF^\dagger$を$a=\gamma_0$で回収する
+- エネルギー運動量は$T(a)=-\frac{\varepsilon_0}2FaF$で確認済み。$T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger$（$F^\dagger=\gamma_0\tilde F\gamma_0$）、$\sum\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J$。03で先送りした運動量の保存をここで回収する。記事の後半がエネルギー運動量になったので、タイトルを「ポテンシャルとエネルギー運動量」に改めた
 
 ## 07 双曲型の基本解と性質の仕分け
 
 - $\partial_0^2-\Delta$の遅延基本解$\delta(t-r/c)/4\pi r$と遅延ポテンシャル。$D$の基本解は$D$を掛けて得る（$D^2=\square$）
 - [[7shi-cla6]]の仕分けの双曲型版。平均値の性質・最大値原理は失われ、光円錐上に台を持つ基本解（ホイヘンスの原理）に替わる。台が円錐上に集まるかどうかは空間の次元に依存する（空間2次元では集まらない）ので、次元の軸も再び現れる
-- **未決**。キルヒホッフの公式（積分公式の双曲型版）を証明するか、主張に留めるか。リエナール＝ヴィーヘルトのポテンシャルを入れるか
+- **決定**。キルヒホッフの公式は主張に留め（多項式の初期値で直接確かめられることだけ述べる）、リエナール＝ヴィーヘルトのポテンシャルは「本記事では扱いません」とした。仕分けは「形を保つもの（成分の方程式・基本定理・保存則）」「替わるもの（積分公式・一意性の根拠）」「失われるもの（平均値の性質・最大値原理・リウヴィル・一致の定理）」「次元で変わるもの（ホイヘンスの原理）」の4区分
 
 # 検証コード
 
-`check/`に置き、`uv run`で実行する（[check/README.md](check/README.md)）。clif-analysisの`check/04`〜`06`にあった$\operatorname{Cl}_{n,0}$のビットマスク実装（`MV`/`Alg`）を、負の2乗を持つ生成元に対応させて$\operatorname{Cl}_{p,q}$に一般化し、`src/common/clifford.py`に移した。$D$は逆基底$e^a=e_a^{-1}$で組む。clif-analysisの`check/04`〜`06`は移行後の実装で移行前と同じ出力になることを確認した。構成案の手計算は[check/memo-signature.py](check/memo-signature.py)で確認した。
+`check/`に置き、`uv run`で実行する（[check/README.md](check/README.md)）。clif-analysisの`check/04`〜`06`にあった$\operatorname{Cl}_{n,0}$のビットマスク実装（`MV`/`Alg`）を、負の2乗を持つ生成元に対応させて$\operatorname{Cl}_{p,q}$に一般化し、`src/common/clifford.py`に移した。$D$は逆基底$e^a=e_a^{-1}$で組む。clif-analysisの`check/04`〜`06`は移行後の実装で移行前と同じ出力になることを確認した。構成案の手計算は[check/memo-signature.py](check/memo-signature.py)で、各回の数式は`check/01-static.py`〜`check/07-retarded.py`で確認した。
 
 # 関連記事
 

@@ -17,6 +17,8 @@
 6. Lorentz force: v = gamma(c gamma_0 + u_k gamma_k), v^2 = c^2; (q/c) F . v
    (F . v = (Fv - vF)/2) has gamma_0 component gamma q E.u / c and gamma_k components
    gamma q (E + u x B)_k; v . (F . v) = 0.
+7. Doppler: for the plane wave F = (1 + sigma_1) E_perp f(x_0 - x_1) and the boost
+   along e_1, R~ F R = e^{-phi} F and x_0 - x_1 = e^{-phi}(x'_0 - x'_1).
 """
 
 import sympy as sp
@@ -161,3 +163,18 @@ vdot = ((vel * Fv + Fv * vel) / 2).grade(0)
 assert eq(vdot, 0)
 print("6. v = gamma(c gamma_0 + u gamma), v^2 = c^2; (q/c)F.v = gamma(q E.u/c) gamma_0 + gamma q(E + u x B)_k gamma_k; "
       "v.(F.v) = 0")
+
+# ---------------------------------------------------------------- 7.
+# Doppler: a plane wave along sigma_1, F = (1 + sigma_1) E_perp f(x_0 - x_1), seen by the
+# observer boosted along e_1: R~ F R = e^{-phi} F (amplitude), and x_0 - x_1 = e^{-phi}(x'_0 - x'_1)
+# with observer coordinates x'_0 = x . gamma'_0, x'_1 = -x . gamma'_1.
+Ey, Ez = sp.symbols("E_y E_z", real=True)
+Fw = (1 + sg[0]) * (Ey * sg[1] + Ez * sg[2])
+assert eq(rev(R) * Fw * R, sp.exp(-phi) * Fw)
+ip = lambda p, q: ((p * q + q * p) / 2).scalar()
+g0p, g1p = R * g0 * Rt, R * g[1] * Rt
+X = S.X
+x0p = ip(S.x, g0p)
+x1p = -ip(S.x, g1p)
+assert sp.simplify((X[0] - X[1] - sp.exp(-phi) * (x0p - x1p)).rewrite(sp.exp)) == 0
+print("7. plane wave along the boost: R~ F R = e^{-phi} F, x0 - x1 = e^{-phi}(x0' - x1') (Doppler factor)")

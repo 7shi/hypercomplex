@@ -145,7 +145,15 @@
 
 ## 電磁気学
 
-クリフォード解析のディラック作用素を電磁場に使い、$\operatorname{Cl}_{3,0}(\mathbb R)$のパラベクトル形式から時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進むシリーズです。構想段階で、記事はまだありません。構想と検討の経緯は[em/README.md](em/README.md)・[em/MEMO.md](em/MEMO.md)を参照。
+クリフォード解析のディラック作用素を電磁場に使い、$\operatorname{Cl}_{3,0}(\mathbb R)$のパラベクトル形式から時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進むシリーズです（全7回、下書き）。構想と検討の経緯は[em/README.md](em/README.md)・[em/MEMO.md](em/MEMO.md)を参照。
+
+1. [静電場と静磁場](em/01-static.md) — クーロンとビオ＝サバールの法則を源$\rho-\boldsymbol J/c$とコーシー核による1本の積分公式にまとめ、スカラー部が定常電流の条件で消えることを示す。$DF$のグレード成分が静的な4本の式、基本定理のグレード成分が積分形。ポテンシャル$P=\varphi-c\boldsymbol A$で$F=-DP$。
+2. [マクスウェル方程式](em/02-maxwell.md) — $\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$のグレード成分が4本の式。係数の2乗の符号で$\bar{\mathcal D}\mathcal D$が$\partial_0^2+\Delta$と$\partial_0^2-\Delta$に分かれる。連続の式と波動方程式。
+3. [電磁波とエネルギーの流れ](em/03-waves.md) — 平面波は冪等元$(1+\hat{\boldsymbol k})/2$の像で$F^2=0$。擬スカラーの指数関数が円偏光。$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$とポインティングの定理。
+4. [時空代数とマクスウェル方程式](em/04-spacetime.md) — $\operatorname{Cl}_{1,3}(\mathbb R)$で$DF=\mu_0cJ$、$D\cdot F=\mu_0cJ$と$D\wedge F=0$。$\gamma_0$を掛ける操作と四元数解析の$e_0$の対比、符号数の選択。
+5. [ローレンツ変換と回転子](em/05-lorentz.md) — 2乗が$\mp1$の2ベクトルの指数関数で回転とブースト。$\tilde RFR$による電場と磁場の混合、不変量、ドップラー因子、ローレンツ力$\frac qcF\cdot v$。
+6. [ポテンシャルとエネルギー運動量](em/06-potential.md) — $F=D\wedge A$、ゲージ$A\mapsto A+D\chi$、ローレンツゲージで$\square A=\mu_0cJ$。$T(a)=-\frac{\varepsilon_0}2FaF$の発散がローレンツ力の密度。
+7. [双曲型の基本解と性質の仕分け](em/07-retarded.md) — 遅延基本解と遅延ポテンシャル、光円錐上の$D$の基本解。クリフォード解析の性質を、双曲型で形を保つもの・替わるもの・失われるもの・次元で変わるものに仕分ける。
 
 関連: [クリフォード解析](#クリフォード解析)の基本定理・積分公式・パラベクトル変数を前提とする。[四元数が脇役になった歴史的経緯](qua/history.md)（[導入と歴史](#導入と歴史)）の内積とベクトル積の分離に対する回答にあたる。
 

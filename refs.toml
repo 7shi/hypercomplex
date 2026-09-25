@@ -55,6 +55,7 @@ url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
 files = [
   "clif/01-representation.md",
   "clif/03-gpm-gca.md",
+  "em/04-spacetime.md",
   "hopf/03-bloch-density.md",
   "hopf/06-clifford-gates.md",
   "qua/05-dual-qua.md",
@@ -85,6 +86,8 @@ files = [
   "clif-analysis/04-quaternion.md",
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
+  "em/01-static.md",
+  "em/04-spacetime.md",
 ]
 
 ["7shi-cla2"]
@@ -93,6 +96,10 @@ files = [
   "clif-analysis/04-quaternion.md",
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
+  "em/01-static.md",
+  "em/05-lorentz.md",
+  "em/06-potential.md",
+  "em/07-retarded.md",
 ]
 
 ["7shi-cla3"]
@@ -100,17 +107,28 @@ files = [
   "clif-analysis/04-quaternion.md",
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
+  "em/03-waves.md",
 ]
 
 ["7shi-cla4"]
 files = [
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
+  "em/02-maxwell.md",
+  "em/04-spacetime.md",
 ]
 
 ["7shi-cla5"]
 files = [
   "clif-analysis/06-summary.md",
+  "em/01-static.md",
+  "em/04-spacetime.md",
+  "em/07-retarded.md",
+]
+
+["7shi-cla6"]
+files = [
+  "em/07-retarded.md",
 ]
 
 ["7shi-clif1"]
@@ -121,12 +139,15 @@ files = [
   "clif-analysis/06-summary.md",
   "clif/02-split-complex.md",
   "clif/03-gpm-gca.md",
+  "em/04-spacetime.md",
   "qua/spinor-ideal.md",
 ]
 
 ["7shi-clif2"]
 files = [
   "clif/03-gpm-gca.md",
+  "em/03-waves.md",
+  "em/05-lorentz.md",
   "oct/04-sedenion.md",
 ]
 
@@ -216,6 +237,47 @@ files = [
   "misc/variable-dependence.md",
 ]
 
+["7shi-em1"]
+files = [
+  "em/02-maxwell.md",
+  "em/04-spacetime.md",
+  "em/06-potential.md",
+  "em/07-retarded.md",
+]
+
+["7shi-em2"]
+files = [
+  "em/03-waves.md",
+  "em/04-spacetime.md",
+  "em/05-lorentz.md",
+  "em/07-retarded.md",
+]
+
+["7shi-em3"]
+files = [
+  "em/04-spacetime.md",
+  "em/05-lorentz.md",
+  "em/06-potential.md",
+  "em/07-retarded.md",
+]
+
+["7shi-em4"]
+files = [
+  "em/05-lorentz.md",
+  "em/06-potential.md",
+  "em/07-retarded.md",
+]
+
+["7shi-em5"]
+files = [
+  "em/06-potential.md",
+]
+
+["7shi-em6"]
+files = [
+  "em/07-retarded.md",
+]
+
 ["7shi-entangle"]
 files = [
   "hopf/06-clifford-gates.md",
@@ -273,6 +335,8 @@ files = [
 files = [
   "clif-analysis/01-dirac-monogenic.md",
   "clif-analysis/02-fundamental-theorem.md",
+  "em/01-static.md",
+  "em/02-maxwell.md",
 ]
 
 ["7shi-homog"]
@@ -303,6 +367,7 @@ files = [
 ["7shi-ideal"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "em/04-spacetime.md",
   "lie/ladder-spinor.md",
 ]
 
@@ -364,6 +429,8 @@ files = [
 ["7shi-lie3"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "em/04-spacetime.md",
+  "em/05-lorentz.md",
   "hopf/06-clifford-gates.md",
   "lie/04-spin4.md",
   "lie/06-su3.md",
@@ -378,6 +445,7 @@ files = [
 
 ["7shi-lie4"]
 files = [
+  "em/04-spacetime.md",
   "lie/06-su3.md",
   "lie/07-s7.md",
   "lie/09-spin7-triality.md",
@@ -688,6 +756,7 @@ citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2
 url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "em/03-waves.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
 ]
