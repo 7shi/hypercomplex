@@ -11,6 +11,8 @@
    F^dagger = gamma_0 F~ gamma_0, and for F = D ^ A
    with J defined by D . F = mu_0 c J: sum_mu d_mu T(gamma^mu) = -(1/c) F . J,
    where (1/c) F . J = (1/c) J . E gamma_0 + (rho E + J x B)_k gamma_k.
+6. Maxwell stress: T^{ij} = gamma^i . T(gamma^j) = -tau_ij, and the momentum balance
+   d_t(S_i/c^2) - sum_j d_j tau_ij = -(rho E + J x B)_i.
 """
 
 import sympy as sp
@@ -140,3 +142,21 @@ for k in range(3):
     assert sp.simplify(comp(f, 1 << (k + 1)) - (rr * Er[k] + cross(Jr, Br)[k])) == 0
 print("5. T(a) = -(eps0/2) F a F: vector, symmetric, T(gamma_0)gamma_0 = (eps0/2)FF^dagger = u + S/c; "
       "sum d_mu T(gamma^mu) = -(1/c)F.J, (1/c)F.J = (J.E/c) gamma_0 + (rho E + J x B)_k gamma_k")
+
+# ---------------------------------------------------------------- 6.
+# Maxwell stress tau_ij = eps0 (E_i E_j + c^2 B_i B_j - delta_ij (|E|^2 + c^2|B|^2)/2):
+# T^{ij} = gamma^i . T(gamma^j) = -tau_ij, and for fields from potentials
+# d_t(S_i/c^2) - sum_j d_j tau_ij = -(rho E + J x B)_i.
+E2c, B2c = dot(Ec, Ec), dot(Bc, Bc)
+tau = lambda EE, BB, i, j: eps0 * (EE[i] * EE[j] + c**2 * BB[i] * BB[j]
+                                   - sp.Rational(1, 2) * (1 if i == j else 0) * (dot(EE, EE) + c**2 * dot(BB, BB)))
+ip0 = lambda p, q: ((p * q + q * p) / 2).scalar()
+for i in range(3):
+    for j in range(3):
+        assert sp.simplify(ip0(S.er[i + 1], T(S.er[j + 1])) + tau(Ec, Bc, i, j)) == 0
+Sf = [w / mu0 for w in cross(E, B)]
+for i in range(3):
+    lhs = sp.diff(Sf[i] / c**2, x0) * c - sum(sp.diff(tau(E, B, i, j), Xs[j]) for j in range(3))
+    force = rho * E[i] + cross(J, B)[i]
+    assert sp.simplify(lhs + force) == 0
+print("6. T^{ij} = -tau_ij; d_t(S/c^2)_i - d_j tau_ij = -(rho E + J x B)_i")

@@ -1,4 +1,4 @@
-[[7shi-em4]]では、時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$でマクスウェル方程式を$DF=\mu_0cJ$と書き、電場と磁場が1つの2ベクトル$F$の成分であり、その分け方は時間方向$\gamma_0$の選び方によることを見ました。本記事では、$\gamma_0$を取り替える変換、すなわちローレンツ変換を回転子$x\mapsto Rx\tilde R$として扱います。2ベクトルの指数関数で回転子を作ると、2乗が$-1$の空間の2ベクトルからは三角関数による空間の回転が、2乗が$+1$の2ベクトル$\sigma_k=\gamma_k\gamma_0$からは双曲線関数によるブーストが得られます。係数の2乗の符号がここでも2つの型を分けます。回転子で$F$を変換すると電場と磁場が混ざり、$F^2$のスカラー部と擬スカラー部は不変量になります。最後に、荷電粒子の運動方程式（ローレンツ力）を$F$とベクトルの内積として書きます。
+[[7shi-em4]]では、時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$でマクスウェル方程式を$DF=\mu_0cJ$と書き、電場と磁場が1つの2ベクトル$F$の成分であり、その分け方は時間方向$\gamma_0$の選び方によることを見ました。本記事では、時空の正規直交基底を取り替えるローレンツ変換を、回転子$x\mapsto Rx\tilde R$として扱います。特に、時間方向を変えるブーストによって、観測者による電場と磁場の分け方を調べます。2ベクトルの指数関数で回転子を作ると、2乗が$-1$の空間の2ベクトルからは三角関数による空間の回転が、2乗が$+1$の2ベクトル$\sigma_k=\gamma_k\gamma_0$からは双曲線関数によるブーストが得られます。係数の2乗の符号がここでも2つの型を分けます。回転子で$F$を変換すると電場と磁場が混ざり、$F^2$のスカラー部と擬スカラー部は不変量になります。最後に、荷電粒子の運動方程式（ローレンツ力）を$F$とベクトルの内積として書きます。
 
 # 回転子
 
@@ -16,7 +16,17 @@ $$
 (Rx\tilde R)^2=Rx\tilde RRx\tilde R=Rx^2\tilde R=x^2R\tilde R=x^2
 $$
 
-です。$x^2$はスカラーなので$R$と可換です。$Rx\tilde R$がベクトルであれば、写像$x\mapsto Rx\tilde R$は線形でミンコフスキー計量を保ち、ローレンツ変換になります。以下では$R$を2ベクトルの指数関数として具体的に作り、$Rx\tilde R$がベクトルになることを計算で確かめます。
+です。$x^2$はスカラーなので$R$と可換です。さらに$Rx\tilde R$はベクトルになります。
+
+&&&prop 回転子の作用
+回転子$R$と時空のベクトル$x$について、$Rx\tilde R$はベクトルです。したがって写像$x\mapsto Rx\tilde R$は線形でミンコフスキー計量を保ち、ローレンツ変換になります。
+&&&
+
+&&&prf
+$Y=Rx\tilde R$は偶・奇・偶の元の積なので奇数グレードの成分だけを持ち、4次元ではグレード1と3である。$\tilde Y=\widetilde{\tilde R}\,\tilde x\,\tilde R=Rx\tilde R=Y$であり、反転はグレード1を変えずグレード3の符号を変えるので、$Y$のグレード3の成分は$0$である。
+&&&
+
+2ベクトル$B$は$\tilde B=-B$を満たすので、$\widetilde{e^B}=e^{-B}$であり、$B$は自身と可換だから$e^B\widetilde{e^B}=e^Be^{-B}=1$です。したがって2ベクトルの指数関数は回転子です。以下では、2乗が$-1$と$+1$の2ベクトルについて、作用を具体的に計算します。
 
 ## 2乗が$-1$の2ベクトル：回転
 
@@ -43,7 +53,7 @@ $$
 $\gamma_0$と$\gamma_3$は$\gamma_2\gamma_1$と可換なので$R$とも可換であり、$R\gamma_0\tilde R=\gamma_0R\tilde R=\gamma_0$となる。$\gamma_1,\gamma_2$は$\gamma_2\gamma_1$と反可換なので$\gamma_1\tilde R=R\gamma_1$であり、$R\gamma_1\tilde R=R^2\gamma_1=e^{-I\sigma_3\theta}\gamma_1=\gamma_1\cos\theta-\gamma_2\gamma_1\gamma_1\sin\theta$である。$\gamma_2\gamma_1\gamma_1=-\gamma_2$より第1式を得る。第2式も同様である。
 &&&
 
-$(x_1,x_2)$平面の角$\theta$の回転です。$R$は$\gamma_0$と可換なので、相対ベクトル$\sigma_k=\gamma_k\gamma_0$にも$R\sigma_k\tilde R=(R\gamma_k\tilde R)\gamma_0$と同じ回転として作用します。これは$\operatorname{Cl}_{3,0}(\mathbb R)$の回転子による空間の回転（[[7shi-lie3]]）そのものです。
+$(x_1,x_2)$平面の角$\theta$の回転です。$R$は$\gamma_0$と可換なので、相対ベクトル$\sigma_k=\gamma_k\gamma_0$にも$R\sigma_k\tilde R=(R\gamma_k\tilde R)\gamma_0$と同じ回転として作用します。これは$\operatorname{Cl}_{3,0}(\mathbb R)$の回転子による空間の回転（[[7shi-lie3]]）と同じものです。[[7shi-lie3]]では$Q=e^{I\sigma_3\theta/2}$による$Q^{-1}xQ$を使いました。本記事ではその逆元を$R$と書くため、指数の符号と挟む順序がともに逆になっていますが、表す回転は同じです。
 
 ## 2乗が$+1$の2ベクトル：ブースト
 
@@ -72,7 +82,7 @@ $$
 $\tilde\sigma_1=\gamma_0\gamma_1=-\sigma_1$より$\tilde R=e^{-\sigma_1\varphi/2}$、$R\tilde R=1$である。$\gamma_0,\gamma_1$は$\sigma_1$と反可換なので$\gamma_0\tilde R=R\gamma_0$であり、$R\gamma_0\tilde R=R^2\gamma_0=(\cosh\varphi+\gamma_1\gamma_0\sinh\varphi)\gamma_0=\gamma_0\cosh\varphi+\gamma_1\sinh\varphi$となる。$\gamma_1$についても$\gamma_1\gamma_0\gamma_1=\gamma_0$から同様である。$\gamma_2,\gamma_3$は$\sigma_1$と可換なので変わらない。
 &&&
 
-$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\varphi\,(\gamma_0+\gamma_1\tanh\varphi)$は、$e_1$方向に速さ$v=c\tanh\varphi$で動く観測者の世界線の向きです。係数$\cosh\varphi=1/\sqrt{1-v^2/c^2}$はローレンツ因子で、パラメーター$\varphi$はラピディティと呼ばれます。
+$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\varphi\,(\gamma_0+\gamma_1\tanh\varphi)$は、$\sigma_1$方向に速さ$v=c\tanh\varphi$で動く観測者の世界線の向きです。係数$\cosh\varphi=1/\sqrt{1-v^2/c^2}$はローレンツ因子で（以下、添字のない$\gamma$はローレンツ因子を表します）、パラメーター$\varphi$はラピディティと呼ばれます。
 
 同じ向きのブーストを続けると、$e^{\sigma_1a/2}e^{\sigma_1b/2}=e^{\sigma_1(a+b)/2}$よりラピディティが足し合わされます。速度で書くと$\tanh(a+b)=(\tanh a+\tanh b)/(1+\tanh a\tanh b)$であり、相対論的な速度の合成則です。
 
@@ -81,7 +91,7 @@ $R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=
 | $I\sigma_k$（空間の面） | $-1$ | $\cos$、$\sin$ | 空間の回転 |
 | $\sigma_k$（時間を含む面） | $+1$ | $\cosh$、$\sinh$ | ブースト |
 
-[[7shi-em2]]と[[7shi-em4]]では、偶部分の生成元の2乗の符号が楕円型と双曲型を分けました。同じ符号が、指数関数を三角関数と双曲線関数に分けています。任意の向きの回転とブーストの合成として一般のローレンツ変換が得られること、および$R$と$-R$が同じ変換を与えること（二重被覆）は、本記事では扱いません。
+[[7shi-em2]]と[[7shi-em4]]では、偶部分の生成元の2乗の符号が楕円型と双曲型を分けました。同じ符号が、指数関数を三角関数と双曲線関数に分けています。空間の向きと時間の向きを保つローレンツ変換が回転とブーストの合成で得られること、および$R$と$-R$が同じ変換を与えること（二重被覆）の一般論は、本記事では扱いません。
 
 # 場の変換
 
@@ -146,7 +156,7 @@ $$
 F'^2=\tilde RFR\tilde RFR=\tilde RF^2R=F^2\tilde RR=F^2
 $$
 
-です。$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と$\boldsymbol E\cdot\boldsymbol B$は、すべての観測者に共通の量です。とくに[[7shi-em3]]の零場（$F^2=0$）は、どの観測者から見ても零場です。
+です。$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と$\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者、すなわち空間と時間の向きの規約を共有する観測者に共通の量です（$\boldsymbol E\cdot\boldsymbol B$は空間反転で符号を変えます）。とくに[[7shi-em3]]のヌル場（$F^2=0$）は、どの観測者から見てもヌル場です。
 
 &&&ex 平面波のドップラー効果
 $\sigma_1$方向に進む平面波$F=(1+\sigma_1)\boldsymbol E(\xi)$（$\boldsymbol E\perp\sigma_1$、$\xi=x_0-x_1$）を、同じ向きに動く観測者から見ます。$(1+\sigma_1)\sigma_1=1+\sigma_1$と、$\boldsymbol E$が$\sigma_1$と反可換であることから
@@ -155,28 +165,34 @@ $$
 \tilde RFR=(1+\sigma_1)\boldsymbol E\,e^{\sigma_1\varphi}=(1+\sigma_1)e^{-\sigma_1\varphi}\boldsymbol E=e^{-\varphi}(1+\sigma_1)\boldsymbol E
 $$
 
-となり、振幅は$e^{-\varphi}=\sqrt{(1-v/c)/(1+v/c)}$倍になります。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$で位相を書くと、[ブースト](#fml-boost)から$x_0-x_1=e^{-\varphi}(x_0'-x_1')$です。正弦波なら振動数も同じ因子$e^{-\varphi}$倍になり、これは光の縦方向のドップラー効果の因子です。
+となります。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$で位相を書くと、[ブースト](#fml-boost)から$x_0-x_1=e^{-\varphi}(x_0'-x_1')$です。したがって観測者の見る場は
+
+$$
+F'(x_0',x_1')=e^{-\varphi}(1+\sigma_1)\boldsymbol E\bigl(e^{-\varphi}(x_0'-x_1')\bigr)
+$$
+
+であり、外側の因子が振幅を、引数の因子が振動数を、ともに$e^{-\varphi}=\sqrt{(1-v/c)/(1+v/c)}$倍にします。これは光の縦方向のドップラー効果の因子です。
 &&&
 
 # ローレンツ力
 
 ## 固有速度
 
-質量$m$、電荷$q$の粒子の世界線を固有時$\tau$で$x(\tau)$と表し、固有速度を$v=dx/d\tau$とします。$v^2=c^2$です。粒子の3次元の速度を$\boldsymbol u$、ローレンツ因子を$\gamma=1/\sqrt{1-|\boldsymbol u|^2/c^2}$とすると
+質量$m$、電荷$q$の粒子の世界線を固有時$\tau$で$x(\tau)$と表し、固有速度を$U=dx/d\tau$とします。$U^2=c^2$です。粒子の3次元の速度を$\boldsymbol u$、ローレンツ因子を$\gamma=1/\sqrt{1-|\boldsymbol u|^2/c^2}$とすると
 
 $$
-v=\gamma\Bigl(c\gamma_0+\sum_ku_k\gamma_k\Bigr),\qquad v\gamma_0=\gamma(c+\boldsymbol u)
+U=\gamma\Bigl(c\gamma_0+\sum_ku_k\gamma_k\Bigr),\qquad U\gamma_0=\gamma(c+\boldsymbol u)
 $$
 
 であり、$\gamma_0$を掛けるとパラベクトルになります。
 
 ## 運動方程式
 
-[[7shi-cla2]]の`&&&def ベクトルと2ベクトルの内積`にならって、2ベクトル$F$とベクトル$v$の内積を$F\cdot v=\frac12(Fv-vF)$とします。これはベクトルです。
+[[7shi-cla2]]の定義「ベクトルと2ベクトルの内積」にならって、2ベクトル$F$とベクトル$U$の内積を$F\cdot U=\frac12(FU-UF)$とします。これはベクトルです。この規約では$U\cdot F=-F\cdot U$なので、順序に注意します。
 
-&&&thm ローレンツ力
+&&&thm ローレンツ力の成分表示
 $$
-m\frac{dv}{d\tau}=\frac qcF\cdot v
+m\frac{dU}{d\tau}=\frac qcF\cdot U
 $$
 
 の$\gamma_0$成分と$\gamma_k$成分は、それぞれ
@@ -190,24 +206,30 @@ $$
 &&&
 
 &&&prf
-$v$の成分を代入して$F\cdot v$を計算する。$\sigma_k\cdot\gamma_0=\frac12(\gamma_k\gamma_0\gamma_0-\gamma_0\gamma_k\gamma_0)=\gamma_k$、$\sigma_k\cdot\gamma_l=\frac12(\gamma_k\gamma_0\gamma_l-\gamma_l\gamma_k\gamma_0)$は$k=l$のとき$\gamma_0$、$k\ne l$のとき$0$である。$I\sigma_k$は$\gamma_0$と可換なので$(I\sigma_k)\cdot\gamma_0=0$であり、$(I\sigma_k)\cdot\gamma_l$は$\epsilon_{klm}\gamma_m$の形の空間のベクトルになる。これらを集めると
+$U$の成分を代入して$F\cdot U$を計算する。$\sigma_k\cdot\gamma_0=\frac12(\gamma_k\gamma_0\gamma_0-\gamma_0\gamma_k\gamma_0)=\gamma_k$、$\sigma_k\cdot\gamma_l=\frac12(\gamma_k\gamma_0\gamma_l-\gamma_l\gamma_k\gamma_0)$は$k=l$のとき$\gamma_0$、$k\ne l$のとき$0$である。$I\sigma_k$は$\gamma_0$と可換なので$(I\sigma_k)\cdot\gamma_0=0$であり、$(I\sigma_k)\cdot\gamma_l=-\sum_m\epsilon_{klm}\gamma_m$である（たとえば$(I\sigma_1)\cdot\gamma_2=(\gamma_3\gamma_2)\cdot\gamma_2=-\gamma_3$）。したがって磁場の寄与は
 
 $$
-F\cdot v=\gamma\bigl(\boldsymbol E\cdot\boldsymbol u\bigr)\gamma_0+\gamma c\sum_k\bigl(\boldsymbol E+\boldsymbol u\times\boldsymbol B\bigr)_k\gamma_k
+-\gamma c\sum_{k,l,m}B_ku_l\epsilon_{klm}\gamma_m=\gamma c\sum_m(\boldsymbol u\times\boldsymbol B)_m\gamma_m
 $$
 
-となる。$m\,dv/d\tau$の$\gamma_0$成分は$d(\gamma mc)/d\tau$、$\gamma_k$成分は$d(\gamma mu_k)/d\tau$である。
+となる。これらを集めると
+
+$$
+F\cdot U=\gamma\bigl(\boldsymbol E\cdot\boldsymbol u\bigr)\gamma_0+\gamma c\sum_k\bigl(\boldsymbol E+\boldsymbol u\times\boldsymbol B\bigr)_k\gamma_k
+$$
+
+となる。$m\,dU/d\tau$の$\gamma_0$成分は$d(\gamma mc)/d\tau$、$\gamma_k$成分は$d(\gamma mu_k)/d\tau$である。
 &&&
 
-$d\tau=dt/\gamma$で書き直すと、空間成分は$\frac d{dt}(\gamma m\boldsymbol u)=q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)$、時間成分に$c$を掛けたものは$\frac d{dt}(\gamma mc^2)=q\boldsymbol E\cdot\boldsymbol u$であり、相対論的な運動量とエネルギーの式になります。電場による力と磁場による力（ローレンツ力）、および電場のする仕事が、$F$と$v$の内積という1つの式にまとまっています。
+$d\tau=dt/\gamma$で書き直すと、空間成分は$\frac d{dt}(\gamma m\boldsymbol u)=q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)$、時間成分に$c$を掛けたものは$\frac d{dt}(\gamma mc^2)=q\boldsymbol E\cdot\boldsymbol u$であり、相対論的な運動量とエネルギーの式になります。電場による力と磁場による力（ローレンツ力）、および電場のする仕事が、$F$と$U$の内積という1つの式にまとまっています。
 
-$v\cdot(F\cdot v)=0$が成り立つので、$\frac d{d\tau}v^2=2v\cdot\frac{dv}{d\tau}=0$であり、$v^2=c^2$は運動の間保たれます。回転子で$F\mapsto RF\tilde R$、$v\mapsto Rv\tilde R$と変換しても$F\cdot v\mapsto R(F\cdot v)\tilde R$なので、方程式の形は変わりません。
+$U\cdot(F\cdot U)=0$が成り立つので、$\frac d{d\tau}U^2=2U\cdot\frac{dU}{d\tau}=0$であり、$U^2=c^2$は運動の間保たれます。また、ここでは観測者の基底を取り替えるのではなく、場と粒子の運動をともに能動的に変換します。一定の回転子$R$で$F\mapsto RF\tilde R$、$U\mapsto RU\tilde R$と変換しても$F\cdot U\mapsto R(F\cdot U)\tilde R$なので、方程式の形は変わりません。
 
 # まとめ
 
 ローレンツ変換を回転子$x\mapsto Rx\tilde R$として扱いました。
 
-- **回転子**：$R\tilde R=1$を満たす偶部分の元はミンコフスキー計量を保ちます。2ベクトルの指数関数で作ると、2乗が$-1$の空間の2ベクトルからは三角関数による回転、2乗が$+1$の$\sigma_k$からは双曲線関数によるブーストが得られます。ラピディティは加法的で、速度の合成則を与えます。
+- **回転子**：$R\tilde R=1$を満たす偶部分の元はベクトルをベクトルに移し、ミンコフスキー計量を保ちます。2ベクトルの指数関数で作ると、2乗が$-1$の空間の2ベクトルからは三角関数による回転、2乗が$+1$の$\sigma_k$からは双曲線関数によるブーストが得られます。ラピディティは加法的で、速度の合成則を与えます。
 - **場の変換**：観測者の見る場は$\tilde RFR$の成分であり、ブーストの方向と反可換な成分に$e^{\sigma_1\varphi}$が掛かることから、電場と磁場の混合の公式が出ます。
-- **不変量**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2c\,\boldsymbol E\cdot\boldsymbol B$は観測者によりません。平面波の振幅と振動数はドップラー因子$e^{-\varphi}$倍になります。
-- **ローレンツ力**：$m\,dv/d\tau=(q/c)F\cdot v$の時間成分が仕事率、空間成分が$q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)$です。
+- **不変量**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2Ic\,\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者によりません。平面波の振幅と振動数はドップラー因子$e^{-\varphi}$倍になります。
+- **ローレンツ力**：$m\,dU/d\tau=(q/c)F\cdot U$を座標時$t$による微分に直すと、時間成分からエネルギーの変化率$q\boldsymbol E\cdot\boldsymbol u$、空間成分から相対論的な運動量の変化率$q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)$が得られます。

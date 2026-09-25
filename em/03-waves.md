@@ -1,4 +1,4 @@
-[[7shi-em2]]では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の$i$を擬スカラー$I$に置き換えられ、そのまま円偏光の回転が得られます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのスカラー部の保存則がポインティングの定理になることを示します。
+[[7shi-em2]]では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、一定の背景場を除けば平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の$i$を擬スカラー$I$に置き換えられ、そのまま円偏光の回転が得られます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのスカラー部の保存則がポインティングの定理になることを示します。
 
 # 設定
 
@@ -31,7 +31,7 @@ P_\pm^2=P_\pm,\qquad P_+P_-=P_-P_+=0,\qquad P_++P_-=1
 $$
 &&&
 
-$(1-\hat{\boldsymbol k})X=0$は$P_-X=0$、すなわち$X=P_+X$と同値です。$F$が$\xi\to-\infty$で$0$になるなどとして積分定数を除けば、$F=P_+F$です。
+$(1-\hat{\boldsymbol k})X=0$は$P_-X=0$、すなわち$X=P_+X$と同値です。したがって方程式からは$(P_-F)'=0$、つまり$P_-F$が$\xi$によらないことが分かります。この一定の背景場を差し引けば、残りの場は$P_-F=0$、すなわち$F=P_+F$を満たします。$\xi\to-\infty$で$F\to0$という条件や、周期的な波で平均が$0$という条件も、$P_-F=0$を保証します。以下では、背景場を除いた波の部分を扱います。
 
 &&&thm 平面波 [thm-plane]
 $F=\boldsymbol E+Ic\boldsymbol B$が$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数で$F=P_+F$を満たすことは、
@@ -53,7 +53,7 @@ $$
 である。2ベクトル部が$0$であることは$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$であり、このとき$\hat{\boldsymbol k}\cdot\boldsymbol B=0$で擬スカラー部も$0$になる。さらにベクトル部は$\boldsymbol E+\hat{\boldsymbol k}\times(\hat{\boldsymbol k}\times\boldsymbol E)=\hat{\boldsymbol k}(\hat{\boldsymbol k}\cdot\boldsymbol E)$となり、スカラー部とともに$\hat{\boldsymbol k}\cdot\boldsymbol E=0$のときに限り$0$になる。したがって$(1-\hat{\boldsymbol k})F=0$は$\hat{\boldsymbol k}\cdot\boldsymbol E=0$と$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$の2条件と同値である。このとき$\hat{\boldsymbol k}\boldsymbol E=\hat{\boldsymbol k}\wedge\boldsymbol E=I(\hat{\boldsymbol k}\times\boldsymbol E)=Ic\boldsymbol B$なので、$F=\boldsymbol E+\hat{\boldsymbol k}\boldsymbol E=(1+\hat{\boldsymbol k})\boldsymbol E$である。
 &&&
 
-電場と磁場はともに進行方向に垂直で互いにも垂直、大きさは$|\boldsymbol E|=c|\boldsymbol B|$です。ベクトル解析では、これらの性質を平面波の仮定からマクスウェル方程式の4本の式に代入して1つずつ導きます。ここでは、$F$が冪等元$P_+$の像に入るという1つの条件にまとまっています。波形$\boldsymbol E(\xi)$は、$\hat{\boldsymbol k}$に垂直でありさえすれば任意の関数でかまいません。
+電場と磁場はともに進行方向に垂直で互いにも垂直、大きさは$|\boldsymbol E|=c|\boldsymbol B|$です。ベクトル解析では、これらの性質を平面波の仮定からマクスウェル方程式の4本の式に代入して1つずつ導きます。ここでは、$F$が冪等元$P_+$の像に入るという1つの条件にまとまっています。逆に、$\hat{\boldsymbol k}$に垂直な値を取る任意の$C^1$級の関数$\boldsymbol E(\xi)$について、$F=(1+\hat{\boldsymbol k})\boldsymbol E(\xi)$は$\mathcal DF=(1-\hat{\boldsymbol k})(1+\hat{\boldsymbol k})\boldsymbol E'=0$を満たす解です。波形は正弦波に限りません。
 
 ## $F^2=0$
 
@@ -71,27 +71,27 @@ $$
 F^2=(1+\hat{\boldsymbol k})\boldsymbol E(1+\hat{\boldsymbol k})\boldsymbol E=(1+\hat{\boldsymbol k})(1-\hat{\boldsymbol k})\boldsymbol E^2=0
 $$
 
-です。スカラー部が$0$であることが$|\boldsymbol E|=c|\boldsymbol B|$に、擬スカラー部が$0$であることが$\boldsymbol E\perp\boldsymbol B$にあたります。$F^2=0$を満たす$0$でない$F$を**零場**と呼びます。
+です。スカラー部が$0$であることが$|\boldsymbol E|=c|\boldsymbol B|$に、擬スカラー部が$0$であることが$\boldsymbol E\perp\boldsymbol B$にあたります。$F^2=0$を満たす$0$でない$F$を**ヌル場**（null field）と呼びます。
 
-&&&prop 零場は平面波の形
+&&&prop ヌル場の点ごとの形
 $F=\boldsymbol E+Ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\boldsymbol k}=\boldsymbol E\times c\boldsymbol B/|\boldsymbol E|^2$は単位ベクトルで、$F=(1+\hat{\boldsymbol k})\boldsymbol E$です。
 &&&
 
 &&&prf
-[場の2乗](#fml-square)より$|\boldsymbol E|=c|\boldsymbol B|$かつ$\boldsymbol E\perp\boldsymbol B$である。$F\ne0$より$\boldsymbol E\ne0$で、$|\boldsymbol E\times c\boldsymbol B|=|\boldsymbol E|\,c|\boldsymbol B|=|\boldsymbol E|^2$だから$\hat{\boldsymbol k}$は単位ベクトルであり、$\boldsymbol E$と$\boldsymbol B$に垂直である。$\hat{\boldsymbol k}\times\boldsymbol E=\bigl((\boldsymbol E\cdot\boldsymbol E)c\boldsymbol B-(\boldsymbol E\cdot c\boldsymbol B)\boldsymbol E\bigr)/|\boldsymbol E|^2=c\boldsymbol B$となるので、[平面波](#thm-plane)の条件が満たされる。
+[場の2乗](#fml-square)より$|\boldsymbol E|=c|\boldsymbol B|$かつ$\boldsymbol E\perp\boldsymbol B$である。$F\ne0$より$\boldsymbol E\ne0$で、$|\boldsymbol E\times c\boldsymbol B|=|\boldsymbol E|\,c|\boldsymbol B|=|\boldsymbol E|^2$だから$\hat{\boldsymbol k}$は単位ベクトルであり、$\boldsymbol E$と$\boldsymbol B$に垂直である。$\hat{\boldsymbol k}\times\boldsymbol E=\bigl((\boldsymbol E\cdot\boldsymbol E)c\boldsymbol B-(\boldsymbol E\cdot c\boldsymbol B)\boldsymbol E\bigr)/|\boldsymbol E|^2=c\boldsymbol B$となるので、[平面波](#thm-plane)で用いた代数的条件$\hat{\boldsymbol k}\cdot\boldsymbol E=0$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が満たされ、$F=(1+\hat{\boldsymbol k})\boldsymbol E$である。
 &&&
 
-各点の場が零場であることは、その点で場が平面波と同じ代数的な形をしていることを意味します。ただし、$\mathcal DF=0$の解であることは別の条件です。
+これは各点での代数的な特徴づけです。ヌル場が$\mathcal DF=0$を満たすことや、$\hat{\boldsymbol k}$が点によらず一定であること、場が$\xi$だけに依存することまでは意味しません。ヌル場がマクスウェル方程式を満たしても、一般には平面波とは限りません。
 
 # 擬スカラーによる指数関数
 
 ## 円偏光
 
-正弦波を扱うとき、ベクトル解析では複素振幅$\boldsymbol E_0e^{i(\omega t-\boldsymbol k\cdot\boldsymbol x)}$を使い、最後に実部を取ります。$\operatorname{Cl}_{3,0}(\mathbb R)$では、2乗が$-1$ですべての元と可換な$I$があるので、$i$の代わりに$I$を使えます。
+正弦波を扱うとき、ベクトル解析では複素振幅$\boldsymbol E_0e^{i(\omega t-\boldsymbol k\cdot\boldsymbol x)}$を使い、最後に実部を取ります。$\operatorname{Cl}_{3,0}(\mathbb R)$には、2乗が$-1$ですべての元と可換な$I$があるので、$i$の代わりに$I$を使った指数関数を作れます。ただしこれは実部を取る処方の書き換えではなく、電磁場全体に$e^{I\theta}$を掛けて電場と磁場の成分を混ぜる操作です。
 
 $\hat{\boldsymbol k}$に垂直な定ベクトル$\boldsymbol E_0$と$\kappa=\omega/c>0$を取り、$\theta=\kappa\xi=\omega t-\boldsymbol k\cdot\boldsymbol x$（$\boldsymbol k=\kappa\hat{\boldsymbol k}$）とします。
 
-&&&def 擬スカラーによる正弦波
+&&&ex 擬スカラーによる正弦波
 $$
 F=(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{I\theta},\qquad e^{I\theta}=\cos\theta+I\sin\theta
 $$
@@ -116,14 +116,14 @@ $$
 である。ベクトル部が$\boldsymbol E$であり、2ベクトル部の$I$の係数が$\hat{\boldsymbol k}\times\boldsymbol E$に等しいことは、$\hat{\boldsymbol k}\times(\hat{\boldsymbol k}\times\boldsymbol E_0)=-\boldsymbol E_0$から確かめられる。
 &&&
 
-$\boldsymbol E_0$と$\hat{\boldsymbol k}\times\boldsymbol E_0$は、$\hat{\boldsymbol k}$に垂直な平面の直交する2つのベクトルで、長さは等しいです。したがって$\boldsymbol E$は、長さ$|\boldsymbol E_0|$を保ったまま、この平面内で角$\theta$だけ回転します。擬スカラーの指数関数は、そのまま円偏光を表します。
+$\boldsymbol E_0$と$\hat{\boldsymbol k}\times\boldsymbol E_0$は、$\hat{\boldsymbol k}$に垂直な平面の直交する2つのベクトルで、長さは等しいです。したがって$\boldsymbol E$は、長さ$|\boldsymbol E_0|$を保ったまま、この平面内で回転します。$\hat{\boldsymbol k}$を軸とする右手系の正の回転を基準にすると、回転角は$-\theta$です。擬スカラーの指数関数は、そのまま円偏光を表します。
 
 ## 偏光面の回転としての$I$
 
-$I$がこの平面の回転として働くことは、式の形からも読み取れます。$(1+\hat{\boldsymbol k})\hat{\boldsymbol k}=1+\hat{\boldsymbol k}$なので$(1+\hat{\boldsymbol k})I=(1+\hat{\boldsymbol k})\hat{\boldsymbol k}I=(1+\hat{\boldsymbol k})(I\hat{\boldsymbol k})$であり、$P_+$の像の上では$I$と2ベクトル$I\hat{\boldsymbol k}$が同じ働きをします。$I\hat{\boldsymbol k}$は$\hat{\boldsymbol k}$に垂直な平面を表す2ベクトルで、$(I\hat{\boldsymbol k})^2=-1$です。平面内のベクトル$\boldsymbol E_0$とは反可換なので
+$I$がこの平面の回転として働くことは、式の形からも読み取れます。$(1+\hat{\boldsymbol k})\hat{\boldsymbol k}=1+\hat{\boldsymbol k}$なので$(1+\hat{\boldsymbol k})I=(1+\hat{\boldsymbol k})\hat{\boldsymbol k}I=(1+\hat{\boldsymbol k})(I\hat{\boldsymbol k})$であり、$P_+$の像の上では、左から掛ける作用として$I$と2ベクトル$I\hat{\boldsymbol k}$が一致します（右から掛ける作用まで同じという意味ではありません）。$I\hat{\boldsymbol k}$は$\hat{\boldsymbol k}$に垂直な平面を表す2ベクトルで、$(I\hat{\boldsymbol k})^2=-1$です。$e^{I\theta}$は可換なので左に移せ、$(1+\hat{\boldsymbol k})$の右では$I$を$I\hat{\boldsymbol k}$に替えられます。さらに$I\hat{\boldsymbol k}$は平面内のベクトル$\boldsymbol E_0$と反可換なので
 
 $$
-(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{I\theta}=(1+\hat{\boldsymbol k})\,e^{I\hat{\boldsymbol k}\theta}\boldsymbol E_0=(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{-I\hat{\boldsymbol k}\theta}
+(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{I\theta}=(1+\hat{\boldsymbol k})\,e^{I\theta}\boldsymbol E_0=(1+\hat{\boldsymbol k})\,e^{I\hat{\boldsymbol k}\theta}\boldsymbol E_0=(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{-I\hat{\boldsymbol k}\theta}
 $$
 
 となります。右端の$\boldsymbol E_0e^{-I\hat{\boldsymbol k}\theta}=\boldsymbol E_0\cos\theta-(\hat{\boldsymbol k}\times\boldsymbol E_0)\sin\theta$は、[[7shi-vge]]と同じく、平面の2ベクトルの指数関数による平面内の回転です。[[7shi-cla3]]で、複素数の$i$が平面の擬スカラーとして現れたのと同じ関係が、偏光面の上で成り立っています。
@@ -136,13 +136,13 @@ $$
 \frac12(1+\hat{\boldsymbol k})\boldsymbol E_0\bigl(e^{I\theta}+e^{-I\theta}\bigr)=(1+\hat{\boldsymbol k})\boldsymbol E_0\cos\theta
 $$
 
-であり、$\boldsymbol E=\boldsymbol E_0\cos\theta$の直線偏光になります。複素数による方法では、直線偏光$\operatorname{Re}\bigl(\boldsymbol E_0e^{i\theta}\bigr)$が基本で、円偏光は直交する2つの直線偏光を位相をずらして重ねたものとして得られます。擬スカラーによる方法では、指数関数そのものが円偏光で、直線偏光は逆回りの2つの円偏光の重ね合わせです。回転の向きは指数の$I$の符号で決まります。
+であり、$\boldsymbol E=\boldsymbol E_0\cos\theta$の直線偏光になります。通常の複素表示で実ベクトル振幅$\boldsymbol E_0$を選んで実部を取ると、$\operatorname{Re}\bigl(\boldsymbol E_0e^{i\theta}\bigr)$は直線偏光です（複素ベクトル振幅を選べば、複素表示でも円偏光を直接表せます）。擬スカラーによる方法では、実振幅$\boldsymbol E_0$のままで指数関数そのものが円偏光になり、直線偏光は逆回りの2つの円偏光の重ね合わせです。回転の向きは指数の$I$の符号で決まります。
 
 # エネルギーの流れ
 
 ## 場とその反転の積
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の反転$X\mapsto X^\dagger$は、基底の積の順序を逆にする操作で、ベクトルを変えず、2ベクトルの符号を変えます。$F^\dagger=\boldsymbol E-Ic\boldsymbol B$です。
+$\operatorname{Cl}_{3,0}(\mathbb R)$の反転$X\mapsto X^\dagger$は、基底の積の順序を逆にする操作で、ベクトルを変えず、2ベクトルの符号を変えます。$(XY)^\dagger=Y^\dagger X^\dagger$、$I^\dagger=-I$であり、$F^\dagger=\boldsymbol E-Ic\boldsymbol B$です。
 
 &&&fml エネルギー密度とポインティングベクトル [fml-energy]
 $$
@@ -168,7 +168,7 @@ $$
 
 ## ポインティングの定理
 
-$\frac{\varepsilon_0}2FF^\dagger$に$\mathcal D$を作用させてスカラー部を取ると、$\langle\mathcal D(u+\boldsymbol S/c)\rangle_0=\partial_0u+\frac1c\nabla\cdot\boldsymbol S$です。ここで$\langle X\rangle_0$は$X$のスカラー部を表します。一方、この量はマクスウェル方程式で書き換えられます。
+$\frac{\varepsilon_0}2FF^\dagger$に$\mathcal D$を作用させてスカラー部を取ると、$\langle\mathcal D(u+\boldsymbol S/c)\rangle_0=\partial_0u+\frac1c\nabla\cdot\boldsymbol S$です。ここで$\langle X\rangle_0$は$X$のスカラー部を表します。一方、この量はマクスウェル方程式で書き換えられます。ここでは真空に限らず、源のある場合も含めて示します。
 
 &&&thm ポインティングの定理
 マクスウェル方程式$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$の解について
@@ -198,13 +198,13 @@ $$
 
 右辺の$\boldsymbol J\cdot\boldsymbol E$は電場が電流にする仕事率の密度です。場のエネルギーの減少は、流れ出るエネルギーと電荷への仕事に等しくなります。ベクトル解析では、$\boldsymbol E$とアンペール＝マクスウェルの法則の内積、$\boldsymbol B$とファラデーの法則の内積を取って組み合わせ、公式$\nabla\cdot(\boldsymbol E\times\boldsymbol B)=\boldsymbol B\cdot(\nabla\times\boldsymbol E)-\boldsymbol E\cdot(\nabla\times\boldsymbol B)$で整理します。ここでは、スカラー部の対称性で2つの項が揃い、$\mathcal DF$がそのまま現れます。
 
-$\langle\mathcal D(FF^\dagger)\rangle$のベクトル部は運動量の保存（マクスウェルの応力）を与えますが、本記事では扱いません。
+運動量の保存則には、エネルギー密度とポインティングベクトルに加えて、運動量の流れを表す応力の成分が必要です。本記事ではエネルギーの保存だけを扱います。
 
 # まとめ
 
 真空のマクスウェル方程式$\mathcal DF=0$を、進行方向の冪等元と擬スカラーを使って調べました。
 
-- **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
-- **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2c\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は平面波と同じ形をしています。
-- **擬スカラーの指数関数**：$e^{I\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$I$は2ベクトル$I\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
+- **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、一定の背景場を除けば$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
+- **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2Ic\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は、各点で平面波と同じ代数的な形をしています。
+- **擬スカラーの指数関数**：$e^{I\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$I$は左からの作用として2ベクトル$I\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
 - **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルで、そのスカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。
