@@ -16,6 +16,9 @@
    rest (I(curl E + c d_0 B), Ic div B). With Maxwell's equations D . F = mu_0 c J,
    D ^ F = 0. D . (D . F) = 0 for any bivector F.
 6. Light rays x_0(gamma_0 + n) are null; c gamma_0 + u_k gamma_k has square c^2 - |u|^2.
+7. Observer split: E = (F - gamma_0 F gamma_0)/2 (planes containing gamma_0, anticommute with
+   gamma_0), IcB = (F + gamma_0 F gamma_0)/2 (spatial planes, commute with gamma_0);
+   vectors orthogonal to gamma_0 are the observer's space: x gamma_0 = x_0 + x.
 """
 
 import sympy as sp
@@ -138,3 +141,14 @@ uu = sp.symbols("u1:4", real=True)
 tang = c * g0 + sum((uu[k] * g[k + 1] for k in range(3)), S.zero())
 assert sp.expand((tang * tang).scalar() - (c**2 - sum(v**2 for v in uu))) == 0
 print("6. light rays are null (x^2 = 0); the tangent c gamma_0 + u gamma has square c^2 - |u|^2 > 0 for |u| < c")
+
+# ---------------------------------------------------------------- 7.
+Ec_, Bc_ = sp.symbols("E1:4", real=True), sp.symbols("B1:4", real=True)
+Fc_ = svec(Ec_) + I * c * svec(Bc_)
+g0Fg0 = g0 * Fc_ * g0
+assert eq((Fc_ - g0Fg0) / 2, svec(Ec_)) and eq((Fc_ + g0Fg0) / 2, I * c * svec(Bc_))
+for s_ in sg:
+    assert all(m & 1 for m in s_.d)          # sigma_k = gamma_k gamma_0 contains gamma_0
+for s_ in sg:
+    assert all(not (m & 1) for m in (I * s_).d)  # I sigma_k is a spatial plane
+print("7. E = (F - g0 F g0)/2 on planes containing gamma_0, IcB = (F + g0 F g0)/2 on spatial planes")

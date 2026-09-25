@@ -78,13 +78,15 @@ $$
 
 ## 相対ベクトル
 
-時間方向の$\gamma_0$を基準にして、時空の量を$\operatorname{Cl}_{3,0}(\mathbb R)$の量に分けます。
+観測者を1人選ぶことは、その観測者の世界線の向き、すなわち時間軸となる単位ベクトルを1つ選ぶことです。ここではそれを$\gamma_0$とします。観測者にとっての空間は、時間軸に直交するベクトル（$\gamma_0\cdot x=0$）の全体で、$\gamma_1,\gamma_2,\gamma_3$が張ります。この時間軸$\gamma_0$を基準にして、時空の量を$\operatorname{Cl}_{3,0}(\mathbb R)$の量に分けます。
 
 &&&def 相対ベクトル
 $$
 \sigma_k=\gamma_k\gamma_0\qquad(k=1,2,3)
 $$
 &&&
+
+$\sigma_k$は、観測者の時間軸$\gamma_0$と空間の軸$\gamma_k$が張る面です。観測者が「空間の方向$\gamma_k$」として見るものを、自分の時間軸と組にした面として偶部分に持ち込んでいます。
 
 &&&prop 偶部分代数と$\operatorname{Cl}_{3,0}(\mathbb R)$
 $\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma_1\sigma_2\sigma_3=\gamma_0\gamma_1\gamma_2\gamma_3$です。$1,\sigma_k,\sigma_k\sigma_l\ (k<l),\sigma_1\sigma_2\sigma_3$は偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の基底をなし、$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)$です。
@@ -156,6 +158,15 @@ $$
 &&&
 
 $\sigma_k=\gamma_k\gamma_0$も$I\sigma_k$も時空の2ベクトルなので、$F$は時空の2ベクトルです。$I\sigma_1=\gamma_3\gamma_2$、$I\sigma_2=\gamma_1\gamma_3$、$I\sigma_3=\gamma_2\gamma_1$であり、時空の2ベクトルの$\binom42=6$成分のうち、$\gamma_0$を含む面の3成分が電場、空間の面の3成分が磁場です。電場と磁場は1つの2ベクトルの成分で、その分け方は時間方向$\gamma_0$の選び方に依存します。
+
+この分け方は、時間軸$\gamma_0$との可換性で書けます。$\sigma_k$は$\gamma_0$と反可換、$I\sigma_k$は可換なので$\gamma_0F\gamma_0=-\boldsymbol E+Ic\boldsymbol B$となり
+
+$$
+\boldsymbol E=\frac12\bigl(F-\gamma_0F\gamma_0\bigr),\qquad
+Ic\boldsymbol B=\frac12\bigl(F+\gamma_0F\gamma_0\bigr)
+$$
+
+です。電場は時間軸を含む面の成分、磁場は時間軸を含まない空間の面の成分です。3次元でベクトルを1本の軸に沿った成分と垂直な成分に分けるとき、分け方が軸の選び方に依存するのと同じく、電場と磁場への分け方は観測者の時間軸の選び方に依存します。$F$そのものは観測者によらない1つの2ベクトルで、電場と磁場は、それを1人の観測者の時間軸に対して分けた2つの成分です。
 
 電流$J$は時空のベクトルです。$\gamma_0$を掛けると
 
@@ -260,6 +271,6 @@ $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとし�
 
 - **作用素**：逆元を係数にしたディラック作用素は$D^2=\partial_0^2-\Delta$を満たし、波動作用素の平方根です。
 - **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。[[7shi-em2]]の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。
-- **場と電流**：$F$は時空の2ベクトルで、$\gamma_0$を含む面の成分が電場、空間の面の成分が磁場です。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
+- **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
 - **2本の式**：$D\cdot F=\mu_0cJ$が源を持つ2本を、$D\wedge F=0$が源を持たない2本をまとめます。
 - **係数の2乗の符号**：$\gamma_0$を掛ける操作は、[[7shi-cla4]]の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。

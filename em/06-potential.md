@@ -83,6 +83,8 @@ $$
 
 と変わります。$DA$のうち、2ベクトル部$D\wedge A$は物理的な場で、スカラー部$D\cdot A$はゲージ変換によって変わる量です。$A$の4成分のうち、$F$を決めるのは$D\wedge A$だけで、$D\cdot A$は$F$に現れません。
 
+ゲージ変換で加える$D\chi$は、スカラー関数の勾配です。勾配は$D\wedge$で消えるので、$F=D\wedge A$には見えません。3次元で$\boldsymbol B=\nabla\times\boldsymbol A$が$\boldsymbol A$に加えた勾配を見ないのと同じく、ポテンシャルのうち$F$に効くのは$D\wedge A$を作る部分だけで、勾配として足せる部分は$F$からは見えない余分な成分です。ゲージ変換とは、この見えない成分を足し引きすることにすぎません。見えない成分が現れるのはスカラー部$D\cdot A$だけなので、ゲージを選ぶことは、$D\cdot A$がどういう値を取るように見えない成分を決めるかを選ぶことです。電位に定数を足しても電場が変わらないことの時空版で、足せるものが定数から勾配$D\chi$の形の関数全体に広がっています（$\chi=kx_0$とすれば$D\chi=k\gamma_0$で、電位に定数$k$を足す変換です）。
+
 電荷に働く力は[[7shi-em1]]のローレンツ力で決まり、そこに現れるのは$\boldsymbol E$と$\boldsymbol B$だけです。したがって、ゲージ変換で結ばれた2つのポテンシャルは、同じ物理的状況を表します。ポテンシャルは場を計算するための道具であり、ゲージは計算の都合に合わせて選んでかまいません。
 
 ## ローレンツゲージ
@@ -209,5 +211,5 @@ $\hat{\boldsymbol k}$の向きに進む平面波が、$\hat{\boldsymbol k}$に�
 時空代数で、ポテンシャルとエネルギー運動量を扱いました。
 
 - **ポテンシャル**：$A=\varphi\gamma_0+c\sum A_k\gamma_k$は$\gamma_0A=\varphi-c\boldsymbol A$を満たし、$DA$の2ベクトル部$D\wedge A$が$F$です。$D\wedge D=0$から、源を持たない2本の式は恒等式になります。
-- **ゲージ**：$A\mapsto A+D\chi$は$D\wedge A$を変えず、スカラー部$D\cdot A$だけを$\square\chi$だけ変えます。$D\cdot A=0$（ローレンツゲージ）では$F=DA$、$\square A=\mu_0cJ$です。静的な場合は[[7shi-em1]]の$F=-DP$と$\nabla\cdot\boldsymbol A=0$に戻ります。
+- **ゲージ**：$A\mapsto A+D\chi$は、$F$に見えない勾配の成分を足すだけの変換です。$D\wedge A$を変えず、スカラー部$D\cdot A$だけを$\square\chi$だけ変えます。$D\cdot A=0$（ローレンツゲージ）では$F=DA$、$\square A=\mu_0cJ$です。静的な場合は[[7shi-em1]]の$F=-DP$と$\nabla\cdot\boldsymbol A=0$に戻ります。
 - **エネルギー運動量**：$T(a)=-\frac{\varepsilon_0}2FaF$はベクトルからベクトルへの対称な線形写像で、$T(\gamma_0)\gamma_0$が[[7shi-em3]]の$\frac{\varepsilon_0}2FF^\dagger$です。その発散$\sum\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J$の時間成分がポインティングの定理、空間成分が運動量の保存則です。
