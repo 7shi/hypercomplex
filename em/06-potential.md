@@ -51,7 +51,7 @@ $$
 となる。$c\,\partial_0=\partial_t$より、偶部分を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのベクトル部が$\boldsymbol E$、$I$の項が$Ic\boldsymbol B$、スカラー部が$D\cdot A$である。
 &&&
 
-$\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\times\boldsymbol A$は、ベクトル解析でポテンシャルから場を作る式そのものです。
+$\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\times\boldsymbol A$は、ベクトル解析でポテンシャルから場を作る式そのものです。静的な場合と違い、電場には$-\partial_t\boldsymbol A$の項が加わります。磁場が時間変化すると電場は渦を持ち（[[7shi-em2]]のファラデーの法則）、勾配だけでは表せないためです。このため、電荷を2点間で動かすときの電場の仕事は経路によって変わり、[[7shi-em1]]のように電位の差を電圧と見なすことは、一般にはできなくなります。
 
 ## 同次方程式
 
@@ -83,6 +83,8 @@ $$
 
 と変わります。$DA$のうち、2ベクトル部$D\wedge A$は物理的な場で、スカラー部$D\cdot A$はゲージ変換によって変わる量です。$A$の4成分のうち、$F$を決めるのは$D\wedge A$だけで、$D\cdot A$は$F$に現れません。
 
+電荷に働く力は[[7shi-em1]]のローレンツ力で決まり、そこに現れるのは$\boldsymbol E$と$\boldsymbol B$だけです。したがって、ゲージ変換で結ばれた2つのポテンシャルは、同じ物理的状況を表します。ポテンシャルは場を計算するための道具であり、ゲージは計算の都合に合わせて選んでかまいません。
+
 ## ローレンツゲージ
 
 波動方程式$\square\chi=-D\cdot A$の解$\chi$を取ってゲージ変換すると、$D\cdot A=0$にできます。
@@ -92,6 +94,8 @@ $$
 D\cdot A=\frac1c\partial_t\varphi+c\,\nabla\cdot\boldsymbol A=0
 $$
 &&&
+
+名前は、この条件を用いたデンマークの物理学者ローレンツ（L. Lorenz）に由来し、ローレンツ変換のローレンツ（H. A. Lorentz）とは別人です。日本語ではどちらも「ローレンツ」と表記されます。
 
 このとき$DA$は2ベクトル部だけになり、$F=DA$です。ただし、$\square\chi=0$を満たす$\chi$によるゲージ変換はこの条件を保つので、ローレンツゲージでもポテンシャルが一意に決まるわけではありません。
 
@@ -192,7 +196,13 @@ $$
 \partial_t\frac{S_i}{c^2}-\sum_j\partial_j\tau_{ij}=-\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_i
 $$
 
-となります。場の運動量密度$\boldsymbol S/c^2$の変化と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。[[7shi-em3]]で扱わなかった運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、[[7shi-em5]]のローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。
+となります。場の運動量密度$\boldsymbol S/c^2$の変化と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。[[7shi-em3]]で扱わなかった運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、[[7shi-em5]]のローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、[[7shi-em1]]で見たローレンツ力の密度です。
+
+電荷が場から力を受けて運動量を得ると、場の運動量はその分だけ減ります。電荷と場を合わせた全運動量が保存され、電磁場は物体と同じく運動量を持って運ぶ存在です。
+
+&&&ex 放射圧
+$\hat{\boldsymbol k}$の向きに進む平面波が、$\hat{\boldsymbol k}$に垂直な壁に当たって完全に吸収されるとします。[[7shi-em3]]で見たとおり平面波では$\boldsymbol S=cu\,\hat{\boldsymbol k}$なので、運動量密度は$\boldsymbol S/c^2=(u/c)\hat{\boldsymbol k}$で、それが速さ$c$で壁に流れ込みます。壁の単位面積が単位時間に受け取る運動量、すなわち壁が受ける圧力は$c\cdot u/c=u$です。完全に反射される場合は運動量の向きが反転するので、圧力は$2u$になります。[[7shi-em3]]の太陽光の例では、時間平均の圧力は$1.4\times10^3/(3.0\times10^8)\approx4.7\times10^{-6}\ \mathrm{Pa}$です。日常では感じられないほど小さい力ですが、宇宙空間の探査機の軌道には影響し、太陽光を大きな帆で受けて進む実験も行われています。
+&&&
 
 # まとめ
 

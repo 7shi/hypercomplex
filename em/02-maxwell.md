@@ -23,13 +23,53 @@ $$
 
 # 静的な式を越えて
 
-[[7shi-em1]]の静的な式$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$のベクトル部はアンペールの法則$\nabla\times\boldsymbol B=\mu_0\boldsymbol J$でした。回転の発散は$0$なので、この式からは$\nabla\cdot\boldsymbol J=0$が従います。一方、電荷の保存は連続の式
+[[7shi-em1]]の4本の式は、電荷と電流が時間変化しない場合の法則でした。時間変化する場合には、そのうち回転の2本が修正を受けます。どちらも19世紀の電磁気学の中心的な発見です。
+
+## 電荷の保存
+
+[[7shi-em1]]で述べたとおり、電荷は生成も消滅もしません。領域$V$の中の電荷$Q=\int_V\rho\,dV$が変化するのは、境界$\partial V$を通って電荷が出入りするときだけです。境界を外向きに単位時間に通過する電荷は$\oint_{\partial V}\boldsymbol J\cdot\boldsymbol n\,dS$なので
+
+$$
+\frac{d}{dt}\int_V\rho\,dV=-\oint_{\partial V}\boldsymbol J\cdot\boldsymbol n\,dS
+$$
+
+です。右辺に発散定理を使い、これが任意の$V$で成り立つことから、微分形の**連続の式**
 
 $$
 \partial_t\rho+\nabla\cdot\boldsymbol J=0
 $$
 
-で表され、電荷密度が時間変化すれば$\nabla\cdot\boldsymbol J\ne0$です。マクスウェルはアンペールの法則に変位電流の項$\varepsilon_0\partial_t\boldsymbol E$を加えてこの矛盾を解消しました。ガウスの法則$\nabla\cdot\boldsymbol E=\rho/\varepsilon_0$を時間で微分すれば$\nabla\cdot(\varepsilon_0\partial_t\boldsymbol E)=\partial_t\rho=-\nabla\cdot\boldsymbol J$なので、$\boldsymbol J+\varepsilon_0\partial_t\boldsymbol E$の発散は$0$になります。また、ファラデーの電磁誘導の法則により、静電場の渦なしの式$\nabla\times\boldsymbol E=0$は$\nabla\times\boldsymbol E=-\partial_t\boldsymbol B$に置き換わります。こうして得られるのが、SI単位系のマクスウェル方程式です。
+を得ます。電荷密度が時間変化する場所では$\nabla\cdot\boldsymbol J\ne0$です。
+
+## 変位電流
+
+静的な式のベクトル部はアンペールの法則$\nabla\times\boldsymbol B=\mu_0\boldsymbol J$でした。回転の発散は$0$なので、この式からは$\nabla\cdot\boldsymbol J=0$が従い、連続の式と両立しません。
+
+具体的な場面として、コンデンサー（向かい合った2枚の金属板）を充電する回路を考えます。導線には電流が流れ、電荷は一方の板にたまっていきますが、板の間の隙間には電荷の流れがありません。導線を囲む閉曲線に[[7shi-em1]]のアンペールの法則の積分形を当てはめると、その閉曲線を縁とする曲面として導線を貫く曲面を選ぶか、板の間の隙間を通る曲面を選ぶかで、貫く電流が$I$と$0$に分かれてしまいます。隙間で起きているのは、板にたまる電荷が増え、板の間の電場が強くなることです。
+
+マクスウェルは、アンペールの法則の電流に**変位電流**$\varepsilon_0\partial_t\boldsymbol E$を加えてこの矛盾を解消しました。ガウスの法則$\nabla\cdot\boldsymbol E=\rho/\varepsilon_0$を時間で微分すれば$\nabla\cdot(\varepsilon_0\partial_t\boldsymbol E)=\partial_t\rho=-\nabla\cdot\boldsymbol J$なので、$\boldsymbol J+\varepsilon_0\partial_t\boldsymbol E$の発散はつねに$0$になります。コンデンサーの隙間では、導線の電流$I$の代わりに変位電流が同じ大きさで流れ、どちらの曲面を選んでも結果が一致します。修正された式
+
+$$
+\nabla\times\boldsymbol B=\mu_0\boldsymbol J+\mu_0\varepsilon_0\partial_t\boldsymbol E
+$$
+
+を**アンペール＝マクスウェルの法則**と呼びます。電流がなくても、電場が時間変化すれば磁場の渦が生じます。
+
+## 電磁誘導
+
+コイル（巻いた導線）に磁石を近づけたり遠ざけたりすると、電池をつながなくてもコイルに電流が流れます。ファラデーが発見したこの現象を**電磁誘導**と呼びます。コイルを縁とする曲面を貫く磁束$\Phi=\int_S\boldsymbol B\cdot\boldsymbol n\,dA$が時間変化すると、コイルに沿って電荷を一周させる力の仕事（起電力）$\oint_{\partial S}\boldsymbol E\cdot d\boldsymbol x$が生じ、その大きさは$-d\Phi/dt$に等しくなります。負号は、誘導された電流の作る磁場が磁束の変化を打ち消す向きになることを表します（レンツの法則）。
+
+静電場では$\oint\boldsymbol E\cdot d\boldsymbol x=0$でしたが、磁場が時間変化すると電場は渦を持ちます。微分形では、静電場の渦なしの式$\nabla\times\boldsymbol E=0$が
+
+$$
+\nabla\times\boldsymbol E=-\partial_t\boldsymbol B
+$$
+
+に置き換わります。これを**ファラデーの法則**と呼びます。
+
+## マクスウェル方程式
+
+ガウスの法則と$\nabla\cdot\boldsymbol B=0$はそのまま保たれます。$\mu_0\varepsilon_0=1/c^2$を使って4本をまとめたものが、SI単位系のマクスウェル方程式です。
 
 &&&fml マクスウェル方程式 [fml-maxwell]
 $$
@@ -78,6 +118,17 @@ $$
 | 擬スカラー | $\nabla\cdot\boldsymbol B=0$ | 同じ |
 
 場が時間によらなければ$\mathcal DF=DF$であり、[[7shi-em1]]の静的な式に戻ります。
+
+積分形も[[7shi-em1]]と同じく基本定理のグレード成分として得られます。時間によらない曲面$S$について曲面の基本定理を$F$に使うと、スカラー部と擬スカラー部の右辺は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$Ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$の面積分で、そこに2ベクトル部とベクトル部の式を代入します。
+
+&&&fml 回転の2本の積分形
+$$
+\oint_{\partial S}\boldsymbol E\cdot d\boldsymbol x=-\frac d{dt}\int_S\boldsymbol B\cdot\boldsymbol n\,dA,\qquad
+\oint_{\partial S}\boldsymbol B\cdot d\boldsymbol x=\mu_0\int_S\boldsymbol J\cdot\boldsymbol n\,dA+\frac1{c^2}\frac d{dt}\int_S\boldsymbol E\cdot\boldsymbol n\,dA
+$$
+&&&
+
+左の式が電磁誘導の法則そのもの、右の式が変位電流を含むアンペールの法則の積分形です。領域の基本定理からは、ガウスの法則と閉曲面を通る磁束が$0$であることが[[7shi-em1]]と同じ形で得られます。
 
 &&&rem 四元数からベクトル解析へ、そして再び1本の式へ
 [[7shi-hist]]で見たとおり、マクスウェルは1873年の著書で四元数の記法を併記していましたが、ギブスとヘヴィサイドは四元数の積を内積とベクトル積に分け、電磁気学の法則を発散と回転の式として書き直しました。上の4本の式はその形です。幾何代数では、ベクトル値の関数に$D$を作用させると、グレードを下げる部分に発散が、上げる部分に回転（の双対）が同時に現れます。2ベクトル値の関数についても、同じ幾何積の微分によって発散と回転がまとめて得られます。分けられた発散と回転を1つの作用素に戻すと、4本の式は1本の式のグレード成分になります。通常の四元数の記法では値を実部と3成分の虚部に分けるだけですが、幾何代数ではベクトルと2ベクトルが別のグレードとして区別され、$\boldsymbol E$と$\boldsymbol B$を1つの元の別の成分として持てます。
@@ -153,6 +204,14 @@ $$
 &&&
 
 電荷も電流もない真空では右辺が$0$になり、$\boldsymbol E$と$\boldsymbol B$の各成分は速さ$c$で伝わる波動方程式を満たします。電磁場の各成分が速さ$c$の波動方程式を満たすことが、1階の方程式$\mathcal DF=0$に共役$\bar{\mathcal D}$を掛けるという1回の操作から分かります。逆に、各成分が波動方程式を満たすだけでは、元のマクスウェル方程式を満たすとは限りません。
+
+&&&rem 光は電磁波
+波動方程式は、ある場所の乱れが一定の速さで周囲に伝わっていくことを表します。真空のマクスウェル方程式では、磁場の時間変化が電場の渦を生み（ファラデーの法則）、電場の時間変化が磁場の渦を生みます（変位電流）。この連鎖によって、電荷や電流から離れた場所でも電場と磁場が互いを支えながら空間を伝わっていきます。これが**電磁波**です。
+
+伝わる速さ$c$は、[[7shi-em1]]の関係$\varepsilon_0\mu_0c^2=1$で定めた$c=1/\sqrt{\varepsilon_0\mu_0}$です。$\varepsilon_0$と$\mu_0$は静止した電荷の間の力と電流の間の力という、光とは無関係に見える実験から決まる定数ですが、そこから計算した電磁波の速さは、測定されていた光の速さと一致しました。マクスウェルはこれをもとに、光は電磁波であると結論しました（1864年）。電磁波の存在は、1888年にヘルツが電気回路からの電磁波の発生と検出によって実験的に確かめています。現在では、電波・赤外線・可視光・紫外線・X線などは、振動数（波長）の違う電磁波として統一的に理解されています。
+
+[[7shi-em1]]では、$\boldsymbol E$と$c\boldsymbol B$の単位が揃うことを、電場と磁場をまとめる理由として使いました。そこで現れた$c$の正体が、電磁波の速さです。
+&&&
 
 [[7shi-cla4]]では、同じ操作で正則関数の各成分が調和関数になることを導きました。操作は同じで、係数の2乗の符号が違うために、結論が「調和関数」から「波動方程式の解」に替わります。
 
