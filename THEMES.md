@@ -138,6 +138,7 @@
 2. [有向積分と幾何微積分の基本定理](clif-analysis/02-fundamental-theorem.md) — $\int_M DF\,dV=\oint_{\partial M}\boldsymbol nF\,dS$を長方形上の1次元の基本定理から示し、グリーンの定理（流束形・循環形）、発散定理と回転の体積分、有向面素による形からストークスの定理を、グレード成分として取り出す。非可換な場合の両側形式も用意する。
 3. [コーシーの積分定理・積分公式・留数](clif-analysis/03-cauchy-residue.md) — 基本定理から積分定理を、核$(\boldsymbol x-\boldsymbol a)^{-1}$と両側形式からコーシー＝ポンペイウの公式を導く。$2\pi i$を$S^1$の長さと接線を法線に回す$I$に分け、留数を小円上の積分として定義して、核の導関数の留数が同次性により$0$になることを示す。
 4. [四元数解析](clif-analysis/04-quaternion.md) — $\operatorname{Cl}_{4,0}(\mathbb R)$で$q=e_0\boldsymbol x$とフューター作用素$e_0D$を作り、$\operatorname{Cl}_{4,0}^0(\mathbb R)\cong\mathbb H\oplus\mathbb H$の片方に値を取る。恒等写像・逆元が正則でないことを次元の数え上げ$\sum_ae_ae_0e_a=(2-n)e_0$から、積が正則でないことを交換子から示し、フューターの定理で$1/z$からコーシー＝フューター核を得る。積分公式と平均値の性質は核と$2\pi^2$に替えて成り立つ。
+5. [一般次元のクリフォード解析](clif-analysis/05-clifford.md) — 核$\boldsymbol x/|\boldsymbol x|^n$をラプラシアンの基本解の$D$微分として得て、$|S^{n-1}|=2\pi^{n/2}/\Gamma(n/2)$を正規化定数とする積分公式・平均値の性質・留数を述べる。$\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}$により$2\pi i$を球面の面積と擬スカラーに分け、フューターの定理のずれの係数$n-2$から$\Delta^{(n-2)/2}$（フューター＝ソーの定理）と$\Delta^kq^{-1}=(-4)^k(k!)^2\bar q/|q|^n$を得る。$D=d-\delta$にも触れる。
 
 関連: 位置ベクトルと複素数の対応は[ベクトルの幾何積と指数関数](vec-oct/geometric-product-exp.md)（[鏡映と回転](#鏡映と回転)）の$e_1e_1$を挟む計算、極小左イデアルとスピノルは[クリフォード代数とSpin(3)](lie/03-spin.md)（[リー群・リー代数](#リー群リー代数)）の射影$P$に基づく。
 

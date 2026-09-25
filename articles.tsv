@@ -36,6 +36,7 @@ date	url	md	title
 		clif-analysis/02-fundamental-theorem.md	有向積分と幾何微積分の基本定理
 		clif-analysis/03-cauchy-residue.md	コーシーの積分定理・積分公式・留数
 		clif-analysis/04-quaternion.md	四元数解析
+		clif-analysis/05-clifford.md	一般次元のクリフォード解析
 		clif/02-split-complex.md	分解型複素数の冪等元と直和分解
 		clif/03-gpm-gca.md	一般化パウリ行列と一般化クリフォード代数
 		clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係

@@ -83,23 +83,32 @@ files = [
   "clif-analysis/02-fundamental-theorem.md",
   "clif-analysis/03-cauchy-residue.md",
   "clif-analysis/04-quaternion.md",
+  "clif-analysis/05-clifford.md",
 ]
 
 ["7shi-cla2"]
 files = [
   "clif-analysis/03-cauchy-residue.md",
   "clif-analysis/04-quaternion.md",
+  "clif-analysis/05-clifford.md",
 ]
 
 ["7shi-cla3"]
 files = [
   "clif-analysis/04-quaternion.md",
+  "clif-analysis/05-clifford.md",
+]
+
+["7shi-cla4"]
+files = [
+  "clif-analysis/05-clifford.md",
 ]
 
 ["7shi-clif1"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
   "clif-analysis/04-quaternion.md",
+  "clif-analysis/05-clifford.md",
   "clif/02-split-complex.md",
   "clif/03-gpm-gca.md",
   "qua/spinor-ideal.md",
