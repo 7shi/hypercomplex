@@ -16,6 +16,8 @@
 6. Integral forms on fixed rectangles for a vacuum plane wave:
    oint E.dx = -d/dt int B.n dA, oint B.dx = (1/c^2) d/dt int E.n dA.
 7. 1/sqrt(eps_0 mu_0) = 2.998e8 m/s.
+8. Vector-analysis identities as grades of D^2 = Laplacian: D(D phi) has bivector part
+   I curl grad phi = 0; D(D V) = grad div V - curl curl V + I div curl V = Lap V.
 """
 
 import sympy as sp
@@ -195,3 +197,18 @@ print("6. plane wave: oint E.dx = -d/dt int B.n dA, oint B.dx = (1/c^2) d/dt int
 eps0_n, mu0_n = 8.8541878188e-12, 1.25663706127e-6
 assert abs(1 / (eps0_n * mu0_n) ** 0.5 - 299792458) < 1
 print("7. wave speed 1/sqrt(eps0 mu0) = 2.998e8 m/s (speed of light)")
+
+# ---------------------------------------------------------------- 8.
+ph = sp.Function("phi")(*Xs)
+V = [sp.Function(f"V{k}")(*Xs) for k in (1, 2, 3)]
+DDp = Dsp(Dsp(mv(ph)))
+assert eq(DDp.grade(2), I * vec(curl(grad(ph)))) and eq(DDp.grade(2), 0)
+assert eq(DDp, sum(sp.diff(ph, v, 2) for v in Xs))
+DV = Dsp(vec(V))
+assert eq(DV, div(V) + I * vec(curl(V)))
+DDV = Dsp(DV)
+assert eq(DDV.grade(1), vec([sp.diff(div(V), Xs[k]) - curl(curl(V))[k] for k in range(3)]))
+assert eq(DDV.grade(3), I * div(curl(V))) and eq(DDV.grade(3), 0)
+assert eq(DDV, vec([sum(sp.diff(V[k], v, 2) for v in Xs) for k in range(3)]))
+print("8. D^2 = Lap: bivector part of D(D phi) is I curl grad phi = 0; D(D V): grad div V - curl curl V = Lap V, "
+      "pseudoscalar I div curl V = 0")

@@ -55,7 +55,7 @@ $\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\t
 
 ## 同次方程式
 
-偏微分は交換するので、$D\wedge D=\sum_{\mu,\nu}\gamma^\mu\wedge\gamma^\nu\partial_\mu\partial_\nu=0$です（$\gamma^\mu\wedge\gamma^\nu$は$\mu,\nu$について反対称）。したがって$F=D\wedge A$と置けば
+偏微分は交換するので、$D\wedge D=\sum_{\mu,\nu}\gamma^\mu\wedge\gamma^\nu\partial_\mu\partial_\nu=0$です（$\gamma^\mu\wedge\gamma^\nu$は$\mu,\nu$について反対称）。ベクトル解析の恒等式$\nabla\times\nabla\varphi=0$と$\nabla\cdot(\nabla\times\boldsymbol A)=0$は、この1つの式の成分にあたります（[[7shi-em2]]）。したがって$F=D\wedge A$と置けば
 
 $$
 D\wedge F=D\wedge(D\wedge A)=0
