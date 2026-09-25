@@ -12,6 +12,10 @@
    I mu_0 c curl J; so (d_0^2 - Lap)E = -(grad rho)/eps_0 - mu_0 d_t J,
    (d_0^2 - Lap)B = mu_0 curl J for fields satisfying Maxwell's equations.
 4. Static case: d_0 = 0 reduces Dq F to D F.
+5. Capacitor: the displacement current eps_0 S d_t E with E = Q/(eps_0 S) equals dQ/dt.
+6. Integral forms on fixed rectangles for a vacuum plane wave:
+   oint E.dx = -d/dt int B.n dA, oint B.dx = (1/c^2) d/dt int E.n dA.
+7. 1/sqrt(eps_0 mu_0) = 2.998e8 m/s.
 """
 
 import sympy as sp
@@ -139,3 +143,55 @@ Bs = [sp.Function(f"B{k}")(*Xs) for k in (1, 2, 3)]
 Fs = vec(Es) + I * c * vec(Bs)
 assert eq(Dq(Fs), Dsp(Fs))
 print("4. static fields: Dq F = D F")
+
+# ---------------------------------------------------------------- 5.
+# Capacitor: E = Q(t)/(eps0 S) between the plates; the displacement current
+# eps0 S d_t E equals the conduction current dQ/dt in the wire.
+t = sp.Symbol("t", real=True)
+Sarea = sp.Symbol("S", positive=True)
+Qt = sp.Function("Q")(t)
+assert sp.simplify(eps0 * Sarea * sp.diff(Qt / (eps0 * Sarea), t) - sp.diff(Qt, t)) == 0
+print("5. capacitor: eps0 S d_t E = dQ/dt")
+
+# ---------------------------------------------------------------- 6.
+# Integral forms of the curl equations for a vacuum plane wave
+# E = cos(x0 - x3) e_1, cB = cos(x0 - x3) e_2 (x0 = ct), on fixed rectangles:
+#   Faraday: oint E.dx = -d/dt int B.n dA  (rectangle in the x3-x1 plane, n = e_2),
+#   Ampere-Maxwell: oint B.dx = (1/c^2) d/dt int E.n dA  (rectangle in the x2-x3 plane, n = e_1),
+# with the boundary oriented counterclockwise around n (right-hand rule).
+tt = sp.Symbol("t", real=True)
+x0w = c * tt
+Ew = [sp.cos(x0w - Xs[2]), 0, 0]
+Bw = [0, sp.cos(x0w - Xs[2]) / c, 0]
+# it solves the vacuum equations (with x0 = ct)
+Ew0 = [sp.cos(x0 - Xs[2]), 0, 0]
+Bw0 = [0, sp.cos(x0 - Xs[2]) / c, 0]
+assert eq(Dq(vec(Ew0) + I * c * vec(Bw0)), 0)
+p_, q_ = sp.symbols("p q", positive=True)
+s_ = sp.Symbol("s", real=True)
+
+
+def loop(E, corners):
+    """oint E.dx along the closed polygon through the given corners."""
+    tot = 0
+    for A_, B_ in zip(corners, corners[1:] + corners[:1]):
+        pt = [A_[k] + s_ * (B_[k] - A_[k]) for k in range(3)]
+        sub = dict(zip(Xs, pt))
+        tot += sp.integrate(sum(sp.sympify(E[k]).subs(sub) * (B_[k] - A_[k]) for k in range(3)), (s_, 0, 1))
+    return sp.simplify(tot)
+
+
+# n = e_2: (e_3, e_1) is positively oriented around e_2 (e_3 x e_1 = e_2)
+rect31 = [(0, 0, 0), (0, 0, p_), (q_, 0, p_), (q_, 0, 0)]
+flux_B = sp.integrate(sp.integrate(Bw[1], (Xs[0], 0, q_)), (Xs[2], 0, p_))
+assert sp.simplify(loop(Ew, rect31) + sp.diff(flux_B, tt)) == 0
+# n = e_1: (e_2, e_3) positively oriented around e_1
+rect23 = [(0, 0, 0), (0, q_, 0), (0, q_, p_), (0, 0, p_)]
+flux_E = sp.integrate(sp.integrate(Ew[0], (Xs[1], 0, q_)), (Xs[2], 0, p_))
+assert sp.simplify(loop(Bw, rect23) - sp.diff(flux_E, tt) / c**2) == 0
+print("6. plane wave: oint E.dx = -d/dt int B.n dA, oint B.dx = (1/c^2) d/dt int E.n dA")
+
+# ---------------------------------------------------------------- 7.
+eps0_n, mu0_n = 8.8541878188e-12, 1.25663706127e-6
+assert abs(1 / (eps0_n * mu0_n) ** 0.5 - 299792458) < 1
+print("7. wave speed 1/sqrt(eps0 mu0) = 2.998e8 m/s (speed of light)")

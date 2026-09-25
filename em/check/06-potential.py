@@ -13,6 +13,8 @@
    where (1/c) F . J = (1/c) J . E gamma_0 + (rho E + J x B)_k gamma_k.
 6. Maxwell stress: T^{ij} = gamma^i . T(gamma^j) = -tau_ij, and the momentum balance
    d_t(S_i/c^2) - sum_j d_j tau_ij = -(rho E + J x B)_i.
+7. Plane wave along e_3: -tau_ij = u k_i k_j, momentum density (u/c)k (radiation
+   pressure u); sunlight 1.4e3/c = 4.7e-6 Pa.
 """
 
 import sympy as sp
@@ -160,3 +162,19 @@ for i in range(3):
     force = rho * E[i] + cross(J, B)[i]
     assert sp.simplify(lhs + force) == 0
 print("6. T^{ij} = -tau_ij; d_t(S/c^2)_i - d_j tau_ij = -(rho E + J x B)_i")
+
+# ---------------------------------------------------------------- 7.
+# Radiation pressure: for the plane wave along e_3 (E perp e_3, cB = e_3 x E) the momentum
+# flux -tau_ij equals u k_i k_j with u = eps0|E|^2, so an absorbing wall normal to e_3 gets
+# pressure u; the momentum density S/c^2 = (u/c) k. Sunlight: 1.4e3/c = 4.7e-6 Pa.
+Ep1, Ep2 = sp.symbols("E1 E2", real=True)
+Epw = [Ep1, Ep2, 0]
+Bpw = [w / c for w in cross([0, 0, 1], Epw)]
+upw = eps0 * dot(Epw, Epw)
+for i in range(3):
+    for j in range(3):
+        assert sp.simplify(-tau(Epw, Bpw, i, j) - upw * (1 if i == j == 2 else 0)) == 0
+Spw = [w / mu0 for w in cross(Epw, Bpw)]
+assert sp.simplify(Spw[2] / c**2 - upw / c) == 0 and Spw[0] == 0 and Spw[1] == 0
+assert round(1.4e3 / 299792458.0 * 1e6, 1) == 4.7
+print("7. plane wave: -tau_ij = u k_i k_j, momentum density (u/c) k; sunlight pressure 4.7e-6 Pa")

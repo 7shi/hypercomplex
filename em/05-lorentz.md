@@ -144,7 +144,7 @@ $$
 である（$I^2=-1$を使った）。したがって$\tilde RF_\perp R$の$\sigma_2$の係数は$E_2\cosh\eta-cB_3\sinh\eta=\gamma(E_2-vB_3)$、$\sigma_3$の係数は$\gamma(E_3+vB_2)$、$Ic\sigma_2$の係数は$\gamma(B_2+vE_3/c^2)$、$Ic\sigma_3$の係数は$\gamma(B_3-vE_2/c^2)$となる。$\boldsymbol v\times\boldsymbol B=v(0,-B_3,B_2)$、$\boldsymbol v\times\boldsymbol E=v(0,-E_3,E_2)$と比べればよい。
 &&&
 
-静止した電荷のまわりにある純粋な電場も、動く観測者からは$\boldsymbol B'_\perp=-\gamma\boldsymbol v\times\boldsymbol E/c^2$の磁場を伴って見えます。動く観測者から見ればその電荷は$-\boldsymbol v$の向きに動いており、[[7shi-em4]]で見たとおり電流を伴います。この磁場は、その電流がビオ＝サバールの法則に従って作る磁場です。
+静止した電荷のまわりにある純粋な電場も、動く観測者からは$\boldsymbol B'_\perp=-\gamma\boldsymbol v\times\boldsymbol E/c^2$の磁場を伴って見えます。動く観測者から見ればその電荷は速度$\boldsymbol u=-\boldsymbol v$で動いており、[[7shi-em4]]で見たとおり電流を伴います。上の変換式からは、観測者の見る電場$\boldsymbol E'$を使って$\boldsymbol B'=\boldsymbol u\times\boldsymbol E'/c^2$と書けます。速さが$c$より十分小さければ、これは[[7shi-em1]]のビオ＝サバールの法則で$I\,d\boldsymbol l$を$q\boldsymbol u$に置き換えた、動く点電荷の作る磁場と一致します。
 
 逆向きの読み方もできます。磁場$\boldsymbol B$の中を速度$\boldsymbol v$で動く電荷には、[[7shi-em1]]のローレンツ力$q\boldsymbol v\times\boldsymbol B$が働きます。電荷と一緒に動く観測者から見ると電荷は静止しているので、磁場による力は働かないはずです。実際、その観測者の電場は$\boldsymbol E'_\perp=\gamma(\boldsymbol E+\boldsymbol v\times\boldsymbol B)_\perp$であり、$\boldsymbol v\times\boldsymbol B$の力は電場による力として現れます。電気的な力と磁気的な力の区別は、観測者の選び方による相対的なものです。ベクトル解析では6成分の変換公式として覚える式ですが、ここでは$F$を回転子で挟むという1つの操作で、$\sigma_1$と反可換な成分に$e^{\sigma_1\eta}$が掛かるだけです。
 

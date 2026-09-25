@@ -16,6 +16,14 @@
 5. Grade parts in DF for F = E + IcB: div E, -c curl B, I curl E, Ic div B.
 6. Integral forms: grades of nF (volume theorem) and of dx F and
    (n x grad)F (surface theorem) give Gauss, div B, Ampere and curl E laws.
+7. SI constants (CODATA 2022): 1/sqrt(eps_0 mu_0) = c; units N/C = V/m and
+   T m/s = V/m, so E and cB have the same unit.
+8. Lorentz force: v.(q(E + v x B)) = q E.v; for E = -grad phi the work
+   int_a^b E.dx = phi(a) - phi(b) along two different paths.
+9. Shell theorem (Gauss-Legendre quadrature) and the uniform ball: outside,
+   E = Q/(4 pi eps_0 r^2) and 4 pi r^2 E = Q/eps_0.
+10. Straight current along e_3: Biot-Savart gives B = mu_0 I/(2 pi r) in the
+   right-handed tangent direction, and 2 pi r B = mu_0 I.
 """
 
 import numpy as np
@@ -185,3 +193,65 @@ assert eq(Hs.grade(0), dot(nv, curl(Ef)))
 assert eq(Hs.grade(3), I * c * dot(nv, curl(Bf)))
 print("6. nF = n.E - c n x B + I n x E + Ic n.B; <dx F>_0 = dx.E, <dx F>_3 = Ic dx.B; "
       "(n x grad)F: scalar n.curl E, pseudoscalar Ic n.curl B")
+
+# ---------------------------------------------------------------- 7.
+# SI constants (CODATA 2022) and units
+from sympy.physics import units as U
+
+eps0_n, mu0_n, c_n = 8.8541878188e-12, 1.25663706127e-6, 299792458.0
+assert abs(1 / np.sqrt(eps0_n * mu0_n) / c_n - 1) < 1e-9
+assert round(eps0_n * 1e12, 3) == 8.854 and round(mu0_n * 1e6, 3) == 1.257 and round(c_n / 1e8, 3) == 2.998
+assert sp.simplify(U.convert_to(U.newton / U.coulomb, U.volt / U.meter) - U.volt / U.meter) == 0
+assert sp.simplify(U.convert_to(U.tesla * U.meter / U.second, U.volt / U.meter) - U.volt / U.meter) == 0
+assert sp.simplify(U.convert_to(U.coulomb**2 / (U.newton * U.meter**2), U.farad / U.meter)
+                   - U.farad / U.meter) == 0
+print("7. 1/sqrt(eps0 mu0) = c (CODATA), N/C = V/m, T m/s = V/m (units of E and cB)")
+
+# ---------------------------------------------------------------- 8.
+# Lorentz force: the magnetic part does no work; power is qE.v
+qq = sp.Symbol("q", real=True)
+vv = sp.symbols("v1:4", real=True)
+Fl = [qq * (Ec[k] + cross(vv, Bc)[k]) for k in range(3)]
+assert sp.expand(dot(Fl, vv) - qq * dot(Ec, vv)) == 0
+# potential: the work q int_a^b E.dx = q(phi(a) - phi(b)) along two different paths
+phi_ex = X[0]**2 * X[1] - X[2] * X[0] + 3 * X[1] * X[2]**2
+E_ex = [-v for v in grad(phi_ex)]
+t = sp.Symbol("t", real=True)
+A_pt, B_pt = (0, 1, -1), (2, -1, 3)
+paths = [[A_pt[k] + t * (B_pt[k] - A_pt[k]) for k in range(3)],
+         [A_pt[k] + t**2 * (B_pt[k] - A_pt[k]) + sp.sin(sp.pi * t) * (k + 1) for k in range(3)]]
+for pth in paths:
+    Ep_ = [v.subs(dict(zip(X, pth))) for v in E_ex]
+    work = sp.integrate(sp.expand(sum(Ep_[k] * sp.diff(pth[k], t) for k in range(3))), (t, 0, 1))
+    assert sp.simplify(work - (phi_ex.subs(dict(zip(X, A_pt))) - phi_ex.subs(dict(zip(X, B_pt))))) == 0
+print("8. v.(q(E + v x B)) = q E.v; int_a^b E.dx = phi(a) - phi(b) independent of the path")
+
+# ---------------------------------------------------------------- 9.
+# Example: spherically symmetric charge. A thin shell of radius s gives the field of a point
+# charge outside (shell theorem), so a ball of total charge Q gives Q/(4 pi eps0 r^2) for r > a,
+# in agreement with Gauss: 4 pi r^2 E = Q/eps0.
+s_, r_, a_, Q = sp.symbols("s r a Q", positive=True)
+w_ = sp.Symbol("w", real=True)  # w = cos(theta)
+# z-component of int (x - y)/|x - y|^3 dS over the shell, x = r e_3
+# (numerically for sample radii r > s, since the closed form involves |r - s|)
+shell_f = sp.lambdify((w_, r_, s_), 2 * sp.pi * s_**2 * (r_ - s_ * w_)
+                      / (r_**2 + s_**2 - 2 * r_ * s_ * w_)**sp.Rational(3, 2))
+wg, wt = np.polynomial.legendre.leggauss(200)
+for rn, sn in ((2.0, 1.0), (5.0, 0.3), (1.5, 1.4)):
+    assert abs(np.sum(wt * shell_f(wg, rn, sn)) - 4 * np.pi * sn**2 / rn**2) < 1e-10
+rho_ball = Q / (sp.Rational(4, 3) * sp.pi * a_**3)
+Eball = sp.integrate(rho_ball * 4 * sp.pi * s_**2 / r_**2, (s_, 0, a_)) / (4 * sp.pi * eps0)
+assert sp.simplify(Eball - Q / (4 * sp.pi * eps0 * r_**2)) == 0
+assert sp.simplify(4 * sp.pi * r_**2 * Eball - Q / eps0) == 0
+print("9. shell theorem: uniform ball of charge Q gives E = Q/(4 pi eps0 r^2) outside; 4 pi r^2 E = Q/eps0")
+
+# ---------------------------------------------------------------- 10.
+# Example: straight current I along e_3. Biot-Savart with I dl = I e_3 dz at y = z e_3 and
+# x = r e_1: e_3 x (x - y) = r e_2, and int r/(r^2 + z^2)^{3/2} dz = 2/r, so B = mu0 I/(2 pi r) e_2
+# (the right-handed tangent at x = r e_1); Ampere: 2 pi r B = mu0 I.
+Icur, z_ = sp.Symbol("I", positive=True), sp.Symbol("z", real=True)
+assert cross([0, 0, 1], [r_, 0, -z_]) == [0, r_, 0]
+Bw = mu0 / (4 * sp.pi) * Icur * sp.integrate(r_ / (r_**2 + z_**2)**sp.Rational(3, 2), (z_, -sp.oo, sp.oo))
+assert sp.simplify(Bw - mu0 * Icur / (2 * sp.pi * r_)) == 0
+assert sp.simplify(2 * sp.pi * r_ * Bw - mu0 * Icur) == 0
+print("10. straight current: Biot-Savart gives B = mu0 I/(2 pi r) in the e_phi direction; 2 pi r B = mu0 I")

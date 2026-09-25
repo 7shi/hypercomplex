@@ -11,6 +11,11 @@
 4. Energy: (eps_0/2) F F^dagger = u + S/c with u = (eps_0/2)(|E|^2 + c^2|B|^2),
    S = E x B / mu_0; <Dq(F F^dagger)>_0 = 2 <(Dq F) F^dagger>_0, hence
    d_t u + div S = -J.E. For the plane wave F F^dagger = 2|E|^2 (1 + k).
+5. Wave fronts xi = const move with speed c along k; theta = kappa xi =
+   omega t - k.x with omega = c kappa, f lambda = c; E x (k x E) = |E|^2 k;
+   u = eps_0|E|^2/2 + |B|^2/(2 mu_0).
+6. Parallel-plate capacitor: charging work Q^2 d/(2 eps_0 S) = (eps_0/2)E^2 S d.
+7. Sunlight 1.4e3 W/m^2: <cos^2> = 1/2 gives E_0 ~ 1.0e3 V/m, B_0 ~ 3.4e-6 T.
 """
 
 import sympy as sp
@@ -167,3 +172,40 @@ Tw = Fw * rev(Fw)
 assert eq(Tw, 2 * dot(Eperp, Eperp) * (1 + k))
 print("4. (eps0/2)FF^dagger = u + S/c; <Dq(FF^dagger)>_0 = 2<(Dq F)F^dagger>_0; "
       "d_t u + div S = -J.E; plane wave FF^dagger = 2|E|^2(1 + k)")
+
+# ---------------------------------------------------------------- 5.
+# Wave fronts: F(xi) at time t + dt and position x + c dt k equals F(xi) at (t, x).
+tt, dt, om = sp.symbols("t dt omega", real=True)
+xi_t = c * tt - dot(kc, Xs)
+shifted = xi_t.subs({tt: tt + dt, **{Xs[i]: Xs[i] + c * dt * kc[i] for i in range(3)}})
+assert sp.simplify(sp.trigsimp(shifted - xi_t)) == 0
+# theta = kappa xi = omega t - k.x with omega = c kappa; f lambda = c
+assert sp.expand(kap * xi_t - (c * kap * tt - dot([kap * v for v in kc], Xs))) == 0
+fr, lam = c * kap / (2 * sp.pi), 2 * sp.pi / kap
+assert sp.simplify(fr * lam - c) == 0
+# E, B, k right-handed: E x (k x E) = |E|^2 k for E perp k
+EkB = cross(Eperp, cross(kc, Eperp))
+for i in range(3):
+    assert sp.simplify(sp.trigsimp(sp.expand(EkB[i] - dot(Eperp, Eperp) * kc[i]))) == 0
+# u = (eps0/2)|E|^2 + |B|^2/(2 mu0)
+assert sp.simplify(u - (eps0 / 2 * dot(Ec, Ec) + dot(Bc, Bc) / (2 * mu0))) == 0
+print("5. xi-planes move with speed c along k; omega = c kappa, f lambda = c; E x cB parallel to k; "
+      "u = eps0|E|^2/2 + |B|^2/(2 mu0)")
+
+# ---------------------------------------------------------------- 6.
+# Parallel-plate capacitor: charging work int_0^Q (q d/(eps0 S)) dq = (eps0/2) E^2 S d
+qv, Q, Sa, dd = sp.symbols("q Q S d", positive=True)
+W = sp.integrate(qv * dd / (eps0 * Sa), (qv, 0, Q))
+Ecap = Q / (eps0 * Sa)
+assert sp.simplify(W - Q**2 * dd / (2 * eps0 * Sa)) == 0
+assert sp.simplify(W - eps0 / 2 * Ecap**2 * Sa * dd) == 0
+print("6. capacitor: W = Q^2 d/(2 eps0 S) = (eps0/2) E^2 S d")
+
+# ---------------------------------------------------------------- 7.
+# Sunlight: <cos^2> = 1/2; c eps0 E0^2/2 = 1.4e3 W/m^2 gives E0 ~ 1.0e3 V/m, B0 = E0/c ~ 3.4e-6 T
+ph = sp.Symbol("phi", real=True)
+assert sp.integrate(sp.cos(ph)**2, (ph, 0, 2 * sp.pi)) / (2 * sp.pi) == sp.Rational(1, 2)
+eps0_n, c_n = 8.8541878188e-12, 299792458.0
+E0 = (2 * 1.4e3 / (c_n * eps0_n)) ** 0.5
+assert round(E0, -2) == 1.0e3 and round(E0 / c_n * 1e6, 1) == 3.4
+print(f"7. sunlight 1.4e3 W/m^2: E0 = {E0:.0f} V/m, B0 = {E0 / c_n:.2e} T")

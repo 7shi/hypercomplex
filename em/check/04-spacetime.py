@@ -15,6 +15,7 @@
    and relative-vector part of Dq F (div E, d_0 E - c curl B), gamma_0 (D ^ F) is the
    rest (I(curl E + c d_0 B), Ic div B). With Maxwell's equations D . F = mu_0 c J,
    D ^ F = 0. D . (D . F) = 0 for any bivector F.
+6. Light rays x_0(gamma_0 + n) are null; c gamma_0 + u_k gamma_k has square c^2 - |u|^2.
 """
 
 import sympy as sp
@@ -125,3 +126,15 @@ Bg = sum((sp.Function(f"F{m}")(*X) * MV({m: 1}, S.neg) for m in range(16) if bin
 assert eq(S.D(S.D(Bg).grade(1)).grade(0), 0)
 print("5. DF = D.F + D^F; gamma_0(D.F) = div E + (d0 E - c curl B), gamma_0(D^F) = I(curl E + c d0 B) + Ic div B; "
       "D.F = mu0 c J; D.(D.F) = 0")
+
+# ---------------------------------------------------------------- 6.
+# Classification: a light signal from the origin, x = x0 (gamma_0 + n) with |n| = 1, is null;
+# a world line with speed |u| < c has timelike tangent c gamma_0 + u_k gamma_k.
+th, ph, x0s = sp.symbols("theta phi x0", real=True)
+nvec = [sp.sin(th) * sp.cos(ph), sp.sin(th) * sp.sin(ph), sp.cos(th)]
+light = x0s * (g0 + sum((nvec[k] * g[k + 1] for k in range(3)), S.zero()))
+assert sp.simplify(sp.trigsimp((light * light).scalar())) == 0
+uu = sp.symbols("u1:4", real=True)
+tang = c * g0 + sum((uu[k] * g[k + 1] for k in range(3)), S.zero())
+assert sp.expand((tang * tang).scalar() - (c**2 - sum(v**2 for v in uu))) == 0
+print("6. light rays are null (x^2 = 0); the tangent c gamma_0 + u gamma has square c^2 - |u|^2 > 0 for |u| < c")

@@ -20,6 +20,7 @@
    profile f(s) = exp(-1/s^2) (s > 0), 0 (s <= 0) is a solution vanishing on a
    half-space without being zero (no unique continuation); cos(x_0 - x_3) is
    bounded and nonconstant (no Liouville).
+7. Radiation: (f'/r)^2 4 pi r^2 is independent of r, (f/r^2)^2 4 pi r^2 -> 0.
 """
 
 import sympy as sp
@@ -135,3 +136,11 @@ assert sp.simplify(box(w(x0 - Xs[2]))) == 0
 assert sp.simplify(box(sp.cos(x0 - Xs[2]))) == 0
 print("6. mean of (x0 - x3)^2 over |x| = R is x0^2 + R^2/3; f(x0 - x3) solves for any f; "
       "exp(-1/s^2) is flat at 0 (solution vanishing on a half-space); cos(x0 - x3) bounded")
+
+# ---------------------------------------------------------------- 7.
+# Radiation: through the sphere of radius r, a field ~ f'/r gives energy flow ~ |f'|^2/r^2
+# times the area 4 pi r^2, independent of r; a field ~ f/r^2 gives ~ 1/r^2 -> 0.
+rr_, fp_, f_ = sp.symbols("r fp f", positive=True)
+assert sp.simplify((fp_ / rr_)**2 * 4 * sp.pi * rr_**2 - 4 * sp.pi * fp_**2) == 0
+assert sp.limit((f_ / rr_**2)**2 * 4 * sp.pi * rr_**2, rr_, sp.oo) == 0
+print("7. 1/r part: flux through the sphere independent of r; 1/r^2 part: flux -> 0")

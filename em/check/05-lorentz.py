@@ -3,13 +3,13 @@
 1. Exponentials: sigma_1^2 = +1 gives e^{sigma_1 a} = cosh a + sigma_1 sinh a,
    (I sigma_3)^2 = -1 gives e^{I sigma_3 a} = cos a + I sigma_3 sin a (power series
    truncated and compared via the recurrence of the square).
-2. Boost: R = e^{sigma_1 phi/2}, R R~ = 1, R gamma_0 R~ = cosh(phi) gamma_0 + sinh(phi) gamma_1,
-   R gamma_1 R~ = sinh(phi) gamma_0 + cosh(phi) gamma_1, gamma_2, gamma_3 fixed; x^2 invariant.
+2. Boost: R = e^{sigma_1 eta/2}, R R~ = 1, R gamma_0 R~ = cosh(eta) gamma_0 + sinh(eta) gamma_1,
+   R gamma_1 R~ = sinh(eta) gamma_0 + cosh(eta) gamma_1, gamma_2, gamma_3 fixed; x^2 invariant.
    Rapidities add: e^{sigma_1 a/2} e^{sigma_1 b/2} = e^{sigma_1 (a+b)/2}.
 3. Rotation: R = e^{-I sigma_3 theta/2} rotates gamma_1 -> cos gamma_1 + sin gamma_2,
    fixes gamma_0 and gamma_3; it commutes with gamma_0 and acts on sigma_k as a rotation.
 4. Fields seen by an observer with gamma_0' = R gamma_0 R~ (velocity v e_1,
-   v/c = tanh phi): F' = R~ F R has E'_1 = E_1, E'_2 = gamma(E_2 - v B_3),
+   v/c = tanh eta): F' = R~ F R has E'_1 = E_1, E'_2 = gamma(E_2 - v B_3),
    E'_3 = gamma(E_3 + v B_2), B'_1 = B_1, B'_2 = gamma(B_2 + v E_3/c^2),
    B'_3 = gamma(B_3 - v E_2/c^2). Equivalently F = sum E'_k sigma'_k + Ic sum B'_k sigma'_k
    with sigma'_k = R sigma_k R~.
@@ -18,7 +18,13 @@
    (F . v = (Fv - vF)/2) has gamma_0 component gamma q E.u / c and gamma_k components
    gamma q (E + u x B)_k; v . (F . v) = 0.
 7. Doppler: for the plane wave F = (1 + sigma_1) E_perp f(x_0 - x_1) and the boost
-   along e_1, R~ F R = e^{-phi} F and x_0 - x_1 = e^{-phi}(x'_0 - x'_1).
+   along e_1, R~ F R = e^{-eta} F and x_0 - x_1 = e^{-eta}(x'_0 - x'_1).
+8. dx_1/dt = c tanh(eta) along gamma_0', t = cosh(eta) tau (time dilation);
+   velocity addition (v1 + v2)/(1 + v1 v2/c^2) = c tanh(a + b), c with c, below c.
+9. Boosting a pure electric field: B' = u x E'/c^2 with u = -v; Biot-Savart with
+   I dl -> q u equals u x E_Coulomb/c^2.
+10. J = c rho gamma_0 seen by the boosted observer: rho' = gamma rho, J'_1 = -gamma rho v.
+11. gamma m c^2 = m c^2 + m u^2/2 + O(u^4).
 """
 
 import sympy as sp
@@ -83,13 +89,13 @@ for b, v in (sp.cos(a) + Is3 * sp.sin(a)).d.items():
 print("1. e^{sigma_1 a} = cosh a + sigma_1 sinh a, e^{I sigma_3 a} = cos a + I sigma_3 sin a")
 
 # ---------------------------------------------------------------- 2.
-phi = sp.Symbol("phi", real=True)
-R = sp.cosh(phi / 2) + sg[0] * sp.sinh(phi / 2)
+eta = sp.Symbol("eta", real=True)
+R = sp.cosh(eta / 2) + sg[0] * sp.sinh(eta / 2)
 Rt = rev(R)
-assert eq(Rt, sp.cosh(phi / 2) - sg[0] * sp.sinh(phi / 2))
+assert eq(Rt, sp.cosh(eta / 2) - sg[0] * sp.sinh(eta / 2))
 assert eq(R * Rt, 1)
-assert eq(R * g0 * Rt, sp.cosh(phi) * g0 + sp.sinh(phi) * g[1])
-assert eq(R * g[1] * Rt, sp.sinh(phi) * g0 + sp.cosh(phi) * g[1])
+assert eq(R * g0 * Rt, sp.cosh(eta) * g0 + sp.sinh(eta) * g[1])
+assert eq(R * g[1] * Rt, sp.sinh(eta) * g0 + sp.cosh(eta) * g[1])
 assert eq(R * g[2] * Rt, g[2]) and eq(R * g[3] * Rt, g[3])
 xp = R * S.x * Rt
 assert eq(xp * xp, S.x * S.x)
@@ -97,7 +103,7 @@ bb = sp.Symbol("b", real=True)
 Ra = sp.cosh(a / 2) + sg[0] * sp.sinh(a / 2)
 Rb = sp.cosh(bb / 2) + sg[0] * sp.sinh(bb / 2)
 assert eq(Ra * Rb, sp.cosh((a + bb) / 2) + sg[0] * sp.sinh((a + bb) / 2))
-print("2. R = e^{sigma_1 phi/2}: gamma_0 -> cosh gamma_0 + sinh gamma_1, gamma_1 -> sinh gamma_0 + cosh gamma_1, "
+print("2. R = e^{sigma_1 eta/2}: gamma_0 -> cosh gamma_0 + sinh gamma_1, gamma_1 -> sinh gamma_0 + cosh gamma_1, "
       "x^2 invariant, rapidities add")
 
 # ---------------------------------------------------------------- 3.
@@ -126,8 +132,8 @@ def split(M):
 
 
 Ep, Bp = split(Fp)
-gam = sp.cosh(phi)
-vv = c * sp.tanh(phi)
+gam = sp.cosh(eta)
+vv = c * sp.tanh(eta)
 exp_E = [Ec[0], gam * (Ec[1] - vv * Bc[2]), gam * (Ec[2] + vv * Bc[1])]
 exp_B = [Bc[0], gam * (Bc[1] + vv * Ec[2] / c**2), gam * (Bc[2] - vv * Ec[1] / c**2)]
 for k in range(3):
@@ -166,15 +172,70 @@ print("6. v = gamma(c gamma_0 + u gamma), v^2 = c^2; (q/c)F.v = gamma(q E.u/c) g
 
 # ---------------------------------------------------------------- 7.
 # Doppler: a plane wave along sigma_1, F = (1 + sigma_1) E_perp f(x_0 - x_1), seen by the
-# observer boosted along e_1: R~ F R = e^{-phi} F (amplitude), and x_0 - x_1 = e^{-phi}(x'_0 - x'_1)
+# observer boosted along e_1: R~ F R = e^{-eta} F (amplitude), and x_0 - x_1 = e^{-eta}(x'_0 - x'_1)
 # with observer coordinates x'_0 = x . gamma'_0, x'_1 = -x . gamma'_1.
 Ey, Ez = sp.symbols("E_y E_z", real=True)
 Fw = (1 + sg[0]) * (Ey * sg[1] + Ez * sg[2])
-assert eq(rev(R) * Fw * R, sp.exp(-phi) * Fw)
+assert eq(rev(R) * Fw * R, sp.exp(-eta) * Fw)
 ip = lambda p, q: ((p * q + q * p) / 2).scalar()
 g0p, g1p = R * g0 * Rt, R * g[1] * Rt
 X = S.X
 x0p = ip(S.x, g0p)
 x1p = -ip(S.x, g1p)
-assert sp.simplify((X[0] - X[1] - sp.exp(-phi) * (x0p - x1p)).rewrite(sp.exp)) == 0
-print("7. plane wave along the boost: R~ F R = e^{-phi} F, x0 - x1 = e^{-phi}(x0' - x1') (Doppler factor)")
+assert sp.simplify((X[0] - X[1] - sp.exp(-eta) * (x0p - x1p)).rewrite(sp.exp)) == 0
+print("7. plane wave along the boost: R~ F R = e^{-eta} F, x0 - x1 = e^{-eta}(x0' - x1') (Doppler factor)")
+
+# ---------------------------------------------------------------- 8.
+# gamma_0' = R gamma_0 R~ moves with dx_1/dt = c tanh(eta); time dilation: c tau gamma_0'
+# has gamma_0 component c tau cosh(eta), i.e. t = gamma tau.
+tau_ = sp.Symbol("tau", positive=True)
+g0p = R * g0 * Rt
+assert sp.simplify(comp(g0p, 2) / comp(g0p, 1) - sp.tanh(eta)) == 0
+assert sp.simplify(comp(c * tau_ * g0p, 1) - c * tau_ * sp.cosh(eta)) == 0
+assert sp.simplify(sp.cosh(eta) - 1 / sp.sqrt(1 - sp.tanh(eta)**2)) == 0
+# velocity addition: (v1 + v2)/(1 + v1 v2/c^2); v2 = c gives c; |result| < c for |v1|, |v2| < c
+v1, v2 = sp.symbols("v1 v2", real=True)
+add = (v1 + v2) / (1 + v1 * v2 / c**2)
+assert sp.simplify(add.subs({v1: c * sp.tanh(a), v2: c * sp.tanh(bb)}) - c * sp.tanh(a + bb)) == 0
+assert sp.simplify(add.subs(v2, c) - c) == 0
+assert sp.factor(c**2 - add**2) == sp.factor((c**2 - v1**2) * (c**2 - v2**2) / (c**2 + v1 * v2)**2 * c**2)
+print("8. dx1/dt = c tanh(eta), t = cosh(eta) tau; (v1 + v2)/(1 + v1 v2/c^2): c with c, < c for |v1|, |v2| < c")
+
+# ---------------------------------------------------------------- 9.
+# A pure electric field (B = 0) seen by the boosted observer: with the charge velocity
+# u = -v e_1 relative to the observer, B' = u x E'/c^2 exactly.
+F0 = svec(Ec)
+Ep0, Bp0 = split(rev(R) * F0 * R)
+uvel = [-c * sp.tanh(eta), 0, 0]
+uxE = cross(uvel, Ep0)
+for k in range(3):
+    assert sp.simplify((Bp0[k] - uxE[k] / c**2).rewrite(sp.exp)) == 0
+# low speed: Biot-Savart with I dl -> q u gives mu0 q u x r/(4 pi r^3) = u x E_Coulomb/c^2
+eps0 = sp.Symbol("epsilon_0", positive=True)
+mu0 = 1 / (eps0 * c**2)
+rv = sp.symbols("r1:4", real=True)
+ul = sp.symbols("w1:4", real=True)
+rn = sp.sqrt(sum(v**2 for v in rv))
+Ecoul = [q * v / (4 * sp.pi * eps0 * rn**3) for v in rv]
+BS = [mu0 * q / (4 * sp.pi) * w / rn**3 for w in cross(ul, rv)]
+for k in range(3):
+    assert sp.simplify(BS[k] - cross(ul, Ecoul)[k] / c**2) == 0
+print("9. pure E boosted: B' = u x E'/c^2 with u = -v; Biot-Savart for q u equals u x E/c^2")
+
+# ---------------------------------------------------------------- 10.
+# Current seen by the boosted observer: J = c rho gamma_0 (charges at rest) has components
+# c rho' = J . gamma_0' = gamma c rho and J'_1 = -J . gamma_1' = -gamma rho v.
+rho_ = sp.Symbol("rho", real=True)
+Jst = c * rho_ * g0
+g1p = R * g[1] * Rt
+ipv = lambda p, r: ((p * r + r * p) / 2).scalar()
+assert sp.simplify(ipv(Jst, g0p) - sp.cosh(eta) * c * rho_) == 0
+assert sp.simplify((-ipv(Jst, g1p) + sp.cosh(eta) * rho_ * c * sp.tanh(eta)).rewrite(sp.exp)) == 0
+print("10. static charge seen by the moving observer: rho' = gamma rho, J'_1 = -gamma rho v")
+
+# ---------------------------------------------------------------- 11.
+# gamma m c^2 = m c^2 + m u^2/2 + O(u^4); d(gamma m u)/dt -> m du/dt as u -> 0
+m_, us = sp.symbols("m u", positive=True)
+ser = sp.series(m_ * c**2 / sp.sqrt(1 - us**2 / c**2), us, 0, 4).removeO()
+assert sp.expand(ser - (m_ * c**2 + m_ * us**2 / 2)) == 0
+print("11. gamma m c^2 = m c^2 + m u^2/2 + ...")
