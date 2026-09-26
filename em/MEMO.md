@@ -40,7 +40,7 @@
 |---|---|---|---|---|
 | 01 | `01-static.md` | `7shi-em1` | 静電場と静磁場 | クーロン場とビオ＝サバールの法則は、3次元の核による積分公式のベクトル部と2ベクトル部。静的な方程式はその$D$微分 |
 | 02 | `02-maxwell.md` | `7shi-em2` | マクスウェル方程式 | 1本の式$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$のグレード成分が4本の式。係数の2乗の符号で$\Delta$と$\partial_0^2-\Delta$が分かれる |
-| 03 | `03-waves.md` | `7shi-em3` | 電磁波とエネルギーの流れ | 平面波は$F^2=0$、指数関数の$i$は擬スカラー$I$。$\frac{\varepsilon_0}2FF^\dagger$がエネルギー密度とポインティングベクトルのパラベクトル |
+| 03 | `03-waves.md` | `7shi-em3` | 電磁波とエネルギーの流れ | 平面波は$F^2=0$、複素指数関数の虚数単位$j$の役割を擬スカラー$i$が担う。$\frac{\varepsilon_0}2FF^\dagger$がエネルギー密度とポインティングベクトルのパラベクトル |
 | 04 | `04-spacetime.md` | `7shi-em4` | 時空代数とマクスウェル方程式 | $DF=J$。$\gamma_0$を掛けると02の式に戻る。楕円型と双曲型は空間の生成元の2乗の符号で分かれる |
 | 05 | `05-lorentz.md` | `7shi-em5` | ローレンツ変換と回転子 | 2乗が$+1$の2ベクトルの指数関数がブースト。$F\mapsto RF\tilde R$で電場と磁場が混ざる。ローレンツ力 |
 | 06 | `06-potential.md` | `7shi-em6` | ポテンシャルとエネルギー運動量 | $F=D\wedge A$、$D\cdot A$がゲージの自由度、$D^2A=J$。エネルギー運動量の時空版 |
@@ -69,7 +69,7 @@
 ## 03 電磁波とエネルギーの流れ
 
 - 平面波$F=(1+\hat{\boldsymbol k})\boldsymbol E_0\exp(\cdots)$の形。$F^2=0$の成分が$\boldsymbol E\perp\boldsymbol B$と$|\boldsymbol E|=c|\boldsymbol B|$
-- 複素指数関数の$i$を擬スカラー$I$に置き換えられ、円偏光が平面内の回転になる（[[7shi-cla3]]の「$i$は擬スカラー」）。$I$は$\operatorname{Cl}_{3,0}$の中心にあるので可換性の問題は起きない
+- 複素指数関数の虚数単位$j$を擬スカラー$i$に置き換えられ、円偏光が平面内の回転になる（[[7shi-cla3]]の「虚数単位は擬スカラー」）。$i$は$\operatorname{Cl}_{3,0}$の中心にあるので可換性の問題は起きない
 - $\frac{\varepsilon_0}2FF^\dagger=\frac{\varepsilon_0}2(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)+\varepsilon_0c\,\boldsymbol E\times\boldsymbol B$（確認済み）。マクスウェル方程式からの保存則の導出
 
 ## 04 時空代数とマクスウェル方程式
