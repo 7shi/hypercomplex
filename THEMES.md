@@ -152,7 +152,7 @@
 3. [電磁波とエネルギーの流れ](em/03-waves.md) — 平面波は冪等元$(1+\hat{\boldsymbol k})/2$の像で$F^2=0$。擬スカラーの指数関数が円偏光。$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$とポインティングの定理。
 4. [時空代数とマクスウェル方程式](em/04-spacetime.md) — $\operatorname{Cl}_{1,3}(\mathbb R)$で$DF=\mu_0cJ$、$D\cdot F=\mu_0cJ$と$D\wedge F=0$。$\gamma_0$を掛ける操作と四元数解析の$e_0$の対比、符号数の選択。
 5. [ローレンツ変換と回転子](em/05-lorentz.md) — 2乗が$\mp1$の2ベクトルの指数関数で回転とブースト。$\tilde RFR$による電場と磁場の混合、不変量、ドップラー因子、ローレンツ力$\frac qcF\cdot v$。
-6. [ポテンシャルとエネルギー運動量](em/06-potential.md) — $F=D\wedge A$、ゲージ$A\mapsto A+D\chi$、ローレンツゲージで$\square A=\mu_0cJ$。$T(a)=-\frac{\varepsilon_0}2FaF$の発散がローレンツ力の密度。
+6. [ポテンシャルとエネルギー運動量](em/06-potential.md) — $F=D\wedge A$、ゲージ$A\mapsto A+D\chi$、ローレンスゲージで$\square A=\mu_0cJ$。$T(a)=-\frac{\varepsilon_0}2FaF$の発散がローレンツ力の密度。
 7. [双曲型の基本解と性質の仕分け](em/07-retarded.md) — 遅延基本解と遅延ポテンシャル、光円錐上の$D$の基本解。クリフォード解析の性質を、双曲型で形を保つもの・替わるもの・失われるもの・次元で変わるものに仕分ける。
 
 関連: [クリフォード解析](#クリフォード解析)の基本定理・積分公式・パラベクトル変数を前提とする。[四元数が脇役になった歴史的経緯](qua/history.md)（[導入と歴史](#導入と歴史)）の内積とベクトル積の分離に対する回答にあたる。
