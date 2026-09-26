@@ -23,6 +23,10 @@
 7. Radiation: (f'/r)^2 4 pi r^2 is independent of r, (f/r^2)^2 4 pi r^2 -> 0.
 8. Radiation: D(x_0 - r) = gamma_0 + n = k (null); for vectors (k ^ a)^2 = (k.a)^2 - k^2 a^2, so
    k.a = 0 gives (k ^ a)^2 = 0 (the 1/r part of the retarded field is null).
+9. Radiation: for F = k ^ a with k = gamma_0 + n, k.a = 0, T(gamma_0) = -(1/2) F gamma_0 F
+   equals u k, so S = c u n (energy flows outward at the speed c).
+10. Domain of dependence: T(gamma_0)^2 = |F^2|^2/4 >= 0 and u >= 0, so u + S.m/c >= 0 for
+   every unit m (no energy enters a ball shrinking at the speed c).
 """
 
 import sympy as sp
@@ -156,3 +160,37 @@ wedge = (kk * av - av * kk) / 2
 dotk = ((kk * av + av * kk) / 2)
 assert eq(wedge * wedge, dotk * dotk - (kk * kk) * (av * av))
 print("8. D(x0 - r) = gamma_0 + n null; (k ^ a)^2 = (k.a)^2 - k^2 a^2, so the radiation part is null")
+
+# ---------------------------------------------------------------- 9.
+# The radiation part F = k ^ a with k = gamma_0 + n (n a unit spatial direction) and
+# k . a = 0 carries its energy along n at the speed c: T(gamma_0) = -(1/2) F gamma_0 F
+# (eps_0 dropped) is u k, i.e. u gamma_0 + (S/c) with S = c u n.
+th9, ph9 = sp.symbols("theta9 phi9", real=True)
+nv = [sp.sin(th9) * sp.cos(ph9), sp.sin(th9) * sp.sin(ph9), sp.cos(th9)]
+n9 = sum((nv[k] * g[k + 1] for k in range(3)), S.zero())
+k9 = g[0] + n9
+a9 = sp.symbols("a0:4", real=True)
+# k . a = a0 - n . (a1, a2, a3) = 0 fixes a0
+a9v = sum(nv[k] * a9[k + 1] for k in range(3)) * g[0] + sum((a9[k + 1] * g[k + 1] for k in range(3)), S.zero())
+assert eq((k9 * a9v + a9v * k9) / 2, 0)
+F9 = (k9 * a9v - a9v * k9) / 2
+T9 = -(F9 * g[0] * F9) / 2
+u9 = ((g[0] * T9 + T9 * g[0]) / 2).grade(0)
+assert eq(T9, u9 * k9)
+print("9. radiation part k ^ a (k . a = 0): T(gamma_0) = u (gamma_0 + n), i.e. S = c u n")
+
+# ---------------------------------------------------------------- 10.
+# Domain of dependence: for any F, T(gamma_0)^2 = |F^2|^2 / 4 >= 0 and gamma_0 . T(gamma_0) = u >= 0,
+# so T(gamma_0) is future causal and u + S.m/c >= u - |S|/c >= 0 for every unit m
+# (the energy leaving a ball shrinking at speed c is nonnegative).
+E10, B10 = sp.symbols("E1:4", real=True), sp.symbols("B1:4", real=True)
+sg10 = [g[k] * g[0] for k in (1, 2, 3)]
+F10 = sum((E10[k] * sg10[k] for k in range(3)), S.zero()) + S.I * sum((B10[k] * sg10[k] for k in range(3)), S.zero())
+T10 = -(F10 * g[0] * F10) / 2
+F2 = F10 * F10
+al, be = F2.grade(0), -(S.I * F2).grade(0)
+assert eq(F2, al + S.I * be)
+assert eq(T10 * T10, (al * al + be * be) / 4)
+u10 = ((g[0] * T10 + T10 * g[0]) / 2).grade(0)
+assert eq(u10, sum(v**2 for v in E10 + B10) / 2)
+print("10. T(gamma_0)^2 = |F^2|^2/4 >= 0, u >= 0: energy flux u + S.m/c >= 0 through a shrinking sphere")
