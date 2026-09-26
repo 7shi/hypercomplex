@@ -1,8 +1,8 @@
-[[7shi-em1]]では、静的な電場と磁場を$F=\boldsymbol E+Ic\boldsymbol B$にまとめ、ディラック作用素$D$について$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$が成り立つことを見ました。本記事では時間変化する場に進みます。$x_0=ct$を座標に加えた作用素$\mathcal D=\partial_0+D$を使うと、マクスウェル方程式は$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式になり、ベクトル解析の4本の式はそのスカラー・ベクトル・2ベクトル・擬スカラー部として回収されます。発散と回転は作用させる演算子として選ぶ必要がなく、$\mathcal D$を掛けて展開すれば自動的に揃います。この作用素は[[7shi-cla4]]の四元数解析の作用素$\mathcal D=\partial_0+i\partial_1+j\partial_2+k\partial_3$と同じ形をしていますが、係数の2乗が$-1$から$+1$に替わっています。その結果、共役との積はラプラシアンではなく波動作用素$\partial_0^2-\Delta$になり、正則関数の成分が調和関数になったことに対応して、電磁場の成分が波動方程式を満たすことが得られます。
+[[7shi-em1]]では、静的な電場と磁場を$F=\boldsymbol E+ic\boldsymbol B$にまとめ、ディラック作用素$D$について$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$が成り立つことを見ました。本記事では時間変化する場に進みます。$x_0=ct$を座標に加えた作用素$\mathcal D=\partial_0+D$を使うと、マクスウェル方程式は$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式になり、ベクトル解析の4本の式はそのスカラー・ベクトル・2ベクトル・擬スカラー部として回収されます。発散と回転は作用させる演算子として選ぶ必要がなく、$\mathcal D$を掛けて展開すれば自動的に揃います。この作用素は[[7shi-cla4]]の四元数解析の作用素$\mathcal D=\partial_0+h_1\partial_1+h_2\partial_2+h_3\partial_3$（$h_1,h_2,h_3$は四元数の単位）と同じ形をしていますが、係数の2乗が$-1$から$+1$に替わっています。その結果、共役との積はラプラシアンではなく波動作用素$\partial_0^2-\Delta$になり、正則関数の成分が調和関数になったことに対応して、電磁場の成分が波動方程式を満たすことが得られます。
 
 # 設定
 
-[[7shi-em1]]と同じく、$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$、擬スカラーを$I=e_1e_2e_3$とし、空間のディラック作用素を$D=\sum_{k=1}^3e_k\partial_k$とします。時間$t$は光速$c$を掛けた$x_0=ct$で表し、$\partial_0=\partial/\partial x_0=\frac1c\partial_t$と書きます。
+[[7shi-em1]]と同じく、$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$、擬スカラーを$i=e_1e_2e_3$とし、空間のディラック作用素を$D=\sum_{k=1}^3e_k\partial_k$とします。時間$t$は光速$c$を掛けた$x_0=ct$で表し、$\partial_0=\partial/\partial x_0=\frac1c\partial_t$と書きます。
 
 &&&def 時空の作用素
 $$
@@ -16,7 +16,7 @@ $\mathcal D$は、スカラー$1$と空間ベクトル$e_k$を係数とするパ
 電場$\boldsymbol E$と磁場$\boldsymbol B$は時刻と位置の関数とし、[[7shi-em1]]と同じく
 
 $$
-F=\boldsymbol E+Ic\boldsymbol B
+F=\boldsymbol E+ic\boldsymbol B
 $$
 
 とまとめます。電荷密度$\rho$と電流密度$\boldsymbol J$も時間に依存してかまいません。関数はすべて必要な回数だけ連続微分可能とします。
@@ -84,15 +84,15 @@ $$
 
 # 1本の式
 
-$\partial_0$はスカラーの作用素なので、$F$に作用させてもグレードを変えません。$\partial_0F=\partial_0\boldsymbol E+Ic\,\partial_0\boldsymbol B$のベクトル部と2ベクトル部が、$DF$の同じグレードの項に加わります。$DF$の成分は[[7shi-em1]]で見たとおりなので、$\mathcal DF$の成分は次のようになります。
+$\partial_0$はスカラーの作用素なので、$F$に作用させてもグレードを変えません。$\partial_0F=\partial_0\boldsymbol E+ic\,\partial_0\boldsymbol B$のベクトル部と2ベクトル部が、$DF$の同じグレードの項に加わります。$DF$の成分は[[7shi-em1]]で見たとおりなので、$\mathcal DF$の成分は次のようになります。
 
 &&&fml $\mathcal DF$のグレード成分 [fml-grades]
 $$
-\mathcal D(\boldsymbol E+Ic\boldsymbol B)
+\mathcal D(\boldsymbol E+ic\boldsymbol B)
 =\nabla\cdot\boldsymbol E
 +\bigl(\partial_0\boldsymbol E-c\,\nabla\times\boldsymbol B\bigr)
-+I\bigl(\nabla\times\boldsymbol E+c\,\partial_0\boldsymbol B\bigr)
-+Ic\,\nabla\cdot\boldsymbol B
++i\bigl(\nabla\times\boldsymbol E+c\,\partial_0\boldsymbol B\bigr)
++ic\,\nabla\cdot\boldsymbol B
 $$
 &&&
 
@@ -127,17 +127,17 @@ $$
 
 &&&fml ベクトル解析の恒等式
 $$
-D^2\varphi=\nabla\cdot\nabla\varphi+I\,\nabla\times\nabla\varphi=\Delta\varphi,
+D^2\varphi=\nabla\cdot\nabla\varphi+i\,\nabla\times\nabla\varphi=\Delta\varphi,
 $$
 
 $$
-D^2\boldsymbol V=\bigl(\nabla(\nabla\cdot\boldsymbol V)-\nabla\times(\nabla\times\boldsymbol V)\bigr)+I\,\nabla\cdot(\nabla\times\boldsymbol V)=\Delta\boldsymbol V
+D^2\boldsymbol V=\bigl(\nabla(\nabla\cdot\boldsymbol V)-\nabla\times(\nabla\times\boldsymbol V)\bigr)+i\,\nabla\cdot(\nabla\times\boldsymbol V)=\Delta\boldsymbol V
 $$
 &&&
 
 グレードを比べると、$\nabla\times\nabla\varphi=0$、$\nabla\cdot(\nabla\times\boldsymbol V)=0$、$\nabla\times(\nabla\times\boldsymbol V)=\nabla(\nabla\cdot\boldsymbol V)-\Delta\boldsymbol V$がまとめて得られます。個別に覚える3つの公式は、$D^2=\Delta$という1つの事実のグレード成分です。以下の連続の式と波動方程式の導出でも、これらの公式を使う場面は、$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$の計算に置き換わります。
 
-積分形も[[7shi-em1]]と同じく基本定理のグレード成分として得られます。時間によらない曲面$S$について曲面の基本定理を$F$に使うと、スカラー部と擬スカラー部の右辺は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$Ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$の面積分で、そこに2ベクトル部とベクトル部の式を代入します。
+積分形も[[7shi-em1]]と同じく基本定理のグレード成分として得られます。時間によらない曲面$S$について曲面の基本定理を$F$に使うと、スカラー部と擬スカラー部の右辺は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$の面積分で、そこに2ベクトル部とベクトル部の式を代入します。
 
 &&&fml 回転の2本の積分形
 $$
@@ -193,10 +193,10 @@ $$
 \bar{\mathcal D}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
 =\Bigl(\partial_0\rho+\frac1c\nabla\cdot\boldsymbol J\Bigr)
 -\Bigl(\nabla\rho+\frac1c\partial_0\boldsymbol J\Bigr)
-+\frac Ic\nabla\times\boldsymbol J
++\frac ic\nabla\times\boldsymbol J
 $$
 
-ここで$D\boldsymbol J=\nabla\cdot\boldsymbol J+I\,\nabla\times\boldsymbol J$を使いました。
+ここで$D\boldsymbol J=\nabla\cdot\boldsymbol J+i\,\nabla\times\boldsymbol J$を使いました。
 
 ## 連続の式
 

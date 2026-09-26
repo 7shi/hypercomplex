@@ -96,7 +96,7 @@ $\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma
 $\sigma_k^2=\gamma_k\gamma_0\gamma_k\gamma_0=-\gamma_k^2\gamma_0^2=1$である。$k\ne l$なら$\gamma_k\gamma_0\gamma_l\gamma_0=-\gamma_k\gamma_l$であり、これは$k,l$について反対称だから$\sigma_k\sigma_l=-\sigma_l\sigma_k$となる。$\sigma_1\sigma_2\sigma_3=(-\gamma_1\gamma_2)\gamma_3\gamma_0=-\gamma_1\gamma_2\gamma_3\gamma_0=\gamma_0\gamma_1\gamma_2\gamma_3$である（$\gamma_0$を3つの生成元の前に移すと符号が3回変わる）。$\sigma_k$は$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元の関係を満たし、それらの積の8個は偶部分代数の8次元の基底$1,\gamma_\mu\gamma_\nu\ (\mu<\nu),\gamma_0\gamma_1\gamma_2\gamma_3$と、符号を除いて一致する。したがって、$e_k\mapsto\sigma_k$で定まる代数準同型$\operatorname{Cl}_{3,0}(\mathbb R)\to\operatorname{Cl}_{1,3}^0(\mathbb R)$は基底を基底に移すので、同型である。
 &&&
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の擬スカラー$I=\sigma_1\sigma_2\sigma_3$は、そのまま時空代数の擬スカラー$\gamma_0\gamma_1\gamma_2\gamma_3$です。$I^2=-1$で、$I$は時空のベクトルとは反可換、偶部分代数の元とは可換です。[[7shi-em1]]から[[7shi-em3]]で使った$\operatorname{Cl}_{3,0}(\mathbb R)$の計算は、すべて偶部分代数の中の計算として読み直せます。以下、$\operatorname{Cl}_{3,0}(\mathbb R)$のベクトルは$\sigma_k$で書き、$\boldsymbol x=\sum_kx_k\sigma_k$などとします。
+$\operatorname{Cl}_{3,0}(\mathbb R)$の擬スカラー$i=\sigma_1\sigma_2\sigma_3$は、そのまま時空代数の擬スカラー$\gamma_0\gamma_1\gamma_2\gamma_3$です。$i^2=-1$で、$i$は時空のベクトルとは反可換、偶部分代数の元とは可換です。[[7shi-em1]]から[[7shi-em3]]で使った$\operatorname{Cl}_{3,0}(\mathbb R)$の計算は、すべて偶部分代数の中の計算として読み直せます。以下、$\operatorname{Cl}_{3,0}(\mathbb R)$のベクトルは$\sigma_k$で書き、$\boldsymbol x=\sum_kx_k\sigma_k$などとします。
 
 ## 位置と作用素の分割
 
@@ -148,27 +148,27 @@ $$
 
 ## 場と電流
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の$F=\boldsymbol E+Ic\boldsymbol B$を偶部分代数の元として読み直します。[[7shi-em2]]と同じく、場と源は必要な回数だけ連続微分可能とします。
+$\operatorname{Cl}_{3,0}(\mathbb R)$の$F=\boldsymbol E+ic\boldsymbol B$を偶部分代数の元として読み直します。[[7shi-em2]]と同じく、場と源は必要な回数だけ連続微分可能とします。
 
 &&&def 時空の電磁場と電流
 $$
-F=\sum_kE_k\sigma_k+Ic\sum_kB_k\sigma_k,\qquad
+F=\sum_kE_k\sigma_k+ic\sum_kB_k\sigma_k,\qquad
 J=c\rho\,\gamma_0+\sum_kJ_k\gamma_k
 $$
 &&&
 
-$\sigma_k=\gamma_k\gamma_0$も$I\sigma_k$も時空の2ベクトルなので、$F$は時空の2ベクトルです。$I\sigma_1=\gamma_3\gamma_2$、$I\sigma_2=\gamma_1\gamma_3$、$I\sigma_3=\gamma_2\gamma_1$であり、時空の2ベクトルの$\binom42=6$成分のうち、$\gamma_0$を含む面の3成分が電場、空間の面の3成分が磁場です。電場と磁場は1つの2ベクトルの成分で、その分け方は時間方向$\gamma_0$の選び方に依存します。
+$\sigma_k=\gamma_k\gamma_0$も$i\sigma_k$も時空の2ベクトルなので、$F$は時空の2ベクトルです。$i\sigma_1=\gamma_3\gamma_2$、$i\sigma_2=\gamma_1\gamma_3$、$i\sigma_3=\gamma_2\gamma_1$であり、時空の2ベクトルの$\binom42=6$成分のうち、$\gamma_0$を含む面の3成分が電場、空間の面の3成分が磁場です。電場と磁場は1つの2ベクトルの成分で、その分け方は時間方向$\gamma_0$の選び方に依存します。
 
-この分け方は、時間軸$\gamma_0$との可換性で書けます。$\sigma_k$は$\gamma_0$と反可換、$I\sigma_k$は可換なので$\gamma_0F\gamma_0=-\boldsymbol E+Ic\boldsymbol B$となり
+この分け方は、時間軸$\gamma_0$との可換性で書けます。$\sigma_k$は$\gamma_0$と反可換、$i\sigma_k$は可換なので$\gamma_0F\gamma_0=-\boldsymbol E+ic\boldsymbol B$となり
 
 $$
 \boldsymbol E=\frac12\bigl(F-\gamma_0F\gamma_0\bigr),\qquad
-Ic\boldsymbol B=\frac12\bigl(F+\gamma_0F\gamma_0\bigr)
+ic\boldsymbol B=\frac12\bigl(F+\gamma_0F\gamma_0\bigr)
 $$
 
 です。電場は時間軸を含む面の成分、磁場は時間軸を含まない空間の面の成分です。3次元でベクトルを1本の軸に沿った成分と垂直な成分に分けるとき、分け方が軸の選び方に依存するのと同じく、電場と磁場への分け方は観測者の時間軸の選び方に依存します。$F$そのものは観測者によらない1つの2ベクトルで、電場と磁場は、それを1人の観測者の時間軸に対して分けた2つの成分です。
 
-電場の面と磁場の面は、同じ番号どうしで組になっています。$\sigma_1=\gamma_1\gamma_0$は$x_0$軸と$x_1$軸が張る面、$I\sigma_1=\gamma_3\gamma_2$は$x_2$軸と$x_3$軸が張る面で、一方の面の任意のベクトルは他方の面の任意のベクトルと直交します。$I$を掛けることは、2ベクトルをその直交補空間の面に移す操作です。4次元では2次元の面の直交補空間がまた2次元の面なので、この操作で2ベクトルは2ベクトルのまま移ります。$E_k$と$B_k$は、時空で互いに直交する相補的な2つの面の成分の組であり、$F\mapsto IF$は電場の面と磁場の面を入れ替えます。[[7shi-em3]]の電気と磁気の双対性は、この入れ替えのことです。
+電場の面と磁場の面は、同じ番号どうしで組になっています。$\sigma_1=\gamma_1\gamma_0$は$x_0$軸と$x_1$軸が張る面、$i\sigma_1=\gamma_3\gamma_2$は$x_2$軸と$x_3$軸が張る面で、一方の面の任意のベクトルは他方の面の任意のベクトルと直交します。$i$を掛けることは、2ベクトルをその直交補空間の面に移す操作です。4次元では2次元の面の直交補空間がまた2次元の面なので、この操作で2ベクトルは2ベクトルのまま移ります。$E_k$と$B_k$は、時空で互いに直交する相補的な2つの面の成分の組であり、$F\mapsto iF$は電場の面と磁場の面を入れ替えます。[[7shi-em3]]の電気と磁気の双対性は、この入れ替えのことです。
 
 電流$J$は時空のベクトルです。$\gamma_0$を掛けると
 
@@ -210,7 +210,7 @@ $$
 
 $$
 \gamma_0(D\cdot F)=\nabla\cdot\boldsymbol E+\bigl(\partial_0\boldsymbol E-c\,\nabla\times\boldsymbol B\bigr),\qquad
-\gamma_0(D\wedge F)=I\bigl(\nabla\times\boldsymbol E+c\,\partial_0\boldsymbol B\bigr)+Ic\,\nabla\cdot\boldsymbol B
+\gamma_0(D\wedge F)=i\bigl(\nabla\times\boldsymbol E+c\,\partial_0\boldsymbol B\bigr)+ic\,\nabla\cdot\boldsymbol B
 $$
 
 であり、[[7shi-em2]]のスカラー部とベクトル部が$D\cdot F$から、2ベクトル部と擬スカラー部が$D\wedge F$から来ています。次の表の「スカラー」「ベクトル」などは、時空ではなく偶部分代数を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのグレードです。
@@ -252,7 +252,7 @@ $D$をもう一度掛けると$D^2F=\mu_0c\,DJ=\mu_0c\,(D\cdot J+D\wedge J)=\mu_
 - **前半との接続**：$\operatorname{Cl}_{3,1}(\mathbb R)$では時間の生成元の2乗が$\gamma_0^2=-1$です。$\gamma_k\gamma_0$の2乗は$+1$のままで、偶部分代数はやはり$\operatorname{Cl}_{3,0}(\mathbb R)$と同型ですが、$\gamma_0\gamma_0=-1$のために$D(\gamma_0\gamma_0DH)=-D^2H$となり、$D^2=\Delta-\partial_0^2$と全体の符号が逆になります。相反基底が$\gamma^0=-\gamma_0$、$\gamma^k=\gamma_k$になるので、同じ$\sigma_k=\gamma_k\gamma_0$を使うと$\gamma_0D=\bar{\mathcal D}$、$D(\gamma_0H)=\mathcal DH$と対応も入れ替わります。[[7shi-cla4]]の$e_0$と同じく2乗が$+1$の生成元を掛けて偶部分に移すという操作をそのまま保てるのは、$\operatorname{Cl}_{1,3}(\mathbb R)$のほうです。
 - **パラベクトルの計量**：[[7shi-em2]]の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$と、パラベクトルのノルム$p\bar p=x_0^2-|\boldsymbol x|^2$は、ともに$(+,-,-,-)$の符号です。
 - **パウリ行列からの拡張**：下の例のように、パウリ行列からワイル表現のガンマ行列が符号の追加なしに得られます。
-- **代数としての違い**：[[7shi-clif1]]の分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$で、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、共通の複素化の中では、$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を複素スカラー$i$倍したものを$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元として取れます。この$i$は擬スカラー$I$ではなく、すべての元と可換な複素数の単位です。[[7shi-lie4]]と[[7shi-ideal]]が$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。
+- **代数としての違い**：[[7shi-clif1]]の分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$で、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、共通の複素化の中では、$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を複素スカラー$j$倍したものを$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元として取れます。この$j$は擬スカラー$i$ではなく、すべての元と可換な複素数の虚数単位です（[[7shi-em3]]と同じく電気工学の慣用に従います）。[[7shi-lie4]]と[[7shi-ideal]]が$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。
 &&&
 
 &&&ex パウリ行列からの構成
@@ -262,7 +262,7 @@ $$
 \gamma(p)=\begin{pmatrix}0&p\\\bar p&0\end{pmatrix}
 $$
 
-と4次の行列に置きます。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）です。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)I_4$です。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=I_4$、$\gamma(\sigma_k)^2=-I_4$から符号数$(+,-,-,-)$が出ます。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。
+と4次の行列に置きます。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）です。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)i_4$です。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=i_4$、$\gamma(\sigma_k)^2=-i_4$から符号数$(+,-,-,-)$が出ます。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。
 &&&
 
 $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとしての$\gamma_k$の2乗が$-1$で、[[7shi-em1]]から[[7shi-em3]]の$\boldsymbol x^2=|\boldsymbol x|^2$という規約から外れることです。空間のベクトルは相対ベクトル$\sigma_k$（2乗$+1$）として保たれるので、$\operatorname{Cl}_{3,0}(\mathbb R)$での計算はそのまま使えます。
@@ -273,6 +273,6 @@ $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとし�
 
 - **作用素**：逆元を係数にしたディラック作用素は$D^2=\partial_0^2-\Delta$を満たし、波動作用素の平方根です。
 - **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。[[7shi-em2]]の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。
-- **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$E_k$の面と$B_k$の面は互いの直交補空間で、$I$を掛けると入れ替わります。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
+- **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$E_k$の面と$B_k$の面は互いの直交補空間で、$i$を掛けると入れ替わります。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
 - **2本の式**：$D\cdot F=\mu_0cJ$が源を持つ2本を、$D\wedge F=0$が源を持たない2本をまとめます。
 - **係数の2乗の符号**：$\gamma_0$を掛ける操作は、[[7shi-cla4]]の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。

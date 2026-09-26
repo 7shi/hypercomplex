@@ -2,7 +2,7 @@
 
 # 設定
 
-[[7shi-em4]]の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_\mu$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、逆元を$\gamma^\mu$、ディラック作用素を$D=\sum_\mu\gamma^\mu\partial_\mu$とし、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$、擬スカラーを$I$とします。電磁場$F=\sum_kE_k\sigma_k+Ic\sum_kB_k\sigma_k$は時空の2ベクトル、電流$J=c\rho\gamma_0+\sum_kJ_k\gamma_k$は時空のベクトルで、マクスウェル方程式は
+[[7shi-em4]]の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_\mu$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、逆元を$\gamma^\mu$、ディラック作用素を$D=\sum_\mu\gamma^\mu\partial_\mu$とし、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$、擬スカラーを$i$とします。電磁場$F=\sum_kE_k\sigma_k+ic\sum_kB_k\sigma_k$は時空の2ベクトル、電流$J=c\rho\gamma_0+\sum_kJ_k\gamma_k$は時空のベクトルで、マクスウェル方程式は
 
 $$
 DF=\mu_0cJ,\qquad\text{すなわち}\qquad D\cdot F=\mu_0cJ,\quad D\wedge F=0
@@ -30,7 +30,7 @@ $A$はベクトルなので、$DA$はスカラー部$D\cdot A$と2ベクトル�
 
 &&&fml ポテンシャルの微分
 $$
-D\wedge A=\boldsymbol E+Ic\boldsymbol B,\qquad
+D\wedge A=\boldsymbol E+ic\boldsymbol B,\qquad
 \boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A,\qquad
 \boldsymbol B=\nabla\times\boldsymbol A,
 $$
@@ -45,10 +45,10 @@ $$
 
 $$
 DA=\partial_0\varphi-c\,\partial_0\boldsymbol A-\nabla\varphi+c\,D_3\boldsymbol A
-=\bigl(\partial_0\varphi+c\,\nabla\cdot\boldsymbol A\bigr)+\bigl(-\nabla\varphi-c\,\partial_0\boldsymbol A\bigr)+Ic\,\nabla\times\boldsymbol A
+=\bigl(\partial_0\varphi+c\,\nabla\cdot\boldsymbol A\bigr)+\bigl(-\nabla\varphi-c\,\partial_0\boldsymbol A\bigr)+ic\,\nabla\times\boldsymbol A
 $$
 
-となる。$c\,\partial_0=\partial_t$より、偶部分を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのベクトル部が$\boldsymbol E$、$I$の項が$Ic\boldsymbol B$、スカラー部が$D\cdot A$である。
+となる。$c\,\partial_0=\partial_t$より、偶部分を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのベクトル部が$\boldsymbol E$、$i$の項が$ic\boldsymbol B$、スカラー部が$D\cdot A$である。
 &&&
 
 $\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\times\boldsymbol A$は、ベクトル解析でポテンシャルから場を作る式そのものです。静的な場合と違い、電場には$-\partial_t\boldsymbol A$の項が加わります。磁場が時間変化すると電場は渦を持ち（[[7shi-em2]]のファラデーの法則）、勾配だけでは表せないためです。このため、電荷を2点間で動かすときの電場の仕事は経路によって変わり、[[7shi-em1]]のように電位の差を電圧と見なすことは、一般にはできなくなります。
@@ -132,7 +132,7 @@ $F=DA$より$DF=D^2A=\square A$である。$\gamma_0$成分は$\square\varphi=\m
 
 ## 定義
 
-[[7shi-em3]]では、$\operatorname{Cl}_{3,0}(\mathbb R)$の反転$F^\dagger=\boldsymbol E-Ic\boldsymbol B$を使って$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$を作りました。時空代数では反転$\tilde F=-F$（2ベクトルの符号の反転）が自然な操作で、$F^\dagger$はそれを$\gamma_0$で挟んだ$F^\dagger=\gamma_0\tilde F\gamma_0=-\gamma_0F\gamma_0$です。$\gamma_0$を任意のベクトル$a$に替えて、次の線形写像を定めます。
+[[7shi-em3]]では、$\operatorname{Cl}_{3,0}(\mathbb R)$の反転$F^\dagger=\boldsymbol E-ic\boldsymbol B$を使って$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$を作りました。時空代数では反転$\tilde F=-F$（2ベクトルの符号の反転）が自然な操作で、$F^\dagger$はそれを$\gamma_0$で挟んだ$F^\dagger=\gamma_0\tilde F\gamma_0=-\gamma_0F\gamma_0$です。$\gamma_0$を任意のベクトル$a$に替えて、次の線形写像を定めます。
 
 &&&def エネルギー運動量
 $$
@@ -149,18 +149,18 @@ $$
 &&&prf
 (1) $FaF$は奇数個のベクトルの積の和なので、グレード1と3の成分だけを持つ。反転はグレード$k$の成分に$(-1)^{k(k-1)/2}$を掛け、グレード1は変えずグレード3の符号を変える。一方$\widetilde{FaF}=\tilde Fa\tilde F=(-F)a(-F)=FaF$なので、グレード3の成分は$0$である。対称性は、スカラー部の性質$\langle XY\rangle_0=\langle YX\rangle_0$を$X=aF$、$Y=bF$に使った$\langle aFbF\rangle_0=\langle bFaF\rangle_0$から従う。
 
-(2) $\sigma_k$は$\gamma_0$と反可換、$I\sigma_k$は可換なので、$\gamma_0F\gamma_0=-\boldsymbol E+Ic\boldsymbol B=-F^\dagger$である。したがって$T(\gamma_0)\gamma_0=-\frac{\varepsilon_0}2F(\gamma_0F\gamma_0)=\frac{\varepsilon_0}2FF^\dagger$となり、[[7shi-em3]]の結果を使えばよい。右から$\gamma_0$を掛けると、$\sigma_k\gamma_0=\gamma_k$より第2式を得る。
+(2) $\sigma_k$は$\gamma_0$と反可換、$i\sigma_k$は可換なので、$\gamma_0F\gamma_0=-\boldsymbol E+ic\boldsymbol B=-F^\dagger$である。したがって$T(\gamma_0)\gamma_0=-\frac{\varepsilon_0}2F(\gamma_0F\gamma_0)=\frac{\varepsilon_0}2FF^\dagger$となり、[[7shi-em3]]の結果を使えばよい。右から$\gamma_0$を掛けると、$\sigma_k\gamma_0=\gamma_k$より第2式を得る。
 &&&
 
 $T(\gamma_0)$は、時間方向$\gamma_0$を向いた観測者から見たエネルギー密度$u$と、運動量密度$\boldsymbol S/c^2$の$c$倍を成分として持つ時空のベクトルです。[[7shi-em3]]のパラベクトル$u+\boldsymbol S/c$は、このベクトルに$\gamma_0$を掛けて$\operatorname{Cl}_{3,0}(\mathbb R)$に移したものです。$T$全体は通常のエネルギー運動量テンソル$T^{\mu\nu}=\gamma^\mu\cdot T(\gamma^\nu)$に対応し、空間方向の$T(\gamma_k)$にはエネルギー流と応力の成分が含まれます。空間成分は、通常のマクスウェルの応力と符号が逆になります。
 
 &&&fml エネルギー運動量テンソルの空間成分 [fml-stress]
 $$
-T^{ij}=-\tau_{ij},\qquad
-\tau_{ij}=\varepsilon_0\Bigl(E_iE_j+c^2B_iB_j-\frac12\delta_{ij}\bigl(|\boldsymbol E|^2+c^2|\boldsymbol B|^2\bigr)\Bigr)
+T^{kl}=-\tau_{kl},\qquad
+\tau_{kl}=\varepsilon_0\Bigl(E_kE_l+c^2B_kB_l-\frac12\delta_{kl}\bigl(|\boldsymbol E|^2+c^2|\boldsymbol B|^2\bigr)\Bigr)
 $$
 
-ここで$\tau_{ij}$はマクスウェルの応力テンソルです。
+ここで$\tau_{kl}$はマクスウェルの応力テンソルです。
 &&&
 
 ## 保存則
@@ -195,7 +195,7 @@ $$
 $\gamma_0$成分は$\partial_0u+\frac1c\nabla\cdot\boldsymbol S=-\frac1c\boldsymbol J\cdot\boldsymbol E$であり、[[7shi-em3]]のポインティングの定理です。$\gamma_k$成分は運動量の保存則で、[エネルギー運動量テンソルの空間成分](#fml-stress)を使うと
 
 $$
-\partial_t\frac{S_i}{c^2}-\sum_j\partial_j\tau_{ij}=-\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_i
+\partial_t\frac{S_k}{c^2}-\sum_l\partial_l\tau_{kl}=-\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_k
 $$
 
 となります。場の運動量密度$\boldsymbol S/c^2$の変化と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。[[7shi-em3]]で扱わなかった運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、[[7shi-em5]]のローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、[[7shi-em1]]で見たローレンツ力の密度です。

@@ -4,7 +4,7 @@
 
 # 設定
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$（$e_k^2=1$、$k\ne l$なら$e_ke_l=-e_le_k$）とし、擬スカラーを$I=e_1e_2e_3$とします。$I^2=-1$で、$I$はすべての元と可換です。空間の点を$\boldsymbol x=\sum_kx_ke_k$と書き、ディラック作用素を
+$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$（$e_k^2=1$、$k\ne l$なら$e_ke_l=-e_le_k$）とし、擬スカラーを$i=e_1e_2e_3$とします。$i^2=-1$で、$i$はすべての元と可換です。[[7shi-cla5]]などでは擬スカラーを$\omega$と書きましたが、本シリーズでは2乗が$-1$であることを表すために$i$と書き、電流には通常どおり$I$を使います。空間の点を$\boldsymbol x=\sum_kx_ke_k$と書き、ディラック作用素を
 
 $$
 D=\sum_{k=1}^3e_k\partial_k
@@ -15,15 +15,15 @@ $$
 ベクトル$\boldsymbol a,\boldsymbol b$の幾何積は$\boldsymbol a\boldsymbol b=\boldsymbol a\cdot\boldsymbol b+\boldsymbol a\wedge\boldsymbol b$と分かれ、3次元では外積とベクトル積が擬スカラーで結ばれます。
 
 $$
-\boldsymbol a\wedge\boldsymbol b=I(\boldsymbol a\times\boldsymbol b)
+\boldsymbol a\wedge\boldsymbol b=i(\boldsymbol a\times\boldsymbol b)
 $$
 
-たとえば$e_1\wedge e_2=e_1e_2=Ie_3$です。ベクトル値の関数$\boldsymbol V$に$D$を作用させると、同じ分解から発散と回転が現れます。$I$は$D$とも可換なので、2ベクトル値の関数$I\boldsymbol V$についても続けて書けます。
+たとえば$e_1\wedge e_2=e_1e_2=ie_3$です。ベクトル値の関数$\boldsymbol V$に$D$を作用させると、同じ分解から発散と回転が現れます。$i$は$D$とも可換なので、2ベクトル値の関数$i\boldsymbol V$についても続けて書けます。
 
 &&&fml ベクトルと2ベクトルの微分 [fml-dv]
 $$
-D\boldsymbol V=\nabla\cdot\boldsymbol V+I\,\nabla\times\boldsymbol V,\qquad
-D(I\boldsymbol V)=I\,\nabla\cdot\boldsymbol V-\nabla\times\boldsymbol V
+D\boldsymbol V=\nabla\cdot\boldsymbol V+i\,\nabla\times\boldsymbol V,\qquad
+D(i\boldsymbol V)=i\,\nabla\cdot\boldsymbol V-\nabla\times\boldsymbol V
 $$
 &&&
 
@@ -110,16 +110,16 @@ $$
 
 # 磁場は2ベクトル
 
-ベクトル積を外積に戻します。$\boldsymbol r=\boldsymbol x-\boldsymbol y$と書くと、$\boldsymbol J\times\boldsymbol r=-I(\boldsymbol J\wedge\boldsymbol r)=I(\boldsymbol r\wedge\boldsymbol J)$です。ビオ＝サバールの法則の両辺に$Ic$を掛け、$I^2=-1$と$\mu_0c=1/\varepsilon_0c$を使うと
+ベクトル積を外積に戻します。$\boldsymbol r=\boldsymbol x-\boldsymbol y$と書くと、$\boldsymbol J\times\boldsymbol r=-i(\boldsymbol J\wedge\boldsymbol r)=i(\boldsymbol r\wedge\boldsymbol J)$です。ビオ＝サバールの法則の両辺に$ic$を掛け、$i^2=-1$と$\mu_0c=1/\varepsilon_0c$を使うと
 
 $$
-Ic\boldsymbol B(\boldsymbol x)=-\frac1{4\pi\varepsilon_0c}\int\frac{\boldsymbol r\wedge\boldsymbol J(\boldsymbol y)}{|\boldsymbol r|^3}\,dV
+ic\boldsymbol B(\boldsymbol x)=-\frac1{4\pi\varepsilon_0c}\int\frac{\boldsymbol r\wedge\boldsymbol J(\boldsymbol y)}{|\boldsymbol r|^3}\,dV
 $$
 
 となります。右辺にはベクトル積も擬スカラーも現れず、2つのベクトル$\boldsymbol r$と$\boldsymbol J$が張る向き付きの面の重ね合わせだけが残ります。磁場は、源点$\boldsymbol y$での電流と、源点から観測点$\boldsymbol x$への変位が張る面として、2ベクトルの量で書けます。
 
 &&&rem 擬ベクトルの解消
-[[7shi-hist]]で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換で、例外的な扱いは要りません。向きを固定した擬スカラー$I$を使って2ベクトル$Ic\boldsymbol B$をベクトル$\boldsymbol B$で表示すると、その表示に擬ベクトルの変換則が現れます。擬ベクトルという扱いは、2ベクトルの変換則をベクトル表示で読んだものです。この表示が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。
+[[7shi-hist]]で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換で、例外的な扱いは要りません。向きを固定した擬スカラー$i$を使って2ベクトル$ic\boldsymbol B$をベクトル$\boldsymbol B$で表示すると、その表示に擬ベクトルの変換則が現れます。擬ベクトルという扱いは、2ベクトルの変換則をベクトル表示で読んだものです。この表示が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。
 &&&
 
 係数の$c$は、$\boldsymbol E$と$c\boldsymbol B$の単位を揃えるために入れています。
@@ -140,7 +140,7 @@ $$
 \boldsymbol r\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)=\rho\,\boldsymbol r-\frac1c\,\boldsymbol r\cdot\boldsymbol J-\frac1c\,\boldsymbol r\wedge\boldsymbol J
 $$
 
-ベクトル部$\rho\boldsymbol r$はクーロンの法則の被積分関数、2ベクトル部$-\boldsymbol r\wedge\boldsymbol J/c$は前節の$Ic\boldsymbol B$の被積分関数です。残るのはスカラー部$-\boldsymbol r\cdot\boldsymbol J/c$で、これが積分すると消えることを確かめます。
+ベクトル部$\rho\boldsymbol r$はクーロンの法則の被積分関数、2ベクトル部$-\boldsymbol r\wedge\boldsymbol J/c$は前節の$ic\boldsymbol B$の被積分関数です。残るのはスカラー部$-\boldsymbol r\cdot\boldsymbol J/c$で、これが積分すると消えることを確かめます。
 
 &&&prop スカラー部の消滅 [prop-scalar]
 $\nabla\cdot\boldsymbol J=0$なら、すべての$\boldsymbol x$で
@@ -169,10 +169,10 @@ $\nabla\cdot\boldsymbol J=0$は、ビオ＝サバールの法則を使う前提�
 $\nabla\cdot\boldsymbol J=0$のとき、[積分公式](#def-F)の$F$は
 
 $$
-F=\boldsymbol E+Ic\boldsymbol B
+F=\boldsymbol E+ic\boldsymbol B
 $$
 
-で、ベクトル部がクーロンの法則の電場、2ベクトル部がビオ＝サバールの法則の磁場の$Ic$倍です。
+で、ベクトル部がクーロンの法則の電場、2ベクトル部がビオ＝サバールの法則の磁場の$ic$倍です。
 &&&
 
 核は[[7shi-cla5]]のコーシー核$E(\boldsymbol x)=\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合です。記号$E$は電場と紛らわしいので、本記事では核を分数のまま書きます。クーロン定数の$4\pi$は、[[7shi-cla5]]の正規化定数$|S^{n-1}|$の$n=3$の値$|S^2|=4\pi$です。電磁気学では$4\pi$を「全立体角」と説明しますが、それは単位球面の面積のことであり、積分公式の定数として自然に現れます。
@@ -200,7 +200,7 @@ $$
 左辺を[ベクトルと2ベクトルの微分](#fml-dv)で成分に分けると
 
 $$
-D(\boldsymbol E+Ic\boldsymbol B)=\nabla\cdot\boldsymbol E-c\,\nabla\times\boldsymbol B+I\,\nabla\times\boldsymbol E+Ic\,\nabla\cdot\boldsymbol B
+D(\boldsymbol E+ic\boldsymbol B)=\nabla\cdot\boldsymbol E-c\,\nabla\times\boldsymbol B+i\,\nabla\times\boldsymbol E+ic\,\nabla\cdot\boldsymbol B
 $$
 
 です。右辺はスカラーとベクトルだけなので、グレードごとに比べて4本の式が得られます。ベクトル部では$-c\,\nabla\times\boldsymbol B=-\boldsymbol J/\varepsilon_0c$の両辺を$-c$で割り、$1/\varepsilon_0c^2=\mu_0$を使います。
@@ -236,14 +236,14 @@ $$
 \oint_{\partial S}d\boldsymbol x\,F=\int_S(D\cdot d\boldsymbol X)F
 $$
 
-に$F=\boldsymbol E+Ic\boldsymbol B$を入れ、グレード成分を取ると得られます。領域・曲面・境界の条件と向きは[[7shi-cla2]]と同じとします。
+に$F=\boldsymbol E+ic\boldsymbol B$を入れ、グレード成分を取ると得られます。領域・曲面・境界の条件と向きは[[7shi-cla2]]と同じとします。
 
 ## 領域の基本定理
 
 外向きの単位法線$\boldsymbol n$との積を成分に分けます。
 
 $$
-\boldsymbol nF=\boldsymbol n\cdot\boldsymbol E-c\,\boldsymbol n\times\boldsymbol B+I\,\boldsymbol n\times\boldsymbol E+Ic\,\boldsymbol n\cdot\boldsymbol B
+\boldsymbol nF=\boldsymbol n\cdot\boldsymbol E-c\,\boldsymbol n\times\boldsymbol B+i\,\boldsymbol n\times\boldsymbol E+ic\,\boldsymbol n\cdot\boldsymbol B
 $$
 
 左辺には[静的なマクスウェル方程式](#thm-static)を代入します。$Q=\int_V\rho\,dV$は$V$の中の電荷です。
@@ -274,7 +274,7 @@ $$
 
 ## 曲面の基本定理
 
-アンペールの法則の積分形は、閉曲線$\partial S$に沿った線積分です。こちらは曲面の基本定理から出ます。[[7shi-cla2]]で見たとおり、有向面素を$d\boldsymbol X=I\boldsymbol n\,dA$と書くと$(D\cdot d\boldsymbol X)F=\bigl((\boldsymbol n\times\nabla)F\bigr)dA$です。左辺の$d\boldsymbol x\,F$のスカラー部は$d\boldsymbol x\cdot\boldsymbol E$、擬スカラー部は$Ic\,d\boldsymbol x\cdot\boldsymbol B$であり、右辺の対応する成分は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$Ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$です。
+アンペールの法則の積分形は、閉曲線$\partial S$に沿った線積分です。こちらは曲面の基本定理から出ます。[[7shi-cla2]]で見たとおり、有向面素を$d\boldsymbol X=i\boldsymbol n\,dA$と書くと$(D\cdot d\boldsymbol X)F=\bigl((\boldsymbol n\times\nabla)F\bigr)dA$です。左辺の$d\boldsymbol x\,F$のスカラー部は$d\boldsymbol x\cdot\boldsymbol E$、擬スカラー部は$ic\,d\boldsymbol x\cdot\boldsymbol B$であり、右辺の対応する成分は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$です。
 
 &&&fml 曲面の基本定理のグレード成分
 $$
@@ -325,7 +325,7 @@ $$
 
 &&&fml 場とポテンシャル
 $$
-F=-DP=-\nabla\varphi+c\,\nabla\cdot\boldsymbol A+Ic\,\nabla\times\boldsymbol A
+F=-DP=-\nabla\varphi+c\,\nabla\cdot\boldsymbol A+ic\,\nabla\times\boldsymbol A
 $$
 &&&
 
@@ -343,7 +343,7 @@ $$
 
 # まとめ
 
-クーロンの法則とビオ＝サバールの法則は、同じ核$(\boldsymbol x-\boldsymbol y)/|\boldsymbol x-\boldsymbol y|^3$を使う2つの積分でした。源を$\rho-\boldsymbol J/c$にまとめて幾何積で核に掛けると、1本の積分公式$F=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}(\rho-\boldsymbol J/c)\,dV$になり、ベクトル部が電場、2ベクトル部が磁場の$Ic$倍、スカラー部は定常電流の条件で$0$になります。
+クーロンの法則とビオ＝サバールの法則は、同じ核$(\boldsymbol x-\boldsymbol y)/|\boldsymbol x-\boldsymbol y|^3$を使う2つの積分でした。源を$\rho-\boldsymbol J/c$にまとめて幾何積で核に掛けると、1本の積分公式$F=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}(\rho-\boldsymbol J/c)\,dV$になり、ベクトル部が電場、2ベクトル部が磁場の$ic$倍、スカラー部は定常電流の条件で$0$になります。
 
 - **電場と磁場**：電荷に働く力$q(\boldsymbol E+\boldsymbol v\times\boldsymbol B)$を通して定まる量で、$\boldsymbol E$と$c\boldsymbol B$は同じ単位を持ちます。
 - **核と定数**：核は[[7shi-cla5]]のコーシー核の$n=3$の場合であり、$4\pi$は$|S^2|$です。
