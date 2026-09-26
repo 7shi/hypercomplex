@@ -92,7 +92,7 @@
 
 ## 06 ポテンシャルとゲージ
 
-- $F=D\wedge A$。$D\cdot A$がゲージの自由度で、$D\cdot A=0$（ローレンツゲージ）なら$F=DA$、$D^2A=J$
+- $F=D\wedge A$。$D\cdot A$がゲージの自由度で、$D\cdot A=0$（ローレンスゲージ）なら$F=DA$、$D^2A=J$
 - 静的な場合は[[7shi-cla5]]の$D|\boldsymbol x|^{2-n}=(2-n)\boldsymbol x/|\boldsymbol x|^n$（$n=3$）に戻る
 - エネルギー運動量は$T(a)=-\frac{\varepsilon_0}2FaF$で確認済み。$T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger$（$F^\dagger=\gamma_0\tilde F\gamma_0$）、$\sum\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J$。03で先送りした運動量の保存をここで回収する。記事の後半がエネルギー運動量になったので、タイトルを「ポテンシャルとエネルギー運動量」に改めた
 

@@ -36,7 +36,7 @@ $f(x_0+r)/r$を使えば、内向きの球面波から先進基本解$\delta(x_0
 
 ## 遅延ポテンシャル
 
-[[7shi-em6]]のローレンツゲージの下で、ポテンシャル$A$は$\square A=\mu_0cJ$を満たします。遅延基本解で源を積分すると、次の解が得られます。$R=|\boldsymbol x-\boldsymbol y|$とし、源は時刻$x_0-R$、すなわち信号が$\boldsymbol y$から$\boldsymbol x$に届くのにかかる時間だけ遡った時刻で評価します。
+[[7shi-em6]]のローレンスゲージの下で、ポテンシャル$A$は$\square A=\mu_0cJ$を満たします。遅延基本解で源を積分すると、次の解が得られます。$R=|\boldsymbol x-\boldsymbol y|$とし、源は時刻$x_0-R$、すなわち信号が$\boldsymbol y$から$\boldsymbol x$に届くのにかかる時間だけ遡った時刻で評価します。
 
 &&&thm 遅延ポテンシャル
 電荷と電流が有界な領域の外で$0$で、連続の式を満たすとき
@@ -45,7 +45,7 @@ $$
 A(x_0,\boldsymbol x)=\frac{\mu_0c}{4\pi}\int\frac{J(x_0-R,\boldsymbol y)}R\,dV
 $$
 
-は$\square A=\mu_0cJ$とローレンツゲージの条件$D\cdot A=0$を満たす。成分では
+は$\square A=\mu_0cJ$とローレンス条件$D\cdot A=0$を満たす。成分では
 
 $$
 \varphi=\frac1{4\pi\varepsilon_0}\int\frac{\rho(x_0-R,\boldsymbol y)}R\,dV,\qquad
@@ -56,7 +56,7 @@ $$
 &&&
 
 &&&prf
-$\square A=\mu_0cJ$は遅延基本解の性質からの形式的な帰結である。ローレンツゲージの条件を確かめる。$\boldsymbol J$を時間の変数$s$（$x_0$と同じく$c$倍した時間）と位置$\boldsymbol y$の関数$\boldsymbol J(s,\boldsymbol y)$と見ると、$R$が$\boldsymbol x$と$\boldsymbol y$に反対称に依存することから
+$\square A=\mu_0cJ$は遅延基本解の性質からの形式的な帰結である。ローレンス条件を確かめる。$\boldsymbol J$を時間の変数$s$（$x_0$と同じく$c$倍した時間）と位置$\boldsymbol y$の関数$\boldsymbol J(s,\boldsymbol y)$と見ると、$R$が$\boldsymbol x$と$\boldsymbol y$に反対称に依存することから
 
 $$
 \nabla_{\boldsymbol x}\cdot\frac{\boldsymbol J(x_0-R,\boldsymbol y)}R
@@ -99,7 +99,7 @@ $\gamma_0^2=1$、$\boldsymbol n^2=-1$、$\gamma_0\boldsymbol n=-\boldsymbol n\ga
 &&&
 
 &&&prf
-源から遠い点では$R=r-\boldsymbol n\cdot\boldsymbol y+O(1/r)$なので、$1/r$の精度で$A=g/r$と書ける。ここで$g$は$x_0-r$と方向$\boldsymbol n$の関数である。$D$が$1/r$や方向を微分すると$1/r^2$の項になるので、$1/r$の項は$x_0-r$の微分だけから来る。$D(x_0-r)=\gamma_0+\boldsymbol n=:k$より$F_{\mathrm{rad}}=k\wedge g'/r$であり（$g'$は$x_0-r$についての微分）、ローレンツゲージ$D\cdot A=0$の$1/r$の項から$k\cdot g'=0$である。ベクトル$k,a$について$(k\wedge a)^2=(k\cdot a)^2-k^2a^2$であり、$k^2=0$、$k\cdot g'=0$から$F_{\mathrm{rad}}^2=0$となる。
+源から遠い点では$R=r-\boldsymbol n\cdot\boldsymbol y+O(1/r)$なので、$1/r$の精度で$A=g/r$と書ける。ここで$g$は$x_0-r$と方向$\boldsymbol n$の関数である。$D$が$1/r$や方向を微分すると$1/r^2$の項になるので、$1/r$の項は$x_0-r$の微分だけから来る。$D(x_0-r)=\gamma_0+\boldsymbol n=:k$より$F_{\mathrm{rad}}=k\wedge g'/r$であり（$g'$は$x_0-r$についての微分）、ローレンスゲージ$D\cdot A=0$の$1/r$の項から$k\cdot g'=0$である。ベクトル$k,a$について$(k\wedge a)^2=(k\cdot a)^2-k^2a^2$であり、$k^2=0$、$k\cdot g'=0$から$F_{\mathrm{rad}}^2=0$となる。
 &&&
 
 光的なベクトル$k=\gamma_0+\boldsymbol n$が核から場に受け継がれ、放射の場は[[7shi-em3]]のヌル場になります。遠くの源から届く電磁波が、その場所では$\boldsymbol n$方向に進む平面波のように見えるのはこのためです。ヌル場は[[7shi-em5]]で見たとおり、どの観測者から見てもヌル場なので、放射であることは観測者によりません。
