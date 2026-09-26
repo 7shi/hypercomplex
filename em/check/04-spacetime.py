@@ -20,7 +20,10 @@
    gamma_0), IcB = (F + gamma_0 F gamma_0)/2 (spatial planes, commute with gamma_0);
    vectors orthogonal to gamma_0 are the observer's space: x gamma_0 = x_0 + x.
 8. I sigma_k is the orthogonal complement of the plane sigma_k: every vector of gamma_1 gamma_0
-   is orthogonal to every vector of gamma_3 gamma_2, and F -> IF swaps the electric and magnetic planes.
+   is orthogonal to every vector of gamma_3 gamma_2, and F -> IF swaps the electric and magnetic planes;
+   I(IF) = -F.
+9. Boost x_0' = gamma(x_0 - beta x_1), x_1' = gamma(x_1 - beta x_0) preserves x_0^2 - x_1^2;
+   simultaneous events (dx_0 = 0) get dx_0' = -gamma beta dx_1; for small beta, x_1' -> x_1 - v t.
 """
 
 import sympy as sp
@@ -164,3 +167,17 @@ for (a1, a2), (b1, b2) in (((1, 0), (3, 2)), ((2, 0), (1, 3)), ((3, 0), (2, 1)))
 IF = I * Fc_
 assert eq((IF - g0 * IF * g0) / 2, -c * svec(Bc_)) and eq((IF + g0 * IF * g0) / 2, I * svec(Ec_))
 print("8. electric plane sigma_k and magnetic plane I sigma_k are orthogonal complements; IF swaps them")
+assert eq(I * IF, -Fc_)
+
+# ---------------------------------------------------------------- 9.
+beta, t_, v_ = sp.symbols("beta t v", real=True)
+x0_, x1_ = sp.symbols("x0 x1", real=True)
+gam = 1 / sp.sqrt(1 - beta**2)
+x0p, x1p = gam * (x0_ - beta * x1_), gam * (x1_ - beta * x0_)
+assert sp.simplify(x0p**2 - x1p**2 - (x0_**2 - x1_**2)) == 0
+dx1 = sp.Symbol("dx1", positive=True)
+assert sp.simplify(gam * (0 - beta * dx1) + gam * beta * dx1) == 0
+# first order in beta = v/c with x0 = ct: x1' ~ x1 - v t
+lin = sp.series(x1p.subs({beta: v_ / c, x0_: c * t_}), v_, 0, 2).removeO()
+assert sp.simplify(lin - (x1_ - v_ * t_)) == 0
+print("9. boost preserves x0^2 - x1^2; simultaneous events: dx0' = -gamma beta dx1; x1' ~ x1 - v t for small v")
