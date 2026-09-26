@@ -19,7 +19,7 @@ $\mathbb R^n$の開集合上の$\operatorname{Cl}_{n,0}(\mathbb R)$値の$C^1$�
 $D^2=\Delta$より、$C^2$級のモノジェニック関数の各成分は$n$次元の調和関数です。
 
 &&&rem 外微分と余微分
-[[7shi-cla1]]で見たとおり、$k$ベクトル値の$F$に対して$DF=D\cdot F+D\wedge F$と分かれます。基底の$k$ベクトル$e_{a_1}\wedge\dots\wedge e_{a_k}$を$k$次微分形式$dx_{a_1}\wedge\dots\wedge dx_{a_k}$と同一視すると、$D\wedge F$は外微分$dF$そのものです。$D\cdot F$は余微分$\delta F$の符号を変えたものになります。ここで$\delta$は$d$の形式的な随伴で、ホッジの星印を$\star F=\tilde FI$（$\tilde F$は積の順序を反転するリバージョン、$I=e_0e_1\cdots e_{n-1}$は擬スカラー）として$\delta=(-1)^{n(k+1)+1}\star d\star$と書けます。したがって
+[[7shi-cla1]]で見たとおり、$k$ベクトル値の$F$に対して$DF=D\cdot F+D\wedge F$と分かれます。基底の$k$ベクトル$e_{a_1}\wedge\dots\wedge e_{a_k}$を$k$次微分形式$dx_{a_1}\wedge\dots\wedge dx_{a_k}$と同一視すると、$D\wedge F$は外微分$dF$そのものです。$D\cdot F$は余微分$\delta F$の符号を変えたものになります。ここで$\delta$は$d$の形式的な随伴で、ホッジの星印を$\star F=\tilde F\omega$（$\tilde F$は積の順序を反転するリバージョン、$\omega=e_0e_1\cdots e_{n-1}$は擬スカラー）として$\delta=(-1)^{n(k+1)+1}\star d\star$と書けます。したがって
 
 $$
 D=d-\delta,\qquad D^2=-(d\delta+\delta d)=\Delta
@@ -232,7 +232,7 @@ $$
 
 # $2\pi i$の分解
 
-[[7shi-cla3]]では、コーシーの積分公式を複素数で書き直したときに現れる$2\pi i$を、出所の異なる2つの因子$2\pi$と$I$に分けました。$2\pi$は小円の上で核と法線の積を積分した$S^1$の長さであり、$I$は法線付きの境界要素と有向線素を結ぶ関係$\boldsymbol n\,ds=I\,d\boldsymbol x$から来ていました。一般の次元では、前者は$|S^{n-1}|$に置き換わりました。後者の置き換えを調べます。
+[[7shi-cla3]]では、コーシーの積分公式を複素数で書き直したときに現れる$2\pi i$を、出所の異なる2つの因子$2\pi$と$\omega$に分けました。$2\pi$は小円の上で核と法線の積を積分した$S^1$の長さであり、$\omega$は法線付きの境界要素と有向線素を結ぶ関係$\boldsymbol n\,ds=\omega\,d\boldsymbol x$から来ていました。一般の次元では、前者は$|S^{n-1}|$に置き換わりました。後者の置き換えを調べます。
 
 ## 有向境界要素
 
@@ -245,29 +245,29 @@ $$
 d\boldsymbol X=\boldsymbol r_{u_1}\wedge\dots\wedge\boldsymbol r_{u_{n-1}}\,du_1\cdots du_{n-1}
 $$
 
-とします。パラメーターの順序は、外向きの法線を先頭に置いた$\boldsymbol n\wedge d\boldsymbol X$が擬スカラー$I=e_0e_1\cdots e_{n-1}$の正の倍になるように選びます。
+とします。パラメーターの順序は、外向きの法線を先頭に置いた$\boldsymbol n\wedge d\boldsymbol X$が擬スカラー$\omega=e_0e_1\cdots e_{n-1}$の正の倍になるように選びます。
 &&&
 
-2次元では、境界を領域を左手に見る向きにたどるという[[7shi-cla2]]の規約がこれにあたります。たとえば単位円の点$e_0$では$\boldsymbol n=e_0$、左手に領域を見る向きの接線は$e_1$で、$\boldsymbol n\wedge e_1=I$です。
+2次元では、境界を領域を左手に見る向きにたどるという[[7shi-cla2]]の規約がこれにあたります。たとえば単位円の点$e_0$では$\boldsymbol n=e_0$、左手に領域を見る向きの接線は$e_1$で、$\boldsymbol n\wedge e_1=\omega$です。
 
 &&&fml 法線と有向境界要素
 $$
-\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}
+\boldsymbol n\,dS=d\boldsymbol X\,\omega^{-1}
 $$
 &&&
 
 &&&prf
-$d\boldsymbol X$の因子はすべて接ベクトルなので$\boldsymbol n$と直交し、$\boldsymbol nd\boldsymbol X=\boldsymbol n\wedge d\boldsymbol X$である。$|\boldsymbol n|=1$と直交性より$|\boldsymbol n\wedge d\boldsymbol X|=|d\boldsymbol X|=dS$であり、向きの約束から$\boldsymbol n\,d\boldsymbol X=I\,dS$である。左から$\boldsymbol n$を掛けて$d\boldsymbol X=\boldsymbol nI\,dS$、右から$I^{-1}$を掛けて公式を得る。
+$d\boldsymbol X$の因子はすべて接ベクトルなので$\boldsymbol n$と直交し、$\boldsymbol nd\boldsymbol X=\boldsymbol n\wedge d\boldsymbol X$である。$|\boldsymbol n|=1$と直交性より$|\boldsymbol n\wedge d\boldsymbol X|=|d\boldsymbol X|=dS$であり、向きの約束から$\boldsymbol n\,d\boldsymbol X=\omega\,dS$である。左から$\boldsymbol n$を掛けて$d\boldsymbol X=\boldsymbol n\omega\,dS$、右から$\omega^{-1}$を掛けて公式を得る。
 &&&
 
-$n=2$では$I^{-1}=-I$で、ベクトルは$I$と反交換するので、$d\boldsymbol x\,I^{-1}=I\,d\boldsymbol x$となり、[[7shi-cla2]]の$\boldsymbol n\,ds=I\,d\boldsymbol x$に一致します。$n=3$では$I$がすべての元と可換なので、$d\boldsymbol X=I\boldsymbol n\,dS$となり、[[7shi-cla2]]の有向面素の表示に一致します。
+$n=2$では$\omega^{-1}=-\omega$で、ベクトルは$\omega$と反交換するので、$d\boldsymbol x\,\omega^{-1}=\omega\,d\boldsymbol x$となり、[[7shi-cla2]]の$\boldsymbol n\,ds=\omega\,d\boldsymbol x$に一致します。$n=3$では$\omega$がすべての元と可換なので、$d\boldsymbol X=\omega\boldsymbol n\,dS$となり、[[7shi-cla2]]の有向面素の表示に一致します。
 
 ## 積分公式の書き換え
 
 [積分公式](#cor-cauchy)を有向境界要素で書くと
 
 $$
-F(\boldsymbol a)=\frac1{|S^{n-1}|}\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,d\boldsymbol X\,I^{-1}F
+F(\boldsymbol a)=\frac1{|S^{n-1}|}\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,d\boldsymbol X\,\omega^{-1}F
 $$
 
 です。$2\pi i$の2つの因子は、次のように置き換わります。
@@ -275,15 +275,15 @@ $$
 | 因子 | $n=2$ | 一般の$n$ | 出所 |
 |---|---|---|---|
 | 定数 | $2\pi$ | $\lvert S^{n-1}\rvert$ | 核と法線の積を小球面上で積分した値 |
-| 擬スカラー | $I$ | $I=e_0\cdots e_{n-1}$ | 有向境界要素を法線に移す$\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}$ |
+| 擬スカラー | $\omega$ | $\omega=e_0\cdots e_{n-1}$ | 有向境界要素を法線に移す$\boldsymbol n\,dS=d\boldsymbol X\,\omega^{-1}$ |
 
-$I^{-1}$は、どの次元でも積分の外に出せます。$n$が奇数なら$I$はすべての元と可換です。$n$が偶数なら$I$は偶部分の元と可換であり、$E$（ベクトル）と$d\boldsymbol X$（$(n-1)$ベクトル）はどちらも奇数グレードなので、積$E\,d\boldsymbol X$は偶部分に入り$I^{-1}$と可換です。したがって$E\,d\boldsymbol X\,I^{-1}F=I^{-1}E\,d\boldsymbol X\,F$であり
+$\omega^{-1}$は、どの次元でも積分の外に出せます。$n$が奇数なら$\omega$はすべての元と可換です。$n$が偶数なら$\omega$は偶部分の元と可換であり、$E$（ベクトル）と$d\boldsymbol X$（$(n-1)$ベクトル）はどちらも奇数グレードなので、積$E\,d\boldsymbol X$は偶部分に入り$\omega^{-1}$と可換です。したがって$E\,d\boldsymbol X\,\omega^{-1}F=\omega^{-1}E\,d\boldsymbol X\,F$であり
 
 $$
-F(\boldsymbol a)=\frac1{|S^{n-1}|\,I}\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,d\boldsymbol X\,F
+F(\boldsymbol a)=\frac1{|S^{n-1}|\,\omega}\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,d\boldsymbol X\,F
 $$
 
-と書けます。$\frac1{|S^{n-1}|\,I}=I^{-1}/|S^{n-1}|$は積分に左から掛けます。$n=3$では$4\pi I$が$2\pi i$の位置に来ます。
+と書けます。$\frac1{|S^{n-1}|\,\omega}=\omega^{-1}/|S^{n-1}|$は積分に左から掛けます。$n=3$では$4\pi \omega$が$2\pi i$の位置に来ます。
 
 2次元に特有なのは、この先の書き換えです。[[7shi-cla3]]では、$d\boldsymbol x$がベクトルであるため$e_1$を掛けて$dz$に移し、偶部分全体が可換な$\mathbb C$であることを使って核・$dz$・$F$を並べ替え、通常の複素線積分$\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$の形に戻しました。境界要素がベクトルの線素になることと、偶部分が可換であることの2つがそろうのは2次元だけです。
 
@@ -346,19 +346,19 @@ $e_0$は可逆なので、左正則性$\mathcal DF=0$は左モノジェニック
 
 ## 軸対称な関数
 
-$q=x_0+\boldsymbol q$（$\boldsymbol q=\sum_lx_lh_l$）と分け、$r=|\boldsymbol q|$、$\omega=\boldsymbol q/r$とします。$\omega^2=-1$です。[[7shi-cla4]]と同じ条件（複素共役で不変な開集合上の正則関数で$f(\bar z)=\overline{f(z)}$）を満たす$f=u+iv$に対して、$\tilde f=u(x_0,r)+\omega\,v(x_0,r)$と置きます。定義域は$\Omega_U=\{x_0+\boldsymbol q:x_0+i|\boldsymbol q|\in U\}$（$U$は$f$の定義域）です。実軸の上（$r=0$）では、[[7shi-cla4]]と同じく$u$が第2変数について偶、$v$が奇であることから、$\tilde f$を$r^2$の関数として滑らかに延長します。$f(z)=z^k$なら$\tilde f=q^k$、$f(z)=1/z$なら$\tilde f=q^{-1}$です。
+$q=x_0+\boldsymbol q$（$\boldsymbol q=\sum_lx_lh_l$）と分け、$r=|\boldsymbol q|$、$\hat{\boldsymbol q}=\boldsymbol q/r$とします。$\hat{\boldsymbol q}^2=-1$です。[[7shi-cla4]]と同じ条件（複素共役で不変な開集合上の正則関数で$f(\bar z)=\overline{f(z)}$）を満たす$f=u+iv$に対して、$\tilde f=u(x_0,r)+\hat{\boldsymbol q}\,v(x_0,r)$と置きます。定義域は$\Omega_U=\{x_0+\boldsymbol q:x_0+i|\boldsymbol q|\in U\}$（$U$は$f$の定義域）です。実軸の上（$r=0$）では、[[7shi-cla4]]と同じく$u$が第2変数について偶、$v$が奇であることから、$\tilde f$を$r^2$の関数として滑らかに延長します。$f(z)=z^k$なら$\tilde f=q^k$、$f(z)=1/z$なら$\tilde f=q^{-1}$です。
 
 &&&fml 軸対称な関数の微分 [fml-axial]
 $A,B$を$x_0,r$の実数値$C^1$級関数とすると、$r>0$で
 
 $$
-\mathcal D(A+\omega B)=(A+\omega B)\mathcal D
-=\partial_0A-\partial_rB-\frac{n-2}rB+\omega\,(\partial_rA+\partial_0B)
+\mathcal D(A+\hat{\boldsymbol q} B)=(A+\hat{\boldsymbol q} B)\mathcal D
+=\partial_0A-\partial_rB-\frac{n-2}rB+\hat{\boldsymbol q}\,(\partial_rA+\partial_0B)
 $$
 &&&
 
 &&&prf
-[[7shi-cla4]]の証明で、虚数単位の個数を$3$から$n-1$に替える。$\varphi=B/r$とおくと$\omega B=\boldsymbol q\varphi$であり
+[[7shi-cla4]]の証明で、虚数単位の個数を$3$から$n-1$に替える。$\varphi=B/r$とおくと$\hat{\boldsymbol q} B=\boldsymbol q\varphi$であり
 
 $$
 \sum_{l=1}^{n-1}h_l\partial_l(\boldsymbol q\varphi)
@@ -375,7 +375,7 @@ $$
 \mathcal D\tilde f=-(n-2)\frac vr
 $$
 
-が残ります。係数$n-2$は、$\omega$に直交する虚数単位の個数$(n-1)-1$です。$f(z)=z$では$v=r$なので$\mathcal Dq=2-n$であり、冒頭で引いた$D(e_0\boldsymbol x)=(2-n)e_0$に一致します。恒等写像の正則性を壊す係数と、フューターの定理のずれの係数は、同じものです。
+が残ります。係数$n-2$は、$\hat{\boldsymbol q}$に直交する虚数単位の個数$(n-1)-1$です。$f(z)=z$では$v=r$なので$\mathcal Dq=2-n$であり、冒頭で引いた$D(e_0\boldsymbol x)=(2-n)e_0$に一致します。恒等写像の正則性を壊す係数と、フューターの定理のずれの係数は、同じものです。
 
 ## 定理
 
@@ -433,11 +433,11 @@ $n=4$（$k=1$）では$\Delta q^{-1}=-4\bar q/|q|^4$となり、[[7shi-cla4]]の
 | 核の次数 | $-1$ | $-3$ | $-(n-1)$ |
 | ポテンシャル | $\log\lvert\boldsymbol x\rvert$ | $\lvert\boldsymbol x\rvert^{-2}$ | $\lvert\boldsymbol x\rvert^{2-n}$（$n\ge3$） |
 | 定数 | $2\pi$ | $2\pi^2$ | $2\pi^{n/2}/\Gamma(n/2)$ |
-| 境界要素と法線 | $\boldsymbol n\,ds=I\,d\boldsymbol x$ | $\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}$ | $\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}$ |
+| 境界要素と法線 | $\boldsymbol n\,ds=\omega\,d\boldsymbol x$ | $\boldsymbol n\,dS=d\boldsymbol X\,\omega^{-1}$ | $\boldsymbol n\,dS=d\boldsymbol X\,\omega^{-1}$ |
 | $\mathcal Dq$ | $0$ | $-2$ | $2-n$ |
 | ずれを消す作用素 | 不要 | $\Delta$ | $\Delta^{(n-2)/2}$（$n$が偶数） |
 
-複素解析の$2\pi i$は、$|S^{n-1}|$と擬スカラー$I$に分かれ、どの次元でも$\frac1{|S^{n-1}|\,I}$の形で積分の外に出せます。これが通常の複素線積分$\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$に戻るのは、境界要素がベクトルの線素になり、偶部分が可換な$\mathbb C$になる2次元の場合です。
+複素解析の$2\pi i$は、$|S^{n-1}|$と擬スカラー$\omega$に分かれ、どの次元でも$\frac1{|S^{n-1}|\,\omega}$の形で積分の外に出せます。これが通常の複素線積分$\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$に戻るのは、境界要素がベクトルの線素になり、偶部分が可換な$\mathbb C$になる2次元の場合です。
 
 恒等写像と逆元が正則でないこと（$D(e_0\boldsymbol x)=(2-n)e_0$、$D\boldsymbol x^{-1}=(n-2)/|\boldsymbol x|^2$）と、フューターの定理のずれ$-(n-2)v/r$は、同じ係数$n-2$で表されます。いずれも$n=2$でだけ消え、2次元で恒等写像$z$と逆数$1/z$がそのまま正則だったことに対応します。ラプラシアンの反復で$1/z$から核を作るには、次数を$n-2$だけ下げる必要があり、その回数は$(n-2)/2$です。
 

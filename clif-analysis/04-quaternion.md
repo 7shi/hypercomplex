@@ -12,7 +12,7 @@ $$
 
 とします。$D^2=\Delta$（4次元のラプラシアン）は[[7shi-cla1]]と同じ計算で成り立ちます。
 
-[[7shi-cla1]]では、位置ベクトルに$e_1$を左から掛けて偶部分の元$z=e_1\boldsymbol x=x+Iy$を作り、作用素にも$e_1$を掛けてヴィルティンガー微分$e_1D=\partial_x+I\partial_y$を得ました。同じことを$e_0$で行います。
+[[7shi-cla1]]では、位置ベクトルに$e_1$を左から掛けて偶部分の元$z=e_1\boldsymbol x=x+e_1e_2y$を作り、作用素にも$e_1$を掛けてヴィルティンガー微分$e_1D=\partial_x+e_1e_2\partial_y$を得ました。同じことを$e_0$で行います。
 
 &&&def 四元数に対応する単位と変数
 $$
@@ -30,17 +30,17 @@ $$
 
 $i,j,k$はどれも2ベクトルで、偶部分代数$\operatorname{Cl}_{4,0}^0(\mathbb R)$に属します。$i^2=e_0e_1e_0e_1=-e_0^2e_1^2=-1$であり、$j,k$も同様です。また$ij=e_0e_1e_0e_2=-e_1e_2$、$ji=-e_2e_1=e_1e_2$より$ij=-ji$で、他の組も同様に反交換します。これは[[7shi-clif1]]で偶部分代数の同型$\operatorname{Cl}_{p,q}^0(\mathbb R)\cong\operatorname{Cl}_{q,p-1}(\mathbb R)$を示したときの、2乗が$+1$の生成元$e_0$との積で新しい生成元を作る構成と（掛ける順序による符号を除いて）同じもので、$i,j,k$は$\operatorname{Cl}_{0,3}(\mathbb R)$の生成元として振る舞います。
 
-2次元では、$e_1$を掛けた$e_1e_2=I$が1つだけ現れ、偶部分は$\mathbb C$でした。4次元では、$e_0$を掛けた単位が3つ現れます。
+2次元では、$e_1$を掛けた$e_1e_2$が1つだけ現れ、偶部分は$\mathbb C$でした。4次元では、$e_0$を掛けた単位が3つ現れます。
 
 ## 四元数の成分への制限
 
-ハミルトンの関係式$ijk=-1$は、まだ成り立っていません。擬スカラー$I_4=e_0e_1e_2e_3$を使うと
+ハミルトンの関係式$ijk=-1$は、まだ成り立っていません。擬スカラー$\omega=e_0e_1e_2e_3$を使うと
 
 $$
-ijk=e_0e_1e_0e_2e_0e_3=-e_1e_2e_0e_3=-I_4
+ijk=e_0e_1e_0e_2e_0e_3=-e_1e_2e_0e_3=-\omega
 $$
 
-です。$I_4^2=1$であり、4次元の擬スカラーは偶数グレードの元と可換です。そこで[[7shi-clif1]]と同じく冪等元$P_\pm=(1\pm I_4)/2$を取ると、偶部分代数は2つの成分に分かれます。
+です。$\omega^2=1$であり、4次元の擬スカラーは偶数グレードの元と可換です。そこで[[7shi-clif1]]と同じく冪等元$P_\pm=(1\pm \omega)/2$を取ると、偶部分代数は2つの成分に分かれます。
 
 &&&fml 偶部分代数の分解
 $$
@@ -48,9 +48,9 @@ $$
 $$
 &&&
 
-$P_+$の成分では$I_4=1$として働くので$ijk=-1$となり、$i,j,k$はハミルトンの四元数の単位そのものです。$P_-$の成分では$ijk=1$ですが、$k$を$-k$に取り替えれば同じく四元数になります。
+$P_+$の成分では$\omega=1$として働くので$ijk=-1$となり、$i,j,k$はハミルトンの四元数の単位そのものです。$P_-$の成分では$ijk=1$ですが、$k$を$-k$に取り替えれば同じく四元数になります。
 
-作用素$e_0D$の係数$1,i,j,k$は偶数グレードなので$I_4$と可換であり、$e_0D$は2つの成分を混ぜません。したがって偶部分に値を取る関数は、$P_+$の成分と$P_-$の成分に分けて扱えます。$P_-$の成分を$i,j,-k$によって四元数と同一視すると、作用素の$\partial_3$の係数だけが反転します。したがって座標$x_3$も反転すれば、$P_+$の成分と同じ方程式になります。以下では$P_+$の成分だけを考え、関数の値を四元数$\mathbb H$に取ります。
+作用素$e_0D$の係数$1,i,j,k$は偶数グレードなので$\omega$と可換であり、$e_0D$は2つの成分を混ぜません。したがって偶部分に値を取る関数は、$P_+$の成分と$P_-$の成分に分けて扱えます。$P_-$の成分を$i,j,-k$によって四元数と同一視すると、作用素の$\partial_3$の係数だけが反転します。したがって座標$x_3$も反転すれば、$P_+$の成分と同じ方程式になります。以下では$P_+$の成分だけを考え、関数の値を四元数$\mathbb H$に取ります。
 
 厳密には、四元数の$1,i,j,k$と同一視するのは射影した$P_+,\ iP_+,\ jP_+,\ kP_+$であり、この成分の単位元は$P_+$です。四元数の変数$q$も$(e_0\boldsymbol x)P_+$の像です。以下の$\bar q$、$q^{-1}$、核$E$などの式は、射影前の偶部分で計算してから$P_+$の成分に射影したものと読みます。$q\bar q$がスカラーになるため、射影前の逆元を射影すれば成分の中での逆元になります。
 
@@ -103,7 +103,7 @@ $\mathcal DF=0$なら$\Delta F=\bar{\mathcal D}\mathcal DF=0$です。右正則�
 
 ## 次元の数え上げ
 
-[[7shi-cla1]]では$(\partial_x+I\partial_y)z=1+I^2=0$であり、恒等写像$z$は正則でした。四元数の変数では
+[[7shi-cla1]]では$(\partial_x+e_1e_2\partial_y)z=1+(e_1e_2)^2=0$であり、恒等写像$z$は正則でした。四元数の変数では
 
 $$
 \mathcal Dq=1+i^2+j^2+k^2=1-3=-2
@@ -213,7 +213,7 @@ $$
 
 ## 左正則と右正則
 
-[[7shi-cla1]]では、偶部分の関数について左モノジェニックが正則、右モノジェニック（$FD=0$）が反正則にあたりました。本記事の右正則性は$F\mathcal D=(Fe_0)D=0$であり、元の$D$による右モノジェニック性そのものではありません。2次元でこれにあたる条件$F(\partial_x+I\partial_y)=0$は、偶部分が可換なので左からの条件$(\partial_x+I\partial_y)F=0$と一致します。四元数では、非可換性のために左正則と右正則が別の条件に分かれます。
+[[7shi-cla1]]では、偶部分の関数について左モノジェニックが正則、右モノジェニック（$FD=0$）が反正則にあたりました。本記事の右正則性は$F\mathcal D=(Fe_0)D=0$であり、元の$D$による右モノジェニック性そのものではありません。2次元でこれにあたる条件$F(\partial_x+e_1e_2\partial_y)=0$は、偶部分が可換なので左からの条件$(\partial_x+e_1e_2\partial_y)F=0$と一致します。四元数では、非可換性のために左正則と右正則が別の条件に分かれます。
 
 &&&ex 左正則だが右正則でない関数
 定数を右から掛けても左正則性は保たれるので、$\zeta_1j$は左正則です。一方、右からの作用は
@@ -250,29 +250,29 @@ $$
 
 ## 軸対称な関数
 
-四元数を$q=x_0+\boldsymbol q$（$\boldsymbol q=x_1i+x_2j+x_3k$）と実部と虚部に分け、$r=|\boldsymbol q|$、$\omega=\boldsymbol q/r$とします。$\omega^2=-1$なので、$\omega$を固定すると$x_0+\omega y$（$y\in\mathbb R$）は複素平面の写しになり、$q=x_0+\omega r$はその中の点です。
+四元数を$q=x_0+\boldsymbol q$（$\boldsymbol q=x_1i+x_2j+x_3k$）と実部と虚部に分け、$r=|\boldsymbol q|$、$\hat{\boldsymbol q}=\boldsymbol q/r$とします。$\hat{\boldsymbol q}^2=-1$なので、$\hat{\boldsymbol q}$を固定すると$x_0+\hat{\boldsymbol q} y$（$y\in\mathbb R$）は複素平面の写しになり、$q=x_0+\hat{\boldsymbol q} r$はその中の点です。
 
 複素共役で不変な開集合$U\subset\mathbb C$の上の正則関数$f(z)=u(x,y)+iv(x,y)$で、$f(\bar z)=\overline{f(z)}$を満たすもの（$u$は$y$について偶、$v$は奇）を取り、各平面の写しに持ち込みます。定義域は$\Omega_U=\{x_0+\boldsymbol q:x_0+i|\boldsymbol q|\in U\}$です。たとえば$f(z)=1/z$なら$U=\mathbb C\setminus\{0\}$、$\Omega_U$は原点を除いた$\mathbb R^4$です。
 
 $$
-\tilde f(q)=u(x_0,r)+\omega\,v(x_0,r)
+\tilde f(q)=u(x_0,r)+\hat{\boldsymbol q}\,v(x_0,r)
 $$
 
-$\omega$は$r>0$でしか定義されないので、実軸の上（$r=0$）では$\tilde f$を連続的に延長して定めます（下の定理の証明で見るとおり、延長は滑らかです）。
+$\hat{\boldsymbol q}$は$r>0$でしか定義されないので、実軸の上（$r=0$）では$\tilde f$を連続的に延長して定めます（下の定理の証明で見るとおり、延長は滑らかです）。
 
-$f(z)=z^n$なら、$x_0+\omega r$の冪を$x_0+iy$の冪と同じく計算できるので$\tilde f=q^n$、$f(z)=1/z$なら$\tilde f=q^{-1}$です。このように$x_0$と$r$の関数$A,B$で$A+\omega B$と書ける関数に、$\mathcal D$を作用させます。
+$f(z)=z^n$なら、$x_0+\hat{\boldsymbol q} r$の冪を$x_0+iy$の冪と同じく計算できるので$\tilde f=q^n$、$f(z)=1/z$なら$\tilde f=q^{-1}$です。このように$x_0$と$r$の関数$A,B$で$A+\hat{\boldsymbol q} B$と書ける関数に、$\mathcal D$を作用させます。
 
 &&&fml 軸対称な関数の微分 [fml-axial]
 $A,B$を$x_0,r$の実数値$C^1$級関数とすると、$r>0$で
 
 $$
-\mathcal D(A+\omega B)=(A+\omega B)\mathcal D
-=\partial_0A-\partial_rB-\frac2rB+\omega\,(\partial_rA+\partial_0B)
+\mathcal D(A+\hat{\boldsymbol q} B)=(A+\hat{\boldsymbol q} B)\mathcal D
+=\partial_0A-\partial_rB-\frac2rB+\hat{\boldsymbol q}\,(\partial_rA+\partial_0B)
 $$
 &&&
 
 &&&prf
-$h_1,h_2,h_3=i,j,k$とする。$\partial_\ell r=x_\ell/r$より$\sum_\ell h_\ell\partial_\ell A=\omega\,\partial_rA$である。$\varphi=B/r$とおくと$\omega B=\boldsymbol q\varphi$であり
+$h_1,h_2,h_3=i,j,k$とする。$\partial_\ell r=x_\ell/r$より$\sum_\ell h_\ell\partial_\ell A=\hat{\boldsymbol q}\,\partial_rA$である。$\varphi=B/r$とおくと$\hat{\boldsymbol q} B=\boldsymbol q\varphi$であり
 
 $$
 \sum_{\ell=1}^3h_\ell\partial_\ell(\boldsymbol q\varphi)
@@ -281,16 +281,16 @@ $$
 =-3\varphi-r\,\partial_r\varphi
 $$
 
-となる。$r\,\partial_r\varphi=\partial_rB-B/r$を代入すると$-\partial_rB-2B/r$である。$\partial_0$の項$\partial_0A+\omega\,\partial_0B$と合わせて左からの作用を得る。右からの作用では$h_\ell\boldsymbol q$が$\boldsymbol qh_\ell$に替わるが、$\sum_\ell\boldsymbol qh_\ell x_\ell=\boldsymbol q^2$なので同じ結果になる。$A,B$は実数値なので、$\omega$や$h_\ell$と可換であることを使った。
+となる。$r\,\partial_r\varphi=\partial_rB-B/r$を代入すると$-\partial_rB-2B/r$である。$\partial_0$の項$\partial_0A+\hat{\boldsymbol q}\,\partial_0B$と合わせて左からの作用を得る。右からの作用では$h_\ell\boldsymbol q$が$\boldsymbol qh_\ell$に替わるが、$\sum_\ell\boldsymbol qh_\ell x_\ell=\boldsymbol q^2$なので同じ結果になる。$A,B$は実数値なので、$\hat{\boldsymbol q}$や$h_\ell$と可換であることを使った。
 &&&
 
-$\tilde f$に当てはめます。コーシー＝リーマンの方程式$u_x=v_y$、$u_y=-v_x$より$\omega$の係数と$\partial_0A-\partial_rB$が消え
+$\tilde f$に当てはめます。コーシー＝リーマンの方程式$u_x=v_y$、$u_y=-v_x$より$\hat{\boldsymbol q}$の係数と$\partial_0A-\partial_rB$が消え
 
 $$
 \mathcal D\tilde f=-\frac{2v}r
 $$
 
-が残ります。$f(z)=z$では$v=r$なので$\mathcal Dq=-2$であり、前節の結果に一致します。$-2B/r$の係数$2$は、$\omega$に直交する虚数単位の個数$3-1$です。複素数では虚数単位が1つだけなのでこの項は現れず、$\tilde f=f$のまま正則でした。
+が残ります。$f(z)=z$では$v=r$なので$\mathcal Dq=-2$であり、前節の結果に一致します。$-2B/r$の係数$2$は、$\hat{\boldsymbol q}$に直交する虚数単位の個数$3-1$です。複素数では虚数単位が1つだけなのでこの項は現れず、$\tilde f=f$のまま正則でした。
 
 ## 定理
 
@@ -447,7 +447,7 @@ $$
 
 # まとめ
 
-[[7shi-cla1]]の$z=e_1\boldsymbol x$、$e_1D=\partial_x+I\partial_y$を$\operatorname{Cl}_{4,0}(\mathbb R)$で繰り返すと、四元数の変数$q=e_0\boldsymbol x$とフューター作用素$\mathcal D=e_0D$が得られます。$i=e_0e_1$、$j=e_0e_2$、$k=e_0e_3$は偶部分代数$\operatorname{Cl}_{4,0}^0(\mathbb R)\cong\mathbb H\oplus\mathbb H$に属し、作用素がこの分解を保つので、関数の値を$\mathbb H$に取れます。$\bar{\mathcal D}\mathcal D=\Delta$は$D^2=\Delta$の言い換えです。
+[[7shi-cla1]]の$z=e_1\boldsymbol x$、$e_1D=\partial_x+e_1e_2\partial_y$を$\operatorname{Cl}_{4,0}(\mathbb R)$で繰り返すと、四元数の変数$q=e_0\boldsymbol x$とフューター作用素$\mathcal D=e_0D$が得られます。$i=e_0e_1$、$j=e_0e_2$、$k=e_0e_3$は偶部分代数$\operatorname{Cl}_{4,0}^0(\mathbb R)\cong\mathbb H\oplus\mathbb H$に属し、作用素がこの分解を保つので、関数の値を$\mathbb H$に取れます。$\bar{\mathcal D}\mathcal D=\Delta$は$D^2=\Delta$の言い換えです。
 
 複素解析で成り立っていた性質は、次のように分かれます。
 

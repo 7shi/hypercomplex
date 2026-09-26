@@ -63,13 +63,13 @@ $$
 
 ## フューター＝ソーの定理のずれ
 
-[[7shi-cla5]]と同じく、複素共役で不変な開集合上で$f(\bar z)=\overline{f(z)}$を満たす正則関数$f=u+iv$を取り、軸対称に持ち込んだ関数を$\tilde f=u(x_0,r)+\omega\,v(x_0,r)$とします。ここで$r=|q-x_0|$は$q$の虚部の長さ、$\omega=(q-x_0)/r$です。$r>0$で
+[[7shi-cla5]]と同じく、複素共役で不変な開集合上で$f(\bar z)=\overline{f(z)}$を満たす正則関数$f=u+iv$を取り、軸対称に持ち込んだ関数を$\tilde f=u(x_0,r)+\hat{\boldsymbol q}\,v(x_0,r)$とします。ここで$\boldsymbol q=q-x_0$は$q$の虚部、$r=|\boldsymbol q|$はその長さ、$\hat{\boldsymbol q}=\boldsymbol q/r$です。$r>0$で
 
 $$
 \mathcal D\tilde f=-(n-2)\frac vr
 $$
 
-が成り立ちます。係数$n-2$は$\omega$に直交する虚数単位の個数$(n-1)-1$であり、$f(z)=z$では$\mathcal Dq=2-n$に一致します。このずれも、虚数単位が1つでないことから生じます。$n$が偶数なら$\Delta^{(n-2)/2}\tilde f$が左右ともに正則になり（フューター＝ソーの定理）、2次元ではずれを消す作用素が要りません。
+が成り立ちます。係数$n-2$は$\hat{\boldsymbol q}$に直交する虚数単位の個数$(n-1)-1$であり、$f(z)=z$では$\mathcal Dq=2-n$に一致します。このずれも、虚数単位が1つでないことから生じます。$n$が偶数なら$\Delta^{(n-2)/2}\tilde f$が左右ともに正則になり（フューター＝ソーの定理）、2次元ではずれを消す作用素が要りません。
 
 &&&rem 等角写像
 2次元では、微分係数が$0$でない正則関数は向きを保つ等角写像であり、逆も成り立ちます。$n\ge3$の正則関数は一般に等角ではありません。たとえば$n=4$のフューター変数$\zeta_1=x_1-x_0i$は、点$(x_0,x_1,x_2,x_3)$を$(x_1,-x_0,0,0)$に写し、ヤコビ行列の階数は$2$です。
@@ -175,12 +175,12 @@ $$
 | 核 | $\boldsymbol x^{-1}$ | $\boldsymbol x/\lvert\boldsymbol x\rvert^n$ |
 | 核の次数 | $-1$ | $-(n-1)$ |
 | 定数 | $2\pi$ | $\lvert S^{n-1}\rvert=2\pi^{n/2}/\Gamma(n/2)$ |
-| $2\pi i$の位置に来るもの | $2\pi I$ | $\lvert S^{n-1}\rvert\,I$ |
+| $2\pi i$の位置に来るもの | $2\pi \omega$ | $\lvert S^{n-1}\rvert\,\omega$ |
 
-ここで$I=e_0e_1\cdots e_{n-1}$は擬スカラーです。
+ここで$\omega=e_0e_1\cdots e_{n-1}$は擬スカラーです。
 核の次数$-(n-1)$は、小球面の上で面積の伸び$\varepsilon^{n-1}$と打ち消し合うことから決まります。2次元で逆元$\boldsymbol x^{-1}$がそのまま核になったのは、逆元の次数$-1$と核の次数$-(n-1)$が$n=2$で一致したためです。留数は小球面上の積分として定義され、その積分が半径によらないことは基本定理から、核の導関数の留数が$0$であることはその半径によらないことと同次性から、どの次元でも得られます[[7shi-cla3]][[7shi-cla5]]。
 
-通常の複素線積分の形$\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$に戻るのは2次元だけです。一般の次元では、境界の$(n-1)$次元の有向境界要素$d\boldsymbol X$（$\boldsymbol n\,dS=d\boldsymbol X\,I^{-1}$を満たすもの）を使った$\frac1{|S^{n-1}|\,I}\oint E\,d\boldsymbol X\,F$の形で止まります。この書き換えには、境界要素がベクトルの線素になること（次元）と、核・$dz$・$F$を並べ替えられること（偶部分の可換性）の両方が要ります[[7shi-cla5]]。
+通常の複素線積分の形$\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$に戻るのは2次元だけです。一般の次元では、境界の$(n-1)$次元の有向境界要素$d\boldsymbol X$（$\boldsymbol n\,dS=d\boldsymbol X\,\omega^{-1}$を満たすもの）を使った$\frac1{|S^{n-1}|\,\omega}\oint E\,d\boldsymbol X\,F$の形で止まります。この書き換えには、境界要素がベクトルの線素になること（次元）と、核・$dz$・$F$を並べ替えられること（偶部分の可換性）の両方が要ります[[7shi-cla5]]。
 
 # 壊れないもの
 
@@ -244,7 +244,7 @@ $\mathbb R^n$全体で左モノジェニックな有界関数は定数です。
 | 積の正則性 | 交換子が$0$ | 交換子の項が残る | 非可換性 |
 | 左右の正則性の一致 | $F\mathcal D=\mathcal DF$ | 別の条件 | 非可換性 |
 | 冪と冪級数 | $z^k$が正則 | $\mathcal Dq^2=2(2-n)q+2(n-2)\boldsymbol v$ | 両方 |
-| 複素線積分の形 | $\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$ | $\frac1{\lvert S^{n-1}\rvert\,I}\oint E\,d\boldsymbol X\,F$ | 両方 |
+| 複素線積分の形 | $\frac1{2\pi i}\oint\frac{F\,dz}{z-w}$ | $\frac1{\lvert S^{n-1}\rvert\,\omega}\oint E\,d\boldsymbol X\,F$ | 両方 |
 | 積分公式・留数 | 核$\boldsymbol x^{-1}$、$2\pi$ | 核$\boldsymbol x/\lvert\boldsymbol x\rvert^n$、$\lvert S^{n-1}\rvert$ | 次元で核と定数が替わる |
 | 成分の調和性 | $D^2=\Delta$ | $D^2=\Delta$ | 壊れない |
 | 平均値の性質・最大値原理 | 円周上の平均 | 球面上の平均 | 壊れない |

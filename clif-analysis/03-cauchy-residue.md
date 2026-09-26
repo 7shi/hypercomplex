@@ -1,14 +1,14 @@
-幾何微積分の基本定理[[7shi-cla2]]にモノジェニック性を代入して、コーシーの積分定理・積分公式・留数定理を導きます。積分公式の核は、ディラック作用素について左右ともにモノジェニックなベクトルの逆元$\boldsymbol x^{-1}$です[[7shi-cla1]]。小さな円の上では核と外向きの法線の積が半径の逆数になり、周に沿った積分から$S^1$の長さ$2\pi$が現れます。複素解析の公式に現れる$2\pi i$は、この周長と、接線を法線に回す擬スカラー$I$に分かれます。
+幾何微積分の基本定理[[7shi-cla2]]にモノジェニック性を代入して、コーシーの積分定理・積分公式・留数定理を導きます。積分公式の核は、ディラック作用素について左右ともにモノジェニックなベクトルの逆元$\boldsymbol x^{-1}$です[[7shi-cla1]]。小さな円の上では核と外向きの法線の積が半径の逆数になり、周に沿った積分から$S^1$の長さ$2\pi$が現れます。複素解析の公式に現れる$2\pi i$は、この周長と、接線を法線に回す擬スカラー$\omega$に分かれます。
 
 # 準備
 
-[[7shi-cla1]]・[[7shi-cla2]]と同じく、$\operatorname{Cl}_{2,0}(\mathbb R)$の生成元を$e_1,e_2$（$e_1^2=e_2^2=1$、$e_1e_2=-e_2e_1$）、擬スカラーを$I=e_1e_2$（$I^2=-1$）とし、ディラック作用素を
+[[7shi-cla1]]・[[7shi-cla2]]と同じく、$\operatorname{Cl}_{2,0}(\mathbb R)$の生成元を$e_1,e_2$（$e_1^2=e_2^2=1$、$e_1e_2=-e_2e_1$）、擬スカラーを$\omega=e_1e_2$（$\omega^2=-1$）とし、ディラック作用素を
 
 $$
 D=e_1\partial_x+e_2\partial_y
 $$
 
-とします。左からの作用を$DF=e_1\partial_xF+e_2\partial_yF$、右からの作用を$GD=(\partial_xG)e_1+(\partial_yG)e_2$と書き、$DF=0$を満たす$F$を左モノジェニック、$GD=0$を満たす$G$を右モノジェニックと呼びます。単にモノジェニックと言えば左モノジェニックを指します。位置ベクトルは$\boldsymbol x=xe_1+ye_2$、対応する複素数は偶部分の元$z=e_1\boldsymbol x=x+Iy$です。
+とします。左からの作用を$DF=e_1\partial_xF+e_2\partial_yF$、右からの作用を$GD=(\partial_xG)e_1+(\partial_yG)e_2$と書き、$DF=0$を満たす$F$を左モノジェニック、$GD=0$を満たす$G$を右モノジェニックと呼びます。単にモノジェニックと言えば左モノジェニックを指します。位置ベクトルは$\boldsymbol x=xe_1+ye_2$、対応する複素数は偶部分の元$z=e_1\boldsymbol x=x+\omega y$です。
 
 [[7shi-cla2]]の設定を引き継ぎます。平面の有界な領域$M$の境界$\partial M$は区分的に滑らかな閉曲線（穴があれば複数）とし、領域を左手に見る向き（外側の境界は反時計回り、穴の境界は時計回り）にたどります。$\boldsymbol n$は外向きの単位法線、$ds$は弧長の要素、$d\boldsymbol x$は有向線素です。関数$F,G$は、$M$とその境界を含む開集合上で定義され、$\operatorname{Cl}_{2,0}(\mathbb R)$に値を取る$C^1$級関数とします。特異点を扱う箇所では、その点を除いた開集合上でこの条件を課します。
 
@@ -19,7 +19,7 @@ $$
 \begin{aligned}
 \int_M DF\,dA&=\oint_{\partial M}\boldsymbol nF\,ds \\
 \int_M\bigl((GD)F+G(DF)\bigr)dA&=\oint_{\partial M}G\,\boldsymbol nF\,ds \\
-\boldsymbol n\,ds&=I\,d\boldsymbol x
+\boldsymbol n\,ds&=\omega\,d\boldsymbol x
 \end{aligned}
 $$
 &&&
@@ -40,10 +40,10 @@ $F$の値は偶部分に限らず、$\operatorname{Cl}_{2,0}(\mathbb R)$の任�
 
 ## 有向線素による形
 
-$\boldsymbol n\,ds=I\,d\boldsymbol x$を代入して$I^{-1}=-I$を左から掛けると$\oint d\boldsymbol x\,F=0$です。さらに$e_1$を左から掛けます。$e_1$は定数なので積分の中に入れることができ、有向線素に$e_1$を掛けたものは$z=e_1\boldsymbol x$の微分
+$\boldsymbol n\,ds=\omega\,d\boldsymbol x$を代入して$\omega^{-1}=-\omega$を左から掛けると$\oint d\boldsymbol x\,F=0$です。さらに$e_1$を左から掛けます。$e_1$は定数なので積分の中に入れることができ、有向線素に$e_1$を掛けたものは$z=e_1\boldsymbol x$の微分
 
 $$
-dz=e_1\,d\boldsymbol x=dx+I\,dy
+dz=e_1\,d\boldsymbol x=dx+\omega\,dy
 $$
 
 になります。
@@ -54,14 +54,14 @@ $$
 $$
 &&&
 
-偶部分に値を取る$F$では$dz$と$F$が可換なので、$\oint F\,dz=0$とも書けます。これが複素解析で知られるコーシーの積分定理の形です。複素解析では、この定理は複素数値の線積分についての命題として述べられます。ここでは、基本定理の左辺がモノジェニック性で消えるという1行の帰結であり、$dz$は法線$\boldsymbol n\,ds$を$I$と$e_1$で書き換えたものにあたります。
+偶部分に値を取る$F$では$dz$と$F$が可換なので、$\oint F\,dz=0$とも書けます。これが複素解析で知られるコーシーの積分定理の形です。複素解析では、この定理は複素数値の線積分についての命題として述べられます。ここでは、基本定理の左辺がモノジェニック性で消えるという1行の帰結であり、$dz$は法線$\boldsymbol n\,ds$を$\omega$と$e_1$で書き換えたものにあたります。
 
 ## ベクトル値の関数
 
 ベクトル値の関数$F=ae_1+be_2$では、[[7shi-cla2]]のグリーンの定理の2つの形により、境界積分のスカラー部と2ベクトル部がそれぞれ流束と循環です。
 
 $$
-\oint_{\partial M}\boldsymbol nF\,ds=\oint_{\partial M}(a\,dy-b\,dx)+I\oint_{\partial M}(a\,dx+b\,dy)
+\oint_{\partial M}\boldsymbol nF\,ds=\oint_{\partial M}(a\,dy-b\,dx)+\omega\oint_{\partial M}(a\,dx+b\,dy)
 $$
 
 モノジェニックなベクトル場は発散と回転がともに消えるので、$\partial M$を横切る流束と$\partial M$に沿った循環がともに$0$です。積分定理はこの2つを1つにまとめた形になっています。
@@ -94,11 +94,11 @@ $$
 \boldsymbol t=-\sin\theta\,e_1+\cos\theta\,e_2
 $$
 
-$\boldsymbol n$は中心から外向きの単位ベクトル、$\boldsymbol t$は反時計回りの単位接線です。$\partial_\theta\boldsymbol n=\boldsymbol t$、$\partial_\theta\boldsymbol t=-\boldsymbol n$であり、$\boldsymbol nI=\cos\theta\,e_2-\sin\theta\,e_1=\boldsymbol t$です。
+$\boldsymbol n$は中心から外向きの単位ベクトル、$\boldsymbol t$は反時計回りの単位接線です。$\partial_\theta\boldsymbol n=\boldsymbol t$、$\partial_\theta\boldsymbol t=-\boldsymbol n$であり、$\boldsymbol n\omega=\cos\theta\,e_2-\sin\theta\,e_1=\boldsymbol t$です。
 
 &&&fml 極座標のディラック作用素
 $$
-DF=\boldsymbol n\Bigl(\partial_r+\frac Ir\,\partial_\theta\Bigr)F,\qquad
+DF=\boldsymbol n\Bigl(\partial_r+\frac \omega r\,\partial_\theta\Bigr)F,\qquad
 GD=(\partial_rG)\,\boldsymbol n+\frac1r(\partial_\theta G)\,\boldsymbol t
 $$
 &&&
@@ -111,10 +111,10 @@ $$
 \partial_y=\sin\theta\,\partial_r+\frac{\cos\theta}r\,\partial_\theta
 $$
 
-であり、$D=e_1\partial_x+e_2\partial_y=\boldsymbol n\,\partial_r+r^{-1}\boldsymbol t\,\partial_\theta$となる。$\boldsymbol t=\boldsymbol nI$を代入すれば第1式を得る。右からの作用も係数が同じなので第2式となる。
+であり、$D=e_1\partial_x+e_2\partial_y=\boldsymbol n\,\partial_r+r^{-1}\boldsymbol t\,\partial_\theta$となる。$\boldsymbol t=\boldsymbol n\omega$を代入すれば第1式を得る。右からの作用も係数が同じなので第2式となる。
 &&&
 
-微分が動径方向と角度方向に分かれ、それぞれの係数が法線$\boldsymbol n$と接線$\boldsymbol t$になっています。$\boldsymbol n$は可逆なので、$DF=0$は$\partial_rF=-(I/r)\partial_\theta F$と同値です。偶部分に値を取る関数では、これが極座標のコーシー＝リーマンの方程式にあたります。
+微分が動径方向と角度方向に分かれ、それぞれの係数が法線$\boldsymbol n$と接線$\boldsymbol t$になっています。$\boldsymbol n$は可逆なので、$DF=0$は$\partial_rF=-(\omega/r)\partial_\theta F$と同値です。偶部分に値を取る関数では、これが極座標のコーシー＝リーマンの方程式にあたります。
 
 ## 円環での両側形式
 
@@ -243,21 +243,21 @@ $$
 
 &&&fml 核と複素数の対応
 $$
-(\boldsymbol x-\boldsymbol a)^{-1}\boldsymbol n\,ds=I^{-1}\frac{dz}{z-w}
+(\boldsymbol x-\boldsymbol a)^{-1}\boldsymbol n\,ds=\omega^{-1}\frac{dz}{z-w}
 $$
 &&&
 
 &&&prf
-$\boldsymbol n\,ds=I\,d\boldsymbol x$と$d\boldsymbol x=e_1\,dz$より、$(\boldsymbol x-\boldsymbol a)^{-1}\boldsymbol n\,ds=(z-w)^{-1}e_1Ie_1\,dz$である。$e_1Ie_1=e_1e_1e_2e_1=-I=I^{-1}$であり、偶部分の元どうしは可換なので右辺を得る。
+$\boldsymbol n\,ds=\omega\,d\boldsymbol x$と$d\boldsymbol x=e_1\,dz$より、$(\boldsymbol x-\boldsymbol a)^{-1}\boldsymbol n\,ds=(z-w)^{-1}e_1\omega e_1\,dz$である。$e_1\omega e_1=e_1e_1e_2e_1=-\omega=\omega^{-1}$であり、偶部分の元どうしは可換なので右辺を得る。
 &&&
 
 偶部分に値を取るモノジェニック関数$F$では、[積分公式](#cor-cauchy)は次の形になります。
 
 $$
-F(\boldsymbol a)=\frac1{2\pi I}\oint_{\partial M}\frac{F\,dz}{z-w}
+F(\boldsymbol a)=\frac1{2\pi \omega}\oint_{\partial M}\frac{F\,dz}{z-w}
 $$
 
-複素解析のコーシーの積分公式です。そこでは$2\pi i$が1つの定数として現れますが、ここでは出所の異なる2つの因子に分かれます。$2\pi$は核と法線の積から来る$S^1$の長さであり、$I$は法線付きの境界要素と有向線素を結ぶ関係$\boldsymbol n\,ds=I\,d\boldsymbol x$から来ています。これは、接線を法線へ時計回りに$90^\circ$回す左乗法です。
+複素解析のコーシーの積分公式です。そこでは$2\pi i$が1つの定数として現れますが、ここでは出所の異なる2つの因子に分かれます。$2\pi$は核と法線の積から来る$S^1$の長さであり、$\omega$は法線付きの境界要素と有向線素を結ぶ関係$\boldsymbol n\,ds=\omega\,d\boldsymbol x$から来ています。これは、接線を法線へ時計回りに$90^\circ$回す左乗法です。
 
 ## 平均値の性質
 
@@ -357,43 +357,43 @@ $$
 
 と有限和で書けるなら、$\operatorname{Res}_{\boldsymbol a}F=c$です。最後の項の留数が$0$であることは[積分定理](#thm-cauchy)によります。留数は、核$(\boldsymbol x-\boldsymbol a)^{-1}$そのものの係数として読み取れます。
 
-偶部分に値を取る$F$について、複素解析の留数を$\operatorname{res}_wF=\frac1{2\pi I}\oint F\,dz$（$w=e_1\boldsymbol a$、積分は$\boldsymbol a$を中心とする小円上）と書いて区別します。$\boldsymbol n\,ds=I\,d\boldsymbol x=Ie_1\,dz=-e_1I\,dz$より
+偶部分に値を取る$F$について、複素解析の留数を$\operatorname{res}_wF=\frac1{2\pi \omega}\oint F\,dz$（$w=e_1\boldsymbol a$、積分は$\boldsymbol a$を中心とする小円上）と書いて区別します。$\boldsymbol n\,ds=\omega\,d\boldsymbol x=\omega e_1\,dz=-e_1\omega\,dz$より
 
 $$
-\operatorname{Res}_{\boldsymbol a}F=-e_1I\cdot\frac1{2\pi}\oint dz\,F=e_1\operatorname{res}_wF
+\operatorname{Res}_{\boldsymbol a}F=-e_1\omega\cdot\frac1{2\pi}\oint dz\,F=e_1\operatorname{res}_wF
 $$
 
 であり、複素解析の留数に$e_1$を左から掛けたものになります。たとえば$1/z=\boldsymbol x^{-1}e_1$の留数は、核の係数を読み取って$e_1$です。複素解析での値$1$と$e_1$だけ違うのは、偶部分の関数を核（ベクトル）の係数として書いたためであり、[[7shi-cla1]]で見た$e_1$による偶部分と奇部分の対応と同じものです。
 
 &&&ex 有理関数の留数
-偶部分の関数$F=1/(1+z^2)$の特異点は$z=\pm I$、すなわち$\boldsymbol x=e_1(\pm I)=\pm e_2$です。$z\mp I=e_1(\boldsymbol x\mp e_2)$より$(z\mp I)^{-1}=(\boldsymbol x\mp e_2)^{-1}e_1$なので、部分分数分解は
+偶部分の関数$F=1/(1+z^2)$の特異点は$z=\pm \omega$、すなわち$\boldsymbol x=e_1(\pm \omega)=\pm e_2$です。$z\mp \omega=e_1(\boldsymbol x\mp e_2)$より$(z\mp \omega)^{-1}=(\boldsymbol x\mp e_2)^{-1}e_1$なので、部分分数分解は
 
 $$
-F=\frac1{2I}\left(\frac1{z-I}-\frac1{z+I}\right)
-=(\boldsymbol x-e_2)^{-1}e_1\frac1{2I}-(\boldsymbol x+e_2)^{-1}e_1\frac1{2I}
+F=\frac1{2\omega}\left(\frac1{z-\omega}-\frac1{z+\omega}\right)
+=(\boldsymbol x-e_2)^{-1}e_1\frac1{2\omega}-(\boldsymbol x+e_2)^{-1}e_1\frac1{2\omega}
 $$
 
 となります。核の係数を読み取ると
 
 $$
-\operatorname{Res}_{e_2}F=-\frac{e_1I}2,\qquad\operatorname{Res}_{-e_2}F=\frac{e_1I}2
+\operatorname{Res}_{e_2}F=-\frac{e_1\omega}2,\qquad\operatorname{Res}_{-e_2}F=\frac{e_1\omega}2
 $$
 
-です。複素解析の値$\mp I/2$に$e_1$を左から掛けたものになっています。
+です。複素解析の値$\mp \omega/2$に$e_1$を左から掛けたものになっています。
 
 原点を中心とする半径$R>1$の円の上の$\oint\boldsymbol nF\,ds$は、留数定理により$2\pi\times$（留数の和）$=0$です。一方、この積分は$R$によらず、$|F|$は$1/R^2$程度で減衰するので積分は$1/R$程度で$0$に近づきます。どちらの見方でも$0$になります。
 &&&
 
 # まとめ
 
-基本定理$\int_MDF\,dA=\oint_{\partial M}\boldsymbol nF\,ds$にモノジェニック性を代入すると、積分定理$\oint\boldsymbol nF\,ds=0$が得られます。$\boldsymbol n\,ds=I\,d\boldsymbol x$と$dz=e_1\,d\boldsymbol x$で書き換えると、複素解析の$\oint F\,dz=0$になります。
+基本定理$\int_MDF\,dA=\oint_{\partial M}\boldsymbol nF\,ds$にモノジェニック性を代入すると、積分定理$\oint\boldsymbol nF\,ds=0$が得られます。$\boldsymbol n\,ds=\omega\,d\boldsymbol x$と$dz=e_1\,d\boldsymbol x$で書き換えると、複素解析の$\oint F\,dz=0$になります。
 
 積分公式の核はベクトルの逆元$(\boldsymbol x-\boldsymbol a)^{-1}$です。小円の上では核と法線の積が$1/\varepsilon$になり、両側形式で小円の極限を取るとコーシー＝ポンペイウの公式が得られます。モノジェニック関数ではコーシーの積分公式、円板では平均値の性質になり、境界の項を消せば核が$D$の基本解であることがわかります。
 
 | 因子 | 出所 |
 |---|---|
 | $2\pi$ | 核と法線の積$1/\varepsilon$を小円に沿って積分した、$S^1$の長さ |
-| $I$ | 接線を法線に回す左乗法$\boldsymbol n\,ds=I\,d\boldsymbol x$ |
+| $\omega$ | 接線を法線に回す左乗法$\boldsymbol n\,ds=\omega\,d\boldsymbol x$ |
 
 留数は小円上の積分として定義し、留数定理は積分定理から直ちに従います。核の導関数の留数は同次性により$0$です。したがって、核とその導関数の有限和に、特異点でもモノジェニックな関数を加えた形で書ける場合、留数は核$(\boldsymbol x-\boldsymbol a)^{-1}$そのものの右側の係数として読み取れます。偶部分の関数では、複素解析の留数に$e_1$を左から掛けたものです。
 

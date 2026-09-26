@@ -18,7 +18,7 @@ $$
 
 # 2次元の基本定理
 
-[[7shi-cla1]]と同じく、$\operatorname{Cl}_{2,0}(\mathbb R)$の生成元を$e_1,e_2$（$e_1^2=e_2^2=1$、$e_1e_2=-e_2e_1$）、擬スカラーを$I=e_1e_2$（$I^2=-1$）とし、ディラック作用素を
+[[7shi-cla1]]と同じく、$\operatorname{Cl}_{2,0}(\mathbb R)$の生成元を$e_1,e_2$（$e_1^2=e_2^2=1$、$e_1e_2=-e_2e_1$）、擬スカラーを$\omega=e_1e_2$（$\omega^2=-1$）とし、ディラック作用素を
 
 $$
 D=e_1\partial_x+e_2\partial_y
@@ -76,29 +76,29 @@ $$
 で表し、**有向線素**と呼びます。長さは$|d\boldsymbol x|=ds$で、向きが境界のたどる向きを表します。
 &&&
 
-外向きの法線は接線を時計回りに$90^\circ$回したものです。領域を左手に見てたどると、進行方向の右手が外側だからです。この回転は$I$を左から掛ける操作で表せます。
+外向きの法線は接線を時計回りに$90^\circ$回したものです。領域を左手に見てたどると、進行方向の右手が外側だからです。この回転は$\omega$を左から掛ける操作で表せます。
 
 &&&fml 法線と有向線素
 $$
-\boldsymbol n\,ds=I\,d\boldsymbol x
+\boldsymbol n\,ds=\omega\,d\boldsymbol x
 $$
 &&&
 
 &&&prf
-$Ie_1=e_1e_2e_1=-e_2$、$Ie_2=e_1e_2e_2=e_1$より
+$\omega e_1=e_1e_2e_1=-e_2$、$\omega e_2=e_1e_2e_2=e_1$より
 
 $$
-I\,d\boldsymbol x=e_1\,dy-e_2\,dx
+\omega\,d\boldsymbol x=e_1\,dy-e_2\,dx
 $$
 
 である。接線方向$(dx,dy)$を時計回りに$90^\circ$回すと$(dy,-dx)$であり、これが$\boldsymbol n\,ds$である。穴の境界でも、領域を左手に見る向きにたどる限り同じである。
 &&&
 
-[基本定理](#thm-2d)に代入し、$I^{-1}=-I$を左から掛けると、境界積分を有向線素で書いた形が得られます。
+[基本定理](#thm-2d)に代入し、$\omega^{-1}=-\omega$を左から掛けると、境界積分を有向線素で書いた形が得られます。
 
 &&&fml 有向線素による形
 $$
-\oint_{\partial M}d\boldsymbol x\,F=-I\int_M DF\,dA
+\oint_{\partial M}d\boldsymbol x\,F=-\omega\int_M DF\,dA
 $$
 &&&
 
@@ -109,7 +109,7 @@ $$
 ベクトル値の関数$F=ae_1+be_2$に[基本定理](#thm-2d)を当てはめます。左辺は[[7shi-cla1]]で見たとおり、発散と回転に分かれます。
 
 $$
-DF=(a_x+b_y)+(b_x-a_y)I
+DF=(a_x+b_y)+(b_x-a_y)\omega
 $$
 
 右辺では、$\boldsymbol n\,ds=e_1\,dy-e_2\,dx$を使って
@@ -118,11 +118,11 @@ $$
 \begin{aligned}
 \boldsymbol nF\,ds
 &=(e_1\,dy-e_2\,dx)(ae_1+be_2) \\
-&=(a\,dy-b\,dx)+(a\,dx+b\,dy)I
+&=(a\,dy-b\,dx)+(a\,dx+b\,dy)\omega
 \end{aligned}
 $$
 
-となります。両辺のスカラー部と$I$の係数を比べると、2つの式が得られます。
+となります。両辺のスカラー部と$\omega$の係数を比べると、2つの式が得られます。
 
 &&&fml グリーンの定理の2つの形
 $$
@@ -165,17 +165,17 @@ $$
 単位球$V$で$F=\boldsymbol x$とすると、$D\boldsymbol x=e_1e_1+e_2e_2+e_3e_3=3$なので、左辺は$3\times\frac43\pi=4\pi$です。境界の単位球面上では$\boldsymbol n\boldsymbol x=\boldsymbol x^2=1$なので、右辺は球面の面積$4\pi$です。
 &&&
 
-ベクトル値の関数$F$に当てはめます。3次元では擬スカラー$I=e_1e_2e_3$がすべての元と可換で$I^2=-1$を満たし、2ベクトルとベクトル積が次のように対応します。
+ベクトル値の関数$F$に当てはめます。3次元では擬スカラー$\omega=e_1e_2e_3$がすべての元と可換で$\omega^2=-1$を満たし、2ベクトルとベクトル積が次のように対応します。
 
 $$
-\boldsymbol a\wedge\boldsymbol b=I(\boldsymbol a\times\boldsymbol b)
+\boldsymbol a\wedge\boldsymbol b=\omega(\boldsymbol a\times\boldsymbol b)
 $$
 
-基底で確かめると、$e_1\wedge e_2=e_1e_2=e_1e_2e_3e_3=Ie_3$で、$e_1\times e_2=e_3$に一致します。$D$についても同様に、ベクトル値の$F$に対して
+基底で確かめると、$e_1\wedge e_2=e_1e_2=e_1e_2e_3e_3=\omega e_3$で、$e_1\times e_2=e_3$に一致します。$D$についても同様に、ベクトル値の$F$に対して
 
 $$
-DF=D\cdot F+D\wedge F=\nabla\cdot F+I(\nabla\times F),\qquad
-\boldsymbol nF=\boldsymbol n\cdot F+I(\boldsymbol n\times F)
+DF=D\cdot F+D\wedge F=\nabla\cdot F+\omega(\nabla\times F),\qquad
+\boldsymbol nF=\boldsymbol n\cdot F+\omega(\boldsymbol n\times F)
 $$
 
 となります。[基本定理](#thm-3d)のスカラー部と2ベクトル部を比べると、2つの式が得られます。
@@ -266,14 +266,14 @@ $$
 D\cdot(e_1e_2)=e_2\partial_1-e_1\partial_2=-e_1e_2(e_1\partial_1+e_2\partial_2)
 $$
 
-となり、右辺は2次元の擬スカラーと作用素による$-ID$です。したがって[曲面の基本定理](#thm-surf)は、2次元の有向線素による形$\oint d\boldsymbol x\,F=-I\int DF\,dA$に一致します。
+となり、右辺は2次元の擬スカラーと作用素による$-ID$です。したがって[曲面の基本定理](#thm-surf)は、2次元の有向線素による形$\oint d\boldsymbol x\,F=-\omega\int DF\,dA$に一致します。
 
 ## ストークスの定理
 
-3次元では有向面素を単位法線$\boldsymbol n$で$d\boldsymbol X=I\boldsymbol n\,dA$と書けます（$\boldsymbol r_u\wedge\boldsymbol r_v=I(\boldsymbol r_u\times\boldsymbol r_v)$）。$I$はすべての元と可換なので
+3次元では有向面素を単位法線$\boldsymbol n$で$d\boldsymbol X=\omega\boldsymbol n\,dA$と書けます（$\boldsymbol r_u\wedge\boldsymbol r_v=\omega(\boldsymbol r_u\times\boldsymbol r_v)$）。$\omega$はすべての元と可換なので
 
 $$
-\boldsymbol a\cdot(I\boldsymbol n)=\frac I2(\boldsymbol a\boldsymbol n-\boldsymbol n\boldsymbol a)=I(\boldsymbol a\wedge\boldsymbol n)=I^2(\boldsymbol a\times\boldsymbol n)=\boldsymbol n\times\boldsymbol a
+\boldsymbol a\cdot(\omega\boldsymbol n)=\frac \omega2(\boldsymbol a\boldsymbol n-\boldsymbol n\boldsymbol a)=\omega(\boldsymbol a\wedge\boldsymbol n)=\omega^2(\boldsymbol a\times\boldsymbol n)=\boldsymbol n\times\boldsymbol a
 $$
 
 となり、$(D\cdot d\boldsymbol X)F=\bigl((\boldsymbol n\times\nabla)F\bigr)dA$です。ベクトル値の$F$に対して[曲面の基本定理](#thm-surf)のスカラー部を取ると、左辺は$d\boldsymbol x\cdot F$、右辺は$(\boldsymbol n\times\nabla)\cdot F=\boldsymbol n\cdot(\nabla\times F)$です。
@@ -311,7 +311,7 @@ $G=1$とすれば元の形に戻ります。法線$\boldsymbol n$は$G$と$F$の
 曲面の場合と同様に、$n$次元空間の中の一般の次元の曲面に対しても基本定理が成り立ちますが、本記事では扱いません。
 
 &&&rem 微分形式との比較
-微分形式を使うと、ストークスの定理$\int_Md\omega=\int_{\partial M}\omega$が各種の積分定理を1つにまとめます。通常の提示では、発散定理と回転の積分定理は次数の異なる形式$\omega$に対する別々の適用として現れます。微分形式でも次数の異なる形式をまとめて扱うことはできますが、本記事の基本定理では、幾何積によって、1つのベクトル値関数$F$から発散と回転、およびそれぞれに対応する境界項が一度に得られます。
+微分形式を使うと、ストークスの定理$\int_Md\alpha=\int_{\partial M}\alpha$が各種の積分定理を1つにまとめます。通常の提示では、発散定理と回転の積分定理は次数の異なる形式$\alpha$に対する別々の適用として現れます。微分形式でも次数の異なる形式をまとめて扱うことはできますが、本記事の基本定理では、幾何積によって、1つのベクトル値関数$F$から発散と回転、およびそれぞれに対応する境界項が一度に得られます。
 &&&
 
 # まとめ
@@ -326,6 +326,6 @@ $G=1$とすれば元の形に戻ります。法線$\boldsymbol n$は$G$と$F$の
 | 3 | 同上 | ベクトル | 2ベクトル部 | 回転の体積分 |
 | 3 | $\oint d\boldsymbol x\,F=\int(D\cdot d\boldsymbol X)F$ | ベクトル | スカラー部 | ストークスの定理 |
 
-平面では$\boldsymbol n\,ds=I\,d\boldsymbol x$により、境界積分を有向線素$d\boldsymbol x$で書いた形$\oint d\boldsymbol x\,F=-I\int DF\,dA$にもなります。空間内の曲面では外向きの法線の代わりに有向面素$d\boldsymbol X$を使い、$\oint d\boldsymbol x\,F=\int(D\cdot d\boldsymbol X)F$となります。平面をそのまま曲面と見ると、この2つは一致します。
+平面では$\boldsymbol n\,ds=\omega\,d\boldsymbol x$により、境界積分を有向線素$d\boldsymbol x$で書いた形$\oint d\boldsymbol x\,F=-\omega\int DF\,dA$にもなります。空間内の曲面では外向きの法線の代わりに有向面素$d\boldsymbol X$を使い、$\oint d\boldsymbol x\,F=\int(D\cdot d\boldsymbol X)F$となります。平面をそのまま曲面と見ると、この2つは一致します。
 
 ベクトル解析で別々に扱われる積分定理は、領域の基本定理とその曲面版という2つの式のグレード成分として現れます。微分の側の$DF$が発散と回転をまとめていたことが、積分の側では法線との積$\boldsymbol nF$が内積と外積をまとめることに対応しています。非可換な代数に値を取る関数のために、$\boldsymbol n$を$G$と$F$で挟む両側形式も成り立ちます。
