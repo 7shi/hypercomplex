@@ -33,6 +33,9 @@
 13. sigma_1 sigma_2 - sigma_2 sigma_1 = 2 I sigma_3; e^{sigma_1 a/2} e^{sigma_2 b/2} has the rotation
     component I sigma_3 sinh(a/2) sinh(b/2). Canonical form: boosting along S with tanh 2eta = |S|/(cu)
     makes E' x B' = 0 (random integer fields, numerically).
+14. Energy as projection: (mU).(c gamma_0) = gamma m c^2; magnetic planes do not move the time
+    axis: (I sigma_k).gamma_0 = 0; a pure magnetic field seen by the comoving observer gives
+    E'_perp = gamma v x B.
 """
 
 import sympy as sp
@@ -308,3 +311,24 @@ for _ in range(3):
     assert max(abs(x) for x in cross(Epn, Bpn)) < 1e-9
 print("13. [sigma_1, sigma_2] = 2 I sigma_3, boost composition has a rotation part; "
       "boost along S with tanh 2eta = |S|/cu gives E' parallel to B'")
+
+# ---------------------------------------------------------------- 14.
+u14 = sp.symbols("u1:4", real=True)
+gam14 = 1 / sp.sqrt(1 - sum(x**2 for x in u14) / c**2)
+U14 = gam14 * (c * g0 + sum((u14[k] * g[k + 1] for k in range(3)), S.zero()))
+m14 = sp.Symbol("m", positive=True)
+dotv = lambda p, r: ((p * r + r * p) / 2).scalar()
+assert sp.simplify(dotv(m14 * U14, c * g0) - gam14 * m14 * c**2) == 0
+for s_ in sg:
+    assert eq(((I * s_) * g0 - g0 * (I * s_)) / 2, 0)
+# pure B boosted along sigma_1 with v = c tanh(eta): E'_perp = gamma (v x B)_perp
+e14 = sp.Symbol("eta", real=True)
+B14 = sp.symbols("B1:4", real=True)
+R14 = sp.cosh(e14 / 2) + sg[0] * sp.sinh(e14 / 2)
+Fp14 = rev(R14) * (I * c * svec(B14)) * R14
+v14 = c * sp.tanh(e14)
+vxB = cross([v14, 0, 0], B14)
+for k in (1, 2):
+    assert sp.simplify((comp(Fp14, list(sg[k].d)[0]) * list(sg[k].d.values())[0]
+                        - sp.cosh(e14) * vxB[k]).rewrite(sp.exp)) == 0
+print("14. gamma m c^2 = (mU).(c gamma_0); (I sigma_k).gamma_0 = 0; pure B: E'_perp = gamma v x B")
