@@ -255,3 +255,30 @@ Bw = mu0 / (4 * sp.pi) * Icur * sp.integrate(r_ / (r_**2 + z_**2)**sp.Rational(3
 assert sp.simplify(Bw - mu0 * Icur / (2 * sp.pi * r_)) == 0
 assert sp.simplify(2 * sp.pi * r_ * Bw - mu0 * Icur) == 0
 print("10. straight current: Biot-Savart gives B = mu0 I/(2 pi r) in the e_phi direction; 2 pi r B = mu0 I")
+
+# ---------------------------------------------------------------- 11.
+# Lorentz force from the bivector iB: v x B = ((iB)v - v(iB))/2. The component of v along B
+# commutes with iB (no force); the component in the plane of iB anticommutes, and then the
+# force is (iB)v, the in-plane vector v turned by a right angle (orthogonal to v, |B||v|).
+Bs = sp.symbols("B1:4", real=True)
+Bb = I * vec(Bs)
+assert eq((Bb * vec(vv) - vec(vv) * Bb) / 2, vec(cross(vv, Bs)))
+assert eq(Bb * vec(Bs) - vec(Bs) * Bb, 0)
+w = [1, 0, 0]  # B along e_3, v in the plane of i e_3
+Bz = I * e[2]
+assert eq(Bz * vec(w) + vec(w) * Bz, 0)
+assert eq(Bz * vec(w), vec(cross(w, [0, 0, 1])))
+print("11. v x B = ((iB)v - v(iB))/2; v || B commutes with iB, v in the plane anticommutes and is turned by 90 deg")
+
+# ---------------------------------------------------------------- 12.
+# Example: uniform surface charge sigma on the plane z = 0. Coulomb's law at height z > 0:
+# E_z = sigma/(4 pi eps0) int_0^oo z/(s^2 + z^2)^{3/2} 2 pi s ds = sigma/(2 eps0), independent of z;
+# Gauss with a thin cylinder: 2 E A = sigma A/eps0. Two sheets +-sigma: sigma/eps0 between, 0 outside.
+sig, zz = sp.Symbol("sigma", positive=True), sp.Symbol("z", positive=True)
+Esheet = sig / (4 * sp.pi * eps0) * sp.integrate(zz / (s_**2 + zz**2)**sp.Rational(3, 2) * 2 * sp.pi * s_, (s_, 0, sp.oo))
+assert sp.simplify(Esheet - sig / (2 * eps0)) == 0
+# plates at z = 0 (+sigma) and z = d (-sigma): field along +e_3 between, cancels outside
+between = Esheet + Esheet   # +sigma pushes up, -sigma above pulls up
+outside = Esheet - Esheet
+assert sp.simplify(between - sig / eps0) == 0 and outside == 0
+print("12. uniform sheet: E = sigma/(2 eps0) independent of distance; two sheets +-sigma: sigma/eps0 between, 0 outside")
