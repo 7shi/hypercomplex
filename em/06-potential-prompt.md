@@ -15,6 +15,7 @@ refs:
     - $D\wedge D=0$がベクトル解析の恒等式$\nabla\times\nabla\varphi=0$、$\nabla\cdot(\nabla\times\boldsymbol A)=0$をまとめたものであること
     - $T(a)=-\frac{\varepsilon_0}2FaF$が$F$で挟むという代数の操作で、$T(\gamma_0)\gamma_0$が第3回の$\frac{\varepsilon_0}2FF^\dagger$に戻ること
     - 第1回の「磁場は2ベクトル」節にある、2ベクトル$i\boldsymbol B$の反対称積としてのローレンツ力$\boldsymbol v\times\boldsymbol B=\frac12\bigl((i\boldsymbol B)\boldsymbol v-\boldsymbol v(i\boldsymbol B)\bigr)$と、本記事の力の密度の扱いが食い違っていないか
+    - 第5回の「エネルギーは4元運動量の観測者の時間軸への射影$\gamma mc^2=(mU)\cdot(c\gamma_0)$」という直感と、本記事の$T(\gamma_0)$（観測者の時間軸で見たエネルギー密度と運動量密度）が、粒子と場の対応として結びついて見えるか。第5回への後方参照が有効か
     - 上の説明が数学的・物理的に正確で、言い過ぎ（成り立つ範囲を超えた一般化、比喩の過剰）になっていないか
     - 式を追わなくても言葉で伝わる書き方になっているか。置かれている位置（定理の直後、まとめなど）が適切で、同じ直感の繰り返しや、前後の記事との重複・食い違いがないか
     - 幾何代数の構造から自然に出るのに書かれていない直感がほかにないか（あれば、どの式から何が読み取れるかを具体的に）
