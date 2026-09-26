@@ -19,6 +19,8 @@
    gamma q (E + u x B)_k; v . (F . v) = 0.
 7. Doppler: for the plane wave F = (1 + sigma_1) E_perp f(x_0 - x_1) and the boost
    along e_1, R~ F R = e^{-eta} F and x_0 - x_1 = e^{-eta}(x'_0 - x'_1).
+   The observer coordinates are x'_0 = gamma(x_0 - beta x_1), x'_1 = gamma(x_1 - beta x_0)
+   with gamma = cosh(eta), beta = tanh(eta) (the Lorentz transformation quoted in em/04).
 8. dx_1/dt = c tanh(eta) along gamma_0', t = cosh(eta) tau (time dilation);
    velocity addition (v1 + v2)/(1 + v1 v2/c^2) = c tanh(a + b), c with c, below c.
 9. Boosting a pure electric field: B' = u x E'/c^2 with u = -v; Biot-Savart with
@@ -189,7 +191,10 @@ X = S.X
 x0p = ip(S.x, g0p)
 x1p = -ip(S.x, g1p)
 assert sp.simplify((X[0] - X[1] - sp.exp(-eta) * (x0p - x1p)).rewrite(sp.exp)) == 0
-print("7. plane wave along the boost: R~ F R = e^{-eta} F, x0 - x1 = e^{-eta}(x0' - x1') (Doppler factor)")
+assert sp.simplify(x0p - sp.cosh(eta) * (X[0] - sp.tanh(eta) * X[1])) == 0
+assert sp.simplify(x1p - sp.cosh(eta) * (X[1] - sp.tanh(eta) * X[0])) == 0
+print("7. plane wave along the boost: R~ F R = e^{-eta} F, x0 - x1 = e^{-eta}(x0' - x1') (Doppler factor); "
+      "x0' = gamma(x0 - beta x1), x1' = gamma(x1 - beta x0)")
 
 # ---------------------------------------------------------------- 8.
 # gamma_0' = R gamma_0 R~ moves with dx_1/dt = c tanh(eta); time dilation: c tau gamma_0'

@@ -94,7 +94,7 @@ $$
 $\tilde\sigma_1=\gamma_0\gamma_1=-\sigma_1$より$\tilde R=e^{-\sigma_1\eta/2}$、$R\tilde R=1$である。$\gamma_0,\gamma_1$は$\sigma_1$と反可換なので$\gamma_0\tilde R=R\gamma_0$であり、$R\gamma_0\tilde R=R^2\gamma_0=(\cosh\eta+\gamma_1\gamma_0\sinh\eta)\gamma_0=\gamma_0\cosh\eta+\gamma_1\sinh\eta$となる。$\gamma_1$についても$\gamma_1\gamma_0\gamma_1=\gamma_0$から同様である。$\gamma_2,\gamma_3$は$\sigma_1$と可換なので変わらない。
 &&&
 
-$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\eta\,(\gamma_0+\gamma_1\tanh\eta)$は、$\sigma_1$方向に速さ$v=c\tanh\eta$で動く観測者の世界線の向きです。係数$\cosh\eta=1/\sqrt{1-v^2/c^2}$はローレンツ因子で（以下、添字のない$\gamma$はローレンツ因子を表します）、パラメーター$\eta$はラピディティと呼ばれます。
+$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\eta\,(\gamma_0+\gamma_1\tanh\eta)$は、$\sigma_1$方向に速さ$v=c\tanh\eta$で動く観測者の世界線の向きです。係数$\cosh\eta=1/\sqrt{1-v^2/c^2}$はローレンツ因子で（以下、添字のない$\gamma$はローレンツ因子を表します）、パラメーター$\eta$はラピディティと呼ばれます。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$を成分で書くと$x_0'=\gamma(x_0-\beta x_1)$、$x_1'=\gamma(x_1-\beta x_0)$（$\beta=v/c$）となり、[[7shi-em4]]の同時性の相対性の例で引用したローレンツ変換が得られます。
 
 $\gamma_0'$が動く観測者の世界線の向きであることは、次のように確かめられます。$\gamma_0'$の向きに進むと、$x_0=ct$が$\cosh\eta$増えるごとに$x_1$が$\sinh\eta$増えるので、$dx_1/dt=c\tanh\eta=v$です。つまりブーストは、静止した観測者を、$\sigma_1$方向に一定の速さ$v$で動く観測者に取り替える変換です。
 
