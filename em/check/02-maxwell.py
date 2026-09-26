@@ -18,6 +18,9 @@
 7. 1/sqrt(eps_0 mu_0) = 2.998e8 m/s.
 8. Vector-analysis identities as grades of D^2 = Laplacian: D(D phi) has bivector part
    I curl grad phi = 0; D(D V) = grad div V - curl curl V + I div curl V = Lap V.
+9. Constraints are preserved: if the vector and bivector parts (evolution equations)
+   hold, d_t(div E - rho/eps_0) = -(d_t rho + div J)/eps_0 and d_t div B = 0.
+10. f(z - ct) solves the wave equation (1/c^2 d_t^2 - d_z^2) f = 0.
 """
 
 import sympy as sp
@@ -212,3 +215,25 @@ assert eq(DDV.grade(3), I * div(curl(V))) and eq(DDV.grade(3), 0)
 assert eq(DDV, vec([sum(sp.diff(V[k], v, 2) for v in Xs) for k in range(3)]))
 print("8. D^2 = Lap: bivector part of D(D phi) is I curl grad phi = 0; D(D V): grad div V - curl curl V = Lap V, "
       "pseudoscalar I div curl V = 0")
+
+# ---------------------------------------------------------------- 9.
+t = sp.Symbol("t", real=True)
+Ef9 = [sp.Function(f"E{k}")(t, *Xs) for k in (1, 2, 3)]
+Bf9 = [sp.Function(f"B{k}")(t, *Xs) for k in (1, 2, 3)]
+rf9 = sp.Function("rho")(t, *Xs)
+Jf9 = [sp.Function(f"J{k}")(t, *Xs) for k in (1, 2, 3)]
+# evolution equations: d_t E = c^2 curl B - J/eps0, d_t B = -curl E
+dtE = [c**2 * curl(Bf9)[k] - Jf9[k] / eps0 for k in range(3)]
+dtB = [-curl(Ef9)[k] for k in range(3)]
+dt_gauss = sum(sp.diff(dtE[k], v) for k, v in enumerate(Xs)) - sp.diff(rf9, t) / eps0
+assert sp.simplify(dt_gauss + (sp.diff(rf9, t) + div(Jf9)) / eps0) == 0
+assert sp.simplify(sum(sp.diff(dtB[k], v) for k, v in enumerate(Xs))) == 0
+print("9. evolution equations preserve the constraints: d_t(div E - rho/eps0) = -(d_t rho + div J)/eps0, "
+      "d_t div B = 0")
+
+# ---------------------------------------------------------------- 10.
+z = sp.Symbol("z", real=True)
+f = sp.Function("f")
+w = f(z - c * t)
+assert sp.simplify(sp.diff(w, t, 2) / c**2 - sp.diff(w, z, 2)) == 0
+print("10. f(z - ct) solves the wave equation")
