@@ -16,7 +16,7 @@ $$
 
 単位ベクトル$\hat{\boldsymbol k}$の方向に進む平面波を考えます。$F$が$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$だけの関数$F(\xi)$であるとします。
 
-この形の意味を確かめておきます。ある時刻に$\xi$が一定の点の集まりは、$\hat{\boldsymbol k}\cdot\boldsymbol x=\text{一定}$という$\hat{\boldsymbol k}$に垂直な平面で、その上で場は一様です。この平面を**波面**と呼びます。時間が$\Delta t$だけ進むと$x_0=ct$は$c\Delta t$増えるので、同じ$\xi$の値を持つ平面は$\hat{\boldsymbol k}$の向きに$c\Delta t$だけ移動します。したがって$F(\xi)$は、波形を変えずに$\hat{\boldsymbol k}$の向きへ速さ$c$で進む波です。電荷から十分遠くでは、狭い範囲の電磁波はこの平面波で近似できます。
+この形の意味を確かめておきます。これは[[7shi-em2]]の1次元の例$f(z-ct)$を任意の向きに書いたものです。ある時刻に$\xi$が一定の点の集まりは、$\hat{\boldsymbol k}\cdot\boldsymbol x=\text{一定}$という$\hat{\boldsymbol k}$に垂直な平面で、その上で場は一様です。この平面を**波面**と呼びます。時間が$\Delta t$だけ進むと$x_0=ct$は$c\Delta t$増えるので、同じ$\xi$の値を持つ平面は$\hat{\boldsymbol k}$の向きに$c\Delta t$だけ移動します。したがって$F(\xi)$は、波形を変えずに$\hat{\boldsymbol k}$の向きへ速さ$c$で進む波です。波源から十分遠く、波面の曲がりや振幅の変化を無視できる狭い範囲では、電磁波はこの平面波で近似できます。
 
 $F=F(\xi)$について$\partial_0F=F'$、$\partial_kF=-\hat k_kF'$より
 
@@ -35,7 +35,7 @@ P_\pm^2=P_\pm,\qquad P_+P_-=P_-P_+=0,\qquad P_++P_-=1
 $$
 &&&
 
-$(1-\hat{\boldsymbol k})X=0$は$P_-X=0$、すなわち$X=P_+X$と同値です。したがって方程式からは$(P_-F)'=0$、つまり$P_-F$が$\xi$によらないことが分かります。この一定の背景場を差し引けば、残りの場は$P_-F=0$、すなわち$F=P_+F$を満たします。$\xi\to-\infty$で$F\to0$という条件や、周期的な波で平均が$0$という条件も、$P_-F=0$を保証します。以下では、背景場を除いた波の部分を扱います。
+$(1-\hat{\boldsymbol k})X=0$は$P_-X=0$、すなわち$X=P_+X$と同値です。したがって方程式からは$(P_-F)'=0$、つまり$P_-F$が$\xi$によらないことが分かります。基準値$\xi_*$を選んで一定の場$F(\xi_*)$を差し引くと、残りの場$F(\xi)-F(\xi_*)$は$P_-$で消え、$F=P_+F$を満たします。$\xi\to-\infty$で$F\to0$という条件や、周期的な波で平均が$0$という条件も、$P_-F=0$を保証します。以下では、背景場を除いた波の部分を扱います。
 
 &&&thm 平面波 [thm-plane]
 $F=\boldsymbol E+ic\boldsymbol B$が$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数で$F=P_+F$を満たすことは、
@@ -57,7 +57,9 @@ $$
 である。2ベクトル部が$0$であることは$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$であり、このとき$\hat{\boldsymbol k}\cdot\boldsymbol B=0$で擬スカラー部も$0$になる。さらにベクトル部は$\boldsymbol E+\hat{\boldsymbol k}\times(\hat{\boldsymbol k}\times\boldsymbol E)=\hat{\boldsymbol k}(\hat{\boldsymbol k}\cdot\boldsymbol E)$となり、スカラー部とともに$\hat{\boldsymbol k}\cdot\boldsymbol E=0$のときに限り$0$になる。したがって$(1-\hat{\boldsymbol k})F=0$は$\hat{\boldsymbol k}\cdot\boldsymbol E=0$と$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$の2条件と同値である。このとき$\hat{\boldsymbol k}\boldsymbol E=\hat{\boldsymbol k}\wedge\boldsymbol E=i(\hat{\boldsymbol k}\times\boldsymbol E)=ic\boldsymbol B$なので、$F=\boldsymbol E+\hat{\boldsymbol k}\boldsymbol E=(1+\hat{\boldsymbol k})\boldsymbol E$である。
 &&&
 
-電場と磁場はともに進行方向に垂直で互いにも垂直、大きさは$|\boldsymbol E|=c|\boldsymbol B|$です。振動する量が進行方向に垂直な波を**横波**と呼び、電磁波は横波です（空気の疎密が進行方向に沿って伝わる音波は縦波です）。$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$より、$\boldsymbol E$、$\boldsymbol B$、$\hat{\boldsymbol k}$はこの順に右手系をなし、進行方向は$\boldsymbol E\times\boldsymbol B$の向きです。ベクトル解析では、これらの性質を平面波の仮定からマクスウェル方程式の4本の式に代入して1つずつ導きます。ここでは、$F$が冪等元$P_+$の像に入るという1つの条件にまとまっています。逆に、$\hat{\boldsymbol k}$に垂直な値を取る任意の$C^1$級の関数$\boldsymbol E(\xi)$について、$F=(1+\hat{\boldsymbol k})\boldsymbol E(\xi)$は$\mathcal DF=(1-\hat{\boldsymbol k})(1+\hat{\boldsymbol k})\boldsymbol E'=0$を満たす解です。波形は正弦波に限りません。
+電場と磁場はともに進行方向に垂直で互いにも垂直、大きさは$|\boldsymbol E|=c|\boldsymbol B|$です。振動する量が進行方向に垂直な波を**横波**と呼び、真空を進む平面電磁波は横波です（空気の疎密が進行方向に沿って伝わる音波は縦波です）。$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$より、$\boldsymbol E$、$\boldsymbol B$、$\hat{\boldsymbol k}$はこの順に右手系をなし、進行方向は$\boldsymbol E\times\boldsymbol B$の向きです。ベクトル解析では、これらの性質を平面波の仮定からマクスウェル方程式の4本の式に代入して1つずつ導きます。ここでは、$F$が冪等元$P_+$の像に入るという1つの条件にまとまっています。逆に、$\hat{\boldsymbol k}$に垂直な値を取る任意の$C^1$級の関数$\boldsymbol E(\xi)$について、$F=(1+\hat{\boldsymbol k})\boldsymbol E(\xi)$は$\mathcal DF=(1-\hat{\boldsymbol k})(1+\hat{\boldsymbol k})\boldsymbol E'=0$を満たす解です。波形は正弦波に限りません。
+
+進行方向と電場の波形を決めると、磁場は別に選べません。冪等元の条件は、電場と磁場を独立な2つの波ではなく、一緒に進む一組に固定しています。
 
 &&&rem 双曲型の正則関数
 本シリーズでは擬スカラーを$i$と書くので、電気工学の慣用に従い、複素数の虚数単位を$j$と書きます。複素解析では、$z=x+jy$の任意の正則関数$f(z)$がコーシー＝リーマンの方程式を満たしました。$\mathcal DF=0$はその双曲型版で、$z$の役割を光的な変数$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$が担います。ただし$\xi$の任意の関数がそのまま解になるのではなく、冪等元$P_+$の像に入ることが必要です。空間1次元（$\mathcal D=\partial_0+e_1\partial_1$）では、$P_\pm=(1\pm e_1)/2$として
@@ -66,7 +68,7 @@ $$
 F=P_+f(x_0-x_1)+P_-g(x_0+x_1)
 $$
 
-が一般解で、右向きと左向きに進む波が2つの冪等元の成分に分かれます（ダランベールの解）。分解型複素数（[[7shi-clif2]]）の冪等元による直和分解が、そのまま進行方向による波の分解になっています。楕円型の正則関数と違い、$f,g$は解析的である必要がなく、微分可能でさえあれば任意です。
+が一般解で、右向きと左向きに進む波が2つの冪等元の成分に分かれます（ダランベールの解）。分解型複素数（[[7shi-clif2]]）の冪等元による直和分解が、そのまま進行方向による波の分解になっています。楕円型の正則関数と違い、$f,g$は解析的である必要がなく、微分可能でさえあれば任意です。ここで$f,g$はクリフォード代数値で、電磁場として使うときは全体がベクトル部と2ベクトル部だけを持つように選びます。
 &&&
 
 ## $F^2=0$
@@ -103,7 +105,7 @@ $F=\boldsymbol E+ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\bolds
 
 波形が三角関数で表される平面波を正弦波と呼びます。正弦波の位相を$\theta=\omega t-\boldsymbol k\cdot\boldsymbol x$と書くとき、$\omega$を角振動数、$\boldsymbol k$を波数ベクトルと呼びます。1秒あたりの振動の回数（振動数）は$f=\omega/2\pi$、波の繰り返しの長さ（波長）は$\lambda=2\pi/|\boldsymbol k|$です。前節の$\xi$の関数であるためには$\omega=c|\boldsymbol k|$、すなわち$f\lambda=c$でなければなりません。
 
-電場の振動する向きを**偏光**と呼びます。電場が1本の直線に沿って往復するものを直線偏光、大きさを保って進行方向のまわりを回転するものを円偏光と呼びます。自然光は、さまざまな偏光が不規則に混ざったものです。
+固定した位置で電場ベクトルが時間とともに描く軌跡を、**偏光**の状態と呼びます。電場が1本の直線に沿って往復するものを直線偏光、大きさを保って進行方向のまわりを回転するものを円偏光と呼び、一般には楕円を描きます（楕円偏光）。自然光は、さまざまな偏光が不規則に混ざったものです。
 
 正弦波を扱うとき、ベクトル解析では複素振幅$\boldsymbol E_0e^{j(\omega t-\boldsymbol k\cdot\boldsymbol x)}$を使い、最後に実部を取ります。$\operatorname{Cl}_{3,0}(\mathbb R)$には、2乗が$-1$ですべての元と可換な$i$があるので、$j$の代わりに$i$を使った指数関数を作れます。ただしこれは実部を取る処方の書き換えではなく、電磁場全体に$e^{i\theta}$を掛けて電場と磁場の成分を混ぜる操作です。
 
@@ -158,7 +160,7 @@ $$
 
 ## 電気と磁気の双対性
 
-円偏光で使った$e^{i\theta}$は、平面波に限らず真空の場全体に働きます。$i$は$\operatorname{Cl}_{3,0}(\mathbb R)$の中心にあり$\mathcal D$と可換なので、$\mathcal DF=0$なら任意の実数$\alpha$について
+円偏光で使った指数関数と同じ形の操作を、位置と時刻によらない一定の角$\alpha$で行います。この双対回転は、平面波に限らず真空の任意の解を別の解に移します。$i$は$\operatorname{Cl}_{3,0}(\mathbb R)$の中心にあり$\mathcal D$と可換なので、$\mathcal DF=0$なら任意の実数$\alpha$について
 
 $$
 \mathcal D\bigl(Fe^{i\alpha}\bigr)=(\mathcal DF)e^{i\alpha}=0
@@ -170,7 +172,7 @@ $$
 \boldsymbol E\mapsto-c\boldsymbol B,\qquad c\boldsymbol B\mapsto\boldsymbol E
 $$
 
-となり、電場と磁場の役割が入れ替わります。真空のマクスウェル方程式が電場と磁場の入れ替えに対して形を保つこと（電気と磁気の双対性）は、擬スカラーを掛けるという1つの操作として表れます。一般の$\alpha$では電場と磁場が角$\alpha$で混ざり、円偏光の$e^{i\theta}$はこの双対回転を位相として使ったものと読めます。源がある場合は、源も同じ角だけ回す必要があり、磁荷（[[7shi-em1]]）を持ち込まない限りこの対称性は成り立ちません。
+となり、電場と磁場の役割が入れ替わります。真空のマクスウェル方程式が電場と磁場の入れ替えに対して形を保つこと（電気と磁気の双対性）は、擬スカラーを掛けるという1つの操作として表れます。一般の$\alpha$では電場と磁場が角$\alpha$で混ざり、円偏光の$e^{i\theta}$はこの双対回転を位相として使ったものと読めます。円偏光で位置と時刻に依存する角$\theta$を使えたのは、平面波の冪等元の条件による特別な事情です。源がある場合は、源も同じ角だけ回す必要があります。回した源$(\rho-\boldsymbol J/c)e^{i\alpha}$には擬スカラー部と2ベクトル部が現れ、それぞれ磁荷（[[7shi-em1]]）の密度とその流れ（磁流）にあたるので、これらを持ち込まない限りこの対称性は成り立ちません。
 
 双対回転で$F^2$は$F^2e^{2i\alpha}$となり、スカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$は複素数の実部と虚部のように混ざります。一方、次節の$FF^\dagger$は$(Fe^{i\alpha})(Fe^{i\alpha})^\dagger=Fe^{i\alpha}e^{-i\alpha}F^\dagger=FF^\dagger$で変わりません。
 
@@ -192,14 +194,14 @@ $$
 $FF^\dagger=(\boldsymbol E+ic\boldsymbol B)(\boldsymbol E-ic\boldsymbol B)=|\boldsymbol E|^2+c^2|\boldsymbol B|^2-ic(\boldsymbol E\boldsymbol B-\boldsymbol B\boldsymbol E)$である。$\boldsymbol E\boldsymbol B-\boldsymbol B\boldsymbol E=2\boldsymbol E\wedge\boldsymbol B=2i(\boldsymbol E\times\boldsymbol B)$より、最後の項は$2c\,\boldsymbol E\times\boldsymbol B$となる。$\varepsilon_0c=1/\mu_0c$を使えばよい。
 &&&
 
-$u$は電磁場のエネルギー密度で、電場と磁場が存在する空間には単位体積あたり$u$のエネルギーが蓄えられていると考えます。$c^2\varepsilon_0=1/\mu_0$より$u=\frac{\varepsilon_0}2|\boldsymbol E|^2+\frac1{2\mu_0}|\boldsymbol B|^2$で、第1項が電場の、第2項が磁場のエネルギーです。単位は$\mathrm{J/m^3}$です。
+$u$は電磁場のエネルギー密度で、電場と磁場が存在する空間には単位体積あたり$u$のエネルギーが蓄えられていると考えます。$c^2\varepsilon_0=1/\mu_0$より$u=\frac{\varepsilon_0}2|\boldsymbol E|^2+\frac1{2\mu_0}|\boldsymbol B|^2$で、第1項が電場の、第2項が磁場のエネルギーです。単位は$\mathrm{J/m^3}$です。この解釈は、下のコンデンサーの例とポインティングの定理によって裏付けられます。
 
 &&&ex 平行板コンデンサーのエネルギー
-面積$S$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与えます。板の端の効果を無視すると、[[7shi-em1]]のガウスの法則から、板の間の電場は一様で大きさ$E=Q/\varepsilon_0S$、板の外では$0$です。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0S$です。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0S}dq$が要ります。$0$から$Q$まで積分すると、充電に要する仕事は
+[[7shi-em2]]で変位電流を考えた平行板コンデンサーについて、充電に要する仕事を調べます。面積$A$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与えます。板の端の効果を無視すると、板の間の電場は一様で大きさ$E=Q/\varepsilon_0A$、板の外では$0$です。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0A$です。ゆっくり充電し、抵抗や放射による損失は無視します。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0A}dq$が要ります。$0$から$Q$まで積分すると、充電に要する仕事は
 $$
-W=\frac{Q^2d}{2\varepsilon_0S}=\frac{\varepsilon_0}2E^2\cdot Sd
+W=\frac{Q^2d}{2\varepsilon_0A}=\frac{\varepsilon_0}2E^2\cdot Ad
 $$
-です。$Sd$は電場のある領域の体積なので、この仕事はエネルギー密度$\frac{\varepsilon_0}2E^2$の電場として板の間に蓄えられていると読めます。
+です。$Ad$は電場のある領域の体積なので、この仕事はエネルギー密度$\frac{\varepsilon_0}2E^2$の電場として板の間に蓄えられていると読めます。
 &&&
 
 $\boldsymbol S$はポインティングベクトルで、エネルギーの流れの密度を表します。$\boldsymbol S$に垂直な単位面積を単位時間に通過するエネルギーが$|\boldsymbol S|$で、単位は$\mathrm{W/m^2}$です。$FF^\dagger$はスカラーとベクトルの和、つまりパラベクトルです。[場の2乗](#fml-square)$F^2$はスカラー部が正とは限らないのに対し、$FF^\dagger$のスカラー部は$\boldsymbol E$と$c\boldsymbol B$の長さの2乗の和で、つねに$0$以上です。
@@ -210,7 +212,7 @@ $$
 FF^\dagger=(1+\hat{\boldsymbol k})\boldsymbol E\boldsymbol E(1+\hat{\boldsymbol k})=2|\boldsymbol E|^2(1+\hat{\boldsymbol k})
 $$
 
-なので、$u=\varepsilon_0|\boldsymbol E|^2$、$\boldsymbol S=cu\,\hat{\boldsymbol k}$です。平面波では電場と磁場のエネルギーが等しく、エネルギーは速さ$c$で進行方向に運ばれます。
+なので、$u=\varepsilon_0|\boldsymbol E|^2$、$\boldsymbol S=cu\,\hat{\boldsymbol k}$です。平面波では電場と磁場のエネルギーが等しく、エネルギーは速さ$c$で進行方向に運ばれます。$FF^\dagger=4|\boldsymbol E|^2P_+$であり、場を選んだのと同じ冪等元$P_+$が、エネルギーの流れる向きにも現れています。
 
 一般の場でも、エネルギーが流れる速さは$c$を超えません。
 
@@ -219,17 +221,17 @@ $$
 u^2-\frac{|\boldsymbol S|^2}{c^2}=\Bigl(\frac{\varepsilon_0}2\Bigr)^2\Bigl(\bigl(|\boldsymbol E|^2-c^2|\boldsymbol B|^2\bigr)^2+4c^2(\boldsymbol E\cdot\boldsymbol B)^2\Bigr)\ge0
 $$
 
-です。したがって$|\boldsymbol S|\le cu$であり、等号はヌル場（$F^2=0$）のときに限ります。
+です。したがって$|\boldsymbol S|\le cu$であり、等号は$F^2=0$、すなわち$F=0$かヌル場のときに限ります。
 &&&
 
 &&&prf
 $\boldsymbol S/c=\varepsilon_0c\,\boldsymbol E\times\boldsymbol B$と$|\boldsymbol E\times\boldsymbol B|^2=|\boldsymbol E|^2|\boldsymbol B|^2-(\boldsymbol E\cdot\boldsymbol B)^2$より、$(2/\varepsilon_0)^2(u^2-|\boldsymbol S|^2/c^2)=(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)^2-4c^2|\boldsymbol E|^2|\boldsymbol B|^2+4c^2(\boldsymbol E\cdot\boldsymbol B)^2$であり、第1項と第2項をまとめれば右辺を得る。
 &&&
 
-右辺の括弧は、[場の2乗](#fml-square)$F^2=\alpha+i\beta$の実部と虚部の2乗和$\alpha^2+\beta^2$です。パラベクトル$u+\boldsymbol S/c$のノルム$u^2-|\boldsymbol S|^2/c^2$が$F^2$の「絶対値の2乗」に等しいので、エネルギーの流れの速さ$|\boldsymbol S|/u$が$c$を超えないことは、代数の恒等式から出ます。$c$に達するのは、平面波と同じ代数的な形をしたヌル場だけです。
+右辺の括弧は、[場の2乗](#fml-square)$F^2=\alpha+i\beta$の実部と虚部の2乗和$\alpha^2+\beta^2$です。パラベクトル$u+\boldsymbol S/c$のノルム$u^2-|\boldsymbol S|^2/c^2$（パラベクトルとその共役$u-\boldsymbol S/c$の積）は、$F^2$の「絶対値の2乗」の$(\varepsilon_0/2)^2$倍に等しくなります。$u>0$の点で$\boldsymbol S/u$を局所的なエネルギーの流れの速度と読むと、その速さが$c$を超えないことは、代数の恒等式から出ます。$c$に達するのは、平面波と同じ代数的な形をしたヌル場だけです。
 
 &&&ex 太陽光の電場
-地球の位置で太陽光に垂直な面が受けるエネルギーは、およそ$1.4\times10^3\ \mathrm{W/m^2}$です。これを振幅$E_0$の直線偏光の正弦波と見なすと、$|\boldsymbol E|^2=E_0^2\cos^2\theta$の時間平均は$E_0^2/2$なので、$|\boldsymbol S|$の時間平均は$c\varepsilon_0E_0^2/2$です。これを$1.4\times10^3\ \mathrm{W/m^2}$と等しいと置くと$E_0\approx1.0\times10^3\ \mathrm{V/m}$、磁場の振幅は$E_0/c\approx3.4\times10^{-6}\ \mathrm T$となります。実際の太陽光はさまざまな振動数と偏光の混ざったものなので、これは大きさの目安です。
+地球軌道付近の大気圏外で、太陽光に垂直な面が受けるエネルギーは、およそ$1.4\times10^3\ \mathrm{W/m^2}$です。これを振幅$E_0$の直線偏光の正弦波と見なすと、$|\boldsymbol E|^2=E_0^2\cos^2\theta$の時間平均は$E_0^2/2$なので、$|\boldsymbol S|$の時間平均は$c\varepsilon_0E_0^2/2$です。これを$1.4\times10^3\ \mathrm{W/m^2}$と等しいと置くと$E_0\approx1.0\times10^3\ \mathrm{V/m}$、磁場の振幅は$E_0/c\approx3.4\times10^{-6}\ \mathrm T$となります。実際の太陽光はさまざまな振動数と偏光の混ざったものなので、これは同じ平均エネルギー流束を持つ正弦波の振幅としての目安です。
 &&&
 
 ## ポインティングの定理
@@ -262,13 +264,13 @@ $$
 である。最後の等号では、$\rho\boldsymbol E$と$\rho ic\boldsymbol B$と$\boldsymbol J(ic\boldsymbol B)$がスカラー部を持たないことを使った。両辺に$\varepsilon_0/2$を掛け、[エネルギー密度とポインティングベクトル](#fml-energy)を使うと$\partial_0u+\frac1c\nabla\cdot\boldsymbol S=-\frac1c\boldsymbol J\cdot\boldsymbol E$となる。$\partial_0=\frac1c\partial_t$として両辺に$c$を掛ければよい。
 &&&
 
-右辺の$\boldsymbol J\cdot\boldsymbol E$は、[[7shi-em1]]のローレンツ力で見た、電場が電流にする単位体積あたりの仕事率です。磁場による力は仕事をしないので、$\boldsymbol B$は現れません。領域$V$で積分して発散定理を使うと
+右辺の$\boldsymbol J\cdot\boldsymbol E$は、[[7shi-em1]]のローレンツ力で見た、電場が電流にする単位体積あたりの仕事率です。磁場による力は仕事をしないので、$\boldsymbol B$は現れません。空間に固定した領域$V$で積分して発散定理を使うと
 
 $$
 \frac d{dt}\int_Vu\,dV=-\oint_{\partial V}\boldsymbol S\cdot\boldsymbol n\,dS-\int_V\boldsymbol J\cdot\boldsymbol E\,dV
 $$
 
-であり、領域の中の場のエネルギーの減少は、境界から流れ出るエネルギーと電荷への仕事の和に等しくなります。電荷に渡されたエネルギーは、電荷の運動エネルギーになるか、抵抗のある導線では熱（ジュール熱）になります。ベクトル解析では、$\boldsymbol E$とアンペール＝マクスウェルの法則の内積、$\boldsymbol B$とファラデーの法則の内積を取って組み合わせ、公式$\nabla\cdot(\boldsymbol E\times\boldsymbol B)=\boldsymbol B\cdot(\nabla\times\boldsymbol E)-\boldsymbol E\cdot(\nabla\times\boldsymbol B)$で整理します。ここでは、スカラー部の対称性で2つの項が揃い、$\mathcal DF$がそのまま現れます。
+であり、領域の中の場のエネルギーの減少は、境界から流れ出るエネルギーと電荷への仕事の和に等しくなります。流出と仕事は符号付きで、境界から流入する場合や、電荷が場にエネルギーを渡す場合には、対応する項が負になります。電荷に渡されたエネルギーは、電荷の運動エネルギーになるか、抵抗のある導線では熱（ジュール熱）になります。ベクトル解析では、$\boldsymbol E$とアンペール＝マクスウェルの法則の内積、$\boldsymbol B$とファラデーの法則の内積を取って組み合わせ、公式$\nabla\cdot(\boldsymbol E\times\boldsymbol B)=\boldsymbol B\cdot(\nabla\times\boldsymbol E)-\boldsymbol E\cdot(\nabla\times\boldsymbol B)$で整理します。ここでは、スカラー部の対称性で2つの項が揃い、$\mathcal DF$がそのまま現れます。
 
 運動量の保存則には、エネルギー密度とポインティングベクトルに加えて、運動量の流れを表す応力の成分が必要です。本記事ではエネルギーの保存だけを扱います。
 
@@ -281,4 +283,4 @@ $$
 - **擬スカラーの指数関数**：$e^{i\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$i$は左からの作用として2ベクトル$i\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
 - **双曲型の正則関数**：平面波では光的な変数の関数が現れ、空間1次元では冪等元への分解が左右に進む波への分解になります。解析性は要りません。
 - **電気と磁気の双対性**：$i$は$\mathcal D$と可換なので、$Fe^{i\alpha}$も真空の解です。$\alpha=\pi/2$で電場と磁場が入れ替わり、$FF^\dagger$は変わりません。
-- **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルです。そのノルムは$F^2$の絶対値の2乗に等しく、エネルギーの流れの速さは$c$を超えません。スカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。
+- **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルです。そのノルムは$F^2$の絶対値の2乗の$(\varepsilon_0/2)^2$倍で、エネルギーの流れの速さは$c$を超えません。スカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。

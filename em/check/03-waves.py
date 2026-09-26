@@ -14,11 +14,14 @@
 5. Wave fronts xi = const move with speed c along k; theta = kappa xi =
    omega t - k.x with omega = c kappa, f lambda = c; E x (k x E) = |E|^2 k;
    u = eps_0|E|^2/2 + |B|^2/(2 mu_0).
-6. Parallel-plate capacitor: charging work Q^2 d/(2 eps_0 S) = (eps_0/2)E^2 S d.
+6. Parallel-plate capacitor: charging work Q^2 d/(2 eps_0 A) = (eps_0/2)E^2 A d.
 7. Sunlight 1.4e3 W/m^2: <cos^2> = 1/2 gives E_0 ~ 1.0e3 V/m, B_0 ~ 3.4e-6 T.
 8. Duality: Dq(F e^{I a}) = (Dq F) e^{I a}, F I = -cB + I E, (F e^{Ia})(F e^{Ia})^dagger = F F^dagger,
    (F e^{Ia})^2 = F^2 e^{2Ia}; u^2 - |S|^2/c^2 = (eps_0/2)^2((|E|^2 - c^2|B|^2)^2 + 4c^2(E.B)^2);
    1+1 dimensions: P_+ f(x_0 - x_1) + P_- g(x_0 + x_1) solves (d_0 + e_1 d_1)F = 0.
+9. P_- F of a field F = E + IcB has scalar part -k.E/2, so P_- F itself is not a field;
+   the plane wave has F F^dagger = 4|E|^2 P_+; the rotated source (rho - J/c)e^{I a} has
+   pseudoscalar part I rho sin a (magnetic charge) and bivector part -I (J/c) sin a (magnetic current).
 """
 
 import sympy as sp
@@ -196,13 +199,13 @@ print("5. xi-planes move with speed c along k; omega = c kappa, f lambda = c; E 
       "u = eps0|E|^2/2 + |B|^2/(2 mu0)")
 
 # ---------------------------------------------------------------- 6.
-# Parallel-plate capacitor: charging work int_0^Q (q d/(eps0 S)) dq = (eps0/2) E^2 S d
-qv, Q, Sa, dd = sp.symbols("q Q S d", positive=True)
+# Parallel-plate capacitor: charging work int_0^Q (q d/(eps0 A)) dq = (eps0/2) E^2 A d
+qv, Q, Sa, dd = sp.symbols("q Q A d", positive=True)
 W = sp.integrate(qv * dd / (eps0 * Sa), (qv, 0, Q))
 Ecap = Q / (eps0 * Sa)
 assert sp.simplify(W - Q**2 * dd / (2 * eps0 * Sa)) == 0
 assert sp.simplify(W - eps0 / 2 * Ecap**2 * Sa * dd) == 0
-print("6. capacitor: W = Q^2 d/(2 eps0 S) = (eps0/2) E^2 S d")
+print("6. capacitor: W = Q^2 d/(2 eps0 A) = (eps0/2) E^2 A d")
 
 # ---------------------------------------------------------------- 7.
 # Sunlight: <cos^2> = 1/2; c eps0 E0^2/2 = 1.4e3 W/m^2 gives E0 ~ 1.0e3 V/m, B0 = E0/c ~ 3.4e-6 T
@@ -230,3 +233,15 @@ x1 = Xs[0]
 G1 = (1 + e[0]) / 2 * fa(x0 - x1) + (1 - e[0]) / 2 * ga(x0 + x1)
 assert eq(d(G1, x0) + e[0] * d(G1, x1), 0)
 print("8. duality F e^{I a}; u^2 - |S|^2/c^2 = (eps0/2)^2 |F^2|^2 >= 0; 1+1 d'Alembert solution with P_+-")
+
+# ---------------------------------------------------------------- 9.
+Pm_F = Pm * (vec(Ec) + I * c * vec(Bc))
+assert eq(Pm_F.grade(0), -dot(kc, Ec) / 2)
+assert eq(Fw * Fw.rev(), 4 * dot(Eperp, Eperp) * Pp)
+rho9 = sp.Symbol("rho", real=True)
+J9 = sp.symbols("J1:4", real=True)
+src9 = (rho9 - vec(J9) / c) * eIa
+assert eq(src9.grade(3), I * rho9 * sp.sin(alpha))
+assert eq(src9.grade(2), -I * vec(J9) * sp.sin(alpha) / c)
+print("9. P_- F has scalar part -k.E/2; plane wave F F^dagger = 4|E|^2 P_+; "
+      "rotated source: magnetic charge I rho sin a, magnetic current -I (J/c) sin a")
