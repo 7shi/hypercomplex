@@ -279,6 +279,6 @@ $$
 - **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、一定の背景場を除けば$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
 - **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は、各点で平面波と同じ代数的な形をしています。
 - **擬スカラーの指数関数**：$e^{i\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$i$は左からの作用として2ベクトル$i\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
-- **双曲型の正則関数**：真空の解は光的な変数の関数で、冪等元への分解が進行方向による波の分解になります。解析性は要りません。
+- **双曲型の正則関数**：平面波では光的な変数の関数が現れ、空間1次元では冪等元への分解が左右に進む波への分解になります。解析性は要りません。
 - **電気と磁気の双対性**：$i$は$\mathcal D$と可換なので、$Fe^{i\alpha}$も真空の解です。$\alpha=\pi/2$で電場と磁場が入れ替わり、$FF^\dagger$は変わりません。
 - **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルです。そのノルムは$F^2$の絶対値の2乗に等しく、エネルギーの流れの速さは$c$を超えません。スカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。
