@@ -15,6 +15,8 @@
    d_t(S_i/c^2) - sum_j d_j tau_ij = -(rho E + J x B)_i.
 7. Plane wave along e_3: -tau_ij = u k_i k_j, momentum density (u/c)k (radiation
    pressure u); sunlight 1.4e3/c = 4.7e-6 Pa.
+8. gamma_0 . T(gamma_0) = u; J x B = ((IB)J - J(IB))/2 in the even subalgebra (Cl_{3,0});
+   along a fixed path, int E.dl = phi(a) - phi(b) - d_t int A.dl (gauge invariant sum).
 """
 
 import sympy as sp
@@ -178,3 +180,22 @@ Spw = [w / mu0 for w in cross(Epw, Bpw)]
 assert sp.simplify(Spw[2] / c**2 - upw / c) == 0 and Spw[0] == 0 and Spw[1] == 0
 assert round(1.4e3 / 299792458.0 * 1e6, 1) == 4.7
 print("7. plane wave: -tau_ij = u k_i k_j, momentum density (u/c) k; sunlight pressure 4.7e-6 Pa")
+
+# ---------------------------------------------------------------- 8.
+u8 = eps0 / 2 * (dot(Ec, Ec) + c**2 * dot(Bc, Bc))
+assert sp.simplify(ip0(g0, T(g0)) - u8) == 0
+J8 = sp.symbols("j1:4", real=True)
+IB, Jv = I * svec(Bc), svec(J8)
+assert eq((IB * Jv - Jv * IB) / 2, svec(cross(J8, Bc)))
+# path integral along x(s), s in [0, 1], at fixed t, with E = -grad phi - d_t A
+t8, s8 = sp.symbols("t s", real=True)
+ph8 = sp.Function("phi")
+A8 = [sp.Function(f"A{k}") for k in (1, 2, 3)]
+path = [sp.Function(f"p{k}")(s8) for k in (1, 2, 3)]
+xs8 = sp.symbols("y1:4", real=True)
+E8 = [-sp.diff(ph8(t8, *xs8), xs8[k]) - sp.diff(A8[k](t8, *xs8), t8) for k in range(3)]
+on = dict(zip(xs8, path))
+integrand = sum(E8[k].subs(on) * sp.diff(path[k], s8) for k in range(3))
+rhs_d = -sp.diff(ph8(t8, *path), s8) - sp.diff(sum(A8[k](t8, *path) * sp.diff(path[k], s8) for k in range(3)), t8)
+assert sp.simplify(sp.expand(integrand - rhs_d).doit()) == 0
+print("8. gamma_0 . T(gamma_0) = u; J x B = ((IB)J - J(IB))/2; int_C E.dl = phi(a) - phi(b) - d_t int_C A.dl")

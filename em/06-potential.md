@@ -14,6 +14,8 @@ $$
 
 ## 時空のポテンシャル
 
+ポテンシャルを使うと、源を持たない2本の式を自動的に満たせます。残る式も、ゲージを適切に選べば成分ごとの波動方程式になります。
+
 &&&def 時空のポテンシャル
 スカラーポテンシャル$\varphi$とベクトルポテンシャル$\boldsymbol A=\sum_kA_k\sigma_k$から、時空のベクトル
 
@@ -51,11 +53,17 @@ $$
 となる。$c\,\partial_0=\partial_t$より、偶部分を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのベクトル部が$\boldsymbol E$、$i$の項が$ic\boldsymbol B$、スカラー部が$D\cdot A$である。
 &&&
 
-$\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\times\boldsymbol A$は、ベクトル解析でポテンシャルから場を作る式そのものです。静的な場合と違い、電場には$-\partial_t\boldsymbol A$の項が加わります。磁場が時間変化すると電場は渦を持ち（[[7shi-em2]]のファラデーの法則）、勾配だけでは表せないためです。このため、電荷を2点間で動かすときの電場の仕事は経路によって変わり、[[7shi-em1]]のように電位の差を電圧と見なすことは、一般にはできなくなります。
+$\boldsymbol E=-\nabla\varphi-\partial_t\boldsymbol A$と$\boldsymbol B=\nabla\times\boldsymbol A$は、ベクトル解析でポテンシャルから場を作る式そのものです。静的な場合と違い、電場には$-\partial_t\boldsymbol A$の項が加わります。磁場が時間変化すると電場は渦を持ち（[[7shi-em2]]のファラデーの法則）、勾配だけでは表せないためです。時間変化する磁束を囲む経路では電場の周回積分が$0$とは限らないので、固定した時刻の電場を2点間で積分した値は経路によって異なり得ます。固定した経路$C:\boldsymbol a\to\boldsymbol b$について
+
+$$
+\int_C\boldsymbol E\cdot d\boldsymbol l=\varphi(\boldsymbol a,t)-\varphi(\boldsymbol b,t)-\partial_t\int_C\boldsymbol A\cdot d\boldsymbol l
+$$
+
+であり、左辺は物理的な電場で決まりますが、右辺の$\varphi$と$\boldsymbol A$への分担はゲージによって変わります。一般のゲージ変換では$\varphi$の差そのものも変わるので、[[7shi-em1]]のように電位の差を測定される電圧と同一視することはできません。
 
 ## 同次方程式
 
-偏微分は交換するので、$D\wedge D=\sum_{\mu,\nu}\gamma^\mu\wedge\gamma^\nu\partial_\mu\partial_\nu=0$です（$\gamma^\mu\wedge\gamma^\nu$は$\mu,\nu$について反対称）。ベクトル解析の恒等式$\nabla\times\nabla\varphi=0$と$\nabla\cdot(\nabla\times\boldsymbol A)=0$は、この1つの式の成分にあたります（[[7shi-em2]]）。したがって$F=D\wedge A$と置けば
+偏微分は交換するので、$D\wedge D=\sum_{\mu,\nu}\gamma^\mu\wedge\gamma^\nu\partial_\mu\partial_\nu=0$です（$\gamma^\mu\wedge\gamma^\nu$は$\mu,\nu$について反対称）。偏微分は順序を入れ替えても同じですが、外積は順序を入れ替えると符号が変わるので、2回の外微分は打ち消し合います。ベクトル解析の恒等式$\nabla\times\nabla\varphi=0$と$\nabla\cdot(\nabla\times\boldsymbol A)=0$は、この1つの式の成分にあたります（[[7shi-em2]]）。したがって$F=D\wedge A$と置けば
 
 $$
 D\wedge F=D\wedge(D\wedge A)=0
@@ -83,9 +91,9 @@ $$
 
 と変わります。$DA$のうち、2ベクトル部$D\wedge A$は物理的な場で、スカラー部$D\cdot A$はゲージ変換によって変わる量です。$A$の4成分のうち、$F$を決めるのは$D\wedge A$だけで、$D\cdot A$は$F$に現れません。
 
-ゲージ変換で加える$D\chi$は、スカラー関数の勾配です。勾配は$D\wedge$で消えるので、$F=D\wedge A$には見えません。3次元で$\boldsymbol B=\nabla\times\boldsymbol A$が$\boldsymbol A$に加えた勾配を見ないのと同じく、ポテンシャルのうち$F$に効くのは$D\wedge A$を作る部分だけで、勾配として足せる部分は$F$からは見えない余分な成分です。ゲージ変換とは、この見えない成分を足し引きすることにすぎません。見えない成分が現れるのはスカラー部$D\cdot A$だけなので、ゲージを選ぶことは、$D\cdot A$がどういう値を取るように見えない成分を決めるかを選ぶことです。電位に定数を足しても電場が変わらないことの時空版で、足せるものが定数から勾配$D\chi$の形の関数全体に広がっています（$\chi=kx_0$とすれば$D\chi=k\gamma_0$で、電位に定数$k$を足す変換です）。
+ゲージ変換で加える$D\chi$はスカラー関数の勾配で、$D\wedge D\chi=0$なので$F=D\wedge A$には現れません。3次元で$\boldsymbol B=\nabla\times\boldsymbol A$が$\boldsymbol A$に加えた勾配を見ないのと同じで、静的な場合にもベクトルポテンシャルに勾配を足す自由度はすでにありました。ゲージ変換で$DA$が変わるのはスカラー部$D\cdot A$だけなので、この自由度を使って$D\cdot A$を扱いやすい値、たとえば$0$に選べます。ただし、この条件だけでは、場に現れない自由度をすべて取り除けるわけではありません（下のローレンツゲージの節）。電位に定数を足しても電場が変わらないことの時空版で、足せるものが定数から勾配$D\chi$の形の関数全体に広がっています（$\chi=kx_0$とすれば$D\chi=k\gamma_0$で、電位に定数$k$を足す変換です）。
 
-電荷に働く力は[[7shi-em1]]のローレンツ力で決まり、そこに現れるのは$\boldsymbol E$と$\boldsymbol B$だけです。したがって、ゲージ変換で結ばれた2つのポテンシャルは、同じ物理的状況を表します。ポテンシャルは場を計算するための道具であり、ゲージは計算の都合に合わせて選んでかまいません。
+電荷に働く力は[[7shi-em1]]のローレンツ力で決まり、そこに現れるのは$\boldsymbol E$と$\boldsymbol B$だけです。したがって、ゲージ変換で結ばれた2つのポテンシャルは、同じ物理的状況を表します。ここではポテンシャルを、同じ場を複数の仕方で表せる計算上の変数として使い、ゲージは計算の都合に合わせて選びます。
 
 ## ローレンツゲージ
 
@@ -122,7 +130,7 @@ $$
 $F=DA$より$DF=D^2A=\square A$である。$\gamma_0$成分は$\square\varphi=\mu_0c\cdot c\rho=\rho/\varepsilon_0$、$\gamma_k$成分は$\square(cA_k)=\mu_0cJ_k$である。
 &&&
 
-ゲージを固定しない場合は、$DF=D(DA-D\cdot A)=\square A-D(D\cdot A)$です。ローレンツゲージは、この第2項を消して、ポテンシャルの各成分についての波動方程式にします。
+ゲージを固定しない場合は、$DF=D(DA-D\cdot A)=\square A-D(D\cdot A)$です。ローレンツゲージを選ぶと、この第2項が消え、各成分についての波動方程式になります。
 
 ## 静的な場合
 
@@ -131,6 +139,8 @@ $F=DA$より$DF=D^2A=\square A$である。$\gamma_0$成分は$\square\varphi=\m
 # エネルギー運動量
 
 ## 定義
+
+ポテンシャルにはゲージの自由度がありますが、場のエネルギーや運動量はその選び方によらず決まらなければなりません。そこで、ポテンシャルではなく$F$そのものから作ります。
 
 [[7shi-em3]]では、$\operatorname{Cl}_{3,0}(\mathbb R)$の反転$F^\dagger=\boldsymbol E-ic\boldsymbol B$を使って$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$を作りました。時空代数では反転$\tilde F=-F$（2ベクトルの符号の反転）が自然な操作で、$F^\dagger$はそれを$\gamma_0$で挟んだ$F^\dagger=\gamma_0\tilde F\gamma_0=-\gamma_0F\gamma_0$です。$\gamma_0$を任意のベクトル$a$に替えて、次の線形写像を定めます。
 
@@ -152,7 +162,9 @@ $$
 (2) $\sigma_k$は$\gamma_0$と反可換、$i\sigma_k$は可換なので、$\gamma_0F\gamma_0=-\boldsymbol E+ic\boldsymbol B=-F^\dagger$である。したがって$T(\gamma_0)\gamma_0=-\frac{\varepsilon_0}2F(\gamma_0F\gamma_0)=\frac{\varepsilon_0}2FF^\dagger$となり、[[7shi-em3]]の結果を使えばよい。右から$\gamma_0$を掛けると、$\sigma_k\gamma_0=\gamma_k$より第2式を得る。
 &&&
 
-$T(\gamma_0)$は、時間方向$\gamma_0$を向いた観測者から見たエネルギー密度$u$と、運動量密度$\boldsymbol S/c^2$の$c$倍を成分として持つ時空のベクトルです。[[7shi-em3]]のパラベクトル$u+\boldsymbol S/c$は、このベクトルに$\gamma_0$を掛けて$\operatorname{Cl}_{3,0}(\mathbb R)$に移したものです。$T$全体は通常のエネルギー運動量テンソル$T^{\mu\nu}=\gamma^\mu\cdot T(\gamma^\nu)$に対応し、空間方向の$T(\gamma_k)$にはエネルギー流と応力の成分が含まれます。空間成分は、通常のマクスウェルの応力と符号が逆になります。
+$T(\gamma_0)$は、時間方向$\gamma_0$を向いた観測者から見たエネルギー密度$u$と、運動量密度$\boldsymbol S/c^2$の$c$倍を成分として持つ時空のベクトルです。[[7shi-em3]]のパラベクトル$u+\boldsymbol S/c$は、このベクトルに$\gamma_0$を掛けて$\operatorname{Cl}_{3,0}(\mathbb R)$に移したものです。[[7shi-em5]]では、粒子の4元運動量を観測者の時間軸へ射影するとエネルギーが得られました。場では、$T$に観測者の時間方向$n$を入れたベクトル$T(n)$を同じ$n$へ射影した$n\cdot T(n)$が、その観測者の見るエネルギー密度です（$\gamma_0\cdot T(\gamma_0)=u$）。粒子と違い、$T(n)$を作る段階にも観測者が入ります。
+
+$T$全体は通常のエネルギー運動量テンソル$T^{\mu\nu}=\gamma^\mu\cdot T(\gamma^\nu)$に対応します。$T(a)$の$a$は取り出す方向で、時間方向を入れると密度が、空間方向を入れると流れが出ます。エネルギーの流れは向きだけを指定すればよいので$\boldsymbol S$はベクトルでしたが、運動量はそれ自身が向きを持つので、どの向きの運動量がどの向きの面を通るかの2つを指定します。$T^{kl}$は、法線が$l$方向の面を通る$k$方向の運動量の流束で、マクスウェルの応力$\tau_{kl}$とは$T^{kl}=-\tau_{kl}$の関係にあります。
 
 &&&fml エネルギー運動量テンソルの空間成分 [fml-stress]
 $$
@@ -198,12 +210,12 @@ $$
 \partial_t\frac{S_k}{c^2}-\sum_l\partial_l\tau_{kl}=-\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_k
 $$
 
-となります。場の運動量密度$\boldsymbol S/c^2$の変化と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。[[7shi-em3]]で扱わなかった運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、[[7shi-em5]]のローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、[[7shi-em1]]で見たローレンツ力の密度です。
+となります。場の運動量密度$\boldsymbol S/c^2$の時間変化率と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。[[7shi-em3]]で扱わなかった運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、[[7shi-em5]]のローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、[[7shi-em1]]で見たローレンツ力の密度です。[[7shi-em1]]で磁場の面が速度を面内で曲げた反対称積$\frac12\bigl((i\boldsymbol B)\boldsymbol v-\boldsymbol v(i\boldsymbol B)\bigr)$が、ここでは電流密度に働く磁気力$\boldsymbol J\times\boldsymbol B=\frac12\bigl((i\boldsymbol B)\boldsymbol J-\boldsymbol J(i\boldsymbol B)\bigr)$として$F\cdot J$に含まれています。
 
-電荷が場から力を受けて運動量を得ると、場の運動量はその分だけ減ります。電荷と場を合わせた全運動量が保存され、電磁場は物体と同じく運動量を持って運ぶ存在です。
+電荷が場から受け取る運動量は右辺に現れ、領域内の場の運動量は境界を通る運動量の流れによっても変わります。外部との受け渡しがない系では、物質と場を合わせた全運動量が保存され、電磁場は物体と同じく運動量を持って運ぶ存在です。
 
 &&&ex 放射圧
-$\hat{\boldsymbol k}$の向きに進む平面波が、$\hat{\boldsymbol k}$に垂直な壁に当たって完全に吸収されるとします。[[7shi-em3]]で見たとおり平面波では$\boldsymbol S=cu\,\hat{\boldsymbol k}$なので、運動量密度は$\boldsymbol S/c^2=(u/c)\hat{\boldsymbol k}$で、それが速さ$c$で壁に流れ込みます。壁の単位面積が単位時間に受け取る運動量、すなわち壁が受ける圧力は$c\cdot u/c=u$です。完全に反射される場合は運動量の向きが反転するので、圧力は$2u$になります。[[7shi-em3]]の太陽光の例では、時間平均の圧力は$1.4\times10^3/(3.0\times10^8)\approx4.7\times10^{-6}\ \mathrm{Pa}$です。日常では感じられないほど小さい力ですが、宇宙空間の探査機の軌道には影響し、太陽光を大きな帆で受けて進む実験も行われています。
+静止した壁に$\hat{\boldsymbol k}$の向きの平面波が垂直に入射するとし、入射波のエネルギー密度を$u$とします。[[7shi-em3]]で見たとおり平面波では$\boldsymbol S=cu\,\hat{\boldsymbol k}$なので、運動量密度は$\boldsymbol S/c^2=(u/c)\hat{\boldsymbol k}$で、それが速さ$c$で壁に流れ込みます。進行方向の運動量が進行方向へ運ばれることは、平面波で$T^{kl}=u\hat k_k\hat k_l$となることに表れています。波が完全に吸収されるとき、壁が単位面積・単位時間あたりに受け取る、壁に垂直な運動量、すなわち壁が受ける圧力は$c\cdot u/c=u$です。完全に反射される場合は運動量の向きが反転するので、圧力は入射波のエネルギー密度の2倍の$2u$になります。[[7shi-em3]]の太陽光の例では、完全に吸収される場合の時間平均の圧力は$1.4\times10^3/(3.0\times10^8)\approx4.7\times10^{-6}\ \mathrm{Pa}$です。日常では感じられないほど小さい力ですが、宇宙空間の探査機の軌道には影響し、太陽光を大きな帆で受けて進む実験も行われています。
 &&&
 
 # まとめ
