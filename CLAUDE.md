@@ -23,6 +23,10 @@
 
 レビュー結果の`<stem>.txt`は残す前提のファイルです。指摘を記事に反映した後も削除しないでください（`uv run articles pending`のレビュー済み判定に使われます）。
 
+# 生成ファイル
+
+`make`で更新する想定のファイル（`mathlog.tsv`・`md.tsv`・`articles.tsv`・`refs.toml`、`refs-master.toml`の`files`）は直接編集しないでください。生成元（`mathlog.html`・各`README.md`・`refs/*.toml`等）を直してから`make`で再生成します。手順は [SLUG.md](SLUG.md) の「更新手順」を参照してください。
+
 # ボックス記法
 
 Mathlogでは通常のMarkdownにない定義・定理・証明等の形式を、`&&&type title`〜`&&&`のブロックでサポートしています。
