@@ -27,6 +27,10 @@
    equals u k, so S = c u n (energy flows outward at the speed c).
 10. Domain of dependence: T(gamma_0)^2 = |F^2|^2/4 >= 0 and u >= 0, so u + S.m/c >= 0 for
    every unit m (no energy enters a ball shrinking at the speed c).
+11. Radiation and the idempotent of 03: F = k a, k F = 0, gamma_0 k = 1 - r^ (r^ = n gamma_0),
+   so (1 - r^) F = 0 and F = ((1 + r^)/2) F.
+12. Null directions: D f(k.x) = f' k and box f(k.x) = k^2 f'', so any profile solves the wave
+   equation when k^2 = 0; k = gamma_0 + gamma_3 gives k.x = x0 - x3.
 """
 
 import sympy as sp
@@ -194,3 +198,29 @@ assert eq(T10 * T10, (al * al + be * be) / 4)
 u10 = ((g[0] * T10 + T10 * g[0]) / 2).grade(0)
 assert eq(u10, sum(v**2 for v in E10 + B10) / 2)
 print("10. T(gamma_0)^2 = |F^2|^2/4 >= 0, u >= 0: energy flux u + S.m/c >= 0 through a shrinking sphere")
+
+# ---------------------------------------------------------------- 11.
+# The radiation part lies in the image of the idempotent (1 + r^)/2 of 03:
+# k . a = 0 gives F = k a, k F = 0, gamma_0 k = 1 - r^ with r^ = n gamma_0.
+rh9 = n9 * g[0]
+assert eq(F9, k9 * a9v)
+assert eq(k9 * F9, 0)
+assert eq(g[0] * k9, 1 - rh9)
+assert eq((1 - rh9) * F9, 0)
+assert eq((1 + rh9) / 2 * F9, F9)
+print("11. radiation part: F = k a, k F = 0, (1 - r^) F = 0 with r^ = n gamma_0 (idempotent of 03)")
+
+# ---------------------------------------------------------------- 12.
+# Null directions: D f(k.x) = f' k and box f(k.x) = k^2 f''; k = gamma_0 + gamma_3 gives k.x = x0 - x3.
+kc = sp.symbols("k0:4", real=True)
+kv = sum((kc[m_] * g[m_] for m_ in range(4)), S.zero())
+xv = sum((Y[m_] * g[m_] for m_ in range(4)), S.zero())
+kx = sp.expand(((kv * xv + xv * kv) / 2).scalar())
+fk = mv(f(kx), S.neg)
+fpk = sp.Subs(sp.Derivative(f(s), s), s, kx).doit()
+fppk = sp.Subs(sp.Derivative(f(s), s, 2), s, kx).doit()
+assert eq(S.D(fk), fpk * kv)
+assert eq(S.D(S.D(fk)), (kv * kv).scalar() * fppk)
+k3 = g[0] + g[3]
+assert sp.simplify(((k3 * xv + xv * k3) / 2).scalar() - (Y[0] - Y[3])) == 0
+print("12. D f(k.x) = f' k, box f(k.x) = k^2 f''; k = gamma_0 + gamma_3 gives k.x = x0 - x3")
