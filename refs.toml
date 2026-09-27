@@ -138,6 +138,17 @@ files = [
   "em/07-retarded.md",
 ]
 
+["7shi-clif"]
+type = "website"
+citation = "七誌, クリフォード代数で考えるパウリ行列と双四元数, Qiita, 閲覧日 2024年7月12日, https://qiita.com/7shi/items/fafe77f9a5ff2f9651ba"
+url = "https://qiita.com/7shi/items/fafe77f9a5ff2f9651ba"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "Qiita"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
 ["7shi-clif1"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
@@ -187,6 +198,7 @@ site = "七誌の開発日記"
 files = [
   "hopf/06-clifford-gates.md",
   "oct/02-7d-3rot.md",
+  "qua/01-pauli-qua.md",
   "vec-oct/geometric-product-exp.md",
 ]
 
@@ -371,6 +383,7 @@ files = [
   "hopf/homogeneous.md",
   "lie/03-spin.md",
   "misc/spherical-coords.md",
+  "qua/01-pauli-qua.md",
 ]
 
 ["7shi-hc"]
@@ -381,6 +394,7 @@ accessed = 2024-07-16
 author = ["七誌"]
 site = "七誌の開発日記"
 files = [
+  "qua/01-pauli-qua.md",
   "vec-oct/01-reflection.md",
 ]
 
@@ -672,13 +686,14 @@ files = [
 
 ["7shi-qcl"]
 type = "website"
-citation = "七誌, 四元数からクリフォード代数へ, 七誌の開発日記, 閲覧日 2024年7月16日, https://7shi.hateblo.jp/entry/2018/08/27/054921"
+citation = "七誌, 四元数からクリフォード代数へ, 七誌の開発日記, 閲覧日 2024年7月24日, https://7shi.hateblo.jp/entry/2018/08/27/054921"
 url = "https://7shi.hateblo.jp/entry/2018/08/27/054921"
-accessed = 2024-07-16
+accessed = 2024-07-24
 author = ["七誌"]
 site = "七誌の開発日記"
 files = [
   "qua/01-pauli-qua.md",
+  "vec-oct/geometric-product-exp.md",
 ]
 
 ["7shi-qcm"]
@@ -693,6 +708,17 @@ files = [
 ["7shi-qgate"]
 files = [
   "hopf/07-real-qubit.md",
+]
+
+["7shi-qmx"]
+type = "website"
+citation = "七誌, 四元数とマクスウェル方程式, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2017/12/10/103720"
+url = "https://7shi.hateblo.jp/entry/2017/12/10/103720"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
 ]
 
 ["7shi-qp"]
@@ -717,6 +743,17 @@ files = [
   "oct/03-oct-left-mul.md",
 ]
 
+["7shi-qrt"]
+type = "website"
+citation = "七誌, 四元数による回転を実行列表現で考える, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/09/10/054059"
+url = "https://7shi.hateblo.jp/entry/2020/09/10/054059"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
 ["7shi-qt"]
 type = "mathlog"
 citation = "7shi, 四元数のテンソル積とクリフォード代数の構成, Mathlog, Fri Nov 22 2024, アクセス日: Sun Jul 26 2026"
@@ -727,15 +764,27 @@ files = [
   "qua/05-dual-qua.md",
 ]
 
+["7shi-qua"]
+type = "website"
+citation = "七誌, 表現行列で考える四元数, Qiita, 閲覧日 2024年7月12日, https://qiita.com/7shi/items/e7364e1b2593f24427a5"
+url = "https://qiita.com/7shi/items/e7364e1b2593f24427a5"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "Qiita"
+files = [
+  "qua/01-pauli-qua.md",
+]
+
 ["7shi-rod"]
 type = "website"
-citation = "七誌, 四元数によるロドリゲスの回転公式, 七誌の開発日記, 閲覧日 2024年6月26日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
+citation = "七誌, 四元数によるロドリゲスの回転公式 , 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
 url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
-accessed = 2024-06-26
+accessed = 2024-07-12
 author = ["七誌"]
 site = "七誌の開発日記"
 files = [
   "oct/02-7d-3rot.md",
+  "qua/01-pauli-qua.md",
 ]
 
 ["7shi-rpt"]
@@ -770,6 +819,17 @@ files = [
   "lie/05-bch-adjoint.md",
   "qua/05-dual-qua.md",
   "qua/06-slerp.md",
+]
+
+["7shi-tbq"]
+type = "website"
+citation = "七誌, テンソル積と双四元数, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2018/08/23/024756"
+url = "https://7shi.hateblo.jp/entry/2018/08/23/024756"
+accessed = 2024-07-12
+author = ["七誌"]
+site = "七誌の開発日記"
+files = [
+  "qua/01-pauli-qua.md",
 ]
 
 ["7shi-tp"]
@@ -1309,6 +1369,16 @@ accessed = 2024-05-14
 site = "Wikipedia"
 files = [
   "hopf/01-quaternion.md",
+]
+
+["wiki-hq"]
+type = "website"
+citation = "Hyperbolic quaternion, Wikipedia, 閲覧日 2024年7月12日, https://en.wikipedia.org/wiki/Hyperbolic_quaternion"
+url = "https://en.wikipedia.org/wiki/Hyperbolic_quaternion"
+accessed = 2024-07-12
+site = "Wikipedia"
+files = [
+  "qua/01-pauli-qua.md",
 ]
 
 ["wiki-jordan"]
