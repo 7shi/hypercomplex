@@ -316,7 +316,7 @@ $$
 \left\{ \begin{pmatrix} p & 0 \\ 0 & q \end{pmatrix} \;\middle|\; p, q \in \mathbb{H} \right\} \cong \mathbb{H} \oplus \mathbb{H}
 $$
 
-という四元数の直和（実8次元）となり、体積要素も$\gamma(1)\gamma(i)\gamma(j)\gamma(k) = \operatorname{diag}(-1, 1)$と単位行列の定数倍には潰れません。実際、純虚単位$u$について$\gamma(1)\gamma(u) = \operatorname{diag}(-u, u)$、$vw = u$を満たす直交する純虚単位$v, w$について$\gamma(v)\gamma(w) = \operatorname{diag}(-u, -u)$となるので、これらと$I$、体積要素$\operatorname{diag}(-1, 1)$で対角成分の8次元がすべて張られます。これに$\gamma(1)$を掛ければ反対角成分の8次元も張られ、奇数グレードの8次元と合わせて$2^4 = 16$個の基底が独立に揃い、$\operatorname{Cl}_{4,0}$が忠実に実現されます。
+という四元数の直和（実8次元）となり、体積要素も$\gamma(1)\gamma(i)\gamma(j)\gamma(k) = \operatorname{diag}(-1, 1)$と単位行列の定数倍には潰れません。実際、単位純虚四元数$u$について$\gamma(1)\gamma(u) = \operatorname{diag}(-u, u)$、$vw = u$を満たす直交する単位純虚四元数$v, w$について$\gamma(v)\gamma(w) = \operatorname{diag}(-u, -u)$となるので、これらと$I$、体積要素$\operatorname{diag}(-1, 1)$で対角成分の8次元がすべて張られます。これに$\gamma(1)$を掛ければ反対角成分の8次元も張られ、奇数グレードの8次元と合わせて$2^4 = 16$個の基底が独立に揃い、$\operatorname{Cl}_{4,0}$が忠実に実現されます。
 
 偶部分代数はこれらの積の実線形包でしたが、$\operatorname{Spin}(4)$は**単位**ベクトルの偶数個の積そのものの集合です。この集合は、対角成分がちょうど単位四元数の対$(p, q)$を走ります。
 

@@ -462,7 +462,7 @@ $$
 1 \cong I, \quad i \cong -i\sigma_x, \quad j \cong -i\sigma_y, \quad k \cong -i\sigma_z
 $$
 
-これによって、回転軸を表す純虚単位四元数を、パウリ行列に変換します：
+これによって、回転軸を表す単位純虚四元数を、パウリ行列に変換します：
 
 $$
 n = n_xi + n_yj + n_zk \cong -n_xi\sigma_x - n_yi\sigma_y - n_zi\sigma_z
