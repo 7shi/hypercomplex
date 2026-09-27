@@ -348,17 +348,6 @@ files = [
   "lie/08-g2.md",
 ]
 
-["7shi-gist"]
-type = "website"
-citation = "七誌, 八元数の計算プログラム, X, 閲覧日 2024年6月26日, https://x.com/7shi/status/1805277382703751383"
-url = "https://x.com/7shi/status/1805277382703751383"
-accessed = 2024-06-26
-author = ["七誌"]
-site = "X"
-files = [
-  "oct/02-7d-3rot.md",
-]
-
 ["7shi-group"]
 type = "mathlog"
 citation = "7shi, 代数的構造の初歩：マグマから群へ, Mathlog, Sat Mar 08 2025, アクセス日: Sun Jul 19 2026"
@@ -631,7 +620,7 @@ files = [
 
 ["7shi-oct1"]
 type = "mathlog"
-citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Sep 27 2026"
 url = "https://mathlog.info/articles/vizAwdiKusmQ6pdsPTLE"
 files = [
   "hopf/04-extension.md",

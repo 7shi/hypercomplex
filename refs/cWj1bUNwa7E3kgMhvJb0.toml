@@ -1,6 +1,6 @@
 [7shi-oct1]
 type = "mathlog"
-citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 八元数の基本事項, Mathlog, Sat May 23 2026, アクセス日: Sun Sep 27 2026"
 
 [7shi-oct]
 type = "website"
@@ -27,7 +27,7 @@ author = ["中嶋 慧"]
 
 [7shi-coord]
 type = "mathlog"
-citation = "7shi, 一般次元における球座標系のバリエーション, Mathlog, Tue May 21 2024, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 一般次元における球座標系のバリエーション, Mathlog, Tue May 21 2024, アクセス日: Sun Sep 27 2026"
 
 [wiki-alt]
 type = "website"
@@ -43,11 +43,3 @@ url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
 accessed = 2024-06-26
 author = ["七誌"]
 site = "七誌の開発日記"
-
-[7shi-gist]
-type = "website"
-citation = "七誌, 八元数の計算プログラム, X, 閲覧日 2024年6月26日, https://x.com/7shi/status/1805277382703751383"
-url = "https://x.com/7shi/status/1805277382703751383"
-accessed = 2024-06-26
-author = ["七誌"]
-site = "X"

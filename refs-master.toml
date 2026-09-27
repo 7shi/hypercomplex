@@ -42,16 +42,6 @@ files = [
   "qua/cd/real-to-cmatrix.md",
 ]
 
-["7shi-gist"]
-type = "website"
-title = "八元数の計算プログラム"
-url = "https://x.com/7shi/status/1805277382703751383"
-author = ["七誌"]
-site = "X"
-files = [
-  "oct/02-7d-3rot.md",
-]
-
 ["7shi-hc"]
 type = "website"
 title = "NotebookLMで多元数の記事を読む"
