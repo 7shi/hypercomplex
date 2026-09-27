@@ -697,11 +697,14 @@ $$
 \mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R),\quad
 \mathrm{SO}(4)\cong\frac{\mathrm{SU}(2)\times\mathrm{SU}(2)}{\{(1,1),(-1,-1)\}}
 $$
-二重回転の分解（$u$を単位純虚四元数、$u^2=-1$、$w$を$u$と直交する単位純虚四元数として、$(1,u)$平面を$1\to u$の向きに$\theta_1$、直交する$(w,uw)$平面を$uw\to w$の向きに$\theta_2$の回転）：
+&&&
+&&& 二重回転の分解
+$u$を単位純虚四元数$(u^2=-1)$、$w$を$u$と直交する単位純虚四元数として、$(1,u)$平面を$1\to u$の向きに$\theta_1$、直交する$(w,uw)$平面を$uw\to w$の向きに$\theta_2$回転させるとき、次のようになります。
 $$
 q'=\exp\left(\frac{\theta_1-\theta_2}2u\right)q\exp\left(\frac{\theta_1+\theta_2}2u\right)
 $$
-偶部分代数の階梯とスピン群：
+&&&
+&&& 偶部分代数の階梯とスピン群
 $$
 \begin{alignedat}{2}
 \operatorname{Cl}_{3,0}^0(\mathbb R)&\cong \operatorname{Cl}_{0,3}^0(\mathbb R)\cong \operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H,&\quad
@@ -710,7 +713,8 @@ $$
 \operatorname{Spin}(4)&\cong\mathrm{SU}(2)\times\mathrm{SU}(2)
 \end{alignedat}
 $$
-偶部分代数から分解型双四元数への同型写像：
+&&&
+&&& 偶部分代数から分解型双四元数への同型写像
 $$
 \varphi:\operatorname{Cl}_{4,0}^0(\mathbb R)\to\mathbb C'\otimes\mathbb H,\quad
 e_4e_3\mapsto i,\quad
@@ -718,7 +722,8 @@ e_2e_4\mapsto j,\quad
 e_3e_2\mapsto k,\quad
 \Omega=e_1e_2e_3e_4\mapsto\omega
 $$
-分解型双四元数の行列表現・射影行列と準同型写像$T$、および$\omega$共役：
+&&&
+&&& 分解型双四元数の行列表現・射影行列と準同型写像$T$、および$\omega$共役
 $$
 \omega \mapsto \begin{pmatrix}1&0\\0&-1\end{pmatrix} \quad (\omega^2 \mapsto I), \quad
 \varepsilon=\frac{1+\omega}2\mapsto\begin{pmatrix}1&0\\0&0\end{pmatrix} \quad (\varepsilon^2=\varepsilon)
@@ -728,7 +733,8 @@ X'+\omega X''\mapsto\begin{pmatrix}X'+X''&0\\0&X'-X''\end{pmatrix},\quad
 T(X'+\omega X'')=X'+X'',\quad
 (X'+\omega X'')^{\dagger}=X'-\omega X''
 $$
-回転子の対応：
+&&&
+&&& 回転子の対応
 $$
 B=b_{12}e_1e_2+b_{13}e_1e_3+b_{14}e_1e_4+b_{43}e_4e_3+b_{24}e_2e_4+b_{32}e_3e_2,\quad
 r=\exp\left(\frac B2\right)
@@ -740,9 +746,9 @@ r_L=\exp\left(\frac{U_L}2\right)=T(\varphi(r)^{\dagger})^{-1}, \quad
 r_R=\exp\left(\frac{U_R}2\right)=T(\varphi(r))
 $$
 $$
-\begin{alignedat}{2}
-U_L&=-T(\varphi(B)^{\dagger})&&=(b_{12}-b_{43})i+(b_{13}-b_{24})j+(b_{14}-b_{32})k \\
-U_R&=T(\varphi(B))&&=(b_{12}+b_{43})i+(b_{13}+b_{24})j+(b_{14}+b_{32})k
+\begin{alignedat}{3}
+U_L&=-&&T(\varphi(B)^{\dagger})&&=(b_{12}-b_{43})i+(b_{13}-b_{24})j+(b_{14}-b_{32})k \\
+U_R&= &&T(\varphi(B))&&=(b_{12}+b_{43})i+(b_{13}+b_{24})j+(b_{14}+b_{32})k
 \end{alignedat}
 $$
 &&&

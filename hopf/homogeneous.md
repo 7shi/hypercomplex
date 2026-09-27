@@ -179,8 +179,7 @@ $\alpha\beta^*$の形は、分母を実数化した$z=\dfrac{\alpha\beta^*}{\bet
 
 実4次元座標による写像と、複素数のペアによる写像は次のようにまとめられます。
 
-&&&
-実座標表示：
+&&& 実座標表示
 $$
 \mathbb{R}^4 \supset S^3 \ni
 \begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4\end{pmatrix}
@@ -193,7 +192,9 @@ $$
  \end{pmatrix}
 \in S^2 \subset \mathbb{R}^3
 $$
-複素ペア表示（$\alpha = x_1+ix_2,\ \beta = x_3+ix_4$）：
+&&&
+&&& 複素ペア表示
+$\alpha = x_1+ix_2,\ \beta = x_3+ix_4$とすると、次のようになります。
 $$
 \begin{pmatrix}\alpha \\ \beta\end{pmatrix}
 \mapsto
