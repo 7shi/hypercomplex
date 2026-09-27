@@ -2,7 +2,7 @@
 
 プロジェクトルートで `uv run hopf/check/<ファイル名>` により実行します。
 
-- [01-quaternion.py](01-quaternion.py) — $ω\mathbf kω^*$の成分展開とノルム、複素数ペア・パウリ行列による表式の一致、ファイバー$q=u+v\mathbf k$の検証。
+- [01-quaternion.py](01-quaternion.py) — $ω\mathbf kω^*$の成分展開とノルム、複素数ペア・パウリ行列による表式の一致、複素数ホップ写像$H(α,β)=(2α^*β,|α|^2-|β|^2)$が同じ座標を与えること、ファイバー$q=u+v\mathbf k$の検証。
 - [02-spinor-tensor.py](02-spinor-tensor.py) — $ωq$による$\mathbf k$項の消去、三角関数表示での回転結果、ブロッホベクトルと密度行列の検証。01-quaternion.md の$ω$との対応（右から$-\mathbf k$を掛けたもの）も確認します。
 - [03-bloch-density.py](03-bloch-density.py) — パウリ行列の積とエルミート行列の展開、純粋状態の性質（べき等性・位相不変性）、混合状態のブロッホベクトルと純粋度、固有分解、混合と重ね合わせの例の検証。
 - [04-extension.py](04-extension.py) — $H(\alpha, \beta)=(2\alpha\beta^*, |\alpha|^2-|\beta|^2)$ の四元数・八元数への拡張によるノルム1の保存の検証、および右乗算によるファイバーが四元数では結合性により保存され、八元数では非結合性により破壊されることの確認。

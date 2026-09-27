@@ -4,6 +4,7 @@
 
 改訂履歴：
 
+- 2026.09.28 複素数ホップ写像を$2α^*β$の形で定義し、パウリ行列による座標と一致させる
 - 2026.07.15 複素数ホップ写像を定義、まとめを追加
 - 2026.07.13 ノルムの乗法性の注記を追加、ファイバーの行間を補完
 - 2025.01.24 符号調整を行わずに内積・外積と対応付けるよう修正
@@ -152,78 +153,32 @@ $$
 
 よく使われる形のホップファイブレーションの表式が四元数によって得られました。
 
-## 結果まとめ
+# 複素数ホップ写像
 
-ここまでの結果をまとめます。
-
-&&&def 複素数ペアと四元数の対応関係
-$$
-\begin{aligned}
-α&=α_0+α_1i \\
-β&=β_0+β_1i \\
-ω&=ω_0+ω_1\mathbf{i}+ω_2\mathbf{j}+ω_3\mathbf{k}
-\end{aligned}
-$$
-$$
-\begin{pmatrix}α_0\\α_1\end{pmatrix}=\begin{pmatrix}ω_3\\ω_0\end{pmatrix}
-,\quad
-\begin{pmatrix}β_0\\β_1\end{pmatrix}=\begin{pmatrix}ω_1\\ω_2\end{pmatrix}
-$$
-$$
-\begin{aligned}
-ω&=α_1+β_0\mathbf{i}+β_1\mathbf{j}+α_0\mathbf{k} \\
- &=α_0\mathbf{k}+α_1+β_0\mathbf{i}+β_1\mathbf{j} \\
- &=(α_0\mathbf{k}+α_1)+\mathbf{j}(β_0\mathbf{k}+β_1)
-\end{aligned}
-$$
-&&&
-&&&def 複素数ペアの四元数への埋め込み
-$$
-\begin{aligned}
-α_ω&=α_0\mathbf{k}+α_1 \\
-β_ω&=β_0\mathbf{k}+β_1 \\
-ω&=α_ω+\mathbf{j}β_ω
-\end{aligned}
-$$
-&&&
-
-$ω$で$\mathbf{k}$を回転させます。
+前節の結果では、複素数$α^*β$の実部と虚部が、そのまま$\mathbf{i},\mathbf{j}$の係数になっています。
 
 $$
-\begin{aligned}
-ω\mathbf{k}ω^*
-&=(α_ω+\mathbf{j}β_ω)\mathbf{k}(α_ω+\mathbf{j}β_ω)^* \\
-&=(α_ω+β_ω^*\mathbf{j})\mathbf{k}(α_ω^*-\mathbf{j}β_ω) \\
-&=(α_ω\mathbf{k}+β_ω^*\mathbf{i})(α_ω^*-\mathbf{j}β_ω) \\
-&=α_ω\mathbf{k}α_ω^*-α_ω\mathbf{k}\mathbf{j}β_ω+β_ω^*\mathbf{i}α_ω^*-β_ω^*\mathbf{i}\mathbf{j}β_ω \\
-&=α_ω\mathbf{k}α_ω^*+α_ω\mathbf{i}β_ω+β_ω^*\mathbf{i}α_ω^*-β_ω^*\mathbf{k}β_ω \\
-&=α_ωα_ω^*\mathbf{k}+α_ωβ_ω^*\mathbf{i}+β_ω^*α_ω\mathbf{i}-β_ω^*β_ω\mathbf{k} \\
-&=2α_ωβ_ω^*\mathbf{i}+(|α|^2-|β|^2)\mathbf{k} \\
-&=2(α_0\mathbf{k}+α_1)(-β_0\mathbf{k}+β_1)\mathbf{i}+(|α|^2-|β|^2)\mathbf{k} \\
-&=2(α_0β_0+α_0β_1\mathbf{k}-α_1β_0\mathbf{k}+α_1β_1)\mathbf{i}+(|α|^2-|β|^2)\mathbf{k} \\
-&=2(α_0β_0+α_1β_1)\mathbf{i}+2(α_0β_1-α_1β_0)\mathbf{j}+(|α|^2-|β|^2)\mathbf{k} \\
-&=2\mathrm{Re}(α^*β)\mathbf{i}+2\mathrm{Im}(α^*β)\mathbf{j}+(|α|^2-|β|^2)\mathbf{k}
-\end{aligned}
+ω\mathbf{k}ω^*=2\mathrm{Re}(α^*β)\mathbf{i}+2\mathrm{Im}(α^*β)\mathbf{j}+(|α|^2-|β|^2)\mathbf{k}
 $$
 
-計算の過程で、$α_ω,β_ω$を展開する直前で、以下の結果が得られています。
-
-$$
-ω\mathbf{k}ω^*=2α_ωβ_ω^*\mathbf{i}+(|α|^2-|β|^2)\mathbf{k}
-$$
-
-この結果より、複素数のペア$(α,β)$から$(2αβ^*,|α|^2-|β|^2)$への複素数ホップ写像を定義します。
+そこで複素数$c$と実数$z$のペア$(c,z)$を純虚四元数$\mathrm{Re}(c)\mathbf{i}+\mathrm{Im}(c)\mathbf{j}+z\mathbf{k}$と対応させれば、$ω\mathbf{k}ω^*$は複素数のペア$(α,β)$から、複素数$2α^*β$と実数$|α|^2-|β|^2$のペアへの写像として表せます。
 
 &&&def 複素数ホップ写像
 単位球面上の点 $|\alpha|^2 + |\beta|^2 = 1$ は、以下の写像によって2次元球面上の点に射影されます。
 $$
-H(\alpha, \beta) = \left(2\alpha \beta^*, |\alpha|^2 - |\beta|^2\right)
+H(\alpha, \beta) = \left(2\alpha^* \beta, |\alpha|^2 - |\beta|^2\right)
 $$
+&&&
+
+&&&rem 原論文の形との関係
+Hopfの原論文では、$(2αβ^*,|α|^2-|β|^2)$の形で定義されています。[[7shi-homog]]
+
+$2αβ^*$は$2α^*β$の複素共役なので、両者の像は$\mathbf{j}$成分の符号だけが異なります。本記事では、後述するパウリ行列による座標と一致する$2α^*β$の形を採ります。
 &&&
 
 # 実部と虚部の分離
 
-複素共役での虚部の符号反転によって、実部と虚部が分離できます。分離した虚部に$-i$を掛けることで実数化します。
+複素共役での虚部の符号反転によって、実部と虚部が分離できます。また、分離した虚部に$-i$を掛けることで実数化できます。
 
 &&&fml 実部と虚部の分離
 $$
@@ -258,7 +213,7 @@ $$
 $$
 &&&
 
-$ω\mathbf{k}ω^*$の$i,j,k$の係数を$x,y,z$とします。
+$ω\mathbf{k}ω^*$の$\mathbf{i},\mathbf{j},\mathbf{k}$の係数を$x,y,z$とします。
 
 $$
 ω\mathbf{k}ω^*
@@ -303,6 +258,8 @@ $$\Psi\mapsto\begin{pmatrix}
   \Psi^\dagger\sigma_y\Psi \\
   \Psi^\dagger\sigma_z\Psi\end{pmatrix}$$
 &&&
+
+$x=2\mathrm{Re}(α^*β),\ y=2\mathrm{Im}(α^*β)$より$x+iy=2α^*β$であり、座標$(x+iy,z)$は複素数ホップ写像$H(α,β)$と一致します。
 
 量子情報では、$\Psi$を**状態ベクトル**、パウリ行列による座標変換によって構成される単位球を**ブロッホ球**と呼びます。
 
@@ -356,24 +313,17 @@ $$
 
 # まとめ
 
-単位四元数$ω$を2つの埋め込まれた複素数$α_ω,β_ω$で表現して、回転$ω\mathbf{k}ω^*$を成分展開します。
-
-$$
-ω\mathbf{k}ω^*
-=2α_ωβ_ω^*\mathbf{i}+(|α|^2-|β|^2)\mathbf{k}
-$$
-
-この結果より、複素数のペアから複素数と実数のペアへの複素数ホップ写像を定義します。
-
-$$
-H(\alpha, \beta) = \left(2\alpha \beta^*, |\alpha|^2 - |\beta|^2\right)
-$$
-
-$α_ω,β_ω$を成分展開して計算を続ければ、結果が2つの複素数$α,β$の内積・外積として書けます。
+単位四元数$ω$で$\mathbf{k}$を回転させた$ω\mathbf{k}ω^*$の係数には、$ω$の成分から作った2つの複素数$α,β$の内積・外積が現れます。
 
 $$
 ω\mathbf{k}ω^*
 =2\,\underbrace{\mathrm{Re}(α^*β)}_{\text{内積}}\,\mathbf{i}+2\,\underbrace{\mathrm{Im}(α^*β)}_{\text{外積}}\,\mathbf{j}+(|α|^2-|β|^2)\mathbf{k}
+$$
+
+複素数と実数のペア$(c,z)$を純虚四元数$\mathrm{Re}(c)\mathbf{i}+\mathrm{Im}(c)\mathbf{j}+z\mathbf{k}$と対応させ、複素数のペアから複素数と実数のペアへの複素数ホップ写像を定義します。
+
+$$
+H(\alpha, \beta) = \left(2\alpha^* \beta, |\alpha|^2 - |\beta|^2\right)
 $$
 
 $\mathrm{Re},\mathrm{Im}$を展開して、虚数単位$\mathbf{i},\mathbf{j},\mathbf{k}$の係数から$x,y,z$成分を求めます。

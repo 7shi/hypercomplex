@@ -7,8 +7,8 @@ Verifies numerically (random unit quaternions, numpy):
    and that its real part vanishes and its norm is 1.
 2. The complex-pair form: with α = ω3+ω0 i, β = ω1+ω2 i,
    ω k ω* = 2Re(α*β) i + 2Im(α*β) j + (|α|²-|β|²) k.
-3. The embedding ω = (α0 k + α1) + j (β0 k + β1) reproduces ω, and the
-   summary derivation ω k ω* = 2 α_ω β_ω* i + (|α|²-|β|²) k.
+3. The complex Hopf map H(α, β) = (2α*β, |α|²-|β|²) equals the
+   coordinates (x+iy, z) of ω k ω*.
 4. The Pauli-matrix form x = Ψ†σx Ψ, y = Ψ†σy Ψ, z = Ψ†σz Ψ with
    Ψ = (α, β)ᵀ gives the same coordinates.
 5. Fibers: q = u+v k (u²+v²=1) fixes k, and (ωq) k (ωq)* = ω k ω*.
@@ -62,17 +62,10 @@ for _ in range(100):
     ab = np.conj(alpha) * beta
     assert np.allclose(wkw, [0, 2*ab.real, 2*ab.imag, abs(alpha)**2 - abs(beta)**2])
 
-    # 3. embedding: α_ω = α0 k + α1, β_ω = β0 k + β1, ω = α_ω + j β_ω
-    a0, a1 = alpha.real, alpha.imag
-    b0, b1 = beta.real, beta.imag
-    aw = np.array([a1, 0, 0, a0])
-    bw = np.array([b1, 0, 0, b0])
-    J = np.array([0.0, 0.0, 1.0, 0.0])
-    assert np.allclose(w, aw + qmul(J, bw))
-    # ω k ω* = 2 α_ω β_ω* i + (|α|²-|β|²) k
-    I = np.array([0.0, 1.0, 0.0, 0.0])
-    summary = 2*qmul(qmul(aw, qconj(bw)), I) + (abs(alpha)**2 - abs(beta)**2)*K
-    assert np.allclose(wkw, summary)
+    # 3. H(α, β) = (2α*β, |α|²-|β|²) gives (x+iy, z)
+    hopf = (2*np.conj(alpha)*beta, abs(alpha)**2 - abs(beta)**2)
+    assert np.isclose(hopf[0], wkw[1] + wkw[2]*1j)
+    assert np.isclose(hopf[1], wkw[3])
 
     # 4. Pauli-matrix coordinates
     psi = np.array([alpha, beta])
