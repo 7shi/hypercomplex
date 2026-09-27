@@ -1,4 +1,8 @@
-四元数のテンソル積[[7shi-tp]]からクリフォード代数を構成する方法を確認します。同様に分解型四元数でも確認します。
+四元数および分解型四元数のテンソル積から実クリフォード代数を構成する手順を整理し、テンソル積による生成元の拡張規則を体系化します。
+
+# 概要
+
+実クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$は、四元数$\mathbb H$や分解型四元数$\mathbb H'$のテンソル積として表現できることが知られています。本記事では、テンソル積の基礎概念[[7shi-tp]]を踏まえ、$\mathbb H$および$\mathbb H'$の基底から反交換関係を満たす生成元を体系的に選択し、$\mathbb H \otimes \mathbb H$や$\mathbb H \otimes \mathbb H'$がそれぞれどのクリフォード代数と同型になるかを具体的に導出します。さらに、一般の$\operatorname{Cl}_{p,q}(\mathbb R)$に対して$\otimes \mathbb H$や$\otimes \mathbb H'$を作用させた際の符号数（計量）の変化公式を導き、テンソル積による拡張構造を整理します。
 
 # 四元数のテンソル積
 
@@ -75,13 +79,13 @@ $$\{i⊗i,\ i⊗j,\ i⊗k,\ j⊗1,\ k⊗1\} \tag{6}$$
 
 $$\{1⊗j,\ 1⊗k,\ i⊗i,\ j⊗i,\ k⊗i\} \tag{3}$$
 
-&&&rem 模式化しやすさ
+&&&rem 生成元の模式化
 次のセクションの$(7)$のこと
 &&&
 
 $(3)$の性質を調べます。
 
-&&&prop
+&&&prop 基底の生成
 $(3)$は$\mathbb H⊗\mathbb H$の基底を生成する。
 &&&
 
@@ -105,7 +109,7 @@ $$
 よって$(3)$から$\mathbb H⊗\mathbb H$の基底が生成される。
 &&&
 
-&&&prop
+&&&prop 4元による残りの元の生成
 $(3)$において、任意の4元から残りの1元が生成される。
 &&&
 
@@ -138,7 +142,7 @@ $$
 \end{array} \tag{7}
 $$
 
-&&&rem
+&&&rem 赤字因子の並び
 赤字部分は、左因子と右因子に$\{i,j,k\}$が現れるように並べ替えた様子を示します。
 &&&
 
@@ -154,7 +158,7 @@ $$
 \end{array}
 $$
 
-&&&rem
+&&&rem 生成元の模式的選択
 赤字部分は、拡張前の$\mathbb H$におけるクリフォード代数の生成元です。それ以外が、テンソル積によって拡張された部分です。
 &&&
 
@@ -177,7 +181,7 @@ $$
 
 - 計量$1$が2個、計量$-1$が2個 → 符号数$(2,2)$
 
-&&&rem
+&&&rem 符号数によるクリフォード代数の指定
 クリフォード代数としての性質は符号数にのみ依存するため、通常、生成元の具体的な選択ではなく、符号数のみが添え字で示されます。
 
 - 符号数$(p,q)$ → $\operatorname{Cl}_{p,q}(\mathbb R)$
@@ -215,7 +219,7 @@ $$
 \end{array}
 $$
 
-&&&rem
+&&&rem 計量の反転
 拡張の際、赤字部分の$i,j$の計量が$⊗i$によって反転しています。また、拡張された$e_3,e_4$の計量は$-1$です。
 &&&
 
@@ -247,7 +251,7 @@ $$
 \end{array}
 $$
 
-&&&rem
+&&&rem 反転と追加生成元の計量
 $e_1,e_2,e_3,e_4$の計量が$⊗i$によって反転して、追加された2個の生成元$\{1⊗j,\ 1⊗ij\}$の計量は$-1$です。
 &&&
 
@@ -288,7 +292,7 @@ $$
 $$
 &&&
 
-&&&rem
+&&&rem 符号数の入れ替わり
 右辺の$\operatorname{Cl}_{q,p+2}(\mathbb R)$は$p,q$の位置が入れ替わります。これは$⊗i$による計量の反転に由来します。
 
 符号数の増分$(0,2)$は$\mathbb H \cong \operatorname{Cl}_{0,2}(\mathbb R)$に由来します。
@@ -338,7 +342,7 @@ $$
 
 クリフォード代数としての性質は符号数にのみ依存するため、$\operatorname{Cl}_{1,1}(\mathbb R)$の生成元としては$\{i,j\}$のみを使用します。
 
-&&&rem
+&&&rem 分解型四元数の同型対応
 グレード2の基底まで含めれば代数として同型です。
 $$
 \mathbb H' \cong \operatorname{Cl}_{1,1}(\mathbb R) \cong \operatorname{Cl}_{2,0}(\mathbb R)
@@ -518,7 +522,7 @@ $$
 $$
 &&&
 
-&&&rem
+&&&rem 計量変化と符号数の増分
 中辺の$\operatorname{Cl}_{q+2,p}(\mathbb R)$は$p,q$の位置が入れ替わります。これは$⊗i$による計量の反転に由来します。
 右辺の$\operatorname{Cl}_{p+1,q+1}(\mathbb R)$は$p,q$の位置が維持されます。これは$⊗j$によって計量が変化しないことに由来します。
 
@@ -564,20 +568,24 @@ $$
 
 # まとめ
 
-本記事では、$\mathbb H$と$\mathbb H'$とそれらのテンソル積によって構成されるクリフォード代数の構造を分析しました。
+本記事では、四元数$\mathbb H$と分解型四元数$\mathbb H'$、およびそれらのテンソル積によって構成されるクリフォード代数の構造を整理しました。
 
 テンソル積によって$\mathbb H,\mathbb H'$を付加することで、クリフォード代数としての生成元は2個増えます。
 
-&&&
+&&& 四元数・分解型四元数と同型対応
+四元数および分解型四元数は、低次元のクリフォード代数と同型です。
 $$
 \begin{alignedat}{2}
 &\mathbb H &&\cong \operatorname{Cl}_{0,2}(\mathbb R) \\
 &\mathbb H' &&\cong \operatorname{Cl}_{2,0}(\mathbb R) \cong \operatorname{Cl}_{1,1}(\mathbb R)
 \end{alignedat}
 $$
+&&&
+
+&&& テンソル積によるクリフォード代数の拡張公式
 $$
 \begin{alignedat}{2}
-\operatorname{Cl}_{p,q}(\mathbb R) &⊗ \mathbb H  &&\cong \operatorname{Cl}_{q,p+2}(\mathbb R) \\
+\operatorname{Cl}_{p,q}(\mathbb R) &⊗ \mathbb H  &&\cong \operatorname{Cl}_{q,p+2}(\mathbb R) \\
 \operatorname{Cl}_{p,q}(\mathbb R) &⊗ \mathbb H' &&\cong \operatorname{Cl}_{q+2,p}(\mathbb R) \cong \operatorname{Cl}_{p+1,q+1}(\mathbb R)
 \end{alignedat}
 $$
@@ -587,7 +595,9 @@ $$
 \mathbb{H} &⊗ \mathbb{H}' &&\cong \mathbb{H}' ⊗ \mathbb{H} &&\cong \operatorname{Cl}_{1,3}(\mathbb R) \cong \operatorname{Cl}_{0,4}(\mathbb R) \cong \operatorname{Cl}_{4,0}(\mathbb R)
 \end{alignedat}
 $$
+&&&
 
+&&& テンソル積とクリフォード代数の対応表
 $$
 \begin{array}{|c|ccccc|}
 \hline
