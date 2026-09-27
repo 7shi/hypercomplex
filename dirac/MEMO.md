@@ -15,7 +15,7 @@
 
 ## 記号
 
-- **擬スカラーは$\omega$**。[CLAUDE.md](../CLAUDE.md)の原則どおりで、emシリーズの$i$は引き継がない。量子力学ではシュレーディンガー方程式$i\hbar\partial_t\Psi$の虚数単位$i$が定着しており、[[7shi-clif5]]もこの形で導いている。複素数の虚数単位は$i$のまま使い、擬スカラー$\omega=\gamma_0\gamma_1\gamma_2\gamma_3=\sigma_1\sigma_2\sigma_3$と区別する。clif-analysisの$\omega$（[[7shi-cla1]]の$e_1e_2$、[[7shi-cla5]]の$e_0\cdots e_{n-1}$）とも一致する
+- **擬スカラーは$\omega$**。[STYLE.md](../STYLE.md)の原則どおりで、emシリーズの$i$は引き継がない。量子力学ではシュレーディンガー方程式$i\hbar\partial_t\Psi$の虚数単位$i$が定着しており、[[7shi-clif5]]もこの形で導いている。複素数の虚数単位は$i$のまま使い、擬スカラー$\omega=\gamma_0\gamma_1\gamma_2\gamma_3=\sigma_1\sigma_2\sigma_3$と区別する。clif-analysisの$\omega$（[[7shi-cla1]]の$e_1e_2$、[[7shi-cla5]]の$e_0\cdots e_{n-1}$）とも一致する
 - **スピノルは$\psi$、列ベクトル・左イデアルの元は$\Psi$**。Hestenes形式の慣例に従い、偶部分代数の元を$\psi$と書く。行列形式の列ベクトル（左イデアルの元）は$\Psi$とする。[[7shi-cla1]]の命題「偶部分と極小左イデアルの対応」は偶部分の$F$から左イデアルの$\psi=FP$を作っており、文字の役割が逆になるので、引くときに断る
 - **行列にはハットを付ける**（案）。代数の元$\sigma_k$・$\gamma_\mu$と、それを表現する行列$\hat\sigma_k$・$\hat\gamma_\mu$を区別する。翻訳の節で両者が並ぶため
 - **作用素**。時空のディラック作用素は[[7shi-em4]]と同じく$D=\sum_\mu\gamma^\mu\partial_\mu$（相反基底$\gamma^0=\gamma_0$、$\gamma^k=-\gamma_k$）、$x_0=ct$、$D^2=\partial_0^2-\Delta=\square$。空間の作用素は、[[7shi-em6]]の証明で使った$D_3=\sum_k\sigma_k\partial_k$と書き、01から$D$と区別しておく（emの01〜03は空間の作用素を$D$と書いたが、本シリーズは02で時空に上がるため）
