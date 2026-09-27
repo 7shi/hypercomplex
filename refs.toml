@@ -777,7 +777,7 @@ files = [
 
 ["7shi-rod"]
 type = "website"
-citation = "七誌, 四元数によるロドリゲスの回転公式 , 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
+citation = "七誌, 四元数によるロドリゲスの回転公式, 七誌の開発日記, 閲覧日 2024年7月12日, https://7shi.hateblo.jp/entry/2020/10/05/055023"
 url = "https://7shi.hateblo.jp/entry/2020/10/05/055023"
 accessed = 2024-07-12
 author = ["七誌"]
@@ -868,7 +868,7 @@ files = [
 
 ["7shi-vge"]
 type = "mathlog"
-citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2024, アクセス日: Sun Jul 19 2026"
+citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2024, アクセス日: Mon Sep 28 2026"
 url = "https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V"
 files = [
   "clif-analysis/01-dirac-monogenic.md",
