@@ -1,16 +1,29 @@
-実数・複素数・四元数と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。完成した分類表からは、擬スカラーによる型の判別、偶部分代数、複素化と2周期性、ピノル表現といった構造を読み取ります。
+実数・複素数・四元数と分解型の代数を基本構造として、テンソル積による拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類します。
 
-拡張公式は以前の記事で導出したものを使用します。[[7shi-qt]]
+# 概要
 
-&&& 凡例
-代数$A$の直和$A \oplus A$を$2A$と略記します。例：$2\mathbb H = \mathbb H \oplus \mathbb H$
+クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$は、計量の符号数$(p,q)$を持つ実線形空間から構成される代数ですが、結合代数としては実数・複素数・四元数上の全行列環やその直和と同型になります。幾何代数やスピン表現を体系的に理解するためには、どの符号数がどの行列環に対応するのかを網羅的に分類することが基礎となります。
 
-$\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します。例：$\mathbb R(2) = M_2(\mathbb R)$
-&&&
+本記事では、低次元の代数から出発して拡張公式を繰り返し適用し、実クリフォード代数の完全な分類表を導出します。
+
+前提知識として、実数・複素数・四元数の基本的な演算とテンソル積の初歩を仮定します。また、先行記事から以下を引き継ぎます。
+
+- 四元数$\mathbb H$および分解型四元数$\mathbb H'$とのテンソル積によるクリフォード代数の拡張公式。[[7shi-qt]]
+- パウリ行列と双四元数の対応$\mathbb C \otimes \mathbb H \cong M_2(\mathbb C)$。[[7shi-bq]]
+
+本記事は次のように進めます。
+
+1. **基本構造の確認**：生成元が2個以下の代数を実数・複素数・四元数およびその分解型（$\mathbb C', \mathbb H'$）として整理し、冪等元による直和分解$\mathbb C' \cong 2\mathbb R$と行列表現$\mathbb H' \cong M_2(\mathbb R)$を確認します（代数$A$の直和$A \oplus A$を$2A$と略記します）。
+2. **拡張公式の反復**：基本構造に2つの拡張公式を交互に適用して分類表の第1行・第1列を決定し、対角線方向の充填によって分類表全体を完成させます。
+3. **8周期性と型の判別**：表に現れるボット周期性を導出し、擬スカラーの中心性と2乗の符号から直和型や複素型が出現する理由を解明します。
+4. **偶部分代数と複素化**：偶部分代数の次元半減と同型、および係数を複素数に拡張した複素クリフォード代数の2周期性を導きます。
+5. **ピノルとスピノル**：分類された行列環が作用する表現空間としてピノル・スピノルを位置づけます。
+
+本記事では代数構造の分類と同型関係の導出を扱い、特定の幾何代数系（時空代数や共形幾何代数など）における具体的な幾何学的応用や、物理的な場の方程式への適用は扱いません。
 
 # 基本的な代数構造
 
-クリフォード代数には、5つの基本的な代数構造があります。
+クリフォード代数を系統的に構成するために、まず生成元が2個以下の基本的な数体系が、どのようなクリフォード代数に対応しているかを観察します。
 
 &&&thm 5つの基本構造
 $$
@@ -56,9 +69,9 @@ $$
 
 この冪等元は以下の重要な性質を持ちます。
 
-- 冪等性：$e^2 = e,\ (e^*)^2 = e^*$
-- 直交性：$ee^* = e^*e = 0$
-- 完全性：$e + e^* = 1$
+- **冪等性** $e^2 = e,\ (e^*)^2 = e^*$
+- **直交性** $ee^* = e^*e = 0$
+- **完全性** $e + e^* = 1$
 
 これにより、任意の分解型複素数 $z = x + jy$ は以下のように一意的に分解できます。
 
@@ -90,12 +103,8 @@ $$
 
 &&&thm 分解型四元数の行列表現
 $$
-\mathbb{H}' \cong \mathbb{R}(2)
+\mathbb{H}' \cong M_2(\mathbb{R})
 $$
-&&&
-
-&&&rem
-$\mathbb F$を成分とする$n$次の全行列環$M_n(\mathbb F)$を$\mathbb F(n)$と表記します。
 &&&
 
 その生成元は以下の行列で表されます。
@@ -155,9 +164,9 @@ $$
 
 &&&fml 行列環とのテンソル積
 $$
-\mathbb{F}(m) \otimes \mathbb{G}(n) \cong (\mathbb{F} \otimes \mathbb{G})(mn)
+M_m(\mathbb{F}) \otimes M_n(\mathbb{G}) \cong M_{mn}(\mathbb{F} \otimes \mathbb{G})
 $$
-特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$\mathbb{F}(m) \otimes \mathbb{R}(n) \cong \mathbb{F}(mn)$となるため、$\mathbb H' \cong \mathbb R(2)$とのテンソル積は行列表現の次数を2倍にします。
+特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$M_m(\mathbb{F}) \otimes M_n(\mathbb{R}) \cong M_{mn}(\mathbb{F})$となるため、$\mathbb H' \cong M_2(\mathbb R)$とのテンソル積は行列表現の次数を2倍にします。
 &&&
 
 &&&fml 直和との分配性
@@ -169,23 +178,23 @@ $$
 &&&fml 四元数とのテンソル積
 $$
 \begin{aligned}
-\mathbb{H} \otimes \mathbb{H} &\cong \mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(4) \\
-\mathbb{H}' \otimes \mathbb{H} &\cong \mathbb{R}(2) \otimes \mathbb{H} \cong \mathbb{H}(2) \\
-\mathbb{C} \otimes \mathbb{H} &\cong \mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C}(2)
+\mathbb{H} \otimes \mathbb{H} &\cong \mathbb{H}' \otimes \mathbb{H}' \cong M_4(\mathbb{R}) \\
+\mathbb{H}' \otimes \mathbb{H} &\cong M_2(\mathbb{R}) \otimes \mathbb{H} \cong M_2(\mathbb{H}) \\
+\mathbb{C} \otimes \mathbb{H} &\cong \mathbb{C} \otimes \mathbb{H}' \cong M_2(\mathbb{C})
 \end{aligned}
 $$
 &&&
 
 &&&rem
-1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は同型です[[7shi-qt]]。$\mathbb H' \cong \mathbb R(2)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong \mathbb{R}(2) \otimes \mathbb{R}(2) \cong \mathbb{R}(4)$と計算できます。
+1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は同型です。$\mathbb H' \cong M_2(\mathbb R)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong M_2(\mathbb{R}) \otimes M_2(\mathbb{R}) \cong M_4(\mathbb{R})$と計算できます。[[7shi-qt]]
 
-3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$\mathbb{C}(2)$と同型になることを以前の記事で確認しました[[7shi-bq]]。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$となるため、両者は同型です。
+3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$M_2(\mathbb{C})$と同型になることを以前の記事で確認しました。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{C})$となるため、両者は同型です。[[7shi-bq]]
 &&&
 
 これらの規則は組み合わせて使用できます。
 
 &&&ex 計算規則の組み合わせ
-$$\mathbb{H}(2) \otimes \mathbb{H} \cong (\mathbb{H} \otimes \mathbb{H})(2) \cong \mathbb{R}(4)(2) \cong \mathbb{R}(8)$$
+$$M_2(\mathbb{H}) \otimes \mathbb{H} \cong M_2(\mathbb{H} \otimes \mathbb{H}) \cong M_2(M_4(\mathbb{R})) \cong M_8(\mathbb{R})$$
 &&&
 
 # 系列による代数構造の導出
@@ -199,9 +208,9 @@ $$\mathbb{H}(2) \otimes \mathbb{H} \cong (\mathbb{H} \otimes \mathbb{H})(2) \con
 $$
 \begin{aligned}
 \operatorname{Cl}_{0,1}(\mathbb{R}) &\cong \mathbb{C} \\
-\operatorname{Cl}_{3,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,1}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2) \\
-\operatorname{Cl}_{0,5}(\mathbb{R}) &\cong \operatorname{Cl}_{3,0}(\mathbb{R}) \otimes \mathbb{H} \cong \mathbb{C}(2) \otimes \mathbb{H} \cong \mathbb{C}(4) \\
-\operatorname{Cl}_{7,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,5}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C}(4) \otimes \mathbb{R}(2) \cong \mathbb{C}(8)
+\operatorname{Cl}_{3,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,1}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{C}) \\
+\operatorname{Cl}_{0,5}(\mathbb{R}) &\cong \operatorname{Cl}_{3,0}(\mathbb{R}) \otimes \mathbb{H} \cong M_2(\mathbb{C}) \otimes \mathbb{H} \cong M_4(\mathbb{C}) \\
+\operatorname{Cl}_{7,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,5}(\mathbb{R}) \otimes \mathbb{H}' \cong M_4(\mathbb{C}) \otimes M_2(\mathbb{R}) \cong M_8(\mathbb{C})
 \end{aligned}
 $$
 
@@ -213,8 +222,8 @@ $$
 \begin{aligned}
 \operatorname{Cl}_{1,0}(\mathbb{R}) &\cong \mathbb{C}' \cong 2\mathbb{R} \\
 \operatorname{Cl}_{0,3}(\mathbb{R}) &\cong \operatorname{Cl}_{1,0}(\mathbb{R}) \otimes \mathbb{H} \cong 2\mathbb{R} \otimes \mathbb{H} \cong 2\mathbb{H} \\
-\operatorname{Cl}_{5,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,3}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{H} \otimes \mathbb{R}(2) \cong 2\mathbb{H}(2) \\
-\operatorname{Cl}_{0,7}(\mathbb{R}) &\cong \operatorname{Cl}_{5,0}(\mathbb{R}) \otimes \mathbb{H} \cong 2\mathbb{H}(2) \otimes \mathbb{H} \cong 2\mathbb{R}(8)
+\operatorname{Cl}_{5,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,3}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{H} \otimes M_2(\mathbb{R}) \cong 2M_2(\mathbb{H}) \\
+\operatorname{Cl}_{0,7}(\mathbb{R}) &\cong \operatorname{Cl}_{5,0}(\mathbb{R}) \otimes \mathbb{H} \cong 2M_2(\mathbb{H}) \otimes \mathbb{H} \cong 2M_8(\mathbb{R})
 \end{aligned}
 $$
 
@@ -225,9 +234,9 @@ $$
 $$
 \begin{aligned}
 \operatorname{Cl}_{0,2}(\mathbb{R}) &\cong \mathbb{H} \\
-\operatorname{Cl}_{4,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,2}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{H} \otimes \mathbb{R}(2) \cong \mathbb{H}(2) \\
-\operatorname{Cl}_{0,6}(\mathbb{R}) &\cong \operatorname{Cl}_{4,0}(\mathbb{R}) \otimes \mathbb{H} \cong \mathbb{H}(2) \otimes \mathbb{H} \cong \mathbb{R}(8) \\
-\operatorname{Cl}_{8,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,6}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R}(8) \otimes \mathbb{R}(2) \cong \mathbb{R}(16)
+\operatorname{Cl}_{4,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,2}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{H} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{H}) \\
+\operatorname{Cl}_{0,6}(\mathbb{R}) &\cong \operatorname{Cl}_{4,0}(\mathbb{R}) \otimes \mathbb{H} \cong M_2(\mathbb{H}) \otimes \mathbb{H} \cong M_8(\mathbb{R}) \\
+\operatorname{Cl}_{8,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,6}(\mathbb{R}) \otimes \mathbb{H}' \cong M_8(\mathbb{R}) \otimes M_2(\mathbb{R}) \cong M_{16}(\mathbb{R})
 \end{aligned}
 $$
 
@@ -237,10 +246,10 @@ $$
 
 $$
 \begin{aligned}
-\operatorname{Cl}_{2,0}(\mathbb{R}) &\cong \mathbb{H}' \cong \mathbb{R}(2) \\
-\operatorname{Cl}_{0,4}(\mathbb{R}) &\cong \operatorname{Cl}_{2,0}(\mathbb{R}) \otimes \mathbb{H} \cong \mathbb{R}(2) \otimes \mathbb{H} \cong \mathbb{H}(2) \\
-\operatorname{Cl}_{6,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,4}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{H}(2) \otimes \mathbb{R}(2) \cong \mathbb{H}(4) \\
-\operatorname{Cl}_{0,8}(\mathbb{R}) &\cong \operatorname{Cl}_{6,0}(\mathbb{R}) \otimes \mathbb{H} \cong \mathbb{H}(4) \otimes \mathbb{H} \cong \mathbb{R}(16)
+\operatorname{Cl}_{2,0}(\mathbb{R}) &\cong \mathbb{H}' \cong M_2(\mathbb{R}) \\
+\operatorname{Cl}_{0,4}(\mathbb{R}) &\cong \operatorname{Cl}_{2,0}(\mathbb{R}) \otimes \mathbb{H} \cong M_2(\mathbb{R}) \otimes \mathbb{H} \cong M_2(\mathbb{H}) \\
+\operatorname{Cl}_{6,0}(\mathbb{R}) &\cong \operatorname{Cl}_{0,4}(\mathbb{R}) \otimes \mathbb{H}' \cong M_2(\mathbb{H}) \otimes M_2(\mathbb{R}) \cong M_4(\mathbb{H}) \\
+\operatorname{Cl}_{0,8}(\mathbb{R}) &\cong \operatorname{Cl}_{6,0}(\mathbb{R}) \otimes \mathbb{H} \cong M_4(\mathbb{H}) \otimes \mathbb{H} \cong M_{16}(\mathbb{R})
 \end{aligned}
 $$
 
@@ -253,15 +262,15 @@ $$
 \hline
 p \backslash q & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \hline
-0 & \mathbb{R} & \mathbb{C} & \mathbb{H} & 2\mathbb{H} & \mathbb{H}(2) & \mathbb{C}(4) & \mathbb{R}(8) & 2\mathbb{R}(8) & \mathbb{R}(16) \\
+0 & \mathbb{R} & \mathbb{C} & \mathbb{H} & 2\mathbb{H} & M_2(\mathbb{H}) & M_4(\mathbb{C}) & M_8(\mathbb{R}) & 2M_8(\mathbb{R}) & M_{16}(\mathbb{R}) \\
 1 & 2\mathbb{R} & & & & & & & & \\
-2 & \mathbb{R}(2) & & & & & & & & \\
-3 & \mathbb{C}(2) & & & & & & & & \\
-4 & \mathbb{H}(2) & & & & & & & & \\
-5 & 2\mathbb{H}(2) & & & & & & & & \\
-6 & \mathbb{H}(4) & & & & & & & & \\
-7 & \mathbb{C}(8) & & & & & & & & \\
-8 & \mathbb{R}(16) & & & & & & & & \\
+2 & M_2(\mathbb{R}) & & & & & & & & \\
+3 & M_2(\mathbb{C}) & & & & & & & & \\
+4 & M_2(\mathbb{H}) & & & & & & & & \\
+5 & 2M_2(\mathbb{H}) & & & & & & & & \\
+6 & M_4(\mathbb{H}) & & & & & & & & \\
+7 & M_8(\mathbb{C}) & & & & & & & & \\
+8 & M_{16}(\mathbb{R}) & & & & & & & & \\
 \hline
 \end{array}
 $$
@@ -272,23 +281,23 @@ $$
 
 ## 対角線方向の充填
 
-公式2は、$\mathbb H'$とのテンソル積によって符号数が$(p,q)$から$(p+1,q+1)$へ拡張できることを示しています。$\mathbb H' \cong \mathbb R(2)$なので、次の式が成り立ちます。
+公式2は、$\mathbb H'$とのテンソル積によって符号数が$(p,q)$から$(p+1,q+1)$へ拡張できることを示しています。$\mathbb H' \cong M_2(\mathbb R)$なので、次の式が成り立ちます。
 
 &&&fml 対角線方向の充填
-$$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{R}(2)$$
+$$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes M_2(\mathbb{R})$$
 &&&
 
 つまり、表を対角線（右下）方向に1つ進むごとに行列の次数が2倍になり、型（$\mathbb{R},\mathbb{C},\mathbb{H}$の種別と直和の有無）は変わりません。系列によって得られた第1行と第1列を起点として、対角線方向に空白部分を埋めることができます。
 
 &&&ex 空白部分の充填
 1. $p=1, q=1$ の場合：
-   $\operatorname{Cl}_{1,1}(\mathbb{R}) \cong \operatorname{Cl}_{0,0}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R} \otimes \mathbb{R}(2) \cong \mathbb{R}(2)$
+   $\operatorname{Cl}_{1,1}(\mathbb{R}) \cong \operatorname{Cl}_{0,0}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{R})$
 
 2. $p=1, q=2$ の場合：
-   $\operatorname{Cl}_{1,2}(\mathbb{R}) \cong \operatorname{Cl}_{0,1}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C} \otimes \mathbb{R}(2) \cong \mathbb{C}(2)$
+   $\operatorname{Cl}_{1,2}(\mathbb{R}) \cong \operatorname{Cl}_{0,1}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{C})$
 
 3. $p=2, q=1$ の場合：
-   $\operatorname{Cl}_{2,1}(\mathbb{R}) \cong \operatorname{Cl}_{1,0}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{R} \otimes \mathbb{R}(2) \cong 2\mathbb{R}(2)$
+   $\operatorname{Cl}_{2,1}(\mathbb{R}) \cong \operatorname{Cl}_{1,0}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{R} \otimes M_2(\mathbb{R}) \cong 2M_2(\mathbb{R})$
 &&&
 
 ## 完全な分類表
@@ -300,15 +309,15 @@ $$
 \hline
 p \backslash q & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \hline
-0 & \mathbb{R} & \mathbb{C} & \mathbb{H} & 2\mathbb{H} & \mathbb{H}(2) & \mathbb{C}(4) & \mathbb{R}(8) & 2\mathbb{R}(8) & \mathbb{R}(16) \\
-1 & 2\mathbb{R} & \mathbb{R}(2) & \mathbb{C}(2) & \mathbb{H}(2) & 2\mathbb{H}(2) & \mathbb{H}(4) & \mathbb{C}(8) & \mathbb{R}(16) & 2\mathbb{R}(16) \\
-2 & \mathbb{R}(2) & 2\mathbb{R}(2) & \mathbb{R}(4) & \mathbb{C}(4) & \mathbb{H}(4) & 2\mathbb{H}(4) & \mathbb{H}(8) & \mathbb{C}(16) & \mathbb{R}(32) \\
-3 & \mathbb{C}(2) & \mathbb{R}(4) & 2\mathbb{R}(4) & \mathbb{R}(8) & \mathbb{C}(8) & \mathbb{H}(8) & 2\mathbb{H}(8) & \mathbb{H}(16) & \mathbb{C}(32) \\
-4 & \mathbb{H}(2) & \mathbb{C}(4) & \mathbb{R}(8) & 2\mathbb{R}(8) & \mathbb{R}(16) & \mathbb{C}(16) & \mathbb{H}(16) & 2\mathbb{H}(16) & \mathbb{H}(32) \\
-5 & 2\mathbb{H}(2) & \mathbb{H}(4) & \mathbb{C}(8) & \mathbb{R}(16) & 2\mathbb{R}(16) & \mathbb{R}(32) & \mathbb{C}(32) & \mathbb{H}(32) & 2\mathbb{H}(32) \\
-6 & \mathbb{H}(4) & 2\mathbb{H}(4) & \mathbb{H}(8) & \mathbb{C}(16) & \mathbb{R}(32) & 2\mathbb{R}(32) & \mathbb{R}(64) & \mathbb{C}(64) & \mathbb{H}(64) \\
-7 & \mathbb{C}(8) & \mathbb{H}(8) & 2\mathbb{H}(8) & \mathbb{H}(16) & \mathbb{C}(32) & \mathbb{R}(64) & 2\mathbb{R}(64) & \mathbb{R}(128) & \mathbb{C}(128) \\
-8 & \mathbb{R}(16) & \mathbb{C}(16) & \mathbb{H}(16) & 2\mathbb{H}(16) & \mathbb{H}(32) & \mathbb{C}(64) & \mathbb{R}(128) & 2\mathbb{R}(128) & \mathbb{R}(256) \\
+0 & \mathbb{R} & \mathbb{C} & \mathbb{H} & 2\mathbb{H} & M_2(\mathbb{H}) & M_4(\mathbb{C}) & M_8(\mathbb{R}) & 2M_8(\mathbb{R}) & M_{16}(\mathbb{R}) \\
+1 & 2\mathbb{R} & M_2(\mathbb{R}) & M_2(\mathbb{C}) & M_2(\mathbb{H}) & 2M_2(\mathbb{H}) & M_4(\mathbb{H}) & M_8(\mathbb{C}) & M_{16}(\mathbb{R}) & 2M_{16}(\mathbb{R}) \\
+2 & M_2(\mathbb{R}) & 2M_2(\mathbb{R}) & M_4(\mathbb{R}) & M_4(\mathbb{C}) & M_4(\mathbb{H}) & 2M_4(\mathbb{H}) & M_8(\mathbb{H}) & M_{16}(\mathbb{C}) & M_{32}(\mathbb{R}) \\
+3 & M_2(\mathbb{C}) & M_4(\mathbb{R}) & 2M_4(\mathbb{R}) & M_8(\mathbb{R}) & M_8(\mathbb{C}) & M_8(\mathbb{H}) & 2M_8(\mathbb{H}) & M_{16}(\mathbb{H}) & M_{32}(\mathbb{C}) \\
+4 & M_2(\mathbb{H}) & M_4(\mathbb{C}) & M_8(\mathbb{R}) & 2M_8(\mathbb{R}) & M_{16}(\mathbb{R}) & M_{16}(\mathbb{C}) & M_{16}(\mathbb{H}) & 2M_{16}(\mathbb{H}) & M_{32}(\mathbb{H}) \\
+5 & 2M_2(\mathbb{H}) & M_4(\mathbb{H}) & M_8(\mathbb{C}) & M_{16}(\mathbb{R}) & 2M_{16}(\mathbb{R}) & M_{32}(\mathbb{R}) & M_{32}(\mathbb{C}) & M_{32}(\mathbb{H}) & 2M_{32}(\mathbb{H}) \\
+6 & M_4(\mathbb{H}) & 2M_4(\mathbb{H}) & M_8(\mathbb{H}) & M_{16}(\mathbb{C}) & M_{32}(\mathbb{R}) & 2M_{32}(\mathbb{R}) & M_{64}(\mathbb{R}) & M_{64}(\mathbb{C}) & M_{64}(\mathbb{H}) \\
+7 & M_8(\mathbb{C}) & M_8(\mathbb{H}) & 2M_8(\mathbb{H}) & M_{16}(\mathbb{H}) & M_{32}(\mathbb{C}) & M_{64}(\mathbb{R}) & 2M_{64}(\mathbb{R}) & M_{128}(\mathbb{R}) & M_{128}(\mathbb{C}) \\
+8 & M_{16}(\mathbb{R}) & M_{16}(\mathbb{C}) & M_{16}(\mathbb{H}) & 2M_{16}(\mathbb{H}) & M_{32}(\mathbb{H}) & M_{64}(\mathbb{C}) & M_{128}(\mathbb{R}) & 2M_{128}(\mathbb{R}) & M_{256}(\mathbb{R}) \\
 \hline
 \end{array}
 $$
@@ -332,23 +341,23 @@ $$
 \end{alignedat}
 $$
 
-$\mathbb H ⊗ \mathbb H' \cong \mathbb H(2)$より、$p$または$q$を$4$増やすことは$\mathbb H(2)$とのテンソル積に対応します。
+$\mathbb H ⊗ \mathbb H' \cong M_2(\mathbb H)$より、$p$または$q$を$4$増やすことは$M_2(\mathbb H)$とのテンソル積に対応します。
 
 &&&fml 4周期の移動
 $$
 \operatorname{Cl}_{p+4,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+4}(\mathbb{R})
-\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{H}(2)
+\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes M_2(\mathbb{H})
 $$
 &&&
 
-これをもう一度適用すれば、$\mathbb H(2) ⊗ \mathbb H(2) \cong (\mathbb H ⊗ \mathbb H)(4) \cong \mathbb R(16)$より、周期$8$で同じ型に戻ります。
+これをもう一度適用すれば、$M_2(\mathbb H) ⊗ M_2(\mathbb H) \cong M_4(\mathbb H ⊗ \mathbb H) \cong M_{16}(\mathbb R)$より、周期$8$で同じ型に戻ります。
 
 &&&thm 8周期性
 $$
 \operatorname{Cl}_{p+8,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+8}(\mathbb{R})
-\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes \mathbb{R}(16)
+\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes M_{16}(\mathbb{R})
 $$
 &&&
 
@@ -383,11 +392,11 @@ $$\omega = e_1e_2\cdots e_n \quad (n=p+q)$$
 
 $$e_i\,\omega=(-1)^{n-1}\omega\,e_i$$
 
-となります。つまり$n$が奇数のとき、$\omega$はすべての生成元と可換、すなわち中心的です。一方、$\omega^2$は生成元を並べ替えて計算できます。並べ替えに必要な交換数は$n(n-1)/2$なので
+となります。つまり$n$が奇数のとき、$\omega$はすべての生成元と可換、すなわち中心的です。一方、$\omega^2$は生成元を並べ替えて計算できます。並べ替えに必要な交換数は$n(n-1)/2$なので、次のようになります。
 
 $$\omega^2=(-1)^{n(n-1)/2}\,e_1^2e_2^2\cdots e_n^2=(-1)^{n(n-1)/2+q}$$
 
-となり、この符号は$p-q \pmod 4$だけで決まります。
+この符号は$p-q \pmod 4$だけで決まります。
 
 &&&thm 擬スカラーの2乗
 $$
@@ -405,9 +414,9 @@ $$
 
 $n$の偶奇と$\omega^2$の符号によって、中心（すべての元と可換な元のなす部分代数）が決まります。
 
-- $n$が**偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \pmod 8$の区別）は中心だけでは決まりません。
-- $n$が**奇数**で$\omega^2=-1\ \bigl(p-q\equiv3\pmod4\bigr)$：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。代数全体が複素行列環となり、$\mathbb C$型が現れます。
-- $n$が**奇数**で$\omega^2=+1\ \bigl(p-q\equiv1\pmod4\bigr)$：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$(1\pm\omega)/2$によって代数全体が直和分解され、$2\mathbb R$型・$2\mathbb H$型が現れます。
+- **$n$が偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \pmod 8$の区別）は中心だけでは決まりません。
+- **$n$が奇数で$\omega^2=-1\ (p-q\equiv3\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。代数全体が複素行列環となり、$\mathbb C$型が現れます。
+- **$n$が奇数で$\omega^2=+1\ (p-q\equiv1\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$(1\pm\omega)/2$によって代数全体が直和分解され、$2\mathbb R$型・$2\mathbb H$型が現れます。
 
 型の表に中心を並べると、直和型と$\mathbb C$型の出現位置が中心の構造とちょうど一致していることが確認できます。
 
@@ -461,7 +470,7 @@ $e_n^2=+1$となる生成元を選んだ場合（$p\ge1$）は、$f_i^2=-e_i^2$�
 $$\operatorname{Cl}_{p,q}(\mathbb R)\cong\operatorname{Cl}_{q+1,p-1}(\mathbb R)\quad(p\ge1)$$
 &&&
 
-例えば$\operatorname{Cl}_{4,0}(\mathbb R)\cong\operatorname{Cl}_{1,3}(\mathbb R)\cong\mathbb H(2)$です。また、符号数を反転した$\operatorname{Cl}_{p,q}(\mathbb R)$と$\operatorname{Cl}_{q,p}(\mathbb R)$は一般には同型ではありませんが（例：$\mathbb H'\not\cong\mathbb H$）、偶部分代数は共通です。
+例えば$\operatorname{Cl}_{4,0}(\mathbb R)\cong\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$です。また、符号数を反転した$\operatorname{Cl}_{p,q}(\mathbb R)$と$\operatorname{Cl}_{q,p}(\mathbb R)$は一般には同型ではありませんが（例：$\mathbb H'\not\cong\mathbb H$）、偶部分代数は共通です。
 
 &&&fml 偶部分代数の符号反転対称性
 $$\operatorname{Cl}_{p,q}^0(\mathbb R)\cong\operatorname{Cl}_{q,p}^0(\mathbb R)$$
@@ -500,12 +509,14 @@ $$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorna
 $$
 \mathbb R\otimes_{\mathbb R}\mathbb C\cong\mathbb C,\quad
 \mathbb C\otimes_{\mathbb R}\mathbb C\cong2\mathbb C,\quad
-\mathbb H\otimes_{\mathbb R}\mathbb C\cong\mathbb C(2)
+\mathbb H\otimes_{\mathbb R}\mathbb C\cong M_2(\mathbb C)
 $$
 &&&
 
 &&&rem
-3つ目は双四元数として確認済みです。[[7shi-bq]] 2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$(1\pm u)/2$による直和分解が起こります。
+3つ目は双四元数として確認済みです。[[7shi-bq]]
+
+2つ目（双複素数）では、$u=i\otimes i$が$u^2=1$を満たすため、分解型複素数と同じ冪等元$(1\pm u)/2$による直和分解が起こります。
 &&&
 
 拡張公式$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb H\cong\operatorname{Cl}_{q,p+2}(\mathbb R)$の両辺を複素化すると、次の周期性が得られます。
@@ -513,7 +524,7 @@ $$
 &&&thm 2周期性
 $$
 \operatorname{Cl}_{n+2}(\mathbb C)
-\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C}\mathbb C(2)
+\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C} M_2(\mathbb C)
 $$
 &&&
 
@@ -526,7 +537,7 @@ $$
 \otimes_{\mathbb C}(\mathbb H\otimes_{\mathbb R}\mathbb C)
 $$
 
-ここで$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_n(\mathbb C)$（$n=p+q$）、$\mathbb H\otimes_{\mathbb R}\mathbb C\cong\mathbb C(2)$である。一方、右辺$\operatorname{Cl}_{q,p+2}(\mathbb R)$の複素化は$\operatorname{Cl}_{n+2}(\mathbb C)$となる。両者を比較すれば主張を得る。
+ここで$\operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_n(\mathbb C)$（$n=p+q$）、$\mathbb H\otimes_{\mathbb R}\mathbb C\cong M_2(\mathbb C)$である。一方、右辺$\operatorname{Cl}_{q,p+2}(\mathbb R)$の複素化は$\operatorname{Cl}_{n+2}(\mathbb C)$となる。両者を比較すれば主張を得る。
 &&&
 
 $\operatorname{Cl}_0(\mathbb C)\cong\mathbb C$と$\operatorname{Cl}_1(\mathbb C)\cong\mathbb C\otimes_{\mathbb R}\mathbb C\cong2\mathbb C$を出発点として、複素の分類表が完成します。
@@ -535,7 +546,7 @@ $$
 \begin{array}{c|ccccccc}
 n & 0 & 1 & 2 & 3 & 4 & 5 & \cdots \\
 \hline
-\operatorname{Cl}_n(\mathbb C) & \mathbb C & 2\mathbb C & \mathbb C(2) & 2\mathbb C(2) & \mathbb C(4) & 2\mathbb C(4) & \cdots
+\operatorname{Cl}_n(\mathbb C) & \mathbb C & 2\mathbb C & M_2(\mathbb C) & 2M_2(\mathbb C) & M_4(\mathbb C) & 2M_4(\mathbb C) & \cdots
 \end{array}
 $$
 
@@ -547,10 +558,10 @@ $$
 
 # ピノルとスピノル
 
-分類表の行列環$\mathbb F(n)$は、$n$次元の列ベクトル空間$\mathbb F^n$に作用します。この作用に自明でない不変部分空間はなく、クリフォード代数の既約表現を与えます。
+分類表の行列環$M_n(\mathbb F)$は、$n$次元の列ベクトル空間$\mathbb F^n$に作用します。この作用に自明でない不変部分空間はなく、クリフォード代数の既約表現を与えます。
 
-- 単純型$\mathbb F(n)$：既約表現は$\mathbb F^n$のただ1つです。
-- 直和型$2\mathbb F(n)$：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$(1\pm\omega)/2$のどちらの成分か）で区別されます。
+- **単純型 $M_n(\mathbb F)$**：既約表現は$\mathbb F^n$のただ1つです。
+- **直和型 $2M_n(\mathbb F)$**：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$(1\pm\omega)/2$のどちらの成分か）で区別されます。
 
 &&&rem ピノルとスピノル
 クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分けます。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来します。
@@ -560,44 +571,51 @@ $$
 物理の文献では、この区別を緩めて、クリフォード代数全体の既約表現の元も慣例的に**スピノル**と呼ぶことがよくあります。ピノル空間を偶部分代数に制限すると、スピノル表現そのもの、または2つのスピノル表現の直和が得られるため、両者は同じ空間をどちらの立場から見るかの違いです。
 &&&
 
-例えば$\operatorname{Cl}_{3,0}(\mathbb R)\cong\mathbb C(2)$のピノル空間は$\mathbb C^2$です。これはパウリ行列が作用する空間であり、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$に制限すれば、$\mathrm{SU}(2)$（単位四元数）が作用する2成分スピノル（パウリスピノル）となります。[[7shi-bq]]
+例えば$\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$のピノル空間は$\mathbb C^2$です。これはパウリ行列が作用する空間であり、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$に制限すれば、$\mathrm{SU}(2)$（単位四元数）が作用する2成分スピノル（パウリスピノル）となります。[[7shi-bq]]
 
 # まとめ
 
 本記事では、5つの基本構造から出発し、テンソル積による2つの拡張公式を繰り返し適用することで、クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$を行列環として分類しました。
 
-&&&
-基本構造：
+&&& 基本構造
 $$
 \begin{alignedat}{2}
 &\mathbb{C}' &&\cong 2\mathbb{R} \\
-&\mathbb{H}' &&\cong \mathbb{R}(2)
+&\mathbb{H}' &&\cong M_2(\mathbb{R})
 \end{alignedat}
 $$
-拡張公式：
+&&&
+
+&&& 拡張公式
 $$
 \begin{alignedat}{2}
 \operatorname{Cl}_{p,q}(\mathbb R) &\otimes_{\mathbb R} \mathbb H  &&\cong \operatorname{Cl}_{q,p+2}(\mathbb R) \\
 \operatorname{Cl}_{p,q}(\mathbb R) &\otimes_{\mathbb R} \mathbb H' &&\cong \operatorname{Cl}_{q+2,p}(\mathbb R) \cong \operatorname{Cl}_{p+1,q+1}(\mathbb R)
 \end{alignedat}
 $$
-8周期性：
+&&&
+
+&&& 8周期性
 $$
 \operatorname{Cl}_{p+8,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+8}(\mathbb{R})
-\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes_{\mathbb R} \mathbb{R}(16)
+\cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes_{\mathbb R} M_{16}(\mathbb{R})
 $$
-偶部分代数：
+&&&
+
+&&& 偶部分代数
+$p,q\ge1$のとき、次の同型が成り立ちます。
 $$
 \operatorname{Cl}_{p,q}^0(\mathbb R)
 \cong\operatorname{Cl}_{p,q-1}(\mathbb R)
 \cong\operatorname{Cl}_{q,p-1}(\mathbb R)
-\quad(p,q\ge1)
 $$
-複素化と2周期性：
+&&&
+
+&&& 複素化と2周期性
 $$
 \operatorname{Cl}_{p,q}(\mathbb R)\otimes_{\mathbb R}\mathbb C\cong\operatorname{Cl}_{p+q}(\mathbb C),\quad
-\operatorname{Cl}_{n+2}(\mathbb C)\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C}\mathbb C(2)
+\operatorname{Cl}_{n+2}(\mathbb C)\cong\operatorname{Cl}_n(\mathbb C)\otimes_{\mathbb C} M_2(\mathbb C)
 $$
 &&&
 
