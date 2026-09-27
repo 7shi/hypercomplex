@@ -159,7 +159,13 @@
 
 ## ディラック方程式
 
-パウリ方程式からディラック方程式への流れを、スピノルを偶部分代数の元として扱うHestenes形式で書くシリーズです。$\operatorname{Cl}_{3,0}(\mathbb R)$のパウリスピノルから時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進みます。構想段階で、記事はまだありません。構想と検討の経緯は[dirac/README.md](dirac/README.md)・[dirac/MEMO.md](dirac/MEMO.md)を参照。
+パウリ方程式からディラック方程式への流れを、スピノルを偶部分代数の元として扱うHestenes形式で書くシリーズです。$\operatorname{Cl}_{3,0}(\mathbb R)$のパウリスピノルから時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進みます。全5記事を下書きし、レビュー待ちです。構想と検討の経緯は[dirac/README.md](dirac/README.md)・[dirac/MEMO.md](dirac/MEMO.md)を参照。
+
+1. [パウリスピノルとパウリ方程式](dirac/01-pauli.md)：$\Psi\in\mathbb C^2$を$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$の元$\psi$に移し、$i$倍が右からの$\omega\sigma_3$になる。$\psi\tilde\psi$が確率密度、$\psi\sigma_3\tilde\psi$がスピンの向き（ホップ写像と同じ形）、大域位相はスピン軸まわりの枠の回転。一様な磁場の中の歳差を回転子で解く。
+2. [時空スピノルとSL(2,C)](dirac/02-spinor.md)：$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong M_2(\mathbb C)$で時空の反転が余因子行列にあたる。$\operatorname{Spin}^+(1,3)\cong\operatorname{SL}(2,\mathbb C)$が$\operatorname{SO}^+(1,3)$を二重に覆う。$\psi=\sqrt\rho\,e^{\omega\beta/2}R$と枠$\psi\gamma_\mu\tilde\psi=\rho e_\mu$。
+3. [ディラック方程式](dirac/03-dirac.md)：$\square$の平方根$D$で$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$。行列形式（ディラック表現）との対応、左右の作用の分離による共変性、平面波と右からの$\sigma_1$による負のエネルギーの解。質量0の場合とワイルスピノル。
+4. [電磁場との結合とゲージ変換](dirac/04-coupling.md)：最小結合$-\frac qcA\psi$。ゲージ変換は右からの$e^{\omega\sigma_3\alpha}$で、流れとスピンの向きを変えずに$e_1,e_2$を回す。流れの保存$D\cdot J=0$と電荷の反転。
+5. [非相対論極限とg=2](dirac/05-limit.md)：$\gamma_0$と可換・反可換な部分に分けて小さい成分を消去し、パウリ方程式を回収する。$D_3\boldsymbol A$の外積の部分$\omega\boldsymbol B$が$g=2$を与える。
 
 関連: [電磁気学](#電磁気学)の時空代数・ローレンツ変換の回転子・ゲージを前提とする。スピノルを左イデアルの元とする[クリフォード代数とSpin(3)](lie/03-spin.md)（[リー群・リー代数](#リー群リー代数)）の構成と、スピンの向きをホップ写像とする[ホップファイブレーションとブロッホ球](#ホップファイブレーションとブロッホ球)の結果を、偶部分代数による表示で言い直す。
 

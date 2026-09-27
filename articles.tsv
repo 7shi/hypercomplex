@@ -43,6 +43,11 @@ date	url	md	title
 		clif/04-weyl-algebra.md	クロック行列とシフト行列の連続極限：ワイル代数と正準交換関係
 		clif/05-schrodinger.md	離散ラプラシアンの連続極限：シュレーディンガー方程式の導出
 		clif/pga-cga.md	射影幾何代数と共形幾何代数
+		dirac/01-pauli.md	パウリスピノルとパウリ方程式
+		dirac/02-spinor.md	時空スピノルとSL(2,C)
+		dirac/03-dirac.md	ディラック方程式
+		dirac/04-coupling.md	電磁場との結合とゲージ変換
+		dirac/05-limit.md	非相対論極限とg=2
 		em/01-static.md	静電場と静磁場
 		em/02-maxwell.md	マクスウェル方程式
 		em/03-waves.md	電磁波とエネルギーの流れ

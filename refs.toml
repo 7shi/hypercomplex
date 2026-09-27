@@ -35,6 +35,7 @@ citation = "7shi, 四元数とホップファイブレーション 3 ブロッ�
 url = "https://mathlog.info/articles/aUC0EotUv0bdyXzusvAT"
 files = [
   "clif/05-schrodinger.md",
+  "dirac/01-pauli.md",
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
   "hopf/07-real-qubit.md",
@@ -45,6 +46,7 @@ files = [
 
 ["7shi-born"]
 files = [
+  "dirac/01-pauli.md",
   "hopf/07-real-qubit.md",
 ]
 
@@ -55,6 +57,8 @@ url = "https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji"
 files = [
   "clif/01-representation.md",
   "clif/03-gpm-gca.md",
+  "dirac/01-pauli.md",
+  "dirac/02-spinor.md",
   "em/04-spacetime.md",
   "hopf/03-bloch-density.md",
   "hopf/06-clifford-gates.md",
@@ -86,6 +90,8 @@ files = [
   "clif-analysis/04-quaternion.md",
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
+  "dirac/01-pauli.md",
+  "dirac/03-dirac.md",
   "em/01-static.md",
   "em/04-spacetime.md",
 ]
@@ -121,6 +127,7 @@ files = [
 ["7shi-cla5"]
 files = [
   "clif-analysis/06-summary.md",
+  "dirac/03-dirac.md",
   "em/01-static.md",
   "em/04-spacetime.md",
   "em/07-retarded.md",
@@ -139,6 +146,7 @@ files = [
   "clif-analysis/06-summary.md",
   "clif/02-split-complex.md",
   "clif/03-gpm-gca.md",
+  "dirac/03-dirac.md",
   "em/04-spacetime.md",
   "qua/spinor-ideal.md",
 ]
@@ -161,6 +169,12 @@ files = [
   "clif/05-schrodinger.md",
   "hopf/06-clifford-gates.md",
   "lie/06-su3.md",
+]
+
+["7shi-clif5"]
+files = [
+  "dirac/01-pauli.md",
+  "dirac/03-dirac.md",
 ]
 
 ["7shi-clrt"]
@@ -210,6 +224,8 @@ files = [
 
 ["7shi-cover"]
 files = [
+  "dirac/01-pauli.md",
+  "dirac/02-spinor.md",
   "lie/07-s7.md",
   "lie/08-g2.md",
 ]
@@ -220,6 +236,31 @@ citation = "7shi, 変数の依存関係と微分, Mathlog, Mon Dec 16 2024, ア�
 url = "https://mathlog.info/articles/ndkq7Dj2xrcnT7oiRYey"
 files = [
   "misc/epsilon-euler-lagrange.md",
+]
+
+["7shi-dirac1"]
+files = [
+  "dirac/02-spinor.md",
+  "dirac/03-dirac.md",
+  "dirac/04-coupling.md",
+  "dirac/05-limit.md",
+]
+
+["7shi-dirac2"]
+files = [
+  "dirac/03-dirac.md",
+  "dirac/04-coupling.md",
+]
+
+["7shi-dirac3"]
+files = [
+  "dirac/04-coupling.md",
+  "dirac/05-limit.md",
+]
+
+["7shi-dirac4"]
+files = [
+  "dirac/05-limit.md",
 ]
 
 ["7shi-dualq"]
@@ -239,6 +280,7 @@ files = [
 
 ["7shi-em1"]
 files = [
+  "dirac/01-pauli.md",
   "em/02-maxwell.md",
   "em/03-waves.md",
   "em/04-spacetime.md",
@@ -258,6 +300,7 @@ files = [
 
 ["7shi-em3"]
 files = [
+  "dirac/01-pauli.md",
   "em/04-spacetime.md",
   "em/05-lorentz.md",
   "em/06-potential.md",
@@ -266,6 +309,10 @@ files = [
 
 ["7shi-em4"]
 files = [
+  "dirac/02-spinor.md",
+  "dirac/03-dirac.md",
+  "dirac/04-coupling.md",
+  "dirac/05-limit.md",
   "em/05-lorentz.md",
   "em/06-potential.md",
   "em/07-retarded.md",
@@ -273,13 +320,25 @@ files = [
 
 ["7shi-em5"]
 files = [
+  "dirac/01-pauli.md",
+  "dirac/02-spinor.md",
+  "dirac/03-dirac.md",
+  "dirac/04-coupling.md",
+  "dirac/05-limit.md",
   "em/06-potential.md",
   "em/07-retarded.md",
 ]
 
 ["7shi-em6"]
 files = [
+  "dirac/04-coupling.md",
+  "dirac/05-limit.md",
   "em/07-retarded.md",
+]
+
+["7shi-em7"]
+files = [
+  "dirac/03-dirac.md",
 ]
 
 ["7shi-entangle"]
@@ -314,6 +373,7 @@ type = "mathlog"
 citation = "7shi, 四元数とホップファイブレーション 1 四元数からの生成, Mathlog, Tue May 14 2024, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/enXfjr4Xvas6pfXLQddc"
 files = [
+  "dirac/01-pauli.md",
   "hopf/02-spinor-tensor.md",
   "hopf/03-bloch-density.md",
   "hopf/04-extension.md",
@@ -371,6 +431,7 @@ files = [
 ["7shi-ideal"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "dirac/01-pauli.md",
   "em/04-spacetime.md",
   "lie/ladder-spinor.md",
 ]
@@ -433,6 +494,8 @@ files = [
 ["7shi-lie3"]
 files = [
   "clif-analysis/01-dirac-monogenic.md",
+  "dirac/01-pauli.md",
+  "dirac/02-spinor.md",
   "em/04-spacetime.md",
   "em/05-lorentz.md",
   "hopf/06-clifford-gates.md",

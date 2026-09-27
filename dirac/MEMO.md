@@ -76,6 +76,16 @@
 - **$g=2$の出所**。消去の後に残る運動量の項（$D_3$とベクトルポテンシャル$\boldsymbol A$を組んだ作用素）の2乗の2ベクトル部が、磁場の2ベクトル$D_3\wedge\boldsymbol A=\omega\,\nabla\times\boldsymbol A=\omega\boldsymbol B$（[[7shi-em6]]の$D\wedge A$の空間部分）を与える。幾何積$D_3\boldsymbol A=D_3\cdot\boldsymbol A+D_3\wedge\boldsymbol A$の外積の部分がスピンと磁場の結合になる、という読み方を軸にする（係数は検証コードで確認）
 - **04との統合**。分量が少なければ04の最後の節にする
 
+# 記事化で確定した事項
+
+全5回で下書きした（04と05は分けた）。検討中だった項目の扱いは次のとおり。
+
+- **行列の規約**：03は標準（Bjorken–Drell）のディラック表現（上付き$\hat\gamma^k$の右上ブロックが$\hat\sigma_k$）を使う。対応は$\psi=\phi+\eta\sigma_3\mapsto(|\phi\rangle,|\eta\rangle)^T$で、$\hat\gamma_\mu\leftrightarrow\gamma_\mu\psi\gamma_0$、$\hat\gamma_5\leftrightarrow\psi\sigma_3$。Doran–Lasenbyは下付きの符号が逆の表現を使うので、引用時に注意
+- **ワイルスピノル**：03の`&&&rem`（右からの射影$(1\pm\sigma_3)/2$）。02では扱わない
+- **負のエネルギーと電荷の反転**：右からの$\sigma_1$。03で負のエネルギーの平面波（$\beta=\pi$、流れは同じ）、04で電荷$q\to-q$として扱う
+- **ジッターベヴェーグング、ローレンツ力（エーレンフェストの定理の時空版）**：扱わない
+- **$g=2$とサイクロトロン運動**：01の最後で、$g=2$ならスピンの回転子の方程式がem/05の固有速度の回転子の方程式と同じ形になることを示し、05で回収する
+
 # 検証コード
 
 `check/`に置き、`uv run`で実行する予定。emシリーズで一般化した`src/common/clifford.py`（$\operatorname{Cl}_{p,q}$のビットマスク実装と$D$）を使う。記事化の前に確かめる事項：
