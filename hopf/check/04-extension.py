@@ -3,12 +3,12 @@
 Verifies numerically (random variables, numpy) the extension of Hopf fibrations:
 
 1. Quaternionic (S^7 -> S^4):
-   - H(α, β) = (2αβ*, |α|² - |β|²) maps S^7 to S^4 (norm is preserved as 1).
-   - Fiber is preserved: H(αq, βq) == H(α, β) due to associativity.
+   - H(α, β) = (2α*β, |α|² - |β|²) maps S^7 to S^4 (norm is preserved as 1).
+   - Fiber is preserved: H(qα, qβ) == H(α, β) due to associativity.
 
 2. Octonionic (S^15 -> S^8):
-   - H(α, β) = (2αβ*, |α|² - |β|²) maps S^15 to S^8 (norm is preserved as 1).
-   - Fiber is generally NOT preserved: H(αq, βq) != H(α, β) due to non-associativity.
+   - H(α, β) = (2α*β, |α|² - |β|²) maps S^15 to S^8 (norm is preserved as 1).
+   - Fiber is generally NOT preserved: H(qα, qβ) != H(α, β) due to non-associativity.
 """
 
 import numpy as np
@@ -47,7 +47,7 @@ def check_quaternionic():
         b /= norm
         
         # H(a, b)
-        H_vec = 2 * qmul(a, qconj(b))
+        H_vec = 2 * qmul(qconj(a), b)
         H_real = np.sum(a**2) - np.sum(b**2)
         H_norm = np.sqrt(np.sum(H_vec**2) + H_real**2)
         assert np.isclose(H_norm, 1.0), f"Norm is {H_norm}"
@@ -55,11 +55,11 @@ def check_quaternionic():
         # Fiber check
         q = rng.normal(size=4)
         q /= np.linalg.norm(q)
-        aq = qmul(a, q)
-        bq = qmul(b, q)
+        qa = qmul(q, a)
+        qb = qmul(q, b)
         
-        Hq_vec = 2 * qmul(aq, qconj(bq))
-        Hq_real = np.sum(aq**2) - np.sum(bq**2)
+        Hq_vec = 2 * qmul(qconj(qa), qb)
+        Hq_real = np.sum(qa**2) - np.sum(qb**2)
         
         assert np.allclose(H_vec, Hq_vec)
         assert np.isclose(H_real, Hq_real)
@@ -75,7 +75,7 @@ def check_octonionic():
         b /= norm
         
         # H(a, b)
-        H_vec = 2 * omul(a, oconj(b))
+        H_vec = 2 * omul(oconj(a), b)
         H_real = np.sum(a**2) - np.sum(b**2)
         H_norm = np.sqrt(np.sum(H_vec**2) + H_real**2)
         assert np.isclose(H_norm, 1.0), f"Norm is {H_norm}"
@@ -83,13 +83,13 @@ def check_octonionic():
         # Fiber check
         q = rng.normal(size=8)
         q /= np.linalg.norm(q)
-        aq = omul(a, q)
-        bq = omul(b, q)
+        qa = omul(q, a)
+        qb = omul(q, b)
         
-        Hq_vec = 2 * omul(aq, oconj(bq))
-        Hq_real = np.sum(aq**2) - np.sum(bq**2)
+        Hq_vec = 2 * omul(oconj(qa), qb)
+        Hq_real = np.sum(qa**2) - np.sum(qb**2)
         
-        # The real part is preserved because |aq| = |a||q| = |a|
+        # The real part is preserved because |qa| = |q||a| = |a|
         assert np.isclose(H_real, Hq_real)
         
         if not np.allclose(H_vec, Hq_vec):

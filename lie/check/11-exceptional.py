@@ -12,7 +12,8 @@ derivations of h_3(O) (Leibniz rule) giving dim Der = 52 = f4,
 killing the identity, preserving the trace, antisymmetric,
 closed under bracket, with exp(D) an automorphism preserving
 trace and det; rank-1 idempotents: the h_2(O) block P = v v*
-always idempotent (Artin) reproducing the Hopf map S^15 -> S^8,
+always idempotent (Artin), with v = (a*, b*)^T reproducing the Hopf map
+H(a, b) = (2a*b, |a|^2 - |b|^2): S^15 -> S^8,
 while a generic v in O^3 fails (OP^2 needs associative coordinates);
 the stabilizer of E1 in f4 having dim 36 = so(9) (acting on a
 9-dim vector block and a 16-dim spinor block), orbit dim 16 = OP^2;
@@ -320,18 +321,21 @@ print("exp(derivation): Jordan automorphism, preserves trace and det:", ok)
 
 # --- rank-1 idempotents: Hopf map and OP^2 ---
 
-# h2(O): P = v v* is always idempotent (2 elements associate: Artin),
-# reproducing the Hopf map S^15 -> S^8
+# h2(O): P = v v* is always idempotent (2 elements associate: Artin);
+# with v = (a*, b*)^T it reproduces the Hopf map H(a, b) = (2a*b, |a|^2 - |b|^2)
 o1, o2 = rand(), rand()
 nrm = np.sqrt(o1 @ o1 + o2 @ o2)
 o1, o2 = o1 / nrm, o2 / nrm
+v = [conj(o1), conj(o2)]
 P = np.zeros((2, 2, 8))
-P[0, 0] = (o1 @ o1) * basis(8, 0)
-P[1, 1] = (o2 @ o2) * basis(8, 0)
-P[0, 1] = mul(o1, conj(o2))
-P[1, 0] = conj(P[0, 1])
+for i in range(2):
+    for j in range(2):
+        P[i, j] = mul(v[i], conj(v[j]))
+hopf_img = 2 * mul(conj(o1), o2)
 print("h2(O): P = vv* (v in S^15) is a trace-1 idempotent (Hopf S^15 -> S^8):",
-      np.allclose(jordan(P, P), P) and np.isclose(tr(P), 1))
+      np.allclose(jordan(P, P), P) and np.isclose(tr(P), 1)
+      and np.allclose(2 * P[0, 1], hopf_img)
+      and np.isclose(P[0, 0, 0] - P[1, 1, 0], o1 @ o1 - o2 @ o2))
 
 # traceless part of h2(O): X o Y = (X . Y) I, the symmetrized Clifford relation
 HB2 = herm_basis(2, 8)

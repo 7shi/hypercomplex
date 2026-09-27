@@ -11,7 +11,7 @@
 - $\operatorname{Spin}(8)$にはベクトル$V$と2つの半スピノル$S^\pm$という3つの8次元表現があり、三対性で結ばれる。リー代数で見ると3つの$\mathfrak{so}(8)$への射影はどれも同型で、1つの無限小作用を決めると残り2つが決まる。$G_2$は3つの表現の区別が消える場所[[7shi-lie9]]
 - コンパクト単純リー代数は4つの無限系列$A_n, B_n, C_n, D_n$と5つの例外型に分類される。例外型の次元は$14, 52, 78, 133, 248$で、どの場合も「次元 = ルートの本数 + ランク」[[7shi-lie10]]
 - $\operatorname{SU}(3)$は$\operatorname{SO}(3)$の複素ユニタリ化で得られる。反対称行列$\mathfrak{so}(3)$に「$i \times$トレース$0$の対称行列」を加えると、反エルミートでトレース$0$の$\mathfrak{su}(3)$になる[[7shi-lie6]]
-- 八元数のホップ写像$H_{\mathbb{O}}(\alpha, \beta) = (2\alpha\beta^*,\ |\alpha|^2 - |\beta|^2)$は$S^{15}$を$S^8$に射影する[[7shi-hopfext]]
+- 八元数のホップ写像$H_{\mathbb{O}}(\alpha, \beta) = (2\alpha^*\beta,\ |\alpha|^2 - |\beta|^2)$は$S^{15}$を$S^8$に射影する[[7shi-hopfext]]
 
 # 八元数の行列 — 積の対称化
 
@@ -176,13 +176,13 @@ $$
 軌道の次元16が$\mathbb{O}P^2$の次元（八元数2成分分）です。実際、$E_1$を固定する微分は、トレース$0$の26次元を、固定される1次元（$2E_1 - E_2 - E_3$の方向）、9次元ブロック、16次元ブロックに分けて保ち、9次元ブロックへの作用は$\mathfrak{so}(9)$の全体を張ります。16次元ブロックが受け取るのは$\operatorname{Spin}(9)$のスピノル表現です。つまり分解$52 = 36 + 16$は「$\mathfrak{f}_4 = \mathfrak{so}(9) \oplus \text{スピノル}$」（ベクトル空間として、また$\mathfrak{so}(9)$の表現としての分解）です。回転の代数にスピノルを接ぎ木して大きな代数を作る、おなじみの構図です[[7shi-lie9]]。
 
 &&&rem 2×2に戻ると — ホップ写像と密度行列
-$h_2(\mathbb{O})$では、任意の単位ベクトル$v = (\alpha, \beta) \in S^{15}$で$vv^\dagger$が冪等になります（成分が2つなのでアルティンの定理の守備範囲）。トレース$1$の冪等元
+$h_2(\mathbb{O})$では、任意の単位ベクトル$v \in S^{15}$で$vv^\dagger$が冪等になります（成分が2つなのでアルティンの定理の守備範囲）。$v = (\alpha^*, \beta^*)^T$と書けば、トレース$1$の冪等元
 
 $$
-vv^\dagger = \begin{pmatrix} |\alpha|^2 & \alpha\beta^* \\ \beta\alpha^* & |\beta|^2 \end{pmatrix}
+vv^\dagger = \begin{pmatrix} |\alpha|^2 & \alpha^*\beta \\ \beta^*\alpha & |\beta|^2 \end{pmatrix}
 $$
 
-の成分、すなわち対角の差$|\alpha|^2 - |\beta|^2$と非対角$\alpha\beta^*$は、八元数ホップ写像$H_{\mathbb{O}}(\alpha, \beta) = (2\alpha\beta^*,\ |\alpha|^2 - |\beta|^2)$の像そのものです[[7shi-hopfext]]。つまり$\mathbb{O}P^1 = S^8$であり、ホップ写像とは「状態ベクトルから射影（密度行列）を作る写像」だったのです[[7shi-bloch]]。ホップの記事で「基点球面$S^8$の回転群は$\operatorname{SO}(9)$」と述べた事実は、$\operatorname{Der}(h_2(\mathbb{O})) \cong \mathfrak{so}(9)$（前掲rem）として代数の側から再現されます。$F_4$の幾何$\mathbb{O}P^2$は、この構図の1つ上の階です。
+の成分、すなわち対角の差$|\alpha|^2 - |\beta|^2$と非対角$\alpha^*\beta$は、八元数ホップ写像$H_{\mathbb{O}}(\alpha, \beta) = (2\alpha^*\beta,\ |\alpha|^2 - |\beta|^2)$の像そのものです[[7shi-hopfext]]。つまり$\mathbb{O}P^1 = S^8$であり、ホップ写像とは「状態ベクトルから射影（密度行列）を作る写像」だったのです[[7shi-bloch]]。ホップの記事で「基点球面$S^8$の回転群は$\operatorname{SO}(9)$」と述べた事実は、$\operatorname{Der}(h_2(\mathbb{O})) \cong \mathfrak{so}(9)$（前掲rem）として代数の側から再現されます。$F_4$の幾何$\mathbb{O}P^2$は、この構図の1つ上の階です。
 &&&
 
 ## 三対性、ふたたび
