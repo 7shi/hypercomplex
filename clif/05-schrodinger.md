@@ -64,7 +64,7 @@ $e^{-itH}$の$-i$は、前回の平行移動$e^{-itP}$と同じ規約です。�
 
 ## ハミルトニアンと一般化クリフォード代数
 
-エルミート行列は$\mathbb C(n)$の元であり、一般化パウリ行列$X^aZ^b$は$\mathbb C(n)$の複素基底でした。[[wiki-gpm]]
+エルミート行列は$M_n(\mathbb C)$の元であり、一般化パウリ行列$X^aZ^b$は$M_n(\mathbb C)$の複素基底でした。[[wiki-gpm]]
 
 したがってどんなハミルトニアンも
 
@@ -72,7 +72,7 @@ $$
 H = \sum_{0\le a,b<n}c_{ab}\,X^aZ^b
 $$
 
-と展開できます。つまり$n$準位系（状態空間が$\mathbb C^n$の量子系）のあらゆる力学は、一般化クリフォード代数$\operatorname{Cl}^{(n)}_2(\mathbb C) \cong \mathbb C(n)$の中で進行します。[[wiki-gca]]
+と展開できます。つまり$n$準位系（状態空間が$\mathbb C^n$の量子系）のあらゆる力学は、一般化クリフォード代数$\operatorname{Cl}^{(n)}_2(\mathbb C) \cong M_n(\mathbb C)$の中で進行します。[[wiki-gca]]
 
 $n = 2$がこの見方の原型です。2×2エルミート行列の実基底が$I, \sigma_x, \sigma_y, \sigma_z$であることは、パウリ行列の導入そのものでした。2準位系（量子ビット）のハミルトニアン$H = wI + x\sigma_x + y\sigma_y + z\sigma_z$（$w, x, y, z$は実数）は、パウリ行列で尽きます。[[wiki-gpm]]
 
