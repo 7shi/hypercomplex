@@ -1,5 +1,7 @@
 四元数の左右からの独立な作用によって4次元回転群$\operatorname{SO}(4)$を構成し、クリフォード代数を用いた$\operatorname{Spin}(4)$の二重被覆の構造を解き明かします。
 
+シリーズ：[リー群・リー代数の初歩](https://mathlog.info/series/LENUzX64bZ63y462z5I9)
+
 # 概要
 
 四元数を4次元空間そのものとして扱い、左右から独立に挟む作用によって4次元回転群$\operatorname{SO}(4)$のすべてを構成します。さらに、$\operatorname{SO}(4)$の回転行列を収める$\operatorname{Cl}_{3,1}(\mathbb{R})$と、その二重被覆$\operatorname{Spin}(4)$を構成する$\operatorname{Cl}_{4,0}(\mathbb{R})$の役割を比較します。前回は四元数の背後にあるクリフォード代数を導入し、$\operatorname{SO}(3)$の二重被覆$\operatorname{Spin}(3)$とスピノルを見ました。[[7shi-lie3]]
