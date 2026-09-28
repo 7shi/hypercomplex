@@ -282,19 +282,35 @@ $$
 
 真空のマクスウェル方程式$\mathcal DF=0$を、進行方向の冪等元と擬スカラーを使って調べました。
 
-&&&fml 真空の電磁波とエネルギー
-$$
-\begin{aligned}
-&F=(1+\hat{\boldsymbol k})\boldsymbol E,\qquad F^2=0,\qquad P_\pm=\frac{1\pm\hat{\boldsymbol k}}2 \\
-&e^{i\theta}=\cos\theta+i\sin\theta\quad(\text{円偏光・双対性}) \\
-&\frac{\varepsilon_0}2FF^\dagger=u+\frac{\boldsymbol S}c,\qquad \partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
-\end{aligned}
-$$
-&&&
-
 - **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、一定の背景場を除けば$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
 - **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は、各点で平面波と同じ代数的な形をしています。
 - **擬スカラーの指数関数**：$e^{i\theta}$を掛けた正弦波は実部を取らずにそのまま円偏光を表します。偏光面の上で$i$は左からの作用として2ベクトル$i\hat{\boldsymbol k}$と同じに働き、平面内の回転になります。
 - **双曲型の正則関数**：平面波では光的な変数の関数が現れ、空間1次元では冪等元への分解が左右に進む波への分解になります。解析性は要りません。
 - **電気と磁気の双対性**：$i$は$\mathcal D$と可換なので、$Fe^{i\alpha}$も真空の解です。$\alpha=\pi/2$で電場と磁場が入れ替わり、$FF^\dagger$は変わりません。
 - **エネルギーの流れ**：$\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$はエネルギー密度とポインティングベクトルのパラベクトルです。そのノルムは$F^2$の絶対値の2乗の$(\varepsilon_0/2)^2$倍で、エネルギーの流れの速さは$c$を超えません。スカラー部についての式$\langle\mathcal D(FF^\dagger)\rangle_0=2\langle(\mathcal DF)F^\dagger\rangle_0$からポインティングの定理が出ます。
+
+&&& 進行方向の冪等元
+$$
+P_\pm=\frac{1\pm\hat{\boldsymbol k}}2,\qquad P_\pm^2=P_\pm,\qquad P_+P_-=P_-P_+=0,\qquad P_++P_-=1
+$$
+&&&
+
+&&& 平面波
+$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数で$F=P_+F$を満たす場は、次の形に限られます。
+$$
+F=(1+\hat{\boldsymbol k})\boldsymbol E,\qquad\hat{\boldsymbol k}\cdot\boldsymbol E=0,\qquad F^2=0
+$$
+&&&
+
+&&& 擬スカラーによる円偏光
+$$
+F=(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{i\theta},\qquad e^{i\theta}=\cos\theta+i\sin\theta
+$$
+&&&
+
+&&& エネルギー密度とポインティングの定理
+マクスウェル方程式の解について、次が成り立ちます。
+$$
+\frac{\varepsilon_0}2FF^\dagger=u+\frac{\boldsymbol S}c,\qquad\partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
+$$
+&&&

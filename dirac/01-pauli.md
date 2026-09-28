@@ -305,30 +305,37 @@ $$
 
 # まとめ
 
-本記事の内容をまとめます。
-
-&&&
-**ヘステネス形式によるパウリスピノルとパウリ方程式**
-- スピノルの対応と作用
-  $$
-  \Psi \leftrightarrow \psi = a_0 + \sum_k a_k\,\omega\sigma_k \in \operatorname{Cl}_{3,0}^0(\mathbb R), \quad i\Psi \leftrightarrow \psi\,\omega\sigma_3, \quad \hat\sigma_k\Psi \leftrightarrow \sigma_k\psi\sigma_3
-  $$
-- 確率密度とスピンの向き
-  $$
-  \rho = \psi\tilde\psi, \quad \boldsymbol s = \frac{\psi\sigma_3\tilde\psi}\rho = R\sigma_3\tilde R
-  $$
-- パウリ方程式
-  $$
-  \hbar\,\partial_t\psi\,\omega\sigma_3 = \frac1{2m}\sum_k\pi_k^2\psi + q\varphi\psi - \frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3
-  $$
-- 一様磁場下の歳差運動
-  $$
-  \partial_t\psi = \frac{gq}{4m}\omega\boldsymbol B\psi
-  $$
-&&&
+パウリスピノルを$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数の元として扱いました。
 
 - **対応**：列ベクトル$\Psi=(a_0+ia_3,-a_2+ia_1)^T$は偶部分代数の元$\psi=a_0+\sum_ka_k\,\omega\sigma_k$、すなわち四元数に対応し、$\Psi$は$\hat\psi$の第1列です。$\hat\sigma_k\Psi$は$\sigma_k\psi\sigma_3$に、$i\Psi$は$\psi\,\omega\sigma_3$に対応します。$\psi\mapsto\psi P$で、左イデアルによる表示と結ばれます。
 - **虚数単位**：量子力学の$i$は、右から掛かる2ベクトル$\omega\sigma_3=\sigma_1\sigma_2$です。左からの作用と可換なので、スカラーとして振る舞います。
 - **観測量**：$\psi=\sqrt\rho\,R$と分解すると、$\rho=\psi\tilde\psi$が確率密度、$\psi\sigma_3\tilde\psi=\rho R\sigma_3\tilde R$がスピンの向きです。スピンの向きはホップ写像と同じ形の式で与えられ、ベクトルと2ベクトルの区別はグレードで付きます。
 - **大域位相**：$\psi\mapsto\psi e^{\omega\sigma_3\alpha}$は、スピン軸まわりに枠$e_1,e_2$を回す操作で、確率密度とスピンの向きを変えません。
 - **パウリ方程式**：$\hbar\,\partial_t\psi\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi+q\varphi\psi-\frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3$と書けます。一様な磁場の中では$\partial_t\psi=\frac{gq}{4m}\omega\boldsymbol B\psi$となり、スピンは角速度$-gqB/2m$で磁場のまわりを歳差運動します。$g=2$なら、固有速度の回転子の方程式と同じ形です。
+
+&&& スピノルの対応
+列ベクトル$\Psi=(a_0+ia_3,-a_2+ia_1)^T$に偶部分代数の元$\psi$を対応させると、作用は次のように対応します。
+$$
+\psi=a_0+\sum_ka_k\,\omega\sigma_k,\qquad\hat\sigma_k\Psi\leftrightarrow\sigma_k\psi\sigma_3,\qquad i\Psi\leftrightarrow\psi\,\omega\sigma_3
+$$
+&&&
+
+&&& 確率密度とスピンの向き
+$\psi=\sqrt\rho\,R$と分解すると、次のようになります。
+$$
+\rho=\psi\tilde\psi,\qquad\psi\sigma_3\tilde\psi=\rho\,\boldsymbol s,\qquad\boldsymbol s=R\sigma_3\tilde R
+$$
+&&&
+
+&&& パウリ方程式
+$$
+\hbar\,\partial_t\psi\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi+q\varphi\psi-\frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3
+$$
+&&&
+
+&&& 一様な磁場の中の歳差運動
+一様な磁場の中で、スピンの向きの変化を与える磁場の項だけを残すと、次の式になります。
+$$
+\partial_t\psi=\frac{gq}{4m}\,\omega\boldsymbol B\,\psi
+$$
+&&&

@@ -371,25 +371,28 @@ $$
 
 クーロンの法則とビオ＝サバールの法則は、同じ核$(\boldsymbol x-\boldsymbol y)/|\boldsymbol x-\boldsymbol y|^3$を使う2つの積分でした。源を$\rho-\boldsymbol J/c$にまとめて幾何積で核に掛けると、1本の積分公式$F=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}(\rho-\boldsymbol J/c)\,dV$になり、ベクトル部が電場、2ベクトル部が磁場の$ic$倍、スカラー部は定常電流の条件で$0$になります。
 
-&&&
-**静的な場の統合とマクスウェル方程式**
-- 静的な場の統合
-  $$
-  F = \boldsymbol E + ic\boldsymbol B = \frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}\Bigl(\rho(\boldsymbol y) - \frac{\boldsymbol J(\boldsymbol y)}c\Bigr)dV
-  $$
-- 微分形（静的なマクスウェル方程式）
-  $$
-  DF = \frac1{\varepsilon_0}\Bigl(\rho - \frac{\boldsymbol J}c\Bigr)
-  $$
-- ポテンシャル表現
-  $$
-  F = -DP, \quad P = \varphi - c\boldsymbol A
-  $$
-&&&
-
 - **電場と磁場**：電荷に働く力$q(\boldsymbol E+\boldsymbol v\times\boldsymbol B)$を通して定まる量で、$\boldsymbol E$と$c\boldsymbol B$は同じ単位を持ちます。
 - **核と定数**：核はコーシー核の$n=3$の場合であり、$4\pi$は$|S^2|$です。[[7shi-cla5]]
 - **磁場**：$\boldsymbol r\wedge\boldsymbol J$の重ね合わせとして2ベクトルで書け、擬ベクトルという例外的な扱いは不要になります。
 - **微分形**：核が$D$の基本解であることから$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$が成り立ち、そのスカラー・ベクトル・2ベクトル・擬スカラー部が静的な場の4本の式です。
 - **積分形**：ガウスの法則は領域の基本定理のスカラー部、アンペールの法則は曲面の基本定理の擬スカラー部です。
 - **ポテンシャル**：$F=-DP$、$P=\varphi-c\boldsymbol A$と書け、スカラー部の消滅は$\nabla\cdot\boldsymbol A=0$と言い換えられます。
+
+&&& 静的な場の積分公式
+$\nabla\cdot\boldsymbol J=0$のとき、次の積分は$F=\boldsymbol E+ic\boldsymbol B$を与えます。
+$$
+F(\boldsymbol x)=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}\Bigl(\rho(\boldsymbol y)-\frac{\boldsymbol J(\boldsymbol y)}c\Bigr)dV
+$$
+&&&
+
+&&& 静的なマクスウェル方程式
+$$
+DF=\frac1{\varepsilon_0}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
+$$
+&&&
+
+&&& ポテンシャル
+$$
+F=-DP,\qquad P=\varphi-c\boldsymbol A
+$$
+&&&

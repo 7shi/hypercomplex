@@ -493,5 +493,5 @@ $$
 &&&
 
 &&& フューターの定理
-複素正則関数$f(z)=u(x,y)+iv(x,y)$に対して$\tilde f(q)=u(x_0,r)+\frac{\underline q}r v(x_0,r)$と置くと、$\Delta\tilde f$は四元数正則になります。
+$f(\bar z)=\overline{f(z)}$を満たす正則関数$f(z)=u(x,y)+iv(x,y)$に対して、$\tilde f(q)=u(x_0,r)+\hat{\boldsymbol q}\,v(x_0,r)$と置くと、$\Delta\tilde f$は左右ともに正則です。
 &&&

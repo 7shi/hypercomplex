@@ -291,12 +291,6 @@ $$
 
 # まとめ
 
-&&&fml
-L_uL_v + L_vL_u = -2\,(u \cdot v)\,I \\
-g_+(yz) = g_0(y)\,g_-(z) \\
-\operatorname{Spin}(8) \xrightarrow{S^7} \operatorname{Spin}(7) \xrightarrow{S^7} G_2 \xrightarrow{S^6} \operatorname{SU}(3) \xrightarrow{S^5} \operatorname{SU}(2) \xrightarrow{S^3} \{1\}
-&&&
-
 純虚八元数の左作用$L_u$は、アルティンの定理に守られてクリフォード代数の生成関係$L_uL_v + L_vL_u = -2(u \cdot v)I$を満たします。四元数では結合律の縮退で4次元止まりだった左作用が、八元数では非結合性により$\operatorname{Cl}_{0,6}(\mathbb{R}) \cong M_8(\mathbb{R})$の64次元全体を生成します。一方、7次元の純虚八元数の単位ベクトルによる左作用$L_u$を偶数個合成すると、$\operatorname{Spin}(7)$が得られます。共役$gL_vg^{-1} = L_{\chi_g(v)}$がベクトル（7次元）への2重被覆を与える一方、八元数$\mathbb{R}^8$自身は半角で回る8次元のスピノルです。
 
 2つの作用は整合式$g(vz) = \chi_g(v)g(z)$（2色の整合式）で結ばれ、そのリー代数版が2色のライプニッツ則です。$\operatorname{Spin}(7)$は単位スピノルの球面$S^7$に推移的に作用し、スピノル$1$を固定すると2色が1色に潰れてライプニッツ則が復元され、固定部分群として$G_2$が現れます（$S^7 = \operatorname{Spin}(7)/G_2$、$21 = 14 + 7$）。ベクトル$e_7$を固定すれば、体積要素$J = L_7$が複素構造となって$\operatorname{Spin}(6) \cong \operatorname{SU}(4)$が行列として実現され、さらにスピノル$1$を固定すると$\operatorname{SU}(3)$に降ります。固定の順序によらず、$G_2$経由でも$\operatorname{SU}(4)$経由でも同じ$\operatorname{SU}(3)$に着地します。
@@ -304,3 +298,21 @@ g_+(yz) = g_0(y)\,g_-(z) \\
 反対角配置$\gamma(v)$による倍加で$\operatorname{Cl}_{8,0}(\mathbb{R}) \cong M_{16}(\mathbb{R})$と$\operatorname{Spin}(8)$が得られ、ベクトル$V$と2つの半スピノル$S^\pm$という3つの8次元表現が出揃います。八元数の乗法は3色の整合式$g_+(yz) = g_0(y)g_-(z)$でこれらを結び、3つの射影$g \mapsto g_0, g_+, g_-$のどれか1つが残りを同時の符号反転を除いて決めます（三対性の原理）。ベクトル側の1枚回しがスピノル側の等傾4枚回しに対応するため、この対称性は内部自己同型では実現できない外部対称性$S_3$です。実次元でベクトルとスピノルが対等に並ぶのは8次元だけで、三対性は$\operatorname{Spin}(8)$だけの個性です。
 
 3つの表現の「$1$」の固定部分群として3つの$\operatorname{Spin}(7)$が現れ、どの2つの交わりも$G_2$に一致します（$21 + 21 - 28 = 14$）。$G_2$は3つの表現の区別が消える場所、すなわち三対性の対称性の固定部分群であり、固定部分群の鎖$28 \to 21 \to 14 \to 8 \to 3 \to 0$（$28 = 7 + 7 + 6 + 5 + 3$）が、$\operatorname{Spin}(8)$から$\operatorname{Spin}(7)$、$G_2$、$\operatorname{SU}(3)$、$\operatorname{SU}(2)$を経て自明な群まで、シリーズの主役たちを1本につなぎます。
+
+&&& 左作用のクリフォード関係
+$$
+L_uL_v + L_vL_u = -2\,(u \cdot v)\,I
+$$
+&&&
+
+&&& 3色の整合式
+$$
+g_+(yz) = g_0(y)\,g_-(z)
+$$
+&&&
+
+&&& 固定部分群の鎖
+$$
+\operatorname{Spin}(8) \xrightarrow{S^7} \operatorname{Spin}(7) \xrightarrow{S^7} G_2 \xrightarrow{S^6} \operatorname{SU}(3) \xrightarrow{S^5} \operatorname{SU}(2) \xrightarrow{S^3} \{1\}
+$$
+&&&

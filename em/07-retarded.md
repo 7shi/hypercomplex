@@ -173,13 +173,6 @@ $$
 
 # まとめ
 
-&&&fml 遅延基本解とキルヒホッフの公式
-$$
-G(x_0,\boldsymbol x)=\frac{\delta(x_0-r)}{4\pi r},\qquad
-\psi(t,\boldsymbol x)=\partial_t\bigl(t\,M_{ct}[g](\boldsymbol x)\bigr)+t\,M_{ct}[h](\boldsymbol x)
-$$
-&&&
-
 楕円型と双曲型（本記事）の性質を並べると、次のようになります。
 
 | 性質 | 楕円型（$D^2=\Delta$） | 双曲型（$D^2=\partial_0^2-\Delta$） | 区分 |
@@ -197,3 +190,16 @@ $$
 | 核の台の次元依存 | 台は次元によらない（原点以外で滑らか） | 空間3以上の奇数次元で光円錐上、偶数次元で内部 | 次元で変わる |
 
 形を保つものは、$D^2$がスカラーの作用素であることと基本定理だけから導かれるものです。係数の2乗の符号によらないので、楕円型と双曲型の両方で成り立ちます。失われるものは、平均値の性質による解の大きさの制御と、楕円型の正則性による解析性で、空間の計量が正定値であること（楕円性）に依存していました。双曲型ではその役割を、光円錐に沿った信号の伝わり方と、エネルギーという別の正値量が担います。[[7shi-cla6]]
+
+&&& 遅延基本解
+$$
+G(x_0,\boldsymbol x)=\frac{\delta(x_0-r)}{4\pi r},\qquad\square G=\delta(x_0)\,\delta(\boldsymbol x)
+$$
+&&&
+
+&&& キルヒホッフの公式
+$\partial_t^2\psi=c^2\Delta\psi$、$\psi|_{t=0}=g$、$\partial_t\psi|_{t=0}=h$の解は、$\boldsymbol x$を中心とする半径$ct$の球面上の平均$M_{ct}$を用いて次のように書けます。
+$$
+\psi(t,\boldsymbol x)=\partial_t\bigl(t\,M_{ct}[g](\boldsymbol x)\bigr)+t\,M_{ct}[h](\boldsymbol x)
+$$
+&&&

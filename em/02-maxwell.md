@@ -271,23 +271,28 @@ $$
 
 時間を$x_0=ct$として作用素$\mathcal D=\partial_0+D$を作ると、マクスウェル方程式は$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$の1本の式になりました。
 
-&&&
-**時空の作用素とマクスウェル方程式**
-- 1本のマクスウェル方程式
-  $$
-  \mathcal DF = \frac1{\varepsilon_0}\Bigl(\rho - \frac{\boldsymbol J}c\Bigr) \quad \Bigl(\mathcal D = \partial_0 + D, \quad F = \boldsymbol E + ic\boldsymbol B\Bigr)
-  $$
-- 波動作用素と波動方程式
-  $$
-  \bar{\mathcal D}\mathcal D = \partial_0^2 - \Delta = \frac1{c^2}\partial_t^2 - \Delta
-  $$
-- 連続の式
-  $$
-  \partial_t\rho + \nabla\cdot\boldsymbol J = 0
-  $$
-&&&
-
 - **グレード成分**：スカラー部がガウスの法則、ベクトル部がアンペール＝マクスウェルの法則、2ベクトル部がファラデーの法則、擬スカラー部が$\nabla\cdot\boldsymbol B=0$です。時間微分はスカラーの作用素なのでグレードを変えず、静的な式の回転の2本にだけ項を加えます。
 - **発散と回転を選ばない**：$\mathcal D$を掛けて幾何積で展開するだけで、4本の式に必要な発散と回転が自動的に揃います。$\nabla\times\nabla\varphi=0$、$\nabla\cdot(\nabla\times\boldsymbol V)=0$、回転の回転の公式も、$D^2=\Delta$のグレード成分として得られます。
 - **係数の2乗の符号**：$\mathcal D$は四元数解析の作用素と同じ形で、係数の2乗が$-1$から$+1$に替わっています。共役との積は$\partial_0^2+\Delta$（楕円型）から$\partial_0^2-\Delta$（双曲型）に替わります。[[7shi-cla4]]
 - **連続の式と波動方程式**：$\bar{\mathcal D}$を掛けると、左辺にスカラー部がないことから連続の式が、ベクトル部と2ベクトル部から$\boldsymbol E$と$\boldsymbol B$の波動方程式が出ます。
+
+&&& マクスウェル方程式
+$\mathcal D=\partial_0+D$、$F=\boldsymbol E+ic\boldsymbol B$とすると、マクスウェル方程式の4本の式は次の1本の式と同値です。
+$$
+\mathcal DF=\frac1{\varepsilon_0}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
+$$
+&&&
+
+&&& 波動作用素
+$\bar{\mathcal D}=\partial_0-D$との積は、速さ$c$の波動作用素になります。
+$$
+\bar{\mathcal D}\mathcal D=\mathcal D\bar{\mathcal D}=\partial_0^2-\Delta
+$$
+&&&
+
+&&& 連続の式
+1本の式に$\bar{\mathcal D}$を掛けたスカラー部から、次が従います。
+$$
+\partial_t\rho+\nabla\cdot\boldsymbol J=0
+$$
+&&&

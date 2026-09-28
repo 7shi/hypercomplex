@@ -382,16 +382,6 @@ $$
 
 ローレンツ変換を回転子$x\mapsto Rx\tilde R$として扱いました。
 
-&&&fml 回転子とローレンツ変換
-$$
-\begin{aligned}
-&R=e^{B/2},\qquad R\tilde R=1,\qquad x'=Rx\tilde R \\
-&R=e^{-i\sigma_3\theta/2}\quad(\text{空間の回転}),\qquad R=e^{\sigma_1\eta/2}\quad(\text{ブースト}) \\
-&F'=\tilde RFR,\qquad m\frac{dU}{d\tau}=\frac qc F\cdot U,\qquad \frac{dR}{d\tau}=\frac q{2mc}FR
-\end{aligned}
-$$
-&&&
-
 - **基底の取り替え**：回転子は生成元の関係式を保つので、ローレンツ変換は正規直交基底を取り替えるだけの時空の回転です。観測者を替えることは基底を替えることで、ブーストの方向に進む光の向き$\gamma_0\pm\gamma_1$は向きを変えず$e^{\pm\eta}$倍に伸び縮みするだけです。
 - **回転子**：$R\tilde R=1$を満たす偶部分の元はベクトルをベクトルに移し、ミンコフスキー計量を保ちます。2ベクトルの指数関数で作ると、2乗が$-1$の空間の2ベクトルからは三角関数による回転、2乗が$+1$の$\sigma_k$からは双曲線関数によるブーストが得られます。ラピディティは加法的で、速度の合成則を与えます。
 - **場の変換**：観測者の見る場は$\tilde RFR$の成分であり、ブーストの方向と反可換な成分に$e^{\sigma_1\eta}$が掛かることから、電場と磁場の混合の公式が出ます。
@@ -399,3 +389,33 @@ $$
 - **不変量**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者によりません。平面波の振幅と振動数はドップラー因子$e^{-\eta}$倍になります。ヌルでない場は、ポインティングベクトルの向きに$\tanh2\eta=|\boldsymbol S|/cu$でブーストした観測者から見て$F'=(a+ib)\hat{\boldsymbol m}$（$\boldsymbol E'\parallel\boldsymbol B'$）となります。
 - **ローレンツ力**：$m\,dU/d\tau=(q/c)F\cdot U$を座標時$t$による微分に直すと、時間成分からエネルギーの変化率$q\boldsymbol E\cdot\boldsymbol u$、空間成分から相対論的な運動量の変化率$q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)$が得られます。
 - **場は固有速度を回す**：固有速度の大きさは常に$c$で、速さは時間軸からの双曲角（ラピディティ）です。運動方程式は$U=cR\gamma_0\tilde R$、$dR/d\tau=\frac q{2mc}FR$と書け、電場がブースト（双曲運動）を、磁場が空間の回転（サイクロトロン運動）を生成します。
+
+&&& 回転子によるローレンツ変換
+偶部分の元$R$で$R\tilde R=1$を満たすものについて、次の写像はローレンツ変換です。
+$$
+x\mapsto Rx\tilde R
+$$
+&&&
+
+&&& 空間の回転とブースト
+$$
+R=e^{-i\sigma_3\theta/2},\qquad R=e^{\sigma_1\eta/2}
+$$
+&&&
+
+&&& 観測者の見る場
+新しい観測者の基底が$\sigma_k'=R\sigma_k\tilde R$のとき、その観測者の見る電場と磁場は、次の元を元の$\sigma_k$で分けた成分です。
+$$
+F'=\tilde RFR
+$$
+&&&
+
+&&& ローレンツ力と回転子
+$$
+m\frac{dU}{d\tau}=\frac qcF\cdot U
+$$
+$U=cR\gamma_0\tilde R$とし、$R$が次を満たせば、$U$はこの運動方程式を満たします。
+$$
+\frac{dR}{d\tau}=\frac q{2mc}FR
+$$
+&&&

@@ -531,21 +531,22 @@ $\varepsilon$に対応する擬スカラー$E = e_0e_1e_2e_3$が二重四元数�
 
 # まとめ
 
-&&&fml 二重四元数と剛体変換
-$$
-\varepsilon^2 = 0, \quad \sigma = \left(1 + \frac{\varepsilon}{2} t\right) r
-$$
-$$
-(1 + \varepsilon x') = \sigma (1 + \varepsilon x) \overline\sigma^* = 1 + \varepsilon (rxr^* + t)
-$$
-$$
-\mathbb H \otimes \mathbb D \cong \operatorname{Cl}_{3,0,1}^0(\mathbb R)
-$$
-&&&
-
 - 「無限小の領域では回転が並進として扱える」という観察は、回転角を$\varepsilon$倍（$\varepsilon^2=0$）に読み替えることで厳密な代数法則に昇格します。角を$\varepsilon$倍した回転子は接平面の点$i + \varepsilon x$を並進させ、基点を通る軸の回転と合わせて、接平面の剛体変換群$\mathrm{SE}(2)$が通常の回転子の共役作用として実現します。
 - 二重数は$\varepsilon^2 = 0$を満たす基底を実数に添加した代数で、$f(x + \varepsilon y) = f(x) + \varepsilon y f'(x)$により「1次で打ち切っても誤差が出ない」無限小計算を厳密に実装します。
 - 四元数の係数を二重数に取り替えた二重四元数$\mathbb H \otimes \mathbb D$は、双四元数$\mathbb H \otimes \mathbb C$・分解型双四元数$\mathbb H \otimes \mathbb C'$と並ぶテンソル積の族の一員です。
 - 基点を$i$から$1$に取り替えた点$1 + \varepsilon x$を、剛体変換$\sigma = (1 + \frac\varepsilon2 t) r$の第3の共役$\overline\sigma^*$で挟むことで、3次元全体の「回転＋並進」が実現します。単位二重四元数は$\mathrm{SE}(3)$を二重被覆します。
 - 任意の剛体変換は二重角とねじ軸による指数関数$\exp(\frac{\hat\theta}2 L)$、すなわちねじ運動として書けます（シャールの定理）。純並進は回転角$0$のねじ運動にあたり、軸の位置は定まりません。
 - 二重四元数は退化クリフォード代数の偶部分代数$\operatorname{Cl}_{3,0,1}^0(\mathbb R)$と同型であり、$e_1, e_2, e_3$に加える第4の生成元の平方$-1, +1, 0$に応じて双四元数・分解型双四元数・二重四元数が現れるという三分法が成り立ちます。これはPGA・CGAへの入り口です。
+
+&&& 剛体変換のサンドイッチ公式
+単位回転子$r$と純虚四元数$t$に対して$\sigma = \left(1 + \frac\varepsilon2 t\right) r$とすると、次が成り立ちます。
+$$
+\sigma (1 + \varepsilon x) \overline\sigma^* = 1 + \varepsilon (r x r^* + t)
+$$
+&&&
+
+&&& 二重四元数とクリフォード代数
+$$
+\mathbb H \otimes \mathbb D \cong \operatorname{Cl}_{3,0,1}^0(\mathbb R)
+$$
+&&&

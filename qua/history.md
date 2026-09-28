@@ -180,15 +180,6 @@ $4$次元でも幾何代数の表現は$R \boldsymbol v \tilde R$のままです
 
 # まとめ
 
-&&&fml 四元数と幾何代数の積構造
-$$
-\begin{aligned}
-\text{純虚四元数の積:}\quad & \boldsymbol p \boldsymbol q = -\,\boldsymbol p \cdot \boldsymbol q + \boldsymbol p \times \boldsymbol q \\
-\text{幾何積:}\quad & \boldsymbol p \boldsymbol q = \boldsymbol p \cdot \boldsymbol q + \boldsymbol p \wedge \boldsymbol q
-\end{aligned}
-$$
-&&&
-
 四元数が主役の座を退いた経緯を整理すると、次のようになります。
 
 - 3次元空間の代数として発見されたが、積のスカラー部に負符号が現れ、応用の場面では記法上の読み替えを要した。
@@ -198,3 +189,15 @@ $$
 - 回転の道具としては復活したが、積の構造そのものが注目される位置づけには戻らなかった。
 
 現在の標準である行列とベクトルによる計算体系は、この経緯の帰結です。四元数から先へ進む道が見えにくいのは、四元数の限界ではなく、四元数を一般化する枠組みが標準から外れた位置に置かれてきたためです。幾何代数は、統一性と実用性を両立させる別の枠組みを与えます。
+
+&&& 純虚四元数の積
+$$
+\boldsymbol p \boldsymbol q = -\,\boldsymbol p \cdot \boldsymbol q + \boldsymbol p \times \boldsymbol q
+$$
+&&&
+
+&&& 幾何積
+$$
+\boldsymbol p \boldsymbol q = \boldsymbol p \cdot \boldsymbol q + \boldsymbol p \wedge \boldsymbol q
+$$
+&&&

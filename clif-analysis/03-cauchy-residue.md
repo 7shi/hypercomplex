@@ -423,7 +423,7 @@ $$
 &&&
 
 &&& 留数定理
-相異なる特異点$\boldsymbol a_1,\dots,\boldsymbol a_m$を除いてモノジェニックなら、次が成り立ちます。
+$M$の内部の相異なる点$\boldsymbol a_1,\dots,\boldsymbol a_m$を除いて$M$上でモノジェニックなら、次が成り立ちます。
 $$
 \oint_{\partial M}\boldsymbol nF\,ds=2\pi\sum_{k=1}^m\operatorname{Res}_{\boldsymbol a_k}F
 $$

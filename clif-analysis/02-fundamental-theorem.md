@@ -352,6 +352,7 @@ $$
 &&&
 
 &&& 両側形式
+右からの作用を$GD=\sum_k(\partial_kG)e_k$とすると、次が成り立ちます。
 $$
 \int_M\bigl((GD)F+G(DF)\bigr)dV=\oint_{\partial M}G\,\boldsymbol nF\,dS
 $$

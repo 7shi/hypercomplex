@@ -840,16 +840,6 @@ $rxr$は実軸を含む1つの平面だけが回転する単純回転です。$r
 
 # まとめ
 
-&&&fml 各代数系の回転表現
-$$
-\begin{aligned}
-\text{クリフォード代数:}\quad & v' = r^{-1} v r, \quad r = \exp\left(\frac{B}{2}\right) \\
-\text{3次元四元数:}\quad & v' = r v r^*, \quad r = \exp\left(\frac{\theta}{2} q\right) \\
-\text{4次元四元数:}\quad & x' = r_L x r_R
-\end{aligned}
-$$
-&&&
-
 各代数系における回転の表現をまとめます。
 
 | 代数系      | 次元  | 回転子・指数関数                         | 積・挟み込みが表す回転           | 鏡映の合成     |

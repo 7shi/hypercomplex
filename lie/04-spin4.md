@@ -413,13 +413,6 @@ $\gamma(v)$の片方のブロックに$-1$を付ければ自乗は$-|v|^2 I$と�
 
 # まとめ
 
-&&&fml
-\text{両側作用}: x \mapsto pxq^{-1} \quad (p, q \in \operatorname{Sp}(1)) \\
-\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1) \to \operatorname{SO}(4), \quad \operatorname{ker} = \{\pm(1, 1)\} \\
-\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2) \\
-M_4(\mathbb{R}) \cong \mathbb{H} \otimes_{\mathbb{R}} \mathbb{H} \cong \operatorname{Cl}_{3,1}(\mathbb{R}), \quad M_2(\mathbb{H}) \cong \operatorname{Cl}_{4,0}(\mathbb{R})
-&&&
-
 四元数全体を4次元空間と見て、左右から独立な単位四元数で挟む両側作用$pxq^{-1}$は、片側作用に付きまとう等傾回転の制限を解除して$\operatorname{SO}(4)$のすべての回転を与えます。対応は2対1で、$\operatorname{Sp}(1) \times \operatorname{Sp}(1)$は$\operatorname{SO}(4)$の二重被覆となり、リー代数では直和分解$\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)$が成り立ちます。この左右の独立性は結合律の帰結です。
 
 行列表現の言葉では、左作用だけでは四元数の乗法関係（$L_iL_j = L_k$）により4次元（四元数自身）に留まり、右作用と合わせてはじめて$4 \times 4$実行列全体の16次元を張ります。この分離は代数として$M_4(\mathbb{R})\cong\mathbb H\otimes_{\mathbb R}\mathbb H$（$L$側の$\mathbb H$と$R$側の$\mathbb H$）と言い換えられ、直和分解$\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$の背後にある結合代数レベルの構造です。$p = e^{i\alpha}$、$q = e^{i\beta}$の場合に$L_pR_{q^{-1}}$を行列として計算すると、$(1,i)$平面を角度$\alpha-\beta$、$(j,k)$平面を角度$\alpha+\beta$で独立に回すブロック対角行列という具体的な$\operatorname{SO}(4)$の回転行列が現れ、共役作用にあたる$q=p$の場合はそのまま$\operatorname{SO}(3)$の回転行列$\exp(\theta J_x)$の埋め込みに一致します。
@@ -429,3 +422,22 @@ $M_4(\mathbb{R})$は、基底$L_uR_v$の自乗と反交換関係を数え上げ�
 一方、4次元ユークリッド空間の舞台$\operatorname{Cl}_{4,0}(\mathbb{R})$は、スピノル空間を$\mathbb{H} \oplus \mathbb{H}$へ倍加し、ベクトル$v$に反対角行列$\gamma(v)$を対応させることで構成されます。その偶部分代数は$\mathbb{H} \oplus \mathbb{H}$で、単位四元数の対$(p, q)$が$\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1)$をなし、グレード$1$への共役作用が両側作用$pxq^{-1}$を再現して、先に構成した二重被覆が$\operatorname{Spin}(4)$であることが確定します。スピノル側では$(p, q)$が2つの**半スピノル**へ別々に片側作用し、左作用と右作用の分離は半スピノル表現の分離として現れます。
 
 四元数の左右から挟む作用が$M_4(\mathbb{R})\cong\mathbb H\otimes\mathbb H\cong \operatorname{Cl}_{3,1}(\mathbb{R})$と$M_2(\mathbb{H})\cong \operatorname{Cl}_{4,0}(\mathbb{R})$という異なる2つのクリフォード代数の中に現れます。前者では同じ行列環に含まれる$\operatorname{SO}(4)$の回転行列として、後者ではスピン群の共役作用として実現されます。
+
+&&& 両側作用と二重被覆
+単位四元数の対$(p, q)$による両側作用$x \mapsto pxq^{-1}$は、次の2対1の全射を与えます。
+$$
+\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1) \to \operatorname{SO}(4), \qquad \ker = \{\pm(1, 1)\}
+$$
+&&&
+
+&&& リー代数の直和分解
+$$
+\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)
+$$
+&&&
+
+&&& 2つのクリフォード代数
+$$
+M_4(\mathbb{R}) \cong \mathbb{H} \otimes_{\mathbb{R}} \mathbb{H} \cong \operatorname{Cl}_{3,1}(\mathbb{R}), \qquad M_2(\mathbb{H}) \cong \operatorname{Cl}_{4,0}(\mathbb{R})
+$$
+&&&

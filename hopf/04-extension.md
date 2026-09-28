@@ -312,19 +312,19 @@ $$
 
 # まとめ
 
-&&&fml 4つのホップ写像
-$$
-\begin{aligned}
-S^0 &\hookrightarrow S^1 \xrightarrow{H_{\mathbb{R}}} S^1 \\
-S^1 &\hookrightarrow S^3 \xrightarrow{H_{\mathbb{C}}} S^2 \\
-S^3 &\hookrightarrow S^7 \xrightarrow{H_{\mathbb{H}}} S^4 \\
-S^7 &\hookrightarrow S^{15} \xrightarrow{H_{\mathbb{O}}} S^8
-\end{aligned}
-$$
-&&&
-
 初回で用いた「1つ上の代数を使って回転させる」構成は、実数の場合は共役作用ではなく乗算（2乗$\zeta^2$、二重被覆$\operatorname{Spin}(2)\to\operatorname{SO}(2)$）によって成立する一方、$\operatorname{Spin}(3)\cong \operatorname{SU}(2)\cong \operatorname{Sp}(1)$という特別な一致に依る共役作用$\omega p \omega^*$の構成は、次元の不一致や非結合性のために$S^7\to S^4$、$S^{15}\to S^8$へはそのまま拡張できません。
 
 そこで、ノルムの乗法性に依存するホップ写像$H(\alpha, \beta) = (2\alpha^* \beta, |\alpha|^2 - |\beta|^2)$を、実数版$H_{\mathbb{R}}$・四元数版$H_{\mathbb{H}}$・八元数版$H_{\mathbb{O}}$として直接拡張しました。実数・四元数では結合性により左からの共通乗算$(q\alpha, q\beta)$がそのままファイバーを保存し、それぞれ$S^0$・$S^3$を与えます。
 
 一方、$H_{\mathbb{O}}$では非結合性の影響が現れ、左乗算によるファイバーの保存則が成り立たなくなることを具体例で確認しました。これは八元数ホップファイブレーションが、ファイバー自身の乗法を構造群とする主束ではなく、$\operatorname{Spin}(8)$を構造群とする球面束であることに対応しています。それでも各ファイバーは、恒等式$x^*(xy)=|x|^2y$に基づく固定の右乗算$\beta=\alpha p$のグラフとして具体的に書き下すことができ、$S^7$全体を得ることができました。
+
+&&& 4つのホップファイブレーション
+$$
+\begin{aligned}
+S^0 &\hookrightarrow S^1 \xrightarrow{H_{\mathbb{R}}} S^1 \\
+S^1 &\hookrightarrow S^3 \xrightarrow{H} S^2 \\
+S^3 &\hookrightarrow S^7 \xrightarrow{H_{\mathbb{H}}} S^4 \\
+S^7 &\hookrightarrow S^{15} \xrightarrow{H_{\mathbb{O}}} S^8
+\end{aligned}
+$$
+&&&

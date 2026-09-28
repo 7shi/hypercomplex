@@ -186,24 +186,28 @@ $$
 
 電磁場の中のディラック方程式から、非相対論極限でパウリ方程式を導きました。
 
-&&&
-**ディラック方程式の非相対論極限とパウリ方程式**
-- 時間軸による分解
-  $$
-  \psi = \psi_+ + \psi_-, \quad \gamma_0\psi_\pm\gamma_0 = \pm\psi_\pm
-  $$
-- 小さい成分の消去
-  $$
-  \psi_- \approx \frac1{2mc}\Pi\psi_+ \quad \Bigl(\Pi X = -\hbar D_3X\,\omega\sigma_3 - q\boldsymbol AX\Bigr)
-  $$
-- パウリ方程式の導出（$g=2$）
-  $$
-  \hbar\,\partial_t\psi_+\,\omega\sigma_3 = \frac1{2m}\sum_k\pi_k^2\psi_+ + q\varphi\,\psi_+ - \frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
-  $$
-&&&
-
 - **分解**：$\psi=\psi_++\psi_-$（$\gamma_0\psi_\pm\gamma_0=\pm\psi_\pm$）と分け、静止エネルギーの因子$e^{-\omega\sigma_3mc^2t/\hbar}$を分離すると、方程式は[分割した方程式](#fml-split-eq)の2本と同値になります。$\Pi X=-\hbar D_3X\omega\sigma_3-q\boldsymbol AX$は2つの部分を入れ替えます。
 - **小さい成分**：非相対論極限では$\psi_-\approx\Pi\psi_+/2mc$で、$\psi_-$は$\psi_+$の$v/2c$倍程度です。
 - **パウリ方程式**：消去すると$\hbar\,\partial_t\psi_+\omega\sigma_3=\frac1{2m}\Pi^2\psi_++q\varphi\psi_+$で、$\Pi^2=\sum_k\pi_k^2-q\hbar\boldsymbol B(\cdot)\sigma_3$より、パウリ方程式が$g=2$で得られます。
 - **$g=2$の出所**：幾何積$D_3\boldsymbol A$の外積の部分$D_3\wedge\boldsymbol A=\omega\boldsymbol B$が、スピンと磁場の結合を与えます。1階の作用素を2乗すると、内積の部分が運動項、外積の部分が磁場の項になります。
 - **歳差**：$g=2$のとき、一様な磁場の中でスピンの向きと運動の向きは同じ角速度で回ります。
+
+&&& 時間軸による分解
+$$
+\psi=\psi_++\psi_-,\qquad\gamma_0\psi_\pm\gamma_0=\pm\psi_\pm
+$$
+&&&
+
+&&& 小さい成分
+$\Pi X=-\hbar\,D_3X\,\omega\sigma_3-q\boldsymbol AX$とすると、非相対論極限では次のようになります。
+$$
+\psi_-\approx\frac1{2mc}\Pi\psi_+
+$$
+&&&
+
+&&& パウリ方程式（$g=2$）
+小さい成分を消去すると、$\psi_+$について次の式が得られます。
+$$
+\hbar\,\partial_t\psi_+\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi_++q\varphi\,\psi_+-\frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
+$$
+&&&

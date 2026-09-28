@@ -588,13 +588,6 @@ $$
 
 # まとめ
 
-&&&fml
-\text{BCH公式}: \exp(x)\exp(y) = \exp\left(x + y + \frac{1}{2}[x, y] + \frac{1}{12}[x, [x, y]] + \frac{1}{12}[y, [y, x]] + \cdots\right) \\
-\text{ヤコビ恒等式}: [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0 \\
-\text{随伴作用}: \operatorname{Ad}_g(x) = gxg^{-1}, \quad \operatorname{ad}_x(y) = [x, y] \\
-\text{アダマールの補題}: \operatorname{Ad}_{\exp(z)} = \exp(\operatorname{ad}_z)
-&&&
-
 方向の異なる元では崩れる指数法則のずれは、BCH公式
 
 $$
@@ -612,3 +605,27 @@ $$
 たびたび登場した共役作用は、リー群$G$が自分のリー代数$\mathfrak{g}$に作用する随伴作用$\operatorname{Ad}_g(x) = gxg^{-1}$（行列群や四元数群では）として統一されます。その無限小版が$\operatorname{ad}_z = [z,\ \cdot\ ]$で、両者は$\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)$（アダマールの補題）で結ばれます。$\mathfrak{su}(2)$では$\operatorname{ad}_{i/2} = J_x$となり、同型$\mathfrak{su}(2) \cong \mathfrak{so}(3)$の対応$i/2 \Leftrightarrow J_x$は$x \mapsto \operatorname{ad}_x$そのもの、二重被覆$q \mapsto \rho_q$は随伴表現$q \mapsto \operatorname{Ad}_q$そのものでした。対応が2対1になる理由も、核$\ker\operatorname{Ad} = \{\pm 1\}$（群の中心）として構造的に整理されます。$\operatorname{ad}$の行列成分は構造定数であり、随伴表現の次元はリー代数の次元です。
 
 行列・四元数によるこれらの具体計算は、すべて積の結合法則の上に成り立っています。
+
+&&& BCH公式
+$$
+\exp(x)\exp(y) = \exp\left(x + y + \frac{1}{2}[x, y] + \frac{1}{12}[x, [x, y]] + \frac{1}{12}[y, [y, x]] + \cdots\right)
+$$
+&&&
+
+&&& ヤコビ恒等式
+$$
+[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0
+$$
+&&&
+
+&&& 随伴作用とその無限小版
+$$
+\operatorname{Ad}_g(x) = gxg^{-1}, \qquad \operatorname{ad}_x(y) = [x, y]
+$$
+&&&
+
+&&& アダマールの補題
+$$
+\operatorname{Ad}_{\exp z} = \exp(\operatorname{ad}_z)
+$$
+&&&

@@ -165,24 +165,28 @@ $\psi\sigma_1$の流れ$J$は同じで電荷が$-q$なので、電流$cqJ$は符
 
 ディラック方程式を電磁場と結合させ、ゲージ変換と保存則を扱いました。
 
-&&&
-**電磁場中のディラック方程式とゲージ変換**
-- 最小結合
-  $$
-  \hbar D\psi\,\omega\sigma_3 - \frac qcA\psi = mc\,\psi\gamma_0
-  $$
-- 局所ゲージ変換
-  $$
-  A \mapsto A + D\chi, \quad \psi \mapsto \psi\,e^{\omega\sigma_3\alpha}, \quad \alpha = -\frac{q\chi}{\hbar c}
-  $$
-- 流れの保存と電荷反転
-  $$
-  D\cdot J = 0 \quad (J = \psi\gamma_0\tilde\psi), \quad \psi \mapsto \psi\sigma_1 \implies q \mapsto -q
-  $$
-&&&
-
 - **最小結合**：$A=\varphi\gamma_0+c\sum_kA_k\gamma_k$により、電磁場の中のディラック方程式は$\hbar D\psi\,\omega\sigma_3-\frac qcA\psi=mc\,\psi\gamma_0$です。$A$は$D$と同じく左から作用し、共変性は保たれます。[[7shi-em6]]
 - **ゲージ変換**：$A\mapsto A+D\chi$に対して$\psi\mapsto\psi e^{\omega\sigma_3\alpha}$、$\alpha=-q\chi/\hbar c$で方程式は保たれます。行列形式の$\Psi\mapsto e^{-iq\chi/\hbar c}\Psi$です。
 - **枠の回転**：ゲージ変換は右からの回転子で、流れ$e_0$、スピン$e_3$、$\rho$、$\beta$を変えず、$e_1,e_2$をスピン軸のまわりに点ごとに回します。大域位相を局所化したもので、ポテンシャルのゲージの自由度にあたります。
 - **流れの保存**：$J=\psi\gamma_0\tilde\psi$について$D\cdot J=0$が方程式から従います。右から掛かる因子が2ベクトル$\omega\sigma_3$と3ベクトル$\gamma_0\omega\sigma_3$であることが要点です。
 - **電荷の反転**：右から$\sigma_1$を掛けると電荷$q$の解が電荷$-q$の解に移り、流れは変わりません。
+
+&&& 電磁場の中のディラック方程式
+$$
+\hbar D\psi\,\omega\sigma_3-\frac qcA\psi=mc\,\psi\gamma_0
+$$
+&&&
+
+&&& ゲージ変換
+$A\mapsto A+D\chi$に対して、次の変換で方程式は保たれます。
+$$
+\psi\mapsto\psi\,e^{\omega\sigma_3\alpha},\qquad\alpha=-\frac{q\chi}{\hbar c}
+$$
+&&&
+
+&&& 流れの保存
+電磁場の中のディラック方程式の解について、次が成り立ちます。
+$$
+D\cdot J=0,\qquad J=\psi\gamma_0\tilde\psi
+$$
+&&&

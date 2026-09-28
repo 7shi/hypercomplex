@@ -297,18 +297,27 @@ $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとし�
 
 時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$で、マクスウェル方程式は$DF=\mu_0cJ$の1本の式になりました。
 
-&&&fml 時空のマクスウェル方程式
+- **作用素**：逆元を係数にしたディラック作用素は$D^2=\partial_0^2-\Delta$を満たし、波動作用素の平方根です。
+- **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。前回の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。[[7shi-em2]]
+- **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$E_k$の面と$B_k$の面は互いの直交補空間で、$i$を掛けると入れ替わります。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
+- **2本の式**：$D\cdot F=\mu_0cJ$が源を持つ2本を、$D\wedge F=0$が源を持たない2本をまとめます。
+- **係数の2乗の符号**：$\gamma_0$を掛ける操作は、以前の記事の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。[[7shi-cla4]]
+
+&&& 時空のマクスウェル方程式
 $$
-\begin{aligned}
-&DF=\mu_0cJ,\qquad D^2=\partial_0^2-\Delta \\
-&D\cdot F=\mu_0cJ,\qquad D\wedge F=0 \\
-&\sigma_k=\gamma_k\gamma_0,\qquad \gamma_0D=\mathcal D,\qquad D(\gamma_0H)=\bar{\mathcal D}H
-\end{aligned}
+DF=\mu_0cJ,\qquad D^2=\partial_0^2-\Delta
 $$
 &&&
 
-- **作用素**：逆元を係数にしたディラック作用素は$D^2=\partial_0^2-\Delta$を満たし、波動作用素の平方根です。
-- **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。前回の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。
-- **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$E_k$の面と$B_k$の面は互いの直交補空間で、$i$を掛けると入れ替わります。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
-- **2本の式**：$D\cdot F=\mu_0cJ$が源を持つ2本を、$D\wedge F=0$が源を持たない2本をまとめます。
-- **係数の2乗の符号**：$\gamma_0$を掛ける操作は、四元数解析の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。
+&&& 2本の式
+$$
+D\cdot F=\mu_0cJ,\qquad D\wedge F=0
+$$
+&&&
+
+&&& 作用素の分割
+$\sigma_k=\gamma_k\gamma_0$とすると、次のようになります。
+$$
+\gamma_0D=\mathcal D,\qquad D(\gamma_0H)=\bar{\mathcal D}H
+$$
+&&&

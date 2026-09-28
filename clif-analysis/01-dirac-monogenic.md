@@ -339,12 +339,12 @@ $$
 &&&
 
 &&& モノジェニック関数とコーシー＝リーマンの方程式
-$F=u+\omega v$（$u,v\in\mathbb R$）に対して、次が成り立ちます。
+実数値関数$u,v$による$F=u+\omega v$に対して、次が成り立ちます。
 $$
 DF=0\iff u_x=v_y,\quad u_y=-v_x
 $$
 &&&
 
 &&& 最小の値空間としてのスピノル
-値空間$V$上で$D^2=\Delta$が成り立つ最小の次元は2であり、極小左イデアル$\operatorname{Cl}_{2,0}(\mathbb R)P$（$P=\frac{1+e_1}2$）により実現されます。
+$V$上の定数の線形写像$A,B$で組んだ$D=A\partial_x+B\partial_y$が$D^2=\Delta$を満たす$V$の最小の次元は2であり、極小左イデアル$\operatorname{Cl}_{2,0}(\mathbb R)P$（$P=\frac{1+e_1}2$）により実現されます。
 &&&

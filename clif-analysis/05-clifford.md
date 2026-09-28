@@ -471,8 +471,8 @@ $$
 &&&
 
 &&& フューター＝ソーの定理（偶数次元）
-$n$が偶数（$n=2k+2$）のとき、軸対称な関数$\tilde f$に対して次が成り立ちます。
+$n=2k+2$のとき、$f(\bar z)=\overline{f(z)}$を満たす正則関数$f$から作った$\tilde f$に対して、$\Delta^k\tilde f$は左右ともに正則です。
 $$
-\mathcal D\Delta^k\tilde f=0
+\mathcal D\Delta^k\tilde f=\Delta^k\tilde f\,\mathcal D=0
 $$
 &&&

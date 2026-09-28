@@ -218,20 +218,27 @@ $m=3$、すなわち$\operatorname{Cl}_6$の場合は、Spin(7)と三対性の�
 
 # まとめ
 
-&&&fml 昇降演算子と純粋スピノル
-$$
-\sigma_\pm = \frac{\sigma_1 \pm i\sigma_2}{2}, \quad \sigma_\pm^2 = 0
-$$
-$$
-P = \frac{I+\sigma_3}{2} = \sigma_+\sigma_-
-$$
-$$
-\{w_j, \bar w_k\} = \delta_{jk}I, \quad \{w_j, w_k\} = 0, \quad w_j \psi_0 = 0
-$$
-&&&
-
 昇降演算子$\sigma_\pm = (\sigma_1 \pm i\sigma_2)/2$は、複素化したクリフォード代数における**等方ベクトル**（ヌルベクトル）です。自乗が$0$になるのはこのためで、$\sigma_3$の固有値を$2$ずつずらす梯子の性質と表裏一体です。
 
 冪等元$P=(I+\sigma_3)/2$は、この等方ベクトルの積$\sigma_+\sigma_-$に分解され、逆に$\sigma_\pm$は$P\sigma_1$、$\sigma_1P$のように冪等元とベクトルの積に分解されます。$P$は極大等方部分空間$\mathbb C\,n_+$に消される**純粋スピノル**であり、梯子の上端$|{\uparrow}\rangle$と、極小左イデアル$M_2(\mathbb C)P$の生成元という3つの姿は同じものです。クリフォード代数とSpin(3)の記事で射影として天下りに導入した$P$の出自が、ここで説明されます。
 
 一般の$2m$次元では、$m$組のヌルベクトル$w_j, \bar w_j$が正準反交換関係を満たし、$W=\operatorname{span}\{w_j\}$に消される真空$\psi_0$に$\bar w_j$を掛けて$2^m$次元のスピノル空間が組み上がります。半スピノルに限れば、純粋であるという条件が追加の制約となるのは$m \ge 4$、つまり8次元以上で、その最初の場合が三対性の$\operatorname{Spin}(8)$です。
+
+&&& 昇降演算子
+$$
+\sigma_\pm = \frac{\sigma_1 \pm i\sigma_2}{2}, \qquad \sigma_\pm^2 = 0
+$$
+&&&
+
+&&& 冪等元の分解
+$$
+P = \frac{I+\sigma_3}{2} = \sigma_+\sigma_-
+$$
+&&&
+
+&&& 正準反交換関係と真空
+$2m$次元では、ヌルベクトル$w_j, \bar w_j$が次を満たし、$W=\operatorname{span}\{w_j\}$に消される真空$\psi_0$から$2^m$次元のスピノル空間が組み上がります。
+$$
+w_iw_j + w_jw_i = 0, \quad \bar w_i\bar w_j + \bar w_j\bar w_i = 0, \quad w_i\bar w_j + \bar w_jw_i = \delta_{ij}I
+$$
+&&&

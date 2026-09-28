@@ -372,18 +372,6 @@ $$
 
 # まとめ
 
-&&&fml 例外型ジョルダン代数と魔方陣
-$$
-A \circ B = \frac{AB + BA}{2}, \quad (A \circ B) \circ A^2 = A \circ (B \circ A^2)
-$$
-$$
-\dim \operatorname{Der}(h_3(\mathbb{O})) = 52 \ (\mathfrak{f}_4), \quad \mathfrak{e}_6 = \mathfrak{f}_4 \oplus iL_X \ (78)
-$$
-$$
-\mathfrak{M}(A, B) = \operatorname{Der}(A) \oplus \operatorname{Der}(h_3(B)) \oplus \bigl(\operatorname{Im}A \otimes h_3(B)_0\bigr)
-$$
-&&&
-
 八元数を成分とする行列は積の結合法則を失い、ユニタリ群の系列を作れませんでした。しかしエルミート行列に限って積を対称化したジョルダン積$A \circ B = (AB + BA)/2$を使うと、結合法則の弱い名残であるジョルダン恒等式$(A \circ B) \circ A^2 = A \circ (B \circ A^2)$が$3 \times 3$までは生き残ります（$2 \times 2$はアルティンの定理から従い、$3 \times 3$は交代性やムーファン恒等式を用いて示され、$4 \times 4$で破綻）。この27次元のジョルダン代数$h_3(\mathbb{O})$がアルバート代数（例外型ジョルダン代数）で、結合的な代数の対称化に埋め込めない唯一の単純ジョルダン代数です。トレースと行列式が定義でき、3次のケイリー・ハミルトンの定理が成り立ち、トレース形式は結合性$\operatorname{tr}((A \circ B) \circ C) = \operatorname{tr}(A \circ (B \circ C))$を満たします。
 
 $F_4$はアルバート代数の自己同型群です。リー代数はライプニッツ則の解空間$\operatorname{Der}(h_3(\mathbb{O}))$で、次元は52。積を保てばトレースと行列式の保存はおまけで付き、27次元は$1 \oplus 26$に割れて26次元が最小表現になります。幾何は冪等元が担い、単位ベクトル$v$から作った$P = vv^\dagger$が冪等になるのは成分が四元数部分代数に収まるときに限られ、冪等元の全体が八元数射影平面$\mathbb{O}P^2 = F_4/\operatorname{Spin}(9)$（$52 = 36 + 16$）です。$2 \times 2$の冪等元はホップ写像$S^{15} \to S^8$の像であり、$\mathbb{O}P^1 = S^8$がその土台でした。対角をすべて固定すると$\mathfrak{so}(8)$（28次元）が残り、3つの八元数スロットに3つの顔で作用して互いを決め合います。$52 = 28 + 8 + 8 + 8$は、三対性を内部対称性として取り込んだ形です。[[7shi-lie9]]
@@ -393,3 +381,22 @@ $E_6$は以前の複素ユニタリ化の再演です。トレース形式につ
 ティッツの構成$\mathfrak{M}(A, B) = \operatorname{Der}(A) \oplus \operatorname{Der}(h_3(B)) \oplus (\operatorname{Im}A \otimes h_3(B)_0)$は、この流れを2つの数体系のペアに一般化します。次元表がフロイデンタールの魔方陣で、非対称な構成にもかかわらず表は対称になり、最下行に$\mathfrak{f}_4, \mathfrak{e}_6, \mathfrak{e}_7, \mathfrak{e}_8$が並びます。$\mathfrak{e}_7 = \mathfrak{M}(\mathbb{H}, \mathbb{O})$は$133 = 78 + 27 + 27 + 1$と56次元のフロイデンタール三重系を持ち、$\mathfrak{e}_8 = \mathfrak{M}(\mathbb{O}, \mathbb{O})$は$248 = 120 + 128 = (28 + 28) + 3 \times 64$と、スピノルの接ぎ木や三対性の構図を最大規模で繰り返します。$E_8$では最小の表現が随伴表現自身になります。
 
 数体系の単位球面の道が八元数で終わったあと、その八元数が例外型という5つの峰になって分類表に帰ってきます。複素数から始めた本シリーズの物語は、ここで完結します。
+
+&&& ジョルダン積とジョルダン恒等式
+$$
+A \circ B = \frac{AB + BA}{2}, \qquad (A \circ B) \circ A^2 = A \circ (B \circ A^2)
+$$
+&&&
+
+&&& $F_4$と$E_6$のリー代数
+$$
+\mathfrak{f}_4 = \operatorname{Der}(h_3(\mathbb{O})), \qquad \mathfrak{e}_6 = \mathfrak{f}_4 \oplus \{\,iL_X \mid X \in h_3(\mathbb{O}),\ \operatorname{tr}X = 0\,\}
+$$
+次元はそれぞれ$52$、$78 = 52 + 26$です。
+&&&
+
+&&& ティッツの構成
+$$
+\mathfrak{M}(A, B) = \operatorname{Der}(A) \oplus \operatorname{Der}(h_3(B)) \oplus \bigl(\operatorname{Im}A \otimes h_3(B)_0\bigr)
+$$
+&&&

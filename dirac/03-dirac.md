@@ -252,24 +252,28 @@ $\hat\gamma_5$は右からの$\sigma_3$に対応するので、行列形式の�
 
 ディラック方程式をヘステネス形式で書き、行列形式と対応させました。
 
-&&&
-**ディラック方程式と行列形式の対応**
-- ヘステネス形式
-  $$
-  \hbar D\psi\,\omega\sigma_3 = mc\,\psi\gamma_0
-  $$
-- 行列形式との対応
-  $$
-  \psi = \phi + \eta\sigma_3 \longleftrightarrow \Psi = \begin{pmatrix}|\phi\rangle \\ |\eta\rangle\end{pmatrix}, \quad \hat\gamma_\mu\Psi \leftrightarrow \gamma_\mu\psi\gamma_0, \quad i\Psi \leftrightarrow \psi\,\omega\sigma_3, \quad \hat\gamma_5\Psi \leftrightarrow \psi\sigma_3
-  $$
-- 平面波解
-  $$
-  \psi = \psi_0 e^{-\omega\sigma_3 p\cdot x/\hbar}, \quad p\psi_0 = mc\,\psi_0\gamma_0 \implies p^2 = m^2c^2
-  $$
-&&&
-
 - **方程式**：$\square$の平方根$D$を使い、$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$と書きます。右から掛かる$\omega\sigma_3$と$\gamma_0$は可換で、2乗の符号が$-1$と$+1$なので、2回使うとクライン＝ゴルドン方程式になります。
 - **行列形式との対応**：$\psi=\phi+\eta\sigma_3$（$\phi,\eta$は$\gamma_0$と可換）を$\Psi=(|\phi\rangle,|\eta\rangle)^T$に移すと、$\hat\gamma_\mu\Psi$は$\gamma_\mu\psi\gamma_0$、$i\Psi$は$\psi\,\omega\sigma_3$、$\hat\gamma_5\Psi$は$\psi\sigma_3$に対応し、$i\hbar\hat\gamma^\mu\partial_\mu\Psi=mc\Psi$と同値です。確率密度$\Psi^\dagger\Psi$は未来向きの流れ$J=\psi\gamma_0\tilde\psi$の時間成分です。
 - **共変性**：$\psi'(x)=R\psi(\tilde RxR)$はまた解です。ローレンツ変換は左から、方程式の中の因子は右から掛かるので干渉しません。
 - **平面波**：$\psi=\psi_0e^{-\omega\sigma_3p\cdot x/\hbar}$は$p\psi_0=mc\psi_0\gamma_0$に帰着し、$p^2=m^2c^2$を与えます。静止した解はパウリスピノルで、運動する解はそのブーストです。右から$\sigma_1$を掛けると負のエネルギーの解が得られ、$\beta=\pi$を持ちます。
 - **質量0**：$D\psi=0$は真空のマクスウェル方程式と同じ作用素の核で、右からの射影$(1\pm\sigma_3)/2$でワイルスピノルに分かれます。
+
+&&& ディラック方程式
+$$
+\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0
+$$
+&&&
+
+&&& 行列形式との対応
+$\psi=\phi+\eta\sigma_3$を$\Psi=(|\phi\rangle,|\eta\rangle)^T$に移すと、次のように対応します。
+$$
+\hat\gamma_\mu\Psi\leftrightarrow\gamma_\mu\psi\gamma_0,\qquad i\Psi\leftrightarrow\psi\,\omega\sigma_3,\qquad\hat\gamma_5\Psi\leftrightarrow\psi\sigma_3
+$$
+&&&
+
+&&& 平面波解
+$\psi=\psi_0e^{-\omega\sigma_3p\cdot x/\hbar}$は次の代数方程式に帰着し、$\psi_0$が可逆なら$p^2=m^2c^2$が従います。
+$$
+p\psi_0=mc\,\psi_0\gamma_0
+$$
+&&&

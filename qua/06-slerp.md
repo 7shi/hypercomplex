@@ -404,15 +404,6 @@ $$
 
 # まとめ
 
-&&&fml 球面線形補間 (SLERP)
-$$
-\operatorname{slerp}(q_0, q_1; t) = q_0 (q_0^{-1} q_1)^t = \frac{\sin((1-t)\Omega)}{\sin\Omega} q_0 + \frac{\sin(t\Omega)}{\sin\Omega} q_1 \quad (\cos\Omega = \langle q_0, q_1 \rangle)
-$$
-$$
-\operatorname{sclerp}(\sigma_0, \sigma_1; t) = \sigma_0 (\sigma_0^{-1} \sigma_1)^t
-$$
-&&&
-
 - 2つの単位四元数のなす角$\Omega$は$\cos\Omega = \langle q_0, q_1 \rangle = \mathrm{Re}(q_0^{-1}q_1)$で定まり、相対回転子だけで決まります（左右の乗算で不変）。空間の回転角は$\theta = 2\Omega$で、因子$2$は二重被覆の半角関係に由来します。
 - 対数写像$\log(\cos\varphi + \sin\varphi\, n) = \varphi n$（主枝$\varphi \in [0,\pi]$）と冪$q^t = \exp(t\log q)$により、$S^3$の大円弧は$q_0(q_0^{-1}q_1)^t$とパラメーター表示されます。大円弧は2点を結ぶ最短経路（測地線）です。
 - SLERPは冪形式(1)とsin重み形式(2)の2通りに書け、両者は等価です。補間は等速で、$S^3$上の速さは$\Omega$、空間の回転角は$t\theta$と進みます。
@@ -420,3 +411,17 @@ $$
 - NLERPはSLERPと同じ大円弧をたどりますが、速度配分が等速ではありません（なす角$\frac\pi2$では中央が両端の2倍速）。
 - 補間された姿勢の運動は、空間に固定された軸回りの等角速度回転です（$\omega = 2q'q^{-1} = \theta\, q_0nq_0^{-1}$が一定）。
 - 冪形式は任意次元の回転子に通用し、4次元では2枚の回転面の角が同時に$t$倍されます。sin重み形式が一般に使えるのは、単位ノルムの元がすべて回転子になる四元数の特殊事情によります（4次元では単純回転に退化する場合に限られます）。剛体変換では冪形式がそのままScLERPを与え、回転角と滑りが同一のねじ軸上で同時に補間されます。
+
+&&& SLERP
+冪形式で定め、$0 < \Omega < \pi$のときはsin重み形式とも等しくなります。
+$$
+\operatorname{slerp}(q_0, q_1; t) = q_0 (q_0^{-1} q_1)^t = \frac{\sin((1-t)\Omega)\, q_0 + \sin(t\Omega)\, q_1}{\sin\Omega} \quad (\cos\Omega = \langle q_0, q_1 \rangle)
+$$
+&&&
+
+&&& ScLERP
+単位二重四元数$\sigma_0, \sigma_1$に対して、冪形式がそのまま持ち上がります。
+$$
+\operatorname{sclerp}(\sigma_0, \sigma_1; t) = \sigma_0 (\sigma_0^{-1} \sigma_1)^t
+$$
+&&&

@@ -211,24 +211,28 @@ $$
 
 時空代数の偶部分代数の元としてディラックスピノルを扱いました。
 
-&&&
-**ディラックスピノルの幾何学的構造**
-- 代数と同型
-  $$
-  \operatorname{Cl}_{1,3}^0(\mathbb R) \cong \operatorname{Cl}_{3,0}(\mathbb R) \cong M_2(\mathbb C), \quad \operatorname{Spin}^+(1,3) \cong \operatorname{SL}(2,\mathbb C)
-  $$
-- 分解
-  $$
-  \psi\tilde\psi = \rho e^{\omega\beta}, \quad \psi = \sqrt\rho\,e^{\omega\beta/2}R \quad (R\tilde R = 1)
-  $$
-- 枠と観測量
-  $$
-  \psi\gamma_\mu\tilde\psi = \rho\,e_\mu, \quad e_\mu = R\gamma_\mu\tilde R \quad (\mu = 0,1,2,3)
-  $$
-&&&
-
 - **偶部分代数**：$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$で、ディラックスピノルは双四元数1つにあたります。時空の反転は余因子行列に、$\gamma_0$で挟んだ反転はエルミート共役に対応し、$\psi\tilde\psi$は$\det\hat\psi$です。
 - **二重被覆**：回転子の群$\operatorname{Spin}^+(1,3)$は$\operatorname{SL}(2,\mathbb C)$と同型で、$x\mapsto Rx\tilde R$は$\operatorname{SO}^+(1,3)$への2対1の全射です。行列では$\hat X\mapsto\hat R\hat X\hat R^\dagger$です。$\gamma_0$と可換な回転子に制限すると$\operatorname{SU}(2)\to\operatorname{SO}(3)$に戻ります。
 - **分解**：$\psi\tilde\psi=\rho e^{\omega\beta}$から$\psi=\sqrt\rho\,e^{\omega\beta/2}R$と分解され、ローレンツ変換$\psi\mapsto L\psi$は回転子だけを変えます。
 - **枠**：$\psi\gamma_\mu\tilde\psi=\rho\,e_\mu$で、$e_0$が流れの向き、$e_3$がスピンの向きです。パウリスピノルは$e_0=\gamma_0$の場合にあたり、$\psi\sigma_3\tilde\psi$は$\rho e_3\gamma_0$です。[[7shi-dirac1]]
 - **右からの作用**：右から掛ける回転子は基準の基底を取り替え、$e^{\omega\sigma_3\alpha}$は流れとスピンの向きを変えずに$e_1,e_2$を回します。
+
+&&& 偶部分代数と回転子の群
+$$
+\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C),\qquad\operatorname{Spin}^+(1,3)\cong\operatorname{SL}(2,\mathbb C)
+$$
+&&&
+
+&&& スピノルの分解
+$\psi\tilde\psi\ne0$なら、$\rho>0$と実数$\beta$により次のように書けます。
+$$
+\psi\tilde\psi=\rho e^{\omega\beta},\qquad\psi=\sqrt\rho\,e^{\omega\beta/2}R,\qquad R\tilde R=1
+$$
+&&&
+
+&&& 枠
+分解の回転子$R$により、次が成り立ちます。
+$$
+\psi\gamma_\mu\tilde\psi=\rho\,e_\mu,\qquad e_\mu=R\gamma_\mu\tilde R\qquad(\mu=0,1,2,3)
+$$
+&&&

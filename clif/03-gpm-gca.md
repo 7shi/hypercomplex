@@ -644,34 +644,46 @@ $$
 
 本記事では、パウリ行列とその一般化を通じて、一般化クリフォード代数を導入しました。
 
-&&&
-パウリ行列：トレースが$0$の2×2エルミート行列の実基底
+クリフォード代数のテンソル積による拡張が、一般化クリフォード代数でも同じ形で機能することを確認しました。$n=2$の複素2周期性は、この拡張公式の特殊な場合です。奇数個の生成元では、擬スカラーに代わって冪を交互に反転させた中心元が直和分解を与え、生成元が1個の場合はフルーリーの多重複素数の複素化という可換な特殊例が現れます。
+
+&&& パウリ行列
+トレースが$0$の2×2エルミート行列の実基底です。四元数と次のように対応します。
 $$
 i \leftrightarrow -i\sigma_x, \quad j \leftrightarrow -i\sigma_y, \quad k \leftrightarrow -i\sigma_z
 $$
 $$
 \operatorname{Cl}_{3,0}(\mathbb R) \cong \mathbb C(2) \cong \operatorname{Cl}_2(\mathbb C) \cong \mathbb C \otimes_{\mathbb R} \mathbb H
 $$
-一般化パウリ行列：$\mathbb C(n)$の複素基底$X^aZ^b \ (0 \le a,b < n)$
+&&&
+
+&&& 一般化パウリ行列
+$X^aZ^b \ (0 \le a,b < n)$は$\mathbb C(n)$の複素基底です（$\omega=e^{2\pi i/n}$）。
 $$
-X^n = Z^n = I, \quad ZX = \omega XZ\ (\omega=e^{2\pi i/n})
+X^n = Z^n = I, \quad ZX = \omega XZ
 $$
-一般化クリフォード代数（関係式で定義される商代数、$\dim = n^m$）
+&&&
+
+&&& 一般化クリフォード代数
+関係式で定義される商代数で、次元は$n^m$です。
 $$
 e_i^n = 1, \quad e_je_i = \omega e_ie_j \ (i<j), \quad
 \operatorname{Cl}^{(n)}_2(\mathbb C) \cong \mathbb C(n)
 $$
-テンソル積（複素数上）による拡張
+&&&
+
+&&& テンソル積による拡張
+複素数上のテンソル積により、次のように拡張されます。
 $$
 \operatorname{Cl}^{(n)}_{m+2}(\mathbb C)
 \cong \operatorname{Cl}^{(n)}_m(\mathbb C) \otimes_{\mathbb C} \mathbb C(n), \quad
 \operatorname{Cl}^{(n)}_{2k}(\mathbb C) \cong \mathbb C(n^k)
 $$
-奇数個の生成元：中心元による直和分解
+&&&
+
+&&& 奇数個の生成元
+次の中心元により直和に分解されます。
 $$
 \zeta = e_1e_2^{n-1}e_3e_4^{n-1}\cdots e_m, \quad
 \operatorname{Cl}^{(n)}_{2k+1}(\mathbb C) \cong n\,\mathbb C(n^k)
 $$
 &&&
-
-クリフォード代数のテンソル積による拡張が、一般化クリフォード代数でも同じ形で機能することを確認しました。$n=2$の複素2周期性は、この拡張公式の特殊な場合です。奇数個の生成元では、擬スカラーに代わって冪を交互に反転させた中心元が直和分解を与え、生成元が1個の場合はフルーリーの多重複素数の複素化という可換な特殊例が現れます。
