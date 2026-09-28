@@ -227,24 +227,19 @@ $$
 
 # まとめ
 
-本記事では、実数パラメーター$\varepsilon$を用いた変分の定式化により、オイラー＝ラグランジュ方程式を厳密に導出しました。
+本記事では、経路の変分を実数パラメーター$\varepsilon$と任意関数$\eta(t)$の積として$q(t)+\varepsilon\eta(t)$と表し、作用積分を$\varepsilon$の関数として扱うことで、オイラー＝ラグランジュ方程式を導出しました。変化後の速度は変化後の経路の時間微分として自動的に決まるため、位置と速度の関係は保たれたままです。極値条件は$\varepsilon=0$における通常の微分係数が$0$になる条件となり、部分積分と$\eta$の任意性からオイラー＝ラグランジュ方程式が得られます。$L=T-V$の場合、この方程式はニュートンの運動方程式$F=ma$と等価です。
 
-&&& 作用積分の変分と極値条件
-経路の変分を$q(t)+\varepsilon\eta(t)$とし、作用積分を実数$\varepsilon$の関数として捉えることで、極値条件は$\varepsilon=0$における微分係数のゼロ条件に帰着されます。
+物理学でよく用いられる$\delta$による変分の計算とは形式的に対応しますが、$\eta$には微小であるという制約は課されません。変分の微小性は実数$\varepsilon$が$0$に近づく極限として扱われ、近似ではなく通常の微分として計算できます。
+
+&&& 作用積分の変分
 $$
-\left.\frac{d}{d \varepsilon} S[q+\varepsilon\eta]\right|_{\varepsilon=0}
-= \int_{t_1}^{t_2} \left[ \eta(t) \frac{\partial L}{\partial q} + \dot{\eta}(t) \frac{\partial L}{\partial \dot{q}} \right]\,dt = 0
+\left.\frac{d}{d\varepsilon}S[q + \varepsilon\eta]\right|_{\varepsilon=0}
+= \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial {q}} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right] \eta \, dt = 0
 $$
 &&&
 
 &&& オイラー＝ラグランジュ方程式
-第2項に部分積分を適用し、境界条件$\eta(t_1)=\eta(t_2)=0$および$\eta(t)$の任意性を用いることで、オイラー＝ラグランジュ方程式が導かれます。
 $$
 \frac{\partial L}{\partial q} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} = 0
 $$
-$L = T - V$（運動エネルギー引く位置エネルギー）と置くことで、ニュートンの運動方程式$F=ma$と一致します。
-&&&
-
-&&& ε法とδ変分法の対応
-$\varepsilon$パラメーター法では、微小量を実数$\varepsilon\to 0$の通常の極限操作として扱い、物理で慣用される$\delta$記法の近似的な微小変位を数学的に厳密に正当化します。
 &&&

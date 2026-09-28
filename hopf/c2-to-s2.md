@@ -237,37 +237,26 @@ $z_0, z_1$の順序や符号は文献により多少異なりますが、本質�
 
 # まとめ
 
-本記事では、正規化された複素数のペア$(z_0, z_1)$から全体の位相自由度$e^{i\omega}$を消去する同値関係を導入し、位相不変量から2次元球面上の点へのホップ写像を初等的に導出しました。
+正規化された複素数のペア$(z_0,z_1)$は3次元球面$S^3$上の点であり、全体にかかる位相$e^{i\omega}$を無視するという同値関係により、実質的な自由度は2次元球面$S^2$分に落ちます。この位相不変性から$z_0^*z_1$の実部・虚部と$|z_0|^2-|z_1|^2$という3つの実量が導かれ、単位球面に載るよう係数を定めることでホップ写像の式が得られました。
 
-&&& 位相不変量とホップ写像
-位相不変な実数として$z_0^*z_1$の実部・虚部と$|z_0|^2-|z_1|^2$を取り出し、単位球面$x^2+y^2+z^2=1$に載るよう係数を決定することで、次の写像が得られます。
 $$
+\begin{aligned}
+\begin{pmatrix}z_0 \\ z_1\end{pmatrix}
+&=\begin{pmatrix}e^{i\alpha} \cos\theta \\ e^{i\beta} \sin\theta\end{pmatrix}
+  \sim \begin{pmatrix}\cos\theta \\ e^{i\phi} \sin\theta\end{pmatrix}
+\\
 \begin{pmatrix}x \\ y \\ z\end{pmatrix}
-= \begin{pmatrix}
-    2\,\text{Re}(z_0^* z_1) \\
-    2\,\text{Im}(z_0^* z_1) \\
+&=\begin{pmatrix}
+    2\text{Re}(z_0^* z_1) \\
+    2\text{Im}(z_0^* z_1) \\
     |z_0|^2 - |z_1|^2
   \end{pmatrix}
-= \begin{pmatrix}
-    z_0^* z_1 + z_1^* z_0 \\
-    -i(z_0^* z_1 - z_1^* z_0) \\
-    z_0^* z_0 - z_1^* z_1
-  \end{pmatrix}
-$$
-&&&
-
-&&& 代表元による球面座標
-第1成分を非負実数とする代表元を選び、複素数の極形式を代入すると、通常の球面極座標が得られます。
-$$
-\begin{pmatrix}z_0 \\ z_1\end{pmatrix}
-\sim \begin{pmatrix}\cos\theta \\ e^{i\phi} \sin\theta\end{pmatrix}
-\quad\mapsto\quad
-\begin{pmatrix}x \\ y \\ z\end{pmatrix}
-= \begin{pmatrix}
+=\begin{pmatrix}
     \cos\phi \sin 2\theta \\
     \sin\phi \sin 2\theta \\
     \cos 2\theta
   \end{pmatrix}
+\end{aligned}
 $$
-$\theta \in [0, \pi/2]$によって北極から南極まで球面全体が途切れなく覆われます。
-&&&
+
+代表元による具体的な計算では、この写像が北極から南極まで球面全体を途切れなく覆うことを確認しました。$z_0^*z_1$という共役線形な組み合わせ1つが、位相の自由度を消しつつ球面上の点を過不足なく指し示しているという点に、この構成の本質があります。
