@@ -214,7 +214,7 @@ $$
 \partial_t\frac{S_k}{c^2}-\sum_l\partial_l\tau_{kl}=-\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_k
 $$
 
-となります。場の運動量密度$\boldsymbol S/c^2$の時間変化率と運動量流束$-\tau_{ij}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、ローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、以前見たローレンツ力の密度です。磁場の面が速度を面内で曲げた反対称積$\frac12\bigl((i\boldsymbol B)\boldsymbol v-\boldsymbol v(i\boldsymbol B)\bigr)$が、ここでは電流密度に働く磁気力$\boldsymbol J\times\boldsymbol B=\frac12\bigl((i\boldsymbol B)\boldsymbol J-\boldsymbol J(i\boldsymbol B)\bigr)$として$F\cdot J$に含まれています。
+となります。場の運動量密度$\boldsymbol S/c^2$の時間変化率と運動量流束$-\tau_{kl}$の発散の和が、電荷と電流が受ける力の密度の符号を変えたものに等しいことを表します。運動量の保存は、エネルギーの保存と同じ1本の式の別の成分として得られます。右辺の$\frac1cF\cdot J$は、ローレンツ力$\frac qcF\cdot U$で、点電荷$qU$を電流密度$J$に置き換えたものです。空間成分の$\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B$は、以前見たローレンツ力の密度です。磁場の面が速度を面内で曲げた反対称積$\frac12\bigl((i\boldsymbol B)\boldsymbol v-\boldsymbol v(i\boldsymbol B)\bigr)$が、ここでは電流密度に働く磁気力$\boldsymbol J\times\boldsymbol B=\frac12\bigl((i\boldsymbol B)\boldsymbol J-\boldsymbol J(i\boldsymbol B)\bigr)$として$F\cdot J$に含まれています。
 
 電荷が場から受け取る運動量は右辺に現れ、領域内の場の運動量は境界を通る運動量の流れによっても変わります。外部との受け渡しがない系では、物質と場を合わせた全運動量が保存され、電磁場は物体と同じく運動量を持って運ぶ存在です。
 
