@@ -381,8 +381,8 @@ files = [
   "hopf/05-entanglement.md",
   "hopf/c2-to-s2.md",
   "hopf/homogeneous.md",
+  "hopf/spherical-coords.md",
   "lie/03-spin.md",
-  "misc/spherical-coords.md",
   "qua/01-pauli-qua.md",
 ]
 
@@ -801,7 +801,7 @@ files = [
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
   "hopf/07-real-qubit.md",
-  "misc/spherical-coords.md",
+  "hopf/spherical-coords.md",
 ]
 
 ["7shi-sedenion"]
@@ -1408,7 +1408,7 @@ url = "https://ja.wikipedia.org/wiki/%E8%B6%85%E7%90%83%E9%9D%A2"
 accessed = 2024-05-20
 site = "Wikipedia"
 files = [
-  "misc/spherical-coords.md",
+  "hopf/spherical-coords.md",
 ]
 
 ["wiki-o"]
@@ -1458,7 +1458,7 @@ url = "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AC%A1%E5%85%83%E7%90%83%E9%9D%
 accessed = 2024-05-21
 site = "Wikipedia"
 files = [
-  "misc/spherical-coords.md",
+  "hopf/spherical-coords.md",
 ]
 
 ["wiki-schrodinger"]

@@ -13,6 +13,7 @@ hopf/05-entanglement.md	7shi-entangle
 hopf/06-clifford-gates.md	7shi-qgate
 hopf/c2-to-s2.md	7shi-c2s2
 hopf/homogeneous.md	7shi-homog
+hopf/spherical-coords.md	7shi-coord
 lebesgue/01-measure-integral.md	7shi-leb1
 lebesgue/02-l2-hilbert.md	7shi-leb2
 lebesgue/03-probability.md	7shi-leb3
@@ -38,7 +39,6 @@ misc/energy-quantize-zeta.md	7shi-zeta
 misc/epsilon-euler-lagrange.md	7shi-eleq
 misc/exp-maclaurin-integral.md	7shi-macl
 misc/integration-by-parts.md	7shi-ibp
-misc/spherical-coords.md	7shi-coord
 misc/variable-dependence.md	7shi-diff
 oct/01-octonion.md	7shi-oct1
 oct/02-7d-3rot.md	7shi-7rot

@@ -32,6 +32,7 @@ hopf/06-clifford-gates.md	量子ゲートを回転子として読み直す
 hopf/07-real-qubit.md	実振幅の量子ビットと実数ホップファイブレーション
 hopf/c2-to-s2.md	複素2次元ベクトルから2次元球面への射影
 hopf/homogeneous.md	同次座標とホップファイブレーション
+hopf/spherical-coords.md	一般次元における球座標系のバリエーション
 lebesgue/01-measure-integral.md	測度とルベーグ積分
 lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 lebesgue/03-probability.md	測度論的確率論
@@ -57,7 +58,6 @@ misc/energy-quantize-zeta.md	エネルギーの量子化とゼータ関数
 misc/epsilon-euler-lagrange.md	εパラメーターを用いたオイラー＝ラグランジュ方程式
 misc/exp-maclaurin-integral.md	指数関数を定積分でマクローリン展開
 misc/integration-by-parts.md	部分積分における関数の微分の利用
-misc/spherical-coords.md	一般次元における球座標系のバリエーション
 misc/variable-dependence.md	変数の依存関係と微分
 oct/01-octonion.md	八元数の基本事項
 oct/02-7d-3rot.md	単位八元数による7次元三重回転

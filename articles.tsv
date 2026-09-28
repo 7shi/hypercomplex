@@ -30,7 +30,7 @@ date	url	md	title
 2024/07/11	/articles/lZ1X3t6exNS3NrNArqji	qua/01-pauli-qua.md	パウリ行列と四元数：双四元数による橋渡し
 2024/06/26	/articles/cWj1bUNwa7E3kgMhvJb0	oct/02-7d-3rot.md	単位八元数による7次元三重回転
 2024/05/24	/articles/co6jC5vshPXR0EgmAjX3	hopf/02-spinor-tensor.md	四元数とホップファイブレーション 2 スピノルのテンソル積
-2024/05/21	/articles/2HkSkfawcYJYgE6rVgu6	misc/spherical-coords.md	一般次元における球座標系のバリエーション
+2024/05/21	/articles/2HkSkfawcYJYgE6rVgu6	hopf/spherical-coords.md	一般次元における球座標系のバリエーション
 2024/05/14	/articles/enXfjr4Xvas6pfXLQddc	hopf/01-quaternion.md	四元数とホップファイブレーション 1 四元数からの生成
 		clif-analysis/01-dirac-monogenic.md	ディラック作用素とモノジェニック関数
 		clif-analysis/02-fundamental-theorem.md	有向積分と幾何微積分の基本定理
