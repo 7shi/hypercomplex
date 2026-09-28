@@ -2,7 +2,7 @@
 
 # 概要
 
-実クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$は、四元数$\mathbb H$や分解型四元数$\mathbb H'$のテンソル積として表現できることが知られています。本記事では、テンソル積の基礎概念[[7shi-tp]]を踏まえ、$\mathbb H$および$\mathbb H'$の基底から反交換関係を満たす生成元を体系的に選択し、$\mathbb H \otimes \mathbb H$や$\mathbb H \otimes \mathbb H'$がそれぞれどのクリフォード代数と同型になるかを具体的に導出します。さらに、一般の$\operatorname{Cl}_{p,q}(\mathbb R)$に対して$\otimes \mathbb H$や$\otimes \mathbb H'$を作用させた際の符号数（計量）の変化公式を導き、テンソル積による拡張構造を整理します。
+実クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$は、四元数$\mathbb H$や分解型四元数$\mathbb H'$のテンソル積として表現できることが知られています。本記事では、テンソル積の基礎概念を踏まえ、$\mathbb H$および$\mathbb H'$の基底から反交換関係を満たす生成元を体系的に選択し、$\mathbb H \otimes \mathbb H$や$\mathbb H \otimes \mathbb H'$がそれぞれどのクリフォード代数と同型になるかを具体的に導出します。さらに、一般の$\operatorname{Cl}_{p,q}(\mathbb R)$に対して$\otimes \mathbb H$や$\otimes \mathbb H'$を作用させた際の符号数（計量）の変化公式を導き、テンソル積による拡張構造を整理します。[[7shi-tp]]
 
 # 四元数のテンソル積
 

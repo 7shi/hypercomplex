@@ -560,6 +560,12 @@ $$
 
 # まとめ
 
+&&&fml
+\operatorname{Spin}(3) \cong \operatorname{Sp}(1) \cong \operatorname{SU}(2) \\
+\omega\omega^\dagger = \frac{1}{2}(I + n_1\sigma_1 + n_2\sigma_2 + n_3\sigma_3) \\
+\operatorname{Cl}_{3,0}^0(\mathbb{R}) \cong \mathbb{H}, \quad \sigma_2\sigma_3 \leftrightarrow i, \ \sigma_3\sigma_1 \leftrightarrow j, \ \sigma_1\sigma_2 \leftrightarrow k
+&&&
+
 $\operatorname{SO}(n)$の連結な二重被覆となるリー群を$\operatorname{Spin}(n)$と呼びます。前回構成した$\operatorname{Sp}(1) \cong \operatorname{SU}(2)$の幾何学的な実体は$\operatorname{Spin}(3)$でした。
 
 $\operatorname{SU}(2)$の行列が片側から作用する複素ベクトル$\mathbb{C}^2$の元を**スピノル**と呼びます。スピノルは回転の半分の角度で変換され、回転1周で$-1$倍、2周ではじめて元に戻ります。単位スピノルの自身との外積$\omega\omega^\dagger$は、片側作用しか受けていないのに共役作用（両側から挟む形）で変換され、その分解からトレース$0$のエルミート行列の基底として**パウリ行列**が取り出されます。外積の係数$(n_1, n_2, n_3)$は3次元の単位ベクトルをなし、スピノルへの片側作用は、このベクトルの回転として現れます。

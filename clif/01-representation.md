@@ -290,13 +290,13 @@ $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{
 つまり、表を対角線（右下）方向に1つ進むごとに行列の次数が2倍になり、型（$\mathbb{R},\mathbb{C},\mathbb{H}$の種別と直和の有無）は変わりません。系列によって得られた第1行と第1列を起点として、対角線方向に空白部分を埋めることができます。
 
 &&&ex 空白部分の充填
-1. $p=1, q=1$ の場合：
+1. $p=1, q=1$ の場合
    $\operatorname{Cl}_{1,1}(\mathbb{R}) \cong \operatorname{Cl}_{0,0}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{R} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{R})$
 
-2. $p=1, q=2$ の場合：
+2. $p=1, q=2$ の場合
    $\operatorname{Cl}_{1,2}(\mathbb{R}) \cong \operatorname{Cl}_{0,1}(\mathbb{R}) \otimes \mathbb{H}' \cong \mathbb{C} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{C})$
 
-3. $p=2, q=1$ の場合：
+3. $p=2, q=1$ の場合
    $\operatorname{Cl}_{2,1}(\mathbb{R}) \cong \operatorname{Cl}_{1,0}(\mathbb{R}) \otimes \mathbb{H}' \cong 2\mathbb{R} \otimes M_2(\mathbb{R}) \cong 2M_2(\mathbb{R})$
 &&&
 
