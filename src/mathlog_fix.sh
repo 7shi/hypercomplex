@@ -1,13 +1,19 @@
 #!/bin/bash
 set -eu
 
-no_refs=false
-for arg in "$@"; do
-    case "$arg" in
-        --no-refs) no_refs=true ;;
-        *) echo "usage: $0 [--no-refs]" >&2; exit 1 ;;
-    esac
-done
+usage() {
+    echo "usage: $0 --refs|--no-refs" >&2
+    echo "  --refs     修正後に参考文献をクリップボードから取り込む" >&2
+    echo "  --no-refs  参考文献の取り込みを省く（本文のみの修正）" >&2
+    exit 1
+}
+
+[ $# -eq 1 ] || usage
+case "$1" in
+    --refs) no_refs=false ;;
+    --no-refs) no_refs=true ;;
+    *) usage ;;
+esac
 
 mapfile -t lines < mathlog_fix.md
 
@@ -29,10 +35,11 @@ flush() {
         code "$file"
         winclip "$url"
         printf '%s\n' "${content[@]}"
-        read -p "修正が完了したら[Enter]を押してください。"
         if $no_refs; then
+            read -p "修正が完了したら[Enter]を押してください。"
             return
         fi
+        read -p "修正が完了したら、参考文献をコピーして[Enter]を押してください。"
         ref="refs/$(basename "$url").html"
         winclip -o "$ref"
         uv run reftools format "$ref" --in-place
