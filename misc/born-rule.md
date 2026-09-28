@@ -1,6 +1,8 @@
-2準位系の状態ベクトル$\Psi=(α,β)^T$から密度行列$ρ=\Psi\Psi^\dagger$とブロッホベクトル$\boldsymbol r$を導き、方向$\boldsymbol n$への測定の期待値がトレース$\mathrm{tr}(ρ(\boldsymbol n\cdot\boldsymbol σ))=\boldsymbol r\cdot\boldsymbol n$で与えられること、そこから確率$p_\pm=\dfrac{1\pm\boldsymbol r\cdot\boldsymbol n}2$が求まることは既に示されています[[7shi-bloch]]。ここでは、同じ確率を状態ベクトル$\Psi$の内積から直接求める方法（ボルンの規則）を示します。
+2準位系の量子状態におけるボルンの規則と、密度行列による期待値表示との同値性を解説します。
 
-シリーズ: [ホップファイブレーション](https://mathlog.info/series/sKmD4S7IQSBnq4CvOVlU)
+# 概要
+
+2準位系の状態ベクトル$\Psi=(α,β)^T$から密度行列$ρ=\Psi\Psi^\dagger$とブロッホベクトル$\boldsymbol r$を導き、方向$\boldsymbol n$への測定の期待値がトレース$\mathrm{tr}(ρ(\boldsymbol n\cdot\boldsymbol σ))=\boldsymbol r\cdot\boldsymbol n$で与えられること、そこから確率$p_\pm=\dfrac{1\pm\boldsymbol r\cdot\boldsymbol n}2$が求まることは既に示されています。ここでは、同じ確率を状態ベクトル$\Psi$の内積から直接求める方法（ボルンの規則）を示します。[[7shi-bloch]]
 
 # 状態ベクトルの成分と確率
 
@@ -48,7 +50,7 @@ p_-=|\Psi_\downarrow^\dagger\Psi|^2
 $$
 
 &&&rem 半角公式との対応
-極角$θ$を使って$z=\cosθ$とおき、半角の公式から$p_+=\cos^2\dfracθ2$を導く方法が既に示されています[[7shi-bloch]]。そこでの$θ$はブロッホベクトル$\boldsymbol r$と測定方向$\boldsymbol n$のなす角であり、$\boldsymbol n$を$z$軸に選べば$\boldsymbol r$の極角（$0\leθ\leπ$）と一致します。
+極角$θ$を使って$z=\cosθ$とおき、半角の公式から$p_+=\cos^2\dfracθ2$を導く方法が既に示されています。そこでの$θ$はブロッホベクトル$\boldsymbol r$と測定方向$\boldsymbol n$のなす角であり、$\boldsymbol n$を$z$軸に選べば$\boldsymbol r$の極角（$0\leθ\leπ$）と一致します。[[7shi-bloch]]
 
 このとき
 $$
@@ -67,7 +69,7 @@ $$
 |(e^{iχ}\Psi_\pm)^\dagger(e^{iφ}\Psi)|^2=|\Psi_\pm^\dagger\Psi|^2
 $$
 
-この$\Psi_\pm$を基底状態として、状態$\Psi$から測定結果$i$を得る確率は$z$軸の場合と同じ形の式で与えられます。これを**ボルンの規則**と呼びます。なお$\Psi_\pm$は測定方向$\boldsymbol n$で決まる基底であり、状態$ρ$の固有分解に現れる固有ベクトル[[7shi-bloch]]とは一般に異なります。
+この$\Psi_\pm$を基底状態として、状態$\Psi$から測定結果$i$を得る確率は$z$軸の場合と同じ形の式で与えられます。これを**ボルンの規則**と呼びます。なお$\Psi_\pm$は測定方向$\boldsymbol n$で決まる基底であり、状態$ρ$の固有分解に現れる固有ベクトルとは一般に異なります。[[7shi-bloch]]
 
 &&&fml ボルンの規則
 規格化された2準位系の純粋状態$\Psi$と、測定方向$\boldsymbol n$に対応する正規直交基底$\Psi_+,\Psi_-$を考えます。この基底は$\boldsymbol n\cdot\boldsymbolσ$の固有値$+1,-1$に対応する固有ベクトルからなります。結果$i$が得られる確率$p_i$は、対応する基底状態$\Psi_i$との内積の絶対値の2乗として得られます。
@@ -125,5 +127,11 @@ $z$軸方向の測定確率には、成分の絶対値$|α|,|β|$だけが現れ
 $α=|α|e^{ia},\ β=|β|e^{ib}$と書けば$α^*β=|α||β|e^{i(b-a)}$です。このように、成分の絶対値に加えて相対位相$b-a$を保持することで、$z$軸以外の方向の測定確率も求められます。全体位相を掛けても$b-a$は変わらないため、どの方向の測定確率も変わりません。
 
 # まとめ
+
+&&&fml ボルンの規則
+$$
+p_i = |\Psi_i^\dagger\Psi|^2 = \mathrm{tr}(\rho P_i) = \frac{1 \pm \boldsymbol r\cdot\boldsymbol n}{2}
+$$
+&&&
 
 測定の確率は、密度行列側では期待値$\boldsymbol r\cdot\boldsymbol n$からスケール調整によって、状態ベクトル側では基底状態との内積の絶対値の2乗（ボルンの規則）として求まります。両者は同じ確率を異なる経路で与えます。状態ベクトルでは、成分の絶対値と相対位相が測定確率を決め、全体位相は確率に影響しません。

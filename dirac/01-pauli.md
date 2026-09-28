@@ -1,3 +1,7 @@
+パウリスピノルを実クリフォード代数$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数の元（四元数）として再定式化し、パウリ方程式とスピンの歳差運動を幾何学的に解説します。
+
+# 概要
+
 量子力学の標準的な定式化では、電子のスピンは複素数を2つ並べた列ベクトル$\Psi\in\mathbb C^2$で表され、パウリ行列がそれに作用します。本記事では、この列ベクトルを$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数の元$\psi$に置き換えます。偶部分代数は四元数と同型なので、パウリスピノルは四元数そのものです。対応の要点は虚数単位$i$の読み替えにあり、$i$倍は$\psi$に右から2ベクトル$\omega\sigma_3=\sigma_1\sigma_2$を掛ける操作になります。この表示では、確率密度が$\psi\tilde\psi$、スピンの向きが$\psi\sigma_3\tilde\psi$として読み取れ、大域位相はスピン軸まわりの回転として見えます。最後に、パウリ方程式をこの表示に翻訳し、一様な磁場の中のスピンの歳差を回転子の時間発展として解きます。
 
 このような表示は、スピノルを列ベクトルでなく代数の元として扱う定式化で、ヘステネス（D. Hestenes）によって整備されました。本シリーズでは、これを**ヘステネス形式**と呼びます。
@@ -6,15 +10,17 @@
 
 ## 記号
 
-[[7shi-em1]]から[[7shi-em3]]と同じく3次元の実クリフォード代数$\operatorname{Cl}_{3,0}(\mathbb R)$を使いますが、本シリーズでは生成元を$\sigma_1,\sigma_2,\sigma_3$と書きます（$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$）。擬スカラーは
+電磁気学のこれまでの記事と同じく3次元の実クリフォード代数$\operatorname{Cl}_{3,0}(\mathbb R)$を使いますが、本シリーズでは生成元を$\sigma_1,\sigma_2,\sigma_3$と書きます（$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$）。擬スカラーは
 
 $$
 \omega=\sigma_1\sigma_2\sigma_3
 $$
 
-と書き、$\omega^2=-1$で、$\omega$はすべての元と可換です。emシリーズでは擬スカラーを$i$、複素数の虚数単位を$j$と書きましたが、本シリーズでは量子力学の慣用に合わせて、複素数の虚数単位を$i$、擬スカラーを$\omega$と書きます。emシリーズの式を引くときは$F=\boldsymbol E+\omega c\boldsymbol B$のように書き換えます。
+と書き、$\omega^2=-1$で、$\omega$はすべての元と可換です。emシリーズでは擬スカラーを$i$、複素数の虚数単位を$j$と書きましたが、本シリーズでは量子力学の慣用に合わせて、複素数の虚数単位を$i$、擬スカラーを$\omega$と書きます。emシリーズの式を引くときは$F=\boldsymbol E+\omega c\boldsymbol B$のように書き換えます。[[7shi-em1]][[7shi-em3]]
 
-ベクトル$\boldsymbol a=\sum_ka_k\sigma_k$と2ベクトルの対応は、[[7shi-em1]]と同じく$\omega\boldsymbol a$です。たとえば
+ベクトル$\boldsymbol a=\sum_ka_k\sigma_k$と2ベクトルの対応は、以前の記事と同じく$\omega\boldsymbol a$です。[[7shi-em1]]
+
+たとえば
 
 $$
 \omega\sigma_1=\sigma_2\sigma_3,\qquad\omega\sigma_2=\sigma_3\sigma_1,\qquad\omega\sigma_3=\sigma_1\sigma_2
@@ -30,22 +36,24 @@ $$
 \hat\sigma_3=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 $$
 
-です。$\sigma_k\mapsto\hat\sigma_k$は$\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$を与え（[[7shi-bq]]・[[7shi-lie3]]）、擬スカラーは$\hat\omega=\hat\sigma_1\hat\sigma_2\hat\sigma_3=iI$に移ります。反転はエルミート共役に移ります（$\hat\sigma_k$はエルミートで、積の順序が逆になるため）。
+です。$\sigma_k\mapsto\hat\sigma_k$は$\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$を与え、擬スカラーは$\hat\omega=\hat\sigma_1\hat\sigma_2\hat\sigma_3=iI$に移ります。反転はエルミート共役に移ります（$\hat\sigma_k$はエルミートで、積の順序が逆になるため）。[[7shi-bq]][[7shi-lie3]]
 
 ## スピン
 
 電子は、空間の中の位置のほかに、向きを持つ内部の自由度を持っています。銀原子のビームを不均一な磁場に通すと、ビームが2本に分かれます（シュテルン＝ゲルラッハの実験）。磁場から受ける力が原子の持つ小さな磁石の向きで決まり、その向きがどの軸で測っても2通りの値しか取らないためです。この内部の自由度を**スピン**と呼びます。スピンを持つ粒子の状態は、各点で2つの複素数の組$\Psi=(\Psi_1,\Psi_2)^T$で表され、$\Psi$を**パウリスピノル**と呼びます。
 
-本シリーズでは、シュレーディンガー方程式$i\hbar\,\partial_t\Psi=\hat H\Psi$と、$\Psi^\dagger\Psi$を確率密度とする解釈（[[7shi-clif5]]・[[7shi-born]]）を前提とします。スピンについて使うのは次の事実だけです。
+本シリーズでは、シュレーディンガー方程式$i\hbar\,\partial_t\Psi=\hat H\Psi$と、$\Psi^\dagger\Psi$を確率密度とする解釈を前提とします。[[7shi-clif5]][[7shi-born]]
+
+スピンについて使うのは次の事実だけです。
 
 - $\hat\sigma_k$は、$x_k$軸方向のスピンを測る観測量（の$2/\hbar$倍）です。
-- 空間の回転は、[[7shi-lie3]]の$\operatorname{SU}(2)$の行列を左から掛けることで$\Psi$に作用します。
+- 空間の回転は、$\operatorname{SU}(2)$の行列を左から掛けることで$\Psi$に作用します。[[7shi-lie3]]
 
 # 偶部分代数による表示
 
 ## 対応の定義
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)$は$1,\omega\sigma_1,\omega\sigma_2,\omega\sigma_3$が張る4次元の空間で、四元数と同型です。[[7shi-bq]]の対応$\mathbf i\cong-i\hat\sigma_1$、$\mathbf j\cong-i\hat\sigma_2$、$\mathbf k\cong-i\hat\sigma_3$は、本シリーズの記号では
+$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)$は$1,\omega\sigma_1,\omega\sigma_2,\omega\sigma_3$が張る4次元の空間で、四元数と同型です。双四元数の記事における対応$\mathbf i\cong-i\hat\sigma_1$、$\mathbf j\cong-i\hat\sigma_2$、$\mathbf k\cong-i\hat\sigma_3$は、本シリーズの記号では次のように表されます。[[7shi-bq]]
 
 $$
 \mathbf i=-\omega\sigma_1,\qquad\mathbf j=-\omega\sigma_2,\qquad\mathbf k=-\omega\sigma_3
@@ -100,7 +108,7 @@ $$
 
 ## 左イデアルとの関係
 
-[[7shi-lie3]]と[[7shi-ideal]]では、射影$P=(1+\sigma_3)/2$を右から掛けて、行列の第1列だけを残した左イデアル$\operatorname{Cl}_{3,0}(\mathbb R)P$の元としてスピノルを取りました。偶部分代数による表示は、この表示の言い直しです。
+以前の記事では、射影$P=(1+\sigma_3)/2$を右から掛けて、行列の第1列だけを残した左イデアル$\operatorname{Cl}_{3,0}(\mathbb R)P$の元としてスピノルを取りました。偶部分代数による表示は、この表示の言い直しです。[[7shi-lie3]][[7shi-ideal]]
 
 &&&prop 偶部分と左イデアル
 $\psi\mapsto\psi P$は$\operatorname{Cl}_{3,0}^0(\mathbb R)$から$\operatorname{Cl}_{3,0}(\mathbb R)P$への実線形な全単射で、$\widehat{\psi P}=\begin{pmatrix}\Psi&\boldsymbol 0\end{pmatrix}$です。さらに
@@ -116,7 +124,7 @@ $$
 $\hat P=\operatorname{diag}(1,0)$なので、$\hat\psi\hat P$は$\hat\psi$の第1列$\Psi$だけを残した行列である。偶部分代数の元は第1列で決まるから単射であり、左イデアルの元は第1列$\mathbb C^2$で決まる実4次元の空間なので全単射である。$\sigma_3P=P$と、$\omega$が中心の元であることから、$\psi\,\omega\sigma_3P=\psi\,\omega P=\omega\,\psi P$となる。
 &&&
 
-左イデアルの上では、右からの$\omega\sigma_3$が中心の元$\omega$の作用になり、$\hat\omega=iI$として行列の虚数単位に一致します。[[7shi-cla1]]の命題「偶部分と極小左イデアルの対応」は、$\operatorname{Cl}_{2,0}(\mathbb R)$で同じことを$P=(1+e_1)/2$について示したものです。ただし、そちらでは偶部分の元を$F$、左イデアルの元を$\psi=FP$と書いており、本シリーズとは文字の役割が逆です。本シリーズでは、偶部分代数の元を$\psi$、列ベクトルを$\Psi$と書きます。
+左イデアルの上では、右からの$\omega\sigma_3$が中心の元$\omega$の作用になり、$\hat\omega=iI$として行列の虚数単位に一致します。以前の記事の命題「偶部分と極小左イデアルの対応」は、$\operatorname{Cl}_{2,0}(\mathbb R)$で同じことを$P=(1+e_1)/2$について示したものです。ただし、そちらでは偶部分の元を$F$、左イデアルの元を$\psi=FP$と書いており、本シリーズとは文字の役割が逆です。本シリーズでは、偶部分代数の元を$\psi$、列ベクトルを$\Psi$と書きます。[[7shi-cla1]]
 
 ## 右から掛かる虚数単位
 
@@ -130,7 +138,7 @@ $$
 
 と対応します。ただし$\omega\sigma_3$は$\sigma_1$や$\sigma_2$とは反可換で、偶部分代数の中心の元ではありません。それでも複素数のスカラー倍として振る舞えるのは、右から掛かるからです。回転や$\sigma_k$による作用はすべて左から掛かり、右からの掛け算と可換です。量子力学の線形作用素がすべて左から働く限り、右からの$\omega\sigma_3$はそれらと区別なく「スカラー」として扱えます。
 
-[[7shi-em3]]では、複素指数関数の虚数単位の役割を擬スカラー$\omega$が担いました。$\omega$はすべての元と可換なので、どちらから掛けても同じです。ここで$i$の役割を担う$\omega\sigma_3$は、特定の平面$\sigma_1\sigma_2$を表す2ベクトルであり、掛ける側が意味を持ちます。量子力学の虚数単位は、スピノルの側では、1つの平面を選んだ2ベクトルとして現れます。どの平面を選ぶかは$\hat\sigma_3$を対角にする表現の選択に対応していて、[対応](#def-map)の成分の並べ方もこの選択に由来します。
+電磁気学の記事では、複素指数関数の虚数単位の役割を擬スカラー$\omega$が担いました。$\omega$はすべての元と可換なので、どちらから掛けても同じです。ここで$i$の役割を担う$\omega\sigma_3$は、特定の平面$\sigma_1\sigma_2$を表す2ベクトルであり、掛ける側が意味を持ちます。量子力学の虚数単位は、スピノルの側では、1つの平面を選んだ2ベクトルとして現れます。どの平面を選ぶかは$\hat\sigma_3$を対角にする表現の選択に対応していて、[対応](#def-map)の成分の並べ方もこの選択に由来します。[[7shi-em3]]
 
 # 観測量
 
@@ -144,7 +152,7 @@ $$
 $$
 &&&
 
-四元数のノルムの2乗が、$\Psi$の確率密度です。$\rho\ne0$なら$R=\psi/\sqrt\rho$は$R\tilde R=1$を満たす偶部分代数の元、すなわち回転子（[[7shi-em5]]）です。
+四元数のノルムの2乗が、$\Psi$の確率密度です。$\rho\ne0$なら$R=\psi/\sqrt\rho$は$R\tilde R=1$を満たす偶部分代数の元、すなわち回転子です。[[7shi-em5]]
 
 $$
 \psi=\sqrt\rho\,R
@@ -173,9 +181,11 @@ $$
 となる（$\hat\psi\hat\psi^\dagger=\rho I$）。
 &&&
 
-$\rho s_k=\Psi^\dagger\hat\sigma_k\Psi$は、スピンの$x_k$成分の期待値（の密度）です。単位ベクトル$\boldsymbol s$は[[7shi-bloch]]のブロッホベクトルにあたります。行列形式では期待値を$\Psi^\dagger\hat\sigma_k\Psi$として計算しますが、ヘステネス形式では、スピノルが基準の向き$\sigma_3$を回した結果$\boldsymbol s$そのものが観測量です。
+$\rho s_k=\Psi^\dagger\hat\sigma_k\Psi$は、スピンの$x_k$成分の期待値（の密度）です。単位ベクトル$\boldsymbol s$はブロッホ球の記事のブロッホベクトルにあたります。行列形式では期待値を$\Psi^\dagger\hat\sigma_k\Psi$として計算しますが、ヘステネス形式では、スピノルが基準の向き$\sigma_3$を回した結果$\boldsymbol s$そのものが観測量です。[[7shi-bloch]]
 
-[[7shi-h]]は、単位四元数$q$から$q\mathbf kq^*$を作る写像としてホップ写像を導入しました。本記事の記号では$\sigma_3=\omega\mathbf k$で、四元数の共役は反転にあたるので
+ホップファイブレーションの記事では、単位四元数$q$から$q\mathbf kq^*$を作る写像としてホップ写像を導入しました。[[7shi-h]]
+
+本記事の記号では$\sigma_3=\omega\mathbf k$で、四元数の共役は反転にあたるので
 
 $$
 \psi\sigma_3\tilde\psi=\omega\,(\psi\mathbf k\tilde\psi)
@@ -191,7 +201,7 @@ $$
 \psi e^{\omega\sigma_3\alpha}\,\sigma_3\,e^{-\omega\sigma_3\alpha}\tilde\psi=\psi\sigma_3\tilde\psi
 $$
 
-です。$e^{\omega\sigma_3\alpha}$は$\sigma_3$を軸とする回転子で、$\sigma_3$を動かさないからです。回転子$R$が$\sigma_3$を$\boldsymbol s$に移すとき、$Re^{\omega\sigma_3\alpha}$も$\sigma_3$を$\boldsymbol s$に移します。ホップファイバー（[[7shi-h]]）は、同じ$\boldsymbol s$を与える回転子の円周です。
+です。$e^{\omega\sigma_3\alpha}$は$\sigma_3$を軸とする回転子で、$\sigma_3$を動かさないからです。回転子$R$が$\sigma_3$を$\boldsymbol s$に移すとき、$Re^{\omega\sigma_3\alpha}$も$\sigma_3$を$\boldsymbol s$に移します。ホップファイバーは、同じ$\boldsymbol s$を与える回転子の円周です。[[7shi-h]]
 
 位相が変えるものもあります。回転子は$\sigma_3$だけでなく$\sigma_1,\sigma_2$も回し、正規直交基底$e_k=R\sigma_k\tilde R$を作ります。$e_3=\boldsymbol s$で、$e_1,e_2$は$\boldsymbol s$に垂直な平面の中の2本です。位相を掛けると
 
@@ -209,7 +219,7 @@ $$
 U\psi\,\sigma_3\,\widetilde{U\psi}=U(\psi\sigma_3\tilde\psi)\tilde U
 $$
 
-より、ベクトルとしての回転$\boldsymbol s\mapsto U\boldsymbol s\tilde U$を受けます。スピノルは片側から、ベクトルは両側から回転子を受けます。角$\theta$の回転の回転子$U=e^{-\omega\hat{\boldsymbol n}\theta/2}$は半角で書かれ、$\theta=2\pi$では$U=-1$です。$2\pi$回転でスピノルは$-\psi$になり、スピンの向きは元に戻ります（[[7shi-lie3]]・[[7shi-cover]]）。
+より、ベクトルとしての回転$\boldsymbol s\mapsto U\boldsymbol s\tilde U$を受けます。スピノルは片側から、ベクトルは両側から回転子を受けます。角$\theta$の回転の回転子$U=e^{-\omega\hat{\boldsymbol n}\theta/2}$は半角で書かれ、$\theta=2\pi$では$U=-1$です。$2\pi$回転でスピノルは$-\psi$になり、スピンの向きは元に戻ります。[[7shi-lie3]][[7shi-cover]]
 
 左からの作用（回転）と右からの作用（位相）は、どちらも回転子を掛ける操作ですが、意味が違います。左からの作用は空間の中の回転で、観測量$\boldsymbol s$を動かします。右からの作用は、基準として選んだ$\sigma_3$のまわりの回転で、観測量を動かしません。
 
@@ -226,7 +236,7 @@ i\hbar\,\partial_t\Psi=\frac1{2m}\sum_k\hat\pi_k^2\Psi+q\varphi\Psi-\frac{gq\hba
 $$
 &&&
 
-$\hat\pi_k$は運動量$-i\hbar\,\partial_k$からベクトルポテンシャルの寄与を引いたもので、[[7shi-clif5]]の自由粒子の運動項に電磁場を加えた形です。最後の項がスピンと磁場の結合で、$\frac{\hbar}2\hat\sigma_k$をスピン、$\frac{gq}{2m}\cdot\frac\hbar2\hat\sigma_k$を磁気モーメントとして、磁気モーメントと磁場の内積の符号を変えたものがエネルギーになります。係数$g$は、スピンの大きさに対する磁気モーメントの比を表す無次元の数で、電子では実験的に$g\approx2$です。本記事では$g$を現象論的に置いた定数として扱います。
+$\hat\pi_k$は運動量$-i\hbar\,\partial_k$からベクトルポテンシャルの寄与を引いたもので、自由粒子の運動項に電磁場を加えた形です。最後の項がスピンと磁場の結合で、$\frac{\hbar}2\hat\sigma_k$をスピン、$\frac{gq}{2m}\cdot\frac\hbar2\hat\sigma_k$を磁気モーメントとして、磁気モーメントと磁場の内積の符号を変えたものがエネルギーになります。係数$g$は、スピンの大きさに対する磁気モーメントの比を表す無次元の数で、電子では実験的に$g\approx2$です。本記事では$g$を現象論的に置いた定数として扱います。[[7shi-clif5]]
 
 ## 翻訳
 
@@ -271,7 +281,7 @@ $$
 スピンの向きは$\boldsymbol s(t)=e^{-\omega\hat{\boldsymbol b}\Omega t/2}\,\boldsymbol s(0)\,e^{\omega\hat{\boldsymbol b}\Omega t/2}$で、$\hat{\boldsymbol b}$を軸として角速度$\Omega$で回ります。
 &&&
 
-回転子$e^{-\omega\hat{\boldsymbol b}\theta/2}$は、$\hat{\boldsymbol b}$に垂直な面$\omega\hat{\boldsymbol b}$の中で角$\theta$の回転を与えます（[[7shi-em5]]の$e^{-\omega\sigma_3\theta/2}$が$x_1$軸を$x_2$軸へ回す向き）。スピンの向きが磁場のまわりを一定の角速度で回るこの運動を、**歳差**と呼びます。電子（$q=-e$）では$\Omega=geB/2m>0$で、$\boldsymbol B$の矢の先の側から見て反時計回りです。
+回転子$e^{-\omega\hat{\boldsymbol b}\theta/2}$は、$\hat{\boldsymbol b}$に垂直な面$\omega\hat{\boldsymbol b}$の中で角$\theta$の回転を与えます（ローレンツ変換の記事における$e^{-\omega\sigma_3\theta/2}$が$x_1$軸を$x_2$軸へ回す向き）。スピンの向きが磁場のまわりを一定の角速度で回るこの運動を、**歳差**と呼びます。電子（$q=-e$）では$\Omega=geB/2m>0$で、$\boldsymbol B$の矢の先の側から見て反時計回りです。[[7shi-em5]]
 
 &&&ex $\hat{\boldsymbol b}=\sigma_3$の場合
 $\boldsymbol s(0)=\sigma_1$から出発すると、$\boldsymbol s(t)=\sigma_1\cos\Omega t+\sigma_2\sin\Omega t$です。行列形式では$\Psi(t)=\operatorname{diag}(e^{-i\Omega t/2},e^{i\Omega t/2})\Psi(0)$となり、2つの成分の位相差が$\Omega t$の速さで進みます。$\Psi^\dagger\hat\sigma_1\Psi$と$\Psi^\dagger\hat\sigma_2\Psi$がこの位相差の余弦と正弦を与えます。ヘステネス形式では、この位相差の進行が、そのままスピンの向きの回転として読めます。
@@ -279,7 +289,7 @@ $\boldsymbol s(0)=\sigma_1$から出発すると、$\boldsymbol s(t)=\sigma_1\co
 
 ## 固有速度の回転との比較
 
-[[7shi-em5]]では、荷電粒子の固有速度$U=cR\gamma_0\tilde R$の回転子が$dR/d\tau=\frac q{2mc}FR$に従うことを見ました。電磁場$F=\boldsymbol E+\omega c\boldsymbol B$の磁場の部分だけを取り出すと
+ローレンツ変換の記事では、荷電粒子の固有速度$U=cR\gamma_0\tilde R$の回転子が$dR/d\tau=\frac q{2mc}FR$に従うことを見ました。電磁場$F=\boldsymbol E+\omega c\boldsymbol B$の磁場の部分だけを取り出すと次のようになります。[[7shi-em5]]
 
 $$
 \frac{dR}{d\tau}=\frac q{2m}\,\omega\boldsymbol B\,R
@@ -295,7 +305,27 @@ $$
 
 # まとめ
 
-パウリスピノルを$\operatorname{Cl}_{3,0}(\mathbb R)$の偶部分代数の元として扱いました。
+本記事の内容をまとめます。
+
+&&&
+**ヘステネス形式によるパウリスピノルとパウリ方程式**
+- スピノルの対応と作用
+  $$
+  \Psi \leftrightarrow \psi = a_0 + \sum_k a_k\,\omega\sigma_k \in \operatorname{Cl}_{3,0}^0(\mathbb R), \quad i\Psi \leftrightarrow \psi\,\omega\sigma_3, \quad \hat\sigma_k\Psi \leftrightarrow \sigma_k\psi\sigma_3
+  $$
+- 確率密度とスピンの向き
+  $$
+  \rho = \psi\tilde\psi, \quad \boldsymbol s = \frac{\psi\sigma_3\tilde\psi}\rho = R\sigma_3\tilde R
+  $$
+- パウリ方程式
+  $$
+  \hbar\,\partial_t\psi\,\omega\sigma_3 = \frac1{2m}\sum_k\pi_k^2\psi + q\varphi\psi - \frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3
+  $$
+- 一様磁場下の歳差運動
+  $$
+  \partial_t\psi = \frac{gq}{4m}\omega\boldsymbol B\psi
+  $$
+&&&
 
 - **対応**：列ベクトル$\Psi=(a_0+ia_3,-a_2+ia_1)^T$は偶部分代数の元$\psi=a_0+\sum_ka_k\,\omega\sigma_k$、すなわち四元数に対応し、$\Psi$は$\hat\psi$の第1列です。$\hat\sigma_k\Psi$は$\sigma_k\psi\sigma_3$に、$i\Psi$は$\psi\,\omega\sigma_3$に対応します。$\psi\mapsto\psi P$で、左イデアルによる表示と結ばれます。
 - **虚数単位**：量子力学の$i$は、右から掛かる2ベクトル$\omega\sigma_3=\sigma_1\sigma_2$です。左からの作用と可換なので、スカラーとして振る舞います。

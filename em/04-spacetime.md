@@ -1,10 +1,14 @@
-[[7shi-em2]]と[[7shi-em3]]では、3次元の$\operatorname{Cl}_{3,0}(\mathbb R)$に時間の作用素$\partial_0$を加えて、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と書きました。本記事では、時間と空間をまとめて扱う必要を特殊相対論の要請から確認したうえで、時間と空間を1つのベクトル空間にまとめた時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$に移ります。ディラック作用素$D$は$D^2=\partial_0^2-\Delta$を満たし、電磁場$F$は時空の2ベクトル、電流$J$は時空のベクトルになって、マクスウェル方程式は$DF=\mu_0cJ$と書けます。時間方向の生成元$\gamma_0$を掛けると、[[7shi-em2]]の式に戻ります。この操作は、[[7shi-cla4]]で$e_0$を掛けて四元数の変数と作用素を作った操作と、基準方向の生成元を掛けて偶部分に移すという構造を共有しています。違いは空間の生成元の2乗の符号です。空間の生成元の2乗が$+1$なら、偶部分の生成元の2乗は$-1$となり、楕円型の四元数解析が現れます。空間の生成元の2乗が$-1$なら、偶部分の生成元の2乗は$+1$となり、双曲型の作用素が現れ、それが電磁気学の作用素になります。
+時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$におけるディラック作用素と電磁場を導入し、マクスウェル方程式が1本の式$DF=\mu_0cJ$にまとまる構造を調べます。
+
+# 概要
+
+前回の記事では、3次元の$\operatorname{Cl}_{3,0}(\mathbb R)$に時間の作用素$\partial_0$を加えて、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と書きました。本記事では、時間と空間をまとめて扱う必要を特殊相対論の要請から確認したうえで、時間と空間を1つのベクトル空間にまとめた時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$に移ります。ディラック作用素$D$は$D^2=\partial_0^2-\Delta$を満たし、電磁場$F$は時空の2ベクトル、電流$J$は時空のベクトルになって、マクスウェル方程式は$DF=\mu_0cJ$と書けます。時間方向の生成元$\gamma_0$を掛けると、前回の式に戻ります。この操作は、基準方向の生成元を掛けて偶部分に移すという構造を共有しています。違いは空間の生成元の2乗の符号です。空間の生成元の2乗が$+1$なら、偶部分の生成元の2乗は$-1$となり、楕円型の四元数解析が現れます。空間の生成元の2乗が$-1$なら、偶部分の生成元の2乗は$+1$となり、双曲型の作用素が現れ、それが電磁気学の作用素になります。[[7shi-em2]][[7shi-em3]][[7shi-cla4]]
 
 # 特殊相対論の要請
 
 ## 光の速さと観測者
 
-[[7shi-em2]]と[[7shi-em3]]で見たとおり、真空のマクスウェル方程式は、どの向きにも速さ$c$で進む電磁波を含みます。ところが、この「速さ$c$」が誰から見た速さなのかは、方程式のどこにも書かれていません。
+真空のマクスウェル方程式は、どの向きにも速さ$c$で進む電磁波を含みます。ところが、この「速さ$c$」が誰から見た速さなのかは、方程式のどこにも書かれていません。
 
 外力を受けない物体が等速直線運動をする座標系を**慣性系**と呼びます。日常の感覚では、速さは観測者によって変わります。ある慣性系に静止した観測者に対して$x_1$の向きに速さ$v$で動く観測者の座標は$x_1'=x_1-vt$、$t'=t$で与えられると考えるのが自然です（ガリレイ変換）。この変換では、静止した観測者から見て速さ$c$で進む光は、動く観測者からは速さ$c-v$で進んで見えます。そうするとマクスウェル方程式は特別な1つの慣性系に対してだけ成り立つことになり、19世紀には光を伝える媒質（エーテル）が静止している慣性系がそれだと考えられました。マイケルソン＝モーリーの実験（1887年）は、地球がエーテルに対して動くなら、向きの異なる光路で光の往復時間に差が出ると予想して調べましたが、予想された差は検出されませんでした。この結果だけでエーテルの考えがすぐに捨てられたわけではありませんが、静止したエーテルという単純な描像では説明の難しい結果でした。
 
@@ -66,9 +70,9 @@ $$
 
 ## ディラック作用素
 
-以下では$D$を時空のディラック作用素に使います。[[7shi-em2]]と[[7shi-em3]]の空間の作用素$\sum_ke_k\partial_k$とは別のものです。
+以下では$D$を時空のディラック作用素に使います。これまでの空間の作用素$\sum_ke_k\partial_k$とは別のものです。
 
-[[7shi-cla1]]の$\operatorname{Cl}_{n,0}(\mathbb R)$では、作用素の係数に生成元をそのまま使いました。一般には、微分作用素の係数には座標基底$\gamma_\mu$に対する相反基底$\gamma^\mu$（$\gamma^\mu\cdot\gamma_\nu=\delta^\mu{}_\nu$）を使います。本記事の正規直交基底では、相反基底は各生成元の逆元$\gamma^\mu=\gamma_\mu^{-1}$に一致します。
+クリフォード解析では、作用素の係数に生成元をそのまま使いました。一般には、微分作用素の係数には座標基底$\gamma_\mu$に対する相反基底$\gamma^\mu$（$\gamma^\mu\cdot\gamma_\nu=\delta^\mu{}_\nu$）を使います。本記事の正規直交基底では、相反基底は各生成元の逆元$\gamma^\mu=\gamma_\mu^{-1}$に一致します。[[7shi-cla1]]
 
 &&&def 時空のディラック作用素
 $$
@@ -77,7 +81,7 @@ D=\sum_{\mu=0}^3\gamma^\mu\partial_\mu=\gamma_0\partial_0-\sum_{k=1}^3\gamma_k\p
 $$
 &&&
 
-このため$\gamma^\mu\gamma_\mu=1$から$Dx=\sum_\mu\gamma^\mu\gamma_\mu=4$となり、[[7shi-cla5]]の$D\boldsymbol x=n$もそのまま保たれます。$\operatorname{Cl}_{n,0}(\mathbb R)$では生成元がそれ自身の逆元なので、相反基底は生成元に一致していました。$D$の2乗は、[[7shi-cla1]]と同じ計算で係数の2乗の和になります。
+このため$\gamma^\mu\gamma_\mu=1$から$Dx=\sum_\mu\gamma^\mu\gamma_\mu=4$となり、$D\boldsymbol x=n$の関係もそのまま保たれます。$\operatorname{Cl}_{n,0}(\mathbb R)$では生成元がそれ自身の逆元なので、相反基底は生成元に一致していました。$D$の2乗は、同じ計算で係数の2乗の和になります。[[7shi-cla5]]
 
 &&&fml 波動作用素
 $$
@@ -85,7 +89,7 @@ D^2=\sum_\mu(\gamma^\mu)^2\partial_\mu^2=\partial_0^2-\Delta
 $$
 &&&
 
-[[7shi-em2]]では共役との積$\bar{\mathcal D}\mathcal D$として得た波動作用素が、ここでは$D$そのものの2乗として現れます。$\operatorname{Cl}_{n,0}(\mathbb R)$の$D^2=\Delta$と同じく、$D$は$\partial_0^2-\Delta$の平方根です。
+これまでは共役との積$\bar{\mathcal D}\mathcal D$として得た波動作用素が、ここでは$D$そのものの2乗として現れます。$\operatorname{Cl}_{n,0}(\mathbb R)$の$D^2=\Delta$と同じく、$D$は$\partial_0^2-\Delta$の平方根です。
 
 # 時空分割
 
@@ -109,7 +113,7 @@ $\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma
 $\sigma_k^2=\gamma_k\gamma_0\gamma_k\gamma_0=-\gamma_k^2\gamma_0^2=1$である。$k\ne l$なら$\gamma_k\gamma_0\gamma_l\gamma_0=-\gamma_k\gamma_l$であり、これは$k,l$について反対称だから$\sigma_k\sigma_l=-\sigma_l\sigma_k$となる。$\sigma_1\sigma_2\sigma_3=(-\gamma_1\gamma_2)\gamma_3\gamma_0=-\gamma_1\gamma_2\gamma_3\gamma_0=\gamma_0\gamma_1\gamma_2\gamma_3$である（$\gamma_0$を3つの生成元の前に移すと符号が3回変わる）。$\sigma_k$は$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元の関係を満たし、それらの積の8個は偶部分代数の8次元の基底$1,\gamma_\mu\gamma_\nu\ (\mu<\nu),\gamma_0\gamma_1\gamma_2\gamma_3$と、符号を除いて一致する。したがって、$e_k\mapsto\sigma_k$で定まる代数準同型$\operatorname{Cl}_{3,0}(\mathbb R)\to\operatorname{Cl}_{1,3}^0(\mathbb R)$は基底を基底に移すので、同型である。
 &&&
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の擬スカラー$i=\sigma_1\sigma_2\sigma_3$は、そのまま時空代数の擬スカラー$\gamma_0\gamma_1\gamma_2\gamma_3$です。$i^2=-1$で、$i$は時空のベクトルとは反可換、偶部分代数の元とは可換です。[[7shi-em1]]から[[7shi-em3]]で使った$\operatorname{Cl}_{3,0}(\mathbb R)$の計算は、すべて偶部分代数の中の計算として読み直せます。以下、$\operatorname{Cl}_{3,0}(\mathbb R)$のベクトルは$\sigma_k$で書き、$\boldsymbol x=\sum_kx_k\sigma_k$などとします。
+$\operatorname{Cl}_{3,0}(\mathbb R)$の擬スカラー$i=\sigma_1\sigma_2\sigma_3$は、そのまま時空代数の擬スカラー$\gamma_0\gamma_1\gamma_2\gamma_3$です。$i^2=-1$で、$i$は時空のベクトルとは反可換、偶部分代数の元とは可換です。前三回で使った$\operatorname{Cl}_{3,0}(\mathbb R)$の計算は、すべて偶部分代数の中の計算として読み直せます。以下、$\operatorname{Cl}_{3,0}(\mathbb R)$のベクトルは$\sigma_k$で書き、$\boldsymbol x=\sum_kx_k\sigma_k$などとします。
 
 ## 位置と作用素の分割
 
@@ -135,11 +139,11 @@ $$
 $\gamma_0\gamma^k=-\gamma_0\gamma_k=\gamma_k\gamma_0=\sigma_k$より第1式を得る。第2式では$\gamma^k\gamma_0=-\gamma_k\gamma_0=-\sigma_k$である。
 &&&
 
-[[7shi-em2]]の$\mathcal D$と$\bar{\mathcal D}$は、時空のディラック作用素に$\gamma_0$を左から掛けたものと、右から掛けたものです。したがって$\bar{\mathcal D}\mathcal DH=D(\gamma_0\gamma_0DH)=D^2H$であり、[[7shi-em2]]の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$は$D^2=\partial_0^2-\Delta$の言い換えです。
+前回の$\mathcal D$と$\bar{\mathcal D}$は、時空のディラック作用素に$\gamma_0$を左から掛けたものと、右から掛けたものです。したがって$\bar{\mathcal D}\mathcal DH=D(\gamma_0\gamma_0DH)=D^2H$であり、前回の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$は$D^2=\partial_0^2-\Delta$の言い換えです。
 
 # 係数の2乗の符号
 
-[[7shi-cla4]]では、$\operatorname{Cl}_{4,0}(\mathbb R)$で位置ベクトルに$e_0$を掛けて四元数の変数$q=e_0\boldsymbol x$を作り、フューター作用素を$\mathcal D=e_0D=\partial_0+\sum_lh_l\partial_l$（$h_l=e_0e_l$）としました。上の[作用素の分割](#fml-split)は、基準方向の生成元を作用素に左から掛けて偶部分に移すという同じ構造を、$\operatorname{Cl}_{1,3}(\mathbb R)$で実現したものです。積の順序が$h_l=e_0e_l$と$\sigma_k=\gamma_k\gamma_0$で逆に見えるのは、時空では相反基底が$\gamma^k=-\gamma_k$になるためです。四元数側の係数は$e_0e_l=h_l$、時空側の係数は$\gamma_0\gamma^k=-\gamma_0\gamma_k=\sigma_k$で、どちらも基準方向の生成元を左から掛けています。ただし四元数側では偶部分$\operatorname{Cl}_{4,0}^0(\mathbb R)\cong\mathbb H\oplus\mathbb H$の一方を選んでいたのに対し、時空側では偶部分の全体が$\operatorname{Cl}_{3,0}(\mathbb R)$です。
+四元数解析では、$\operatorname{Cl}_{4,0}(\mathbb R)$で位置ベクトルに$e_0$を掛けて四元数の変数$q=e_0\boldsymbol x$を作り、フューター作用素を$\mathcal D=e_0D=\partial_0+\sum_lh_l\partial_l$（$h_l=e_0e_l$）としました。上の[作用素の分割](#fml-split)は、基準方向の生成元を作用素に左から掛けて偶部分に移すという同じ構造を、$\operatorname{Cl}_{1,3}(\mathbb R)$で実現したものです。積の順序が$h_l=e_0e_l$と$\sigma_k=\gamma_k\gamma_0$で逆に見えるのは、時空では相反基底が$\gamma^k=-\gamma_k$になるためです。四元数側の係数は$e_0e_l=h_l$、時空側の係数は$\gamma_0\gamma^k=-\gamma_0\gamma_k=\sigma_k$で、どちらも基準方向の生成元を左から掛けています。ただし四元数側では偶部分$\operatorname{Cl}_{4,0}^0(\mathbb R)\cong\mathbb H\oplus\mathbb H$の一方を選んでいたのに対し、時空側では偶部分の全体が$\operatorname{Cl}_{3,0}(\mathbb R)$です。
 
 偶部分に移った生成元の2乗は、空間の生成元の2乗の符号で決まります。$e_0^2=\gamma_0^2=1$なので
 
@@ -152,16 +156,16 @@ $$
 
 | | 代数 | 空間の生成元の2乗 | 偶部分の生成元 | その2乗 | $\bar{\mathcal D}\mathcal D$ | 型 |
 |---|---|---|---|---|---|---|
-| 四元数解析（[[7shi-cla4]]） | $\operatorname{Cl}_{4,0}(\mathbb R)$ | $e_l^2=+1$ | $h_l=e_0e_l$ | $-1$ | $\partial_0^2+\Delta$ | 楕円型 |
+| 四元数解析 | $\operatorname{Cl}_{4,0}(\mathbb R)$ | $e_l^2=+1$ | $h_l=e_0e_l$ | $-1$ | $\partial_0^2+\Delta$ | 楕円型 |
 | 電磁気学 | $\operatorname{Cl}_{1,3}(\mathbb R)$ | $\gamma_k^2=-1$ | $\sigma_k=\gamma_k\gamma_0$ | $+1$ | $\partial_0^2-\Delta$ | 双曲型 |
 
-どちらも「2乗が$+1$の基準方向の生成元を掛けて偶部分に移す」操作で、得られる作用素は$\partial_0+\sum(\text{偶部分の生成元})\partial$という同じ形をしています。この形の中での違いは空間の生成元の2乗の符号だけで、それが偶部分の生成元の2乗の符号を反転させ、ラプラシアンと波動作用素を分けます。[[7shi-em2]]では$\operatorname{Cl}_{3,0}(\mathbb R)$のまま、共役との積として波動作用素を得ました。時空全体のディラック作用素$D$そのものの2乗として波動作用素を得るには、ユークリッド型の符号数からミンコフスキー型の符号数に替える必要があります。
+どちらも「2乗が$+1$の基準方向の生成元を掛けて偶部分に移す」操作で、得られる作用素は$\partial_0+\sum(\text{偶部分の生成元})\partial$という同じ形をしています。この形の中での違いは空間の生成元の2乗の符号だけで、それが偶部分の生成元の2乗の符号を反転させ、ラプラシアンと波動作用素を分けます。前回の記事では$\operatorname{Cl}_{3,0}(\mathbb R)$のまま、共役との積として波動作用素を得ました。時空全体のディラック作用素$D$そのものの2乗として波動作用素を得るには、ユークリッド型の符号数からミンコフスキー型の符号数に替える必要があります。
 
 # マクスウェル方程式
 
 ## 場と電流
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の$F=\boldsymbol E+ic\boldsymbol B$を偶部分代数の元として読み直します。[[7shi-em2]]と同じく、場と源は必要な回数だけ連続微分可能とします。
+$\operatorname{Cl}_{3,0}(\mathbb R)$の$F=\boldsymbol E+ic\boldsymbol B$を偶部分代数の元として読み直します。これまでと同じく、場と源は必要な回数だけ連続微分可能とします。
 
 &&&def 時空の電磁場と電流
 $$
@@ -179,9 +183,9 @@ $$
 ic\boldsymbol B=\frac12\bigl(F+\gamma_0F\gamma_0\bigr)
 $$
 
-です。電場は時間軸を含む面の成分、磁場は時間軸を含まない空間の面の成分です。3次元でベクトルを1本の軸に沿った成分と垂直な成分に分けるとき、分け方が軸の選び方に依存するのと同じく、電場と磁場への分け方は観測者の時間軸の選び方に依存します。$F$そのものは観測者によらない1つの2ベクトルで、電場と磁場は、それを1人の観測者の時間軸に対して分けた2つの成分です。この観測者に対して静止した試験電荷に働く力を決めるのが電場で、動く電荷にだけ働く速度に依存した力に現れるのが磁場です（[[7shi-em1]]）。観測者を替えると「静止した電荷」も替わるので、同じ$F$でも電場と磁場への分け方が変わります。
+です。電場は時間軸を含む面の成分、磁場は時間軸を含まない空間の面の成分です。3次元でベクトルを1本の軸に沿った成分と垂直な成分に分けるとき、分け方が軸の選び方に依存するのと同じく、電場と磁場への分け方は観測者の時間軸の選び方に依存します。$F$そのものは観測者によらない1つの2ベクトルで、電場と磁場は、それを1人の観測者の時間軸に対して分けた2つの成分です。この観測者に対して静止した試験電荷に働く力を決めるのが電場で、動く電荷にだけ働く速度に依存した力に現れるのが磁場です。観測者を替えると「静止した電荷」も替わるので、同じ$F$でも電場と磁場への分け方が変わります。[[7shi-em1]]
 
-電場の面と磁場の面は、同じ番号どうしで組になっています。$\sigma_1=\gamma_1\gamma_0$は$x_0$軸と$x_1$軸が張る面、$i\sigma_1=\gamma_3\gamma_2$は$x_2$軸と$x_3$軸が張る面で、一方の面の任意のベクトルは他方の面の任意のベクトルと直交します。これらの基底の面に$i$を掛けると、その直交補空間の面に移ります。4次元では2次元の面の直交補空間がまた2次元の面なので、2ベクトルは2ベクトルのまま移ります。一般の$F$には、この操作が各成分に線形に働きます。$E_k$と$B_k$は、時空で互いに直交する相補的な2つの面の成分の組であり、$F\mapsto iF$は電場の面と磁場の面を入れ替えます。[[7shi-em3]]の電気と磁気の双対性は、この入れ替えのことです。$i^2=-1$なので、2回掛けると元の場の符号が反転します。[[7shi-em3]]の$\boldsymbol E\mapsto-c\boldsymbol B$、$c\boldsymbol B\mapsto\boldsymbol E$はこのことです。
+電場の面と磁場の面は、同じ番号どうしで組になっています。$\sigma_1=\gamma_1\gamma_0$は$x_0$軸と$x_1$軸が張る面、$i\sigma_1=\gamma_3\gamma_2$は$x_2$軸と$x_3$軸が張る面で、一方の面の任意のベクトルは他方の面の任意のベクトルと直交します。これらの基底の面に$i$を掛けると、その直交補空間の面に移ります。4次元では2次元の面の直交補空間がまた2次元の面なので、2ベクトルは2ベクトルのまま移ります。一般の$F$には、この操作が各成分に線形に働きます。$E_k$と$B_k$は、時空で互いに直交する相補的な2つの面の成分の組であり、$F\mapsto iF$は電場の面と磁場の面を入れ替えます。電気と磁気の双対性は、この入れ替えのことです。$i^2=-1$なので、2回掛けると元の場の符号が反転します。前回の$\boldsymbol E\mapsto-c\boldsymbol B$、$c\boldsymbol B\mapsto\boldsymbol E$はこのことです。
 
 電流$J$は時空のベクトルです。$\gamma_0$を掛けると
 
@@ -189,7 +193,7 @@ $$
 \gamma_0J=c\rho+\sum_kJ_k\gamma_0\gamma_k=c\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
 $$
 
-となり、[[7shi-em2]]の源が現れます。
+となり、前回の源が現れます。
 
 $J$を**4元電流**とも呼びます。電荷密度と電流密度が1つのベクトルの成分になっているので、時間方向の取り方が変われば両者も混ざります。静止した電荷の分布は、それに対して動く観測者からは電荷の流れ、すなわち電流を伴って見えます。電荷密度そのものも観測者によって変わります。密度は、その観測者が同時とする時刻に、一定の体積の中の電荷を数えた量だからです。電場と磁場の場合も同じく、分け方は観測者の時間方向に依存します。
 
@@ -200,7 +204,7 @@ $$
 DF=\mu_0cJ
 $$
 
-は[[7shi-em2]]の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値です。
+は前回の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値です。
 &&&
 
 &&&prf
@@ -211,7 +215,7 @@ $\gamma_0$は可逆なので、$DF=\mu_0cJ$は$\gamma_0DF=\mu_0c\gamma_0J$と同
 
 ## 内積と外積への分解
 
-$D$はベクトルを係数とする作用素なので、2ベクトル$F$に作用させるとグレードが1つ下がる部分と1つ上がる部分に分かれます。[[7shi-cla1]]で見た分解$DF=D\cdot F+D\wedge F$です。
+$D$はベクトルを係数とする作用素なので、2ベクトル$F$に作用させるとグレードが1つ下がる部分と1つ上がる部分に分かれます。クリフォード解析で見た分解$DF=D\cdot F+D\wedge F$です。
 
 &&&fml 2本の式
 $$
@@ -226,7 +230,7 @@ $$
 \gamma_0(D\wedge F)=i\bigl(\nabla\times\boldsymbol E+c\,\partial_0\boldsymbol B\bigr)+ic\,\nabla\cdot\boldsymbol B
 $$
 
-であり、[[7shi-em2]]のスカラー部とベクトル部が$D\cdot F$から、2ベクトル部と擬スカラー部が$D\wedge F$から来ています。次の表の「スカラー」「ベクトル」などは、時空ではなく偶部分代数を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのグレードです。
+であり、前回のスカラー部とベクトル部が$D\cdot F$から、2ベクトル部と擬スカラー部が$D\wedge F$から来ています。次の表の「スカラー」「ベクトル」などは、時空ではなく偶部分代数を$\operatorname{Cl}_{3,0}(\mathbb R)$と見たときのグレードです。
 
 | 時空代数 | $\operatorname{Cl}_{3,0}(\mathbb R)$のグレード | 式 |
 |---|---|---|
@@ -237,7 +241,7 @@ $$
 
 時空代数では、源を持つ2本と源を持たない2本が、それぞれ1本の式にまとまります。
 
-[[7shi-em2]]では、観測者の時間方向を選んで、時間微分を含む時間発展の式と、含まない制約に分けました。2通りの分け方を並べると次のようになります。
+これまでは、観測者の時間方向を選んで、時間微分を含む時間発展の式と、含まない制約に分けました。2通りの分け方を並べると次のようになります。
 
 | | 制約 | 時間発展 |
 |---|---|---|
@@ -264,37 +268,47 @@ $$
 となる。
 &&&
 
-$D$をもう一度掛けると$D^2F=\mu_0c\,DJ=\mu_0c\,(D\cdot J+D\wedge J)=\mu_0c\,D\wedge J$です。左辺は$(\partial_0^2-\Delta)F$で、[[7shi-em2]]の電場と磁場の波動方程式がこの1本の2ベクトルの式にまとまります。
+$D$をもう一度掛けると$D^2F=\mu_0c\,DJ=\mu_0c\,(D\cdot J+D\wedge J)=\mu_0c\,D\wedge J$です。左辺は$(\partial_0^2-\Delta)F$で、前回の電場と磁場の波動方程式がこの1本の2ベクトルの式にまとまります。
 
 # 符号数の選択
 
 時空代数には、本記事の$\operatorname{Cl}_{1,3}(\mathbb R)$（時間の2乗が$+1$）と、$\operatorname{Cl}_{3,1}(\mathbb R)$（空間の2乗が$+1$、時間の2乗が$-1$）の2つの流儀があります。
 
 &&&rem $\operatorname{Cl}_{1,3}(\mathbb R)$を選ぶ理由
-- **前半との接続**：$\operatorname{Cl}_{3,1}(\mathbb R)$では時間の生成元の2乗が$\gamma_0^2=-1$です。$\gamma_k\gamma_0$の2乗は$+1$のままで、偶部分代数はやはり$\operatorname{Cl}_{3,0}(\mathbb R)$と同型ですが、$\gamma_0\gamma_0=-1$のために$D(\gamma_0\gamma_0DH)=-D^2H$となり、$D^2=\Delta-\partial_0^2$と全体の符号が逆になります。相反基底が$\gamma^0=-\gamma_0$、$\gamma^k=\gamma_k$になるので、同じ$\sigma_k=\gamma_k\gamma_0$を使うと$\gamma_0D=\bar{\mathcal D}$、$D(\gamma_0H)=\mathcal DH$と対応も入れ替わります。[[7shi-cla4]]の$e_0$と同じく2乗が$+1$の生成元を掛けて偶部分に移すという操作をそのまま保てるのは、$\operatorname{Cl}_{1,3}(\mathbb R)$のほうです。
-- **パラベクトルの計量**：[[7shi-em2]]の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$と、パラベクトルのノルム$p\bar p=x_0^2-|\boldsymbol x|^2$は、ともに$(+,-,-,-)$の符号です。
+- **前半との接続**：$\operatorname{Cl}_{3,1}(\mathbb R)$では時間の生成元の2乗が$\gamma_0^2=-1$です。$\gamma_k\gamma_0$の2乗は$+1$のままで、偶部分代数はやはり$\operatorname{Cl}_{3,0}(\mathbb R)$と同型ですが、$\gamma_0\gamma_0=-1$のために$D(\gamma_0\gamma_0DH)=-D^2H$となり、$D^2=\Delta-\partial_0^2$と全体の符号が逆になります。相反基底が$\gamma^0=-\gamma_0$、$\gamma^k=\gamma_k$になるので、同じ$\sigma_k=\gamma_k\gamma_0$を使うと$\gamma_0D=\bar{\mathcal D}$、$D(\gamma_0H)=\mathcal DH$と対応も入れ替わります。四元数解析の$e_0$と同じく2乗が$+1$の生成元を掛けて偶部分に移すという操作をそのまま保てるのは、$\operatorname{Cl}_{1,3}(\mathbb R)$のほうです。
+- **パラベクトルの計量**：前回の$\bar{\mathcal D}\mathcal D=\partial_0^2-\Delta$と、パラベクトルのノルム$p\bar p=x_0^2-|\boldsymbol x|^2$は、ともに$(+,-,-,-)$の符号です。
 - **パウリ行列からの拡張**：下の例のように、パウリ行列からワイル表現のガンマ行列が符号の追加なしに得られます。
-- **代数としての違い**：[[7shi-clif1]]の分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$で、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、共通の複素化の中では、$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を複素スカラー$j$倍したものを$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元として取れます。この$j$は擬スカラー$i$ではなく、すべての元と可換な複素数の虚数単位です（[[7shi-em3]]と同じく電気工学の慣用に従います）。[[7shi-lie4]]と[[7shi-ideal]]が$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。
+- **代数としての違い**：分類では$\operatorname{Cl}_{1,3}(\mathbb R)\cong M_2(\mathbb H)$、$\operatorname{Cl}_{3,1}(\mathbb R)\cong M_4(\mathbb R)$で、実代数としては同型ではありません。複素化すればともに$M_4(\mathbb C)$で、共通の複素化の中では、$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を複素スカラー$j$倍したものを$\operatorname{Cl}_{3,1}(\mathbb R)$の生成元として取れます。この$j$は擬スカラー$i$ではなく、すべての元と可換な複素数の虚数単位です（前回の記事と同じく電気工学の慣用に従います）。$\operatorname{Cl}_{3,1}(\mathbb R)$を使うのは$\operatorname{SO}(4)$や実表現の文脈で、本シリーズとは目的が異なります。[[7shi-clif1]][[7shi-lie4]][[7shi-ideal]]
 &&&
 
 &&&ex パウリ行列からの構成
-パウリ行列による$\operatorname{Cl}_{3,0}(\mathbb R)$の表現（[[7shi-bq]]・[[7shi-lie3]]）で、パラベクトル$p$を
+パウリ行列による$\operatorname{Cl}_{3,0}(\mathbb R)$の表現で、パラベクトル$p$を
 
 $$
 \gamma(p)=\begin{pmatrix}0&p\\\bar p&0\end{pmatrix}
 $$
 
-と4次の行列に置きます。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）です。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)i_4$です。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=i_4$、$\gamma(\sigma_k)^2=-i_4$から符号数$(+,-,-,-)$が出ます。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。
+と4次の行列に置きます。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）です。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)i_4$です。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=i_4$、$\gamma(\sigma_k)^2=-i_4$から符号数$(+,-,-,-)$が出ます。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。[[7shi-bq]][[7shi-lie3]]
 &&&
 
-$\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとしての$\gamma_k$の2乗が$-1$で、[[7shi-em1]]から[[7shi-em3]]の$\boldsymbol x^2=|\boldsymbol x|^2$という規約から外れることです。空間のベクトルは相対ベクトル$\sigma_k$（2乗$+1$）として保たれるので、$\operatorname{Cl}_{3,0}(\mathbb R)$での計算はそのまま使えます。
+$\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとしての$\gamma_k$の2乗が$-1$で、空間の規約$\boldsymbol x^2=|\boldsymbol x|^2$から外れることです。空間のベクトルは相対ベクトル$\sigma_k$（2乗$+1$）として保たれるので、$\operatorname{Cl}_{3,0}(\mathbb R)$での計算はそのまま使えます。
 
 # まとめ
 
 時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$で、マクスウェル方程式は$DF=\mu_0cJ$の1本の式になりました。
 
+&&&fml 時空のマクスウェル方程式
+$$
+\begin{aligned}
+&DF=\mu_0cJ,\qquad D^2=\partial_0^2-\Delta \\
+&D\cdot F=\mu_0cJ,\qquad D\wedge F=0 \\
+&\sigma_k=\gamma_k\gamma_0,\qquad \gamma_0D=\mathcal D,\qquad D(\gamma_0H)=\bar{\mathcal D}H
+\end{aligned}
+$$
+&&&
+
 - **作用素**：逆元を係数にしたディラック作用素は$D^2=\partial_0^2-\Delta$を満たし、波動作用素の平方根です。
-- **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。[[7shi-em2]]の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。
+- **時空分割**：$\sigma_k=\gamma_k\gamma_0$が偶部分代数で$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元になり、$\gamma_0D=\mathcal D$、$D(\gamma_0H)=\bar{\mathcal D}H$です。前回の式は$DF=\mu_0cJ$に$\gamma_0$を掛けたものです。
 - **場と電流**：観測者を選ぶことは時間軸$\gamma_0$を選ぶことです。$F$は時空の2ベクトルで、時間軸を含む面の成分$\frac12(F-\gamma_0F\gamma_0)$が電場、空間の面の成分$\frac12(F+\gamma_0F\gamma_0)$が磁場です。$E_k$の面と$B_k$の面は互いの直交補空間で、$i$を掛けると入れ替わります。$J=c\rho\gamma_0+\sum J_k\gamma_k$は時空のベクトルです。
 - **2本の式**：$D\cdot F=\mu_0cJ$が源を持つ2本を、$D\wedge F=0$が源を持たない2本をまとめます。
-- **係数の2乗の符号**：$\gamma_0$を掛ける操作は、[[7shi-cla4]]の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。
+- **係数の2乗の符号**：$\gamma_0$を掛ける操作は、四元数解析の$e_0$を掛ける操作と「基準方向の生成元を掛けて偶部分に移す」構造を共有します。空間の生成元の2乗の符号が偶部分の生成元の2乗の符号を反転させ、楕円型と双曲型を分けます。

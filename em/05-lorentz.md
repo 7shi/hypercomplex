@@ -1,10 +1,14 @@
-[[7shi-em4]]では、時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$でマクスウェル方程式を$DF=\mu_0cJ$と書き、電場と磁場が1つの2ベクトル$F$の成分であり、その分け方は時間方向$\gamma_0$の選び方によることを見ました。本記事では、時空の正規直交基底を取り替えるローレンツ変換を、回転子$x\mapsto Rx\tilde R$として扱います。特に、時間方向を変えるブーストによって、観測者による電場と磁場の分け方を調べます。2ベクトルの指数関数で回転子を作ると、2乗が$-1$の空間の2ベクトルからは三角関数による空間の回転が、2乗が$+1$の2ベクトル$\sigma_k=\gamma_k\gamma_0$からは双曲線関数によるブーストが得られます。係数の2乗の符号がここでも2つの型を分けます。向きの異なるブーストは可換でなく、その生成元どうしの交換子は空間の回転の生成元になります。回転子で$F$を変換すると電場と磁場が混ざり、$F^2$のスカラー部と擬スカラー部は不変量になります。ヌルでない場は、適当な観測者から見れば電場と磁場が平行な標準形になり、その中身は$F^2$の平方根という「複素数」です。ローレンツ変換は、ベクトルそのものを動かさず正規直交基底を取り替えるだけの回転として理解できます。最後に、荷電粒子の運動方程式（ローレンツ力）を$F$とベクトルの内積として書きます。固有速度の大きさは常に$c$で、速さはその向き（ラピディティ）に現れます。電磁場はこの向きを回す2ベクトルとして働き、電場の成分がブースト、磁場の成分が空間の回転を生成します。
+時空代数における回転子によってローレンツ変換とブーストを幾何学的に扱い、電磁場の混合、不変量、標準形、およびローレンツ力の運動方程式を調べます。
+
+# 概要
+
+前回の記事では、時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$でマクスウェル方程式を$DF=\mu_0cJ$と書き、電場と磁場が1つの2ベクトル$F$の成分であり、その分け方は時間方向$\gamma_0$の選び方によることを見ました。本記事では、時空の正規直交基底を取り替えるローレンツ変換を、回転子$x\mapsto Rx\tilde R$として扱います。特に、時間方向を変えるブーストによって、観測者による電場と磁場の分け方を調べます。2ベクトルの指数関数で回転子を作ると、2乗が$-1$の空間の2ベクトルからは三角関数による空間の回転が、2乗が$+1$の2ベクトル$\sigma_k=\gamma_k\gamma_0$からは双曲線関数によるブーストが得られます。係数の2乗の符号がここでも2つの型を分けます。向きの異なるブーストは可換でなく、その生成元どうしの交換子は空間の回転の生成元になります。回転子で$F$を変換すると電場と磁場が混ざり、$F^2$のスカラー部と擬スカラー部は不変量になります。ヌルでない場は、適当な観測者から見れば電場と磁場が平行な標準形になり、その中身は$F^2$の平方根という「複素数」です。ローレンツ変換は、ベクトルそのものを動かさず正規直交基底を取り替えるだけの回転として理解できます。最後に、荷電粒子の運動方程式（ローレンツ力）を$F$とベクトルの内積として書きます。固有速度の大きさは常に$c$で、速さはその向き（ラピディティ）に現れます。電磁場はこの向きを回す2ベクトルとして働き、電場の成分がブースト、磁場の成分が空間の回転を生成します。[[7shi-em4]]
 
 # 回転子
 
 ## 反転と回転子
 
-[[7shi-em4]]の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_0,\gamma_1,\gamma_2,\gamma_3$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、擬スカラーを$i=\gamma_0\gamma_1\gamma_2\gamma_3$、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$とします。時空の元$X$の反転$\tilde X$は、基底の積の順序を逆にする操作です。ベクトルは変えず、2ベクトルの符号を変え、$\widetilde{XY}=\tilde Y\tilde X$を満たします。
+前回の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_0,\gamma_1,\gamma_2,\gamma_3$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、擬スカラーを$i=\gamma_0\gamma_1\gamma_2\gamma_3$、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$とします。時空の元$X$の反転$\tilde X$は、基底の積の順序を逆にする操作です。ベクトルは変えず、2ベクトルの符号を変え、$\widetilde{XY}=\tilde Y\tilde X$を満たします。
 
 &&&def 回転子
 偶部分代数の元$R$で$R\tilde R=1$を満たすものを**回転子**と呼びます。
@@ -38,7 +42,7 @@ $$
 \gamma_0'^2=1,\qquad\gamma_k'^2=-1,\qquad\mu\ne\nu\text{ なら }\gamma_\mu'\gamma_\nu'=-\gamma_\nu'\gamma_\mu'
 $$
 
-です。新しい基底$\gamma_\mu'$は元の基底と同じ関係式を満たし、代数の上では区別がつきません。3次元で座標軸を回しても矢印そのものは変わらず、成分だけが変わるのと同じく、ローレンツ変換は時空の中の回転であり、ベクトルや場を成分に分けるための正規直交基底を取り替えるだけの操作と見られます。観測者の時間軸と空間の座標軸を選ぶことは、正規直交基底を選ぶことです。どの慣性観測者の正規直交基底でも同じ関係式が使えます。相対性原理（[[7shi-em4]]）そのものを代数から導いたわけではありませんが、観測者によらない形で法則を書く仕組みが、この代数に備わっています。
+です。新しい基底$\gamma_\mu'$は元の基底と同じ関係式を満たし、代数の上では区別がつきません。3次元で座標軸を回しても矢印そのものは変わらず、成分だけが変わるのと同じく、ローレンツ変換は時空の中の回転であり、ベクトルや場を成分に分けるための正規直交基底を取り替えるだけの操作と見られます。観測者の時間軸と空間の座標軸を選ぶことは、正規直交基底を選ぶことです。どの慣性観測者の正規直交基底でも同じ関係式が使えます。相対性原理そのものを代数から導いたわけではありませんが、観測者によらない形で法則を書く仕組みが、この代数に備わっています。
 
 以下では、2乗が$-1$と$+1$の2ベクトルについて、作用を具体的に計算します。
 
@@ -67,17 +71,17 @@ $$
 $\gamma_0$と$\gamma_3$は$\gamma_2\gamma_1$と可換なので$R$とも可換であり、$R\gamma_0\tilde R=\gamma_0R\tilde R=\gamma_0$となる。$\gamma_1,\gamma_2$は$\gamma_2\gamma_1$と反可換なので$\gamma_1\tilde R=R\gamma_1$であり、$R\gamma_1\tilde R=R^2\gamma_1=e^{-i\sigma_3\theta}\gamma_1=\gamma_1\cos\theta-\gamma_2\gamma_1\gamma_1\sin\theta$である。$\gamma_2\gamma_1\gamma_1=-\gamma_2$より第1式を得る。第2式も同様である。
 &&&
 
-$(x_1,x_2)$平面の角$\theta$の回転です。$R$は$\gamma_0$と可換なので、相対ベクトル$\sigma_k=\gamma_k\gamma_0$にも$R\sigma_k\tilde R=(R\gamma_k\tilde R)\gamma_0$と同じ回転として作用します。これは$\operatorname{Cl}_{3,0}(\mathbb R)$の回転子による空間の回転（[[7shi-lie3]]）と同じものです。[[7shi-lie3]]では$Q=e^{i\sigma_3\theta/2}$による$Q^{-1}xQ$を使いました。本記事ではその逆元を$R$と書くため、指数の符号と挟む順序がともに逆になっていますが、表す回転は同じです。
+$(x_1,x_2)$平面の角$\theta$の回転です。$R$は$\gamma_0$と可換なので、相対ベクトル$\sigma_k=\gamma_k\gamma_0$にも$R\sigma_k\tilde R=(R\gamma_k\tilde R)\gamma_0$と同じ回転として作用します。これは$\operatorname{Cl}_{3,0}(\mathbb R)$の回転子による空間の回転と同じものです。回転の議論では$Q=e^{i\sigma_3\theta/2}$による$Q^{-1}xQ$を使いました。本記事ではその逆元を$R$と書くため、指数の符号と挟む順序がともに逆になっていますが、表す回転は同じです。[[7shi-lie3]]
 
 ## 2乗が$+1$の2ベクトル：ブースト
 
-$\sigma_1=\gamma_1\gamma_0$は$\sigma_1^2=+1$を満たします（[[7shi-em4]]）。級数の偶数次と奇数次を分けると、三角関数の代わりに双曲線関数が現れます。
+$\sigma_1=\gamma_1\gamma_0$は$\sigma_1^2=+1$を満たします。級数の偶数次と奇数次を分けると、三角関数の代わりに双曲線関数が現れます。
 
 $$
 e^{\sigma_1a}=\sum_{n=0}^\infty\frac{a^n\sigma_1^n}{n!}=\cosh a+\sigma_1\sinh a
 $$
 
-1と2乗が$+1$の元が張る代数は分解型複素数（[[7shi-clif2]]）であり、その指数関数は双曲線関数で書けます。
+1と2乗が$+1$の元が張る代数は分解型複素数であり、その指数関数は双曲線関数で書けます。[[7shi-clif2]]
 
 &&&fml ブースト [fml-boost]
 $R=e^{\sigma_1\eta/2}$について
@@ -96,7 +100,7 @@ $$
 $\tilde\sigma_1=\gamma_0\gamma_1=-\sigma_1$より$\tilde R=e^{-\sigma_1\eta/2}$、$R\tilde R=1$である。$\gamma_0,\gamma_1$は$\sigma_1$と反可換なので$\gamma_0\tilde R=R\gamma_0$であり、$R\gamma_0\tilde R=R^2\gamma_0=(\cosh\eta+\gamma_1\gamma_0\sinh\eta)\gamma_0=\gamma_0\cosh\eta+\gamma_1\sinh\eta$となる。$\gamma_1$についても$\gamma_1\gamma_0\gamma_1=\gamma_0$から同様である。$\gamma_2,\gamma_3$は$\sigma_1$と可換なので変わらない。
 &&&
 
-$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\eta\,(\gamma_0+\gamma_1\tanh\eta)$は、$\sigma_1$方向に速さ$v=c\tanh\eta$で動く観測者の世界線の向きです。係数$\cosh\eta=1/\sqrt{1-v^2/c^2}$はローレンツ因子で（以下、添字のない$\gamma$はローレンツ因子を表します）、パラメーター$\eta$はラピディティと呼ばれます。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$を成分で書くと$x_0'=\gamma(x_0-\beta x_1)$、$x_1'=\gamma(x_1-\beta x_0)$（$\beta=v/c$）となり、[[7shi-em4]]の同時性の相対性の例で引用したローレンツ変換が得られます。
+$R\gamma_0\tilde R$を新しい時間方向$\gamma_0'$と見ると、$\gamma_0'=\cosh\eta\,(\gamma_0+\gamma_1\tanh\eta)$は、$\sigma_1$方向に速さ$v=c\tanh\eta$で動く観測者の世界線の向きです。係数$\cosh\eta=1/\sqrt{1-v^2/c^2}$はローレンツ因子で（以下、添字のない$\gamma$はローレンツ因子を表します）、パラメーター$\eta$はラピディティと呼ばれます。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$を成分で書くと$x_0'=\gamma(x_0-\beta x_1)$、$x_1'=\gamma(x_1-\beta x_0)$（$\beta=v/c$）となり、前回の同時性の相対性の例で引用したローレンツ変換が得られます。
 
 $\gamma_0'$が動く観測者の世界線の向きであることは、次のように確かめられます。$\gamma_0'$の向きに進むと、$x_0=ct$が$\cosh\eta$増えるごとに$x_1$が$\sinh\eta$増えるので、$dx_1/dt=c\tanh\eta=v$です。つまりブーストは、静止した観測者を、$\sigma_1$方向に一定の速さ$v$で動く観測者に取り替える変換です。
 
@@ -118,7 +122,7 @@ $$
 | $i\sigma_k$（空間の面） | $-1$ | $\cos$、$\sin$ | 空間の回転 |
 | $\sigma_k$（時間を含む面） | $+1$ | $\cosh$、$\sinh$ | ブースト |
 
-[[7shi-em2]]と[[7shi-em4]]では、偶部分の生成元の2乗の符号が楕円型と双曲型を分けました。同じ符号が、指数関数を三角関数と双曲線関数に分けています。空間の向きと時間の向きを保つローレンツ変換が回転とブーストの合成で得られること、および$R$と$-R$が同じ変換を与えること（二重被覆）の一般論は、本記事では扱いません。
+これまでの記事では、偶部分の生成元の2乗の符号が楕円型と双曲型を分けました。同じ符号が、指数関数を三角関数と双曲線関数に分けています。空間の向きと時間の向きを保つローレンツ変換が回転とブーストの合成で得られること、および$R$と$-R$が同じ変換を与えること（二重被覆）の一般論は、本記事では扱いません。[[7shi-em2]]
 
 ## 向きの異なるブースト
 
@@ -183,13 +187,13 @@ $$
 である（$i^2=-1$を使った）。したがって$\tilde RF_\perp R$の$\sigma_2$の係数は$E_2\cosh\eta-cB_3\sinh\eta=\gamma(E_2-vB_3)$、$\sigma_3$の係数は$\gamma(E_3+vB_2)$、$ic\sigma_2$の係数は$\gamma(B_2+vE_3/c^2)$、$ic\sigma_3$の係数は$\gamma(B_3-vE_2/c^2)$となる。$\boldsymbol v\times\boldsymbol B=v(0,-B_3,B_2)$、$\boldsymbol v\times\boldsymbol E=v(0,-E_3,E_2)$と比べればよい。
 &&&
 
-静止した電荷のまわりにある純粋な電場も、動く観測者からは$\boldsymbol B'_\perp=-\gamma\boldsymbol v\times\boldsymbol E/c^2$の磁場を伴って見えます。動く観測者から見ればその電荷は速度$\boldsymbol u=-\boldsymbol v$で動いており、[[7shi-em4]]で見たとおり電流を伴います。上の変換式からは、観測者の見る電場$\boldsymbol E'$を使って$\boldsymbol B'=\boldsymbol u\times\boldsymbol E'/c^2$と書けます。速さが$c$より十分小さければ、これは[[7shi-em1]]のビオ＝サバールの法則で$I\,d\boldsymbol l$を$q\boldsymbol u$に対応させた式と一致します。これは低速での場の形の比較で、定常電流の法則を動く点電荷にそのまま当てはめたものではありません。
+静止した電荷のまわりにある純粋な電場も、動く観測者からは$\boldsymbol B'_\perp=-\gamma\boldsymbol v\times\boldsymbol E/c^2$の磁場を伴って見えます。動く観測者から見ればその電荷は速度$\boldsymbol u=-\boldsymbol v$で動いており、前述のとおり電流を伴います。上の変換式からは、観測者の見る電場$\boldsymbol E'$を使って$\boldsymbol B'=\boldsymbol u\times\boldsymbol E'/c^2$と書けます。速さが$c$より十分小さければ、これはビオ＝サバールの法則で$I\,d\boldsymbol l$を$q\boldsymbol u$に対応させた式と一致します。これは低速での場の形の比較で、定常電流の法則を動く点電荷にそのまま当てはめたものではありません。[[7shi-em1]]
 
-逆向きの読み方もできます。磁場$\boldsymbol B$の中を速度$\boldsymbol v$で動く電荷には、[[7shi-em1]]のローレンツ力$q\boldsymbol v\times\boldsymbol B$が働きます。その瞬間に電荷と同じ速度$\boldsymbol v$で動く慣性観測者から見ると電荷は静止しているので、磁場による力は働かないはずです。実際、その観測者の電場は$\boldsymbol E'_\perp=\gamma(\boldsymbol E+\boldsymbol v\times\boldsymbol B)_\perp$であり、$\boldsymbol v\times\boldsymbol B$の力は電場による力として現れます。元の系で純粋な磁場なら$q\boldsymbol E'=\gamma q\,\boldsymbol v\times\boldsymbol B$で、力の大きさも観測者によって変わるので、両者をそのまま等置するわけではありません。電気的な力と磁気的な力の区別は、観測者の選び方による相対的なものです。ベクトル解析では6成分の変換公式として覚える式ですが、ここでは$F$を回転子で挟むという1つの操作で、$\sigma_1$と反可換な成分に$e^{\sigma_1\eta}$が掛かるだけです。
+逆向きの読み方もできます。磁場$\boldsymbol B$の中を速度$\boldsymbol v$で動く電荷には、ローレンツ力$q\boldsymbol v\times\boldsymbol B$が働きます。その瞬間に電荷と同じ速度$\boldsymbol v$で動く慣性観測者から見ると電荷は静止しているので、磁場による力は働かないはずです。実際、その観測者の電場は$\boldsymbol E'_\perp=\gamma(\boldsymbol E+\boldsymbol v\times\boldsymbol B)_\perp$であり、$\boldsymbol v\times\boldsymbol B$の力は電場による力として現れます。元の系で純粋な磁場なら$q\boldsymbol E'=\gamma q\,\boldsymbol v\times\boldsymbol B$で、力の大きさも観測者によって変わるので、両者をそのまま等置するわけではありません。電気的な力と磁気的な力の区別は、観測者の選び方による相対的なものです。ベクトル解析では6成分の変換公式として覚える式ですが、ここでは$F$を回転子で挟むという1つの操作で、$\sigma_1$と反可換な成分に$e^{\sigma_1\eta}$が掛かるだけです。
 
 ## 不変量
 
-[[7shi-em3]]で見たとおり、$F^2$はスカラー部と擬スカラー部だけを持ちます。
+電磁場の2乗$F^2$はスカラー部と擬スカラー部だけを持ちます。
 
 $$
 F^2=\bigl(|\boldsymbol E|^2-c^2|\boldsymbol B|^2\bigr)+2ic\,\boldsymbol E\cdot\boldsymbol B
@@ -201,7 +205,7 @@ $$
 F'^2=\tilde RFR\tilde RFR=\tilde RF^2R=F^2\tilde RR=F^2
 $$
 
-です。$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と$\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者、すなわち空間と時間の向きの規約を共有する観測者に共通の量です（$\boldsymbol E\cdot\boldsymbol B$は空間反転で符号を変えます）。とくに[[7shi-em3]]のヌル場（$F^2=0$）は、どの観測者から見てもヌル場です。
+です。$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と$\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者、すなわち空間と時間の向きの規約を共有する観測者に共通の量です（$\boldsymbol E\cdot\boldsymbol B$は空間反転で符号を変えます）。とくにヌル場（$F^2=0$）は、どの観測者から見てもヌル場です。[[7shi-em3]]
 
 &&&ex 平面波のドップラー効果
 $\sigma_1$方向に進む平面波$F=(1+\sigma_1)\boldsymbol E(\xi)$（$\boldsymbol E\perp\sigma_1$、$\xi=x_0-x_1$）を、同じ向きに動く観測者から見ます。$(1+\sigma_1)\sigma_1=1+\sigma_1$と、$\boldsymbol E$が$\sigma_1$と反可換であることから
@@ -223,7 +227,7 @@ $$
 
 $F^2$はスカラーと擬スカラーの和$\alpha+i\beta$で、$i^2=-1$かつ$i$が偶部分の元と可換なので、複素数のように振る舞います。ヌルでない場は、適当な観測者から見ると最も単純な形になります。
 
-証明では[[7shi-em3]]のエネルギー密度$u=\frac{\varepsilon_0}2(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)$、ポインティングベクトル$\boldsymbol S=\frac1{\mu_0}\boldsymbol E\times\boldsymbol B$、$F^\dagger=\boldsymbol E-ic\boldsymbol B$を使います。$\dagger$は$\operatorname{Cl}_{3,0}(\mathbb R)$の反転で、本記事の時空の反転$\tilde{\ }$とは別の操作です。電場と磁場が平行ならエネルギーの流れ$\boldsymbol S$は消えるので、$\boldsymbol S$の向きに動いてその流れが消える観測者を探します。
+証明ではエネルギー密度$u=\frac{\varepsilon_0}2(|\boldsymbol E|^2+c^2|\boldsymbol B|^2)$、ポインティングベクトル$\boldsymbol S=\frac1{\mu_0}\boldsymbol E\times\boldsymbol B$、$F^\dagger=\boldsymbol E-ic\boldsymbol B$を使います。$\dagger$は$\operatorname{Cl}_{3,0}(\mathbb R)$の反転で、本記事の時空の反転$\tilde{\ }$とは別の操作です。電場と磁場が平行ならエネルギーの流れ$\boldsymbol S$は消えるので、$\boldsymbol S$の向きに動いてその流れが消える観測者を探します。
 
 &&&prop 場の標準形
 ある時空点で$F^2\ne0$なら、その点で適当なブーストで移った観測者から見て$\boldsymbol E'$と$\boldsymbol B'$は平行（一方が$0$の場合を含む）で、単位相対ベクトル$\hat{\boldsymbol m}$と実数$a,b$により
@@ -242,7 +246,7 @@ $$
 \frac{\varepsilon_0}2F'F'^\dagger=\frac{\varepsilon_0}2Fe^{2\hat{\boldsymbol n}\eta}F^\dagger=e^{-2\hat{\boldsymbol n}\eta}\Bigl(u+\frac{|\boldsymbol S|}c\hat{\boldsymbol n}\Bigr)
 $$
 
-であり、ベクトル部は$\bigl(\frac{|\boldsymbol S|}c\cosh2\eta-u\sinh2\eta\bigr)\hat{\boldsymbol n}$となる。[[7shi-em3]]の命題「エネルギーの流れの速さ」より、ヌルでない場では$|\boldsymbol S|<cu$なので、$\tanh2\eta=|\boldsymbol S|/cu$となる$\eta$が取れ、このとき$\boldsymbol S'=0$、すなわち$\boldsymbol E'\times\boldsymbol B'=0$である。$\boldsymbol E'$と$\boldsymbol B'$が平行なので、共通の単位相対ベクトル$\hat{\boldsymbol m}$で$F'=(a+ib)\hat{\boldsymbol m}$と書け、$\hat{\boldsymbol m}^2=1$と$i$の可換性から$F'^2=(a+ib)^2$である。これは不変量$F^2$に等しい。$\boldsymbol E\cdot\boldsymbol B=0$なら$F^2$は実数なので$ab=0$で、$a^2-b^2=|\boldsymbol E|^2-c^2|\boldsymbol B|^2$の符号でどちらが残るかが決まる。
+であり、ベクトル部は$\bigl(\frac{|\boldsymbol S|}c\cosh2\eta-u\sinh2\eta\bigr)\hat{\boldsymbol n}$となる。以前の記事の命題「エネルギーの流れの速さ」より、ヌルでない場では$|\boldsymbol S|<cu$なので、$\tanh2\eta=|\boldsymbol S|/cu$となる$\eta$が取れ、このとき$\boldsymbol S'=0$、すなわち$\boldsymbol E'\times\boldsymbol B'=0$である。$\boldsymbol E'$と$\boldsymbol B'$が平行なので、共通の単位相対ベクトル$\hat{\boldsymbol m}$で$F'=(a+ib)\hat{\boldsymbol m}$と書け、$\hat{\boldsymbol m}^2=1$と$i$の可換性から$F'^2=(a+ib)^2$である。これは不変量$F^2$に等しい。$\boldsymbol E\cdot\boldsymbol B=0$なら$F^2$は実数なので$ab=0$で、$a^2-b^2=|\boldsymbol E|^2-c^2|\boldsymbol B|^2$の符号でどちらが残るかが決まる。
 &&&
 
 必要なブーストの向きと大きさは、一般には時空点ごとに異なります。標準形では、ヌルでない場は複素数$a+ib$（$F^2$の平方根）と1つの方向$\hat{\boldsymbol m}$で表され、観測者によって見え方が違うのは、この単純な形がブーストで傾けられているためです。$F^2$の平方根は、標準形で残る電場と磁場の強さの組を表し、平方根の符号の違いは$\hat{\boldsymbol m}$の反転に吸収できます。ヌル場だけはこの標準形を持たず、どの観測者から見ても、各点で平面波と同じ代数的な形をしています。
@@ -275,9 +279,9 @@ $$
 
 ## 運動方程式
 
-[[7shi-cla2]]の定義「ベクトルと2ベクトルの内積」にならって、2ベクトル$F$とベクトル$U$の内積を$F\cdot U=\frac12(FU-UF)$とします。これはベクトルです。この規約では$U\cdot F=-F\cdot U$なので、順序に注意します。
+ベクトルと2ベクトルの内積の定義にならって、2ベクトル$F$とベクトル$U$の内積を$F\cdot U=\frac12(FU-UF)$とします。これはベクトルです。この規約では$U\cdot F=-F\cdot U$なので、順序に注意します。[[7shi-cla2]]
 
-4元運動量を$p=mU$とし、外から与えられた電磁場の中の荷電粒子の運動法則を次の形で置きます（粒子自身の放射による反作用は考えません）。その成分が[[7shi-em1]]のローレンツ力と仕事率を再現することを確かめます。
+4元運動量を$p=mU$とし、外から与えられた電磁場の中の荷電粒子の運動法則を次の形で置きます（粒子自身の放射による反作用は考えません）。その成分がローレンツ力と仕事率を再現することを確かめます。
 
 &&&thm ローレンツ力の成分表示
 $$
@@ -318,7 +322,7 @@ $$
 m\frac{d\boldsymbol u}{dt}=q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)
 $$
 
-となります。これは[[7shi-em1]]のローレンツ力をニュートンの運動方程式に入れたものです。時間成分の$\gamma mc^2$は粒子のエネルギーです。$\gamma mc^2=(mU)\cdot(c\gamma_0)$であり、エネルギーは4元運動量の、観測者の時間軸への成分です。$x_0'=x\cdot\gamma_0'$と同じく、観測者に依存する成分は時間軸への射影として現れます。$|\boldsymbol u|\ll c$では
+となります。これはローレンツ力をニュートンの運動方程式に入れたものです。時間成分の$\gamma mc^2$は粒子のエネルギーです。$\gamma mc^2=(mU)\cdot(c\gamma_0)$であり、エネルギーは4元運動量の、観測者の時間軸への成分です。$x_0'=x\cdot\gamma_0'$と同じく、観測者に依存する成分は時間軸への射影として現れます。$|\boldsymbol u|\ll c$では
 
 $$
 \gamma mc^2=mc^2+\frac12m|\boldsymbol u|^2+\cdots
@@ -352,7 +356,7 @@ $$
 となる。$F$は世界線上の点$x(\tau)$で評価した値でよい。
 &&&
 
-電磁場$F$は、粒子の時間軸を回転させる2ベクトルとして働きます。回転子の節の表のとおり、基底$\sigma_k$の2乗は$+1$、$i\sigma_k$の2乗は$-1$で、$F$の成分のうち$E_k\sigma_k$はブーストを、$icB_k\sigma_k$は空間の回転を生成します。電場は時間方向と空間方向を混ぜるブーストの生成元として働き、粒子のエネルギーと速度を変えます。磁場は空間方向だけを回し、速さを変えずに運動の向きを変えます。[[7shi-em1]]では、磁場の面内の速度が直角に曲げられることを見ました。ここでは、その瞬間ごとの曲がりが回転子による連続的な回転になり、円運動を作ります。静止した粒子（$U=c\gamma_0$）には$F\cdot\gamma_0=\sum_kE_k\gamma_k$だけが働き、磁場は働きません。
+電磁場$F$は、粒子の時間軸を回転させる2ベクトルとして働きます。回転子の節の表のとおり、基底$\sigma_k$の2乗は$+1$、$i\sigma_k$の2乗は$-1$で、$F$の成分のうち$E_k\sigma_k$はブーストを、$icB_k\sigma_k$は空間の回転を生成します。電場は時間方向と空間方向を混ぜるブーストの生成元として働き、粒子のエネルギーと速度を変えます。磁場は空間方向だけを回し、速さを変えずに運動の向きを変えます。以前の記事では、磁場の面内の速度が直角に曲げられることを見ました。ここでは、その瞬間ごとの曲がりが回転子による連続的な回転になり、円運動を作ります。静止した粒子（$U=c\gamma_0$）には$F\cdot\gamma_0=\sum_kE_k\gamma_k$だけが働き、磁場は働きません。
 
 &&&ex 一様な電場と一様な磁場
 一様な電場$F=E\sigma_1$では$R=e^{qE\sigma_1\tau/2mc}$で、静止から出発した粒子の固有速度は
@@ -377,6 +381,16 @@ $$
 # まとめ
 
 ローレンツ変換を回転子$x\mapsto Rx\tilde R$として扱いました。
+
+&&&fml 回転子とローレンツ変換
+$$
+\begin{aligned}
+&R=e^{B/2},\qquad R\tilde R=1,\qquad x'=Rx\tilde R \\
+&R=e^{-i\sigma_3\theta/2}\quad(\text{空間の回転}),\qquad R=e^{\sigma_1\eta/2}\quad(\text{ブースト}) \\
+&F'=\tilde RFR,\qquad m\frac{dU}{d\tau}=\frac qc F\cdot U,\qquad \frac{dR}{d\tau}=\frac q{2mc}FR
+\end{aligned}
+$$
+&&&
 
 - **基底の取り替え**：回転子は生成元の関係式を保つので、ローレンツ変換は正規直交基底を取り替えるだけの時空の回転です。観測者を替えることは基底を替えることで、ブーストの方向に進む光の向き$\gamma_0\pm\gamma_1$は向きを変えず$e^{\pm\eta}$倍に伸び縮みするだけです。
 - **回転子**：$R\tilde R=1$を満たす偶部分の元はベクトルをベクトルに移し、ミンコフスキー計量を保ちます。2ベクトルの指数関数で作ると、2乗が$-1$の空間の2ベクトルからは三角関数による回転、2乗が$+1$の$\sigma_k$からは双曲線関数によるブーストが得られます。ラピディティは加法的で、速度の合成則を与えます。

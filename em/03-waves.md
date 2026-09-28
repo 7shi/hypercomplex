@@ -1,8 +1,12 @@
-[[7shi-em2]]では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、一定の背景場を除けば平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の虚数単位の役割を擬スカラー$i$が果たし、そのまま円偏光の回転が得られます。$i$と可換な$\mathcal D$の性質から、$i$を掛ける操作は電場と磁場を入れ替える双対性として働きます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのノルムが$F^2$の絶対値の2乗に等しいことからエネルギーの流れが光速を超えないこと、スカラー部の保存則がポインティングの定理になることを示します。
+クリフォード代数における真空のマクスウェル方程式を直接解き、平面波の代数的構造、擬スカラーによる円偏光と双対性、そしてエネルギーの流れを調べます。
+
+# 概要
+
+前回の記事では、マクスウェル方程式を$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$という1本の式にまとめ、共役$\bar{\mathcal D}$を掛けて波動方程式を導きました。本記事では、電荷も電流もない真空で$\mathcal DF=0$を直接解きます。進行方向の単位ベクトル$\hat{\boldsymbol k}$について$(1\pm\hat{\boldsymbol k})/2$が冪等元になることから、一定の背景場を除けば平面波は$F=(1+\hat{\boldsymbol k})\boldsymbol E$の形に限られ、$F^2=0$を満たします。正弦波では複素指数関数の虚数単位の役割を擬スカラー$i$が果たし、そのまま円偏光の回転が得られます。$i$と可換な$\mathcal D$の性質から、$i$を掛ける操作は電場と磁場を入れ替える双対性として働きます。最後に、$F$と反転$F^\dagger$の積がエネルギー密度とポインティングベクトルをまとめたパラベクトルになり、そのノルムが$F^2$の絶対値の2乗に等しいことからエネルギーの流れが光速を超えないこと、スカラー部の保存則がポインティングの定理になることを示します。[[7shi-em2]]
 
 # 設定
 
-[[7shi-em2]]の記号をそのまま使います。$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$、擬スカラーを$i=e_1e_2e_3$とし、$x_0=ct$、$\mathcal D=\partial_0+D$、$F=\boldsymbol E+ic\boldsymbol B$とします。真空のマクスウェル方程式は
+前回の記号をそのまま使います。$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$、擬スカラーを$i=e_1e_2e_3$とし、$x_0=ct$、$\mathcal D=\partial_0+D$、$F=\boldsymbol E+ic\boldsymbol B$とします。真空のマクスウェル方程式は
 
 $$
 \mathcal DF=0
@@ -16,7 +20,7 @@ $$
 
 単位ベクトル$\hat{\boldsymbol k}$の方向に進む平面波を考えます。$F$が$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$だけの関数$F(\xi)$であるとします。
 
-この形の意味を確かめておきます。これは[[7shi-em2]]の1次元の例$f(z-ct)$を任意の向きに書いたものです。ある時刻に$\xi$が一定の点の集まりは、$\hat{\boldsymbol k}\cdot\boldsymbol x=\text{一定}$という$\hat{\boldsymbol k}$に垂直な平面で、その上で場は一様です。この平面を**波面**と呼びます。時間が$\Delta t$だけ進むと$x_0=ct$は$c\Delta t$増えるので、同じ$\xi$の値を持つ平面は$\hat{\boldsymbol k}$の向きに$c\Delta t$だけ移動します。したがって$F(\xi)$は、波形を変えずに$\hat{\boldsymbol k}$の向きへ速さ$c$で進む波です。波源から十分遠く、波面の曲がりや振幅の変化を無視できる狭い範囲では、電磁波はこの平面波で近似できます。
+この形の意味を確かめておきます。これは前回の1次元の例$f(z-ct)$を任意の向きに書いたものです。ある時刻に$\xi$が一定の点の集まりは、$\hat{\boldsymbol k}\cdot\boldsymbol x=\text{一定}$という$\hat{\boldsymbol k}$に垂直な平面で、その上で場は一様です。この平面を**波面**と呼びます。時間が$\Delta t$だけ進むと$x_0=ct$は$c\Delta t$増えるので、同じ$\xi$の値を持つ平面は$\hat{\boldsymbol k}$の向きに$c\Delta t$だけ移動します。したがって$F(\xi)$は、波形を変えずに$\hat{\boldsymbol k}$の向きへ速さ$c$で進む波です。波源から十分遠く、波面の曲がりや振幅の変化を無視できる狭い範囲では、電磁波はこの平面波で近似できます。
 
 $F=F(\xi)$について$\partial_0F=F'$、$\partial_kF=-\hat k_kF'$より
 
@@ -26,7 +30,7 @@ $$
 
 です。$\mathcal DF=0$は、$F'$が左から掛けた$1-\hat{\boldsymbol k}$で消えることを意味します。
 
-$\hat{\boldsymbol k}^2=1$なので、$1$と$\hat{\boldsymbol k}$が張る部分代数は分解型複素数と同型で、[[7shi-clif2]]の冪等元が現れます。
+$\hat{\boldsymbol k}^2=1$なので、$1$と$\hat{\boldsymbol k}$が張る部分代数は分解型複素数と同型で、冪等元が現れます。[[7shi-clif2]]
 
 &&&fml 進行方向の冪等元
 $$
@@ -68,7 +72,7 @@ $$
 F=P_+f(x_0-x_1)+P_-g(x_0+x_1)
 $$
 
-が一般解で、右向きと左向きに進む波が2つの冪等元の成分に分かれます（ダランベールの解）。分解型複素数（[[7shi-clif2]]）の冪等元による直和分解が、そのまま進行方向による波の分解になっています。楕円型の正則関数と違い、$f,g$は解析的である必要がなく、微分可能でさえあれば任意です。ここで$f,g$はクリフォード代数値で、電磁場として使うときは全体がベクトル部と2ベクトル部だけを持つように選びます。
+が一般解で、右向きと左向きに進む波が2つの冪等元の成分に分かれます（ダランベールの解）。分解型複素数の冪等元による直和分解が、そのまま進行方向による波の分解になっています。楕円型の正則関数と違い、$f,g$は解析的である必要がなく、微分可能でさえあれば任意です。ここで$f,g$はクリフォード代数値で、電磁場として使うときは全体がベクトル部と2ベクトル部だけを持つように選びます。
 &&&
 
 ## $F^2=0$
@@ -146,7 +150,7 @@ $$
 (1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{i\theta}=(1+\hat{\boldsymbol k})\,e^{i\theta}\boldsymbol E_0=(1+\hat{\boldsymbol k})\,e^{i\hat{\boldsymbol k}\theta}\boldsymbol E_0=(1+\hat{\boldsymbol k})\boldsymbol E_0\,e^{-i\hat{\boldsymbol k}\theta}
 $$
 
-となります。右端の$\boldsymbol E_0e^{-i\hat{\boldsymbol k}\theta}=\boldsymbol E_0\cos\theta-(\hat{\boldsymbol k}\times\boldsymbol E_0)\sin\theta$は、[[7shi-vge]]と同じく、平面の2ベクトルの指数関数による平面内の回転です。[[7shi-cla3]]で、複素数の虚数単位が平面の擬スカラーとして現れたのと同じ関係が、偏光面の上で成り立っています。
+となります。右端の$\boldsymbol E_0e^{-i\hat{\boldsymbol k}\theta}=\boldsymbol E_0\cos\theta-(\hat{\boldsymbol k}\times\boldsymbol E_0)\sin\theta$は、平面の2ベクトルの指数関数による平面内の回転です。複素数の虚数単位が平面の擬スカラーとして現れたのと同じ関係が、偏光面の上で成り立っています。[[7shi-vge]][[7shi-cla3]]
 
 ## 直線偏光
 
@@ -172,7 +176,7 @@ $$
 \boldsymbol E\mapsto-c\boldsymbol B,\qquad c\boldsymbol B\mapsto\boldsymbol E
 $$
 
-となり、電場と磁場の役割が入れ替わります。真空のマクスウェル方程式が電場と磁場の入れ替えに対して形を保つこと（電気と磁気の双対性）は、擬スカラーを掛けるという1つの操作として表れます。一般の$\alpha$では電場と磁場が角$\alpha$で混ざり、円偏光の$e^{i\theta}$はこの双対回転を位相として使ったものと読めます。円偏光で位置と時刻に依存する角$\theta$を使えたのは、平面波の冪等元の条件による特別な事情です。源がある場合は、源も同じ角だけ回す必要があります。回した源$(\rho-\boldsymbol J/c)e^{i\alpha}$には擬スカラー部と2ベクトル部が現れ、それぞれ磁荷（[[7shi-em1]]）の密度とその流れ（磁流）にあたるので、これらを持ち込まない限りこの対称性は成り立ちません。
+となり、電場と磁場の役割が入れ替わります。真空のマクスウェル方程式が電場と磁場の入れ替えに対して形を保つこと（電気と磁気の双対性）は、擬スカラーを掛けるという1つの操作として表れます。一般の$\alpha$では電場と磁場が角$\alpha$で混ざり、円偏光の$e^{i\theta}$はこの双対回転を位相として使ったものと読めます。円偏光で位置と時刻に依存する角$\theta$を使えたのは、平面波の冪等元の条件による特別な事情です。源がある場合は、源も同じ角だけ回す必要があります。回した源$(\rho-\boldsymbol J/c)e^{i\alpha}$には擬スカラー部と2ベクトル部が現れ、それぞれ磁荷の密度とその流れ（磁流）にあたるので、これらを持ち込まない限りこの対称性は成り立ちません。[[7shi-em1]]
 
 双対回転で$F^2$は$F^2e^{2i\alpha}$となり、スカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$は複素数の実部と虚部のように混ざります。一方、次節の$FF^\dagger$は$(Fe^{i\alpha})(Fe^{i\alpha})^\dagger=Fe^{i\alpha}e^{-i\alpha}F^\dagger=FF^\dagger$で変わりません。
 
@@ -197,7 +201,7 @@ $FF^\dagger=(\boldsymbol E+ic\boldsymbol B)(\boldsymbol E-ic\boldsymbol B)=|\bol
 $u$は電磁場のエネルギー密度で、電場と磁場が存在する空間には単位体積あたり$u$のエネルギーが蓄えられていると考えます。$c^2\varepsilon_0=1/\mu_0$より$u=\frac{\varepsilon_0}2|\boldsymbol E|^2+\frac1{2\mu_0}|\boldsymbol B|^2$で、第1項が電場の、第2項が磁場のエネルギーです。単位は$\mathrm{J/m^3}$です。この解釈は、下のコンデンサーの例とポインティングの定理によって裏付けられます。
 
 &&&ex 平行板コンデンサーのエネルギー
-[[7shi-em2]]で変位電流を考えた平行板コンデンサーについて、充電に要する仕事を調べます。面積$A$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与えます。板の端の効果を無視すると、板の間の電場は一様で大きさ$E=Q/\varepsilon_0A$、板の外では$0$です。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0A$です。ゆっくり充電し、抵抗や放射による損失は無視します。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0A}dq$が要ります。$0$から$Q$まで積分すると、充電に要する仕事は
+変位電流を考えた平行板コンデンサーについて、充電に要する仕事を調べます。面積$A$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与えます。板の端の効果を無視すると、板の間の電場は一様で大きさ$E=Q/\varepsilon_0A$、板の外では$0$です。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0A$です。ゆっくり充電し、抵抗や放射による損失は無視します。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0A}dq$が要ります。$0$から$Q$まで積分すると、充電に要する仕事は
 $$
 W=\frac{Q^2d}{2\varepsilon_0A}=\frac{\varepsilon_0}2E^2\cdot Ad
 $$
@@ -264,7 +268,7 @@ $$
 である。最後の等号では、$\rho\boldsymbol E$と$\rho ic\boldsymbol B$と$\boldsymbol J(ic\boldsymbol B)$がスカラー部を持たないことを使った。両辺に$\varepsilon_0/2$を掛け、[エネルギー密度とポインティングベクトル](#fml-energy)を使うと$\partial_0u+\frac1c\nabla\cdot\boldsymbol S=-\frac1c\boldsymbol J\cdot\boldsymbol E$となる。$\partial_0=\frac1c\partial_t$として両辺に$c$を掛ければよい。
 &&&
 
-右辺の$\boldsymbol J\cdot\boldsymbol E$は、[[7shi-em1]]のローレンツ力で見た、電場が電流にする単位体積あたりの仕事率です。磁場による力は仕事をしないので、$\boldsymbol B$は現れません。空間に固定した領域$V$で積分して発散定理を使うと
+右辺の$\boldsymbol J\cdot\boldsymbol E$は、ローレンツ力で見た、電場が電流にする単位体積あたりの仕事率です。磁場による力は仕事をしないので、$\boldsymbol B$は現れません。空間に固定した領域$V$で積分して発散定理を使うと
 
 $$
 \frac d{dt}\int_Vu\,dV=-\oint_{\partial V}\boldsymbol S\cdot\boldsymbol n\,dS-\int_V\boldsymbol J\cdot\boldsymbol E\,dV
@@ -277,6 +281,16 @@ $$
 # まとめ
 
 真空のマクスウェル方程式$\mathcal DF=0$を、進行方向の冪等元と擬スカラーを使って調べました。
+
+&&&fml 真空の電磁波とエネルギー
+$$
+\begin{aligned}
+&F=(1+\hat{\boldsymbol k})\boldsymbol E,\qquad F^2=0,\qquad P_\pm=\frac{1\pm\hat{\boldsymbol k}}2 \\
+&e^{i\theta}=\cos\theta+i\sin\theta\quad(\text{円偏光・双対性}) \\
+&\frac{\varepsilon_0}2FF^\dagger=u+\frac{\boldsymbol S}c,\qquad \partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
+\end{aligned}
+$$
+&&&
 
 - **平面波**：$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数では$\mathcal DF=(1-\hat{\boldsymbol k})F'$であり、一定の背景場を除けば$F$は冪等元$P_+=(1+\hat{\boldsymbol k})/2$の像に入ります。その形は$F=(1+\hat{\boldsymbol k})\boldsymbol E$に限られ、$\boldsymbol E\perp\hat{\boldsymbol k}$、$c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E$が同時に出ます。
 - **$F^2=0$**：$F^2$のスカラー部$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と擬スカラー部$2ic\,\boldsymbol E\cdot\boldsymbol B$がともに$0$になります。逆に$F^2=0$の場は、各点で平面波と同じ代数的な形をしています。

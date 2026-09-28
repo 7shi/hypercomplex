@@ -1,8 +1,8 @@
-前回は、四元数の背後にあるクリフォード代数を導入し、$\operatorname{SO}(3)$の二重被覆$\operatorname{Spin}(3)$とスピノルを見ました。[[7shi-lie3]]
+四元数の左右からの独立な作用によって4次元回転群$\operatorname{SO}(4)$を構成し、クリフォード代数を用いた$\operatorname{Spin}(4)$の二重被覆の構造を解き明かします。
 
-今回は、四元数を4次元空間そのものとして扱い、左右から独立に挟む作用によって4次元回転群$\operatorname{SO}(4)$のすべてを構成します。さらに、$\operatorname{SO}(4)$の回転行列を収める$\operatorname{Cl}_{3,1}(\mathbb{R})$と、その二重被覆$\operatorname{Spin}(4)$を構成する$\operatorname{Cl}_{4,0}(\mathbb{R})$の役割を比較します。
+# 概要
 
-シリーズ: [リー群・リー代数の初歩](https://mathlog.info/series/LENUzX64bZ63y462z5I9)
+四元数を4次元空間そのものとして扱い、左右から独立に挟む作用によって4次元回転群$\operatorname{SO}(4)$のすべてを構成します。さらに、$\operatorname{SO}(4)$の回転行列を収める$\operatorname{Cl}_{3,1}(\mathbb{R})$と、その二重被覆$\operatorname{Spin}(4)$を構成する$\operatorname{Cl}_{4,0}(\mathbb{R})$の役割を比較します。前回は四元数の背後にあるクリフォード代数を導入し、$\operatorname{SO}(3)$の二重被覆$\operatorname{Spin}(3)$とスピノルを見ました。[[7shi-lie3]]
 
 # 前提知識
 
@@ -282,7 +282,7 @@ $\operatorname{Cl}_{3,1}(\mathbb{R})$本来の枠組みで回転子$r$（2ベク
 
 # $\operatorname{Cl}_{4,0}(\mathbb{R})$による$\operatorname{Spin}(4)$の構成
 
-クリフォード代数による$\operatorname{Spin}(n)$の一般的な構成は、前回触れた通り「$\mathbb{R}^n$の直交基底を生成元とするクリフォード代数を作り、偶部分代数の元（単位ベクトルの偶数個の積）でグレード$1$のベクトルを挟む」というものでした。[[7shi-lie3]] 4次元のユークリッド空間なら、パウリ行列と同じ流儀で「自乗が$+I$（長さ$1$）」の反交換する生成元が4つ必要で、舞台は$\operatorname{Cl}_{4,0}(\mathbb{R})$です。
+クリフォード代数による$\operatorname{Spin}(n)$の一般的な構成は、前回触れた通り「$\mathbb{R}^n$の直交基底を生成元とするクリフォード代数を作り、偶部分代数の元（単位ベクトルの偶数個の積）でグレード$1$のベクトルを挟む」というものでした。4次元のユークリッド空間なら、パウリ行列と同じ流儀で「自乗が$+I$（長さ$1$）」の反交換する生成元が4つ必要で、舞台は$\operatorname{Cl}_{4,0}(\mathbb{R})$です。[[7shi-lie3]]
 
 ところが、$4 \times 4$実行列の中では$\operatorname{Cl}_{4,0}$は作れません。前節の数え上げでは、基底$L_uR_v$から反交換する4個を取ると計量は必ず混ざり、自乗$+I$のものは3つ（$L_iR_i, L_jR_i, L_kR_i$など）までしか取れませんでした。基底以外の元を許しても事情は変わりません。$\operatorname{Cl}_{4,0}(\mathbb{R})$の非零実加群は最小でも実8次元になることが知られており、自乗$+I$で互いに反交換する4つの行列が$M_4(\mathbb{R})$の中にあれば、$\mathbb{R}^4$が実4次元の加群になってしまうからです。自乗$-I$の4つについても、$\operatorname{Cl}_{0,4}(\mathbb{R}) \cong M_2(\mathbb{H})$（後述の注意）の非零実加群が同じく最小で実8次元なので、同様に存在しません。生成元4つの積は$2^4 = 16$通りで、次元だけなら$M_4(\mathbb{R})$と同じですが、代数としては構造が異なります。
 
@@ -412,6 +412,13 @@ $\gamma(v)$の片方のブロックに$-1$を付ければ自乗は$-|v|^2 I$と�
 &&&
 
 # まとめ
+
+&&&fml
+\text{両側作用}: x \mapsto pxq^{-1} \quad (p, q \in \operatorname{Sp}(1)) \\
+\operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1) \to \operatorname{SO}(4), \quad \operatorname{ker} = \{\pm(1, 1)\} \\
+\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2) \\
+M_4(\mathbb{R}) \cong \mathbb{H} \otimes_{\mathbb{R}} \mathbb{H} \cong \operatorname{Cl}_{3,1}(\mathbb{R}), \quad M_2(\mathbb{H}) \cong \operatorname{Cl}_{4,0}(\mathbb{R})
+&&&
 
 四元数全体を4次元空間と見て、左右から独立な単位四元数で挟む両側作用$pxq^{-1}$は、片側作用に付きまとう等傾回転の制限を解除して$\operatorname{SO}(4)$のすべての回転を与えます。対応は2対1で、$\operatorname{Sp}(1) \times \operatorname{Sp}(1)$は$\operatorname{SO}(4)$の二重被覆となり、リー代数では直和分解$\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)$が成り立ちます。この左右の独立性は結合律の帰結です。
 

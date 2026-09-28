@@ -1,3 +1,7 @@
+分解型複素数の代数構造を冪等元と極小イデアルを通じて調べ、実数環の直和への分解と分解型四元数の構成を解説します。
+
+# 概要
+
 分解型複素数は、通常の複素数の関係式 $i^2 = -1$ を $j^2 = +1$ に置き換えて得られる実2次元の可換代数です。その代数構造は、冪等元と極小イデアルを通じて明快に理解できます。本記事では、分解型複素数の定義から始め、冪等元の直交性や零因子としての性質を調べ、実数環の直和への分解を導きます。最後に、$j$ と通常の虚数単位 $i$ を $2 \times 2$ 実行列として並べると反交換性が現れ、分解型四元数が自然に構成されることを確認します。
 
 # 分解型複素数の定義
@@ -369,7 +373,7 @@ q &= a + bi + cj + dk \\
 \end{aligned}
 $$
 
-実数係数 $a, b, c, d$ を動かせば任意の $2 \times 2$ 実行列が得られるため、環同型 $\mathbb{H}' \cong M_2(\mathbb{R})$（記事 [[7shi-clif1]] における記法では $\mathbb{R}(2)$）が成り立ちます。
+実数係数 $a, b, c, d$ を動かせば任意の $2 \times 2$ 実行列が得られるため、環同型 $\mathbb{H}' \cong M_2(\mathbb{R})$（クリフォード代数の記事における記法では $\mathbb{R}(2)$）が成り立ちます。[[7shi-clif1]]
 &&&
 
 &&&rem クリフォード代数としての生成元
@@ -391,17 +395,34 @@ $$
 \sigma_2 = \begin{pmatrix} 0 & -i_\mathbb{C} \\ i_\mathbb{C} & 0 \end{pmatrix}, \quad
 \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = -k
 $$
-となり、$j$ と $-k$ は実パウリ行列そのものです。[[7shi-rpt]] また、$-i_\mathbb{C}\sigma_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = i$ です。すなわち、分解型四元数の純虚部分の基底 $\{j, i, -k\}$ は、パウリ行列の組 $\{\sigma_1, \sigma_2, \sigma_3\}$ のうち、$\sigma_2$ を $-i_\mathbb{C}\sigma_2$ に置き換えたものに対応します。この置き換えによって、すべての行列成分が実数になります。
+となり、$j$ と $-k$ は実パウリ行列そのものです。また、$-i_\mathbb{C}\sigma_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = i$ です。すなわち、分解型四元数の純虚部分の基底 $\{j, i, -k\}$ は、パウリ行列の組 $\{\sigma_1, \sigma_2, \sigma_3\}$ のうち、$\sigma_2$ を $-i_\mathbb{C}\sigma_2$ に置き換えたものに対応します。この置き換えによって、すべての行列成分が実数になります。[[7shi-rpt]]
 &&&
 
 # まとめ
 
-本記事の内容を4点にまとめます。
+本記事の内容をまとめます。
+
+&&&
+**分解型複素数と分解型四元数**
+- 冪等元と完全性
+  $$
+  e = \frac{1+j}{2}, \quad e^* = \frac{1-j}{2}, \quad ee^* = 0, \quad e + e^* = 1
+  $$
+- 極小イデアルへの直和分解
+  $$
+  \mathbb{R}[j] = \mathbb{R}e \oplus \mathbb{R}e^* \cong \mathbb{R} \oplus \mathbb{R}
+  $$
+- 行列表現
+  $$
+  j \cong \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad e \cong \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad e^* \cong \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+  $$
+- 分解型四元数への拡張
+  $$
+  \mathbb{H}' = \operatorname{span}_{\mathbb{R}}\{1, i, j, k\} \cong M_2(\mathbb{R}) = \mathbb{R}(2)
+  $$
+&&&
 
 - **冪等元の性質**：$\mathbb{R}[j]$（$j^2=+1$）の非自明な冪等元は $e = (1+j)/2$ と $e^* = (1-j)/2$ の2つだけであり、直交性 $ee^* = 0$ と完全性 $e + e^* = 1$ を満たします。非自明な冪等元は零因子であるため、$\mathbb{R}[j]$ は整域ではありません。
-
 - **極小イデアルへの直和分解**：$e, e^*$ が生成する $\mathbb{R}e, \mathbb{R}e^*$ はそれぞれ極小イデアルであり、環全体は $\mathbb{R}[j] = \mathbb{R}e \oplus \mathbb{R}e^*$ と直和分解されます。これは「$j$ を掛ける」線形変換の固有空間分解（固有値 $\pm 1$）でもあり、この分解のもとで積が成分ごとに行われるため、環同型 $\mathbb{R}[j] \cong \mathbb{R} \oplus \mathbb{R}$ が成り立ちます。
-
 - **行列表現との対応**：$j \cong \operatorname{diag}(1, -1)$ とする行列表現のもとで、冪等元は射影行列 $e \cong \operatorname{diag}(1, 0),\ e^* \cong \operatorname{diag}(0, 1)$ に、一般の元は $z \cong \operatorname{diag}(x+y,\ x-y)$ に対応します。本記事で導いた代数構造はすべて、対角成分ごとの計算として直感的に理解できます。
-
 - **分解型四元数への拡張**：基底 $\{1, j\}$ に関する「$j$ を掛ける」表現行列は交換行列 $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ となり、複素数における $i \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ と並べることで反交換性 $ij = -ji$ が現れます。積 $k = ij$（$k^2 = +1$）を加えた $\{1, i, j, k\}$ が生成する代数は分解型四元数 $\mathbb{H}'$ であり、実 $2 \times 2$ 行列環 $\mathbb{R}(2)$ と同型になります。

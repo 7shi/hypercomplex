@@ -1,16 +1,26 @@
-静電場を与えるクーロンの法則と、静磁場を与えるビオ＝サバールの法則は、電磁気学の出発点となる2つの実験則です。ベクトル解析では、前者は電荷密度と変位ベクトルの積、後者は電流密度と変位ベクトルのベクトル積を使う、別々の式として書かれます。幾何代数では、両者は電荷密度と電流密度をまとめた1つの量に同じ核を掛けて積分する1本の公式にまとまり、その結果のベクトル部が電場、2ベクトル部が磁場になります。核は[[7shi-cla5]]のコーシー核$\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合であり、クーロン定数$1/4\pi\varepsilon_0$の$4\pi$は単位球面$S^2$の面積です。この公式にディラック作用素$D$を掛けると、静的な場のマクスウェル方程式4本が1本の式のグレード成分として得られます。磁場がもともと2ベクトルであることから、ベクトル積が擬ベクトルとして例外的に扱われる事情（[[7shi-hist]]）も解消されます。
+3次元幾何代数を用いて静電場と静磁場を統合し、クーロンの法則とビオ＝サバールの法則から静的なマクスウェル方程式を導出します。
+
+# 概要
+
+静電場を与えるクーロンの法則と、静磁場を与えるビオ＝サバールの法則は、電磁気学の出発点となる2つの実験則です。ベクトル解析では、前者は電荷密度と変位ベクトルの積、後者は電流密度と変位ベクトルのベクトル積を使う、別々の式として書かれます。
+
+幾何代数では、両者は電荷密度と電流密度をまとめた1つの量に同じ核を掛けて積分する1本の公式にまとまり、その結果のベクトル部が電場、2ベクトル部が磁場になります。核はコーシー核$\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合であり、クーロン定数$1/4\pi\varepsilon_0$の$4\pi$は単位球面$S^2$の面積です。[[7shi-cla5]]
+
+この公式にディラック作用素$D$を掛けると、静的な場のマクスウェル方程式4本が1本の式のグレード成分として得られます。磁場がもともと2ベクトルであることから、ベクトル積が擬ベクトルとして例外的に扱われる事情も解消されます。[[7shi-hist]]
 
 電磁気学の予備知識は仮定せず、電荷・電流・力という基本的な概念から始めます。
 
 # 設定
 
-$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$（$e_k^2=1$、$k\ne l$なら$e_ke_l=-e_le_k$）とし、擬スカラーを$i=e_1e_2e_3$とします。$i^2=-1$で、$i$はすべての元と可換です。[[7shi-cla5]]などでは擬スカラーを$\omega$と書きましたが、本シリーズでは2乗が$-1$であることを表すために$i$と書き、電流には通常どおり$I$を使います。空間の点を$\boldsymbol x=\sum_kx_ke_k$と書き、ディラック作用素を
+$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$e_1,e_2,e_3$（$e_k^2=1$、$k\ne l$なら$e_ke_l=-e_le_k$）とし、擬スカラーを$i=e_1e_2e_3$とします。$i^2=-1$で、$i$はすべての元と可換です。クリフォード解析では擬スカラーを$\omega$と書きましたが、本シリーズでは2乗が$-1$であることを表すために$i$と書き、電流には通常どおり$I$を使います。[[7shi-cla5]]
+
+空間の点を$\boldsymbol x=\sum_kx_ke_k$と書き、ディラック作用素を
 
 $$
 D=\sum_{k=1}^3e_k\partial_k
 $$
 
-とします。$D^2=\Delta$です（[[7shi-cla1]]）。本記事では、電場・磁場と、電荷密度・電流密度が時間によらない場合を扱います。電流を担う電荷そのものは動いていても、各点での密度と流れが一定なら、この条件を満たします。
+とします。$D^2=\Delta$です。本記事では、電場・磁場と、電荷密度・電流密度が時間によらない場合を扱います。電流を担う電荷そのものは動いていても、各点での密度と流れが一定なら、この条件を満たします。[[7shi-cla1]]
 
 ベクトル$\boldsymbol a,\boldsymbol b$の幾何積は$\boldsymbol a\boldsymbol b=\boldsymbol a\cdot\boldsymbol b+\boldsymbol a\wedge\boldsymbol b$と分かれ、3次元では外積とベクトル積が擬スカラーで結ばれます。
 
@@ -119,7 +129,7 @@ $$
 となります。右辺にはベクトル積も擬スカラーも現れず、2つのベクトル$\boldsymbol r$と$\boldsymbol J$が張る向き付きの面の重ね合わせだけが残ります。磁場は、源点$\boldsymbol y$での電流と、源点から観測点$\boldsymbol x$への変位が張る面として、2ベクトルの量で書けます。これは空間に実際の面が置かれているという意味ではなく、磁場の向きと大きさを向き付きの面の量として表すということです。通常の$\boldsymbol B$は、その面を法線方向のベクトルで表示したものです。
 
 &&&rem 擬ベクトルの解消
-[[7shi-hist]]で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換で、例外的な扱いは要りません。向きを固定した擬スカラー$i$を使って2ベクトル$ic\boldsymbol B$をベクトル$\boldsymbol B$で表示すると、その表示に擬ベクトルの変換則が現れます。擬ベクトルという扱いは、2ベクトルの変換則をベクトル表示で読んだものです。この表示が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。
+以前の記事で見たとおり、ギブスとヘヴィサイドのベクトル解析は四元数の積を内積とベクトル積に分け、ベクトル積は鏡映に対してベクトルと異なる符号の変化を示す擬ベクトルとして扱われました。磁場$\boldsymbol B$はその代表例です。空間反転$\boldsymbol x\mapsto-\boldsymbol x$で$\boldsymbol r$と$\boldsymbol J$はともに符号を変えるので、$\boldsymbol r\wedge\boldsymbol J$は符号を変えません。これは2ベクトルとして当然の変換で、例外的な扱いは要りません。向きを固定した擬スカラー$i$を使って2ベクトル$ic\boldsymbol B$をベクトル$\boldsymbol B$で表示すると、その表示に擬ベクトルの変換則が現れます。擬ベクトルという扱いは、2ベクトルの変換則をベクトル表示で読んだものです。この表示が可能なのは、3次元で2ベクトルとベクトルがともに3成分を持つためです。[[7shi-hist]]
 &&&
 
 係数の$c$は、$\boldsymbol E$と$c\boldsymbol B$の単位を揃えるために入れています。
@@ -168,7 +178,7 @@ $$
 =\nabla_{\boldsymbol y}\cdot\frac{\boldsymbol J}{|\boldsymbol x-\boldsymbol y|}-\frac{\nabla\cdot\boldsymbol J}{|\boldsymbol x-\boldsymbol y|}
 $$
 
-となり、仮定から右辺の第2項は$0$である。第1項を、$\boldsymbol J$の台と点$\boldsymbol x$を内部に含む十分大きな球から$\boldsymbol x$を中心とする半径$\varepsilon$の小球を除いた領域で積分し、発散定理（[[7shi-cla2]]）を使う。外側の球面上では$\boldsymbol J=0$である。小球面上では$|\boldsymbol J/|\boldsymbol x-\boldsymbol y||\le\max|\boldsymbol J|/\varepsilon$で面積は$4\pi\varepsilon^2$なので、境界積分は$\varepsilon\to0$で$0$に近づく。左辺の被積分関数は大きさが$|\boldsymbol x-\boldsymbol y|^{-2}$程度で積分可能なので、小球を除いた積分は$\varepsilon\to0$で全空間の積分に収束する。
+となり、仮定から右辺の第2項は$0$である。第1項を、$\boldsymbol J$の台と点$\boldsymbol x$を内部に含む十分大きな球から$\boldsymbol x$を中心とする半径$\varepsilon$の小球を除いた領域で積分し、発散定理を使う。外側の球面上では$\boldsymbol J=0$である。小球面上では$|\boldsymbol J/|\boldsymbol x-\boldsymbol y||\le\max|\boldsymbol J|/\varepsilon$で面積は$4\pi\varepsilon^2$なので、境界積分は$\varepsilon\to0$で$0$に近づく。左辺の被積分関数は大きさが$|\boldsymbol x-\boldsymbol y|^{-2}$程度で積分可能なので、小球を除いた積分は$\varepsilon\to0$で全空間の積分に収束する。[[7shi-cla2]]
 &&&
 
 $\nabla\cdot\boldsymbol J=0$は、ビオ＝サバールの法則を使う前提そのものでした。したがって定常電流では$F$にスカラー部が残らず、$F$はベクトル部と2ベクトル部だけを持ちます。
@@ -183,17 +193,17 @@ $$
 で、ベクトル部がクーロンの法則の電場、2ベクトル部がビオ＝サバールの法則の磁場の$ic$倍です。
 &&&
 
-核は[[7shi-cla5]]のコーシー核$E(\boldsymbol x)=\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合です。記号$E$は電場と紛らわしいので、本記事では核を分数のまま書きます。クーロン定数の$4\pi$は、[[7shi-cla5]]の正規化定数$|S^{n-1}|$の$n=3$の値$|S^2|=4\pi$です。電磁気学では$4\pi$を「全立体角」と説明しますが、それは単位球面の面積のことであり、積分公式の定数として自然に現れます。核の大きさは距離の2乗に反比例し、球面の面積は半径の2乗に比例するので、点電荷を囲む球面全体で電場の外向き成分を足し合わせた量は、半径によらず一定になります。なお、$4\pi$がクーロンの法則の側に現れるのは、後で見るガウスの法則を$\nabla\cdot\boldsymbol E=\rho/\varepsilon_0$と書く$\mathrm{SI}$単位系の規格化によるものです。
+核はコーシー核$E(\boldsymbol x)=\boldsymbol x/|\boldsymbol x|^n$の$n=3$の場合です。記号$E$は電場と紛らわしいので、本記事では核を分数のまま書きます。クーロン定数の$4\pi$は、正規化定数$|S^{n-1}|$の$n=3$の値$|S^2|=4\pi$です。電磁気学では$4\pi$を「全立体角」と説明しますが、それは単位球面の面積のことであり、積分公式の定数として自然に現れます。核の大きさは距離の2乗に反比例し、球面の面積は半径の2乗に比例するので、点電荷を囲む球面全体で電場の外向き成分を足し合わせた量は、半径によらず一定になります。なお、$4\pi$がクーロンの法則の側に現れるのは、後で見るガウスの法則を$\nabla\cdot\boldsymbol E=\rho/\varepsilon_0$と書く$\mathrm{SI}$単位系の規格化によるものです。[[7shi-cla5]]
 
 # 静的なマクスウェル方程式
 
-[[7shi-cla5]]の注意「基本解」で見たとおり、$\boldsymbol x/(|S^{n-1}||\boldsymbol x|^n)$は$D$の基本解です。$n=3$では
+以前に確認したとおり、$\boldsymbol x/(|S^{n-1}||\boldsymbol x|^n)$は$D$の基本解です。$n=3$では
 
 $$
 D\,\frac{\boldsymbol x}{4\pi|\boldsymbol x|^3}=\delta(\boldsymbol x)
 $$
 
-を表します。[積分公式](#def-F)では、$D$は$\boldsymbol x$についての微分なので核にだけ作用し、源$\rho-\boldsymbol J/c$は$\boldsymbol y$の関数として核の右に残ります。したがって$F$は、源の$1/\varepsilon_0$倍を$D$の基本解で積分したものです。
+を表します。[積分公式](#def-F)では、$D$は$\boldsymbol x$についての微分なので核にだけ作用し、源$\rho-\boldsymbol J/c$は$\boldsymbol y$の関数として核の右に残ります。したがって$F$は、源の$1/\varepsilon_0$倍を$D$の基本解で積分したものです。[[7shi-cla5]]
 
 &&&thm 静的なマクスウェル方程式 [thm-static]
 $$
@@ -237,14 +247,14 @@ $$
 
 # 積分形
 
-ガウスの法則とアンペールの法則には積分形があります。[[7shi-cla2]]の2つの基本定理
+ガウスの法則とアンペールの法則には積分形があります。2つの基本定理
 
 $$
 \int_VDF\,dV=\oint_{\partial V}\boldsymbol nF\,dS,\qquad
 \oint_{\partial S}d\boldsymbol x\,F=\int_S(D\cdot d\boldsymbol X)F
 $$
 
-に$F=\boldsymbol E+ic\boldsymbol B$を入れ、グレード成分を取ると得られます。領域・曲面・境界の条件と向きは[[7shi-cla2]]と同じとします。
+に$F=\boldsymbol E+ic\boldsymbol B$を入れ、グレード成分を取ると得られます。領域・曲面・境界の条件と向きは以前の記事と同じとします。[[7shi-cla2]]
 
 ## 領域の基本定理
 
@@ -268,7 +278,7 @@ $$
 $$
 &&&
 
-スカラー部はガウスの法則の積分形で、閉曲面を外向きに貫く電場の流束が、内部の電荷の$1/\varepsilon_0$倍に等しいことを表します。擬スカラー部は、閉曲面を通る正味の磁束（磁場の流束）が$0$であることです。残る2つは、[[7shi-cla2]]の「回転の体積分」$\int_V\nabla\times\boldsymbol V\,dV=\oint\boldsymbol n\times\boldsymbol V\,dS$を$\nabla\times\boldsymbol E=0$と$\nabla\times\boldsymbol B=\mu_0\boldsymbol J$に当てはめたものにあたります。
+スカラー部はガウスの法則の積分形で、閉曲面を外向きに貫く電場の流束が、内部の電荷の$1/\varepsilon_0$倍に等しいことを表します。擬スカラー部は、閉曲面を通る正味の磁束（磁場の流束）が$0$であることです。残る2つは、回転の体積分$\int_V\nabla\times\boldsymbol V\,dV=\oint\boldsymbol n\times\boldsymbol V\,dS$を$\nabla\times\boldsymbol E=0$と$\nabla\times\boldsymbol B=\mu_0\boldsymbol J$に当てはめたものにあたります。[[7shi-cla2]]
 
 ガウスの法則の積分形は、電荷の分布に対称性があるとき、電場を積分せずに求める手段になります。
 
@@ -290,7 +300,7 @@ $$
 
 ## 曲面の基本定理
 
-アンペールの法則の積分形は、閉曲線$\partial S$に沿った線積分です。こちらは曲面の基本定理から出ます。[[7shi-cla2]]で見たとおり、有向面素を$d\boldsymbol X=i\boldsymbol n\,dA$と書くと$(D\cdot d\boldsymbol X)F=\bigl((\boldsymbol n\times\nabla)F\bigr)dA$です。左辺の$d\boldsymbol x\,F$のスカラー部は$d\boldsymbol x\cdot\boldsymbol E$、擬スカラー部は$ic\,d\boldsymbol x\cdot\boldsymbol B$であり、右辺の対応する成分は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$です。
+アンペールの法則の積分形は、閉曲線$\partial S$に沿った線積分です。こちらは曲面の基本定理から出ます。有向面素を$d\boldsymbol X=i\boldsymbol n\,dA$と書くと$(D\cdot d\boldsymbol X)F=\bigl((\boldsymbol n\times\nabla)F\bigr)dA$です。左辺の$d\boldsymbol x\,F$のスカラー部は$d\boldsymbol x\cdot\boldsymbol E$、擬スカラー部は$ic\,d\boldsymbol x\cdot\boldsymbol B$であり、右辺の対応する成分は$\boldsymbol n\cdot(\nabla\times\boldsymbol E)$と$ic\,\boldsymbol n\cdot(\nabla\times\boldsymbol B)$です。[[7shi-cla2]]
 
 &&&fml 曲面の基本定理のグレード成分
 $$
@@ -313,13 +323,13 @@ $$
 
 # ポテンシャル
 
-[[7shi-cla5]]の公式「核とポテンシャル」で、核はラプラシアンの基本解の$D$微分として得られました。$n=3$では
+核はラプラシアンの基本解の$D$微分として得られました。$n=3$では
 
 $$
 D\frac1{|\boldsymbol x|}=-\frac{\boldsymbol x}{|\boldsymbol x|^3}
 $$
 
-です。$D$は$\boldsymbol x$についての微分なので、$\boldsymbol x$を$\boldsymbol x-\boldsymbol y$に替えても同じ式が成り立ちます。これを[積分公式](#def-F)に使うと、$F$を1つの関数の$D$微分として書けます。
+です。$D$は$\boldsymbol x$についての微分なので、$\boldsymbol x$を$\boldsymbol x-\boldsymbol y$に替えても同じ式が成り立ちます。これを[積分公式](#def-F)に使うと、$F$を1つの関数の$D$微分として書けます。[[7shi-cla5]]
 
 &&&def ポテンシャル
 $$
@@ -361,8 +371,24 @@ $$
 
 クーロンの法則とビオ＝サバールの法則は、同じ核$(\boldsymbol x-\boldsymbol y)/|\boldsymbol x-\boldsymbol y|^3$を使う2つの積分でした。源を$\rho-\boldsymbol J/c$にまとめて幾何積で核に掛けると、1本の積分公式$F=\frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}(\rho-\boldsymbol J/c)\,dV$になり、ベクトル部が電場、2ベクトル部が磁場の$ic$倍、スカラー部は定常電流の条件で$0$になります。
 
+&&&
+**静的な場の統合とマクスウェル方程式**
+- 静的な場の統合
+  $$
+  F = \boldsymbol E + ic\boldsymbol B = \frac1{4\pi\varepsilon_0}\int\frac{\boldsymbol x-\boldsymbol y}{|\boldsymbol x-\boldsymbol y|^3}\Bigl(\rho(\boldsymbol y) - \frac{\boldsymbol J(\boldsymbol y)}c\Bigr)dV
+  $$
+- 微分形（静的なマクスウェル方程式）
+  $$
+  DF = \frac1{\varepsilon_0}\Bigl(\rho - \frac{\boldsymbol J}c\Bigr)
+  $$
+- ポテンシャル表現
+  $$
+  F = -DP, \quad P = \varphi - c\boldsymbol A
+  $$
+&&&
+
 - **電場と磁場**：電荷に働く力$q(\boldsymbol E+\boldsymbol v\times\boldsymbol B)$を通して定まる量で、$\boldsymbol E$と$c\boldsymbol B$は同じ単位を持ちます。
-- **核と定数**：核は[[7shi-cla5]]のコーシー核の$n=3$の場合であり、$4\pi$は$|S^2|$です。
+- **核と定数**：核はコーシー核の$n=3$の場合であり、$4\pi$は$|S^2|$です。[[7shi-cla5]]
 - **磁場**：$\boldsymbol r\wedge\boldsymbol J$の重ね合わせとして2ベクトルで書け、擬ベクトルという例外的な扱いは不要になります。
 - **微分形**：核が$D$の基本解であることから$DF=(\rho-\boldsymbol J/c)/\varepsilon_0$が成り立ち、そのスカラー・ベクトル・2ベクトル・擬スカラー部が静的な場の4本の式です。
 - **積分形**：ガウスの法則は領域の基本定理のスカラー部、アンペールの法則は曲面の基本定理の擬スカラー部です。
