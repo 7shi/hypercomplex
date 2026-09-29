@@ -33,6 +33,7 @@ hopf/07-real-qubit.md	実振幅の量子ビットと実数ホップファイブ�
 hopf/c2-to-s2.md	複素2次元ベクトルから2次元球面への射影
 hopf/homogeneous.md	同次座標とホップファイブレーション
 hopf/spherical-coords.md	一般次元における球座標系のバリエーション
+ktheory/01-overview.md	K理論の見通し
 lebesgue/01-measure-integral.md	測度とルベーグ積分
 lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 lebesgue/03-probability.md	測度論的確率論

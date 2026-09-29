@@ -70,6 +70,11 @@ files = [
   "vec-oct/geometric-product-exp.md",
 ]
 
+["7shi-c2s2"]
+files = [
+  "ktheory/01-overview.md",
+]
+
 ["7shi-cl6"]
 type = "mathlog"
 citation = "7shi, 八元数の左作用とクリフォード代数, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
@@ -131,6 +136,7 @@ files = [
   "em/01-static.md",
   "em/04-spacetime.md",
   "em/07-retarded.md",
+  "ktheory/01-overview.md",
 ]
 
 ["7shi-cla6"]
@@ -159,6 +165,7 @@ files = [
   "clif/03-gpm-gca.md",
   "dirac/03-dirac.md",
   "em/04-spacetime.md",
+  "ktheory/01-overview.md",
   "qua/spinor-ideal.md",
 ]
 
@@ -365,6 +372,7 @@ type = "mathlog"
 citation = "7shi, 代数的構造の初歩：マグマから群へ, Mathlog, Sat Mar 08 2025, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/e4aD1MZfKjQKcNO4ilRG"
 files = [
+  "ktheory/01-overview.md",
   "lie/01-u1-so2.md",
   "lie/07-s7.md",
 ]
@@ -413,12 +421,14 @@ url = "https://mathlog.info/articles/f5v2F6yOFhqtnpDtFtcP"
 files = [
   "clif/pga-cga.md",
   "hopf/01-quaternion.md",
+  "ktheory/01-overview.md",
 ]
 
 ["7shi-hopfext"]
 files = [
   "hopf/05-entanglement.md",
   "hopf/07-real-qubit.md",
+  "ktheory/01-overview.md",
   "lie/11-exceptional.md",
   "oct/04-sedenion.md",
 ]
