@@ -80,6 +80,7 @@ type = "mathlog"
 citation = "7shi, 八元数の左作用とクリフォード代数, Mathlog, Sat May 23 2026, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/PZJuaRWHYidsIg9u83j8"
 files = [
+  "ktheory/02-vector-fields.md",
   "lie/07-s7.md",
   "lie/09-spin7-triality.md",
   "lie/ladder-spinor.md",
@@ -166,6 +167,7 @@ files = [
   "dirac/03-dirac.md",
   "em/04-spacetime.md",
   "ktheory/01-overview.md",
+  "ktheory/02-vector-fields.md",
   "qua/spinor-ideal.md",
 ]
 
@@ -460,6 +462,11 @@ files = [
   "vec-oct/01-reflection.md",
 ]
 
+["7shi-kth1"]
+files = [
+  "ktheory/02-vector-fields.md",
+]
+
 ["7shi-leb6"]
 files = [
   "clif/05-schrodinger.md",
@@ -555,6 +562,7 @@ files = [
 
 ["7shi-lie7"]
 files = [
+  "ktheory/02-vector-fields.md",
   "lie/08-g2.md",
   "lie/09-spin7-triality.md",
   "lie/10-roots-dynkin.md",
@@ -816,6 +824,7 @@ files = [
 
 ["7shi-sedenion"]
 files = [
+  "ktheory/02-vector-fields.md",
   "lie/11-exceptional.md",
 ]
 
