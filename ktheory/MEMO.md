@@ -166,7 +166,18 @@
 - **四元数・八元数**。$S^4$上では$g:S^3\to\operatorname{Sp}(1)$、$q\mapsto q$が四元数ホップ束、$S^8$上では単位八元数の左からの積$S^7\to\operatorname{SO}(8)$が八元数ホップ束（[[7shi-hopfext]]）。$g$が$\boldsymbol x\mapsto\boldsymbol x\cdot$（02と同じ写像）であることを明示する
 - **自明でないことの判定**。$g$が定数にホモトピックでないことを、回転数（$S^1$）・写像度（$S^3$）で述べる。$S^3$の写像度は主張として使う
 
-## 04 K群とボット周期性
+## 04 K群とボット周期性（レビュー反映済み）
+
+`04-bott.md`として執筆し、`04-bott-prompt.md`（参照：ktheory/03・01・02）でレビューした結果`04-bott.txt`の指摘を反映した（[[prop-line-sums]]の$m<0$の書き方と[[prop-stable]]の証明の短縮は見送り）。レビューで補ったのは、$\overline W$が$W$と異なる既約加群になるのは直和型（$k-1\equiv3,7\pmod8$）に限ること（実加群の$\operatorname{Cl}_{0,1}$では$\pm i$が共役で同型）、安定なホモトピーによる表示は複素の場合であること、[[lem-restrict]]を$k-1\equiv3,7\pmod8$に広げて代数の側の周期8の論理を閉じたこと、アダムスの定理の`&&&rem`の歴史的記述（ベクトル場は実射影空間のKO群、ホップ不変量1はアティヤ＝アダムスのK理論による証明）、単連結性から$S^2$上の束を分類する段落を命題[[prop-s2-classify]]に独立させたこと。構成案からの変更点は次のとおり。
+
+- **非次数付きで書いた**：$\mathcal A_k=\mathfrak M_{k-1}/r(\mathfrak M_k)$（$\mathfrak M_j$は$\operatorname{Cl}_{0,j}(\mathbb R)$の加群の群、$r$は制限）。次数付き加群と$KO^{-k}(\mathrm{pt})$には触れていない
+- **証明した範囲**：安定なホモトピーによる表示（複素）、回転$\operatorname{diag}(g,h)\simeq\operatorname{diag}(gh,I)$（K群の和が貼り合わせ関数の積、逆元が逆行列）、$S^2$の直線束の直和の分類と$φ=\operatorname{wind}\circ\det$が全射な準同型であること、延長できる加群が自明な束を与えること（$\cos t\,g_W+\sin t\,J_k$）、直和型への制限で$W,\overline W$が同数ずつ現れること
+- **主張に留めた範囲**：加群の既約分解の一意性、$\operatorname{SL}(n,\mathbb C)$の単連結性（これを認めて$\tilde K(S^2)\cong\mathbb Z$と03の「同じ階数で行列式の回転数が等しければ同型」を回収）、ABSの定理の同型、ボット周期性定理、四元数・八元数のホップ束（と実のホップ束の$\widetilde{KO}(S^2)$）の安定な非自明性
+- **$\overline W$の記号**：生成元の符号を反転した加群。$g_{\overline W}(c)=L_{c^*}$で、$[E_{\overline W}]-\dim W=-([E_W]-\dim W)$。複素の$k=2$では$H^{-1}$
+- **01の回収**：「$k=1,2$の$\mathbb Z_2$は既約加群の次元が関わるが扱わない」を、延長側の既約加群の次元が2倍になることとして説明した
+- **$(H-1)^2=0$**：一般のテンソル積とK群の環構造には立ち入らず、`&&&rem`で触れるに留めた
+
+以下は執筆前の構成案。
 
 - **安定化**。K群の定義（直和の半群から形式的な差で群を作る）は01で済んでいるので後方参照し、ここでは球面の場合に$\tilde K(S^k)$が貼り合わせ関数の安定なホモトピー類になることを示す
 - **$S^2$の計算**。$\tilde K(S^2)\cong\mathbb Z$で、生成元は$H-1$。関係式$(H-1)^2=0$、すなわち$H\otimes H\oplus1\cong H\oplus H$を、$\operatorname{GL}(2,\mathbb C)$の中で$\operatorname{diag}(z^2,1)$を$\operatorname{diag}(z,z)$に連続変形する回転で具体的に示す
@@ -214,7 +225,7 @@
 - 01：`check/01-overview.py`（作成済み・通過）。$-I_2$から$I_2$への回転による変形、$\mathbb C^\times$の中で$-1$から$1$への道、$k=1,2,4,8$で単位数を掛ける貼り合わせ関数が可逆（$|xy|=|x||y|$）で、生成元の1次結合が$(\sum x_ie_i)^2=-|\boldsymbol x|^2$を満たすこと
 - 02：`check/02-vector-fields.py`（作成済み・通過）。$\operatorname{Cl}_{0,k}(\mathbb R)$（$k=1,\dots,8$）の実行列表現、既約性（可換子環の次元$2,4,4,4,2,1,1,1$）と像の次元（$k=3,7$で$2^{k-1}$）、接ベクトル場の正規直交性、偏極、$\rho(n)$の2通りの計算の一致（$n\le1024$）、$\rho(n)=n$と$a_{n-1}\mid n$が$n=1,2,4,8$に限られること、$L_1\cdots L_6=L_7$
 - 03：`check/03-clutching.py`（作成済み・通過）。$\mathbb K=\mathbb R,\mathbb C,\mathbb H,\mathbb O$のホップ束のファイバー$(1-r)α=cβ$と赤道の$μ=L_cλ$、01の$μ=zλ$との一致、[[7shi-hopfext]]の規約との対応（$CR_{c^*}C=L_c$）、回転数の性質、$v^w=-z^{-2}v^z$、行列式の回転数
-- 04：$\operatorname{diag}(z^2,1)$から$\operatorname{diag}(z,z)$へのホモトピー。$M_k/i^*M_{k+1}$の計算（非次数付きでは$\operatorname{Cl}_{0,k-1}$の既約加群の群を$\operatorname{Cl}_{0,k}$の既約加群の制限で割る。既約加群の個数と制限の行列から）
+- 04：`check/04-bott.py`（作成済み・通過）。回転$\operatorname{diag}(a,1)R(t)\operatorname{diag}(1,b)R(t)^{-1}$による$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$・$\operatorname{diag}(z,z^{-1})\simeq I$、$\cos t\,g_W+\sin t\,J_k$の直交性、$\operatorname{Cl}_{0,k}\to\operatorname{Cl}_{0,k-1}$の制限の個数（擬スカラーの符号で区別）と余核$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$、複素の$0,\mathbb Z$と$\operatorname{Cl}_1(\mathbb C)$の2つの既約加群が$H^{\pm1}$を与えること、$\overline W$が$L_{c^*}$を与えること、$\operatorname{Cl}_{0,k+8}$の表現の次元$16a_k$
 - 05：切断したテプリッツ行列の核の次元と指数（有限切断では指数が見えないことも含めて扱い方を検討）
 - 06：$n=3$で$\Gamma$の固有値とlie/MEMOの$\mathcal D$の固有値の一致、球面モノジェニックスの固有値$\pm(k+\frac{n-1}2)$
 - 07：$S^2$上で$H^n$に捩った作用素の核の次元が$n$になること

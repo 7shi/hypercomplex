@@ -169,6 +169,7 @@ files = [
   "em/04-spacetime.md",
   "ktheory/01-overview.md",
   "ktheory/02-vector-fields.md",
+  "ktheory/04-bott.md",
   "qua/spinor-ideal.md",
 ]
 
@@ -469,11 +470,18 @@ files = [
 files = [
   "ktheory/02-vector-fields.md",
   "ktheory/03-clutching.md",
+  "ktheory/04-bott.md",
 ]
 
 ["7shi-kth2"]
 files = [
   "ktheory/03-clutching.md",
+  "ktheory/04-bott.md",
+]
+
+["7shi-kth3"]
+files = [
+  "ktheory/04-bott.md",
 ]
 
 ["7shi-leb6"]
@@ -572,6 +580,7 @@ files = [
 ["7shi-lie7"]
 files = [
   "ktheory/02-vector-fields.md",
+  "ktheory/04-bott.md",
   "lie/08-g2.md",
   "lie/09-spin7-triality.md",
   "lie/10-roots-dynkin.md",

@@ -62,6 +62,7 @@ date	url	md	title
 		ktheory/01-overview.md	K理論の見通し
 		ktheory/02-vector-fields.md	球面上のベクトル場とクリフォード加群
 		ktheory/03-clutching.md	貼り合わせ関数とホップ束
+		ktheory/04-bott.md	K群とボット周期性
 		lebesgue/01-measure-integral.md	測度とルベーグ積分
 		lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 		lebesgue/03-probability.md	測度論的確率論
