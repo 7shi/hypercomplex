@@ -35,6 +35,7 @@ hopf/homogeneous.md	同次座標とホップファイブレーション
 hopf/spherical-coords.md	一般次元における球座標系のバリエーション
 ktheory/01-overview.md	K理論の見通し
 ktheory/02-vector-fields.md	球面上のベクトル場とクリフォード加群
+ktheory/03-clutching.md	貼り合わせ関数とホップ束
 lebesgue/01-measure-integral.md	測度とルベーグ積分
 lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 lebesgue/03-probability.md	測度論的確率論

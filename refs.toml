@@ -120,6 +120,7 @@ files = [
   "clif-analysis/05-clifford.md",
   "clif-analysis/06-summary.md",
   "em/03-waves.md",
+  "ktheory/03-clutching.md",
 ]
 
 ["7shi-cla4"]
@@ -424,6 +425,7 @@ files = [
   "clif/pga-cga.md",
   "hopf/01-quaternion.md",
   "ktheory/01-overview.md",
+  "ktheory/03-clutching.md",
 ]
 
 ["7shi-hopfext"]
@@ -431,6 +433,7 @@ files = [
   "hopf/05-entanglement.md",
   "hopf/07-real-qubit.md",
   "ktheory/01-overview.md",
+  "ktheory/03-clutching.md",
   "lie/11-exceptional.md",
   "oct/04-sedenion.md",
 ]
@@ -465,6 +468,12 @@ files = [
 ["7shi-kth1"]
 files = [
   "ktheory/02-vector-fields.md",
+  "ktheory/03-clutching.md",
+]
+
+["7shi-kth2"]
+files = [
+  "ktheory/03-clutching.md",
 ]
 
 ["7shi-leb6"]
