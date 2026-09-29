@@ -5,7 +5,7 @@ import tomllib
 from pathlib import Path
 
 from reftools.loaders import load_md_titles, load_md_urls, load_slugs_tsv
-from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, SLUG_RE
+from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, ROOT, SLUGS_TSV, extract_slugs
 
 
 def resolve_show_target(target: str, slugs_map: dict[str, str]) -> Path:
@@ -23,13 +23,7 @@ def resolve_show_target(target: str, slugs_map: dict[str, str]) -> Path:
 
 def extract_slugs_in_order(md_path: Path) -> list[str]:
     text = md_path.read_text(encoding="utf-8")
-    seen: set[str] = set()
-    result: list[str] = []
-    for slug in SLUG_RE.findall(text):
-        if slug not in seen:
-            seen.add(slug)
-            result.append(slug)
-    return result
+    return extract_slugs(text)
 
 
 def has_resolved_info(entry: dict) -> bool:

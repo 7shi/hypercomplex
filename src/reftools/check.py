@@ -6,7 +6,7 @@ import tomllib
 from pathlib import Path
 
 from reftools.loaders import load_md_entries, load_md_list, load_refs_table, load_slugs_tsv
-from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, MD_TSV, REFS_DIR, ROOT, SLUGS_TSV, SLUG_RE
+from reftools.paths import ARTICLES_TSV, DEFAULT_OUTPUT, MASTER_PATH, MD_TSV, REFS_DIR, ROOT, SLUGS_TSV, extract_slugs
 from reftools.toml_io import toml_string, toml_value
 
 
@@ -27,12 +27,7 @@ def find_slug_mismatches(
             continue
         refs_table = load_refs_table(article_id)
         text = md_path.read_text(encoding="utf-8")
-        seen: set[str] = set()
-        used: list[str] = []
-        for slug in SLUG_RE.findall(text):
-            if slug not in seen:
-                seen.add(slug)
-                used.append(slug)
+        used = extract_slugs(text)
         used_set = set(used)
         defined_set = set(refs_table.keys())
         missing = sorted(used_set - defined_set)
@@ -90,12 +85,7 @@ def find_undefined_in_unpublished(
         if article_id:
             continue
         text = md_path.read_text(encoding="utf-8")
-        seen: set[str] = set()
-        used: list[str] = []
-        for slug in SLUG_RE.findall(text):
-            if slug not in seen:
-                seen.add(slug)
-                used.append(slug)
+        used = extract_slugs(text)
         undefined = sorted(set(used) - known)
         if undefined:
             result.append((md_path, undefined))

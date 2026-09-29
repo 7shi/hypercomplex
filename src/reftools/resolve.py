@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from reftools.loaders import load_refs_table
-from reftools.paths import MATHLOG_BASE, MATHLOG_CITATION_RE, ROOT, SLUG_RE
+from reftools.paths import MATHLOG_BASE, MATHLOG_CITATION_RE, ROOT, extract_slugs
 
 
 def resolve_slug(
@@ -36,12 +36,7 @@ def collect_slugs_by_file(
     result: list[tuple[Path, str, list[tuple[str, bool, dict]]]] = []
     for md_path, article_id in md_entries:
         text = md_path.read_text(encoding="utf-8")
-        seen: set[str] = set()
-        slugs: list[str] = []
-        for slug in SLUG_RE.findall(text):
-            if slug not in seen:
-                seen.add(slug)
-                slugs.append(slug)
+        slugs = extract_slugs(text)
         if not slugs:
             continue
         refs_table = load_refs_table(article_id) if article_id else {}
