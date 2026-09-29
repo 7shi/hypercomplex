@@ -61,7 +61,7 @@
 
 ## 01 K理論の見通し（レビュー反映済み）
 
-`01-overview.md`として執筆し、レビュー結果`01-overview.txt`の指摘をすべて反映した。レビューで補ったのは、K群を扱う空間をコンパクトに限ること、$G$を自明束に取り替えられる理由（補束の存在）、フレドホルム作用素の設定と作用素の族の指数（核の次元が跳ぶ場合の指数束）、主表象が余接束上のK群の元を定めること、主表象と貼り合わせ関数を「同じ形の写像」に弱めたこと、ABS定理の$M_{k-1}/i^*M_k$の形の1文。以下の構成案は執筆前の記録。
+`01-overview.md`として執筆し、レビュー結果`01-overview.txt`の指摘をすべて反映した。レビューで補ったのは、K群を扱う空間をコンパクトに限ること、$G$を自明束に取り替えられる理由（補束の存在）、フレドホルム作用素の設定と作用素の族の指数（核の次元が跳ぶ場合の指数束）、主表象が余接束上のK群の元を定めること、主表象と貼り合わせ関数を「同じ形の写像」に弱めたこと、ABS定理を「$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群の群を、$\operatorname{Cl}_{0,k}(\mathbb R)$の加群の制限で割る」形で述べた1文（04の記号では$M_k/i^*M_{k+1}$）。以下の構成案は執筆前の記録。
 
 「何をK理論と呼ぶのか」を、定義と主張と最小限の例で見渡す回。証明はメビウスの帯まわりの初等的なものに限り、ボット周期性定理・アティヤ＝ボット＝シャピロの定理・指数定理は主張として紹介する。前提は線形代数と連続性、[[7shi-clif1]]の分類表、[[7shi-group]]の半群と群。
 
@@ -171,7 +171,7 @@
 - **安定化**。K群の定義（直和の半群から形式的な差で群を作る）は01で済んでいるので後方参照し、ここでは球面の場合に$\tilde K(S^k)$が貼り合わせ関数の安定なホモトピー類になることを示す
 - **$S^2$の計算**。$\tilde K(S^2)\cong\mathbb Z$で、生成元は$H-1$。関係式$(H-1)^2=0$、すなわち$H\otimes H\oplus1\cong H\oplus H$を、$\operatorname{GL}(2,\mathbb C)$の中で$\operatorname{diag}(z^2,1)$を$\operatorname{diag}(z,z)$に連続変形する回転で具体的に示す
 - **ABS構成**。$k$次元の球面の生成元を、$\operatorname{Cl}_{0,k}(\mathbb R)$（複素なら$\operatorname{Cl}_k(\mathbb C)$）の加群$W$上の貼り合わせ関数$\boldsymbol x\mapsto\sum_ix_ie_i$で作る。$k=2,4,8$で03のホップ束に戻る
-- **分類表からの計算**。$M_k$を次数付き$\operatorname{Cl}_{0,k}(\mathbb R)$加群（非次数付き$\operatorname{Cl}_{0,k-1}(\mathbb R)$加群と同じ）のグロタンディーク群とし、$\operatorname{Cl}_{0,k+1}\supset\operatorname{Cl}_{0,k}$への制限$i^*$の余核を取ると$KO^{-k}(\mathrm{pt})$の表$\mathbb Z,\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0$が得られる。[[7shi-clif1]]の既約加群の個数（直和型で2個）と次元だけから計算でき、02の$a_k$をそのまま使う。複素では$\mathbb Z,0$の2周期。**これが[[7shi-clif1]]の「対応することが知られています」の具体的な中身**になる
+- **分類表からの計算**。$M_k$を次数付き$\operatorname{Cl}_{0,k}(\mathbb R)$加群のグロタンディーク群とし、次数付き加群の$\operatorname{Cl}_{0,k+1}\supset\operatorname{Cl}_{0,k}$への制限$i^*$の余核$M_k/i^*M_{k+1}$を取ると$KO^{-k}(\mathrm{pt})\cong\widetilde{KO}(S^k)$の表$\mathbb Z,\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0$が得られる。次数付き$\operatorname{Cl}_{0,k}$加群は偶部分$\operatorname{Cl}_{0,k}^0\cong\operatorname{Cl}_{0,k-1}$の非次数付き加群と同じなので、非次数付きの言葉では「$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群の群を、$\operatorname{Cl}_{0,k}(\mathbb R)$の加群を$\operatorname{Cl}_{0,k-1}$に制限したもので割る」となり、01の「分類表との比較」の書き方と一致する。記事では01に合わせて非次数付きで書き、次数付き加群は導入しない案が有力（例：$k=4$では$\operatorname{Cl}_{0,3}\cong2\mathbb H$の既約加群2つの群$\mathbb Z^2$を、$M_2(\mathbb H)$の既約加群の制限$(1,1)$で割って$\mathbb Z$）。[[7shi-clif1]]の既約加群の個数（直和型で2個）と次元だけから計算でき、02の$a_k$をそのまま使う。複素では$\mathbb Z,0$の2周期。**これが[[7shi-clif1]]の「対応することが知られています」の具体的な中身**になる
 - **ボット周期性定理**。$\tilde K(S^{k+2})\cong\tilde K(S^k)$、$\widetilde{KO}(S^{k+8})\cong\widetilde{KO}(S^k)$を主張として述べ、代数の側の周期性（[[7shi-clif1]]の$\operatorname{Cl}_{p+8,q}\cong\operatorname{Cl}_{p,q}\otimes\mathbb R(16)$）との対応を示す。証明は扱わない
 - **アダムスの定理**。ホップ不変量1の写像が$S^1,S^3,S^7$にしかないこと（[[7shi-lie7]]の`&&&rem`）と02のベクトル場の上界がK理論で証明されることを`&&&rem`で述べる。アダムス作用素には立ち入らない
 
@@ -214,7 +214,7 @@
 - 01：`check/01-overview.py`（作成済み・通過）。$-I_2$から$I_2$への回転による変形、$\mathbb C^\times$の中で$-1$から$1$への道、$k=1,2,4,8$で単位数を掛ける貼り合わせ関数が可逆（$|xy|=|x||y|$）で、生成元の1次結合が$(\sum x_ie_i)^2=-|\boldsymbol x|^2$を満たすこと
 - 02：`check/02-vector-fields.py`（作成済み・通過）。$\operatorname{Cl}_{0,k}(\mathbb R)$（$k=1,\dots,8$）の実行列表現、既約性（可換子環の次元$2,4,4,4,2,1,1,1$）と像の次元（$k=3,7$で$2^{k-1}$）、接ベクトル場の正規直交性、偏極、$\rho(n)$の2通りの計算の一致（$n\le1024$）、$\rho(n)=n$と$a_{n-1}\mid n$が$n=1,2,4,8$に限られること、$L_1\cdots L_6=L_7$
 - 03：`check/03-clutching.py`（作成済み・通過）。$\mathbb K=\mathbb R,\mathbb C,\mathbb H,\mathbb O$のホップ束のファイバー$(1-r)α=cβ$と赤道の$μ=L_cλ$、01の$μ=zλ$との一致、[[7shi-hopfext]]の規約との対応（$CR_{c^*}C=L_c$）、回転数の性質、$v^w=-z^{-2}v^z$、行列式の回転数
-- 04：$\operatorname{diag}(z^2,1)$から$\operatorname{diag}(z,z)$へのホモトピー。$M_k/i^*M_{k+1}$の計算（既約加群の個数と制限の行列から）
+- 04：$\operatorname{diag}(z^2,1)$から$\operatorname{diag}(z,z)$へのホモトピー。$M_k/i^*M_{k+1}$の計算（非次数付きでは$\operatorname{Cl}_{0,k-1}$の既約加群の群を$\operatorname{Cl}_{0,k}$の既約加群の制限で割る。既約加群の個数と制限の行列から）
 - 05：切断したテプリッツ行列の核の次元と指数（有限切断では指数が見えないことも含めて扱い方を検討）
 - 06：$n=3$で$\Gamma$の固有値とlie/MEMOの$\mathcal D$の固有値の一致、球面モノジェニックスの固有値$\pm(k+\frac{n-1}2)$
 - 07：$S^2$上で$H^n$に捩った作用素の核の次元が$n$になること
