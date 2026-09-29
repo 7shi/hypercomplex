@@ -186,7 +186,18 @@
 - **ボット周期性定理**。$\tilde K(S^{k+2})\cong\tilde K(S^k)$、$\widetilde{KO}(S^{k+8})\cong\widetilde{KO}(S^k)$を主張として述べ、代数の側の周期性（[[7shi-clif1]]の$\operatorname{Cl}_{p+8,q}\cong\operatorname{Cl}_{p,q}\otimes\mathbb R(16)$）との対応を示す。証明は扱わない
 - **アダムスの定理**。ホップ不変量1の写像が$S^1,S^3,S^7$にしかないこと（[[7shi-lie7]]の`&&&rem`）と02のベクトル場の上界がK理論で証明されることを`&&&rem`で述べる。アダムス作用素には立ち入らない
 
-## 05 フレドホルム指数とテプリッツ作用素
+## 05 フレドホルム指数とテプリッツ作用素（レビュー反映済み）
+
+`05-fredholm.md`として執筆し、`05-fredholm-prompt.md`（参照：ktheory/03・01・clif/04）でレビューした結果`05-fredholm.txt`の指摘を反映した（像が閉じることの補足は、証明が代数的に完結しているので見送り）。レビューで補ったのは、連続変形での不変性が「フレドホルム作用素のままノルムについて連続」な変形に限ること、有限の切断の極限がその変形ではないこと、交換子のトレースの差が有限階数の作用素どうしで厳密に取れること、[[lem-analytic]]の無限和への拡張、$|a|<1$の$S-aI$の像は$e_0$の方向が欠けるのではなく余次元1であること、零点の個数は多項式$p$の重複度込みであること、負の冪の側では$z^n\mapsto z^{-n-1}$で記号$f(z^{-1})$になり指数$+\operatorname{wind}$となること、貼り合わせの向きを変えても$T_f$の公式は変わらず束との対応の符号が変わること、ハーディ空間$H^2$とホップ束の$H^n$の記号の区別。構成案からの変更点は次のとおり。
+
+- **コンパクト作用素を使わずに証明した**：[[lem-product]]（積の指数、線形代数だけで示す）と[[lem-analytic]]（$T_{\bar gfh}=T_{\bar g}T_fT_h$）から、ローラン多項式$f=z^{-m}p$の$T_f$を$(S^*)^m\,c\prod(S-a_j)\prod(S-b_l)$に分解し、$S-a=(I-aS^*)S$（$|a|<1$）とノイマン級数で$\operatorname{ind}T_f=m-k=-\operatorname{wind}f$を得た。回転数は03の命題「回転数の性質」の2から$\operatorname{wind}(z-a)=1,0$
+- **有限階数の摂動**（未決事項から解消）：[[lem-product]]を$\ker F$への包含との合成に適用して示した。コンパクト摂動・アトキンソンの定理・$T_fT_g-T_{fg}$のコンパクト性は`&&&rem`で主張に留めた
+- **連続な記号**：「零点のない連続な記号の$T_f$はフレドホルム」「01の連続変形での不変性」「三角多項式による一様近似」の3つを認めて[[prop-continuous]]で導いた
+- **符号**：標準どおり$\operatorname{ind}T_f=-\operatorname{wind}(f)=-φ([E_f]-1)$。03・04の向きは変えていない。行列値の記号$\operatorname{ind}T_g=-\operatorname{wind}\det g$は`&&&rem`で主張
+- **有限の切断**：本文ではシフトの切断$J$（核$e_{N-1}$・余核$e_0$、$J^*J-JJ^*=\operatorname{diag}(1,0,\dots,0,-1)$）だけを扱い、一般の記号で小さい特異値が$|\operatorname{wind}|$個現れること（端への局在）は検証コードだけで確かめた
+- **07への注意**：標準的な規約の$c_1=-\operatorname{wind}$（03の注意）と合わせると$\operatorname{ind}T_f=c_1(E_f)$。05本文には書いていない
+
+以下は執筆前の構成案。
 
 - **有限次元**。線形写像$T:V\to W$で$\dim\ker T-\dim\operatorname{coker}T=\dim V-\dim W$（階数・退化次数の定理）。指数は$T$によらず、正方行列なら常に0
 - **無限次元**。$\ell^2$上の片側シフト$S$は$\ker S=0$、$\operatorname{coker}S$が1次元で指数$-1$。[[7shi-clif3]]の巡回的なシフト行列（指数0）との違いは「端があること」。$S^*S-SS^*$が階数1の射影でトレース1になることは、[[7shi-clif4]]の「有限次元では$[Q,P]=iI$がトレースで不可能」と同じ障害の裏返しとして対比する
@@ -226,7 +237,7 @@
 - 02：`check/02-vector-fields.py`（作成済み・通過）。$\operatorname{Cl}_{0,k}(\mathbb R)$（$k=1,\dots,8$）の実行列表現、既約性（可換子環の次元$2,4,4,4,2,1,1,1$）と像の次元（$k=3,7$で$2^{k-1}$）、接ベクトル場の正規直交性、偏極、$\rho(n)$の2通りの計算の一致（$n\le1024$）、$\rho(n)=n$と$a_{n-1}\mid n$が$n=1,2,4,8$に限られること、$L_1\cdots L_6=L_7$
 - 03：`check/03-clutching.py`（作成済み・通過）。$\mathbb K=\mathbb R,\mathbb C,\mathbb H,\mathbb O$のホップ束のファイバー$(1-r)α=cβ$と赤道の$μ=L_cλ$、01の$μ=zλ$との一致、[[7shi-hopfext]]の規約との対応（$CR_{c^*}C=L_c$）、回転数の性質、$v^w=-z^{-2}v^z$、行列式の回転数
 - 04：`check/04-bott.py`（作成済み・通過）。回転$\operatorname{diag}(a,1)R(t)\operatorname{diag}(1,b)R(t)^{-1}$による$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$・$\operatorname{diag}(z,z^{-1})\simeq I$、$\cos t\,g_W+\sin t\,J_k$の直交性、$\operatorname{Cl}_{0,k}\to\operatorname{Cl}_{0,k-1}$の制限の個数（擬スカラーの符号で区別）と余核$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$、複素の$0,\mathbb Z$と$\operatorname{Cl}_1(\mathbb C)$の2つの既約加群が$H^{\pm1}$を与えること、$\overline W$が$L_{c^*}$を与えること、$\operatorname{Cl}_{0,k+8}$の表現の次元$16a_k$
-- 05：切断したテプリッツ行列の核の次元と指数（有限切断では指数が見えないことも含めて扱い方を検討）
+- 05：`check/05-fredholm.py`（作成済み・通過）。$S^*S=I$・$SS^*=I-P_0$と交換子のトレース、切断$J$の核・余核と交換子、$(I-aS^*)S=S-aI$とノイマン級数、$T_{\bar gfh}=T_{\bar g}T_fT_h$と$\|T_f\|\le\max|f|$、$\operatorname{wind}(z^{-m}p)=k-m$、負の冪の側が記号$f(z^{-1})$になること、切断$T_N(f)$の小さい特異値が$|\operatorname{wind}|$個で端に局在すること、有限行列での積の指数
 - 06：$n=3$で$\Gamma$の固有値とlie/MEMOの$\mathcal D$の固有値の一致、球面モノジェニックスの固有値$\pm(k+\frac{n-1}2)$
 - 07：$S^2$上で$H^n$に捩った作用素の核の次元が$n$になること
 
@@ -243,7 +254,6 @@
 
 # 未決事項
 
-- **07の曲率と符号**。回転数とチャーン数の一致（03から持ち越し）を07で示す。$c_1=-\operatorname{wind}$の符号の扱いと、捩る束を$H^{-n}$とするか規約を変えるかを決める
-- **05の摂動**。コンパクト作用素による摂動の不変性をどこまで示すか
+- **07の曲率と符号**。回転数とチャーン数の一致（03から持ち越し）を07で示す。$c_1=-\operatorname{wind}$の符号の扱いと、捩る束を$H^{-n}$とするか規約を変えるかを決める。05では$\operatorname{ind}T_f=-\operatorname{wind}(f)$としたので、$c_1$を導入すると$\operatorname{ind}T_f=c_1(E_f)$となる
 - **06の正当化**。分解から得る作用素と内在的なディラック作用素の関係をどこまで示すか
 - **07の四元数の場合**。$S^4$の例を入れるか

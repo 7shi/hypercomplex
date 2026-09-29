@@ -183,6 +183,7 @@ files = [
 
 ["7shi-clif3"]
 files = [
+  "ktheory/05-fredholm.md",
   "lie/06-su3.md",
 ]
 
@@ -190,6 +191,7 @@ files = [
 files = [
   "clif/05-schrodinger.md",
   "hopf/06-clifford-gates.md",
+  "ktheory/05-fredholm.md",
   "lie/06-su3.md",
 ]
 
@@ -471,6 +473,7 @@ files = [
   "ktheory/02-vector-fields.md",
   "ktheory/03-clutching.md",
   "ktheory/04-bott.md",
+  "ktheory/05-fredholm.md",
 ]
 
 ["7shi-kth2"]
@@ -482,6 +485,17 @@ files = [
 ["7shi-kth3"]
 files = [
   "ktheory/04-bott.md",
+  "ktheory/05-fredholm.md",
+]
+
+["7shi-kth4"]
+files = [
+  "ktheory/05-fredholm.md",
+]
+
+["7shi-leb2"]
+files = [
+  "ktheory/05-fredholm.md",
 ]
 
 ["7shi-leb6"]
