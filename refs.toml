@@ -139,6 +139,7 @@ files = [
   "em/04-spacetime.md",
   "em/07-retarded.md",
   "ktheory/01-overview.md",
+  "ktheory/06-sphere-dirac.md",
 ]
 
 ["7shi-cla6"]
@@ -170,6 +171,7 @@ files = [
   "ktheory/01-overview.md",
   "ktheory/02-vector-fields.md",
   "ktheory/04-bott.md",
+  "ktheory/06-sphere-dirac.md",
   "qua/spinor-ideal.md",
 ]
 
@@ -251,6 +253,7 @@ files = [
 files = [
   "dirac/01-pauli.md",
   "dirac/02-spinor.md",
+  "ktheory/06-sphere-dirac.md",
   "lie/07-s7.md",
   "lie/08-g2.md",
 ]
@@ -474,6 +477,7 @@ files = [
   "ktheory/03-clutching.md",
   "ktheory/04-bott.md",
   "ktheory/05-fredholm.md",
+  "ktheory/06-sphere-dirac.md",
 ]
 
 ["7shi-kth2"]
@@ -486,6 +490,7 @@ files = [
 files = [
   "ktheory/04-bott.md",
   "ktheory/05-fredholm.md",
+  "ktheory/06-sphere-dirac.md",
 ]
 
 ["7shi-kth4"]
@@ -493,9 +498,15 @@ files = [
   "ktheory/05-fredholm.md",
 ]
 
+["7shi-kth5"]
+files = [
+  "ktheory/06-sphere-dirac.md",
+]
+
 ["7shi-leb2"]
 files = [
   "ktheory/05-fredholm.md",
+  "ktheory/06-sphere-dirac.md",
 ]
 
 ["7shi-leb6"]

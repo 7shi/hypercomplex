@@ -205,7 +205,21 @@
 - **03との対応**。$f:S^1\to\mathbb C^\times$は03の貼り合わせ関数そのもので、指数は$S^2$上の直線束の回転数（の符号反転）。04の生成元がここで作用素の指数として再登場する
 - **扱う範囲**。コンパクト作用素による摂動の不変性は主張に留めるか、有限階数の摂動に限って示すかを検討する
 
-## 06 球面上のディラック作用素
+## 06 球面上のディラック作用素（レビュー反映済み）
+
+`06-sphere-dirac.md`として執筆し、`06-sphere-dirac-prompt.md`（参照：clif-analysis/05・ktheory/01）でレビューした結果`06-sphere-dirac.txt`の指摘をすべて反映した。構成案からの変更点と確定した事項は次のとおり。
+
+- **規約と符号**：$Γ=\sum_{a<b}e_ae_bL_{ab}$（$L_{ab}=x_a\partial_b-x_b\partial_a$）で$\boldsymbol xD=E+Γ$。文献のガンマ作用素とは符号が逆のことがあると`&&&rem`で断った。内積$\langle\tilde AB\rangle_0$について$Γ$は対称で、$e_a^2=+1$の規約では$i$が要らない（2乗が$-1$の2ベクトルがその役）。$Γ^2=(n-2)Γ-Δ_S$、$Δ_S=\sum L_{ab}^2$
+- **固有値**：$P\in M_k$で$ΓP=-kP$、$Γ(\boldsymbol xP)=(k+n-1)\boldsymbol xP$。$\dim M_k=2^n\binom{k+n-2}{n-2}$は$x_0=0$への制限（コーシー＝コワレフスカヤ型の延長）で証明した。フィッシャー分解と完全性は主張
+- **正当化の範囲**（未決事項から解消）：接ベクトルの掛け算を$X\bullet ψ=X\boldsymbol xψ$（$(X\boldsymbol x)^2=-|X|^2$、偶部分代数$\cong\operatorname{Cl}_{0,n-1}(\mathbb R)$を生成）とし、ライプニッツ則の要請から共変微分$\nabla_X=\partial_X-\frac12X\boldsymbol x$を導いて、$D_S=\frac{n-1}2-Γ$を一般の$n$で証明した。標準的なスピン接続との一致は一般の$n$では主張（スピノルのガウスの公式）。$n=3$では回転子$U=e^{-e_0e_1φ/2}e^{-e_2e_0θ/2}$で枠に移し、$\nabla_θ=\partial_θ$、$\nabla_φ=\partial_φ-\frac12\cosθ\,e_0e_1$、$D_S=f_1(\partial_θ+\frac{\cotθ}2)+f_2\partial_φ/\sinθ$（$f_1=e_0e_2$、$f_2=e_1e_2$、$f_l\mapsto-iσ_l$でlie/MEMOの式）を示した。記号は、cla5の$\mathcal D=e_0D$と区別して$D_S$、スカラー曲率$R$と区別して回転子を$U$とした
+- **値の空間**：$\operatorname{Cl}_{n,0}^0(\mathbb R)$値の関数（偶部分代数全体を値の空間とするスピノルのモデル）。既約加群$W$に制限すると重複度は$\dim W\binom{k+n-2}{n-2}$。$n=3$で複素の重複度$2(k+1)=2j+1$
+- **スピン構造**（レビューで追加）：周囲の空間から誘導される構成を選んでいると明示した。$n\ge3$では一意（主張）、$S^1$では円板から誘導されるほう（反周期的、固有値$m+\frac12$、核0）。$n=2$では両立性から$c$が決まらず$-\frac12$は選択
+- **リヒネロビッチの公式**：一般の$n$で証明した。接続ラプラシアンを通常の定義（局所の正規直交枠）から始め、$H(X,Y)=\nabla_X\nabla_Y-\nabla_{\nabla_XY}$のテンソル性と$\sum\nabla_{\boldsymbol v_{ab}}\boldsymbol v_{ab}=0$から回転の場の和$-\sum\nabla_{\boldsymbol v_{ab}}^2$に書き換え（レビューで追加）、$\nabla^*\nabla=-Δ_S-Γ+\frac{n-1}4$から$D_S^2=\nabla^*\nabla+\frac{(n-1)(n-2)}4$。核の消失は完全性を使わず部分積分（回転不変性）で$n\ge3$に限って示し、$n=2$は平行なスピノル$e^{-Jφ/2}c$が1価でないことから示した。$R=m(m-1)$とフリードリヒの評価（閉リーマンスピン多様体、$m\ge2$）は主張
+- **平方完成の`&&&rem`**：$(Γ-\frac{n-2}2)^2=-Δ_S+\text{定数}$は成分ごとのラプラシアンの平方根で、ディラック作用素（ずれ$\frac{n-1}2$）とは一致しないことを、ずれを決めるのが接続である動機として置いた
+- **05・01との整合**：$D_S$は$L^2$上で非有界なので05の有界なフレドホルム作用素の枠組みには準備が要ると断り、核だけを扱った。主表象は$D_S$の1階の部分から$\boldsymbol\xi\bullet=\boldsymbol\xi\boldsymbol x$として01と対応させた
+- **07への注意**：捩りは、両立性と内積の保存だけでは共変微分が決まらない（反対称な零階の項を加える余地）という06の`&&&rem`と、$(ψ,\nabla^*\nabla ψ)=\sum\|\nabla_{\boldsymbol v_{ab}}ψ\|^2$の部分積分をそのまま使える。06本文には捩りを書いていない
+
+以下は執筆前の構成案。
 
 - **分解**。[[7shi-cla5]]の$D$を$\boldsymbol x^{-1}$と組んで$\boldsymbol xD=\boldsymbol x\cdot D+\boldsymbol x\wedge D$と分け、前者は動径方向の微分（オイラー作用素$r\partial_r$）、後者が球面方向の作用素（文献ではガンマ作用素$\Gamma$）になる。$D$の2乗が$\Delta$であるのと同様に、$\Gamma$から球面のラプラシアンが得られる。符号と規約は検証コードで確定する
 - **球面モノジェニックス**。次数$k$の同次モノジェニック多項式（[[7shi-cla5]]が扱わなかった球面モノジェニックス）が$\Gamma$の固有関数になる。ここから$S^{n-1}$上のディラック作用素の固有値$\pm(k+\frac{n-1}2)$（$k\ge0$）を得る
@@ -238,7 +252,7 @@
 - 03：`check/03-clutching.py`（作成済み・通過）。$\mathbb K=\mathbb R,\mathbb C,\mathbb H,\mathbb O$のホップ束のファイバー$(1-r)α=cβ$と赤道の$μ=L_cλ$、01の$μ=zλ$との一致、[[7shi-hopfext]]の規約との対応（$CR_{c^*}C=L_c$）、回転数の性質、$v^w=-z^{-2}v^z$、行列式の回転数
 - 04：`check/04-bott.py`（作成済み・通過）。回転$\operatorname{diag}(a,1)R(t)\operatorname{diag}(1,b)R(t)^{-1}$による$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$・$\operatorname{diag}(z,z^{-1})\simeq I$、$\cos t\,g_W+\sin t\,J_k$の直交性、$\operatorname{Cl}_{0,k}\to\operatorname{Cl}_{0,k-1}$の制限の個数（擬スカラーの符号で区別）と余核$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$、複素の$0,\mathbb Z$と$\operatorname{Cl}_1(\mathbb C)$の2つの既約加群が$H^{\pm1}$を与えること、$\overline W$が$L_{c^*}$を与えること、$\operatorname{Cl}_{0,k+8}$の表現の次元$16a_k$
 - 05：`check/05-fredholm.py`（作成済み・通過）。$S^*S=I$・$SS^*=I-P_0$と交換子のトレース、切断$J$の核・余核と交換子、$(I-aS^*)S=S-aI$とノイマン級数、$T_{\bar gfh}=T_{\bar g}T_fT_h$と$\|T_f\|\le\max|f|$、$\operatorname{wind}(z^{-m}p)=k-m$、負の冪の側が記号$f(z^{-1})$になること、切断$T_N(f)$の小さい特異値が$|\operatorname{wind}|$個で端に局在すること、有限行列での積の指数
-- 06：$n=3$で$\Gamma$の固有値とlie/MEMOの$\mathcal D$の固有値の一致、球面モノジェニックスの固有値$\pm(k+\frac{n-1}2)$
+- 06：`check/06-sphere-dirac.py`（作成済み・通過）。$\boldsymbol xD=E+Γ$、$Δ_S=(n-2)Γ-Γ^2$、$Γ$の対称性、球面モノジェニックスの固有値と$\dim M_k$、共変微分の係数$-\frac12$、$\sum\nabla_{\boldsymbol v_{ab}}\boldsymbol v_{ab}=0$、$D_S=\frac{n-1}2-Γ$、リヒネロビッチの公式、$n=3$の枠による形（lie/MEMOの式）と$U(φ+2\pi)=-U$
 - 07：$S^2$上で$H^n$に捩った作用素の核の次元が$n$になること
 
 # 既存シリーズとの関係
@@ -255,5 +269,4 @@
 # 未決事項
 
 - **07の曲率と符号**。回転数とチャーン数の一致（03から持ち越し）を07で示す。$c_1=-\operatorname{wind}$の符号の扱いと、捩る束を$H^{-n}$とするか規約を変えるかを決める。05では$\operatorname{ind}T_f=-\operatorname{wind}(f)$としたので、$c_1$を導入すると$\operatorname{ind}T_f=c_1(E_f)$となる
-- **06の正当化**。分解から得る作用素と内在的なディラック作用素の関係をどこまで示すか
 - **07の四元数の場合**。$S^4$の例を入れるか
