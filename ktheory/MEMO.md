@@ -54,7 +54,7 @@
 | 04 | `04-bott.md` | `7shi-kth4` | K群とボット周期性 | 直和で安定化した$\tilde K(S^n)$。$\boldsymbol x\mapsto\sum x_ie_i$による生成元（ABS構成）。$KO^{-k}(\mathrm{pt})\cong M_k/i^*M_{k+1}$を分類表から計算して$\mathbb Z,\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0$ |
 | 05 | `05-fredholm.md` | `7shi-kth5` | フレドホルム指数とテプリッツ作用素 | 有限次元では指数は常に$\dim V-\dim W$。片側シフトの指数$-1$。テプリッツ作用素の指数が記号の回転数の$-1$倍になること（最初の指数定理） |
 | 06 | `06-sphere-dirac.md` | `7shi-kth6` | 球面上のディラック作用素 | 平坦な$D$の球面方向への分解から$S^{n-1}$上のディラック作用素を取り出し、球面モノジェニックスで固有値$\pm(k+\frac{n-1}2)$を得る。$n=3$でlie/MEMOの$\pm(l+1)$を回収。リヒネロビッチの公式と核の消失 |
-| 07 | `07-twisted.md` | `7shi-kth7` | ホップ束で捩ったディラック作用素 | $S^2$上でホップ束の$n$乗で捩ると、核が次数$n-1$の同次多項式（$n$次元）になり、指数$n$が03の回転数と一致する。捩りの曲率がリヒネロビッチの公式の$R/4$を打ち消す仕組み |
+| 07 | `07-twisted.md` | `7shi-kth7` | ホップ束で捩ったディラック作用素 | カイラリティ$γψ=ω\boldsymbol xψJ$で正の側が$H$そのもの。$H^n$で捩ると曲率の積分は$-2\pi n$、リヒネロビッチの公式に$\frac n2γ$が加わり、$n=-m$で核は次数$m-1$の同次多項式（$m$次元）。指数$-n=\operatorname{ind}T_{z^n}$ |
 | 08 | `08-atiyah-singer.md` | `7shi-kth8` | アティヤ＝シンガーの指数定理 | 主表象が04の生成元であることから位相的指数を定め、指数定理の主張を述べる。ガウス＝ボネ・符号数・リーマン＝ロッホ・$\hat A$種数への特殊化と、02の毛玉の定理の回収 |
 
 # 各回の検討事項
@@ -228,7 +228,20 @@
 - **リヒネロビッチの公式**。$\mathcal D^2=\nabla^*\nabla+\frac R4$、$S^{n-1}$のスカラー曲率$R=(n-1)(n-2)$。$R>0$から核が0になることを示し、固有値の最小値$\frac{n-1}2$との整合を見る
 - **注意点**。$\Gamma$の分解から得る作用素と、球面に内在的なディラック作用素の関係（共形変換による書き換え）を記事内でどこまで正当化するか。$n=3$の検証コードで一致を確認した上で、一般の$n$は主張として述べる案が有力
 
-## 07 ホップ束で捩ったディラック作用素
+## 07 ホップ束で捩ったディラック作用素（レビュー反映済み）
+
+`07-twisted.md`として執筆し、`07-twisted-prompt.md`（参照：ktheory/06・03）でレビューした結果`07-twisted.txt`の指摘を反映した（「射影から誘導される接続」を`&&&ex`にする提案は、本文の論理が依存しない補足なので`&&&rem`のまま見送り）。レビューで補ったのは、[[prop-flip]]の向き（$H^{-n}$の側の接続を$-\boldsymbol a$として$D_{-\boldsymbol a}(ψK)=(D_{\boldsymbol a}ψ)K$）と$K$が単位元ではなく$K^2=-1$の2ベクトルであること、反線形写像で次元が保たれる理由（逆写像）、平行なスピノルが複素1次元以下であることを評価写像の単射で示したこと、共変微分に加えた項$(\boldsymbol a\cdot X)R_J$が反対称でディラック作用素の零階の項$\boldsymbol a\boldsymbol xψJ$は対称であることの区別、$γ$が右からの$J$を含むこと、$\ker D^-$を像の直交補空間とするのは滑らかなスピノルの範囲であること、曲率の符号が接続の書き方と向きの規約にも依存すること、核と指数は曲率一定の接続についてであることの明記。確定した事項は次のとおり。
+
+- **捩り方**：案(a)。スピノルを$U_\pm$（南極・北極を除く領域）で与え$ψ_+=ψ_-e^{nJφ}$（03の向きの$z^n$）で貼り合わせ、06の「零階の項の余地」として$\nabla^{\boldsymbol a}_X=\nabla_X+(\boldsymbol a\cdot X)R_J$を加えた。貼り合わせの条件は$\boldsymbol a_+-\boldsymbol a_-=-n\nablaφ$。案(b)は`&&&rem`（$n=1$の接続は$H\subset\mathbb C^2$の射影接続）と[[prop-hopf-chirality]]、案(c)は核の同次多項式表示として現れる
+- **カイラリティ**：$γψ=ω\boldsymbol xψJ$。$γ^2=1$、平行、$X\bullet$と反交換。枠では$ψ_f\mapsto Jψ_fJ$で$S^+=f_1\mathbb C_J$、$S^-=\mathbb C_J$。$Φ(α,β)=f_1α-β$で$S^+_{\boldsymbol x}=Φ(E_{\boldsymbol x})$、$S^-_{\boldsymbol x}=Φ(E_{-\boldsymbol x})$、束として$S^+\cong H$、$S^-\cong H^{-1}$（04の$H\oplus H^{-1}$が自明と整合）
+- **符号**（未決事項から解消）：03の$H^n$をそのまま使った。$\operatorname{ind}D_n=\frac1{2\pi}\int F\,dΩ=-\operatorname{wind}(z^n)=\operatorname{ind}T_{z^n}=-n$。曲率は$F=\boldsymbol t_2\cdot\partial_{\boldsymbol t_1}\boldsymbol a-\boldsymbol t_1\cdot\partial_{\boldsymbol t_2}\boldsymbol a$（$\boldsymbol t_1\boldsymbol t_2\boldsymbol x=ω$、外向きの向き）。外向きの向きの標準的な$i\,\boldsymbol t_1\bullet\boldsymbol t_2\bullet$は$-γ$にあたり、その規約では指数$+n$（外向きの向きでの$c_1(H^n)=n$）。「チャーン数」の名前は07では出していない。MEMOの旧記述「$c_1=-\operatorname{wind}$」は$z$を複素座標とする向き（外向きと逆）での値
+- **曲率の積分**（03からの持ち越しを回収）：任意の両立する接続で$\int F\,dΩ=-2\pi n$を[[7shi-cla2]]のストークスの定理で示した。曲率一定の接続は$\boldsymbol a=f(x_2)\boldsymbol v_{01}$から$F=-\frac d{dx_2}((1-x_2^2)f)$を解いて$\boldsymbol a_\pm=\mp\frac n2\boldsymbol v_{01}/(1\pm x_2)$、$F=-\frac n2$
+- **リヒネロビッチの公式**：一般の$\boldsymbol a$で$D^2=\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}+\frac12-Fγ$、一定の接続で$+\frac n2γ$。構成案の「曲率の項が$R/4$を打ち消す」は$|n|=1$だけ（核は平行なスピノル）で、$|n|\ge2$では上回る。一般の$n$で言えるのは片側の核の消失
+- **核**：06の球面モノジェニックスの方法は使わず、枠の形の変数分離（$g_μ=\sin^{-μ-\frac12}\frac θ2\cos^{μ-\frac12-n}\frac θ2$、両極で有界なモードを数える）。核の元は$Φ(α_\pm,β_\pm)P(α_\pm,β_\pm)$（$P$は次数$m-1$の同次多項式、$(α_\pm,β_\pm)$は03の座標$μ=α$・$λ=β$が正になる単位ベクトル）。負のカイラリティは$ψ\mapstoψK$（$K=f_2$、反線形）で移す。南半球では$P(z,1)/(1+|z|^2)^{(m-1)/2}$で、05の$\ker(S^*)^m=\langle1,\dots,z^{m-1}\rangle$と同じ形（観察に留めた）
+- **四元数の場合**（未決事項から解消）：07では扱わない。$S^4$の四元数ホップ束で捩った場合の指数1は、08で指数定理の例として扱うか検討する
+- **記号**：捩りの冪を$n$（周囲の次元は3に固定）、$D_n$（$D_0=D_S$）、接続のベクトル場$\boldsymbol a_\pm$、曲率$F$、$\mathbb C_J=\langle1,J\rangle$、$R_J$。$γ$と06の$Γ$、$S^\pm$と05のずらし$S$、共変微分とベクトル解析の$\nabla$の重なりは本文で断った
+
+以下は執筆前の構成案。
 
 - **捩ったディラック作用素**。$S^2$上で、06の作用素をホップ束の$n$乗$H^n$（03）の切断に作用させる。hopf/MEMOの言葉では、ファイバーの電荷を$\pm1$からずらすことにあたる
 - **核の計算**。核は次数$n-1$の同次多項式（hopf/MEMOの「電荷$2j$の関数は次数$2j$の同次多項式」の$2j=n-1$）で$n$次元、すべて片方のカイラリティに属する。余核は0。指数$n$が03の回転数・04の生成元の$n$倍と一致する
@@ -253,7 +266,7 @@
 - 04：`check/04-bott.py`（作成済み・通過）。回転$\operatorname{diag}(a,1)R(t)\operatorname{diag}(1,b)R(t)^{-1}$による$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$・$\operatorname{diag}(z,z^{-1})\simeq I$、$\cos t\,g_W+\sin t\,J_k$の直交性、$\operatorname{Cl}_{0,k}\to\operatorname{Cl}_{0,k-1}$の制限の個数（擬スカラーの符号で区別）と余核$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$、複素の$0,\mathbb Z$と$\operatorname{Cl}_1(\mathbb C)$の2つの既約加群が$H^{\pm1}$を与えること、$\overline W$が$L_{c^*}$を与えること、$\operatorname{Cl}_{0,k+8}$の表現の次元$16a_k$
 - 05：`check/05-fredholm.py`（作成済み・通過）。$S^*S=I$・$SS^*=I-P_0$と交換子のトレース、切断$J$の核・余核と交換子、$(I-aS^*)S=S-aI$とノイマン級数、$T_{\bar gfh}=T_{\bar g}T_fT_h$と$\|T_f\|\le\max|f|$、$\operatorname{wind}(z^{-m}p)=k-m$、負の冪の側が記号$f(z^{-1})$になること、切断$T_N(f)$の小さい特異値が$|\operatorname{wind}|$個で端に局在すること、有限行列での積の指数
 - 06：`check/06-sphere-dirac.py`（作成済み・通過）。$\boldsymbol xD=E+Γ$、$Δ_S=(n-2)Γ-Γ^2$、$Γ$の対称性、球面モノジェニックスの固有値と$\dim M_k$、共変微分の係数$-\frac12$、$\sum\nabla_{\boldsymbol v_{ab}}\boldsymbol v_{ab}=0$、$D_S=\frac{n-1}2-Γ$、リヒネロビッチの公式、$n=3$の枠による形（lie/MEMOの式）と$U(φ+2\pi)=-U$
-- 07：$S^2$上で$H^n$に捩った作用素の核の次元が$n$になること
+- 07：`check/07-twisted.py`（作成済み・通過）。カイラリティ$γ$の性質と枠での形、$Φ(α,β)=f_1α-β$が$E_{\boldsymbol x}$を$S^+$に写すことと$S^\pm$の貼り合わせ関数$z^{\pm1}$、局所的な単位ベクトル$(α_\pm,β_\pm)$、貼り合わせの条件と$\boldsymbol a=f(x_2)\boldsymbol v_{01}$の曲率、曲率一定の接続と周回積分$-2\pi n$、$ψ\mapstoψK$、$n=1$の射影接続、一般の$\boldsymbol a$でのリヒネロビッチの公式、枠の形とモードの解、核の元が両方の領域で$D_n=0$を満たし貼り合うこと、$n=-1$で平行、核の次元と指数、$\ker(S^*)^m$
 
 # 既存シリーズとの関係
 
@@ -268,5 +281,5 @@
 
 # 未決事項
 
-- **07の曲率と符号**。回転数とチャーン数の一致（03から持ち越し）を07で示す。$c_1=-\operatorname{wind}$の符号の扱いと、捩る束を$H^{-n}$とするか規約を変えるかを決める。05では$\operatorname{ind}T_f=-\operatorname{wind}(f)$としたので、$c_1$を導入すると$\operatorname{ind}T_f=c_1(E_f)$となる
-- **07の四元数の場合**。$S^4$の例を入れるか
+- **08の符号**。07では外向きの向きの曲率で$\operatorname{ind}D_n=\frac1{2\pi}\int F\,dΩ=-n$とし、カイラリティは$γ=-i\,\boldsymbol t_1\bullet\boldsymbol t_2\bullet$を正とした（05と向きを揃えるため）。08で$\int\hat A\operatorname{ch}$の形の主張を述べるときは、向きと$c_1$の符号の規約を07と合わせる
+- **08の四元数の場合**。$S^4$上で四元数ホップ束で捩ったディラック作用素の指数1を例に入れるか
