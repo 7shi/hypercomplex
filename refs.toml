@@ -113,6 +113,7 @@ files = [
   "em/06-potential.md",
   "em/07-retarded.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-cla3"]
@@ -141,6 +142,7 @@ files = [
   "em/07-retarded.md",
   "ktheory/01-overview.md",
   "ktheory/06-sphere-dirac.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-cla6"]
@@ -434,6 +436,7 @@ files = [
   "ktheory/01-overview.md",
   "ktheory/03-clutching.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-hopfext"]
@@ -481,12 +484,14 @@ files = [
   "ktheory/05-fredholm.md",
   "ktheory/06-sphere-dirac.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-kth2"]
 files = [
   "ktheory/03-clutching.md",
   "ktheory/04-bott.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-kth3"]
@@ -495,23 +500,32 @@ files = [
   "ktheory/05-fredholm.md",
   "ktheory/06-sphere-dirac.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-kth4"]
 files = [
   "ktheory/05-fredholm.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-kth5"]
 files = [
   "ktheory/06-sphere-dirac.md",
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-kth6"]
 files = [
   "ktheory/07-twisted.md",
+  "ktheory/08-atiyah-singer.md",
+]
+
+["7shi-kth7"]
+files = [
+  "ktheory/08-atiyah-singer.md",
 ]
 
 ["7shi-leb2"]

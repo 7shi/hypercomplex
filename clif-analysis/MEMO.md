@@ -152,6 +152,7 @@
 - **八元数解析**。本シリーズの積の操作をそのまま移せないため扱わない（README）
 - **曲がった空間上のディラック作用素**。[K理論と指数定理](../ktheory/README.md)のシリーズに委ねた。[ktheory/06](../ktheory/06-sphere-dirac.md)で、05の$D$を$\boldsymbol xD=E+Γ$と分けて球面$S^{n-1}$上のディラック作用素$\frac{n-1}2-Γ$を取り出した
 - **球面モノジェニックスの回収**（05）。[ktheory/06](../ktheory/06-sphere-dirac.md)で、次数$k$の球面モノジェニックスが$Γ$の固有関数（固有値$-k$、$\boldsymbol xP$で$k+n-1$）になることと$\dim M_k=2^n\binom{k+n-2}{n-2}$を示し、球面上のディラック作用素の固有値$\pm(k+\frac{n-1}2)$を得た。球面モノジェニックスによる展開（ローラン展開の対応物）とフィッシャー分解の証明は扱っていない
+- **$D=d-δ$の回収**（05の`&&&rem`）。[ktheory/08](../ktheory/08-atiyah-singer.md)で、球面上の微分形式を$X\mapsto X\boldsymbol x$で偶部分代数に同一視すると、$d+δ$の主表象がディラック作用素と同じ$\boldsymbol\xi\bullet$（$\boldsymbol\xi\wedge-ι_{\boldsymbol\xi}$）になることを述べ、$S^2$の調和形式（定数関数と面積要素）から$\operatorname{ind}(d+δ)=\chi(S^2)=2$を数えた。これと主表象の変形から、偶数次元の球面の毛玉の定理を導いた
 
 # 関連記事
 

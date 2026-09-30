@@ -66,6 +66,7 @@ date	url	md	title
 		ktheory/05-fredholm.md	フレドホルム指数とテプリッツ作用素
 		ktheory/06-sphere-dirac.md	球面上のディラック作用素
 		ktheory/07-twisted.md	ホップ束で捩ったディラック作用素
+		ktheory/08-atiyah-singer.md	アティヤ＝シンガーの指数定理
 		lebesgue/01-measure-integral.md	測度とルベーグ積分
 		lebesgue/02-l2-hilbert.md	L²空間とヒルベルト空間
 		lebesgue/03-probability.md	測度論的確率論
