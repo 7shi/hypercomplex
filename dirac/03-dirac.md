@@ -123,7 +123,7 @@ $\psi\mapsto\Psi$のもとで、$i\hbar\sum_\mu\hat\gamma^\mu\partial_\mu\Psi=mc
 [作用の翻訳](#prop-dirac-action)の1・2より、$i\hbar\hat\gamma^\mu\partial_\mu\Psi$には$\gamma^\mu(\hbar\,\partial_\mu\psi\,\omega\sigma_3)\gamma_0$が対応し、$\mu$について和を取ると$\hbar D\psi\,\omega\sigma_3\gamma_0$である。したがって行列形式の方程式は$\hbar D\psi\,\omega\sigma_3\gamma_0=mc\psi$と同値で、右から$\gamma_0$を掛ければ$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$となる。
 &&&
 
-行列形式の4本の複素数の方程式は、ヘステネス形式では偶部分代数の1本の式です。$\hat\gamma^\mu$を掛けることは$\gamma^\mu$で挟むことに、$i$を掛けることは右から$\omega\sigma_3$を掛けることになり、行列の側の複素数と$\hat\gamma$行列の区別は、代数の側では右から掛けるか左から掛けるかの区別になります。
+行列形式の4本の複素数の方程式は、ヘステネス形式では偶部分代数の1本の式です。$\hat\gamma^\mu$を掛けることは左から$\gamma^\mu$、右から$\gamma_0$を掛けることに、$i$を掛けることは右から$\omega\sigma_3$を掛けることになり、行列の側の複素数と$\hat\gamma$行列の区別は、代数の側では右から掛けるか左から掛けるかの区別になります。
 
 ## 観測量との対応
 
