@@ -91,3 +91,4 @@ qua/tensor-from-complex.md	複素数の拡張で学ぶテンソル積
 vec-oct/01-reflection.md	鏡映：ベクトルから八元数まで
 vec-oct/02-rotation.md	回転：ベクトルから八元数まで
 vec-oct/geometric-product-exp.md	ベクトルの幾何積と指数関数
+vec-oct/notation.md	回転の向きと積の順序の規約
