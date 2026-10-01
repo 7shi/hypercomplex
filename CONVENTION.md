@@ -67,7 +67,7 @@
 
 ## 未決事項
 
-- ベクトルを数（複素数・四元数）に移すとき、基準の生成元を左右どちらから掛けるか。2次元の `vec-oct` 系（`geometric-product-exp`・`vec-oct/02`・`convention`）は $ve_1$（$i\cong e_2e_1$、回転子 $nm\cong m^*n$、$ba\cong a^*b$）。`clif-analysis`（$z=e_1\boldsymbol x$、$\omega=e_1e_2$、$e_1D=2\bar\partial$）、`clif-analysis/04`・`ktheory`・`em/04`（$q=e_0\boldsymbol x$、$h_l=e_0e_l$）、`qua/04`・`vec-oct/02` の4次元（$Q(v)=T(\varphi(e_1v))$）は左から掛ける。回転では右から、関数論・解析では左からと用途で分け、`convention` に使い分けを書く案が有力。
+- ベクトルを数（複素数・四元数）に移すとき、基準の生成元を左右どちらから掛けるか。2次元の `vec-oct` 系（`geometric-product-exp`・`vec-oct/02`・`convention`）は $ve_1$（$i\cong e_2e_1$、回転子 $nm\cong m^*n$、$ba\cong a^*b$）。`clif-analysis`（$z=e_1\boldsymbol x$、$\omega=e_1e_2$、$e_1D=2\bar\partial$）、`clif-analysis/04`・`ktheory`・`em/04`（$q=e_0\boldsymbol x$、$h_l=e_0e_l$）、`qua/04`・`vec-oct/02` の4次元（$Q(v)=T(\varphi(e_1v))$）は左から掛ける。`convention` では2次元の2通りの対応を並べ（$e_1v$ では $ab\cong a^*b$、$ve_1$ では $ba\cong a^*b$）、四元数に拡張するときは $k\cong e_2e_1$ とそろう $ve_1$ を選ぶ論法にした。`clif-analysis` は左モノジェニック＝正則（$e_1D=2\bar\partial$）のために $e_1e_2$ が自然で、$e_2e_1$ にすると右モノジェニックが正則にあたる鏡像になる。`geometric-product-exp` は四元数まで扱うので $i\cong e_2e_1$ を維持し、$e_1e_2$ でも対応できること（$ab\cong a^*b$）と、四元数とそろえるために $e_2e_1$ を選ぶことを一文で述べた。
 
 ## レビュー予定
 
