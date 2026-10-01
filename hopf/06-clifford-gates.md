@@ -39,7 +39,7 @@ $$
 共役作用が2倍角ではなく角度$\theta$そのものの回転になるのは、両側から半分ずつ作用するためです。鏡映2回の合成としての回転子の導入と指数関数表現、パウリ行列による定式化、$\mathrm{SU}(2)$と$\mathrm{SO}(3)$の対応としての導出は関連記事を参照してください。[[7shi-clrt]][[7shi-bq]][[7shi-lie2]]
 
 &&&rem 回転子との記法の対応
-パウリ行列による回転の記事では、四元数の回転子$r=\exp(\frac\theta2 n)$に対応する行列を$R=\exp(\frac\theta2 N)$（$N=i\,\boldsymbol n\cdot\boldsymbol\sigma\cong-n$）とおき、回転を$R^\dagger VR$と書きました。四元数の虚数単位との対応$\mathbf i\cong-i\sigma_x,\ \mathbf j\cong-i\sigma_y,\ \mathbf k\cong-i\sigma_z$をたどると$r\cong\exp(-\frac{i\theta}2\,\boldsymbol n\cdot\boldsymbol\sigma)$なので、本記事の$R_{\boldsymbol n}(\theta)=R^\dagger$は回転子$r$の行列表現そのものであり、共役作用$R_{\boldsymbol n}VR_{\boldsymbol n}^\dagger=R^\dagger VR$は$rvr^*$にあたります。[[7shi-bq]][[7shi-bloch]]
+パウリ行列による回転の記事では、四元数の回転子$r=\exp(\frac\theta2 n)$を、虚数単位の対応$\mathbf i\cong-i\sigma_x,\ \mathbf j\cong-i\sigma_y,\ \mathbf k\cong-i\sigma_z$でそのまま行列に移し、$R=\exp(-\frac{i\theta}2\,\boldsymbol n\cdot\boldsymbol\sigma)$として回転を$RVR^\dagger$と書きました。本記事の$R_{\boldsymbol n}(\theta)$はこの$R$そのもの、すなわち回転子$r$の行列表現であり、共役作用$R_{\boldsymbol n}VR_{\boldsymbol n}^\dagger$は$rvr^*$にあたります。[[7shi-bq]][[7shi-bloch]]
 &&&
 
 向きを1つの例で確認します。$z$軸周りの回転子は対角行列

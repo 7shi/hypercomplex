@@ -80,7 +80,7 @@
 
 全5回で執筆し、全回をレビューして指摘を反映した（04と05は分けた）。検討中だった項目の扱いと、執筆・レビューで確定した事項は次のとおり。
 
-- **回転子の規約**：作用はemシリーズに合わせて$x\mapsto Rx\tilde R$、四元数との対応は$\mathbf i=-\omega\sigma_1$、$\mathbf j=-\omega\sigma_2$、$\mathbf k=-\omega\sigma_3$（[[7shi-bq]]と同じ）。[[7shi-lie3]]は$x\mapsto R^{-1}xR$で、同じ回転子が互いに逆元になる。本シリーズの内部では整合が取れているので統一は保留し、01の「記号」に断りを入れた（経緯は[lie/NOTATION.md](../lie/NOTATION.md)）。レビューが規約差を指摘しても、統一は提案せず、この断りで足りるかで判断する
+- **回転子の規約**：作用は$x\mapsto Rx\tilde R$、四元数との対応は$\mathbf i=-\omega\sigma_1$、$\mathbf j=-\omega\sigma_2$、$\mathbf k=-\omega\sigma_3$（[[7shi-bq]]と同じ）。四元数の回転子をそのまま移す規約で、emシリーズ・[[7shi-lie3]]・[[7shi-bq]]と一致する（経緯は[lie/NOTATION.md](../lie/NOTATION.md)）
 - **共変成分の記号**：04で、$A$の共変成分を$a_\mu=\gamma_\mu\cdot A/c$と書く。空間成分$A_k$との衝突を避けるため
 - **適用範囲の明示**：スピンは1/2粒子に限り$\hbar/2$の係数を落とさない。分解と枠は$\psi\tilde\psi\ne0$のスピノルに対するもので、非零でも$\psi\tilde\psi=0$となる例（ワイルスピノルなど）は対象外。一様磁場の歳差は状態がスピン部分と軌道部分に分離している場合（01）、近似の前提は正エネルギー側の低エネルギー状態（05）
 - **左右の作用**：左乗算（ローレンツ変換）と右乗算（複素構造$\omega\sigma_3$など）は可換で、右乗算は複素構造を与える。一般の右乗算は観測量も変える（$e^{\omega\sigma_3\alpha}$だけが$e_0,e_3$を保つ）。左右の可換性は値に対する代数作用の話で、場の変換では引数も変わる
@@ -130,7 +130,7 @@
 
 これらは記号の規約がシリーズごとに異なる。本シリーズはemの規約に合わせ、引くときに対応を断る。
 
-- **[[7shi-lie3]]・[[7shi-ideal]]・[[7shi-ladder]]**：射影$P=(1+\sigma_3)/2$による左イデアルとしてのスピノル、昇降演算子と純粋スピノル。01で偶部分代数による表示と結ぶ。[[7shi-lie3]]はスピノルの列ベクトルを$\omega$と書き、回転を$R^{-1}xR$（emとは左右が逆）と書いている。四元数との対応も$i\leftrightarrow\sigma_1\sigma_2$、$k\leftrightarrow\sigma_2\sigma_3$で、[[7shi-bq]]とは異なる
+- **[[7shi-lie3]]・[[7shi-ideal]]・[[7shi-ladder]]**：射影$P=(1+\sigma_3)/2$による左イデアルとしてのスピノル、昇降演算子と純粋スピノル。01で偶部分代数による表示と結ぶ。[[7shi-lie3]]はスピノルの列ベクトルを$\omega$と書き、回転を$RxR^{-1}$、四元数との対応を$i\leftrightarrow-i\sigma_1=\sigma_3\sigma_2$などと書いている（[[7shi-bq]]と同じ）
 - **[[7shi-bq]]**：$\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$と双四元数、四元数との対応$\mathbf i\cong-i\sigma_x$、$\mathbf j\cong-i\sigma_y$、$\mathbf k\cong-i\sigma_z$（本シリーズの記号では$\mathbf k\cong-\omega\sigma_3$）。01の「パウリスピノルは四元数」と02の「ディラックスピノルは双四元数」はこの対応で述べる
 - **[[7shi-h]]・[[7shi-bloch]]・[[7shi-s]]・[[7shi-qgate]]**：ホップ写像$\omega\mapsto\omega\mathbf k\omega^*$（hopf/01の$\omega$は単位四元数）、ブロッホベクトルと密度行列、大域位相とファイバー、ゲートの位相×回転子分解。[[7shi-bq]]の対応では$\sigma_3=\omega\mathbf k$、反転が四元数の共役にあたるので、$\psi\sigma_3\tilde\psi=\omega\,(\psi\mathbf k\psi^*)$となり、01のスピンの向きはホップ写像の像の双対（2ベクトルとベクトルの読み替え）になる（符号は検証コードで確認）。スピンの向きをベクトル、四元数の虚部を2ベクトルとして区別できることは[PLAN.md](../PLAN.md)の「グレード」の論点そのものなので、01で明示する
 - **[[7shi-cover]]・[[7shi-lie4]]・[[7shi-4drot]]**：二重被覆の位相的な直観、$\operatorname{Spin}(4)$。02の$\operatorname{Spin}^+(1,3)\to\operatorname{SO}^+(1,3)$は、コンパクトな場合の二重被覆を非コンパクトな場合に広げたものとして引く。[lie/README.md](../lie/README.md)が時空代数に委ねた非コンパクト群の構造は、[[7shi-em5]]が変換までを扱い、群の構造を本シリーズの02が扱う

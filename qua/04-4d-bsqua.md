@@ -1,8 +1,12 @@
 四元数の左右からの挟み込みによる4次元回転と、クリフォード代数$\operatorname{Cl}_{4,0}(\mathbb R)$における回転子による挟み込みの対応を、二重回転の回転角を和と差に組み替える操作として与える、中嶋慧氏による方法をまとめます。
 
+&&& 改訂履歴
+- 2026.10.01 回転子による回転を、四元数の挟み込みと同じ並びの$v'=rvr^{-1}$（$r=\exp(-B/2)$）に改めた
+&&&
+
 # 概要
 
-四元数は実部も含めた4成分で実4次元空間の点を表し、その回転は左右2つの単位四元数で挟む$q'=r_L\,q\,r_R$という形で書けます。一方、幾何代数（クリフォード代数）$\operatorname{Cl}_{4,0}(\mathbb R)$では、6成分の2ベクトルから作られる回転子$r$を用いて$v'=r^{-1}vr$という形で回転を表します。どちらも4次元の回転群$\mathrm{SO}(4)$を記述する有力な手法ですが、四元数の左右2つの回転子$(r_L, r_R)$と、クリフォード代数の単一の回転子$r$という2つの「挟み込み」が代数的にどう対応しているのかは一見して自明ではありません。
+四元数は実部も含めた4成分で実4次元空間の点を表し、その回転は左右2つの単位四元数で挟む$q'=r_L\,q\,r_R$という形で書けます。一方、幾何代数（クリフォード代数）$\operatorname{Cl}_{4,0}(\mathbb R)$では、6成分の2ベクトルから作られる回転子$r$を用いて$v'=rvr^{-1}$という形で回転を表します。どちらも4次元の回転群$\mathrm{SO}(4)$を記述する有力な手法ですが、四元数の左右2つの回転子$(r_L, r_R)$と、クリフォード代数の単一の回転子$r$という2つの「挟み込み」が代数的にどう対応しているのかは一見して自明ではありません。
 
 本記事では、中嶋慧氏による手法に基づき、この2つの挟み込みの代数的な対応を解き明かします。鍵となるのは、4次元の回転が互いに直交する2つの平面が独立な角度で回る「二重回転」の標準形に分解できるという事実です。四元数の左右からの挟み込みでは、2つの平面の回転角が和と差$\frac{\theta_1 \pm \theta_2}{2}$に自然に組み替えられます。[[nakajima-4d-rot]]
 
@@ -47,7 +51,7 @@ $$
 
 この同型は、$\mathrm{SO}(4)$の回転行列を含む行列環$M_4(\mathbb R)$に、ミンコフスキー型のクリフォード代数構造を与えています。一方、ユークリッド4次元のスピン群を構成する代数は$\operatorname{Cl}_{4,0}(\mathbb R)\cong M_2(\mathbb H)$であり、別の代数です。
 
-次節の$\mathrm{SO}(4)$の構成は行列をベクトルに直接作用させる方式です。これに対し$\operatorname{Cl}_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=r^{-1}vr$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
+次節の$\mathrm{SO}(4)$の構成は行列をベクトルに直接作用させる方式です。これに対し$\operatorname{Cl}_{3,1}(\mathbb R)$本来の構成は、後述する回転子でグレード1のベクトルを挟む方式（$v'=rvr^{-1}$）で、こちらを取ると$\operatorname{SO}(4)$ではなくローレンツ変換が得られます。
 &&&
 
 ## $\mathrm{SO}(4)$の構成
@@ -163,13 +167,13 @@ $$
 $\operatorname{Cl}_{4,0}(\mathbb R)$における回転は、回転子$r$による挟み込みです。
 
 $$
-v'=r^{-1}vr
+v'=rvr^{-1}
 $$
 
-ここでベクトル$v=v_0e_1+v_1e_2+v_2e_3+v_3e_4$は四元数$q=v_0+v_1i+v_2j+v_3k$と同一視します。回転子は、6成分の2ベクトル$B$の指数関数として与えられます。
+ここでベクトル$v=v_0e_1+v_1e_2+v_2e_3+v_3e_4$は四元数$q=v_0+v_1i+v_2j+v_3k$と同一視します。回転子は、回転面とその向きを表す6成分の2ベクトル$B$の指数関数として与えられます。回転子を左に置いて作用させるため、$B$の向きに回す回転子は指数に負号が付いた形になります。
 
 $$
-r=\exp\left(\frac B2\right),\quad
+r=\exp\left(-\frac B2\right),\quad
 B=b_{12}e_1e_2+b_{13}e_1e_3+b_{14}e_1e_4+b_{43}e_4e_3+b_{24}e_2e_4+b_{32}e_3e_2
 $$
 
@@ -197,7 +201,7 @@ $$
 &&&ex 単純回転
 単純単位2ベクトル$p$を用いて$B=\theta p$と取れば指数関数が展開でき、回転子は三角関数で表されます。
 $$
-r=\exp\left(\frac\theta2p\right)=\cos\frac\theta2+\sin\frac\theta2\,p
+r=\exp\left(-\frac\theta2p\right)=\cos\frac\theta2-\sin\frac\theta2\,p
 $$
 これはその1平面だけを角$\theta$回す**単純回転**の回転子です。一般の2ベクトルはこの制約を受けず、対応する回転は2平面が独立な角度で回る二重回転になります。
 &&&
@@ -238,20 +242,20 @@ $$
 となり、$b$と$\Omega b$は可換です。積が純グレード4になる（グレード0と2の成分を持たない）ことは、2平面が互いに直交していることの反映です。可換性から指数関数は因数分解でき
 
 $$
-r=\exp\left(\frac{\theta_1}2b+\frac{\theta_2}2\,\Omega b\right)
-=\exp\left(\frac{\theta_1}2b\right)\exp\left(\frac{\theta_2}2\,\Omega b\right)
+r=\exp\left(-\frac{\theta_1}2b-\frac{\theta_2}2\,\Omega b\right)
+=\exp\left(-\frac{\theta_1}2b\right)\exp\left(-\frac{\theta_2}2\,\Omega b\right)
 $$
 
-は、挟み込み$v'=r^{-1}vr$によって$b$平面を$e_1\to n$の向きに$\theta_1$、$\Omega b$平面を$\theta_2$だけ回す二重回転の回転子です。各因子は他方の平面内のベクトルと可換なので、自分の平面だけを回します。
+は、挟み込み$v'=rvr^{-1}$によって$b$平面を$e_1\to n$の向きに$\theta_1$、$\Omega b$平面を$\theta_2$だけ回す二重回転の回転子です。各因子は他方の平面内のベクトルと可換なので、自分の平面だけを回します。
 
 二重回転の節の結果を思い出すと、左作用$q\mapsto e^{\alpha u}q$は$(\theta_1,\theta_2)=(\alpha,-\alpha)$、右作用$q\mapsto q\,e^{\beta u}$は$(\theta_1,\theta_2)=(\beta,\beta)$の等傾回転でした。代入すれば、対応する回転子が得られます。
 
 $$
 \begin{alignedat}{2}
 q&\mapsto e^{\alpha u}q,&\quad
-r_-&=\exp\left(\frac\alpha2(b-\Omega b)\right)=\exp\left(\frac\alpha2(1-\Omega)b\right) \\
+r_-&=\exp\left(-\frac\alpha2(b-\Omega b)\right)=\exp\left(-\frac\alpha2(1-\Omega)b\right) \\
 q&\mapsto q\,e^{\beta u},&\quad
-r_+&=\exp\left(\frac\beta2(b+\Omega b)\right)=\exp\left(\frac\beta2(1+\Omega)b\right)
+r_+&=\exp\left(-\frac\beta2(b+\Omega b)\right)=\exp\left(-\frac\beta2(1+\Omega)b\right)
 \end{alignedat}
 $$
 
@@ -286,7 +290,7 @@ $$
 
 $$
 r_-r_+=r_+r_-
-=\exp\left(\frac{\alpha+\beta}2\,b+\frac{\beta-\alpha}2\,\Omega b\right)
+=\exp\left(-\frac{\alpha+\beta}2\,b-\frac{\beta-\alpha}2\,\Omega b\right)
 $$
 
 これは$\theta_1=\alpha+\beta$、$\theta_2=\beta-\alpha$の二重回転の回転子であり、逆に解けば
@@ -299,9 +303,9 @@ $$
 と、二重回転の節で四元数の計算から得た和と差への組み替えが回転子の側でも再現されます。逆向きに読めば、回転面の対$(b,\Omega b)$を持つ任意の二重回転の回転子は、可換な左右の等傾回転子の積に分解されます。
 
 $$
-\exp\left(\frac{\theta_1}2b+\frac{\theta_2}2\,\Omega b\right)
-=\exp\left(\frac{\theta_1-\theta_2}4(1-\Omega)b\right)
-\exp\left(\frac{\theta_1+\theta_2}4(1+\Omega)b\right)
+\exp\left(-\frac{\theta_1}2b-\frac{\theta_2}2\,\Omega b\right)
+=\exp\left(-\frac{\theta_1-\theta_2}4(1-\Omega)b\right)
+\exp\left(-\frac{\theta_1+\theta_2}4(1+\Omega)b\right)
 $$
 
 この分離を担っているのが因子$1\pm\Omega$です。$\Omega^2=1$より
@@ -531,10 +535,10 @@ Q(v)
 $$
 &&&
 
-$Q$は$T\circ\varphi$そのものではなく、$e_1$を掛ける操作を挟んでいます。回転後のベクトル$v'=r^{-1}vr$もグレード1なので、これにも同じ$Q$を適用します。すると、回転は次のように四元数の左右からの挟み込みに移ります。
+$Q$は$T\circ\varphi$そのものではなく、$e_1$を掛ける操作を挟んでいます。回転後のベクトル$v'=rvr^{-1}$もグレード1なので、これにも同じ$Q$を適用します。すると、回転は次のように四元数の左右からの挟み込みに移ります。
 
 $$
-Q(r^{-1}vr)
+Q(rvr^{-1})
 =\exp\left(-\frac12T(\varphi(B)^{\dagger})\right)
 Q(v)
 \exp\left(\frac12T(\varphi(B))\right)
@@ -544,15 +548,15 @@ $$
 以上をまとめます。
 
 &&&fml 回転子の対応
-$\operatorname{Cl}_{4,0}(\mathbb R)$の回転$v'=r^{-1}vr$（$r=\exp(B/2)$）と同じ回転が、四元数では次のように表されます。
+$\operatorname{Cl}_{4,0}(\mathbb R)$の回転$v'=rvr^{-1}$（$r=\exp(-B/2)$）と同じ回転が、四元数では次のように表されます。
 $$
 q'=r_L\,q\,r_R,\quad q=Q(v),\quad q'=Q(v')
 $$
 $$
 \begin{alignedat}{3}
-r_L&=T(\varphi(r)^{\dagger})^{-1}&&=\exp\left(\frac{U_L}2\right),&\quad
+r_L&=T(\varphi(r)^{\dagger})&&=\exp\left(\frac{U_L}2\right),&\quad
 U_L&=-T(\varphi(B)^{\dagger})=(b_{12}-b_{43})i+(b_{13}-b_{24})j+(b_{14}-b_{32})k \\
-r_R&=T(\varphi(r))&&=\exp\left(\frac{U_R}2\right),&\quad
+r_R&=T(\varphi(r))^{-1}&&=\exp\left(\frac{U_R}2\right),&\quad
 U_R&=T(\varphi(B))=(b_{12}+b_{43})i+(b_{13}+b_{24})j+(b_{14}+b_{32})k
 \end{alignedat}
 $$
@@ -567,7 +571,7 @@ $$
 $$
 B=0,\qquad B=4\pi e_1e_2
 $$
-は、どちらも$r=\exp(B/2)=1$を与えます。軸と角度パラメータによる自由度の勘定も、大域的に一意な座標表示を意味するものではありません。
+は、どちらも$r=\exp(-B/2)=1$を与えます。軸と角度パラメータによる自由度の勘定も、大域的に一意な座標表示を意味するものではありません。
 &&&
 
 公式「回転子の対応」の証明を2通り与えます。1つ目の証明の準備として、次の命題を示します。
@@ -593,10 +597,10 @@ $$
 1つ目は、$e_1$による共役が$\varphi$を通して$\omega$共役に対応することを使い、回転子$r$を分解せずに直接示す方法です。
 
 &&&prf 1. 射影による回転の対応
-$q=Q(v)$と置く。回転後のベクトル$v'=r^{-1}vr$にも同じ対応を用いて$q'=Q(v')$とするので、左から$e_1$を掛けた$e_1r^{-1}vr$を考える。$e_1^2=1$より
+$q=Q(v)$と置く。回転後のベクトル$v'=rvr^{-1}$にも同じ対応を用いて$q'=Q(v')$とするので、左から$e_1$を掛けた$e_1rvr^{-1}$を考える。$e_1^2=1$より
 
 $$
-e_1r^{-1}vr=(e_1r^{-1}e_1)(e_1v)\,r
+e_1rvr^{-1}=(e_1re_1)(e_1v)\,r^{-1}
 $$
 
 と偶部分代数の元の積に分解できる。$\varphi$と$T$は準同型なので、上の命題から
@@ -604,22 +608,22 @@ $$
 $$
 \begin{aligned}
 q'
-&=Q(r^{-1}vr)=T(\varphi(e_1r^{-1}vr)) \\
-&=T(\varphi(e_1r^{-1}e_1))\,T(\varphi(e_1v))\,T(\varphi(r)) \\
-&=T(\varphi(r)^{\dagger})^{-1}\,q\,T(\varphi(r))
+&=Q(rvr^{-1})=T(\varphi(e_1rvr^{-1})) \\
+&=T(\varphi(e_1re_1))\,T(\varphi(e_1v))\,T(\varphi(r^{-1})) \\
+&=T(\varphi(r)^{\dagger})\,q\,T(\varphi(r))^{-1}
 \end{aligned}
 $$
 
 となる。
 
-すなわち$r_L=T(\varphi(r)^{\dagger})^{-1}$、$r_R=T(\varphi(r))$であり、$r$が一般の回転子のまま結論が得られる。$r=\exp(B/2)$と置けば、$\varphi,T,\dagger$はいずれも準同型で指数関数と可換だから
+すなわち$r_L=T(\varphi(r)^{\dagger})$、$r_R=T(\varphi(r))^{-1}$であり、$r$が一般の回転子のまま結論が得られる。$r=\exp(-B/2)$と置けば、$\varphi,T,\dagger$はいずれも準同型で指数関数と可換だから
 
 $$
 r_L=\exp\left(-\frac12T(\varphi(B)^{\dagger})\right),\quad
 r_R=\exp\left(\frac12T(\varphi(B))\right)
 $$
 
-となり、指数表示$r_L=\exp(U_L/2)$、$r_R=\exp(U_R/2)$が従う。生成子$U_L$には負号、回転子$r_L$には逆元が付くことに注意する。
+となり、指数表示$r_L=\exp(U_L/2)$、$r_R=\exp(U_R/2)$が従う。生成子$U_L$には負号、回転子$r_R$には逆元が付くことに注意する。
 &&&
 
 2つ目は、回転子を左右の等傾回転子の積に分解する方法で、計算は長くなりますが、左右の作用がどの平面をどちら向きに回しているかが見える形になります。
@@ -645,11 +649,11 @@ $$
 $b_L,b_R$は$e_1n$型の回転面（軸を持つ回転面）で、その成分は本文の$U_L,U_R$の成分そのものである。「等傾回転の合成」の節で見たように$(1-\Omega)$型と$(1+\Omega)$型の2ベクトルはどちらの順でも積が$0$、特に可換なので、指数関数は因数分解できる。
 
 $$
-r=\exp\left(\frac B2\right)
-=\exp\left(\frac14(1-\Omega)b_L\right)\exp\left(\frac14(1+\Omega)b_R\right)
+r=\exp\left(-\frac B2\right)
+=\exp\left(-\frac14(1-\Omega)b_L\right)\exp\left(-\frac14(1+\Omega)b_R\right)
 $$
 
-第1因子は、$b_L=|U_L|\,\hat b$（$\hat b^2=-1$）と規格化すれば、回転面を表す$\hat b$に対応する軸を$\hat u$として、軸$\hat u$・角$\dfrac{|U_L|}2$の左作用の等傾回転子$\exp\left(\dfrac{|U_L|}4(1-\Omega)\hat b\right)$である（$U_L=0$なら恒等）。「等傾回転の合成」の節より、その作用は四元数側では左作用となる。
+第1因子は、$b_L=|U_L|\,\hat b$（$\hat b^2=-1$）と規格化すれば、回転面を表す$\hat b$に対応する軸を$\hat u$として、軸$\hat u$・角$\dfrac{|U_L|}2$の左作用の等傾回転子$\exp\left(-\dfrac{|U_L|}4(1-\Omega)\hat b\right)$である（$U_L=0$なら恒等）。「等傾回転の合成」の節より、その作用は四元数側では左作用となる。
 
 $$
 q\mapsto\exp\left(\frac{|U_L|}2\,\hat u\right)q=\exp\left(\frac{U_L}2\right)q=r_L\,q
@@ -658,7 +662,7 @@ $$
 ここで$|U_L|\hat u=U_L$である。同様に第2因子は右作用$q\mapsto q\exp\left(\frac{U_R}2\right)=q\,r_R$として作用する。回転子$r$は2つの因子の積だから、回転も2つの作用の合成となる。
 
 $$
-v'=r^{-1}vr\quad\leftrightarrow\quad q'=r_L\,q\,r_R
+v'=rvr^{-1}\quad\leftrightarrow\quad q'=r_L\,q\,r_R
 $$
 
 これで、射影による証明と同じ対応が、左右の等傾回転子への分解としても確認された。左作用か右作用かの分担が因子$1\mp\Omega$に対応していることが、この形では直接見て取れる。
@@ -667,13 +671,13 @@ $$
 &&&rem 直和成分と左右の回転子
 $\varphi$と$T$から直接得られるのは、偶部分代数$\mathbb H\oplus\mathbb H$の2つの直和成分を並べた対です。
 $$
-G(r)=\bigl(T(\varphi(r)),\ T(\varphi(r)^{\dagger})\bigr)=(r_R,\ r_L^{-1})
+G(r)=\bigl(T(\varphi(r)),\ T(\varphi(r)^{\dagger})\bigr)=(r_R^{-1},\ r_L)
 $$
 $\varphi,T,\dagger$はいずれも準同型なので、$G$は成分ごとの積を保ちます。左右の回転子そのものの対$(r_L,r_R)$は、これを共役と逆元で読み替えたものです。読み替えた側では成分ごとの積にならず、回転子の積$rs$に対応する対は
 $$
-(s_Lr_L,\ r_Rs_R)
+(r_Ls_L,\ s_Rr_R)
 $$
-と、左側だけ順序が逆転します。これは$v'=r^{-1}vr$という向きの規約の現れです。回転を$\rho_r(v)=r^{-1}vr$と書くと$\rho_{rs}=\rho_s\circ\rho_r$となり、回転子の積に対して作用の合成順序が逆転します。
+と、右側だけ順序が逆転します。回転を$\rho_r(v)=rvr^{-1}$と書くと$\rho_{rs}=\rho_r\circ\rho_s$で、$s$による回転のあとに$r$による回転を施すことにあたります。四元数側では$q\mapsto s_Lqs_R$のあとに$r_L(\cdot)r_R$を施すので、右から掛かる回転子は後から施すものが右に並び、右側だけ順序が逆転するのはその現れです。
 &&&
 
 &&&rem 3次元回転
@@ -688,7 +692,7 @@ $$
 
 # まとめ
 
-四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R,r_L^{-1})$として住みます。この対は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。
+四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R^{-1},r_L)$として住みます。この対は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。
 
 4次元の任意の回転は直交2平面の二重回転の標準形にでき、その独立な2つの回転角が和と差に組み替えられて右と左の回転角になることは、等傾回転の合成として四元数だけで確認できました。回転子の側では、左作用か右作用かの違いは因子$1\pm\Omega$に集約され、一般の回転子は可換な左右の等傾回転子の積に因数分解されます。準同型写像$T\circ\varphi$は、この$1\pm\Omega$の成分を四元数として読み出し、和と差への組み替えを一般の2ベクトルの6成分全体へ広げる装置です。その中身は2つの冪等元（行列表現では射影行列$\operatorname{diag}(1,0),\operatorname{diag}(0,1)$）による直和成分への射影であり、2ベクトルの言葉では自己双対・反自己双対分解にあたります。これにより、2ベクトルの6成分が純虚四元数$U_L,U_R$の各3成分に分離され、それらの指数関数から左右の単位四元数$r_L,r_R$が得られます。
 
@@ -737,13 +741,13 @@ $$
 &&& 回転子の対応
 $$
 B=b_{12}e_1e_2+b_{13}e_1e_3+b_{14}e_1e_4+b_{43}e_4e_3+b_{24}e_2e_4+b_{32}e_3e_2,\quad
-r=\exp\left(\frac B2\right)
+r=\exp\left(-\frac B2\right)
 $$
 $$
 q'=r_L\,q\,r_R, \quad
 q=Q(v)=T(\varphi(e_1v)), \quad
-r_L=\exp\left(\frac{U_L}2\right)=T(\varphi(r)^{\dagger})^{-1}, \quad
-r_R=\exp\left(\frac{U_R}2\right)=T(\varphi(r))
+r_L=\exp\left(\frac{U_L}2\right)=T(\varphi(r)^{\dagger}), \quad
+r_R=\exp\left(\frac{U_R}2\right)=T(\varphi(r))^{-1}
 $$
 $$
 \begin{alignedat}{3}
