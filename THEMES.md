@@ -160,7 +160,7 @@
 
 ## ディラック方程式
 
-パウリ方程式からディラック方程式への流れを、スピノルを偶部分代数の元として扱うHestenes形式で書くシリーズです。$\operatorname{Cl}_{3,0}(\mathbb R)$のパウリスピノルから時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進みます。全5記事を下書きし、レビュー待ちです。構想と検討の経緯は[dirac/README.md](dirac/README.md)・[dirac/MEMO.md](dirac/MEMO.md)を参照。
+パウリ方程式からディラック方程式への流れを、スピノルを偶部分代数の元として扱うHestenes形式で書くシリーズです。$\operatorname{Cl}_{3,0}(\mathbb R)$のパウリスピノルから時空代数$\operatorname{Cl}_{1,3}(\mathbb R)$へ進みます。全5記事で完結しています。構想と検討の経緯は[dirac/README.md](dirac/README.md)・[dirac/MEMO.md](dirac/MEMO.md)を参照。
 
 1. [パウリスピノルとパウリ方程式](dirac/01-pauli.md)：$\Psi\in\mathbb C^2$を$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$の元$\psi$に移し、$i$倍が右からの$\omega\sigma_3$になる。$\psi\tilde\psi$が確率密度、$\psi\sigma_3\tilde\psi$がスピンの向き（ホップ写像と同じ形）、大域位相はスピン軸まわりの枠の回転。一様な磁場の中の歳差を回転子で解く。
 2. [時空スピノルとSL(2,C)](dirac/02-spinor.md)：$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong M_2(\mathbb C)$で時空の反転が余因子行列にあたる。$\operatorname{Spin}^+(1,3)\cong\operatorname{SL}(2,\mathbb C)$が$\operatorname{SO}^+(1,3)$を二重に覆う。$\psi=\sqrt\rho\,e^{\omega\beta/2}R$と枠$\psi\gamma_\mu\tilde\psi=\rho e_\mu$。

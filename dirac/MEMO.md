@@ -17,16 +17,16 @@
 
 - **擬スカラーは$\omega$**。[STYLE.md](../STYLE.md)の原則どおりで、emシリーズの$i$は引き継がない。量子力学ではシュレーディンガー方程式$i\hbar\partial_t\Psi$の虚数単位$i$が定着しており、[[7shi-clif5]]もこの形で導いている。複素数の虚数単位は$i$のまま使い、擬スカラー$\omega=\gamma_0\gamma_1\gamma_2\gamma_3=\sigma_1\sigma_2\sigma_3$と区別する。clif-analysisの$\omega$（[[7shi-cla1]]の$e_1e_2$、[[7shi-cla5]]の$e_0\cdots e_{n-1}$）とも一致する
 - **スピノルは$\psi$、列ベクトル・左イデアルの元は$\Psi$**。Hestenes形式の慣例に従い、偶部分代数の元を$\psi$と書く。行列形式の列ベクトル（左イデアルの元）は$\Psi$とする。[[7shi-cla1]]の命題「偶部分と極小左イデアルの対応」は偶部分の$F$から左イデアルの$\psi=FP$を作っており、文字の役割が逆になるので、引くときに断る
-- **行列にはハットを付ける**（案）。代数の元$\sigma_k$・$\gamma_\mu$と、それを表現する行列$\hat\sigma_k$・$\hat\gamma_\mu$を区別する。翻訳の節で両者が並ぶため
+- **行列にはハットを付ける**。代数の元$\sigma_k$・$\gamma_\mu$と、それを表現する行列$\hat\sigma_k$・$\hat\gamma_\mu$を区別する。翻訳の節で両者が並ぶため。ハットは行列表示と列スピノルに作用する演算子にだけ付け、単位ベクトルには付けない（$\boldsymbol n$、$\boldsymbol b$。単位ベクトルと断る）
 - **作用素**。時空のディラック作用素は[[7shi-em4]]と同じく$D=\sum_\mu\gamma^\mu\partial_\mu$（相反基底$\gamma^0=\gamma_0$、$\gamma^k=-\gamma_k$）、$x_0=ct$、$D^2=\partial_0^2-\Delta=\square$。空間の作用素は、[[7shi-em6]]の証明で使った$D_3=\sum_k\sigma_k\partial_k$と書き、01から$D$と区別しておく（emの01〜03は空間の作用素を$D$と書いたが、本シリーズは02で時空に上がるため）
 - **3次元の生成元は$\sigma_k$**。01から$\operatorname{Cl}_{3,0}(\mathbb R)$の生成元を$\sigma_k$と書き、02で[[7shi-em4]]の相対ベクトル$\sigma_k=\gamma_k\gamma_0$として回収する。em/01〜03の$e_k$は使わない
-- **定数は$\hbar$と$c$を残す**（案）。非相対論極限で$c\to\infty$を取るため、自然単位系にはしない。emシリーズのSI単位系と揃う。電荷は一般に$q$と書き、電子では$q=-e$とする。ポテンシャルは[[7shi-em6]]の$A=\varphi\gamma_0+c\sum_kA_k\gamma_k$（単位は$\varphi$と同じ）をそのまま使うので、結合項には$1/c$が付く（04の検討事項）
+- **定数は$\hbar$と$c$を残す**。非相対論極限で$c\to\infty$を取るため、自然単位系にはしない。emシリーズのSI単位系と揃う。電荷は一般に$q$と書き、電子では$q=-e$とする。ポテンシャルは[[7shi-em6]]の$A=\varphi\gamma_0+c\sum_kA_k\gamma_k$（単位は$\varphi$と同じ）をそのまま使うので、結合項には$1/c$が付く（04の検討事項）
 
 # シリーズ構成
 
-全5回の予定です（暫定）。01は$\operatorname{Cl}_{3,0}(\mathbb R)$の回、02〜03で時空代数に上げてディラック方程式に至り、04〜05で電磁場との結合と非相対論極限を扱ってパウリ方程式に戻ります。04と05は分量しだいで1回にまとめます。
+全5回で完結しました（全回レビュー済み）。01は$\operatorname{Cl}_{3,0}(\mathbb R)$の回、02〜03で時空代数に上げてディラック方程式に至り、04〜05で電磁場との結合と非相対論極限を扱ってパウリ方程式に戻ります。04と05は分量が多いので分けました。
 
-| # | ファイル（予定） | slug | 内容 | 到達点 |
+| # | ファイル | slug | 内容 | 到達点 |
 |---|---|---|---|---|
 | 01 | `01-pauli.md` | `7shi-dirac1` | パウリスピノルとパウリ方程式 | 列ベクトル$\mathbb C^2$は偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$の元$\psi=\sqrt\rho\,R$に移る。虚数単位$i$は右からの$\omega\sigma_3=\sigma_1\sigma_2$、スピンの向きは$\psi\sigma_3\tilde\psi$（ホップ写像）。一様磁場中のスピンの歳差 |
 | 02 | `02-spinor.md` | `7shi-dirac2` | 時空スピノルとSL(2,C) | $\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$（双四元数）。回転子の群$\operatorname{Spin}^+(1,3)\cong\operatorname{SL}(2,\mathbb C)$が$\operatorname{SO}^+(1,3)$を二重に覆う。ディラックスピノルは$\psi=\sqrt\rho\,e^{\omega\beta/2}R$ |
@@ -78,7 +78,13 @@
 
 # 記事化で確定した事項
 
-全5回で下書きした（04と05は分けた）。検討中だった項目の扱いは次のとおり。
+全5回で執筆し、全回をレビューして指摘を反映した（04と05は分けた）。検討中だった項目の扱いと、執筆・レビューで確定した事項は次のとおり。
+
+- **回転子の規約**：作用はemシリーズに合わせて$x\mapsto Rx\tilde R$、四元数との対応は$\mathbf i=-\omega\sigma_1$、$\mathbf j=-\omega\sigma_2$、$\mathbf k=-\omega\sigma_3$（[[7shi-bq]]と同じ）。[[7shi-lie3]]は$x\mapsto R^{-1}xR$で、同じ回転子が互いに逆元になる。本シリーズの内部では整合が取れているので統一は保留し、01の「記号」に断りを入れた（経緯は[lie/NOTATION.md](../lie/NOTATION.md)）。レビューが規約差を指摘しても、統一は提案せず、この断りで足りるかで判断する
+- **共変成分の記号**：04で、$A$の共変成分を$a_\mu=\gamma_\mu\cdot A/c$と書く。空間成分$A_k$との衝突を避けるため
+- **適用範囲の明示**：スピンは1/2粒子に限り$\hbar/2$の係数を落とさない。分解と枠は$\psi\tilde\psi\ne0$のスピノルに対するもので、非零でも$\psi\tilde\psi=0$となる例（ワイルスピノルなど）は対象外。一様磁場の歳差は状態がスピン部分と軌道部分に分離している場合（01）、近似の前提は正エネルギー側の低エネルギー状態（05）
+- **左右の作用**：左乗算（ローレンツ変換）と右乗算（複素構造$\omega\sigma_3$など）は可換で、右乗算は複素構造を与える。一般の右乗算は観測量も変える（$e^{\omega\sigma_3\alpha}$だけが$e_0,e_3$を保つ）。左右の可換性は値に対する代数作用の話で、場の変換では引数も変わる
+- **$J$の保存**：03で$J$の正値性までを示して保存は先送りし、04で方程式から示す
 
 - **行列の規約**：03は標準（Bjorken–Drell）のディラック表現（上付き$\hat\gamma^k$の右上ブロックが$\hat\sigma_k$）を使う。対応は$\psi=\phi+\eta\sigma_3\mapsto(|\phi\rangle,|\eta\rangle)^T$で、$\hat\gamma_\mu\leftrightarrow\gamma_\mu\psi\gamma_0$、$\hat\gamma_5\leftrightarrow\psi\sigma_3$。Doran–Lasenbyは下付きの符号が逆の表現を使うので、引用時に注意
 - **ワイルスピノル**：03の`&&&rem`（右からの射影$(1\pm\sigma_3)/2$）。02では扱わない
@@ -88,7 +94,7 @@
 
 # 検証コード
 
-`check/`に置き、`uv run`で実行する予定。emシリーズで一般化した`src/common/clifford.py`（$\operatorname{Cl}_{p,q}$のビットマスク実装と$D$）を使う。記事化の前に確かめる事項：
+`check/`に置き、`uv run`で実行する（一覧は[check/README.md](check/README.md)）。emシリーズで一般化した`src/common/clifford.py`（$\operatorname{Cl}_{p,q}$のビットマスク実装と$D$）を使う。記事化の前に確かめた事項：
 
 - 01の対応規約（$\hat\sigma_k\Psi\leftrightarrow\sigma_k\psi\sigma_3$、$i\Psi\leftrightarrow\psi\,\omega\sigma_3$）と、$\psi\mapsto\psi P$の全単射
 - 03の翻訳：ディラック表現の$\hat\gamma_\mu$で行列形式と$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$が同値になる対応写像

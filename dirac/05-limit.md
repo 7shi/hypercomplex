@@ -46,7 +46,7 @@ $$
 $$
 &&&
 
-$\Pi$は、$\pi_k\psi=-\hbar\,\partial_k\psi\,\omega\sigma_3-qA_k\psi$に$\sigma_k$を掛けて足したもの$\sum_k\sigma_k\pi_k$で、行列形式の$\sum_k\hat\sigma_k\hat\pi_k$（$\hat\pi_k=-i\hbar\partial_k-qA_k$）にあたります。$\sigma_k$を含むので、$\Pi$は$\psi_+$と$\psi_-$を入れ替えます。[[7shi-dirac1]]
+$\Pi$は、$\pi_k\psi=-\hbar\,\partial_k\psi\,\omega\sigma_3-qA_k\psi$に$\sigma_k$を掛けて足したもの$\sum_k\sigma_k\pi_k$です。上下の成分の対応を通じて、$\Pi$は行列形式の$\sum_k\hat\sigma_k\hat\pi_k$（$\hat\pi_k=-i\hbar\partial_k-qA_k$）にあたります。具体的には、可換な$X$に対する$(\Pi X)\sigma_3$が、その作用に対応します。$\sigma_k$を含むので、$\Pi$は$\psi_+$と$\psi_-$を入れ替えます。[[7shi-dirac1]]
 
 質量$m$の粒子の静止エネルギー$mc^2$に伴う速い振動を分離するため
 
@@ -88,13 +88,19 @@ $$
 
 ## 小さい成分の消去
 
-粒子の運動エネルギーとポテンシャルエネルギーが静止エネルギー$mc^2$より十分小さい場合を考えます。$\psi_\pm$の時間変化は運動エネルギー程度の振動数を持つので、$\psi_-$の式の左辺$\hbar\,\partial_t\psi_-\,\omega\sigma_3$と$q\varphi\psi_-$は、右辺の$2mc^2\psi_-$に比べて小さくなります。これらを無視すると
+以下では、正エネルギー側の低エネルギー状態を考えます。静止エネルギーの因子を除いたスピノルはゆっくり変化し、外場もこの近似を保つ程度に緩やかであるとします。選んだゲージで、残りのエネルギー尺度と$|q\varphi|$が静止エネルギー$mc^2$より十分小さいとします。$\psi_-$の式は次のように書けます。
+
+$$
+2mc^2\psi_-+\bigl(\hbar\,\partial_t\psi_-\,\omega\sigma_3-q\varphi\,\psi_-\bigr)=c\,\Pi\psi_+
+$$
+
+$\hbar$に時間変化の振動数を掛けたものが低エネルギーの尺度になるので、括弧内は$2mc^2\psi_-$に比べて小さくなります。括弧内の2つの項は個別にはゲージに依存するため、選んだゲージで小さいと仮定します。これを無視すると
 
 $$
 \psi_-\approx\frac1{2mc}\Pi\psi_+
 $$
 
-です。$\Pi$は運動量程度の大きさ（$mv$）を持つので、$\psi_-$は$\psi_+$の$v/2c$倍程度です。$\psi_+$を**大きい成分**、$\psi_-$を**小さい成分**と呼びます。
+です。$\Pi$は微分作用素ですが、典型的な運動学的運動量を$p\sim mv$とすれば、$\psi_-$の大きさの目安は$\psi_+$の$p/2mc\sim v/2c$倍です。$\psi_+$を**大きい成分**、$\psi_-$を**小さい成分**と呼びます。
 
 &&&ex 自由粒子の平面波
 正のエネルギーの平面波$\psi_0=L\phi_0$（$L=e^{\sigma_1\eta/2}$、$\phi_0$は$\gamma_0$と可換）では、$L=\cosh\frac\eta2+\sigma_1\sinh\frac\eta2$の$\cosh\frac\eta2$の項が大きい成分、$\sigma_1\sinh\frac\eta2$の項が小さい成分を与えます。大きさの比は$\tanh\frac\eta2$で、運動量$p=mc\sinh\eta$、エネルギー$E=mc^2\cosh\eta$で書けば
@@ -117,7 +123,7 @@ $$
 を得ます。$\psi_+$は$\gamma_0$と可換で、パウリスピノルの空間の元です。残るのは$\Pi^2$の計算です。[[7shi-dirac1]]
 
 &&&prop $\Pi$の2乗 [prop-pi2]
-$\gamma_0$と可換な$X$について
+時空代数の偶部分の元で、$\gamma_0$と可換な$X$について
 
 $$
 \Pi^2X=\sum_k\pi_k^2X-q\hbar\,\boldsymbol BX\sigma_3,\qquad\boldsymbol B=\nabla\times\boldsymbol A
@@ -143,7 +149,7 @@ $$
 &&&
 
 &&&thm 非相対論極限
-小さい成分を消去すると、大きい成分$\psi_+$は
+非相対論的な最低次の近似で小さい成分を消去すると、大きい成分$\psi_+$は
 
 $$
 \hbar\,\partial_t\psi_+\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi_++q\varphi\,\psi_+-\frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
@@ -162,10 +168,14 @@ $$
 
 係数も同じ見方で決まります。$\Pi^2$の中で外積の部分は、$D_3(\boldsymbol AX)$から1回だけ現れ、その係数$q\hbar$がそのまま$\frac1{2m}$倍されて磁場の項になります。パウリ方程式の記号では$\frac{gq\hbar}{4m}=\frac{q\hbar}{2m}$、すなわち$g=2$です。[[7shi-dirac1]]
 
-以前に見たとおり、$g=2$のとき、一様な磁場の中でスピン部分の向きを回す方程式$\partial_t\psi=\frac q{2m}\omega\boldsymbol B\psi$は、固有速度の向きを回す方程式と同じ形になります。ディラック方程式に従う粒子は、速さが光速より十分小さい範囲では、磁場の中でスピンの向きと運動の向きが同じ角速度で回ります。[[7shi-dirac1]][[7shi-em5]]
+別の見方をすれば、$\pi_k$は左からの$\sigma_l$と可換なので、$\Pi=\sum_k\sigma_k\pi_k$について$\Pi^2=\sum_k\pi_k^2+\sum_{k<l}\sigma_k\sigma_l[\pi_k,\pi_l]$です。交換子は$[\pi_k,\pi_l]X=q\hbar(\partial_kA_l-\partial_lA_k)X\omega\sigma_3$で、運動学的運動量の交換子が磁場を与えます。
+
+ただし、ここで$g=2$が決まるのは、最小結合したディラック方程式の、このクリフォード代数構造と係数によります。1階の方程式であることや相対論的共変性だけから、任意の理論で$g=2$が従うわけではありません。
+
+以前に見たとおり、$g=2$のとき、一様な磁場の中でスピン部分の向きを回す方程式$\partial_t\psi=\frac q{2m}\omega\boldsymbol B\psi$は、固有速度の向きを回す方程式と同じ形になります。ディラック方程式に従う粒子は、電場のない一様な磁場の中で、速さが光速より十分小さい範囲では、スピンの向きと速度の向きが同じ角速度で回ります。[[7shi-dirac1]][[7shi-em5]]
 
 &&&rem 近似の範囲と実際の値
-本記事の近似は、$\psi_-$の式で$\hbar\,\partial_t\psi_-$と$q\varphi\psi_-$を落としたもので、$(v/c)^2$の程度の補正（運動エネルギーの相対論的な補正、スピン軌道相互作用、ダーウィン項と呼ばれる項）を含みません。これらは同じ分解を次の次数まで進めると得られますが、本記事では扱いません。
+本記事の近似は、$\psi_-$の式で$\hbar\,\partial_t\psi_-$と$q\varphi\psi_-$を落としたものです。通常の非相対論的な尺度設定（$\Pi\sim mv$、$\hbar\,\partial_t,\ q\varphi\sim mv^2$）では、落とした項は$2mc^2\psi_-$に対して相対的に$O((v/c)^2)$で、有効ハミルトニアンの次の$1/c^2$の次数に現れる補正（運動エネルギーの相対論的な補正、スピン軌道相互作用、ダーウィン項と呼ばれる項）を含みません。これらは消去と大きい成分の規格化を次の次数まで整えると得られますが、本記事では扱いません。
 
 また、電子の$g$の実測値は$2.0023\ldots$で、$2$からわずかにずれています。このずれは電磁場そのものを量子化した理論（量子電磁力学）で説明されるもので、本シリーズでは扱いません。
 &&&
@@ -188,9 +198,9 @@ $$
 
 - **分解**：$\psi=\psi_++\psi_-$（$\gamma_0\psi_\pm\gamma_0=\pm\psi_\pm$）と分け、静止エネルギーの因子$e^{-\omega\sigma_3mc^2t/\hbar}$を分離すると、方程式は[分割した方程式](#fml-split-eq)の2本と同値になります。$\Pi X=-\hbar D_3X\omega\sigma_3-q\boldsymbol AX$は2つの部分を入れ替えます。
 - **小さい成分**：非相対論極限では$\psi_-\approx\Pi\psi_+/2mc$で、$\psi_-$は$\psi_+$の$v/2c$倍程度です。
-- **パウリ方程式**：消去すると$\hbar\,\partial_t\psi_+\omega\sigma_3=\frac1{2m}\Pi^2\psi_++q\varphi\psi_+$で、$\Pi^2=\sum_k\pi_k^2-q\hbar\boldsymbol B(\cdot)\sigma_3$より、パウリ方程式が$g=2$で得られます。
+- **パウリ方程式**：最低次の近似で消去すると$\hbar\,\partial_t\psi_+\omega\sigma_3=\frac1{2m}\Pi^2\psi_++q\varphi\psi_+$で、$\Pi^2=\sum_k\pi_k^2-q\hbar\boldsymbol B(\cdot)\sigma_3$より、パウリ方程式が$g=2$で得られます。
 - **$g=2$の出所**：幾何積$D_3\boldsymbol A$の外積の部分$D_3\wedge\boldsymbol A=\omega\boldsymbol B$が、スピンと磁場の結合を与えます。1階の作用素を2乗すると、内積の部分が運動項、外積の部分が磁場の項になります。
-- **歳差**：$g=2$のとき、一様な磁場の中でスピンの向きと運動の向きは同じ角速度で回ります。
+- **歳差**：$g=2$のとき、電場のない一様な磁場の中でスピンの向きと速度の向きは同じ角速度で回ります。
 
 &&& 時間軸による分解
 $$
@@ -206,7 +216,7 @@ $$
 &&&
 
 &&& パウリ方程式（$g=2$）
-小さい成分を消去すると、$\psi_+$について次の式が得られます。
+非相対論的な最低次の近似で小さい成分を消去すると、$\psi_+$について次の式が得られます。
 $$
 \hbar\,\partial_t\psi_+\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi_++q\varphi\,\psi_+-\frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
 $$
