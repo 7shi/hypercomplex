@@ -13,6 +13,7 @@ files = [
 
 ["7shi-4drot"]
 files = [
+  "em/04-spacetime.md",
   "qua/05-dual-qua.md",
   "qua/06-slerp.md",
   "qua/history.md",
@@ -68,6 +69,7 @@ files = [
   "qua/real-pauli-trace.md",
   "qua/tensor-from-complex.md",
   "vec-oct/geometric-product-exp.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-c2s2"]
@@ -218,6 +220,7 @@ files = [
   "oct/02-7d-3rot.md",
   "qua/01-pauli-qua.md",
   "vec-oct/geometric-product-exp.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-colab-cl"]
@@ -677,6 +680,7 @@ files = [
   "qua/01-pauli-qua.md",
   "qua/history.md",
   "vec-oct/geometric-product-exp.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-mobius"]
@@ -703,6 +707,7 @@ files = [
 files = [
   "clif/03-gpm-gca.md",
   "clif/04-weyl-algebra.md",
+  "lie/02-su2-so3.md",
   "lie/06-su3.md",
   "oct/04-sedenion.md",
 ]
@@ -787,7 +792,6 @@ type = "mathlog"
 citation = "7shi, 発見的手法による四元数の複素行列表現の構成, Mathlog, Tue May 06 2025, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO"
 files = [
-  "lie/02-su2-so3.md",
   "qua/cd/cd-to-matrix.md",
 ]
 
@@ -812,8 +816,10 @@ type = "mathlog"
 citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Jul 19 2026"
 url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
 files = [
+  "lie/02-su2-so3.md",
   "qua/cd/heuristic-cmatrix.md",
   "qua/cd/real-to-cmatrix.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-qrot"]
@@ -962,6 +968,7 @@ files = [
   "em/03-waves.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-vrot"]

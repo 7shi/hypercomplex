@@ -21,6 +21,7 @@ files = [
   "oct/02-7d-3rot.md",
   "qua/01-pauli-qua.md",
   "vec-oct/geometric-product-exp.md",
+  "vec-oct/notation.md",
 ]
 
 ["7shi-colab-cl"]
