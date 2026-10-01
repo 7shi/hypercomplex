@@ -65,9 +65,13 @@
 
 `lie/10`・`lie/ladder-spinor` のパウリ行列は四元数との対応に依存しないため変更不要。
 
-## 未決事項
+## 決定事項：ベクトルを数に移すときの左右
 
-- ベクトルを数（複素数・四元数）に移すとき、基準の生成元を左右どちらから掛けるか。2次元の `vec-oct` 系（`geometric-product-exp`・`vec-oct/02`・`convention`）は $ve_1$（$i\cong e_2e_1$、回転子 $nm\cong m^*n$、$ba\cong a^*b$）。`clif-analysis`（$z=e_1\boldsymbol x$、$\omega=e_1e_2$、$e_1D=2\bar\partial$）、`clif-analysis/04`・`ktheory`・`em/04`（$q=e_0\boldsymbol x$、$h_l=e_0e_l$）、`qua/04`・`vec-oct/02` の4次元（$Q(v)=T(\varphi(e_1v))$）は左から掛ける。`convention` では2次元の2通りの対応を並べ（$e_1v$ では $ab\cong a^*b$、$ve_1$ では $ba\cong a^*b$）、四元数に拡張するときは $k\cong e_2e_1$ とそろう $ve_1$ を選ぶ論法にした。`clif-analysis` は左モノジェニック＝正則（$e_1D=2\bar\partial$）のために $e_1e_2$ が自然で、$e_2e_1$ にすると右モノジェニックが正則にあたる鏡像になる。`geometric-product-exp` は四元数まで扱うので $i\cong e_2e_1$ を維持し、$e_1e_2$ でも対応できること（$ab\cong a^*b$）と、四元数とそろえるために $e_2e_1$ を選ぶことを一文で述べた。
+ベクトルを数（複素数・四元数）に移すとき、基準の生成元を左右どちらから掛けるかは、記事の目的に応じて次のように決めた。
+
+- **回転・四元数と結び付ける2次元**（`geometric-product-exp`・`vec-oct/02`・`convention`）：右から掛ける $ve_1$（$i\cong e_2e_1$、$ba\cong a^*b$、回転子 $nm\cong m^*n$）。左から掛ける $e_1v$（$i\cong e_1e_2$、$ab\cong a^*b$）でも対応できることを述べたうえで、四元数の $k\cong e_2e_1$（右手系の要請）とそろえるために $e_2e_1$ を選ぶ、という論法で書く。
+- **4次元の四元数への対応**（`qua/04` の $Q(v)=T(\varphi(e_1v))$）：左から掛ける $e_1v$ のまま。$\varphi$ の対応 $e_1e_2,e_1e_3,e_1e_4\mapsto\omega i,\omega j,\omega k$ に合わせると $e_1v$ が自然で、$ve_1$ にすると $Q$ が共役の四元数になり、左右の回転子も入れ替わる。
+- **解析**（`clif-analysis` の $z=e_1\boldsymbol x$、$\omega=e_1e_2$、$e_1D=2\bar\partial$、`clif-analysis/04`・`ktheory`・`em/04` の $q=e_0\boldsymbol x$、$h_l=e_0e_l$）：左から掛けるまま（現状維持で決定）。左モノジェニックが正則にあたるため。$e_2e_1$ にすると右モノジェニックが正則にあたる鏡像になり、クリフォード解析の文献の標準（左モノジェニック）からも外れる。
 
 ## レビュー予定
 
@@ -75,9 +79,9 @@
 
 | 記事 | 状態 | 重点 |
 |---|---|---|
-| `vec-oct/convention` | 新規 | 四元数の回転子をそのまま移す筋立て、位相の負号と面の向きの説明、$ba\cong a^*b$ と $R=nm$ の対応、「別の書き方との関係」の節 |
-| `vec-oct/02-rotation` | 全面改訂（既存 `.txt` は旧版） | 回転子 $r=nm$・$rvr^{-1}$、通常の鏡映 $-nvn$ への置き換え、4次元の成分の対応（基底の反転）と $r_L=T(r^\dagger)$・$r_R=T(\tilde r)$ |
-| `vec-oct/geometric-product-exp` | 公開済み・改訂 | $i\cong e_2e_1$、$ba\cong a^*b$、rem「回転子との関係」、外積の符号付き面積 |
+| `vec-oct/convention` | 新規 | 四元数の回転子をそのまま移す筋立て、位相の負号と面の向きの説明、2次元で複素数に移す2通りの対応（$e_1v$ で $ab\cong a^*b$、$ve_1$ で $ba\cong a^*b$）と四元数に拡張するときに $i\cong e_2e_1$ を選ぶ論法、「別の書き方との関係」の節 |
+| `vec-oct/02-rotation` | 全面改訂（既存 `.txt` は旧版） | 回転子 $r=nm$・$rvr^{-1}$、通常の鏡映 $-nvn$ への置き換え、2次元の複素数との2通りの対応と $e_2e_1$ を選ぶ理由、4次元の成分の対応（基底の反転）と $r_L=T(r^\dagger)$・$r_R=T(\tilde r)$ |
+| `vec-oct/geometric-product-exp` | 公開済み・改訂 | $i\cong e_2e_1$、$ba\cong a^*b$、$e_1e_2$ でも対応できること（$ab\cong a^*b$）と四元数とそろえる理由の一文、rem「回転子との関係」、外積の符号付き面積 |
 | `lie/02-su2-so3` | 公開済み・改訂 | 行列式の要請からの行列表現の導出、成分内・成分間の回転 |
 | `lie/03-spin` | 公開済み・改訂 | 対応 $-i\sigma_k$、回転子 $R=vu$・$RxR^{-1}$、例とremの符号 |
 | `qua/01-pauli-qua` | 公開済み・改訂 | $R=\exp(-\frac{i\theta}2N)\cong r$、$RVR^\dagger$、鏡映の節の $NM$ |
@@ -98,7 +102,7 @@
 | 記事 | Mathlog | 内容 | 参照の変更 |
 |---|---|---|---|
 | `qua/01-pauli-qua` | `lZ1X3t6exNS3NrNArqji` | パウリ行列による回転を、四元数の生成子をそのまま移した $RVR^\dagger$（$R=\exp(-\frac{i\theta}2N)\cong r$）に変更。鏡映の節を $NM$ に。改訂履歴を追加 | なし（`--no-refs`） |
-| `vec-oct/geometric-product-exp` | `YZmxak6ObeP6rLQnyU2V` | 2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。改訂履歴を追加 | なし（`--no-refs`） |
+| `vec-oct/geometric-product-exp` | `YZmxak6ObeP6rLQnyU2V` | 2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。左から $e_1$ を掛けて $i\cong e_1e_2$ とする対応（$ab\cong a^*b$）もあり、四元数とそろえるために $e_2e_1$ を選ぶことを一文で追記。改訂履歴を追加 | なし（`--no-refs`） |
 | `lie/02-su2-so3` | `Utdur1fLLzrWVHOJHifj` | 行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加 | `7shi-qp`・`7shi-nonion` を追加、`7shi-qcm` を削除（`--refs`） |
 | `qua/04-4d-bsqua` | `asrMOxuKsJIdPqANfOs3` | 回転を $rvr^{-1}$、$r=\exp(-B/2)$ に変更。等傾回転の回転子、射影による証明（$r_L=T(\varphi(r)^\dagger)$、$r_R=T(\varphi(r))^{-1}$）、直和成分のrem、まとめを追従。改訂履歴を追加 | なし（`--no-refs`） |
 | `lie/03-spin` | `DRbXTeeL31pDcZyG6ml7` | 四元数との対応を $-i\sigma_k$ に変更。スピノルの例を $q=\exp(k\theta/2)$ にして全角 $+\theta$ に。回転子による回転を $R=vu$、$RxR^{-1}$ に変更し、例・共役作用との対応のrem・まとめを追従。符号の選び方のremを追加。改訂履歴を追加 | なし（`--no-refs`） |
