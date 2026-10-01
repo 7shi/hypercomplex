@@ -205,7 +205,7 @@ j \mapsto \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \quad
 k \mapsto \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}
 $$
 
-パウリ行列 $\sigma_1, \sigma_2, \sigma_3$ を用いると、それぞれ $i\sigma_3,\ i\sigma_2,\ i\sigma_1$ です。リー群の記事で用いた $\operatorname{SU}(2)$ の規約と同じ形です。[[7shi-lie2]]
+パウリ行列 $\sigma_1, \sigma_2, \sigma_3$ を用いると、それぞれ $i\sigma_3,\ i\sigma_2,\ i\sigma_1$ です。リー群の記事では、行列式が絶対値の2乗になる要請から、標準形 $I_H, J_H, K_H = -i\sigma_1, -i\sigma_2, -i\sigma_3$ を導きました。[[7shi-lie2]] ここでの表現は $i, j, k \mapsto -K_H, -J_H, -I_H$ で、標準形とは $i$ と $k$ の役割が入れ替わり、符号も反転しています。$i$ を複素数の虚数単位として持ち上げる構成なので、$i$ が対角に来ます。
 
 双複素数の $j \mapsto \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ は $i$ と可換でしたが、四元数では対角の $\operatorname{diag}(i, -i)$ と非対角の $j$ が反交換します。上下の成分で $i$ の向きが逆になることが、$jz = z^*j$ の行列版です。
 

@@ -55,14 +55,14 @@
 | `lie/05-bch-adjoint`・`lie/07-s7`・`lie/08-g2`・`lie/double-cover` | 四元数型 | $\rho_q(x)=qxq^{-1}$ | 一致 |
 | `hopf/06-clifford-gates` | 流儀型 | $R^\dagger VR$（`qua/01` を引用）、$R_{\boldsymbol n}(\theta)=R^\dagger$ が $r$ の行列表現と断る | 一致 |
 | `qua/05-dual-qua`・`qua/06-slerp` | 四元数型 | 二重四元数による剛体変換、$qvq^{-1}$ の補間 | 一致 |
-| `qua/cd/bcmp-qua` | 対応のみ | $-i\sigma_k$（負号あり） | 一致 |
+| `qua/cd/bcmp-qua` | 対応のみ | $p=a+bj$ から $i,j,k\mapsto i\sigma_3,i\sigma_2,i\sigma_1$（改訂前の `lie/02` と同じ論法）。標準形とは $i,j,k\mapsto-K_H,-J_H,-I_H$ の関係と断る | 構成上の表現として残し、標準形との関係を明示（以前は「`lie/02` と同じ形」と書いていた） |
 | `qua/history` | 文献流 | $R\boldsymbol v\tilde R$（歴史記事での一般的な紹介）。四元数は $q\boldsymbol vq^*$ | 作用が異なる |
 | `em/05-lorentz` | 文献流 | $Rx\tilde R$、$R=e^{-i\sigma_3\theta/2}$（回転・ブースト） | 作用が異なる |
 | `dirac/01`〜`04` | 文献流 | $Rx\tilde R$、$\psi\gamma_\mu\tilde\psi=\rho e_\mu$。四元数との対応は $\mathbf i=-\omega\sigma_1$。`dirac/03` は座標変換で $x'=\tilde RxR$ も使う | 作用が異なる、対応は一致 |
 | `clif/pga-cga` | 文献流 | $X\mapsto MX\widetilde M$、$M=rq$（合成の順）。PGA・CGAの剛体変換 | 作用が異なる |
 | `ktheory/06`〜`08` | 文献流 | $Ue_0\tilde U=\hat\theta$ など（枠の読み取り）。`dirac` と同じ向き | 作用が異なる |
 
-未公開の記事のうち、流儀と異なるのは文献流の `qua/history`・`em/05`・`dirac/01`〜`04`・`clif/pga-cga`・`ktheory/06`〜`08` で、いずれも作用の向きだけが異なる。四元数との対応は、未公開の記事ではすべて負号付きで流儀と一致している。
+未公開の記事のうち、流儀と異なるのは文献流の `qua/history`・`em/05`・`dirac/01`〜`04`・`clif/pga-cga`・`ktheory/06`〜`08` で、いずれも作用の向きだけが異なる。四元数との対応は、未公開の記事では `bcmp-qua` を除いて負号付きで流儀と一致している。`bcmp-qua` はケイリー＝ディクソン構成から出る形を使い、標準形との関係を断っている。
 
 ## 著者の流儀
 
