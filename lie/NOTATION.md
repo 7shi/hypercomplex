@@ -65,6 +65,26 @@
 
 `lie/10`・`lie/ladder-spinor` のパウリ行列は四元数との対応に依存しないため変更不要。
 
+## 未決事項
+
+- ベクトルを数（複素数・四元数）に移すとき、基準の生成元を左右どちらから掛けるか。2次元の `vec-oct` 系（`geometric-product-exp`・`vec-oct/02`・`notation`）は $ve_1$（$i\cong e_2e_1$、回転子 $nm\cong m^*n$、$ba\cong a^*b$）。`clif-analysis`（$z=e_1\boldsymbol x$、$\omega=e_1e_2$、$e_1D=2\bar\partial$）、`clif-analysis/04`・`ktheory`・`em/04`（$q=e_0\boldsymbol x$、$h_l=e_0e_l$）、`qua/04`・`vec-oct/02` の4次元（$Q(v)=T(\varphi(e_1v))$）は左から掛ける。回転では右から、関数論・解析では左からと用途で分け、`notation` に使い分けを書く案が有力。
+
+## レビュー予定
+
+規約の書き換えはまだ完成していない。書き換えが固まったら、次の記事を `uv run review` で見直す（`<stem>-prompt.md` の準備までは Claude が行い、実行は著者が判断する。手順は `REVIEW.md`）。既存の `<stem>.txt` は書き換え前の版に対するもの。
+
+| 記事 | 状態 | 重点 |
+|---|---|---|
+| `vec-oct/notation` | 新規 | 四元数の回転子をそのまま移す筋立て、位相の負号と面の向きの説明、$ba\cong a^*b$ と $R=nm$ の対応、「別の書き方との関係」の節 |
+| `vec-oct/02-rotation` | 全面改訂（既存 `.txt` は旧版） | 回転子 $r=nm$・$rvr^{-1}$、通常の鏡映 $-nvn$ への置き換え、4次元の成分の対応（基底の反転）と $r_L=T(r^\dagger)$・$r_R=T(\tilde r)$ |
+| `vec-oct/geometric-product-exp` | 公開済み・改訂 | $i\cong e_2e_1$、$ba\cong a^*b$、rem「回転子との関係」、外積の符号付き面積 |
+| `lie/02-su2-so3` | 公開済み・改訂 | 行列式の要請からの行列表現の導出、成分内・成分間の回転 |
+| `lie/03-spin` | 公開済み・改訂 | 対応 $-i\sigma_k$、回転子 $R=vu$・$RxR^{-1}$、例とremの符号 |
+| `qua/01-pauli-qua` | 公開済み・改訂 | $R=\exp(-\frac{i\theta}2N)\cong r$、$RVR^\dagger$、鏡映の節の $NM$ |
+| `qua/04-4d-bsqua` | 公開済み・改訂（既存 `.txt` は旧版） | $r=\exp(-B/2)$・$rvr^{-1}$、$r_L=T(\varphi(r)^\dagger)$・$r_R=T(\varphi(r))^{-1}$、rem「直和成分と左右の回転子」 |
+
+公開済みの記事は、レビューの指摘を反映してから Mathlog に反映するとよい。
+
 ## Mathlogへの反映
 
 ローカルで改訂した公開済み記事のうち、Mathlogに未反映のものをまとめる。反映は `mathlog_fix.md` を書いて `bash src/mathlog_fix.sh` で行う（手順は `SLUG.md` の「更新手順」）。
