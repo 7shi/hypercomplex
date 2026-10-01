@@ -4,7 +4,7 @@
 
 前回は、自由粒子のディラック方程式を$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$と書きました。[[7shi-dirac3]]
 
-本記事では、電荷$q$の粒子を電磁場の中に置きます。時空のポテンシャル$A$を使うと、行列形式の最小結合$i\hbar\partial_\mu\to i\hbar\partial_\mu-qA_\mu$は、左から$A$を掛ける項$-\frac qcA\psi$を加えることになります。[[7shi-em6]]
+本記事では、電荷$q$の粒子を電磁場の中に置きます。時空のポテンシャル$A$を使うと、行列形式の最小結合$i\hbar\partial_\mu\to i\hbar\partial_\mu-qa_\mu$は、左から$A$を掛ける項$-\frac qcA\psi$を加えることになります。[[7shi-em6]]
 
 ポテンシャルのゲージ変換$A\mapsto A+D\chi$に対して、スピノルは右からの回転子$\psi\mapsto\psi e^{\omega\sigma_3\alpha}$で変換されます。これは大域位相を時空の点ごとに変えたもので、流れの向き$e_0$とスピンの向き$e_3$を変えずに、$e_1,e_2$をスピン軸のまわりに回します。[[7shi-dirac1]]
 
@@ -20,18 +20,18 @@ $$
 A=\varphi\,\gamma_0+c\sum_kA_k\gamma_k
 $$
 
-を作ります。$F=D\wedge A$が電磁場で、$F=\boldsymbol E+\omega c\boldsymbol B$です（emシリーズの擬スカラー$i$を本シリーズでは$\omega$と書きます）。$A$の成分を$c$で割って添字を下げた$A_\mu=\gamma_\mu\cdot A/c$、すなわち
+を作ります。$F=D\wedge A$が電磁場で、$F=\boldsymbol E+\omega c\boldsymbol B$です（emシリーズの擬スカラー$i$を本シリーズでは$\omega$と書きます）。$A$の成分を$c$で割って添字を下げた$a_\mu=\gamma_\mu\cdot A/c$（空間成分の$A_k$と区別するため$a$と書きます）、すなわち
 
 $$
-A_0=\frac\varphi c,\qquad A_\mu=-A_k\quad(\mu=k=1,2,3)
+a_0=\frac\varphi c,\qquad a_k=-A_k\quad(k=1,2,3)
 $$
 
-を使うと、$A=c\sum_\mu A_\mu\gamma^\mu$です。[[7shi-em6]]
+を使うと、$A=c\sum_\mu a_\mu\gamma^\mu$です。[[7shi-em6]]
 
-古典力学では、電磁場の中の荷電粒子の運動量$\boldsymbol p$は、ベクトルポテンシャルの分だけずれた$\boldsymbol p-q\boldsymbol A$が速度に比例する運動量（運動学的運動量）になり、エネルギーには$q\varphi$が加わります。パウリ方程式の$\hat\pi_k=-i\hbar\partial_k-qA_k$と$q\varphi$がこれにあたります。4元運動量で書けば、$i\hbar\partial_\mu$を$i\hbar\partial_\mu-qA_\mu$に替える操作で、**最小結合**と呼ばれます。行列形式のディラック方程式は
+古典力学では、正準運動量$\boldsymbol p$と、速度に結び付く運動学的運動量$\boldsymbol\pi$は、ベクトルポテンシャルの分だけずれた$\boldsymbol\pi=\boldsymbol p-q\boldsymbol A$で関係し、ハミルトニアンには$q\varphi$が加わります。パウリ方程式の$\hat\pi_k=-i\hbar\partial_k-qA_k$と$q\varphi$がこれにあたります。4元運動量で書けば、$i\hbar\partial_\mu$を$i\hbar\partial_\mu-qa_\mu$に替える操作で、**最小結合**と呼ばれます。行列形式のディラック方程式は
 
 $$
-\sum_\mu\hat\gamma^\mu\bigl(i\hbar\,\partial_\mu-qA_\mu\bigr)\Psi=mc\Psi
+\sum_\mu\hat\gamma^\mu\bigl(i\hbar\,\partial_\mu-qa_\mu\bigr)\Psi=mc\Psi
 $$
 
 となります。[[7shi-dirac1]]
@@ -49,7 +49,7 @@ $$
 &&&
 
 &&&prf
-作用の翻訳より、$\hat\gamma^\mu(-qA_\mu\Psi)$には$-q\gamma^\mu A_\mu\psi\gamma_0$が対応し、$\mu$について和を取ると$-\frac qcA\psi\gamma_0$である。自由粒子の場合と合わせて、行列形式の方程式は$\bigl(\hbar D\psi\,\omega\sigma_3-\frac qcA\psi\bigr)\gamma_0=mc\psi$と同値であり、右から$\gamma_0$を掛ければよい。[[7shi-dirac3]]
+作用の翻訳より、$\hat\gamma^\mu(-qa_\mu\Psi)$には$-q\gamma^\mu a_\mu\psi\gamma_0$が対応し、$\mu$について和を取ると$-\frac qcA\psi\gamma_0$である。自由粒子の場合と合わせて、行列形式の方程式は$\bigl(\hbar D\psi\,\omega\sigma_3-\frac qcA\psi\bigr)\gamma_0=mc\psi$と同値であり、右から$\gamma_0$を掛ければよい。[[7shi-dirac3]]
 &&&
 
 結合の項$-\frac qcA\psi$は、ベクトル$A$を左から掛けます。ローレンツ力$m\,dU/d\tau=\frac qcF\cdot U$と同じく係数は$q/c$で、ポテンシャル$A$の単位（$\varphi$と同じ）に合わせた形です。$A$は$D$と同じく左から作用するので、共変性はそのまま保たれます。一定の回転子$R$について、$\psi'(x)=R\psi(\tilde RxR)$、$A'(x)=RA(\tilde RxR)\tilde R$と置けば、$\frac qcA'\psi'=R\bigl(\frac qcA\psi\bigr)(\tilde RxR)$で、方程式の各項が同じ形で$R$を左に出します。[[7shi-em5]][[7shi-em6]][[7shi-dirac3]]
@@ -86,11 +86,11 @@ $$
 である。結合の項は$-\frac qc(A+D\chi)\psi'=\bigl(-\frac qcA\psi-\frac qc(D\chi)\psi\bigr)e^{\omega\sigma_3\alpha}$で、$\hbar D\alpha=-\frac qcD\chi$により余分な項は打ち消し合う。質量の項は、$\gamma_0$が$\omega\sigma_3=\gamma_2\gamma_1$と可換なので$\psi'\gamma_0=\psi\gamma_0e^{\omega\sigma_3\alpha}$である。したがって方程式全体が右から$e^{\omega\sigma_3\alpha}$を掛けた形になり、解は解に移る。
 &&&
 
-行列形式では、$\psi e^{\omega\sigma_3\alpha}$は$e^{i\alpha}\Psi$なので、ゲージ変換は$\Psi\mapsto e^{-iq\chi/\hbar c}\Psi$です。位相を位置によって変えると、微分から余分な項$(D\alpha)\psi$が出ます。ポテンシャルのゲージ変換で加わる$D\chi$が、ちょうどその項を打ち消します。電磁場がなければ、許される位相は定数だけです。点ごとに異なる位相の変更を許すには、その変化を補うポテンシャル$A$が方程式に含まれている必要があります。この見方から電磁場との結合を導く考え方を、**ゲージ原理**と呼びます。
+行列形式では、$\psi e^{\omega\sigma_3\alpha}$は$e^{i\alpha}\Psi$なので、ゲージ変換は$\Psi\mapsto e^{-iq\chi/\hbar c}\Psi$です。位相を位置によって変えると、微分から余分な項$(D\alpha)\psi$が出ます。ポテンシャルのゲージ変換で加わる$D\chi$が、ちょうどその項を打ち消します。ポテンシャルを導入しない自由方程式は、定数位相の変換には不変ですが、一般の局所位相変換には不変ではありません。局所位相変換にも対応させるため、位相の微分から生じる項を補うポテンシャル$A$を導入します。この見方から電磁場との結合を導く考え方を、**ゲージ原理**と呼びます。
 
 ## 枠の回転としてのゲージ
 
-ゲージ変換は右から掛かる回転子なので、枠$\psi\gamma_\mu\tilde\psi=\rho e_\mu$への影響が読み取れます。$e^{\omega\sigma_3\alpha}$は$\gamma_0$と$\gamma_3$を動かさず、$x_1x_2$平面の中で$\gamma_1,\gamma_2$を回すので
+この節では$\psi\tilde\psi\ne0$の領域を考え、前回の分解と枠を使います。ゲージ変換は右から掛かる回転子なので、枠$\psi\gamma_\mu\tilde\psi=\rho e_\mu$への影響が読み取れます。$e^{\omega\sigma_3\alpha}$は$\gamma_0$と$\gamma_3$を動かさず、$x_1x_2$平面の中で$\gamma_1,\gamma_2$を回すので
 
 $$
 e_0\mapsto e_0,\qquad e_3\mapsto e_3,\qquad
@@ -100,9 +100,9 @@ $$
 
 です。密度$\rho$と角$\beta$も変わりません（$\psi e^{\omega\sigma_3\alpha}\widetilde{\psi e^{\omega\sigma_3\alpha}}=\psi\tilde\psi$）。[[7shi-dirac2]]
 
-流れの向き$e_0$とスピンの向き$e_3$はゲージによらない観測量で、残りの$e_1,e_2$は、スピン軸$e_3$に垂直な面の中で点ごとに勝手に回せる、観測にかからない向きです。大域位相がスピン軸まわりの枠の回転として見えたのと同様に、ゲージ変換はその回転の角を点ごとに変えたもので、ポテンシャル$A$に現れたゲージの自由度が、スピノルの側では$e_1,e_2$の回転の自由度として現れます。[[7shi-dirac1]][[7shi-em6]]
+流れの向き$e_0$とスピンの向き$e_3$はゲージによらない観測量です。残りの$e_1,e_2$は、$e_1,e_2$の張る面（スピン軸$e_3$に垂直な面）の中で点ごとに任意に回せる向きで、その向きそのものはゲージ依存であり、単独では観測量になりません。大域位相がスピン軸まわりの枠の回転として見えたのと同様に、ゲージ変換はその回転の角を点ごとに変えたもので、ポテンシャル$A$に現れたゲージの自由度が、スピノルの側では$e_1,e_2$の回転の自由度として現れます。[[7shi-dirac1]][[7shi-em6]]
 
-emシリーズでは、ゲージの自由度は$DA$のスカラー部$D\cdot A$に現れ、$F$には現れない量でした。本シリーズでは、同じ自由度がスピノルの右側、すなわち観測者によらない基準の側で、$\omega\sigma_3$の面の回転として働いています。ローレンツ変換が左から、ゲージ変換が右から掛かるので、2つの変換は可換です。
+emシリーズでは、ゲージ変換による$DA$の変化はスカラー部$D\cdot A$だけに現れ、$F$は変わらないことを見ました。本シリーズでは、同じ自由度がスピノルの右側、すなわち観測者によらない基準の側で、$\omega\sigma_3$の面の回転として働いています。スピノルの値に対する左からのローレンツ作用と右からの位相作用は、左右から掛かるので可換です。ただし、場のローレンツ変換は引数も変えるので、局所位相$\alpha$もスカラー場として引き戻して扱います。
 
 # 流れの保存
 
@@ -133,12 +133,12 @@ $$
 (D\psi)\gamma_0\tilde\psi=-\frac1\hbar\Bigl(mc\,\psi\,\omega\sigma_3\tilde\psi+\frac qcA\,\psi\gamma_0\omega\sigma_3\tilde\psi\Bigr)
 $$
 
-となる。$\psi\,\omega\sigma_3\tilde\psi$は反転で符号が変わるので、スカラー部を持たない。$\gamma_0\omega\sigma_3=\gamma_0\gamma_2\gamma_1$は3ベクトルで反転で符号が変わるから、$\psi\gamma_0\omega\sigma_3\tilde\psi$は反転で符号が変わる奇数グレードの元、すなわち3ベクトルである。ベクトル$A$と3ベクトルの積はグレード2と4の成分しか持たず、スカラー部は$0$である。
+となる。$\psi\,\omega\sigma_3\tilde\psi$は反転で符号が変わるので、スカラー部を持たない。$\gamma_0\omega\sigma_3=\gamma_0\gamma_2\gamma_1$は3ベクトルで反転で符号が変わるから、$\psi\gamma_0\omega\sigma_3\tilde\psi$は反転で符号が変わる奇数グレードの元、すなわち3ベクトルである。ベクトル$A$と3ベクトルの積はグレード2と4の成分しか持たず、スカラー部は$0$である。したがって両項のスカラー部は$0$であり、$D\cdot J=0$となる。
 &&&
 
-証明で使ったのは、右から掛かる因子の形だけです。$\omega\sigma_3$が2ベクトルで、$\gamma_0\omega\sigma_3$が3ベクトルであることから、質量の項と結合の項がスカラー部に寄与しないことが従います。$D\cdot J=0$は、成分では$\partial_t(\Psi^\dagger\Psi)+\nabla\cdot\boldsymbol j=0$（$\boldsymbol j$は確率の流れ）の形の連続の式です。
+証明で使ったのは、右から掛かる因子の形だけです。$\omega\sigma_3$が2ベクトルで、$\gamma_0\omega\sigma_3$が3ベクトルであることから、質量の項と結合の項がスカラー部に寄与しないことが従います。$J=J^0\gamma_0+\sum_kJ^k\gamma_k$と成分に分け、$J^0=\Psi^\dagger\Psi$、$\boldsymbol j=c\sum_kJ^k\sigma_k$（確率の流れ）と置くと、$D\cdot J=0$は$\partial_tJ^0+\nabla\cdot\boldsymbol j=0$の形の連続の式です。
 
-電磁気学では、電流$J_{\mathrm{em}}=c\rho_{\mathrm{em}}\gamma_0+\sum_kJ_k\gamma_k$の保存$D\cdot J_{\mathrm{em}}=0$を、マクスウェル方程式から$D\cdot(D\cdot F)=0$として導きました。ここでは保存則がディラック方程式そのものから出ます。確率密度に電荷$q$を掛けたものが電荷密度なので、$cqJ$が$J_{\mathrm{em}}$と同じ形の電流を与え、同じ保存則を満たします。ディラック方程式の解が作る電磁場（マクスウェル方程式との連立）は、本記事では扱いません。[[7shi-em4]]
+電磁気学では、電流$J_{\mathrm{em}}=c\rho_{\mathrm{em}}\gamma_0+\sum_kJ_k\gamma_k$の保存$D\cdot J_{\mathrm{em}}=0$を、マクスウェル方程式から$D\cdot(D\cdot F)=0$として導きました。ここでは保存則がディラック方程式そのものから出ます。確率密度に電荷$q$を掛けたものが電荷密度（$\rho_{\mathrm{em}}=qJ^0$、$\boldsymbol J_{\mathrm{em}}=q\boldsymbol j$）なので、$cqJ$が$J_{\mathrm{em}}$と同じ形の電流を与え、同じ保存則を満たします。ディラック方程式の解が作る電磁場（マクスウェル方程式との連立）は、本記事では扱いません。[[7shi-em4]]
 
 # 電荷の反転
 
