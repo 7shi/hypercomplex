@@ -13,7 +13,7 @@
 ## 現状
 
 - `vec-oct/02`：回転子を $r=mn=\exp(\frac\theta2p)$、$p=m\wedge n/|m\wedge n|$ とし、作用は $v\mapsto r^{-1}vr$。四元数との対応は $ae_3e_2+be_1e_3+ce_2e_1\cong ai+bj+ck$（負号あり、向きを保つ）。その結果 $p\cong-q$ となり、四元数の $rvr^*$ とは表面上挟み方が逆になると説明している。鏡映から導く体裁だが、重点は指数関数の対応にある。未公開。
-- `lie/02`：四元数の行列表現を、見た目に対応が分かる形で天下りに導入している（パウリ行列は使わない）。`lie/03` でこれが $i,j,k\Leftrightarrow i\sigma_3,i\sigma_2,i\sigma_1$ に一致することを示す（添字が逆順）。
+- `lie/02`：以前は四元数の行列表現を $i,j,k\Leftrightarrow i\sigma_3,i\sigma_2,i\sigma_1$（`lie/03` で添字が逆順と示す形）で天下りに導入していた。行列式が絶対値の2乗になる要請から形を絞り込み、標準形 $I_H,J_H,K_H=-i\sigma_1,-i\sigma_2,-i\sigma_3$ を導く形に改訂した（パウリ行列は使わず、$\beta=-i$ の符号の選び方は先送り）。ローカルでは改訂済み、Mathlog未反映。
 - `lie/03`：回転子を鏡映の積 $R=uv$ から導き、作用は $x\mapsto R^{-1}xR$。四元数との対応は $i,j,k\Leftrightarrow\sigma_1\sigma_2,\sigma_3\sigma_1,\sigma_2\sigma_3$。公開済み。
 - `qua/cd`（`bq` を含む）：$I_H,J_H,K_H=-i\sigma_1,-i\sigma_2,-i\sigma_3$。`lie/02` とは別の行列表現で、添字の順を保つ。
 - `em`：回転子は偶部分の元で $R\tilde R=1$ を満たすもの、作用は $x\mapsto Rx\tilde R$。正の回転の回転子は $e^{-i\sigma_3\theta/2}$ のように指数に負号が付く（`em` では擬スカラーを $i=\gamma_0\gamma_1\gamma_2\gamma_3$ と書く）。未公開。
@@ -36,10 +36,10 @@
 | `hopf/02-spinor-tensor` | 2024/05/24 | 四元数型 | $q\mathbf kq^*$ | 一致 |
 | `oct/02-7d-3rot` | 2024/06/26 | 四元数型 | 八元数の $rxr^*$ | 一致 |
 | `qua/01-pauli-qua` | 2024/07/11 | 流儀型 | $R^\dagger VR$、$R=\exp(\frac\theta2N)$、$N=i\boldsymbol n\cdot\boldsymbol\sigma\cong-n$。四元数は $rvr^*$、$R^\dagger\cong r$ | 一致 |
-| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、$i\cong e_1e_2$、四元数は $i\cong e_3e_2$（負号あり）。2次元の外積を擬スカラー $e_1e_2$ の係数（符号付き面積）として扱う（要Mathlog反映） | 一致（`vec-oct/notation` の外積の節の出典） |
+| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、$i\cong e_1e_2$、四元数は $i\cong e_3e_2$（負号あり）。2次元の外積を擬スカラー $e_1e_2$ の係数（符号付き面積）として扱う（Mathlog未反映） | 一致（`vec-oct/notation` の外積の節の出典） |
 | `qua/cd/matrix-to-pauli` | 2025/05/03 | 対応のみ | $I_H=-i\sigma_1$ など（負号あり） | 一致 |
 | `qua/spherical-trig` | 2025/11/29 | 四元数型 | $qvq^{-1}$ | 一致 |
-| `lie/02-su2-so3` | 2026/07/10 | 四元数型 | $qxq^{-1}$、等傾回転。四元数の行列表現を天下りに導入 | 作用は一致。行列表現が `lie/03` の添字逆順の起点 |
+| `lie/02-su2-so3` | 2026/07/10 | 四元数型 | $qxq^{-1}$、等傾回転。行列表現を標準形 $-i\sigma_k$ に改訂（Mathlog未反映） | 一致（改訂前は行列表現が `lie/03` の添字逆順の起点） |
 | `qua/04-4d-bsqua` | 2026/07/20 | 流儀型 | $r^{-1}vr$、$r=\exp(B/2)$。四元数は $r_Lqr_R$。$\rho_{rs}=\rho_s\circ\rho_r$ の断りあり | 一致 |
 | `lie/03-spin` | 2026/07/24 | 流儀型 | $R^{-1}xR$、$R=\exp(\varphi\sigma_1\sigma_2)$。四元数は $qxq^{-1}$、対応は添字逆順（負号なし） | 作用は一致、対応が異なる |
 
@@ -75,7 +75,7 @@
 - 文献流 $Rx\tilde R$ との違いは指数の肩の負号（$R=\tilde r$）に帰着する。負号は文献流では指数に、流儀では四元数との対応に置かれる。
 - 擬スカラー $\omega$ は可換なので、グレードの違いは向きに影響しない。
 
-`vec-oct/geometric-product-exp` は以前、2次元でも $|a||b|\sin\theta=|a\wedge b|$ と大きさで対応させ、$\sin\theta\ge0$ の制限を付けていたが、符号付き面積の読みに改めた（公開済みのためMathlogへの反映が必要）。
+`vec-oct/geometric-product-exp` は以前、2次元でも $|a||b|\sin\theta=|a\wedge b|$ と大きさで対応させ、$\sin\theta\ge0$ の制限を付けていたが、符号付き面積の読みに改めた（Mathlogへの反映は後述）。
 
 ## `lie/03` の向きの食い違い
 
@@ -103,7 +103,7 @@
     - `em/05` の回転子・ブーストの式と、`dirac` 全体の符号の向きが変わる。
     - $Rx\tilde R$ は、ヘステネスやドーラン＝ラゼンビーなど標準的な文献の書き方と一致する。流儀に合わせると文献との差を断る必要がある。
 - 四元数との対応は `qua/cd`・`bq`（`dirac/01` も引用）の $-i\sigma_k$ をそのまま使える。
-- `lie/03` の四元数との対応（添字逆順）を負号付きに改めるかどうか。`lie/02` の行列表現との関係も含めて検討が必要。`lie/03` は公開済みなので、修正する場合はMathlogへの反映が必要。
+- `lie/03` の四元数との対応（添字逆順）を負号付きに改めるかどうか。`lie/02` の行列表現との関係も含めて検討が必要。`lie/02` は標準形に改訂したので、`lie/03` も負号付きの対応に改める方向。`lie/03` は公開済みなので、Mathlogへの反映が必要。
 
 ## 保留中の小さな課題
 
@@ -111,3 +111,33 @@
     1. 四元数の $(i,j,k)$ は右手系だが、対応する軸 $(\sigma_3,\sigma_2,\sigma_1)$ は逆の向きになる。
     2. 四元数の言葉で反時計回りの $qxq^{-1}$ は、$\sigma$ の右手系では時計回りになり、反時計回りに揃えるには $R^{-1}xR$ を使う。
     3. 外積の節の全角 $-\theta$ もこの向きの違いから来る。
+
+## Mathlogへの反映
+
+ローカルで改訂した公開済み記事のうち、Mathlogに未反映のものをまとめる。反映は `mathlog_fix.md` を書いて `bash src/mathlog_fix.sh` で行う（手順は `SLUG.md` の「更新手順」）。
+
+- 参照（`[[slug]]`）を変えた記事は `--refs` で実行し、Mathlogの参考文献パネルも直したうえで、パネルをコピーして `refs/{ID}.toml` を取り込み直す。本文のみの修正は `--no-refs` でよい。オプションは実行単位で1つなので、両方がある場合は `mathlog_fix.md` を分けて2回実行するか、全体を `--refs` で実行する。
+- 処理後に `mathlog_fix.md` を削除し、`make all` で `refs.toml` などを再生成する。
+- `lie/02` の参照の変更により、現在 `reftools check` が `lie/02` について「未定義：`7shi-nonion`・`7shi-qp`」「未使用：`7shi-qcm`」を報告している。Mathlog側の参考文献パネルを直して取り込めば解消する。
+
+### 未反映の記事
+
+| 記事 | Mathlog | 内容 | 参照の変更 |
+|---|---|---|---|
+| `vec-oct/geometric-product-exp` | `YZmxak6ObeP6rLQnyU2V` | 2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定 | なし（`--no-refs`） |
+| `lie/02-su2-so3` | `Utdur1fLLzrWVHOJHifj` | 行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加 | `7shi-qp`・`7shi-nonion` を追加、`7shi-qcm` を削除（`--refs`） |
+
+`lie/03` は `lie/02` に合わせて改訂予定で、改訂後にこの表に加える。
+
+### `mathlog_fix.md` の下書き
+
+```markdown
+## vec-oct/geometric-product-exp.md — https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V
+- 本文：「2次元の外積」の節と「外積における角度の範囲」のremを差し替え（参照の変更なし）
+
+## lie/02-su2-so3.md — https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj
+- 本文：改訂履歴、前提、「四元数の行列表現」の節、su(2)の分解、「SO(2)の複素ユニタリ化」の後半、「等傾回転の相殺」の分解とremを差し替え
+- 7shi-qcm: 削除
+- 7shi-qp: 追加
+- 7shi-nonion: 追加
+```
