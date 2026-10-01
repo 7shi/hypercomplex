@@ -97,6 +97,14 @@
 - 処理後に `mathlog_fix.md` を削除し、`make all` で `refs.toml` などを再生成する。
 - `lie/02` の参照の変更により、現在 `reftools check` が `lie/02` について「未定義：`7shi-nonion`・`7shi-qp`」「未使用：`7shi-qcm`」を報告している。Mathlog側の参考文献パネルを直して取り込めば解消する。
 
+### 反映の計画
+
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの4本は本文のみなので、まとめて `--no-refs` で反映する。
+
+1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
+2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめ、下の表から `lie/02` を外す。
+3. **残りの4本（`--no-refs`）**：`qua/01`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きから `lie/02` を除いた内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+
 ### 未反映の記事
 
 | 記事 | Mathlog | 内容 | 参照の変更 |
