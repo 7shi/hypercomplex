@@ -14,7 +14,7 @@
 
 - `vec-oct/02`：回転子を $r=mn=\exp(\frac\theta2p)$、$p=m\wedge n/|m\wedge n|$ とし、作用は $v\mapsto r^{-1}vr$。四元数との対応は $ae_3e_2+be_1e_3+ce_2e_1\cong ai+bj+ck$（負号あり、向きを保つ）。その結果 $p\cong-q$ となり、四元数の $rvr^*$ とは表面上挟み方が逆になると説明している。鏡映から導く体裁だが、重点は指数関数の対応にある。未公開。
 - `lie/02`：以前は四元数の行列表現を $i,j,k\Leftrightarrow i\sigma_3,i\sigma_2,i\sigma_1$（`lie/03` で添字が逆順と示す形）で天下りに導入していた。行列式が絶対値の2乗になる要請から形を絞り込み、標準形 $I_H,J_H,K_H=-i\sigma_1,-i\sigma_2,-i\sigma_3$ を導く形に改訂した（パウリ行列は使わず、$\beta=-i$ の符号の選び方は先送り）。ローカルでは改訂済み、Mathlog未反映。
-- `lie/03`：回転子を鏡映の積 $R=uv$ から導き、作用は $x\mapsto R^{-1}xR$。四元数との対応は $i,j,k\Leftrightarrow\sigma_1\sigma_2,\sigma_3\sigma_1,\sigma_2\sigma_3$。公開済み。
+- `lie/03`：回転子を鏡映の積 $R=uv$ から導き、作用は $x\mapsto R^{-1}xR$。以前は四元数との対応が $i,j,k\Leftrightarrow\sigma_1\sigma_2,\sigma_3\sigma_1,\sigma_2\sigma_3$（添字逆順）で、スピノルの例に $-\theta$ が出ていた。`lie/02` に合わせて $i,j,k\Leftrightarrow-i\sigma_1,-i\sigma_2,-i\sigma_3=\sigma_3\sigma_2,\sigma_1\sigma_3,\sigma_2\sigma_1$ に改訂し、$q\Leftrightarrow R^{-1}$ で $qxq^{-1}$ と $R^{-1}xR$ が一致する形にした。`lie/02` で先送りした符号の理由（向きをそろえるため）をremで回収。ローカルでは改訂済み、Mathlog未反映。
 - `qua/cd`（`bq` を含む）：$I_H,J_H,K_H=-i\sigma_1,-i\sigma_2,-i\sigma_3$。`lie/02` とは別の行列表現で、添字の順を保つ。
 - `em`：回転子は偶部分の元で $R\tilde R=1$ を満たすもの、作用は $x\mapsto Rx\tilde R$。正の回転の回転子は $e^{-i\sigma_3\theta/2}$ のように指数に負号が付く（`em` では擬スカラーを $i=\gamma_0\gamma_1\gamma_2\gamma_3$ と書く）。未公開。
 - `dirac`：`em` に合わせて $x\mapsto Rx\tilde R$、四元数との対応は $\mathbf i=-\omega\sigma_1$ など（`qua/cd` と同じ）。未公開。`dirac/01` の「記号」に、`lie/03` との規約の差の断りを入れた。
@@ -41,9 +41,9 @@
 | `qua/spherical-trig` | 2025/11/29 | 四元数型 | $qvq^{-1}$ | 一致 |
 | `lie/02-su2-so3` | 2026/07/10 | 四元数型 | $qxq^{-1}$、等傾回転。行列表現を標準形 $-i\sigma_k$ に改訂（Mathlog未反映） | 一致（改訂前は行列表現が `lie/03` の添字逆順の起点） |
 | `qua/04-4d-bsqua` | 2026/07/20 | 流儀型 | $r^{-1}vr$、$r=\exp(B/2)$。四元数は $r_Lqr_R$。$\rho_{rs}=\rho_s\circ\rho_r$ の断りあり | 一致 |
-| `lie/03-spin` | 2026/07/24 | 流儀型 | $R^{-1}xR$、$R=\exp(\varphi\sigma_1\sigma_2)$。四元数は $qxq^{-1}$、対応は添字逆順（負号なし） | 作用は一致、対応が異なる |
+| `lie/03-spin` | 2026/07/24 | 流儀型 | $R^{-1}xR$、$R=\exp(\varphi\sigma_1\sigma_2)$。四元数は $qxq^{-1}$、対応を $-i\sigma_k$ に改訂（Mathlog未反映） | 一致（改訂前は対応が添字逆順） |
 
-公開済みの記事は、`lie/03` の四元数との対応（と、その起点の `lie/02` の行列表現）を除いて、すべて流儀と一致している。文献流の公開済み記事はない。
+公開済みの記事は、`lie/02`・`lie/03` の改訂（Mathlog未反映）を含めて、すべて流儀と一致している。文献流の公開済み記事はない。
 
 ### 未公開
 
@@ -77,7 +77,10 @@
 
 `vec-oct/geometric-product-exp` は以前、2次元でも $|a||b|\sin\theta=|a\wedge b|$ と大きさで対応させ、$\sin\theta\ge0$ の制限を付けていたが、符号付き面積の読みに改めた（Mathlogへの反映は後述）。
 
-## `lie/03` の向きの食い違い
+## `lie/03` の向きの食い違い（改訂前）
+
+`lie/02`・`lie/03` の改訂で解消した。経緯として残す。
+
 
 - 負号を避けて添字を逆順に取る（`lie/02`・`lie/03`）と、四元数の $(i,j,k)$ に対応する軸は $(\sigma_3,\sigma_2,\sigma_1)$ で、$\sigma$ の右手系から見ると向きが反転する。
 - その結果、$r=\exp(\theta\,\mathbf i/2)$ による四元数の共役作用 $rqr^{-1}$ が反時計回りでも、$\sigma$ の右手系では時計回りになる。`lie/03` の $R^{-1}xR$ は流儀どおりだが、対応だけが負号を避けた形のため、四元数の側と向きが食い違う。
@@ -90,10 +93,10 @@
 |---|---|---|---|---|
 | `vec-oct/02` | $r^{-1}vr$ | $k\cong e_2e_1$（負号あり） | $\exp(+\theta p/2)$ | 一致 |
 | `qua/cd`・`bq` | ― | $K_H=-i\sigma_3$（負号あり） | ― | 対応は一致 |
-| `lie/03` | $R^{-1}xR$ | $i\Leftrightarrow\sigma_1\sigma_2$（添字逆順、負号なし） | $\exp(+\theta B/2)$ | 作用は一致、対応が異なる |
+| `lie/03` | $R^{-1}xR$ | $i\Leftrightarrow\sigma_3\sigma_2=-i\sigma_1$（改訂後） | $\exp(+\theta B/2)$ | 一致（改訂前は対応が添字逆順） |
 | `em`・`dirac` | $Rx\tilde R$ | $\mathbf i=-\omega\sigma_1$（負号あり） | $\exp(-\theta B/2)$ | 対応は一致、作用が異なる |
 
-四元数との対応は、`vec-oct`・`qua/cd`・`dirac` がすでに負号付きで一致している。流儀に統一する場合のずれは、`em`・`dirac` の作用（$Rx\tilde R$）と、`lie/03` の四元数との対応（添字逆順）の2か所である。`lie/03` のremで符号の違いが説明しにくかったのも、作用は流儀どおりで対応だけが負号を避けた形になっているためである。
+四元数との対応は、`vec-oct`・`qua/cd`・`dirac` がすでに負号付きで一致している。`lie/03` の改訂後、流儀に統一する場合のずれは `em`・`dirac` の作用（$Rx\tilde R$）だけである。改訂前の `lie/03` のremで符号の違いが説明しにくかったのは、作用は流儀どおりで対応だけが負号を避けた形になっていたためである。
 
 ## 論点
 
@@ -103,14 +106,7 @@
     - `em/05` の回転子・ブーストの式と、`dirac` 全体の符号の向きが変わる。
     - $Rx\tilde R$ は、ヘステネスやドーラン＝ラゼンビーなど標準的な文献の書き方と一致する。流儀に合わせると文献との差を断る必要がある。
 - 四元数との対応は `qua/cd`・`bq`（`dirac/01` も引用）の $-i\sigma_k$ をそのまま使える。
-- `lie/03` の四元数との対応（添字逆順）を負号付きに改めるかどうか。`lie/02` の行列表現との関係も含めて検討が必要。`lie/02` は標準形に改訂したので、`lie/03` も負号付きの対応に改める方向。`lie/03` は公開済みなので、Mathlogへの反映が必要。
-
-## 保留中の小さな課題
-
-- `lie/03` の「四元数の共役作用との符号の違い」のrem（L432〜）は、原因を「並び順の違い」と書いているが、本質は上記の向きの反転で、意味が取りにくい。対応を改めない場合に書き直すなら次の骨子にする。
-    1. 四元数の $(i,j,k)$ は右手系だが、対応する軸 $(\sigma_3,\sigma_2,\sigma_1)$ は逆の向きになる。
-    2. 四元数の言葉で反時計回りの $qxq^{-1}$ は、$\sigma$ の右手系では時計回りになり、反時計回りに揃えるには $R^{-1}xR$ を使う。
-    3. 外積の節の全角 $-\theta$ もこの向きの違いから来る。
+- `lie/02`・`lie/03` は標準形（$-i\sigma_k$）に改訂した。未公開の `lie/04`・`lie/06` が旧表現（$i\Leftrightarrow i\sigma_3$ の対角、$z+wj$ の分解、成分内＝$i$）に依存しているため、追従が必要。
 
 ## Mathlogへの反映
 
@@ -126,8 +122,7 @@
 |---|---|---|---|
 | `vec-oct/geometric-product-exp` | `YZmxak6ObeP6rLQnyU2V` | 2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定 | なし（`--no-refs`） |
 | `lie/02-su2-so3` | `Utdur1fLLzrWVHOJHifj` | 行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加 | `7shi-qp`・`7shi-nonion` を追加、`7shi-qcm` を削除（`--refs`） |
-
-`lie/03` は `lie/02` に合わせて改訂予定で、改訂後にこの表に加える。
+| `lie/03-spin` | `DRbXTeeL31pDcZyG6ml7` | 四元数との対応を $-i\sigma_k$ に変更。スピノルの例を $q=\exp(k\theta/2)$ にして全角 $+\theta$ に、$\mathfrak{su}(2)$ の一般形、クリフォード代数の対応・偶部分代数の乗積規則・$\operatorname{Spin}(3)$ の基底を追従。符号の選び方のremを追加し、共役作用との符号の違いのremを対応の説明に置き換え。改訂履歴を追加 | なし（`--no-refs`） |
 
 ### `mathlog_fix.md` の下書き
 
@@ -140,4 +135,7 @@
 - 7shi-qcm: 削除
 - 7shi-qp: 追加
 - 7shi-nonion: 追加
+
+## lie/03-spin.md — https://mathlog.info/articles/DRbXTeeL31pDcZyG6ml7
+- 本文：改訂履歴、概要の前提（su(2)の一般形、対角行列の作用）、スピノルの冒頭と例、「四元数との対応」の節、クリフォード代数の冒頭の対応、回転子のrem、偶部分代数の乗積規則とSpin(3)、グレード1への共役作用のremを差し替え（参照の変更なし）
 ```
