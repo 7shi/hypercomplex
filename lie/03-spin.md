@@ -2,6 +2,10 @@
 
 シリーズ：[リー群・リー代数の初歩](https://mathlog.info/series/LENUzX64bZ63y462z5I9)
 
+&&& 改訂履歴
+- 2026.10.01 前回の行列表現の変更に合わせて、四元数との対応を$i,j,k\Leftrightarrow-i\sigma_1,-i\sigma_2,-i\sigma_3$に変更し、回転の向きをそろえた
+&&&
+
 # 概要
 
 前回は、単位四元数のなすリー群$\operatorname{Sp}(1) \cong \operatorname{SU}(2)$が共役作用$qxq^{-1}$によって3次元回転群$\operatorname{SO}(3)$の二重被覆を与えることを見ました。[[7shi-lie2]]
@@ -15,9 +19,9 @@
 - 単位四元数全体はリー群$\operatorname{Sp}(1)$となり、行列表現を通して$\operatorname{SU}(2)$と同型
 - リー代数$\mathfrak{sp}(1) \cong \mathfrak{su}(2)$は純虚四元数全体で、トレース$0$の反エルミート行列全体に対応
   $$
-  A = \begin{pmatrix} ix & y + iz \\ -y + iz & -ix \end{pmatrix} \quad \Leftrightarrow \quad xi + yj + zk
+  A = \begin{pmatrix} -iz & -(y + ix) \\ y - ix & iz \end{pmatrix} \quad \Leftrightarrow \quad xi + yj + zk
   $$
-- $\operatorname{SU}(2)$の行列は複素ベクトル$(r, s) \in \mathbb{C}^2$に左から作用する（$\operatorname{SO}(2)$の複素ユニタリ化）。$\exp(i\theta)$に対応する対角行列の作用は$(e^{i\theta}r,\ e^{-i\theta}s)$
+- $\operatorname{SU}(2)$の行列は複素ベクトル$(r, s) \in \mathbb{C}^2$に左から作用する（$\operatorname{SO}(2)$の複素ユニタリ化）。$\exp(k\theta)$に対応する対角行列の作用は$(e^{-i\theta}r,\ e^{i\theta}s)$
 - 共役作用$\rho_q(x) = qxq^{-1}$は3次元の回転を与え、$q$と$-q$が同じ回転になるため対応は2対1（二重被覆）
 - 片側だけの作用$L_q(x) = qx$と$R_{q^{-1}}(x) = xq^{-1}$は、4次元空間の2つの直交平面が同じ角度だけ回る等傾回転
 - $z$を複素数とすると、交換規則$jz = z^*j$が成り立つ
@@ -28,12 +32,12 @@
 
 前回、$\operatorname{SU}(2)$の元が作用する対象として、2種類のものが登場していました。1つは共役作用$qvq^{-1}$で**両側から**挟まれる純虚四元数（3次元ベクトル）、もう1つは「$\operatorname{SO}(2)$の複素ユニタリ化」の視点で行列が**片側から**掛かる複素ベクトル$(r, s) \in \mathbb{C}^2$です。今回の出発点は後者です。
 
-共役作用では、左右からの半角$\theta/2$の作用が合わさって角度$\theta$の回転になりました。一方、複素ベクトルは作用を1回しか受けないため、半角$\theta/2$がそのまま現れます。$q = \exp(i\theta/2)$に対応する行列の作用は次のようになります。
+共役作用では、左右からの半角$\theta/2$の作用が合わさって角度$\theta$の回転になりました。一方、複素ベクトルは作用を1回しか受けないため、半角$\theta/2$がそのまま現れます。$q = \exp(k\theta/2)$に対応する行列の作用は次のようになります。
 
 $$
-\begin{pmatrix} e^{i\theta/2} & 0 \\ 0 & e^{-i\theta/2} \end{pmatrix}
+\begin{pmatrix} e^{-i\theta/2} & 0 \\ 0 & e^{i\theta/2} \end{pmatrix}
 \begin{pmatrix} r \\ s \end{pmatrix}
-= \begin{pmatrix} e^{i\theta/2}\, r \\ e^{-i\theta/2}\, s \end{pmatrix}
+= \begin{pmatrix} e^{-i\theta/2}\, r \\ e^{i\theta/2}\, s \end{pmatrix}
 $$
 
 回転角$\theta$を$0$から$2\pi$まで動かして回転を1周させると、成分の位相は$\pm\pi$までしか進まず、ベクトルは$-1$倍になります。元に戻るには$\theta = 4\pi$、つまり回転2周分が必要です。このように、回転の半分の角度で変換され、回転1周で符号が反転し、2周ではじめて元に戻る対象を**スピノル**と呼びます。
@@ -189,27 +193,27 @@ $$
 
 とベクトルの長さの情報を持ち、共役作用は行列式を変えない（$\det(UAU^{-1}) = \det A$）ため、この変換は長さを保つ**3次元の回転**です。
 
-&&&ex $q = \exp(i\theta/2)$による回転
+&&&ex $q = \exp(k\theta/2)$による回転
 冒頭で導入した$q$に対応する行列をスピノルに掛けると、スピノルの成分はそれぞれ逆方向に位相が掛かります。
 
 $$
-\begin{pmatrix} e^{i\theta/2} & 0 \\ 0 & e^{-i\theta/2} \end{pmatrix}
+\begin{pmatrix} e^{-i\theta/2} & 0 \\ 0 & e^{i\theta/2} \end{pmatrix}
 \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
-= \begin{pmatrix} e^{i\theta/2}\alpha \\ e^{-i\theta/2}\beta \end{pmatrix}
+= \begin{pmatrix} e^{-i\theta/2}\alpha \\ e^{i\theta/2}\beta \end{pmatrix}
 $$
 
 変換後のスピノルで外積を計算すると
 $$
-\begin{pmatrix} e^{i\theta/2}\alpha \\ e^{-i\theta/2}\beta \end{pmatrix}
-\begin{pmatrix} e^{-i\theta/2}\alpha^* & e^{i\theta/2}\beta^* \end{pmatrix}
-= \begin{pmatrix} |\alpha|^2 & e^{i\theta}\,\alpha\beta^* \\ e^{-i\theta}\,\alpha^*\beta & |\beta|^2 \end{pmatrix}
+\begin{pmatrix} e^{-i\theta/2}\alpha \\ e^{i\theta/2}\beta \end{pmatrix}
+\begin{pmatrix} e^{i\theta/2}\alpha^* & e^{-i\theta/2}\beta^* \end{pmatrix}
+= \begin{pmatrix} |\alpha|^2 & e^{-i\theta}\,\alpha\beta^* \\ e^{i\theta}\,\alpha^*\beta & |\beta|^2 \end{pmatrix}
 $$
 となります。対角成分では位相が相殺して不変となる一方、非対角成分ではエルミート共役による位相の反転で半角が2つ揃い、全角$\theta$が現れます。$n_1, n_2, n_3$の定義と見比べると
 $$
-n_1 + in_2 \mapsto e^{-i\theta}(n_1 + in_2), \quad
+n_1 + in_2 \mapsto e^{i\theta}(n_1 + in_2), \quad
 n_3 \mapsto n_3
 $$
-となります。$\sigma_3$の方向を軸として、$\sigma_1, \sigma_2$が張る平面が角度$-\theta$だけ回転します。スピノルの成分は半角$-\theta/2$ずつしか動いていませんが、外積は$\omega$と$\omega^\dagger$の両方を通して作用を2回受けるため全角$-\theta$になります（この符号の由来は後述します）。前回「半角と倍加」として見た構造が、スピノルの言葉で再現されました。
+となります。$\sigma_3$の方向を軸として、$\sigma_1, \sigma_2$が張る平面が角度$\theta$だけ（$\sigma_1$から$\sigma_2$へ向かう向きに）回転します。スピノルの成分は半角$\theta/2$ずつしか動いていませんが、外積は$\omega$と$\omega^\dagger$の両方を通して作用を2回受けるため全角$\theta$になります。前回「半角と倍加」として見た構造が、スピノルの言葉で再現されました。
 &&&
 
 二重被覆もこの図式に現れます。$U$と$-U$はスピノルの行き先を$-1$倍だけ変えますが、外積では$(-U)\,\omega\omega^\dagger\,(-U)^{-1} = U\,\omega\omega^\dagger\,U^{-1}$と相殺されるため、同じ回転を与えます。さらに一般に、スピノル全体の位相$\omega \mapsto e^{i\varphi}\omega$は外積で相殺されるため、スピノルから単位ベクトルへの対応は位相の分だけ多対1です。
@@ -222,53 +226,53 @@ $$
 
 ## 四元数との対応
 
-パウリ行列に$i$を掛けると
+パウリ行列に$-i$を掛けると
 
 $$
-i\sigma_1 = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}, \quad
-i\sigma_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \quad
-i\sigma_3 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}
+-i\sigma_1 = \begin{pmatrix} 0 & -i \\ -i & 0 \end{pmatrix}, \quad
+-i\sigma_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
+-i\sigma_3 = \begin{pmatrix} -i & 0 \\ 0 & i \end{pmatrix}
 $$
 
 となり、前回定めた四元数の基底の行列表現と一致します。[[7shi-lie2]]
 
 $$
-i \Leftrightarrow i\sigma_3, \quad j \Leftrightarrow i\sigma_2, \quad k \Leftrightarrow i\sigma_1
+i \Leftrightarrow -i\sigma_1, \quad j \Leftrightarrow -i\sigma_2, \quad k \Leftrightarrow -i\sigma_3
 $$
 
-&&&rem 四元数の行列表現の流儀
-四元数の行列表現の取り方は1通りではなく、文献によって異なる流儀があります。ここでは前回の記事で定めた表現に合わせています。この対応ではパウリ行列の添字が$\sigma_3, \sigma_2, \sigma_1$と逆順に並ぶことに注意してください。
-&&&
+この対応で$\sigma_3$の軸は四元数の$k$に対応するため、先ほどの例（$\sigma_3$を軸とする角度$\theta$の回転）は、前回計算した$i$軸周りの回転を巡回させた$k$軸周りの回転$\rho_q(i) = i\cos\theta + j\sin\theta$と同じものです。$\sigma_1\to\sigma_2$と$i\to j$で、回転の向きもそろっています。
 
-この対応で$\sigma_3$の軸は四元数の$i$に対応するため、先ほどの例（$\sigma_3$を軸とする角度$\theta$の回転）は、前回計算した$i$軸周りの回転$\rho_q(j) = j\cos\theta + k\sin\theta$と同じものです。
+&&&rem 符号の選び方
+前回、行列表現を定める際に、$\pm i$のどちらを選ぶかの理由には立ち入りませんでした。符号を逆にして$k\Leftrightarrow i\sigma_3$とすると、$q=\exp(k\theta/2)$に対応する行列は$\operatorname{diag}(e^{i\theta/2},e^{-i\theta/2})$となり、先ほどの例では$\sigma_1,\sigma_2$が張る平面が角度$-\theta$だけ回転します。四元数の$k$軸周りの回転と向きが逆になるわけです。$-i$を掛けた形を選ぶことで、四元数の軸$i,j,k$とパウリ行列の軸$\sigma_1,\sigma_2,\sigma_3$が同じ向きに対応します。
+&&&
 
 また、前回リー群の条件から求めた$\mathfrak{su}(2)$の一般形は、パウリ行列で次のように書けます。
 
 $$
-A = \begin{pmatrix} ix & y + iz \\ -y + iz & -ix \end{pmatrix}
-= x(i\sigma_3) + y(i\sigma_2) + z(i\sigma_1)
-= i(z\sigma_1 + y\sigma_2 + x\sigma_3)
+A = \begin{pmatrix} -iz & -(y + ix) \\ y - ix & iz \end{pmatrix}
+= x(-i\sigma_1) + y(-i\sigma_2) + z(-i\sigma_3)
+= -i(x\sigma_1 + y\sigma_2 + z\sigma_3)
 $$
 
-つまり$\mathfrak{su}(2)$の反エルミート行列は「トレース$0$のエルミート行列の$i$倍」であり、スピノルの外積から取り出したパウリ行列は、$i$倍を除いて$\mathfrak{su}(2)$の基底そのものです。係数が$z, y, x$の順に並ぶのは、行列表現を定める際に四元数の$i$を対角（$\sigma_3$の方向）に割り当てたためです。
+つまり$\mathfrak{su}(2)$の反エルミート行列は「トレース$0$のエルミート行列の$-i$倍」であり、スピノルの外積から取り出したパウリ行列は、$-i$倍を除いて$\mathfrak{su}(2)$の基底そのものです。
 
 &&&rem 反エルミート行列と純虚数
-「反エルミートはエルミートの$i$倍」は、「純虚数は実数の$i$倍」の行列版です。
+「反エルミートはエルミートの$\pm i$倍」は、「純虚数は実数の$\pm i$倍」の行列版です。
 &&&
 
 &&&rem 量子力学流の導出
-物理学（特に量子力学）では、オブザーバブル（観測可能量）をエルミート行列（$H^\dagger = H$）で表すという要請があり、パウリ行列は本文とは逆向きに導出されるのが標準的です。すなわち、$\mathfrak{su}(2)$の反エルミート行列から$i$をくくり出し
+物理学（特に量子力学）では、オブザーバブル（観測可能量）をエルミート行列（$H^\dagger = H$）で表すという要請があり、パウリ行列は本文とは逆向きに導出されるのが標準的です。すなわち、$\mathfrak{su}(2)$の反エルミート行列から$-i$をくくり出し
 
 $$
-A = \begin{pmatrix} ix & y + iz \\ -y + iz & -ix \end{pmatrix}
-= i \begin{pmatrix} x & z - iy \\ z + iy & -x \end{pmatrix}
+A = \begin{pmatrix} -iz & -(y + ix) \\ y - ix & iz \end{pmatrix}
+= -i \begin{pmatrix} z & x - iy \\ x + iy & -z \end{pmatrix}
 $$
 
 右辺のエルミート行列を分解して、その基底としてパウリ行列を得ます。
 
 $$
-\begin{pmatrix} x & z - iy \\ z + iy & -x \end{pmatrix}
-= z\sigma_1 + y\sigma_2 + x\sigma_3
+\begin{pmatrix} z & x - iy \\ x + iy & -z \end{pmatrix}
+= x\sigma_1 + y\sigma_2 + z\sigma_3
 $$
 
 このように、パウリ行列は四元数由来の$\mathfrak{su}(2)$の一般形からも導出できますが、本記事では、作用を受ける側であるスピノルから構成する道筋を採用しました。
@@ -276,16 +280,16 @@ $$
 
 # クリフォード代数
 
-この「パウリ行列に$i$を掛けると四元数の基底に対応する」ことには、別の見方があります。パウリ行列同士の積を計算すれば
+この「パウリ行列に$-i$を掛けると四元数の基底に対応する」ことには、別の見方があります。パウリ行列同士の積を計算すれば
 
 $$
-\sigma_1\sigma_2 = i\sigma_3, \quad \sigma_2\sigma_3 = i\sigma_1, \quad \sigma_3\sigma_1 = i\sigma_2
+\sigma_3\sigma_2 = -i\sigma_1, \quad \sigma_1\sigma_3 = -i\sigma_2, \quad \sigma_2\sigma_1 = -i\sigma_3
 $$
 
-となり、$i\sigma_a$は残り2つのパウリ行列の積であることが分かります。これによって、四元数の基底を因数分解したのがパウリ行列だと解釈できます。
+となり、$-i\sigma_a$は残り2つのパウリ行列の積であることが分かります。これによって、四元数の基底を因数分解したのがパウリ行列だと解釈できます。
 
 $$
-i \Leftrightarrow \sigma_1\sigma_2, \quad j \Leftrightarrow \sigma_3\sigma_1, \quad k \Leftrightarrow \sigma_2\sigma_3
+i \Leftrightarrow \sigma_3\sigma_2, \quad j \Leftrightarrow \sigma_1\sigma_3, \quad k \Leftrightarrow \sigma_2\sigma_1
 $$
 
 ここで、パウリ行列の積として表したときの因子の個数を**グレード**と呼びます。単位行列$I$はグレード$0$、単独のパウリ行列$\sigma_1, \sigma_2, \sigma_3$はグレード$1$、四元数の虚数単位$i, j, k$に対応するのはグレード$2$の元です。パウリ行列と四元数は似ていますが、住んでいる階層（グレード）が違うわけです。このグレードによる分類は**クリフォード代数**と呼ばれる枠組みに由来します。
@@ -429,8 +433,8 @@ $$
 と符号が反転し、角度$-2\varphi$の回転になってしまいます。
 &&&
 
-&&&rem 四元数の共役作用との符号の違い
-四元数の共役作用$qxq^{-1}$は$q$を左、$q^{-1}$を右に置きますが、回転子による回転$R^{-1}xR$はその逆で、$R^{-1}$を左、$R$を右に置きます。$\varphi=\theta/2$とすると、$R=\exp(\varphi\sigma_1\sigma_2)$は$\sigma_1\sigma_2=i\sigma_3$より、スピノルの外積の節で扱った$q=\exp(i\theta/2)$に対応する行列と同じ元です。あの節では外積の変換則$U(\cdot)U^{-1}$（$U$を左に置く並び）にそのまま代入していたため、本記事で採用した並び順$R^{-1}xR$とは逆向きの$R\sigma_1R^{-1}$を計算していたことになり、全角$-\theta$という符号が現れたのはこの並び順の違いによるものです。
+&&&rem 四元数の共役作用との対応
+四元数の共役作用$qxq^{-1}$は$q$を左、$q^{-1}$を右に置きますが、回転子による回転$R^{-1}xR$はその逆で、$R^{-1}$を左、$R$を右に置きます。これは矛盾ではありません。$\varphi=\theta/2$とすると、四元数の$q=\exp(k\theta/2)$は、$k\Leftrightarrow\sigma_2\sigma_1=-\sigma_1\sigma_2$より$\exp(-\varphi\sigma_1\sigma_2)=R^{-1}$に対応します。したがって$qxq^{-1}$は$R^{-1}xR$にちょうど対応し、どちらも$\sigma_3$（$k$）を軸とする角度$\theta$の回転です。スピノルの外積の節で$U(\cdot)U^{-1}$に$q$の行列を代入した計算も、$R^{-1}\sigma_1R$と同じ結果を与えています。
 &&&
 
 ### リー群とリー代数
@@ -439,12 +443,12 @@ $$
 
 ## 偶部分代数としての四元数
 
-前節の回転子$\cos\varphi\,I+\sin\varphi\,B$は、グレード$0$（スカラー）とグレード$2$（2ベクトル）だけの線形結合でした。偶数個の因子同士の積はまた偶数個の因子になるため、この2つのグレードを合わせた部分空間は積について閉じており、**偶部分代数**と呼ばれる代数構造をなします。3次元のクリフォード代数の偶部分代数は$I, \sigma_1\sigma_2, \sigma_3\sigma_1, \sigma_2\sigma_3$が張る4次元の代数で、回転子はすべてこの中に住んでいます。
+前節の回転子$\cos\varphi\,I+\sin\varphi\,B$は、グレード$0$（スカラー）とグレード$2$（2ベクトル）だけの線形結合でした。偶数個の因子同士の積はまた偶数個の因子になるため、この2つのグレードを合わせた部分空間は積について閉じており、**偶部分代数**と呼ばれる代数構造をなします。3次元のクリフォード代数の偶部分代数は$I, \sigma_3\sigma_2, \sigma_1\sigma_3, \sigma_2\sigma_1$が張る4次元の代数で、回転子はすべてこの中に住んでいます。
 
-単位2ベクトルである$\sigma_1\sigma_2$も、前節の関係$B^2=-I$をそのまま満たします。
+単位2ベクトルである$\sigma_2\sigma_1$も、前節の関係$B^2=-I$をそのまま満たします。
 
 $$
-(\sigma_1\sigma_2)^2 = \sigma_1\sigma_2\sigma_1\sigma_2 = -\sigma_1\sigma_1\sigma_2\sigma_2 = -I
+(\sigma_2\sigma_1)^2 = \sigma_2\sigma_1\sigma_2\sigma_1 = -\sigma_2\sigma_2\sigma_1\sigma_1 = -I
 $$
 
 四元数の虚数単位と同じ2乗の性質を持つわけです。パウリ行列を空間の「ベクトル（線）」だとすれば、四元数の$i, j, k$は「平面」を表していたことになります。実際、偶部分代数はこの3つの基底によって四元数と完全に同型になります。
@@ -453,9 +457,9 @@ $$
 
 $$
 \begin{aligned}
-ij=-ji=k\quad &\Leftrightarrow \quad (\sigma_1\sigma_2)(\sigma_3\sigma_1) = -(\sigma_3\sigma_1)(\sigma_1\sigma_2) = \sigma_2\sigma_3 \\
-jk=-kj=i\quad &\Leftrightarrow \quad (\sigma_3\sigma_1)(\sigma_2\sigma_3) = -(\sigma_2\sigma_3)(\sigma_3\sigma_1) = \sigma_1\sigma_2 \\
-ki=-ik=j\quad &\Leftrightarrow \quad (\sigma_2\sigma_3)(\sigma_1\sigma_2) = -(\sigma_1\sigma_2)(\sigma_2\sigma_3) = \sigma_3\sigma_1
+ij=-ji=k\quad &\Leftrightarrow \quad (\sigma_3\sigma_2)(\sigma_1\sigma_3) = -(\sigma_1\sigma_3)(\sigma_3\sigma_2) = \sigma_2\sigma_1 \\
+jk=-kj=i\quad &\Leftrightarrow \quad (\sigma_1\sigma_3)(\sigma_2\sigma_1) = -(\sigma_2\sigma_1)(\sigma_1\sigma_3) = \sigma_3\sigma_2 \\
+ki=-ik=j\quad &\Leftrightarrow \quad (\sigma_2\sigma_1)(\sigma_3\sigma_2) = -(\sigma_3\sigma_2)(\sigma_2\sigma_1) = \sigma_1\sigma_3
 \end{aligned}
 $$
 
@@ -465,7 +469,7 @@ $$
 $$
 \begin{aligned}
 \operatorname{Spin}(3)
-&= \{a\,I + b\,\sigma_1\sigma_2 + c\,\sigma_3\sigma_1 + d\,\sigma_2\sigma_3 \ :\ a^2+b^2+c^2+d^2=1\} \\
+&= \{a\,I + b\,\sigma_3\sigma_2 + c\,\sigma_1\sigma_3 + d\,\sigma_2\sigma_1 \ :\ a^2+b^2+c^2+d^2=1\} \\
 &\cong \{a+bi+cj+dk \ :\ a^2+b^2+c^2+d^2=1\}
 \end{aligned}
 $$
@@ -492,7 +496,7 @@ $$
 一方、今回の視点では純虚四元数は平面です。2つの見方が両立するのは、前節で見たように3次元では平面と法線ベクトルが1対1に対応するためです。高次元では平面の数がベクトルの次元を上回るため、この同一視は崩れ、回転の生成子はベクトルではなく平面（グレード$2$）として扱う必要があります。
 
 &&&rem グレード$1$への共役作用
-四元数の共役作用$qvq^{-1}$では純虚四元数（グレード$2$）を挟みましたが、スピノルの外積で見たように、パウリ行列が張るグレード$1$のベクトル空間を挟んでも同じ回転が得られます。グレード$2$はグレード$1$の$i$倍にすぎず、共役作用は$i$を素通りさせるからです。クリフォード代数による$\operatorname{Spin}(n)$の一般的な構成では、このように偶部分代数の元でグレード$1$のベクトルを挟んで回転を作ります。
+四元数の共役作用$qvq^{-1}$では純虚四元数（グレード$2$）を挟みましたが、スピノルの外積で見たように、パウリ行列が張るグレード$1$のベクトル空間を挟んでも同じ回転が得られます。グレード$2$はグレード$1$に擬スカラー$\sigma_1\sigma_2\sigma_3=iI$を掛けたもの（$\sigma_3\sigma_2=-i\sigma_1$など）にすぎず、共役作用は$iI$を素通りさせるからです。クリフォード代数による$\operatorname{Spin}(n)$の一般的な構成では、このように偶部分代数の元でグレード$1$のベクトルを挟んで回転を作ります。
 &&&
 
 ## クリフォード代数から見たスピノル
