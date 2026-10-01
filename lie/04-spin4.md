@@ -29,10 +29,10 @@ $$
 x \mapsto pxq^{-1}
 $$
 
-たとえば$p = \exp(i\alpha)$、$q = \exp(i\beta)$とすれば、$x = z + wj$と交換規則$jz = z^*j$より
+たとえば$p = \exp(i\alpha)$、$q = \exp(i\beta)$とすれば、$1,i$で張られる複素数$u,v$を用いて$x = u + vj$と分け、交換規則$jv = v^*j$を使って
 
 $$
-pxq^{-1} = e^{i\alpha}(z + wj)e^{-i\beta} = e^{i(\alpha-\beta)}z + e^{i(\alpha+\beta)}w\,j
+pxq^{-1} = e^{i\alpha}(u + vj)e^{-i\beta} = e^{i(\alpha-\beta)}u + e^{i(\alpha+\beta)}v\,j
 $$
 
 となり、$(1, i)$平面は角度$\alpha - \beta$、$(j, k)$平面は角度$\alpha + \beta$と、2つの平面が**別々の角度**で回転します。$\alpha, \beta$を独立に動かせば任意の角度の組が実現でき、等傾回転の制限は消えます。$\beta = \alpha$とすれば共役作用（$(1, i)$平面が動かない3次元の回転）、$\beta = 0$とすれば左作用（等傾回転）となり、前回までの作用はすべて$pxq^{-1}$の特別な場合として統一されます。

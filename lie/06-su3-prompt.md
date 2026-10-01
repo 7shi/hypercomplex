@@ -4,7 +4,7 @@ refs:
   - lie/05-bch-adjoint.md
 ---
 
-添付は「リー群・リー代数の初歩」シリーズ第6回の記事です。第2回（参照記事`lie/02-su2-so3.md`）で導入した四元数の行列表現の規約（$i \Leftrightarrow i\sigma_3,\ j \Leftrightarrow i\sigma_2,\ k \Leftrightarrow i\sigma_1$）、「複素ユニタリ化」「成分内の回転・成分間の回転」という用語、$\mathfrak{so}(3)$の基底$J_x,J_y,J_z$と、第5回（参照記事`lie/05-bch-adjoint.md`）で整備したBCH公式・随伴作用を前提に、$\operatorname{SO}(2)\to\operatorname{SO}(3)$の構造を複素ユニタリ版に置き換えて$\operatorname{SU}(3)$を構成します。本記事は一度レビューを受けて修正済みで、今回は再レビューです。以下の観点でレビューしてください。
+添付は「リー群・リー代数の初歩」シリーズ第6回の記事です。第2回（参照記事`lie/02-su2-so3.md`）で導入した四元数の行列表現の規約（$i \Leftrightarrow -i\sigma_1,\ j \Leftrightarrow -i\sigma_2,\ k \Leftrightarrow -i\sigma_3$）、「複素ユニタリ化」「成分内の回転・成分間の回転」という用語、$\mathfrak{so}(3)$の基底$J_x,J_y,J_z$と、第5回（参照記事`lie/05-bch-adjoint.md`）で整備したBCH公式・随伴作用を前提に、$\operatorname{SO}(2)\to\operatorname{SO}(3)$の構造を複素ユニタリ版に置き換えて$\operatorname{SU}(3)$を構成します。本記事は一度レビューを受けて修正済みで、今回は再レビューです。以下の観点でレビューしてください。
 
 - 数式・数学的主張の正しさ
     - ゲルマン行列、構造定数$f_{abc}$の値と完全反対称性、$[\lambda_4,\lambda_5]$、$i\lambda_2=-J_z$などの対応、各平面の$\mathfrak{su}(2)$の3つ組、$(i\lambda_1)^2$の展開、$e^{i\theta\lambda_1}$の3項表示、$U,V$の生成子（$\log U\in\operatorname{span}\{\lambda_2,\lambda_5,\lambda_7\}$、$V=\exp(\frac{2\pi i}{3}H_{23})$）、位数27の群、$FUF^\dagger=V$と$\det F=-i$、$\mathbb{C}^4$の半スピノルの固定部分群が8次元であることは別途数値で確認済みです。検算よりも、一般論の述べ方（指数写像の全射性、極大トーラス定理、ランクの定義の注記、フルヴィッツの定理と「球面のうちリー群になるのは$S^0,S^1,S^3$だけ」、ファイバー束の注釈、$\operatorname{U}(3)$と$\operatorname{SU}(3)$の複素構造・体積形式の説明）の適用範囲と過不足を重点的に見てください
