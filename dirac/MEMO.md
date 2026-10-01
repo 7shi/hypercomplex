@@ -80,7 +80,7 @@
 
 全5回で執筆し、全回をレビューして指摘を反映した（04と05は分けた）。検討中だった項目の扱いと、執筆・レビューで確定した事項は次のとおり。
 
-- **回転子の規約**：作用は$x\mapsto Rx\tilde R$、四元数との対応は$\mathbf i=-\omega\sigma_1$、$\mathbf j=-\omega\sigma_2$、$\mathbf k=-\omega\sigma_3$（[[7shi-bq]]と同じ）。四元数の回転子をそのまま移す規約で、emシリーズ・[[7shi-lie3]]・[[7shi-bq]]と一致する（経緯は[lie/NOTATION.md](../lie/NOTATION.md)）
+- **回転子の規約**：作用は$x\mapsto Rx\tilde R$、四元数との対応は$\mathbf i=-\omega\sigma_1$、$\mathbf j=-\omega\sigma_2$、$\mathbf k=-\omega\sigma_3$（[[7shi-bq]]と同じ）。四元数の回転子をそのまま移す規約で、emシリーズ・[[7shi-lie3]]・[[7shi-bq]]と一致する（経緯は[CONVENTION.md](../CONVENTION.md)）
 - **共変成分の記号**：04で、$A$の共変成分を$a_\mu=\gamma_\mu\cdot A/c$と書く。空間成分$A_k$との衝突を避けるため
 - **適用範囲の明示**：スピンは1/2粒子に限り$\hbar/2$の係数を落とさない。分解と枠は$\psi\tilde\psi\ne0$のスピノルに対するもので、非零でも$\psi\tilde\psi=0$となる例（ワイルスピノルなど）は対象外。一様磁場の歳差は状態がスピン部分と軌道部分に分離している場合（01）、近似の前提は正エネルギー側の低エネルギー状態（05）
 - **左右の作用**：左乗算（ローレンツ変換）と右乗算（複素構造$\omega\sigma_3$など）は可換で、右乗算は複素構造を与える。一般の右乗算は観測量も変える（$e^{\omega\sigma_3\alpha}$だけが$e_0,e_3$を保つ）。左右の可換性は値に対する代数作用の話で、場の変換では引数も変わる
