@@ -20,7 +20,7 @@ $$
 
 ベクトル$\boldsymbol a=\sum_ka_k\sigma_k$と2ベクトルの対応は、以前の記事と同じく$\omega\boldsymbol a$です。[[7shi-em1]]
 
-回転子の作用は、emシリーズに合わせて$x\mapsto Rx\tilde R$とします。[[7shi-lie3]]の$x\mapsto R^{-1}xR$とは、回転子を逆元に取り替えた規約です。
+回転子の作用は、emシリーズや[[7shi-lie3]]と同じく$x\mapsto Rx\tilde R$とします。
 
 たとえば
 
