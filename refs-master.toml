@@ -20,8 +20,8 @@ files = [
   "hopf/06-clifford-gates.md",
   "oct/02-7d-3rot.md",
   "qua/01-pauli-qua.md",
+  "vec-oct/convention.md",
   "vec-oct/geometric-product-exp.md",
-  "vec-oct/notation.md",
 ]
 
 ["7shi-colab-cl"]

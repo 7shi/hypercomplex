@@ -68,8 +68,8 @@ files = [
   "qua/history.md",
   "qua/real-pauli-trace.md",
   "qua/tensor-from-complex.md",
+  "vec-oct/convention.md",
   "vec-oct/geometric-product-exp.md",
-  "vec-oct/notation.md",
 ]
 
 ["7shi-c2s2"]
@@ -219,8 +219,8 @@ files = [
   "hopf/06-clifford-gates.md",
   "oct/02-7d-3rot.md",
   "qua/01-pauli-qua.md",
+  "vec-oct/convention.md",
   "vec-oct/geometric-product-exp.md",
-  "vec-oct/notation.md",
 ]
 
 ["7shi-colab-cl"]
@@ -679,8 +679,8 @@ files = [
   "lie/03-spin.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
+  "vec-oct/convention.md",
   "vec-oct/geometric-product-exp.md",
-  "vec-oct/notation.md",
 ]
 
 ["7shi-mobius"]
@@ -819,7 +819,7 @@ files = [
   "lie/02-su2-so3.md",
   "qua/cd/heuristic-cmatrix.md",
   "qua/cd/real-to-cmatrix.md",
-  "vec-oct/notation.md",
+  "vec-oct/convention.md",
 ]
 
 ["7shi-qrot"]
@@ -968,7 +968,7 @@ files = [
   "em/03-waves.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
-  "vec-oct/notation.md",
+  "vec-oct/convention.md",
 ]
 
 ["7shi-vrot"]
