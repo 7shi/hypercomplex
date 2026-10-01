@@ -50,7 +50,7 @@
 | 記事 | 型 | 作用・対応 | 流儀との関係 |
 |---|---|---|---|
 | `vec-oct/notation` | 流儀型 | 流儀そのものの説明。$qvq^{-1}$ から双四元数を介して $r^{-1}xr$ を導く。対応は $i\cong e_3e_2\cong-i\sigma_1$ | 流儀の定義 |
-| `vec-oct/02-rotation` | 流儀型 | $r^{-1}vr$、$r=mn$。四元数は $rvr^*$、$ae_3e_2+be_1e_3+ce_2e_1\cong ai+bj+ck$、4Dは $r_Lqr_R$ | 一致。流儀を最も忠実に記事にした基準 |
+| `vec-oct/02-rotation` | 流儀型 | $r^{-1}vr$、$r=mn$。四元数は $rvr^*$、$ae_3e_2+be_1e_3+ce_2e_1\cong ai+bj+ck$、4Dは $r_Lqr_R$ | 一致。流儀を最も忠実に記事にした基準。`vec-oct/notation` とは独立した記事で、符号付き面積の向き・右からの積・$e_1v\leftrightarrow z$・挟み方が逆になる理由などをフィードバック済み |
 | `lie/04-spin4` | 流儀型 | $gvg^{-1}$（$g=R^{-1}$ と断り、四元数に向きをそろえる）。四元数は $qxq^{-1}$、$pxq^{-1}$ | 一致（`lie/03` の $R^{-1}vR$ を受ける） |
 | `lie/05-bch-adjoint`・`lie/07-s7`・`lie/08-g2`・`lie/double-cover` | 四元数型 | $\rho_q(x)=qxq^{-1}$ | 一致 |
 | `hopf/06-clifford-gates` | 流儀型 | $R^\dagger VR$（`qua/01` を引用）、$R_{\boldsymbol n}(\theta)=R^\dagger$ が $r$ の行列表現と断る | 一致 |
