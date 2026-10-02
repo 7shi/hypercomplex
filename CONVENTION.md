@@ -100,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの7本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの9本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの7本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの9本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03`・`clif/01-representation` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -138,4 +138,12 @@
 ## lie/03-spin.md — https://mathlog.info/articles/DRbXTeeL31pDcZyG6ml7
 - 内容：四元数との対応を $-i\sigma_k$ に変更。スピノルの例を $q=\exp(k\theta/2)$ にして全角 $+\theta$ に。回転子による回転を $R=vu$、$RxR^{-1}$ に変更し、例・共役作用との対応のrem・まとめを追従。符号の選び方のremを追加。改訂履歴を追加
 - 本文：改訂履歴、概要の前提（su(2)の一般形、対角行列の作用）、スピノルの冒頭と例、「四元数との対応」の節、クリフォード代数の冒頭の対応、「単位ベクトルの積による構成」の回転子による回転・例・rem、偶部分代数の乗積規則とSpin(3)、グレード1への共役作用のrem、まとめを差し替え（参照の変更なし）
+
+## qua/03-qua-tensor.md — https://mathlog.info/articles/Q2gHpZNKhnCki6ipol4F
+- 内容：レビューの指摘を反映。概要を「テンソル積によって生成元を2個ずつ増やして構成できる」に直し、テンソル積が実数上の $\otimes_{\mathbb R}$ であること、同型が実結合代数としてのものであることを明記。生成元の定義に $e_i^2=\pm1$ と単項式 $2^n$ 個が基底をなすことを加え、同型の判定の命題（関係式・生成・次元の一致）と証明を追加。「3個と5個」を極大な反交換集合と明記し、3個では不足する理由（単項式 $2^3=8$ 個）と5個の組の形の rem を追加。(3) を選ぶ理由の rem を本文に統合し、生成元の選択を命題から導く形に改めて、別の4元の選択で符号数が $(3,1)$ にも $(2,2)$ にもなる rem を追加。拡張の一般的な証明（命題「生成元の拡張」と証明）を追加し、$\mathbb H\otimes\mathbb H\cong\mathbb H'\otimes\mathbb H'$ の証明を補い、計量の説明と分解型の二次形式 $N(x)$ の記法を修正。命題・公式にラベルを付け、$\mathbb H\otimes\mathbb H$ の基底を ex、拡張の一般化の図を fml に変更し、対応表に範囲の断りを追加。改訂履歴を追加
+- 本文：改訂履歴、概要、「四元数のテンソル積」の冒頭と基底のボックス、「クリフォード代数の生成元」の定義・命題・証明、「$\mathbb H\otimes\mathbb H$」の探索の説明と rem「5個の組の形」、「生成元の候補の選択」の冒頭（rem を本文に統合）と命題のラベル、「生成元の選択」、「計量と符号数」の計量の説明と rem「別の4元の選択と符号数」、「一般化と公式」の図（fml）と命題・証明「生成元の拡張」と公式のラベル、「分解型四元数」の rem の $N(x)$、$\mathbb H'\otimes\mathbb H'$ の同型の証明、「$\otimes\mathbb H'$ による拡張」の一般化と公式、公式への参照、まとめの対応表を差し替え（参照の変更なし）
+
+## clif/01-representation.md — https://mathlog.info/articles/aTwHWEwHs7JRLyErT9ww
+- 内容：「テンソル積による拡張公式」の rem を、$p,q$ が入れ替わるのは $(q,p+2)$・$(q+2,p)$ の形に限り、$(p+1,q+1)$ の形では符号が維持されて正負の生成元が1個ずつ追加される旨に修正（`qua/03` のレビューの指摘）
+- 本文：「テンソル積による拡張公式」の公式の直後の rem を差し替え（参照の変更なし）
 ```
