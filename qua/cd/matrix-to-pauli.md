@@ -122,13 +122,13 @@ $$
 -1 = i^2(\sin^2\theta+\cos^2\theta) = (i\sin\theta)^2+(i\cos\theta)^2
 $$
 
-よって
+そこで、解の族として
 
 $$
 a = i\sin\theta, \quad b = i\cos\theta
 $$
 
-とパラメーター表示できます。
+を選びます。
 
 &&&rem パラメーター表示の任意性
 パラメーター表示には任意性があるため、例えば
@@ -366,8 +366,8 @@ $$
 &&= \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 &&= \sigma_1 \\
 {\sigma_2}^\dagger
- &= \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}^\dagger
-&&= \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}
+ &= \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}^\dagger
+&&= \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
 &&= \sigma_2 \\
 {\sigma_3}^\dagger
  &= \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}^\dagger

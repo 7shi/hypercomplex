@@ -1,6 +1,6 @@
 ## lie/02-su2-so3.md — https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj
-- 内容：行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加
-- 本文：改訂履歴、前提（四元数の行列表現の構成法の行）、「四元数の行列表現」の節、「$\mathfrak{su}(2)$ と $\mathfrak{sp}(1)$」の分解、「$\operatorname{SO}(2)$の複素ユニタリ化としての$\operatorname{SU}(2)$」の後半、「等傾回転の相殺」の分解とremを差し替え
+- 内容：行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加。レビューの指摘で、四元数版オイラーの公式（`fml`、$q=\pm1$ の場合、べき級数による定義）、リー代数の導入と基底の記述（接線方向、基底ベクトル）、$K_H=\pm I_HJ_H$ の導出、$J_H$ の動機づけ、符号の選び方のrem（パウリ行列との対応）、$\mathfrak{su}(2)$ の十分性と行列・四元数の同一視、「ならでは」の限定、ノルムの乗法性のrem、複素ユニタリ化の説明（共役が入ること、複素行列式）、成分内・成分間の回転の限定、rem「座標の取り方による回転方向の見え方」、共役作用が回転であることの論証、二重被覆の定理と証明、局所微分同相の確認、スピンのrem、$\operatorname{Sp}(1)$ の名称、概要・まとめの表現を修正
+- 本文：改訂履歴、前提（四元数の行列表現の構成法の行）、「四元数の行列表現」の節、「$\mathfrak{su}(2)$ と $\mathfrak{sp}(1)$」の分解、「$\operatorname{SO}(2)$の複素ユニタリ化としての$\operatorname{SU}(2)$」の後半、「等傾回転の相殺」の分解とrem、概要、「$\operatorname{Sp}(1)$」の説明、「オイラーの公式の四元数版」、「リー代数 $\mathfrak{sp}(1)$」の冒頭と「基底」、「括弧積」の閉性の説明、「$\operatorname{SU}(2)$」のrem、「$\mathfrak{su}(2)$ と $\mathfrak{sp}(1)$」の十分性・同一視・rem「リー群とリー代数の同居」、「ユニタリ条件と行列式1の四元数的な意味」のrem、「共役作用による回転」、「二重被覆」、「リー代数の同型」、「片側作用と両側作用」のrem、まとめを差し替え
 - 7shi-qcm: 削除（発見的手法による四元数の複素行列表現の構成 https://mathlog.info/articles/IHhFIq8wMAe1ymcklkyO）
 - 7shi-qp: 追加（四元数の行列表現からパウリ行列まで https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu）
 - 7shi-nonion: 追加（シルベスターの九元数 (nonion) https://mathlog.info/articles/3gMUAXJD714J2LtlfIqU）
