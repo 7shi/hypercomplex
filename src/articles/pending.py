@@ -15,22 +15,34 @@ def load_articles_tsv(path: Path) -> list[tuple[str, str, str, str]]:
     return rows
 
 
-def find_pending(rows: list[tuple[str, str, str, str]]) -> list[tuple[str, str]]:
-    """Return (md, title) for rows that are unpublished (no url) and
-    unreviewed (no matching .txt review trace)."""
-    pending: list[tuple[str, str]] = []
+def find_pending(
+    rows: list[tuple[str, str, str, str]],
+) -> tuple[list[tuple[bool, str, str]], list[tuple[bool, str, str]]]:
+    """Return (unreviewed, stale) lists of (published, md, title).
+
+    unreviewed: no matching .txt review trace.
+    stale: the .txt exists but the md is older than it (review not reflected).
+    """
+    unreviewed: list[tuple[bool, str, str]] = []
+    stale: list[tuple[bool, str, str]] = []
     for date_, url, md, title in rows:
-        if not md or url:
+        if not md:
             continue
-        if (ROOT / md).with_suffix(".txt").exists():
-            continue
-        pending.append((md, title))
-    return pending
+        md_path = ROOT / md
+        txt_path = md_path.with_suffix(".txt")
+        entry = (bool(url), md, title)
+        if not txt_path.exists():
+            unreviewed.append(entry)
+        elif md_path.exists() and md_path.stat().st_mtime < txt_path.stat().st_mtime:
+            stale.append(entry)
+    unreviewed.sort(key=lambda e: e[1])
+    stale.sort(key=lambda e: e[1])
+    return unreviewed, stale
 
 
 def add_subparser(subparsers: argparse._SubParsersAction) -> None:
     parser = subparsers.add_parser(
-        "pending", help="articles.tsv → 未公開かつ未レビューの記事一覧"
+        "pending", help="articles.tsv → 未レビュー・レビュー未反映の記事一覧（[済]公開済・[未]未公開）"
     )
     parser.set_defaults(func=pending_command)
 
@@ -40,11 +52,17 @@ def pending_command(args: argparse.Namespace) -> None:
         raise SystemExit(f"missing {ARTICLES_TSV}; run: articles merge")
 
     rows = load_articles_tsv(ARTICLES_TSV)
-    pending = find_pending(rows)
+    unreviewed, stale = find_pending(rows)
 
-    if not pending:
-        print("未公開かつ未レビューの記事はありません")
-        return
-
-    for md, title in pending:
-        print(f"{md}\t{title}")
+    sections = [
+        ("レビューされていない記事", unreviewed),
+        ("レビューが反映されていない記事", stale),
+    ]
+    for i, (heading, entries) in enumerate(sections):
+        if i:
+            print()
+        print(f"# {heading} ({len(entries)})")
+        width = len(str(len(entries)))
+        for n, (published, md, title) in enumerate(entries, 1):
+            mark = "[済]" if published else "[未]"
+            print(f"{n:>{width}}. {mark} {md} {title}")
