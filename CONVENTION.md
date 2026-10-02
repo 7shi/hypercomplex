@@ -39,7 +39,8 @@
 | `hopf/02-spinor-tensor` | 2024/05/24 | 四元数型 | $q\mathbf kq^*$ | 変更不要 |
 | `oct/02-7d-3rot` | 2024/06/26 | 四元数型 | 八元数の $rxr^*$ | 変更不要 |
 | `qua/01-pauli-qua` | 2024/07/11 | 規約型 | $RVR^\dagger$、$R=\exp(-\frac{i\theta}2\boldsymbol n\cdot\boldsymbol\sigma)\cong r$。四元数は $rvr^*$。鏡映は $NM$ | 改訂済み（以前は $R^\dagger VR$、$R\cong r^*$。`vec-oct/convention` のレビューで外積の角の範囲と $V'$ の式も修正）、Mathlog未反映 |
-| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、2次元は $i\cong e_2e_1$（$ve_1$ 型の対応、$ba\cong a^*b$）、四元数は $i\cong e_3e_2$（負号あり） | 改訂済み（外積の符号付き面積、2次元の対応を $i\cong e_1e_2$ から変更。`vec-oct/convention` のレビューで $p$ の非平行の条件を追加）、Mathlog未反映 |
+| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、2次元は $i\cong e_2e_1$（$ve_1$ 型の対応、$ba\cong a^*b$）、四元数は $i\cong e_3e_2$（負号あり） | 改訂済み（外積の符号付き面積、2次元の対応を $i\cong e_1e_2$ から変更。`vec-oct/convention` のレビューで $p$ の非平行の条件を追加、`vec-oct/02` のレビューで rem「回転子との関係」の表現を修正）、Mathlog未反映 |
+| `vec-oct/01-reflection` | 2024/07/16 | 対応のみ（規約と無関係） | 鏡映 $I-2\mathbf n\mathbf n^{\mathsf T}$、$-nvn$ | `vec-oct/02` のレビューで文言を修正（法線の説明、「冪等性」→「対合性」、超平面が原点を通る旨を明示）、Mathlog未反映 |
 | `qua/cd/matrix-to-pauli` | 2025/05/03 | 対応のみ | $I_H=-i\sigma_1$ など（負号あり） | 変更不要 |
 | `qua/spherical-trig` | 2025/11/29 | 四元数型 | $qvq^{-1}$ | 変更不要 |
 | `lie/02-su2-so3` | 2026/07/10 | 四元数型 | $qxq^{-1}$、等傾回転。行列表現を標準形 $-i\sigma_k$ に改訂 | 改訂済み、Mathlog未反映 |
@@ -80,7 +81,7 @@
 | 記事 | 状態 | 重点 |
 |---|---|---|
 | `vec-oct/convention` | 新規 | 四元数の回転子をそのまま移す筋立て、位相の負号と面の向きの説明、2次元で複素数に移す2通りの対応（$e_1v$ で $ab\cong a^*b$、$ve_1$ で $ba\cong a^*b$）と四元数に拡張するときに $i\cong e_2e_1$ を選ぶ論法、「別の書き方との関係」の節 |
-| `vec-oct/02-rotation` | 全面改訂（既存 `.txt` は旧版） | 回転子 $r=nm$・$rvr^{-1}$、通常の鏡映 $-nvn$ への置き換え、2次元の複素数との2通りの対応と $e_2e_1$ を選ぶ理由、4次元の成分の対応（基底の反転）と $r_L=T(r^\dagger)$・$r_R=T(\tilde r)$ |
+| `vec-oct/02-rotation` | 全面改訂（`.txt` は改訂版へのレビューで、指摘は反映済み） | 回転子 $r=nm$・$rvr^{-1}$、通常の鏡映 $-nvn$ への置き換え、2次元の複素数との2通りの対応と $e_2e_1$ を選ぶ理由、4次元の成分の対応（基底の反転）と $r_L=T(r^\dagger)$・$r_R=T(\tilde r)$ |
 | `vec-oct/geometric-product-exp` | 公開済み・改訂 | $i\cong e_2e_1$、$ba\cong a^*b$、$e_1e_2$ でも対応できること（$ab\cong a^*b$）と四元数とそろえる理由の一文、rem「回転子との関係」、外積の符号付き面積 |
 | `lie/02-su2-so3` | 公開済み・改訂 | 行列式の要請からの行列表現の導出、成分内・成分間の回転 |
 | `lie/03-spin` | 公開済み・改訂 | 対応 $-i\sigma_k$、回転子 $R=vu$・$RxR^{-1}$、例とremの符号 |
@@ -99,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの4本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの5本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの4本（`--no-refs`）**：`qua/01`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの5本（`--no-refs`）**：`qua/01`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -114,8 +115,12 @@
 - 内容：パウリ行列による回転を、四元数の生成子をそのまま移した $RVR^\dagger$（$R=\exp(-\frac{i\theta}2N)\cong r$）に変更。鏡映の節を $NM$ に。内積・外積公式の角を $0\le\theta\le\pi$ に直し、規格化できるのは $0<\theta<\pi$ の場合に限ると補った。$V'=RVR^\dagger\cong rvr^*$ は $V\cong hv$ なので、式から $\cong rvr^*$ を外し、$V'\cong h(rvr^*)$ であると説明を補った。改訂履歴を追加
 - 本文：改訂履歴、概要の5、「四元数からパウリ行列への変換」の後半（生成子の定義）、「パウリ行列による回転の表現」、「2次の元の回転」、「回転表現のまとめ」、「回転の生成子の分解」の積と回転表現、「内積と外積」の公式の角の範囲・rem・規格化の条件、「パウリ行列による回転の表現」の $V'$ の式と直後の説明を差し替え（参照の変更なし）
 
+## vec-oct/01-reflection.md — https://mathlog.info/articles/yZGOwcB2XXpfEvlCuSW4
+- 内容：「鏡映」の説明の法線を「鏡映面に垂直な単位ベクトル」に修正し、超平面が原点を通ることを明示。八元数（7次元）の非結合性の影響の「冪等性」を「対合性」に修正。改訂履歴を追加
+- 本文：改訂履歴、「鏡映」の定義の直後と法線の説明、「八元数（7次元）」の非結合性の影響の箇条書きの3を差し替え（参照の変更なし）
+
 ## vec-oct/geometric-product-exp.md — https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V
-- 内容：2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。左から $e_1$ を掛けて $i\cong e_1e_2$ とする対応（$ab\cong a^*b$）もあり、四元数とそろえるために $e_2e_1$ を選ぶことを一文で追記。「任意次元の指数関数表示」とまとめの $p=(a\wedge b)/|a\wedge b|$ に「$a,b$ が平行でない場合」の条件を足し、平行・反平行（$\theta=0,\pi$）では幾何積がスカラーで規格化が不要なことを補う。改訂履歴を追加
+- 内容：2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。左から $e_1$ を掛けて $i\cong e_1e_2$ とする対応（$ab\cong a^*b$）もあり、四元数とそろえるために $e_2e_1$ を選ぶことを一文で追記。rem「回転子との関係」を「$m$ に左から掛けると $n$ に移す元（$(nm)m=n$）」に修正。「任意次元の指数関数表示」とまとめの $p=(a\wedge b)/|a\wedge b|$ に「$a,b$ が平行でない場合」の条件を足し、平行・反平行（$\theta=0,\pi$）では幾何積がスカラーで規格化が不要なことを補う。改訂履歴を追加
 - 本文：改訂履歴、「指数関数による表現」の冒頭、「2次元の外積」の節、「複素数との対応」の節（rem「回転子との関係」を含む）、「外積における角度の範囲」のrem、「任意次元の指数関数表示」の説明と枠（$p$ の非平行の条件）、「四元数との対応」の定義の直後、まとめを差し替え（参照の変更なし）
 
 ## qua/04-4d-bsqua.md — https://mathlog.info/articles/asrMOxuKsJIdPqANfOs3
