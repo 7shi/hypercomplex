@@ -338,7 +338,7 @@ $$
 | 3次元 | $\operatorname{Cl}_{3,0}(\mathbb R)$，$\operatorname{Cl}_{0,3}(\mathbb R)$ | $\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$   | $\operatorname{Spin}(3)\cong\mathrm{SU}(2)$                      |
 | 4次元 | $\operatorname{Cl}_{4,0}(\mathbb R)$，$\operatorname{Cl}_{0,4}(\mathbb R)$ | $\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$  | $\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$  |
 
-3次元回転が記述される$\operatorname{Cl}_{0,3}(\mathbb R)$が、1つ上の4次元では偶部分代数として再登場しています。$\operatorname{Cl}_{0,3}(\mathbb R)$は「四元数と、それに可換な体積要素$\Omega$」という形をしており、4次元では$\Omega^2=e_1^2e_2^2e_3^2e_4^2$となるため、どちらの計量でも$\Omega^2=+1$です。これが**分解型双四元数**$\mathbb C'\otimes\mathbb H$（$\mathbb C'=\mathbb R[\omega]/(\omega^2-1)$は分解型複素数）であり、分解型複素数と同様に冪等元$\dfrac{1\pm\Omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解できます。後で見るように、この2つの四元数成分は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。対は符号ごと保持されるため、単位四元数の対がなすのは商$\mathrm{SO}(4)$ではなく直積$\mathrm{SU}(2)\times\mathrm{SU}(2)\cong\operatorname{Spin}(4)$です。回転行列そのものを構成する$M_4(\mathbb R)$と、対を符号ごと保持する$\mathbb H\oplus\mathbb H$という、2つの表現がここで分岐します。
+3次元回転が記述される$\operatorname{Cl}_{0,3}(\mathbb R)$が、1つ上の4次元では偶部分代数として再登場しています。$\operatorname{Cl}_{0,3}(\mathbb R)$は「四元数と、それに可換な体積要素$\Omega$」という形をしており、4次元では$\Omega^2=e_1^2e_2^2e_3^2e_4^2$となるため、どちらの計量でも$\Omega^2=+1$です。これが**分解型双四元数**$\mathbb C'\otimes\mathbb H$（$\mathbb C'=\mathbb R[\omega]/(\omega^2-1)$は分解型複素数）であり、分解型複素数と同様に冪等元$\dfrac{1\pm\Omega}2$によって$\mathbb H\oplus\mathbb H$へ直和分解できます。後で見るように、この2つの四元数成分は、順序の入れ替えと逆元を介して左右の回転子$(r_L,r_R)$に対応します。対は符号ごと保持されるため、単位四元数の対がなすのは商$\mathrm{SO}(4)$ではなく直積$\mathrm{SU}(2)\times\mathrm{SU}(2)\cong\operatorname{Spin}(4)$です。回転行列そのものを構成する$M_4(\mathbb R)$と、対を符号ごと保持する$\mathbb H\oplus\mathbb H$という、2つの表現がここで分岐します。
 
 ## グレードの振り分けと分解型双四元数へのマッピング
 
@@ -673,7 +673,7 @@ $\varphi$と$T$から直接得られるのは、偶部分代数$\mathbb H\oplus\
 $$
 G(r)=\bigl(T(\varphi(r)),\ T(\varphi(r)^{\dagger})\bigr)=(r_R^{-1},\ r_L)
 $$
-$\varphi,T,\dagger$はいずれも準同型なので、$G$は成分ごとの積を保ちます。左右の回転子そのものの対$(r_L,r_R)$は、これを共役と逆元で読み替えたものです。読み替えた側では成分ごとの積にならず、回転子の積$rs$に対応する対は
+$\varphi,T,\dagger$はいずれも準同型なので、$G$は成分ごとの積を保ちます。左右の回転子そのものの対$(r_L,r_R)$は、$G(r)=(A,B)$から成分の順序を入れ替え、第1成分$A=r_R^{-1}$の逆元を取って$(r_L,r_R)=(B,A^{-1})$と作ったものです。読み替えた側では成分ごとの積にならず、回転子の積$rs$に対応する対は
 $$
 (r_Ls_L,\ s_Rr_R)
 $$
@@ -681,7 +681,7 @@ $$
 &&&
 
 &&&rem 3次元回転
-4次元回転の一部としての3次元回転は、$b_{12}=b_{13}=b_{14}=0$（2ベクトルが$e_1$を含まない）より$U_L=-U_R$として得られます。このとき$r_L=r_R^*$となり、挟み込み$rqr^*$の形に帰着します。
+4次元回転の一部としての3次元回転は、$b_{12}=b_{13}=b_{14}=0$（2ベクトルが$e_1$を含まない）より$U_L=-U_R$として得られます。このとき$r_R=r_L^*$となり、$q'=r_Lqr_L^*$という3次元回転の共役作用に帰着します。
 &&&
 
 &&&rem 自己双対分解
@@ -692,7 +692,7 @@ $$
 
 # まとめ
 
-四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R^{-1},r_L)$として住みます。この対は、共役と逆元を介して左右の回転子$(r_L,r_R)$に対応します。
+四元数の左右から挟む作用は$\mathbb H\otimes_{\mathbb R}\mathbb H\cong M_4(\mathbb R)$を張り、$\mathrm{SO}(4)$の回転行列そのものを直接構成します。ただし、像の回転行列だけを見ると2つの持ち上げを区別する符号は失われるため、これは$\mathrm{SO}(4)$の標準ベクトル表現であって、スピノル表現ではありません。符号を区別する$\operatorname{Spin}(4)$の置き場所は、偶部分代数の階梯の上にあります。3次元回転では偶部分代数$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$に$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$が住むように、4次元回転では偶部分代数$\operatorname{Cl}_{0,3}(\mathbb R)\cong\mathbb H\oplus\mathbb H$（分解型双四元数）の直和成分に、$\operatorname{Spin}(4)$が単位四元数の対$(r_R^{-1},r_L)$として住みます。この対は、順序の入れ替えと逆元を介して左右の回転子$(r_L,r_R)$に対応します。
 
 4次元の任意の回転は直交2平面の二重回転の標準形にでき、その独立な2つの回転角が和と差に組み替えられて右と左の回転角になることは、等傾回転の合成として四元数だけで確認できました。回転子の側では、左作用か右作用かの違いは因子$1\pm\Omega$に集約され、一般の回転子は可換な左右の等傾回転子の積に因数分解されます。準同型写像$T\circ\varphi$は、この$1\pm\Omega$の成分を四元数として読み出し、和と差への組み替えを一般の2ベクトルの6成分全体へ広げる装置です。その中身は2つの冪等元（行列表現では射影行列$\operatorname{diag}(1,0),\operatorname{diag}(0,1)$）による直和成分への射影であり、2ベクトルの言葉では自己双対・反自己双対分解にあたります。これにより、2ベクトルの6成分が純虚四元数$U_L,U_R$の各3成分に分離され、それらの指数関数から左右の単位四元数$r_L,r_R$が得られます。
 
