@@ -509,11 +509,11 @@ $$
 
 &&&fml パウリ行列による回転の表現
 $$
-V' = RVR^{\dagger} \cong rvr^* \quad (r \cong R,\ r^* \cong R^{\dagger})
+V' = RVR^{\dagger} \quad (r \cong R,\ r^* \cong R^{\dagger})
 $$
 &&&
 
-$RR^{\dagger}=I$より$R$はユニタリ行列で、$RVR^{\dagger}$はユニタリ変換かつ相似変換です。四元数の生成子をそのまま移したため、挟み方も四元数の$rvr^*$と同じ並びになります。[[7shi-qrt]]
+$RR^{\dagger}=I$より$R$はユニタリ行列で、$RVR^{\dagger}$はユニタリ変換かつ相似変換です。四元数の生成子をそのまま移したため、挟み方も四元数の$rvr^*$と同じ並びになります。$V$は純虚四元数$v$に$h$を付けた$hv$に対応し、$h$は$R$と可換なので、$V'\cong h(rvr^*)$です。[[7shi-qrt]]
 
 ### 2次の元の回転
 
@@ -559,12 +559,12 @@ $$
 $$
 \begin{aligned}
 V \cdot W &= |V||W|\cos\theta \\
-|V \wedge W| &= |V||W|\sin\theta \quad (0 \le \theta < \pi)
+|V \wedge W| &= |V||W|\sin\theta \quad (0 \le \theta \le \pi)
 \end{aligned}
 $$
 
 &&&rem ノルムと回転角
-ノルムの定義より$|V \wedge W| \ge 0$ですが、$\theta$の範囲では$\sin\theta \ge 0$となるため、整合的です。このパラメーターで回転を生成した場合、両側から挟むことから回転角は$2\theta\ (0 \le 2\theta < 2\pi)$となるため、全角度がカバーできます。
+ノルムの定義より$|V \wedge W| \ge 0$ですが、$\theta$の範囲では$\sin\theta \ge 0$となるため、整合的です。このパラメーターで回転を生成した場合、両側から挟むことから回転角は$2\theta\ (0 \le 2\theta \le 2\pi)$となるため、全角度がカバーできます。
 &&&
 
 これにより、積$VW$を確認します。
@@ -578,7 +578,7 @@ VW
 \end{aligned}
 $$
 
-ここで$\dfrac{V \wedge W}{|V \wedge W|}$は2ベクトル$V \wedge W$を正規化した単位2ベクトルで、$V,W$が張る平面を表します。内積と外積はその平面上での操作であることから、本質的には2次元の操作です。
+ここで$\dfrac{V \wedge W}{|V \wedge W|}$は2ベクトル$V \wedge W$を正規化した単位2ベクトルで、$V,W$が張る平面を表します。正規化できるのは$V,W$が平行でない場合（$0<\theta<\pi$）に限ります。平行・反平行の場合は$V \wedge W=0$で積はスカラーとなり、平面は一意に定まらないため、別に扱います。内積と外積はその平面上での操作であることから、本質的には2次元の操作です。
 
 ## 回転の生成子の分解
 

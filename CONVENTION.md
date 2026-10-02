@@ -38,8 +38,8 @@
 | `hopf/01-quaternion` | 2024/05/14 | 四元数型 | $qpq^*$ | 変更不要 |
 | `hopf/02-spinor-tensor` | 2024/05/24 | 四元数型 | $q\mathbf kq^*$ | 変更不要 |
 | `oct/02-7d-3rot` | 2024/06/26 | 四元数型 | 八元数の $rxr^*$ | 変更不要 |
-| `qua/01-pauli-qua` | 2024/07/11 | 規約型 | $RVR^\dagger$、$R=\exp(-\frac{i\theta}2\boldsymbol n\cdot\boldsymbol\sigma)\cong r$。四元数は $rvr^*$。鏡映は $NM$ | 改訂済み（以前は $R^\dagger VR$、$R\cong r^*$）、Mathlog未反映 |
-| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、2次元は $i\cong e_2e_1$（$ve_1$ 型の対応、$ba\cong a^*b$）、四元数は $i\cong e_3e_2$（負号あり） | 改訂済み（外積の符号付き面積、2次元の対応を $i\cong e_1e_2$ から変更）、Mathlog未反映 |
+| `qua/01-pauli-qua` | 2024/07/11 | 規約型 | $RVR^\dagger$、$R=\exp(-\frac{i\theta}2\boldsymbol n\cdot\boldsymbol\sigma)\cong r$。四元数は $rvr^*$。鏡映は $NM$ | 改訂済み（以前は $R^\dagger VR$、$R\cong r^*$。`vec-oct/convention` のレビューで外積の角の範囲と $V'$ の式も修正）、Mathlog未反映 |
+| `vec-oct/geometric-product-exp` | 2024/07/24 | 対応のみ | $ab=\|a\|\|b\|e^{\theta e_1e_2}$、2次元は $i\cong e_2e_1$（$ve_1$ 型の対応、$ba\cong a^*b$）、四元数は $i\cong e_3e_2$（負号あり） | 改訂済み（外積の符号付き面積、2次元の対応を $i\cong e_1e_2$ から変更。`vec-oct/convention` のレビューで $p$ の非平行の条件を追加）、Mathlog未反映 |
 | `qua/cd/matrix-to-pauli` | 2025/05/03 | 対応のみ | $I_H=-i\sigma_1$ など（負号あり） | 変更不要 |
 | `qua/spherical-trig` | 2025/11/29 | 四元数型 | $qvq^{-1}$ | 変更不要 |
 | `lie/02-su2-so3` | 2026/07/10 | 四元数型 | $qxq^{-1}$、等傾回転。行列表現を標準形 $-i\sigma_k$ に改訂 | 改訂済み、Mathlog未反映 |
@@ -102,37 +102,27 @@
 参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの4本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
-2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめ、下の表から `lie/02` を外す。
-3. **残りの4本（`--no-refs`）**：`qua/01`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きから `lie/02` を除いた内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
+3. **残りの4本（`--no-refs`）**：`qua/01`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/03` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
-### 未反映の記事
+### 未反映の記事（`mathlog_fix.md` の下書き）
 
-| 記事 | Mathlog | 内容 | 参照の変更 |
-|---|---|---|---|
-| `qua/01-pauli-qua` | `lZ1X3t6exNS3NrNArqji` | パウリ行列による回転を、四元数の生成子をそのまま移した $RVR^\dagger$（$R=\exp(-\frac{i\theta}2N)\cong r$）に変更。鏡映の節を $NM$ に。改訂履歴を追加 | なし（`--no-refs`） |
-| `vec-oct/geometric-product-exp` | `YZmxak6ObeP6rLQnyU2V` | 2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。左から $e_1$ を掛けて $i\cong e_1e_2$ とする対応（$ab\cong a^*b$）もあり、四元数とそろえるために $e_2e_1$ を選ぶことを一文で追記。改訂履歴を追加 | なし（`--no-refs`） |
-| `lie/02-su2-so3` | `Utdur1fLLzrWVHOJHifj` | 行列表現を行列式の要請から導く標準形に変更。$\mathfrak{su}(2)$ の分解、成分内・成分間の回転（$k$ と $j$）、等傾回転のremを追従。改訂履歴を追加 | `7shi-qp`・`7shi-nonion` を追加、`7shi-qcm` を削除（`--refs`） |
-| `qua/04-4d-bsqua` | `asrMOxuKsJIdPqANfOs3` | 回転を $rvr^{-1}$、$r=\exp(-B/2)$ に変更。等傾回転の回転子、射影による証明（$r_L=T(\varphi(r)^\dagger)$、$r_R=T(\varphi(r))^{-1}$）、直和成分のrem、まとめを追従。改訂履歴を追加 | なし（`--no-refs`） |
-| `lie/03-spin` | `DRbXTeeL31pDcZyG6ml7` | 四元数との対応を $-i\sigma_k$ に変更。スピノルの例を $q=\exp(k\theta/2)$ にして全角 $+\theta$ に。回転子による回転を $R=vu$、$RxR^{-1}$ に変更し、例・共役作用との対応のrem・まとめを追従。符号の選び方のremを追加。改訂履歴を追加 | なし（`--no-refs`） |
-
-### `mathlog_fix.md` の下書き
+各記事の内容と差し替え箇所をまとめる。参照の変更がある `lie/02` は別枠で、リポジトリ直下の `mathlog_fix.md` に書いてあるため、この下書きには含めない。
 
 ```markdown
 ## qua/01-pauli-qua.md — https://mathlog.info/articles/lZ1X3t6exNS3NrNArqji
-- 本文：改訂履歴、概要の5、「四元数からパウリ行列への変換」の後半（生成子の定義）、「パウリ行列による回転の表現」、「2次の元の回転」、「回転表現のまとめ」、「回転の生成子の分解」の積と回転表現を差し替え（参照の変更なし）
+- 内容：パウリ行列による回転を、四元数の生成子をそのまま移した $RVR^\dagger$（$R=\exp(-\frac{i\theta}2N)\cong r$）に変更。鏡映の節を $NM$ に。内積・外積公式の角を $0\le\theta\le\pi$ に直し、規格化できるのは $0<\theta<\pi$ の場合に限ると補った。$V'=RVR^\dagger\cong rvr^*$ は $V\cong hv$ なので、式から $\cong rvr^*$ を外し、$V'\cong h(rvr^*)$ であると説明を補った。改訂履歴を追加
+- 本文：改訂履歴、概要の5、「四元数からパウリ行列への変換」の後半（生成子の定義）、「パウリ行列による回転の表現」、「2次の元の回転」、「回転表現のまとめ」、「回転の生成子の分解」の積と回転表現、「内積と外積」の公式の角の範囲・rem・規格化の条件、「パウリ行列による回転の表現」の $V'$ の式と直後の説明を差し替え（参照の変更なし）
 
 ## vec-oct/geometric-product-exp.md — https://mathlog.info/articles/YZmxak6ObeP6rLQnyU2V
-- 本文：改訂履歴、「指数関数による表現」の冒頭、「2次元の外積」の節、「複素数との対応」の節（rem「回転子との関係」を含む）、「外積における角度の範囲」のrem、「四元数との対応」の定義の直後、まとめを差し替え（参照の変更なし）
-
-## lie/02-su2-so3.md — https://mathlog.info/articles/Utdur1fLLzrWVHOJHifj
-- 本文：改訂履歴、前提、「四元数の行列表現」の節、su(2)の分解、「SO(2)の複素ユニタリ化」の後半、「等傾回転の相殺」の分解とremを差し替え
-- 7shi-qcm: 削除
-- 7shi-qp: 追加
-- 7shi-nonion: 追加
+- 内容：2次元の外積を符号付き面積として扱い、角度の制限を3次元に限定。複素数との対応を $i\cong e_2e_1$ に変更（$ve_1\leftrightarrow v_1+iv_2$、幾何積 $ba$ が $a^*b$ に対応）し、四元数の $k\cong e_2e_1$ との一致を追記。左から $e_1$ を掛けて $i\cong e_1e_2$ とする対応（$ab\cong a^*b$）もあり、四元数とそろえるために $e_2e_1$ を選ぶことを一文で追記。「任意次元の指数関数表示」とまとめの $p=(a\wedge b)/|a\wedge b|$ に「$a,b$ が平行でない場合」の条件を足し、平行・反平行（$\theta=0,\pi$）では幾何積がスカラーで規格化が不要なことを補う。改訂履歴を追加
+- 本文：改訂履歴、「指数関数による表現」の冒頭、「2次元の外積」の節、「複素数との対応」の節（rem「回転子との関係」を含む）、「外積における角度の範囲」のrem、「任意次元の指数関数表示」の説明と枠（$p$ の非平行の条件）、「四元数との対応」の定義の直後、まとめを差し替え（参照の変更なし）
 
 ## qua/04-4d-bsqua.md — https://mathlog.info/articles/asrMOxuKsJIdPqANfOs3
+- 内容：回転を $rvr^{-1}$、$r=\exp(-B/2)$ に変更。等傾回転の回転子、射影による証明（$r_L=T(\varphi(r)^\dagger)$、$r_R=T(\varphi(r))^{-1}$）、直和成分のrem、まとめを追従。改訂履歴を追加
 - 本文：改訂履歴、概要、「SO(4)とCl_{4,0}(R)」の回転と回転子、単純回転の例、「等傾回転の合成」の回転子、「純虚四元数への変換」のQの式、公式「回転子の対応」、remの例、証明1・2、rem「直和成分と左右の回転子」、まとめと枠「回転子の対応」を差し替え（参照の変更なし）
 
 ## lie/03-spin.md — https://mathlog.info/articles/DRbXTeeL31pDcZyG6ml7
+- 内容：四元数との対応を $-i\sigma_k$ に変更。スピノルの例を $q=\exp(k\theta/2)$ にして全角 $+\theta$ に。回転子による回転を $R=vu$、$RxR^{-1}$ に変更し、例・共役作用との対応のrem・まとめを追従。符号の選び方のremを追加。改訂履歴を追加
 - 本文：改訂履歴、概要の前提（su(2)の一般形、対角行列の作用）、スピノルの冒頭と例、「四元数との対応」の節、クリフォード代数の冒頭の対応、「単位ベクトルの積による構成」の回転子による回転・例・rem、偶部分代数の乗積規則とSpin(3)、グレード1への共役作用のrem、まとめを差し替え（参照の変更なし）
 ```
