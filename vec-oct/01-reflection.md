@@ -1,7 +1,7 @@
 ユークリッド空間における超平面に関する鏡映操作を、ベクトル、複素数、四元数、八元数、クリフォード代数の各数体系を通じて代数的に定式化します。
 
 &&& 改訂履歴
-- 2026.10.02 法線を「鏡映面に垂直な単位ベクトル」と修正し、超平面が原点を通ることを明示。非結合性の影響の「冪等性」を「対合性」に修正
+- 2026.10.02 法線を「鏡映面に垂直な単位ベクトル」と修正し、超平面が原点を通ることを明示。非結合性の影響の「冪等性」を「対合性」に修正。純虚四元数の積の$k$係数と、単位ベクトルとの内積が射影の符号付きの長さであることを修正
 &&&
 
 # 概要
@@ -89,8 +89,8 @@ $\mathrm A \cdot \mathrm B = \|\mathrm A\| \|\mathrm B\| \cos\theta$
 
 特別な場合として、単位ベクトルとの内積が頻出で、鏡映でも使用されます。
 
-- ベクトル$\mathbf{v}$と単位ベクトル$\mathbf{n}$の内積は、射影されたベクトル$\mathbf{v_p}$の長さになります。$\mathbf{v} \cdot \mathbf{n}=\|\mathbf{v_p}\|$
-- 内積に更に$\mathbf{n}$を掛ければ、射影されたベクトル$\mathbf{v_p}$が得られます。$(\mathbf{v} \cdot \mathbf{n})\mathbf{n}=\|\mathbf{v_p}\|\mathbf{n}=\mathbf{v_p}$
+- ベクトル$\mathbf{v}$と単位ベクトル$\mathbf{n}$の内積は、射影されたベクトル$\mathbf{v_p}$の符号付きの長さになります（$\mathbf n$と同じ向きなら正、逆向きなら負）。$\mathbf{v_p}=(\mathbf{v} \cdot \mathbf{n})\mathbf{n}$、$\|\mathbf{v_p}\|=|\mathbf{v} \cdot \mathbf{n}|$
+- 内積に更に$\mathbf{n}$を掛ければ、射影されたベクトル$\mathbf{v_p}$が得られます。$(\mathbf{v} \cdot \mathbf{n})\mathbf{n}=\mathbf{v_p}$
 - 射影の作用を取り出せば、射影行列（射影作用素）$(\cdot \mathbf{n})\mathbf{n}=\mathbf{n}(\mathbf{n}\cdot)=\mathbf{n}\mathbf{n}^{\mathsf T}$が得られます。[[proj]]
 
 &&&rem 冪等行列
@@ -224,7 +224,7 @@ $$
 vw
 &=(v_xi+v_yj+v_zk)(w_xi+w_yj+w_zk) \\
 &=-(v_xw_x+v_yw_y+v_zw_z) \\
-&\quad+(v_yw_z-v_zw_y)i+(v_zw_x-v_xw_z)j+(v_yw_z-v_zw_y)k
+&\quad+(v_yw_z-v_zw_y)i+(v_zw_x-v_xw_z)j+(v_xw_y-v_yw_x)k
 \end{aligned}
 $$
 $$
