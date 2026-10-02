@@ -110,9 +110,9 @@ $$
 その生成元は以下の行列で表されます。
 
 $$
-i \cong \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
-j \cong \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
-k = ij \cong \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
+i \mapsto \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
+j \mapsto \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
+k = ij \mapsto \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
 $$
 
 &&&rem 複素数と分解型複素数
@@ -131,14 +131,14 @@ $$
 
 クリフォード代数は、$\mathbb H,\mathbb H'$とのテンソル積によって拡張できます。[[7shi-qt]]
 
-&&&fml クリフォード代数の$⊗\mathbb H$による拡張
+&&&fml クリフォード代数の$⊗\mathbb H$による拡張 [fml-ext-h]
 $$
 \operatorname{Cl}_{p,q}(\mathbb R) ⊗ \mathbb H
 \cong \operatorname{Cl}_{q,p+2}(\mathbb R)
 $$
 &&&
 
-&&&fml クリフォード代数の$⊗\mathbb H'$による拡張
+&&&fml クリフォード代数の$⊗\mathbb H'$による拡張 [fml-ext-hs]
 $$
 \operatorname{Cl}_{p,q}(\mathbb R) ⊗ \mathbb H'
 \cong \operatorname{Cl}_{q+2,p}(\mathbb R)
@@ -186,7 +186,7 @@ $$
 &&&
 
 &&&rem
-1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は同型です。$\mathbb H' \cong M_2(\mathbb R)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong M_2(\mathbb{R}) \otimes M_2(\mathbb{R}) \cong M_4(\mathbb{R})$と計算できます。[[7shi-qt]]
+1行目：$\mathbb{H} \otimes \mathbb{H} \cong \mathbb{H}' \otimes \mathbb{H}'$は以前の記事で確認しました。$\mathbb H' \cong M_2(\mathbb R)$より、$\mathbb{H}' \otimes \mathbb{H}' \cong M_2(\mathbb{R}) \otimes M_2(\mathbb{R}) \cong M_4(\mathbb{R})$と計算できます。[[7shi-qt]]
 
 3行目：$\mathbb{C} \otimes \mathbb{H}$は双四元数であり、パウリ行列との対応によって$M_2(\mathbb{C})$と同型になることを以前の記事で確認しました。一方、$\mathbb{C} \otimes \mathbb{H}' \cong \mathbb{C} \otimes M_2(\mathbb{R}) \cong M_2(\mathbb{C})$となるため、両者は同型です。[[7shi-bq]]
 &&&
@@ -199,7 +199,7 @@ $$M_2(\mathbb{H}) \otimes \mathbb{H} \cong M_2(\mathbb{H} \otimes \mathbb{H}) \c
 
 # 系列による代数構造の導出
 
-基本構造に2つの公式を交互に適用して、分類表の第1行（$p=0$）と第1列（$q=0$）を導出します。符号数$(p,0)$に公式1を適用すると$(0,p+2)$へ、$(0,q)$に公式2を適用すると$(q+2,0)$へ移るため、交互に適用することで$p$軸と$q$軸を往復しながら次数が上がっていきます。
+基本構造に2つの公式を交互に適用して、分類表の第1行（$p=0$）と第1列（$q=0$）を導出します。符号数$(p,0)$に[[fml-ext-h]]を適用すると$(0,p+2)$へ、$(0,q)$に[[fml-ext-hs]]を適用すると$(q+2,0)$へ移るため、交互に適用することで$p$軸と$q$軸を往復しながら次数が上がっていきます。
 
 ## 複素数の系列
 
@@ -275,13 +275,13 @@ p \backslash q & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \end{array}
 $$
 
-この表の空白部分は、公式2の$\operatorname{Cl}_{p+1,q+1}(\mathbb{R})$の形を用いて埋めることができます。
+この表の空白部分は、[[fml-ext-hs]]の$\operatorname{Cl}_{p+1,q+1}(\mathbb{R})$の形を用いて埋めることができます。
 
 # 分類表の完成
 
 ## 対角線方向の充填
 
-公式2は、$\mathbb H'$とのテンソル積によって符号数が$(p,q)$から$(p+1,q+1)$へ拡張できることを示しています。$\mathbb H' \cong M_2(\mathbb R)$なので、次の式が成り立ちます。
+[[fml-ext-hs]]は、$\mathbb H'$とのテンソル積によって符号数が$(p,q)$から$(p+1,q+1)$へ拡張できることを示しています。$\mathbb H' \cong M_2(\mathbb R)$なので、次の式が成り立ちます。
 
 &&&fml 対角線方向の充填
 $$\operatorname{Cl}_{p+1,q+1}(\mathbb{R}) \cong \operatorname{Cl}_{p,q}(\mathbb{R}) \otimes M_2(\mathbb{R})$$
@@ -323,12 +323,12 @@ p \backslash q & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 $$
 
 &&&rem
-Wikipediaにも同様な行列表現の一覧表がありますが、三角形に並べる独特な形をしています。上の表と見比べると、対角線方向（$p-q$が一定）に同じ型が並ぶことを利用して、その対角線を1行にまとめていることがわかります。この配置には、同型な代数が横に並ぶという利点があります。[[wiki-clif-class]]
+Wikipediaにも同様な行列表現の一覧表がありますが、三角形に並べる独特な形をしています。$n=p+q$を行、$p-q$を列とする配置で、上の表の対角線方向（$p-q$が一定）が1列にまとまります。対角線上に並ぶのは同じ型で次元の異なる代数なので、同型ではありません。一方、同じ行には次元が等しい代数が並び、型が同じもの（$p-q$が8異なるものなど）は同型です。この配置には、同型な代数が横に並ぶという利点があります。[[wiki-clif-class]]
 &&&
 
 ## 8周期性
 
-対角線方向に型が変わらないことから、型は$p-q$だけで決まります。さらに、公式1と公式2を続けて適用します。
+対角線方向に型が変わらないことから、型は$p-q$だけで決まります。さらに、[[fml-ext-h]]と[[fml-ext-hs]]を続けて適用します。
 
 $$
 \begin{alignedat}{3}
@@ -343,7 +343,7 @@ $$
 
 $\mathbb H ⊗ \mathbb H' \cong M_2(\mathbb H)$より、$p$または$q$を$4$増やすことは$M_2(\mathbb H)$とのテンソル積に対応します。
 
-&&&fml 4周期の移動
+&&&fml 符号数を4増やす拡張
 $$
 \operatorname{Cl}_{p+4,q}(\mathbb{R})
 \cong \operatorname{Cl}_{p,q+4}(\mathbb{R})
@@ -412,11 +412,11 @@ $$
 符号数を$(p,q)\to(p+1,q+1)$と変えると、$n\to n+2$より指数の変化は$\{(n+2)(n+1)-n(n-1)\}/2+1=2n+2$で偶数となり、符号は変わらない。また$(p,q)\to(p+4,q)$では指数の変化は$\{(n+4)(n+3)-n(n-1)\}/2=4n+6$で偶数となり、やはり符号は変わらない。したがって符号は$p-q \pmod 4$のみに依存し、代表例$\operatorname{Cl}_{0,0},\operatorname{Cl}_{1,0},\operatorname{Cl}_{2,0},\operatorname{Cl}_{3,0}$での値$+1,+1,-1,-1$から上式が得られる。
 &&&
 
-$n$の偶奇と$\omega^2$の符号によって、中心（すべての元と可換な元のなす部分代数）が決まります。
+中心（すべての元と可換な元のなす部分代数）全体は、基底単項式$e_{i_1}\cdots e_{i_k}$と各生成元との可換性を調べて決まります。すべての生成元と可換な基底単項式は、スカラー$1$と、$n$が奇数の場合の$\omega$だけです。したがって、中心は$n$の偶奇と$\omega^2$の符号によって決まります。
 
-- **$n$が偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \pmod 8$の区別）は中心だけでは決まりません。
-- **$n$が奇数で$\omega^2=-1\ (p-q\equiv3\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。代数全体が複素行列環となり、$\mathbb C$型が現れます。
-- **$n$が奇数で$\omega^2=+1\ (p-q\equiv1\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$(1\pm\omega)/2$によって代数全体が直和分解され、$2\mathbb R$型・$2\mathbb H$型が現れます。
+- **$n$が正の偶数**：$\omega$は生成元と反交換するため中心に入らず、中心は$\mathbb R$のみです（$n=0$では$\omega=1$で、代数が$\mathbb R$なので結論は同じです）。型は$\mathbb R$か$\mathbb H$ですが、どちらになるか（$p-q \pmod 8$の区別）は中心だけでは決まりません。
+- **$n$が奇数で$\omega^2=-1\ (p-q\equiv3\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C$です。分類表と合わせると、代数全体が複素行列環となり、$\mathbb C$型が現れます。
+- **$n$が奇数で$\omega^2=+1\ (p-q\equiv1\pmod4)$**：中心は$\mathbb R+\mathbb R\omega\cong\mathbb C'\cong2\mathbb R$です。分解型複素数と同じ冪等元$(1\pm\omega)/2$によって代数全体が直和分解され、分類表と合わせると$2\mathbb R$型・$2\mathbb H$型が現れます。
 
 型の表に中心を並べると、直和型と$\mathbb C$型の出現位置が中心の構造とちょうど一致していることが確認できます。
 
@@ -437,7 +437,7 @@ $$
 
 # 偶部分代数
 
-偶数グレードの元は積について閉じており、**偶部分代数**$\operatorname{Cl}_{p,q}^0(\mathbb R)$をなします。次元は全体の半分の$2^{n-1}$です。偶部分代数は、生成元が1つ少ないクリフォード代数と同型になります。
+偶数グレードの元は積について閉じており、**偶部分代数**$\operatorname{Cl}_{p,q}^0(\mathbb R)$をなします。$n\ge1$のとき、次元は全体の半分の$2^{n-1}$です（$n=0$では$\operatorname{Cl}_{0,0}^0(\mathbb R)=\mathbb R$で次元は1です）。偶部分代数は、生成元が1つ少ないクリフォード代数と同型になります。
 
 &&&fml 偶部分代数の同型
 $$
@@ -476,7 +476,7 @@ $$\operatorname{Cl}_{p,q}(\mathbb R)\cong\operatorname{Cl}_{q+1,p-1}(\mathbb R)\
 $$\operatorname{Cl}_{p,q}^0(\mathbb R)\cong\operatorname{Cl}_{q,p}^0(\mathbb R)$$
 &&&
 
-偶部分代数の中身は分類表から読み取ることができます。
+偶部分代数の代数構造は分類表から読み取ることができます。
 
 &&&ex 偶部分代数の読み取り
 $$
@@ -488,7 +488,7 @@ $$
 &&&
 
 &&&rem
-回転群の二重被覆であるスピン群は偶部分代数の中に住んでおり、この同型は$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$（単位四元数）や$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$（単位四元数の対）の置き場所を与えます。
+回転群の二重被覆であるスピン群は偶部分代数に含まれており、この同型は$\operatorname{Spin}(3)\cong\mathrm{SU}(2)$（単位四元数）や$\operatorname{Spin}(4)\cong\mathrm{SU}(2)\times\mathrm{SU}(2)$（単位四元数の対）の置き場所を与えます。
 &&&
 
 # 複素化と2周期性
@@ -558,17 +558,17 @@ $$
 
 # ピノルとスピノル
 
-分類表の行列環$M_n(\mathbb F)$は、$n$次元の列ベクトル空間$\mathbb F^n$に作用します。この作用に自明でない不変部分空間はなく、クリフォード代数の既約表現を与えます。
+分類表の行列環$M_n(\mathbb F)$は、$n$次元の列ベクトル空間$\mathbb F^n$に作用します。この作用に自明でない不変部分空間はなく、クリフォード代数の既約表現を与えます。以下では実線形表現を同型を除いて数えます。$\mathbb F^n$の実次元は$n\dim_{\mathbb R}\mathbb F$で、$\mathbb F=\mathbb R,\mathbb C,\mathbb H$に応じて$n,2n,4n$です。行列の次数と表現空間の実次元を区別してください。
 
 - **単純型 $M_n(\mathbb F)$**：既約表現は$\mathbb F^n$のただ1つです。
 - **直和型 $2M_n(\mathbb F)$**：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$(1\pm\omega)/2$のどちらの成分か）で区別されます。
 
-&&&rem ピノルとスピノル
-クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分けます。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来します。
+&&&def ピノルとスピノル
+本記事では、クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分けます。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来します。
 &&&
 
 &&&rem 用語の慣習
-物理の文献では、この区別を緩めて、クリフォード代数全体の既約表現の元も慣例的に**スピノル**と呼ぶことがよくあります。ピノル空間を偶部分代数に制限すると、スピノル表現そのもの、または2つのスピノル表現の直和が得られるため、両者は同じ空間をどちらの立場から見るかの違いです。
+物理の文献では、この区別を緩めて、クリフォード代数全体の既約表現の元も慣例的に**スピノル**と呼ぶことがよくあります。ピノル空間を偶部分代数に制限すると、スピノル表現そのもの、または2つのスピノル表現の直和が得られるため、両者は密接に関係しますが、制限後に既約分解が必要となる場合があります。たとえば$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$の実既約表現$\mathbb C$を偶部分代数$\mathbb R$に制限すると、同型な1次元実表現2つに分かれます。
 &&&
 
 例えば$\operatorname{Cl}_{3,0}(\mathbb R)\cong M_2(\mathbb C)$のピノル空間は$\mathbb C^2$です。これはパウリ行列が作用する空間であり、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)\cong\mathbb H$に制限すれば、$\mathrm{SU}(2)$（単位四元数）が作用する2成分スピノル（パウリスピノル）となります。[[7shi-bq]]
