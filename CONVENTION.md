@@ -100,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの15本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの16本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの15本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの16本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot`・`oct/nonassociativity` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -170,4 +170,8 @@
 ## oct/02-7d-3rot.md — https://mathlog.info/articles/cWj1bUNwa7E3kgMhvJb0
 - 内容：`oct/01` のレビューの指摘を反映。rem「自由度」の「21÷3=7」を、回転軸 $n$ の自由度6と回転角 $\theta$ の自由度1による説明に修正。rem「交代代数」に、$r^*=2\operatorname{Re}(r)-r$ と交代性 $(rx)r=r(xr)$ から $(rx)r^*=r(xr^*)$ となる根拠を追加
 - 本文：rem「自由度」、rem「交代代数」を差し替え（参照の変更なし）
+
+## oct/nonassociativity.md — https://mathlog.info/articles/fXYD8gdyHdnyPvoFnWPN
+- 内容：レビューの指摘を反映。反結合性の適用範囲を基底の虚数単位に限定し、前書き・概要を「結合法則の不成立を導き、反結合性は乗積表で確認する（一般的な証明は扱わない）」形に修正。反結合性の節で、符号反転の連鎖は証明ではなく整合性の確認と明記し、`fml`「反結合性」（相異なる基底虚数単位で $e_ae_b\ne\pm e_c$ のとき $(e_ae_b)e_c=-e_a(e_be_c)$）を追加。まとめの分類を基底の虚数単位に限り、一般の八元数では二者択一にならないことを明記し、rem「記号の範囲」を $x,y,z$ と $e_a,e_b,e_c$ の範囲の区別に変更。$k^2=-1$ の `prf` を本文の式にして結合性と $i^2=j^2=-1$ を使うことを明記し、八元数は7つの単位の2乗が $-1$ になるよう乗法を定める（反交換性だけでは決まらない）と修正。呼称を「実ノルム可除代数」に統一し、480種類を「固定した7つの虚数単位に対する乗法表の付け方」に、「よく使われるのは2種類」を「そのうち2つを紹介」に修正。添字対応の $⇒$ を等式に改め、rem「記号表記の解釈」を $i\cdot\ell$ による説明に変更。「別の定義」を規則 $e_ae_{a+1}=e_{a+3}$（法 $7$）から示す形に修正。rem「可除性」を、可除性の意味（$ax=b$・$ya=b$ が一意に解ける）と、乗積表の符号を任意に選べないという制約に弱めた。交代性の def を2式にして $(xy)x=x(yx)$ を帰結とし、ex「交代性」の目的、rem「3因子の形と交代性の判定」の言い回しと反結合性を使える理由、三つ組の定義（$1$ と合わせて張る四元数と同型な部分代数との区別、基底を固定したときの7つ、条件 $e_ae_b=\pm e_c$）、ex「三つ組内での結合性」、計算例の前の反結合性の適用条件を修正。数式直前の文を句点で閉じる形に修正
+- 本文：前書き、概要、「代数系の拡張と表記法」の四元数・八元数の説明（`prf` を本文の式に）と480種類の記述、def「添字対応」、rem「記号表記の解釈」、def「別の定義」とその導入、ex「括弧を単位とする反交換性」の「反交換性より」、「非結合性」の仮定の文、「反結合性」の節（`fml` を追加）、rem「可除性」、「交代性」の def と直後の文・ex・rem、「四元数と同型な部分代数」の節、「規則を用いた実際の計算」の冒頭、まとめと rem「記号の範囲」を差し替え（参照の変更なし）
 ```
