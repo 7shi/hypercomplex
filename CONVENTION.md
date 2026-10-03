@@ -100,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの21本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの22本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの21本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot`・`oct/nonassociativity`・`oct/03-oct-left-mul`・`misc/energy-quantize-zeta`・`misc/variable-dependence`・`misc/epsilon-euler-lagrange`・`misc/integration-by-parts`（この4本は回転の規約とは無関係。レビューの指摘の反映）を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの22本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot`・`oct/nonassociativity`・`oct/03-oct-left-mul`・`misc/energy-quantize-zeta`・`misc/variable-dependence`・`misc/epsilon-euler-lagrange`・`misc/integration-by-parts`・`misc/exp-maclaurin-integral`（この5本は回転の規約とは無関係。レビューの指摘の反映）を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -194,4 +194,8 @@
 ## misc/integration-by-parts.md — https://mathlog.info/articles/hdHs4JasRbf9uSo26mFd
 - 内容：レビューの指摘を反映。「関数の微分」を `def` で先に導入し（微分形式との関係は1文の補足に、「1階微分形式」の呼称を削除）、ライプニッツ則を $d(fg)=(fg)'dx=(fg'+f'g)dx=f\,dg+g\,df$ と導いて項の順序を統一し、負号が $g\,df$ の移項から生じることを明記。積分定数を省く約束と、fml「定積分の部分積分」（境界項 $[fg]_a^b$）を追加し、概要の範囲を「主に不定積分を扱い、定積分版の公式も補足する」に修正。各例を求めたい積分から始める計算に1本化して冒頭で $f,g$ の割り当て（例2は $g=-\cos x$）を示し、計算を ex に。rem「微分記号と関数の微分」の「分母を取り払う」を、$dg=g'(x)dx$ の適用であり約分ではないという説明に、「暗算でできる積分」を原始関数の選択に修正。記法の利点を、積分する因子を $dg$・微分する因子を $df$ と書ける項の対応として説明。「積分を外すことができません」を、変形は正しいが次数が上がり簡単にならないという説明に直し、因子の選び方を多項式と三角関数の積に限定（見出し「微分する因子と積分する因子の選び方」）。前書き・概要・まとめの表現を修正し、まとめに枠「定積分の部分積分」を追加
 - 本文：構成を組み替えたため全文を差し替え（参照の変更なし。`wiki-df` は本文内で位置を移しただけ）
+
+## misc/exp-maclaurin-integral.md — https://mathlog.info/articles/uxSj6AJC0J03WRk0h3r7
+- 内容：レビューの指摘を反映。無限和に移る前に、定数 $1$ と $e^{t_n}$ の $n$ 重の反復積分 $I_n,R_n$ を置いて有限の等式 $e^x=\sum_{k<n}I_k(x)+R_n(x)$ を fml に。prop「定数1の反復積分」（$I_n=x^n/n!$、帰納法）と prop「剰余項の評価」（$|R_n|\le e^{|x|}|x|^n/n!\to0$）を証明付きで追加し、級数表示を fml に。積分変数を $x',x'',x'''$ から $t_1,t_2,\dots$ に変え、最初の代入で恒等式を $t_1$ で評価する操作を明示。$x<0$ での積分の向きの断り、前提に $(e^x)'=e^x$・$e^0=1$ を明記し、冒頭のマクローリン展開を比較用と位置づけ。概要の範囲を「各実数 $x$ で剰余項の収束を確認し、ピカール法の一般的な収束定理は扱わない」に修正し、ピカールの逐次近似法との対応を本文に追加。用語（定積分による恒等式、反復積分、冪）、前書き・概要の宣伝調の表現、まとめを項目ごとの枠に修正
+- 本文：構成を組み替えたため全文を差し替え（参照の変更なし）
 ```
