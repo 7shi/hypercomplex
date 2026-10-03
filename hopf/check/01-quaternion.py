@@ -80,4 +80,17 @@ for _ in range(100):
     wq = qmul(w, q)
     assert np.allclose(qmul(qmul(wq, K), qconj(wq)), wkw)
 
+    # 6. preimage: η = ω r has the same image only if r = a + d k
+    a, b, c, d = rng.normal(size=4)
+    r = np.array([a, b, c, d])
+    assert np.allclose(qmul(r, K), [-d, c, -b, a])
+    assert np.allclose(qmul(K, r), [-d, -c, b, a])
+    r /= np.linalg.norm(r)
+    eta = qmul(w, r)
+    assert not np.allclose(qmul(qmul(eta, K), qconj(eta)), wkw)
+    r[1:3] = 0
+    r /= np.linalg.norm(r)
+    eta = qmul(w, r)
+    assert np.allclose(qmul(qmul(eta, K), qconj(eta)), wkw)
+
 print("check-01-quaternion: all checks passed")
