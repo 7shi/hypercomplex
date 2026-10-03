@@ -52,7 +52,7 @@ def find_pending(
 
 def add_subparser(subparsers: argparse._SubParsersAction) -> None:
     parser = subparsers.add_parser(
-        "pending", help="articles.tsv → プロンプト未作成・未レビュー・レビュー未反映の記事一覧（[済]公開済・[未]未公開）"
+        "pending", help="articles.tsv → プロンプト未作成・未レビュー・レビュー未反映の記事一覧（[公開済]・[未公開]）"
     )
     parser.set_defaults(func=pending_command)
 
@@ -75,5 +75,5 @@ def pending_command(args: argparse.Namespace) -> None:
         print(f"# {heading} ({len(entries)})")
         width = len(str(len(entries)))
         for n, (published, md, title) in enumerate(entries, 1):
-            mark = "[済]" if published else "[未]"
+            mark = "[公開済]" if published else "[未公開]"
             print(f"{n:>{width}}. {mark} {md} {title}")
