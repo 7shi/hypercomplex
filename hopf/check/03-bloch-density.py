@@ -12,7 +12,8 @@ Verifies numerically (random parameters, numpy):
 3. (r·σ)² = |r|² I for arbitrary real r, and
    ρ² = ¼{(1+|r|²) I + 2 r·σ}.
 4. Mixed state ρ = Σ pi ωiωi†: Bloch vector r = Σ pi ri, |r| < 1,
-   purity tr ρ² = ½(1+|r|²).
+   purity tr ρ² = ½(1+|r|²); mixing copies of one pure state (with
+   arbitrary phases) leaves it pure.
 5. Eigendecomposition: eigenvalues ½(1±|r|), eigenvectors are pure
    states with Bloch vectors ±r/|r| (antipodal), and
    ρ = λ+ρ+ + λ-ρ- reconstructs ρ.
@@ -105,6 +106,11 @@ for _ in range(100):
     assert np.linalg.norm(r_mix) < 1
     assert np.isclose(np.trace(rho_mix @ rho_mix).real,
                       (1 + r_mix @ r_mix) / 2)
+    # the same pure state (up to phase) mixed with itself stays pure
+    rho_same = sum(p[i] * np.outer(ws[0] * np.exp(1j * i), (ws[0] * np.exp(1j * i)).conj())
+                   for i in range(n))
+    assert np.allclose(rho_same @ rho_same, rho_same)
+    assert np.isclose(np.linalg.norm(bloch(rho_same)), 1)
 
     # 5. eigendecomposition
     lam, vec = np.linalg.eigh(rho_mix)
@@ -114,6 +120,17 @@ for _ in range(100):
     assert np.allclose(bloch(np.outer(vec[:, 0], vec[:, 0].conj())), -r_mix / rn)
     assert np.allclose(sum(lam[i] * np.outer(vec[:, i], vec[:, i].conj())
                            for i in range(2)), rho_mix)
+    # constructed ρ± = ½(I ± n·σ) are orthogonal projections onto eigenvectors
+    nn = r_mix / rn
+    nsig = sum(nn[i] * paulis[i] for i in range(3))
+    rho_p, rho_m = (I2 + nsig) / 2, (I2 - nsig) / 2
+    assert np.allclose(rho_p @ rho_m, 0)
+    assert np.allclose(rho_mix @ rho_p, (1 + rn) / 2 * rho_p)
+    assert np.allclose(rho_mix @ rho_m, (1 - rn) / 2 * rho_m)
+    # trace-1 Hermitian ½(I + r·σ) is positive semidefinite iff |r| <= 1
+    rv = rng.normal(size=3) * 0.8
+    ev = np.linalg.eigvalsh((I2 + sum(rv[i] * paulis[i] for i in range(3))) / 2)
+    assert (ev.min() >= -1e-12) == (np.linalg.norm(rv) <= 1)
 
     # 7. measurement: tr(ρ(n·σ)) = n·r, z-probabilities (1±z)/2
     nvec = rng.normal(size=3)
@@ -141,5 +158,18 @@ assert np.allclose(rho_sup, (I2 + sigma_x) / 2)
 assert np.allclose(bloch(rho_sup), [1, 0, 0])
 assert np.allclose(np.diag(rho_mix), np.diag(rho_sup))
 assert not np.allclose(rho_mix, rho_sup)
+# superposition: every direction orthogonal to x (y and z) gives 50/50
+assert np.isclose(np.trace(rho_sup @ sigma_y).real, 0)
+assert np.isclose(np.trace(rho_sup @ sigma_z).real, 0)
+assert np.isclose(np.trace(rho_sup @ sigma_x).real, 1)
+# r = 0: any axis n splits ½I into ½ρ+ + ½ρ-
+nn = rng.normal(size=3)
+nn /= np.linalg.norm(nn)
+nsig = sum(nn[i] * paulis[i] for i in range(3))
+assert np.allclose(((I2 + nsig) + (I2 - nsig)) / 4, I2 / 2)
+
+# biquaternion: h ≅ σxσyσz = iI, and tr ↔ 2·Sc (tr of iI is 2i)
+assert np.allclose(sigma_x @ sigma_y @ sigma_z, 1j * I2)
+assert np.isclose(np.trace(1j * I2), 2j)
 
 print("check-03-bloch-density: all checks passed")
