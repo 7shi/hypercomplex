@@ -100,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの18本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの20本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの18本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot`・`oct/nonassociativity`・`oct/03-oct-left-mul`・`misc/energy-quantize-zeta`（回転の規約とは無関係。レビューの指摘の反映）を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの20本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group`・`oct/01-octonion`・`oct/02-7d-3rot`・`oct/nonassociativity`・`oct/03-oct-left-mul`・`misc/energy-quantize-zeta`・`misc/variable-dependence`・`misc/epsilon-euler-lagrange`（この3本は回転の規約とは無関係。レビューの指摘の反映）を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -182,4 +182,12 @@
 ## misc/energy-quantize-zeta.md — https://mathlog.info/articles/JglJ6odtQZfz0t87vguS
 - 内容：レビューの指摘を反映。ウィーンの公式の分子の $h$ の脱落と、$x^2$ のフーリエ展開の1行目の $\cos(nx)$ の脱落（積分変数を $t$ に）を修正。3公式の導入を史実の順序ではなく現在の立場からの比較に改め、ウィーンの公式を $h,k$ で表した形であることを断り、プランクのエネルギー要素 $h\nu$（1900年）とアインシュタインの光量子仮説（1905年）を区別。$u(\nu,T)$ とモード密度が単位周波数幅当たりの量であることを明記。モード計数を完全導体壁の境界条件・第1八分空間・球殻体積による近似に分けて書き直し、波数を $\kappa$ に変更。連続分布に状態密度が一定という前提を補い、確率密度と明記。$E_n$ が零点エネルギーを除いた値であることを補足。離散計算の変数を $q$ にし、項別微分の根拠と代入の途中式を追加。等比級数の展開の条件 $x>0$、総和と積分の交換の根拠（単調収束定理、証明は省略）、ゼータ関数の定義域 $s>1$ を追加。放射発散度 $M=\sigma T^4$ との関係を追加。`fml`「パーセヴァルの等式」（$a_0/2$ 規約）と正規直交基底版との対応を追加し、フーリエ級数の等号の意味を注記。人名を「シュテファン＝ボルツマン」「レイリー＝ジーンズ」に統一し、前書きなどの表現を修正
 - 本文：前書き、「黒体放射を表す3つの公式」の導入・ウィーンの公式とその直後・プランクの公式の導入・$u(\nu,T)$ の説明、「3つの公式の一般構造」のモード密度の説明、「モード密度の導出」、「平均エネルギーの違い」の量子化の説明と歴史の段落、「連続的なエネルギー」の冒頭、「離散的なエネルギー」、「全エネルギー密度とゼータ関数」の冒頭、「全エネルギー密度の計算」の等比級数と順序交換の説明・def「リーマンゼータ関数」・シュテファン＝ボルツマン定数の直後、「ゼータ関数の計算」（fml「パーセヴァルの等式」を追加）を差し替え。人名表記は全体（ボックス見出し・まとめを含む）（参照の変更なし）
+
+## misc/variable-dependence.md — https://mathlog.info/articles/ndkq7Dj2xrcnT7oiRYey
+- 内容：レビューの指摘を反映。「代入と微分の順序が可換」を、2つの手順の一致が連鎖律によって保証され、同じ法則を先に合成する書き方と全微分の書き方で表したもの、という位置づけに改めた。$f,y$ を $C^1$ 級とし、合成後の関数を $F(x)=f(x,y(x))$ と置いて元の $f$ と区別し、偏導関数の評価点 $(x,y(x))$ を明示。「両辺を $dx$ で割る」を $dF=\frac{dF}{dx}dx$ との $dx$ の係数の比較に改めた。2つの手順を小見出しにし、連鎖律を fml に分離。具体例を `# 具体例` 節の ex にまとめ、「和の自乗」を「平方和」に修正、例の呼称を「積・正弦関数との合成・平方和」に統一し、例2の後に偏微分でも連鎖律を使う旨を追加。オイラー＝ラグランジュ方程式の節を、$L$ を3つの独立な引数の関数として定める・偏微分する・経路を代入するの3段階の区別、$\frac{d}{dt}\frac{\partial L}{\partial\dot q}$ の連鎖律による展開、$\dot q$ が $q$ だけの関数ではないことの説明に書き直した。用語（連鎖律と全微分の区別、「依存関係（微分形式）」）、概要の範囲（陰関数定理の削除）、前書き、まとめを修正
+- 本文：前書き、概要、「操作の順序」全体（小見出し「先に依存関係を代入する手順」「全微分後に依存関係を代入する手順」「連鎖律」）、新節「具体例」（3つの例を ex に、見出し「平方和と三角関数の微分」）、「オイラー＝ラグランジュ方程式との関連」の方程式の後、まとめと枠を差し替え（参照の変更なし）
+
+## misc/epsilon-euler-lagrange.md — https://mathlog.info/articles/XYc7CpVJFqivkuseQCQS
+- 内容：`misc/variable-dependence` のレビューの指摘を反映。ニュートンの運動方程式との対応式の符号誤り $\frac{\partial L}{\partial q}=\frac{\partial V}{\partial q}=F$ を $-\frac{\partial V}{\partial q}$ に修正し、$T=\frac12m\dot q^2$、$V=V(q)$ の場合であることを明記
+- 本文：「作用積分の微分」末尾の「この方程式は、$L=T-V$ …」の文と、その直後の式の1行目を差し替え（参照の変更なし）
 ```

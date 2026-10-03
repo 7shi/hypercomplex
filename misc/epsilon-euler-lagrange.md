@@ -162,11 +162,11 @@ $$
 $$
 &&&
 
-この方程式は、$L = T - V$ （運動エネルギーから位置エネルギーを引いたもの）の場合、ニュートンの運動方程式$F=ma$と等価になります。
+この方程式は、$L = T - V$ （運動エネルギーから位置エネルギーを引いたもの）で、$T=\frac12m\dot q^2$、$V=V(q)$の場合、ニュートンの運動方程式$F=ma$と等価になります。
 
 $$
 \begin{aligned}
-\frac{\partial L}{\partial q} &= \frac{\partial V}{\partial q} = F \\
+\frac{\partial L}{\partial q} &= -\frac{\partial V}{\partial q} = F \\
 \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} &= \frac{d}{dt} \frac{\partial T}{\partial \dot{q}} = \frac{d}{dt} m \dot{q} = ma
 \end{aligned}
 $$
