@@ -100,11 +100,11 @@
 
 ### 反映の計画
 
-参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの12本は本文のみなので、まとめて `--no-refs` で反映する。
+参照の変更がある `lie/02` だけを先に `--refs` で反映し、残りの13本は本文のみなので、まとめて `--no-refs` で反映する。
 
 1. **`lie/02`（`--refs`）**：リポジトリ直下の `mathlog_fix.md` に `lie/02` の1件だけを書いてある（本文の差し替え箇所と、参考文献パネルの `7shi-qcm` 削除・`7shi-qp` 追加・`7shi-nonion` 追加）。`bash src/mathlog_fix.sh --refs` で反映し、参考文献パネルを取り込んで `refs/Utdur1fLLzrWVHOJHifj.toml` を更新する。
 2. **後始末**：`mathlog_fix.md` を削除し、`make all` で再生成する。`reftools check` の `lie/02` の警告が消えたことを確かめる。
-3. **残りの12本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
+3. **残りの13本（`--no-refs`）**：`qua/01`・`qua/02-nonion`・`qua/03-qua-tensor`・`qua/tensor-from-complex`・`hopf/01-quaternion`・`vec-oct/01-reflection`・`vec-oct/geometric-product-exp`・`qua/04`・`lie/01-u1-so2`・`lie/03`・`qua/cd/matrix-to-pauli`・`clif/01-representation`・`lie/magma-to-group` を、下の下書きの内容で `mathlog_fix.md` に書き直し、`bash src/mathlog_fix.sh --no-refs` で反映する。レビュー予定の記事なので、レビューの指摘を反映してから行う。反映後に `mathlog_fix.md` を削除し、`make all` を実行する。
 
 ### 未反映の記事（`mathlog_fix.md` の下書き）
 
@@ -154,6 +154,10 @@
 ## qua/cd/matrix-to-pauli.md — https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu
 - 内容：証明「エルミート行列」の $\sigma_2$ の行が、定義と逆の符号の行列になっていたので修正。「${I_H}^2=-I$ の条件」で、$a=i\sin\theta,\ b=i\cos\theta$ を全解の表示ではなく、解の族として選ぶ形に直した
 - 本文：「${I_H}^2=-I$ の条件」の解の説明、証明「エルミート行列」の $\sigma_2$ の行を差し替え（参照の変更なし）
+
+## qua/tensor-from-complex.md — https://mathlog.info/articles/OunyiPffmIKhwwdmSrsA
+- 内容：概要の末尾に、本記事のテンソル積がすべて実数体 $\mathbb R$ 上のものである旨を追記（`clif/02` のレビューの指摘。$\mathbb C\otimes_{\mathbb C}\mathbb C$ との混同を防ぐ）
+- 本文：「概要」の末尾の1文を差し替え（参照の変更なし）
 
 ## lie/magma-to-group.md — https://mathlog.info/articles/e4aD1MZfKjQKcNO4ilRG
 - 内容：レビューの指摘を反映。閉性の説明の括弧書きを整理し、結合性を「$(ab)c=a(bc)$、元の並びを変えずに括弧の付け方を変えても結果が同じ」と述べて可換性との混同を避けた。引き算の非結合性を $(3-2)-1=0$、$3-(2-1)=2$ の具体例にした。単位元を「任意の $a\in M$ に対し $ae=ea=a$」とし、引き算で左右両方の条件が要ることを補った。逆元の定義を「$ab=ba=e$ を満たす $b$」に改めて一意性を定義から外し、モノイドでの一意性を命題と証明に分けた。自然数の逆元の rem を、$0$ を含む足し算の $0$ や掛け算の $1$ を除いた正確な記述に直した。群を「すべての元が逆元を持つモノイド」に統一し、系列図の矢印も「各元の逆元」にした。新節「可換性」（可換性・可換群の定義と、群の定義に含まれない旨の rem）と新節「可除性と準群・ループ」（準群・ループの def、整数の引き算が準群、整数の足し算がループの例、ループの左右の逆元の rem）を追加。まとめに可換群を補い、「集合を適切に定義する必要があります」を「同じ演算でも、対象とする集合によって〜かが変わります」に改めた
