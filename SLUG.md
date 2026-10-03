@@ -19,7 +19,7 @@
 
 - 記事ファイルごとの正準slugはローカルの `slugs.tsv`（md → slug）で管理する。Mathlogには記事にslugを割り振る機能がないため、これが唯一の台帳となる。`slugs.tsv` は `md.tsv` の全ファイルを対象とし、公開予定のないファイルは `NONE` を残置する。未公開の他記事を `[[slug]]` で参照する場合は、この台帳に予約された正準slugを使う（公開を待たずに参照できる）。
 - 外部文献（Mathlog以外）の正準定義は `refs-master.toml` で手動管理する（後述）。
-- 旧slugが見つかった場合は**Mathlog側を手動修正する**（本文の `[[slug]]` と参考文献登録のラベル）。ローカルのmd本文と `refs/*.toml` も同じ内容に合わせて修正する。この手動修正作業は `mathlog_fix.md` / `src/mathlog_fix.sh` で支援する（詳細は関連ファイル・ツール参照）。
+- 旧slugが見つかった場合は**Mathlog側を手動修正する**（本文の `[[slug]]` と参考文献登録のラベル）。ローカルのmd本文と `refs/*.toml` も同じ内容に合わせて修正する。この手動修正作業は `mathlog_fix-ref.md`・`mathlog_fix.md` / `src/mathlog_fix.sh` で支援する（詳細は関連ファイル・ツール参照）。
 - 同一slugが異なる対象を指す「衝突」は個別に解決が必要。同一対象を指す重複定義（表記揺れ）は統合可能。
 
 ## 外部文献の統合管理（refs-master.toml）
@@ -42,7 +42,7 @@
 
 1. **Mathlogの参考文献パネルを取り込む**（公開・修正した記事がある場合）
    - 参考文献パネルのHTMLを `refs/{記事ID}.html` として保存し、`uv run reftools format --in-place` で整形してから `uv run reftools toml` で `refs/{ID}.toml` を生成する。
-   - 本文や参考文献パネルの修正を伴う場合は、リポジトリ直下に `mathlog_fix.md` を書いて `bash src/mathlog_fix.sh --refs` を実行する（HTMLの取り込み・整形・TOML変換に続けて `reftools build` / `check` まで行う）。処理後に `mathlog_fix.md` を削除する。
+   - 本文や参考文献パネルの修正を伴う場合は、リポジトリ直下に `mathlog_fix-ref.md` を書いて `bash src/mathlog_fix.sh --refs` を実行する（HTMLの取り込み・整形・TOML変換に続けて `reftools build` / `check` まで行う）。処理後に `mathlog_fix-ref.md` を削除する。参考文献パネルに変更がない本文のみの修正は `mathlog_fix.md` に書いて `--no-refs` で実行する。
 2. **記事一覧を更新する**
    - Mathlogの記事一覧が変わった場合は `mathlog.html` を保存し直して `make mathlog` を実行する。
    - `make md` → `make merge` で `md.tsv` / `articles.tsv` を更新する。
@@ -74,8 +74,8 @@
   - `sync`: `check` と同じ検査を行った上で、`refs-master.toml` の各slugの `files` を `refs.toml` に合わせて書き換える。
   - `show <mdパス|slug>`: 引数（mdパスまたは`slugs.tsv`の正準slug）で記事を1つ特定し、ファイル名と正準slug（`slugs.tsv`未登録なら未登録である旨）を表示した上で、本文の `[[slug]]` を出現順に列挙する。各slugは `refs-master.toml`（優先）または `refs.toml` の内容があれば表示し、どちらもなければ `slugs.tsv` の逆引き（他記事の正準slugであれば、未公開でもそのmdパス。公開済みなら `articles.tsv` から取得したURLも併記）を試し、それもなければ「情報なし」と表示する。
 - `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`reftools toml` で `refs/*.html` から生成）。
-- `mathlog_fix.md` — Mathlog側の参考文献パネルを手動修正する際の作業リスト。何を直すか（表記ゆれの統一先、slug衝突の解消、ラベル改名など）は文脈依存のヒューリスティックな判断が必要で自動生成できないため、都度手で書く使い捨てファイル（処理後に削除する）。記事ごとに `## <mdファイル> — <Mathlog記事URL>` を見出しとし、その下に修正内容を箇条書きする（例: `- <slug>: <field> = <新値>`、改名は `- <旧slug> → <新slug>`）。
-- `src/mathlog_fix.sh` — リポジトリ直下で実行し、`mathlog_fix.md` を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`reftools format --in-place` で整形して `reftools toml` で `refs/{ID}.toml` に変換する。全ブロックの処理後に `reftools build` と `reftools check` を実行する。`--refs` と `--no-refs` のどちらかの指定が必須で、省略するとusageを表示して終了する。参考文献に変更がない本文のみの修正では `--no-refs` を付けると、クリップボードからの取り込み・整形・TOML変換を省く（`reftools build` / `check` は実行する）。
+- `mathlog_fix-ref.md` / `mathlog_fix.md` — Mathlog側の記事を手動修正する際の作業リスト。参考文献パネルの修正を伴う記事は `mathlog_fix-ref.md`（`--refs` 用）、本文のみの修正は `mathlog_fix.md`（`--no-refs` 用）に書く。2つを分けることで、参照の変更が確定せず反映を保留している記事と、すぐに反映できる記事を同時に管理できる。何を直すか（表記ゆれの統一先、slug衝突の解消、ラベル改名など）は文脈依存のヒューリスティックな判断が必要で自動生成できないため、都度手で書く使い捨てファイル（処理後に削除する）。書式は両者で共通で、記事ごとに `## <mdファイル> — <Mathlog記事URL>` を見出しとし、その下に修正内容を箇条書きする（例: `- <slug>: <field> = <新値>`、改名は `- <旧slug> → <新slug>`）。
+- `src/mathlog_fix.sh` — リポジトリ直下で実行し、作業リスト（`--refs` なら `mathlog_fix-ref.md`、`--no-refs` なら `mathlog_fix.md`）を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`reftools format --in-place` で整形して `reftools toml` で `refs/{ID}.toml` に変換する。全ブロックの処理後に `reftools build` と `reftools check` を実行する。`--refs` と `--no-refs` のどちらかの指定が必須で、省略するとusageを表示して終了する。`--no-refs` では `mathlog_fix.md` を読み、クリップボードからの取り込み・整形・TOML変換を省く（`reftools build` / `check` は実行する）。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`src/articles/`（`articles`コマンド）で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
 - `Makefile` — `make mathlog`/`md`/`merge`（`articles` の同名サブコマンド）、`make build`/`sync`/`check`（`reftools` の同名サブコマンド）、`make all`（`md merge build sync`）のショートカット。`make help` で一覧表示。

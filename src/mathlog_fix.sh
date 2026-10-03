@@ -3,19 +3,19 @@ set -eu
 
 usage() {
     echo "usage: $0 --refs|--no-refs" >&2
-    echo "  --refs     修正後に参考文献をクリップボードから取り込む" >&2
-    echo "  --no-refs  参考文献の取り込みを省く（本文のみの修正）" >&2
+    echo "  --refs     mathlog_fix-ref.md を処理し、修正後に参考文献をクリップボードから取り込む" >&2
+    echo "  --no-refs  mathlog_fix.md を処理し、参考文献の取り込みを省く（本文のみの修正）" >&2
     exit 1
 }
 
 [ $# -eq 1 ] || usage
 case "$1" in
-    --refs) no_refs=false ;;
-    --no-refs) no_refs=true ;;
+    --refs) no_refs=false; list=mathlog_fix-ref.md ;;
+    --no-refs) no_refs=true; list=mathlog_fix.md ;;
     *) usage ;;
 esac
 
-mapfile -t lines < mathlog_fix.md
+mapfile -t lines < "$list"
 
 total=0
 for line in "${lines[@]}"; do
