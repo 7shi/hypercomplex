@@ -17,7 +17,8 @@ variety (Moreno's theorem: the pair space is homeomorphic to G2);
 dim Der(S) = 14 with block-diagonal solutions; the discrete
 automorphisms eps: (a,b) -> (a,-b) and the order-3 psi rotating the
 planes (q, q e8) by 2pi/3 (Aut(S) = G2 x S3), neither of which is a
-diagonal lift from G2; and, one doubling further (the 32-dimensional
+diagonal lift from G2 and which commute with the diagonal lifts
+(direct product); and, one doubling further (the 32-dimensional
 algebra), dim Der = 14 again while the new eps, psi together with the
 diagonal lifts of the sedenion eps, psi commute and generate a group of
 order 36 (S3 x S3).
@@ -225,11 +226,16 @@ print("partner components (u1u3, u2u3) again orthonormal imaginary:",
       and np.isclose(norm(c), 1) and np.isclose(norm(d), 1)
       and np.isclose(c @ d, 0))
 
-# basic triple (u1, u2, u3) -> zero-divisor pair, and recovery u3 = -u1 c
+# basic triple (u1, u2, u3) -> zero-divisor pair, and recovery from the
+# unit-norm pair x = (a, b), y = (c', d'): u1 = sqrt2 a, u3 = -sqrt2 u1 c'
 Y = pair(c, d)
+Xn, Yn = X / np.sqrt(2), Y / np.sqrt(2)
+u1r = np.sqrt(2) * Xn[:8]
 print("basic triple gives x y = 0 and y x = 0:",
       np.allclose(mul(X, Y), 0) and np.allclose(mul(Y, X), 0),
-      "/ u3 recovered as -u1 c:", np.allclose(-mul(u1, c), u3))
+      "/ unit norms:", np.isclose(norm(Xn), 1) and np.isclose(norm(Yn), 1),
+      "/ u3 recovered as -sqrt2 u1 c':",
+      np.allclose(u1r, u1) and np.allclose(-np.sqrt(2) * mul(u1r, Yn[:8]), u3))
 
 # ---------------------------------------------------- G2 acts diagonally
 print("\n== G2 action ==")
@@ -330,6 +336,17 @@ print("psi (rotate (q, q e8) planes by 2pi/3) is an automorphism:", ok_psi,
       np.allclose(eps @ psi @ eps, np.linalg.matrix_power(psi, 2)))
 print("psi does not preserve the octonion subalgebra (not diagonal):",
       not np.allclose((psi @ E16[1])[8:], 0))
+
+# eps, psi commute with the diagonal lifts of G2, and the S3 they generate
+# meets the diagonal lifts only in the identity (a diagonal lift fixes e8
+# and preserves the octonion subalgebra)
+print("eps, psi commute with a diagonal lift of G2:",
+      all(np.allclose(A @ phi, phi @ A) for A in (eps, psi)))
+psi2 = psi @ psi
+nontriv = [psi, psi2, eps, eps @ psi, eps @ psi2]
+print("no non-identity element of <eps, psi> is a diagonal lift:",
+      all(not (np.allclose(A @ E16[8], E16[8]) and np.allclose(A[8:, :8], 0))
+          for A in nontriv))
 
 # ------------------------------------------- one doubling further: 32-ions
 print("\n== the next doubling (32 dimensions) ==")
