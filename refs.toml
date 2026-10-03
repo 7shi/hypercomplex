@@ -538,6 +538,11 @@ files = [
   "ktheory/06-sphere-dirac.md",
 ]
 
+["7shi-leb5"]
+files = [
+  "lebesgue/06-nelson-stochastic-qm.md",
+]
+
 ["7shi-leb6"]
 files = [
   "clif/05-schrodinger.md",
