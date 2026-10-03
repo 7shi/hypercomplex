@@ -11,6 +11,11 @@ Verifies:
    rotations of angle theta occur synchronously in the 3 orthogonal planes
    (e_2, e_3), (e_4, e_5), and (e_7, e_6).
 5. Numerical consistency check with random octonions.
+6. Properties of the 7D cross product (antisymmetry, orthogonality, norm identity),
+   the identities used in the algebraic proof of the Rodrigues formula
+   (nx + xn = -2 n·x, nx - xn = 2 n×x, (nx)n = x - 2(n·x)n), and the decomposition
+   of n^perp into 3 planes by J_n y = n y (J_n^2 = -1, isometry, each plane
+   (u, J_n u) rotated by theta).
 """
 
 import numpy as np
@@ -229,9 +234,79 @@ def check_numerical_random():
     print("  OK: 50回のランダム試行で直接計算とロドリゲス公式が完全一致")
 
 
+def check_proofs():
+    print("=== 5. 外積の性質・ロドリゲスの証明・3平面への分解 ===")
+    rng = np.random.default_rng(7)
+
+    def mul(a, b):
+        return sum(a[i] * L[i] for i in range(8)) @ b
+
+    def pure(v7):
+        v = np.zeros(8)
+        v[1:] = v7
+        return v
+
+    def cross(v, w):
+        p = mul(v, w)
+        p[0] = 0.0
+        return p
+
+    for _ in range(50):
+        v, w = pure(rng.normal(size=7)), pure(rng.normal(size=7))
+        c = cross(v, w)
+        assert np.allclose(c, -cross(w, v))
+        assert np.isclose(c @ v, 0) and np.isclose(c @ w, 0)
+        assert np.isclose(c @ c, (v @ v) * (w @ w) - (v @ w) ** 2)
+
+        n = pure(rng.normal(size=7))
+        n /= np.linalg.norm(n)
+        x = pure(rng.normal(size=7))
+        a = n @ x
+        nx, xn = mul(n, x), mul(x, n)
+        e0 = np.eye(8)[0]
+        assert np.allclose(nx + xn, -2 * a * e0)
+        assert np.allclose(nx - xn, 2 * cross(n, x))
+        assert np.allclose(mul(nx, n), x - 2 * a * n)
+
+        # J_n on n^perp
+        J = np.column_stack([mul(n, np.eye(8)[j]) for j in range(8)])
+        P = np.eye(8) - np.outer(e0, e0) - np.outer(n, n)  # projector onto n^perp in Im O
+        Jv = J @ P
+        assert np.allclose(P @ Jv, Jv)  # maps V to V
+        assert np.allclose(Jv @ Jv, -P)
+        assert np.allclose(Jv.T @ Jv, P)
+
+        theta = rng.uniform(-np.pi, np.pi)
+        r = np.cos(theta / 2) * e0 + np.sin(theta / 2) * n
+        rc = r.copy()
+        rc[1:] *= -1
+        # choose orthonormal u_j, J u_j greedily
+        basis = []
+        for _ in range(3):
+            u = P @ rng.normal(size=8)
+            for b in basis:
+                u -= (u @ b) * b
+            u /= np.linalg.norm(u)
+            ju = J @ u
+            assert np.isclose(u @ ju, 0)
+            for b in basis:
+                assert np.isclose(ju @ b, 0)
+            basis += [u, ju]
+            img_u = mul(mul(r, u), rc)
+            img_ju = mul(mul(r, ju), rc)
+            assert np.allclose(img_u, np.cos(theta) * u + np.sin(theta) * ju)
+            assert np.allclose(img_ju, -np.sin(theta) * u + np.cos(theta) * ju)
+        assert np.allclose(mul(mul(r, n), rc), n)
+
+    print("  OK: 外積の反対称性・直交性・ノルムの式")
+    print("  OK: nx+xn=-2a, nx-xn=2n×x, (nx)n=x-2an")
+    print("  OK: J_n は n^⊥ 上で J^2=-1・等長、3つの平面 (u, J u) で角度 θ の回転")
+
+
 if __name__ == "__main__":
     check_product_and_cross()
     check_symbolic_components()
     check_example_e1()
     check_numerical_random()
+    check_proofs()
     print("\nAll checks passed successfully!")
