@@ -932,6 +932,7 @@ citation = "7shi, 複素数の拡張で学ぶテンソル積, Mathlog, Wed Nov 0
 url = "https://mathlog.info/articles/OunyiPffmIKhwwdmSrsA"
 files = [
   "clif/02-split-complex.md",
+  "clif/03-gpm-gca.md",
   "hopf/05-entanglement.md",
   "hopf/06-clifford-gates.md",
   "oct/04-sedenion.md",
