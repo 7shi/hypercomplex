@@ -677,6 +677,7 @@ files = [
   "clif-analysis/01-dirac-monogenic.md",
   "clif/pga-cga.md",
   "hopf/06-clifford-gates.md",
+  "lebesgue/02-l2-hilbert.md",
   "lie/03-spin.md",
   "qua/01-pauli-qua.md",
   "qua/history.md",
