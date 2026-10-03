@@ -937,7 +937,6 @@ files = [
   "hopf/06-clifford-gates.md",
   "oct/04-sedenion.md",
   "qua/03-qua-tensor.md",
-  "qua/history.md",
 ]
 
 ["7shi-vec3"]
