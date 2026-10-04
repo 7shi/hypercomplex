@@ -63,7 +63,7 @@ def find_missing_refs(md_entries: list[tuple[Path, str]]) -> list[tuple[str, str
 def render_missing_refs(missing: list[tuple[str, str]]) -> str:
     """Render as mathlog_fix-refs.md headings, ready to paste and import with
     `bash src/mathlog_fix.sh --refs`."""
-    lines = ["refs未取得(公開済みだがrefs/{ID}.tomlがない)。mathlog_fix-refs.mdに貼り、bash src/mathlog_fix.sh --refs で取り込む:"]
+    lines = ["未取得(公開済みだがrefs/{ID}.tomlがない)。mathlog_fix-refs.mdに貼り、bash src/mathlog_fix.sh --refs で取り込む:"]
     for md, article_id in missing:
         lines.append(f"## {md} — https://mathlog.info/articles/{article_id}")
     return "\n".join(lines)
@@ -266,56 +266,52 @@ def add_subparser(subparsers: argparse._SubParsersAction) -> None:
 
 
 def check_command(args: argparse.Namespace, sync: bool = False) -> None:
+    """Print "[OK] <item>" or "[NG] <item>" per check, with the details of
+    the problems found after each "[NG]" line."""
+    results: list[tuple[str, str | None]] = []
+
     md_entries = load_md_entries(ARTICLES_TSV)
     mismatches = find_slug_mismatches(md_entries)
-    if not mismatches:
-        print("mismatch nothing: all published articles match their refs/{ID}.toml")
-    else:
-        print(render_mismatches(mismatches))
+    results.append(("本文の[[slug]]とrefs/{ID}.tomlの一致", render_mismatches(mismatches) if mismatches else None))
 
     missing_refs = find_missing_refs(md_entries)
-    if missing_refs:
-        print(render_missing_refs(missing_refs))
-    else:
-        print("refs nothing: every published article has its refs/{ID}.toml")
+    results.append(("公開済み記事のrefs/{ID}.toml", render_missing_refs(missing_refs) if missing_refs else None))
 
     md_list = load_md_list(MD_TSV)
     slugs_map = load_slugs_tsv(SLUGS_TSV)
     missing_registrations = find_missing_from_slugs_tsv(md_list, slugs_map)
-    if missing_registrations:
-        print(f"未登録(md.tsvにあるがslugs.tsvにない): {missing_registrations}")
-    else:
-        print("registration nothing: every md.tsv file is registered in slugs.tsv")
+    results.append((
+        "slugs.tsvへの登録",
+        f"未登録(md.tsvにあるがslugs.tsvにない): {missing_registrations}" if missing_registrations else None,
+    ))
 
     undefined = find_undefined_in_unpublished(md_entries, slugs_map)
-    if undefined:
-        print(render_undefined_in_unpublished(undefined))
-    else:
-        print("undefined nothing: all [[slug]] markers in unpublished articles are known project-wide")
+    results.append(("未公開記事の[[slug]]の定義", render_undefined_in_unpublished(undefined) if undefined else None))
 
-    if not MASTER_PATH.is_file():
-        return
-    with DEFAULT_OUTPUT.open("rb") as f:
-        refs = tomllib.load(f)
-    with MASTER_PATH.open("rb") as f:
-        master = tomllib.load(f)
+    if MASTER_PATH.is_file():
+        with DEFAULT_OUTPUT.open("rb") as f:
+            refs = tomllib.load(f)
+        with MASTER_PATH.open("rb") as f:
+            master = tomllib.load(f)
 
-    if sync:
-        text = MASTER_PATH.read_text(encoding="utf-8")
-        new_text, changed = sync_master_files(text, refs, master)
-        if changed:
-            MASTER_PATH.write_text(new_text, encoding="utf-8")
-            print(f"synced files for {len(changed)} slug(s) in {MASTER_PATH.relative_to(ROOT)}: {changed}")
-            with MASTER_PATH.open("rb") as f:
-                master = tomllib.load(f)
+        if sync:
+            text = MASTER_PATH.read_text(encoding="utf-8")
+            new_text, changed = sync_master_files(text, refs, master)
+            if changed:
+                MASTER_PATH.write_text(new_text, encoding="utf-8")
+                print(f"synced files for {len(changed)} slug(s) in {MASTER_PATH.relative_to(ROOT)}: {changed}")
+                with MASTER_PATH.open("rb") as f:
+                    master = tomllib.load(f)
+
+        master_mismatches = find_master_mismatches(refs, master)
+        results.append(("refs.tomlとrefs-master.tomlの一致", "\n".join(master_mismatches) if master_mismatches else None))
+
+    for label, detail in results:
+        if detail is None:
+            print(f"[OK] {label}")
         else:
-            print("sync nothing: refs-master.toml files already match refs.toml")
-
-    master_mismatches = find_master_mismatches(refs, master)
-    if master_mismatches:
-        print("\n".join(master_mismatches))
-    else:
-        print("master mismatch nothing: refs.toml agrees with refs-master.toml")
+            print(f"[NG] {label}")
+            print(detail)
 
 
 def sync_command(args: argparse.Namespace) -> None:
