@@ -75,6 +75,7 @@ files = [
 
 ["7shi-c2s2"]
 files = [
+  "hopf/spherical-coords.md",
   "ktheory/01-overview.md",
 ]
 
