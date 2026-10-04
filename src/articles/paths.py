@@ -3,8 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-HTML_PATH = ROOT / "mathlog.html"
 MATHLOG_TSV = ROOT / "mathlog.tsv"
+MATHLOG_URL = ROOT / "mathlog.url"
 MD_TSV = ROOT / "md.tsv"
 ARTICLES_TSV = ROOT / "articles.tsv"
 

@@ -25,11 +25,20 @@
 - [slug管理](SLUG.md)：参考文献ラベル（slug）の命名規約と運用ルール。
 - [レビューと修正反映](REVIEW.md)：記事をLLMにレビューさせる手順と、公開済み記事を修正してMathlogへ反映する手順。
 
+## 新規公開
+
+記事をMathlogに新規投稿する手順です。
+
+1. 記事へのリンクをディレクトリの`README.md`に追加して`make md`を実行し、`slugs.tsv`に正準slugを登録します。リンク文字列は、Mathlogで付けるタイトルと一致させます（`articles.tsv`での突き合わせに使われます）。Mathlogのタイトルに「リー群・リー代数の初歩 3 」のようなシリーズ名を前に付ける場合は、リンク文字列をその後ろの部分と一致させれば対応づけられます。
+2. `bash src/mathlog_new.sh <md>`を実行します。記事がエディタで開き、Mathlogに登録する参考文献が一覧されます。
+3. Mathlogの編集画面で本文を貼り付け、参考文献を登録します。最後に参考文献パネルをブックマークレット`src/bookmarklets/mathlog_ref.url`でコピーしてから投稿します。
+4. スクリプトに戻って[Enter]を押します。記事一覧の差分（`make fetch`）と参考文献パネルが取り込まれ、`reftools check`まで実行されます。途中で止まっても、原因を直して同じコマンドを再実行すれば続きから再開します。
+
 ## ツール
 
 - [src/](src/README.md)：記事執筆・検証・参考文献管理に使うスクリプト類。
 - [src/articles/](src/articles/README.md)：Mathlog記事とREADMEリンクを突き合わせるツール。
-  - mathlog.tsv：mathlog.html から抽出した記事一覧（日付・URL・タイトル）。
+  - mathlog.tsv：Mathlogの記事一覧（日時・URL・タイトル）。`mathlog.url` のページから差分を取り込む。
   - md.tsv：README.md から抽出した記事一覧（パス・タイトル）。
   - articles.tsv：両者をタイトルで突き合わせた結果。
 - [src/review/](src/review/README.md)：記事をLLMにレビューさせるツール（運用手順は[REVIEW.md](REVIEW.md)）。

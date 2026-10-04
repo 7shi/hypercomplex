@@ -41,10 +41,11 @@
 記事の公開・修正や参照の追加に伴ってrefsを更新するときは、次の順で行う。
 
 1. **Mathlogの参考文献パネルを取り込む**（公開・修正した記事がある場合）
+   - 新規公開は `bash src/mathlog_new.sh <md>` で行う（操作の手順は [README.md](README.md) の「新規公開」）。投稿後にクリップボードの参考文献パネルを一時ファイル `mathlog_new-refs.html` に保存し、記事一覧（手順2）を取り込んでURLが決まったら `refs/{ID}.html` に移し、整形・TOML変換から `reftools build` / `sync` / `check` まで行う。
    - 参考文献パネルのHTMLを `refs/{記事ID}.html` として保存し、`uv run reftools format --in-place` で整形してから `uv run reftools toml` で `refs/{ID}.toml` を生成する。
    - 本文や参考文献パネルの修正を伴う場合は、リポジトリ直下に `mathlog_fix-refs.md` を書いて `bash src/mathlog_fix.sh --refs` を実行する（HTMLの取り込み・整形・TOML変換に続けて `reftools build` / `check` まで行う）。処理後に `mathlog_fix-refs.md` を削除する。参考文献パネルに変更がない本文のみの修正は `mathlog_fix.md` に書いて `--no-refs` で実行する。
 2. **記事一覧を更新する**
-   - Mathlogの記事一覧が変わった場合は `mathlog.html` を保存し直して `make mathlog` を実行する。
+   - Mathlogの記事一覧が変わった場合は `make fetch` で `mathlog.tsv` に差分を取り込む（`mathlog_new.sh` はこれを含む）。全件を取り直すときは、記事一覧ページでブックマークレット `src/bookmarklets/mathlog_articles.url` を実行し、`winclip -o mathlog.tsv` で保存する。
    - `make md` → `make merge` で `md.tsv` / `articles.tsv` を更新する。
 3. **集約・検証する**
    - `make build` で `refs.toml` を再生成する。
@@ -56,9 +57,9 @@
 5. **同期する**
    - `make sync` で `refs-master.toml` の各slugの `files` を `refs.toml` に合わせる。
 
-手順2（`make mathlog` を除く）〜5は `make all`（`md merge build sync`）でまとめて実行できる。
+手順2（`make fetch` を除く）〜5は `make all`（`md merge build sync`）でまとめて実行できる。
 
-機械生成されるファイル（`mathlog.tsv`・`md.tsv`・`articles.tsv`・`refs.toml`、`refs-master.toml` の `files`）は直接編集しない。内容を変えたいときは生成元（`mathlog.html`・各 `README.md`・`refs/*.toml` 等）を直してから再生成する。
+機械生成されるファイル（`mathlog.tsv`・`md.tsv`・`articles.tsv`・`refs.toml`、`refs-master.toml` の `files`）は直接編集しない。内容を変えたいときは生成元（Mathlogの記事一覧・各 `README.md`・`refs/*.toml` 等）を直してから再生成する。
 
 ## 関連ファイル・ツール
 
@@ -78,4 +79,7 @@
 - `src/mathlog_fix.sh` — リポジトリ直下で実行し、作業リスト（`--refs` なら `mathlog_fix-refs.md`、`--no-refs` なら `mathlog_fix.md`）を見出しごとのブロックに分割し、各ブロックで対象mdファイルをエディタで開き、Mathlog記事URLをクリップボードにコピーし、ブロック本文（修正内容）を表示して手動修正の完了を待つ。完了後 `refs/{ID}.html` をクリップボードから取得し、`reftools format --in-place` で整形して `reftools toml` で `refs/{ID}.toml` に変換する。全ブロックの処理後に `reftools build` と `reftools check` を実行する。`--refs` と `--no-refs` のどちらかの指定が必須で、省略するとusageを表示して終了する。`--no-refs` では `mathlog_fix.md` を読み、クリップボードからの取り込み・整形・TOML変換を省く（`reftools build` / `check` は実行する）。
 - `articles.tsv` — 記事一覧（date, url, md, title）。`src/articles/`（`articles`コマンド）で生成・更新。
 - `md.tsv` — 全記事ファイル一覧（md, title）。公開・未公開を問わず全ファイルを含む。
-- `Makefile` — `make mathlog`/`md`/`merge`（`articles` の同名サブコマンド）、`make build`/`sync`/`check`（`reftools` の同名サブコマンド）、`make all`（`md merge build sync`）のショートカット。`make help` で一覧表示。
+- `src/mathlog_new.sh` — 未公開の記事1本を新規投稿する手順を順に案内する（手順は上記「更新手順」の1）。事前に `md.tsv`・`slugs.tsv` への登録と未公開であることを確かめ、`reftools show` で登録すべき参考文献を表示する。
+- `mathlog.url` — Mathlogの記事一覧ページのURL。`articles fetch` が取得する。
+- `src/bookmarklets/mathlog_articles.url` — Mathlogの記事一覧ページで実行し、表示中の記事を `mathlog.tsv` の形式（日時・URL・タイトル）でクリップボードにコピーする。日時は各記事の `created_at` を日本時間に直したもの（`yyyy/mm/dd hh:mm:ss`）。全件を取り直すときに、全記事を表示させてから実行する。
+- `Makefile` — `make fetch`/`md`/`merge`（`articles` の同名サブコマンド）、`make build`/`sync`/`check`（`reftools` の同名サブコマンド）、`make all`（`md merge build sync`）のショートカット。`make help` で一覧表示。

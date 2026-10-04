@@ -29,7 +29,7 @@
 
 # 生成ファイル
 
-`make`で更新する想定のファイル（`mathlog.tsv`・`md.tsv`・`articles.tsv`・`refs.toml`、`refs-master.toml`の`files`）は直接編集しないでください。生成元（`mathlog.html`・各`README.md`・`refs/*.toml`等）を直してから`make`で再生成します。手順は [SLUG.md](SLUG.md) の「更新手順」を参照してください。
+ツールで更新する想定のファイル（`mathlog.tsv`・`md.tsv`・`articles.tsv`・`refs.toml`、`refs-master.toml`の`files`）は直接編集しないでください。生成元（Mathlogの記事一覧・各`README.md`・`refs/*.toml`等）を直してから再生成します（`mathlog.tsv`は`make fetch`で差分を取り込み、他も`make`で生成）。手順は [SLUG.md](SLUG.md) の「更新手順」を参照してください。
 
 # ボックス記法
 

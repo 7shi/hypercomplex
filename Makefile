@@ -1,8 +1,9 @@
-.PHONY: help all mathlog md merge build sync check
+.PHONY: help all fetch md merge build sync check
 
 help:
 	@echo "使用可能なターゲット:"
 	@echo "  all    - md merge build check"
+	@echo "  fetch  - uv run articles fetch"
 	@echo "  md     - uv run articles md"
 	@echo "  merge  - uv run articles merge"
 	@echo "  build  - uv run reftools build"
@@ -11,7 +12,7 @@ help:
 
 all: md merge build sync
 
-mathlog md merge:
+fetch md merge:
 	uv run articles $@
 
 build sync check:

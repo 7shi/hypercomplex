@@ -98,7 +98,7 @@ def add_subparser(subparsers: argparse._SubParsersAction) -> None:
 
 def merge_command(args: argparse.Namespace) -> None:
     if not MATHLOG_TSV.is_file():
-        raise SystemExit(f"missing {MATHLOG_TSV}; run: articles mathlog")
+        raise SystemExit(f"missing {MATHLOG_TSV}; copy it with src/bookmarklets/mathlog_articles.url")
     if not MD_TSV.is_file():
         raise SystemExit(f"missing {MD_TSV}; run: articles md")
 

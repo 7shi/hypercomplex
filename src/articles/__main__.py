@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import argparse
 
-from articles import md, mathlog, merge, pending
+from articles import fetch, md, merge, pending
 
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.strip())
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    mathlog.add_subparser(subparsers)
+    fetch.add_subparser(subparsers)
     md.add_subparser(subparsers)
     merge.add_subparser(subparsers)
     pending.add_subparser(subparsers)

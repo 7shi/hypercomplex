@@ -10,5 +10,5 @@ wheels/
 .venv
 
 # Generated files
-mathlog.html
+mathlog_new-refs.html
 refs/*.html
