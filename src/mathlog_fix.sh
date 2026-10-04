@@ -39,6 +39,9 @@ flush() {
             read -p "修正が完了したら[Enter]を押してください。"
             return
         fi
+        echo
+        uv run reftools show "$file"
+        echo
         read -p "修正が完了したら、参考文献をコピーして[Enter]を押してください。"
         ref="refs/$(basename "$url").html"
         winclip -o "$ref"
