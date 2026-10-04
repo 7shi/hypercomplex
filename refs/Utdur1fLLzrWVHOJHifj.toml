@@ -1,10 +1,14 @@
 [7shi-lie1]
 type = "mathlog"
-citation = "7shi, リー群・リー代数の初歩 1 複素数とSO(2), Mathlog, Sun Mar 09 2025, アクセス日: Sun Jul 19 2026"
+citation = "7shi, リー群・リー代数の初歩 1 複素数とSO(2), Mathlog, Sun Mar 09 2025, アクセス日: Sun Oct 04 2026"
 
-[7shi-qcm]
+[7shi-qp]
 type = "mathlog"
-citation = "7shi, 発見的手法による四元数の複素行列表現の構成, Mathlog, Tue May 06 2025, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Oct 04 2026"
+
+[7shi-nonion]
+type = "mathlog"
+citation = "7shi, シルベスターの九元数 (nonion), Mathlog, Sun May 17 2026, アクセス日: Sun Oct 04 2026"
 
 [7shi-qrot]
 type = "website"

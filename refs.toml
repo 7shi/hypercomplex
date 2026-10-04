@@ -74,6 +74,9 @@ files = [
 ]
 
 ["7shi-c2s2"]
+type = "mathlog"
+citation = "7shi, 複素2次元ベクトルから2次元球面への射影, Mathlog, Tue Nov 25 2025, アクセス日: Sun Oct 04 2026"
+url = "https://mathlog.info/articles/OHZI3f5bQ4hB0S7dn6lv"
 files = [
   "hopf/spherical-coords.md",
   "ktheory/01-overview.md",
@@ -551,7 +554,7 @@ files = [
 
 ["7shi-lie1"]
 type = "mathlog"
-citation = "7shi, リー群・リー代数の初歩 1 複素数とSO(2), Mathlog, Sun Mar 09 2025, アクセス日: Sun Jul 19 2026"
+citation = "7shi, リー群・リー代数の初歩 1 複素数とSO(2), Mathlog, Sun Mar 09 2025, アクセス日: Sun Oct 04 2026"
 url = "https://mathlog.info/articles/LaKnZpwhlbeMHelDgI4M"
 files = [
   "clif/04-weyl-algebra.md",
@@ -712,6 +715,9 @@ files = [
 ]
 
 ["7shi-nonion"]
+type = "mathlog"
+citation = "7shi, シルベスターの九元数 (nonion), Mathlog, Sun May 17 2026, アクセス日: Sun Oct 04 2026"
+url = "https://mathlog.info/articles/3gMUAXJD714J2LtlfIqU"
 files = [
   "clif/03-gpm-gca.md",
   "clif/04-weyl-algebra.md",
@@ -822,7 +828,7 @@ files = [
 
 ["7shi-qp"]
 type = "mathlog"
-citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Jul 19 2026"
+citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Sun Oct 04 2026"
 url = "https://mathlog.info/articles/DHOiSwSzjA9jR4MlrTGu"
 files = [
   "lie/02-su2-so3.md",
