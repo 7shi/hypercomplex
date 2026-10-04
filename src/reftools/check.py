@@ -49,6 +49,26 @@ def render_mismatches(mismatches: list[tuple[Path, str, list[str], list[str]]]) 
     return "\n".join(lines)
 
 
+def find_missing_refs(md_entries: list[tuple[Path, str]]) -> list[tuple[str, str]]:
+    """Return (md, article_id) for published articles (with a Mathlog url)
+    whose refs/{ID}.toml is missing, i.e. the references panel was never
+    imported. find_slug_mismatches silently skips these."""
+    return [
+        (md_path.relative_to(ROOT).as_posix(), article_id)
+        for md_path, article_id in md_entries
+        if article_id and not (REFS_DIR / f"{article_id}.toml").is_file()
+    ]
+
+
+def render_missing_refs(missing: list[tuple[str, str]]) -> str:
+    """Render as mathlog_fix-refs.md headings, ready to paste and import with
+    `bash src/mathlog_fix.sh --refs`."""
+    lines = ["refs未取得(公開済みだがrefs/{ID}.tomlがない)。mathlog_fix-refs.mdに貼り、bash src/mathlog_fix.sh --refs で取り込む:"]
+    for md, article_id in missing:
+        lines.append(f"## {md} — https://mathlog.info/articles/{article_id}")
+    return "\n".join(lines)
+
+
 def find_missing_from_slugs_tsv(md_list: list[str], slugs_map: dict[str, str]) -> list[str]:
     """Return md.tsv paths that have no entry in slugs.tsv at all (not even
     "NONE"). slugs.tsv is meant to cover every file in md.tsv, so a missing
@@ -252,6 +272,12 @@ def check_command(args: argparse.Namespace, sync: bool = False) -> None:
         print("mismatch nothing: all published articles match their refs/{ID}.toml")
     else:
         print(render_mismatches(mismatches))
+
+    missing_refs = find_missing_refs(md_entries)
+    if missing_refs:
+        print(render_missing_refs(missing_refs))
+    else:
+        print("refs nothing: every published article has its refs/{ID}.toml")
 
     md_list = load_md_list(MD_TSV)
     slugs_map = load_slugs_tsv(SLUGS_TSV)

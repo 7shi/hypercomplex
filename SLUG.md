@@ -44,6 +44,7 @@
    - 新規公開は `bash src/mathlog_new.sh <md>` で行う（操作の手順は [README.md](README.md) の「新規公開」）。投稿後にクリップボードの参考文献パネルを一時ファイル `mathlog_new-refs.html` に保存し、記事一覧（手順2）を取り込んでURLが決まったら `refs/{ID}.html` に移し、整形・TOML変換から `reftools build` / `sync` / `check` まで行う。
    - 参考文献パネルのHTMLを `refs/{記事ID}.html` として保存し、`uv run reftools format --in-place` で整形してから `uv run reftools toml` で `refs/{ID}.toml` を生成する。
    - 本文や参考文献パネルの修正を伴う場合は、リポジトリ直下に `mathlog_fix-refs.md` を書いて `bash src/mathlog_fix.sh --refs` を実行する（HTMLの取り込み・整形・TOML変換に続けて `reftools build` / `check` まで行う）。処理後に `mathlog_fix-refs.md` を削除する。参考文献パネルに変更がない本文のみの修正は `mathlog_fix.md` に書いて `--no-refs` で実行する。
+   - 取り込み漏れ（`reftools check` の「refs未取得」）も、報告された見出しを `mathlog_fix-refs.md` に貼り、`--refs` で取り込む。
 2. **記事一覧を更新する**
    - Mathlogの記事一覧が変わった場合は `make fetch` で `mathlog.tsv` に差分を取り込む（`mathlog_new.sh` はこれを含む）。全件を取り直すときは、記事一覧ページでブックマークレット `src/bookmarklets/mathlog_articles.url` を実行し、`winclip -o mathlog.tsv` で保存する。
    - `make md` → `make merge` で `md.tsv` / `articles.tsv` を更新する。
@@ -69,9 +70,10 @@
   - `build`: `refs.toml` を生成する。slugごとに見出しを立て、`type`/`url`（定義がなければ省略）と使用元mdファイル一覧（`files`）を持つ。同一slugが異なる`(type, url)`に解決される場合はビルド時にエラーとする。`--url-output`/`--file-output` で `refs-url.txt`（複数slugから引用される同一URLの検出）/ `refs-file.txt`（自著記事が他記事から引用されているslugの一覧）を追加生成できるが、これらは通常のbuildには含めず、必要なチェック時にのみ都度生成する使い捨てファイル。
   - `check`: 以下をすべて実行する。
     1. 各公開済み記事本文の `[[slug]]` と対応する `refs/{ID}.toml` の過不足を検査する（「未使用」＝tomlにあるが本文にないslugは意図的な保持もあり、必ずしも修正対象ではない）。
-    2. `md.tsv` の全ファイルが `slugs.tsv` に登録されているか確認する。
-    3. 未公開記事（`refs/{ID}.toml` を持たない）本文の `[[slug]]` を、プロジェクト全体で既知のslug（全公開記事の `refs/{ID}.toml` のキー ∪ `refs-master.toml` のキー ∪ `slugs.tsv` に予約された正準slug）と突き合わせ、どこにも定義のないslugを報告する。
-    4. `refs.toml`（機械生成）と `refs-master.toml`（手動管理）を突き合わせ、titleおよびその他共有フィールドの矛盾を報告する。
+    2. Mathlogのurlがあるのに `refs/{ID}.toml` がない記事を、参考文献パネルの取り込み漏れとして報告する（`mathlog_fix-refs.md` の見出しの形式で出力する）。
+    3. `md.tsv` の全ファイルが `slugs.tsv` に登録されているか確認する。
+    4. 未公開記事（`refs/{ID}.toml` を持たない）本文の `[[slug]]` を、プロジェクト全体で既知のslug（全公開記事の `refs/{ID}.toml` のキー ∪ `refs-master.toml` のキー ∪ `slugs.tsv` に予約された正準slug）と突き合わせ、どこにも定義のないslugを報告する。
+    5. `refs.toml`（機械生成）と `refs-master.toml`（手動管理）を突き合わせ、titleおよびその他共有フィールドの矛盾を報告する。
   - `sync`: `check` と同じ検査を行った上で、`refs-master.toml` の各slugの `files` を `refs.toml` に合わせて書き換える。
   - `show <mdパス|slug>`: 引数（mdパスまたは`slugs.tsv`の正準slug）で記事を1つ特定し、ファイル名と正準slug（`slugs.tsv`未登録なら未登録である旨）を表示した上で、本文の `[[slug]]` を出現順に列挙する。各slugは `refs-master.toml`（優先）または `refs.toml` の内容があれば表示し、どちらもなければ `slugs.tsv` の逆引き（他記事の正準slugであれば、未公開でもそのmdパス。公開済みなら `articles.tsv` から取得したURLも併記）を試し、それもなければ「情報なし」と表示する。
 - `refs/*.toml` — Mathlog記事ごとの参考文献エクスポート（`reftools toml` で `refs/*.html` から生成）。

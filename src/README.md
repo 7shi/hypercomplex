@@ -9,5 +9,4 @@
 - LLMのトークン使用量を`usage.jsonl`に記録・集計するツールは[llm7shi](https://github.com/7shi/llm7shi)に統合され、`uv run usage`で使えます。
 - [bookmarklets/](bookmarklets/) — Mathlog関連のブックマークレット集。
 - [mathlog_new.sh](mathlog_new.sh) — 未公開の記事をMathlogに新規投稿し、記事一覧（`mathlog.tsv`）の差分と参考文献パネルを取り込む。
-- [mathlog_ref.sh](mathlog_ref.sh) — `mathlog.tsv`の未取得記事について、参考文献パネルのHTMLをクリップボード経由で取り込み、整形・TOML化する。
 - [mathlog_fix.sh](mathlog_fix.sh) — `mathlog_fix.md`に列挙した既存記事を開き直し、本文修正と参考文献の再取り込みを行う。
