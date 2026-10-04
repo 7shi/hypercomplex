@@ -3,7 +3,7 @@
 シリーズ：[リー群・リー代数の初歩](https://mathlog.info/series/LENUzX64bZ63y462z5I9)
 
 &&& 改訂履歴
-- 2026.10.01 前回の行列表現の変更に合わせて、四元数との対応を$i,j,k\Leftrightarrow-i\sigma_1,-i\sigma_2,-i\sigma_3$に変更し、回転の向きをそろえた。回転子による回転を、四元数の共役作用と同じ並びの$RxR^{-1}$に改めた。鏡映の合成順に合わせて回転子を$R=vu$とした
+- 2026.10.04 四元数との対応を$i,j,k\Leftrightarrow-i\sigma_1,-i\sigma_2,-i\sigma_3$、回転子による回転を$RxR^{-1}$に変更
 &&&
 
 # 概要
