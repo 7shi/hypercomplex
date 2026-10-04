@@ -1,4 +1,5 @@
 date	url	md	title
+2026/10/05 05:06:21	/articles/lqjnqaunOqyX7yWKMosO	vec-oct/convention.md	回転の向きと積の順序の規約
 2026/07/26 19:05:17	/articles/aTwHWEwHs7JRLyErT9ww	clif/01-representation.md	クリフォード代数の構造と表現
 2026/07/24 05:45:16	/articles/DRbXTeeL31pDcZyG6ml7	lie/03-spin.md	リー群・リー代数の初歩 3 クリフォード代数とSpin(3)
 2026/07/20 05:34:34	/articles/asrMOxuKsJIdPqANfOs3	qua/04-4d-bsqua.md	4次元回転と分解型双四元数
@@ -91,4 +92,3 @@ date	url	md	title
 		qua/history.md	四元数が脇役になった歴史的経緯
 		qua/spinor-ideal.md	四元数の左作用・右作用とスピノルの左イデアル
 		vec-oct/02-rotation.md	回転：ベクトルから八元数まで
-		vec-oct/convention.md	回転の向きと積の順序の規約

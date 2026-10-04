@@ -1,0 +1,23 @@
+[7shi-mir]
+type = "mathlog"
+citation = "7shi, 鏡映：ベクトルから八元数まで, Mathlog, Tue Jul 16 2024, アクセス日: Mon Oct 05 2026"
+
+[7shi-clrt]
+type = "website"
+citation = "七誌, クリフォード代数による回転, 七誌の開発日記, 閲覧日 2026年10月5日, https://7shi.hateblo.jp/entry/2020/03/07/071242"
+url = "https://7shi.hateblo.jp/entry/2020/03/07/071242"
+accessed = 2026-10-05
+author = ["七誌"]
+site = "七誌の開発日記"
+
+[7shi-vge]
+type = "mathlog"
+citation = "7shi, ベクトルの幾何積と指数関数, Mathlog, Wed Jul 24 2024, アクセス日: Mon Oct 05 2026"
+
+[7shi-bq]
+type = "mathlog"
+citation = "7shi, パウリ行列と四元数：双四元数による橋渡し, Mathlog, Thu Jul 11 2024, アクセス日: Mon Oct 05 2026"
+
+[7shi-qp]
+type = "mathlog"
+citation = "7shi, 四元数の行列表現からパウリ行列まで, Mathlog, Sat May 03 2025, アクセス日: Mon Oct 05 2026"
