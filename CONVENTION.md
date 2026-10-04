@@ -94,6 +94,6 @@
 
 ローカルで改訂した公開済み記事は、作業リストに書いて `bash src/mathlog_fix.sh` でMathlogに反映する（手順は `SLUG.md` の「更新手順」）。
 
-- 参照（`[[slug]]`）を変えた記事は `mathlog_fix-ref.md` に書いて `--refs` で実行し、Mathlogの参考文献パネルも直したうえで、パネルをコピーして `refs/{ID}.toml` を取り込み直す。
+- 参照（`[[slug]]`）を変えた記事は `mathlog_fix-refs.md` に書いて `--refs` で実行し、Mathlogの参考文献パネルも直したうえで、パネルをコピーして `refs/{ID}.toml` を取り込み直す。
 - 本文のみの修正は `mathlog_fix.md` に書いて `--no-refs` で実行する。
 - 処理後にそれぞれの作業リストを削除し、`make all` で `refs.toml` などを再生成する。
