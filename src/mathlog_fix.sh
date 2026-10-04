@@ -42,9 +42,15 @@ flush() {
         echo
         uv run reftools show "$file"
         echo
-        read -p "修正が完了したら、参考文献をコピーして[Enter]を押してください。"
+        prompt="修正が完了したら、参考文献をコピーして[Enter]を押してください。"
+        while :; do
+            read -p "$prompt"
+            refs=$(winclip -o)
+            [[ "$refs" == *accordion* ]] && break
+            prompt="クリップボードの内容が参考文献パネルではありません。コピーし直して[Enter]を押してください。"
+        done
         ref="refs/$(basename "$url").html"
-        winclip -o "$ref"
+        printf '%s\n' "$refs" > "$ref"
         uv run reftools format "$ref" --in-place
         uv run reftools toml "$ref"
     fi

@@ -9,8 +9,14 @@ for line in "${lines[@]:1}"; do
     [ -e "$ref" ] && continue
 
     winclip "https://mathlog.info$url"
-    read -p "$url $title"
-    winclip -o "$ref"
+    prompt="$url $title"
+    while :; do
+        read -p "$prompt"
+        refs=$(winclip -o)
+        [[ "$refs" == *accordion* ]] && break
+        prompt="クリップボードの内容が参考文献パネルではありません。コピーし直して[Enter]を押してください。"
+    done
+    printf '%s\n' "$refs" > "$ref"
     uv run reftools format "$ref" --in-place
     uv run reftools toml "$ref"
 done
