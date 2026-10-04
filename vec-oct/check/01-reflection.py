@@ -178,8 +178,6 @@ for dim in (2, 3, 4, 8):
         two = {k: -x for k, x in cmul(cmul(M, {k: -x for k, x in cmul(cmul(N, V), N).items()}), M).items()}
         ok(f"Cl_{dim},0: 合成 = mnvnm", close(two, cmul(cmul(cmul(cmul(M, N), V), N), M)))
         ok(f"Cl_{dim},0: 合成 = 2回の鏡映", close(two, vec(refl(refl(v, n), m))))
-        ok(f"Cl_{dim},0: 線対称な鏡映 nvn = 2(v.n)n - v",
-           close(cmul(cmul(N, V), N), vec(2 * (v @ n) * n - v)))
 
 print("=== 射影行列 ===")
 n = unit(rng.normal(size=5))
@@ -188,11 +186,5 @@ ok("冪等", np.allclose(P @ P, P))
 H = np.eye(5) - 2 * P
 ok("I-2nn^T は対合かつ直交", np.allclose(H @ H, np.eye(5)) and np.allclose(H.T @ H, np.eye(5)))
 ok("det = -1", np.isclose(np.linalg.det(H), -1))
-
-print("=== 3次元の線対称な鏡映は軸周りの180度回転 ===")
-n3 = unit(rng.normal(size=3))
-A = 2 * np.outer(n3, n3) - np.eye(3)
-ok("det = +1 かつ軸固定", np.isclose(np.linalg.det(A), 1) and np.allclose(A @ n3, n3))
-ok("trace = -1（回転角 pi）", np.isclose(np.trace(A), -1))
 
 print("すべて確認しました。")

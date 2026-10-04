@@ -56,7 +56,7 @@ n = np.cos(phi) * m + np.sin(phi) * t
 v = np.zeros(8)
 v[1:] = rng.normal(size=7)
 
-# 鏡映 nvn = v - 2(v.n)n、線対称な鏡映は -nvn
+# 鏡映 nvn = v - 2(v.n)n
 nvn1 = omul(omul(n, v), n)
 nvn2 = omul(n, omul(v, n))
 ok("(nv)n = n(vn)  [交代性]", np.allclose(nvn1, nvn2))
