@@ -147,6 +147,11 @@ Pform = (I4 - L[1] @ R[1] - L[2] @ R[2] - L[3] @ R[3])
 print("P == 1/4 (I - L_iR_i - L_jR_j - L_kR_k):", np.array_equal(Pform, 4 * P))
 print("P^2 == P:", np.array_equal(P @ P, P), " L_1 P == P:",
       np.array_equal(L[0] @ P, P))
+# M_4(R)P is not a two-sided ideal: the first row of L_i is (0,-1,0,0), so
+# P L_i has a nonzero entry in column 2 and leaves the first-column matrices
+print("first row of L_i == (0,-1,0,0):", list(L[1][0]) == [0, -1, 0, 0])
+PLi = P @ L[1]
+print("P L_i has nonzero column 2 (not in M_4(R)P):", PLi[0, 1] != 0)
 
 rng = np.random.default_rng(0)
 ok = True

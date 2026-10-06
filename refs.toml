@@ -191,6 +191,7 @@ files = [
   "em/03-waves.md",
   "em/05-lorentz.md",
   "oct/04-sedenion.md",
+  "qua/spinor-ideal.md",
 ]
 
 ["7shi-clif3"]
