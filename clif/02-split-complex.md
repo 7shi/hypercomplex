@@ -16,7 +16,7 @@ $$
 $1, j$ が基底であることから、この表示は一意です。分解型複素数全体のなす環を $\mathbb{R}[j]$ と書きます。
 &&&
 
-ここで $j$ はしばしば「虚数単位」と呼ばれますが、通常の複素数の虚数単位 $i$（$i^2 = -1$）とは異なり、$j^2 = +1$ という性質を持ちます。代数的には、$t^2 - 1$ による剰余環として
+ここで $j$ はしばしば「虚数単位」と呼ばれますが、通常の複素数の虚数単位 $i$（$i^2 = -1$）とは異なり、$j^2 = +1$ という性質を持ちます。代数的には、後の節で定義する剰余環として
 
 $$
 \mathbb{R}[j] \cong \mathbb{R}[t]/(t^2-1)
@@ -177,10 +177,12 @@ $$
 
 # 冪等元と極小イデアル
 
-冪等元 $e$ と $e^*$ は、それぞれ極小イデアルを生成します。
+冪等元 $e$ と $e^*$ は、それぞれ極小イデアルを生成します。本記事で扱う環は単位元 $1$ を持つものとします。
 
 &&&def イデアル
 可換環 $A$ の加法部分群 $I \subseteq A$ であり、任意の $a \in A$、$u \in I$ に対して $au \in I$ を満たす（吸収性を持つ）ものを**イデアル**と呼びます。
+
+非可換環では、左からの吸収性を満たすものを**左イデアル**と呼びます。
 &&&
 
 &&&def 極小イデアル
@@ -292,7 +294,13 @@ $$
 (a + I) + (b + I) = (a + b) + I, \qquad (a + I)(b + I) = ab + I
 $$
 
-吸収性により、この演算は代表元の選び方によらずに定まります。
+代表元を $a + u,\ b + v$（$u, v \in I$）に替えても、和の差は $u + v \in I$、積の差は次のように $I$ に属します。
+
+$$
+(a + u)(b + v) - ab = av + ub + uv \in I
+$$
+
+したがって、加法部分群の性質と吸収性により、この演算は代表元の選び方によらずに定まります。
 &&&
 
 冒頭で用いた $\mathbb{R}[t]/(t^2-1)$ も、多項式環 $\mathbb{R}[t]$ を $t^2 - 1$ の倍数全体のなすイデアルで割った剰余環です。
@@ -303,7 +311,7 @@ $$
 \mathbb{R}[j]/\mathbb{R}e^* \cong \mathbb{R}, \qquad z + \mathbb{R}e^* \longmapsto π_1(z)
 $$
 
-同様に、第2成分を取り出す $π_2: x + jy \mapsto x - y$（$j$ に $-1$ を代入する操作）で $0$ に移る元は $\mathbb{R}e$ の元であり、$\mathbb{R}[j]/\mathbb{R}e \cong \mathbb{R}$ が得られます。$t^2 - 1 = (t-1)(t+1)$ と因数分解すると、因数 $t - 1$ と $t + 1$ は $\mathbb{R}[j]$ ではそれぞれ $j - 1 = -2e^*$ と $j + 1 = 2e$ になります。$j$ に $\pm 1$ を代入することは、因数 $t \mp 1$ を零とみなすことに当たります。
+同様に、第2成分を取り出す $π_2: x + jy \mapsto x - y$（$j$ に $-1$ を代入する操作）で $0$ に移る元は $\mathbb{R}e$ の元であり、$\mathbb{R}[j]/\mathbb{R}e \cong \mathbb{R}$ が得られます。$t^2 - 1 = (t-1)(t+1)$ と因数分解すると、$f(t) \mapsto f(j)$ によって、因数 $t - 1$ と $t + 1$ はそれぞれ $j - 1 = -2e^*$ と $j + 1 = 2e$ に移ります。$j$ に $\pm 1$ を代入することは、因数 $t \mp 1$ を零とみなすことに当たります。
 
 剰余環がどちらも体 $\mathbb{R}$ になったのは、$\mathbb{R}e^*$ と $\mathbb{R}e$ がそれ以上大きくできないイデアルであることを反映しています。これを確かめるために、まず $\mathbb{R}[j]$ のイデアルをすべて求めます。
 
@@ -334,13 +342,13 @@ $\mathbb{R}[j]$ のイデアルは、$\{0\},\ \mathbb{R}e,\ \mathbb{R}e^*,\ \mat
 &&&
 
 &&&prf
-（極大イデアル ⇒ 体）$\mathfrak{m} \neq A$ より $1 \notin \mathfrak{m}$ なので、$A/\mathfrak{m}$ において $1 + \mathfrak{m} \neq 0 + \mathfrak{m}$ である。$a \notin \mathfrak{m}$ を取り、
+（極大イデアル ⇒ 体）$1 \in \mathfrak{m}$ なら任意の $b \in A$ について $b = b \cdot 1 \in \mathfrak{m}$ となり $\mathfrak{m} = A$ になるため、$\mathfrak{m} \neq A$ より $1 \notin \mathfrak{m}$ である。よって $A/\mathfrak{m}$ において $1 + \mathfrak{m} \neq 0 + \mathfrak{m}$ である。$a \notin \mathfrak{m}$ を取り、
 
 $$
 J = \mathfrak{m} + Aa = \{m + ra \mid m \in \mathfrak{m},\ r \in A\}
 $$
 
-とおく。$J$ は加法と吸収性について閉じているためイデアルであり、$\mathfrak{m}$ を含み、さらに $a \in J$ なので $\mathfrak{m}$ より真に大きい。$\mathfrak{m}$ は極大なので $J = A$ であり、特に $1 = m + ra$ となる $m \in \mathfrak{m}$、$r \in A$ が存在する。差 $1 - ra = m$ が $\mathfrak{m}$ に属するので、$(r + \mathfrak{m})(a + \mathfrak{m}) = 1 + \mathfrak{m}$ となる。したがって $0$ でない元 $a + \mathfrak{m}$ はすべて逆元を持ち、$A/\mathfrak{m}$ は体である。
+とおく。$J$ は加法と反数について閉じており、$s \in A$ に対して $s(m + ra) = sm + (sr)a \in J$ となるためイデアルである。$J$ は $\mathfrak{m}$ を含み、さらに $a \in J$ なので $\mathfrak{m}$ より真に大きい。$\mathfrak{m}$ は極大なので $J = A$ であり、特に $1 = m + ra$ となる $m \in \mathfrak{m}$、$r \in A$ が存在する。差 $1 - ra = m$ が $\mathfrak{m}$ に属するので、$(r + \mathfrak{m})(a + \mathfrak{m}) = 1 + \mathfrak{m}$ となる。したがって $0$ でない元 $a + \mathfrak{m}$ はすべて逆元を持ち、$A/\mathfrak{m}$ は体である。
 
 （体 ⇒ 極大イデアル）$A/\mathfrak{m}$ は体なので $1 + \mathfrak{m} \neq 0 + \mathfrak{m}$、すなわち $1 \notin \mathfrak{m}$ であり、$\mathfrak{m} \neq A$ である。$\mathfrak{m}$ を真に含むイデアル $J$ を取り、$a \in J$、$a \notin \mathfrak{m}$ とする。$a + \mathfrak{m} \neq 0 + \mathfrak{m}$ は逆元 $r + \mathfrak{m}$ を持つので、$1 - ra \in \mathfrak{m} \subseteq J$ である。吸収性より $ra \in J$ なので、$1 = (1 - ra) + ra \in J$ となる。すると任意の $b \in A$ について $b = b \cdot 1 \in J$ となり、$J = A$ である。したがって $\mathfrak{m}$ は極大イデアルである。
 &&&
@@ -353,7 +361,7 @@ $$
 
 したがって $a + \mathbb{R}e^*$ の逆元は $\dfrac{1}{p} + \mathbb{R}e^*$ です。$\mathbb{R}e^*$ で割ると $e^*$ の成分が無視され、残る $e$ の成分が $0$ でなければ割り算ができるということです。
 
-通常の複素数体 $\mathbb{C}$ ではイデアルが $\{0\}$ と全体しかないため、$\{0\}$ が極大イデアルであり、剰余環 $\mathbb{C}/\{0\} = \mathbb{C}$ は体です。これに対して $\mathbb{R}[j]$ では $\{0\}$ が極大イデアルではなく、$\mathbb{R}[j]$ 自身が体でないことに対応しています。
+rem「半単純環」で見たように、通常の複素数体 $\mathbb{C}$ ではイデアルが $\{0\}$ と全体しかないため、$\{0\}$ が極大イデアルであり、剰余環 $\mathbb{C}/\{0\} = \mathbb{C}$ は体です。これに対して $\mathbb{R}[j]$ では $\{0\}$ が極大イデアルではなく、$\mathbb{R}[j]$ 自身が体でないことに対応しています。
 
 &&&rem 極小イデアルと極大イデアルの違い
 $\mathbb{R}[j]$ では、$\mathbb{R}e$ と $\mathbb{R}e^*$ が極小イデアルであると同時に極大イデアルでもあります。これは環が実2次元しかなく、$\{0\}$ と全体の間に1次元のイデアルしか入らないためで、一般には両者は一致しません。

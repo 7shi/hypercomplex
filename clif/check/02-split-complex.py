@@ -9,6 +9,10 @@ section at the end of the article:
 - the only idempotents of R[j] are 0, 1, e, e*, the zero divisors are
   exactly the x(1 +- j), and the isomorphism R[j] = R (+) R given by
   x + jy -> (x+y, x-y);
+- the projections pi_1, pi_2 (substituting j = +-1) are ring homomorphisms
+  with kernels R e*, R e; j -+ 1 = -2e*, 2e; the 1-dim ideals are the
+  eigenspaces of j; in R[j]/R e* the class of a = pe + qe* (p != 0) has
+  inverse 1/p;
 - the non-diagonal representation B = (0 1; 1 0) is the regular representation
   of "multiply by j" on the basis {1, j}, has eigenvalues +-1 and is similar to
   the diagonal one; it acts as (x, y) -> (y, x), the reflection in y = x;
@@ -69,6 +73,31 @@ p1, p2, pp = Phi(z1), Phi(z2), Phi(sp.expand(z1 * z2))
 print("Phi is multiplicative:",
       sp.expand(pp[0] - p1[0] * p2[0]) == 0 and sp.expand(pp[1] - p1[1] * p2[1]) == 0)
 print("Phi is additive:", Phi(z1 + z2) == (p1[0] + p2[0], p1[1] + p2[1]))
+
+# --- maximal ideals and quotient rings -------------------------------------------
+# pi_1: x + jy -> x + y (substitute j = 1), pi_2: x + jy -> x - y (j = -1)
+pi1 = lambda m: m[0, 0]
+pi2 = lambda m: m[1, 1]
+print("pi_1(z) = x + y, pi_2(z) = x - y:", pi1(z) == x + y and pi2(z) == x - y)
+print("pi_1 is a ring homomorphism:",
+      sp.expand(pi1(z1 * z2) - pi1(z1) * pi1(z2)) == 0
+      and pi1(z1 + z2) == pi1(z1) + pi1(z2) and pi1(I2) == 1)
+# kernel of pi_1 is R e*, kernel of pi_2 is R e
+r = sp.symbols("r", real=True)
+print("pi_1(r e*) = 0, pi_2(r e) = 0:", pi1(r * es) == 0 and pi2(r * e) == 0)
+print("pi_1(z) = 0 => z in R e*:", sp.simplify(z.subs(y, -x) - 2 * x * es) == sp.zeros(2))
+print("pi_2(z) = 0 => z in R e:", sp.simplify(z.subs(y, x) - 2 * x * e) == sp.zeros(2))
+# factors of t^2 - 1
+print("j - 1 = -2e*, j + 1 = 2e:", J - I2 == -2 * es and J + I2 == 2 * e)
+# 1-dim ideals R z: j z must be a multiple of z, i.e. z is an eigenvector of j
+print("eigenspaces of j are R e (+1) and R e* (-1):",
+      sorted(J.eigenvals()) == [-1, 1]
+      and (J - I2) * e == sp.zeros(2) and (J + I2) * es == sp.zeros(2))
+# inverse in R[j]/R e*: a = p e + q e*, (1/p) a - 1 = (q/p - 1) e*
+p, q = sp.symbols("p q", real=True, nonzero=True)
+av = p * e + q * es
+print("(1/p) a - 1 = (q/p - 1) e*:",
+      sp.simplify(av / p - I2 - (q / p - 1) * es) == sp.zeros(2))
 
 # --- the regular representation ---------------------------------------------------
 def rep(images):

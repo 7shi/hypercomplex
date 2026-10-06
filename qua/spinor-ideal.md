@@ -30,7 +30,7 @@ $$
 \mathbb H\otimes_{\mathbb R}\mathbb H^{\mathrm{op}}\longrightarrow M_4(\mathbb R),\quad u\otimes v\longmapsto L_uR_v
 $$
 
-第2因子の共役をとれば$\mathbb H^{\mathrm{op}}\cong\mathbb H$なので、通常の$\mathbb H$を使って$u\otimes v\mapsto L_uR_{v^*}$と書くこともできます。いずれの書き方でも、これは分類表の結果$\mathbb H\otimes\mathbb H\cong M_4(\mathbb R)$（分類表の表記では$\mathbb R(4)$）がここに具体的に現れたものです。[[7shi-4drot]][[7shi-clif1]]
+第2因子の共役をとれば$\mathbb H^{\mathrm{op}}\cong\mathbb H$なので、通常の$\mathbb H$を使って$u\otimes v\mapsto L_uR_{v^*}$と書くこともできます。いずれの書き方でも、これは分類表の結果$\mathbb H\otimes\mathbb H\cong M_4(\mathbb R)$がここに具体的に現れたものです。[[7shi-4drot]][[7shi-clif1]]
 
 ## クリフォード代数$\operatorname{Cl}_{3,1}(\mathbb R)$としての$M_4(\mathbb R)$
 
@@ -245,7 +245,7 @@ $$
 
 # まとめ
 
-四元数の左作用・右作用が張る$M_4(\mathbb R)$は、生成元$L_iR_i,L_jR_i,L_kR_i,R_j$によるミンコフスキー型のクリフォード代数$\operatorname{Cl}_{3,1}(\mathbb R)$そのものであり、可換な2つの因子のテンソル積$\mathbb H\otimes\mathbb H\cong M_4(\mathbb R)$（分類表の表記では$\mathbb R(4)$）としての実現でもあります。そのスピノルは実ベクトル空間として四元数自身であり、射影行列$P=\operatorname{diag}(1,0,0,0)$によって極小左イデアル$M_4(\mathbb R)P$の元$L_xP$として代数の内部に埋め込まれ、右作用による共役の和$L_x=\sum_uR_u(L_xP)R_u^{-1}$で左作用の演算子へ復元できます。$R_yP=L_yP$が両側単位元の性質だけから成り立つため、$L_xR_yP\mapsto xy$は結合律により$L_zP\mapsto z$（$z=xy$）へ還元できます。八元数でも$L_xL_yP=L_{xy}P$は成り立ちますが、そこでは射影前の$L_xL_y$と$L_{xy}$が一般に別の行列であり、射影$P$がその違いを捨てている点が四元数と異なります。[[7shi-clif1]]
+四元数の左作用・右作用が張る$M_4(\mathbb R)$は、生成元$L_iR_i,L_jR_i,L_kR_i,R_j$によるミンコフスキー型のクリフォード代数$\operatorname{Cl}_{3,1}(\mathbb R)$そのものであり、可換な2つの因子のテンソル積$\mathbb H\otimes\mathbb H\cong M_4(\mathbb R)$としての実現でもあります。そのスピノルは実ベクトル空間として四元数自身であり、射影行列$P=\operatorname{diag}(1,0,0,0)$によって極小左イデアル$M_4(\mathbb R)P$の元$L_xP$として代数の内部に埋め込まれ、右作用による共役の和$L_x=\sum_uR_u(L_xP)R_u^{-1}$で左作用の演算子へ復元できます。$R_yP=L_yP$が両側単位元の性質だけから成り立つため、$L_xR_yP\mapsto xy$は結合律により$L_zP\mapsto z$（$z=xy$）へ還元できます。八元数でも$L_xL_yP=L_{xy}P$は成り立ちますが、そこでは射影前の$L_xL_y$と$L_{xy}$が一般に別の行列であり、射影$P$がその違いを捨てている点が四元数と異なります。[[7shi-clif1]]
 
 八元数の左作用が生成する$\operatorname{Cl}_{0,6}(\mathbb R)\cong M_8(\mathbb R)$でも、同じ形の射影$P=\operatorname{diag}(1,0,\dots,0)$と、8項の和による復元式が成り立ちます。射影による左イデアルへの埋め込みと、乗法を使った左作用の復元は、結合性によらない共通の仕組みです。違いが出るのは、行列環がどの作用から生成されるかです。四元数では左作用の積が単一の左作用に戻るため、左作用だけでは4次元にとどまり、右作用を組み合わせて初めて$M_4(\mathbb R)$が埋まります。八元数では非結合性のために左作用の積が単一の左作用に戻らず、左作用$L_1,\dots,L_6$だけで$M_8(\mathbb R)$全体が生成されます。結合的な四元数と非結合的な八元数の違いは、スピノルの埋め込み方ではなく、行列環を生成するために左右どちらの作用が必要かという点に表れているのです。[[7shi-cl6]]
 
