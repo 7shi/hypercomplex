@@ -76,17 +76,17 @@ $$
 \Psi=\begin{pmatrix}a_0+ia_3\\-a_2+ia_1\end{pmatrix}\in\mathbb C^2
 $$
 
-を対応させます。
+を対応させる。
 &&&
 
 この対応は実線形で、実4次元の空間$\operatorname{Cl}_{3,0}^0(\mathbb R)$と$\mathbb C^2$の間の全単射です。成分の並べ方は恣意的に見えますが、次の命題が示すとおり、$\Psi$は$\psi$を表す行列の第1列です。
 
 &&&prop 作用の翻訳 [prop-action]
-[対応](#def-map)$\psi\mapsto\Psi$について、次が成り立ちます。
+[対応](#def-map)$\psi\mapsto\Psi$について、次が成り立つ。
 
-1. $\Psi$は行列$\hat\psi$の第1列です。
-2. $\hat\sigma_k\Psi$には$\sigma_k\psi\sigma_3$が対応します（$k=1,2,3$）。
-3. $i\Psi$には$\psi\,\omega\sigma_3$が対応します。
+1. $\Psi$は行列$\hat\psi$の第1列である。
+2. $\hat\sigma_k\Psi$には$\sigma_k\psi\sigma_3$が対応する（$k=1,2,3$）。
+3. $i\Psi$には$\psi\,\omega\sigma_3$が対応する。
 &&&
 
 &&&prf
@@ -113,13 +113,13 @@ $$
 以前の記事では、射影$P=(1+\sigma_3)/2$を右から掛けて、行列の第1列だけを残した左イデアル$\operatorname{Cl}_{3,0}(\mathbb R)P$の元としてスピノルを取りました。偶部分代数による表示は、この表示の言い直しです。[[7shi-lie3]][[7shi-ideal]]
 
 &&&prop 偶部分と左イデアル
-$\psi\mapsto\psi P$は$\operatorname{Cl}_{3,0}^0(\mathbb R)$から$\operatorname{Cl}_{3,0}(\mathbb R)P$への実線形な全単射で、$\widehat{\psi P}=\begin{pmatrix}\Psi&\boldsymbol 0\end{pmatrix}$です。さらに
+$\psi\mapsto\psi P$は$\operatorname{Cl}_{3,0}^0(\mathbb R)$から$\operatorname{Cl}_{3,0}(\mathbb R)P$への実線形な全単射で、$\widehat{\psi P}=\begin{pmatrix}\Psi&\boldsymbol 0\end{pmatrix}$である。さらに
 
 $$
 (\psi\,\omega\sigma_3)P=\omega\,(\psi P)
 $$
 
-が成り立ちます。
+が成り立つ。
 &&&
 
 &&&prf
@@ -280,13 +280,13 @@ $$
 \psi(t)=e^{-\omega\boldsymbol b\,\Omega t/2}\,\psi(0),\qquad\Omega=-\frac{gqB}{2m}
 $$
 
-スピンの向きは$\boldsymbol s(t)=e^{-\omega\boldsymbol b\Omega t/2}\,\boldsymbol s(0)\,e^{\omega\boldsymbol b\Omega t/2}$で、$\boldsymbol b$を軸として角速度$\Omega$で回ります。
+スピンの向きは$\boldsymbol s(t)=e^{-\omega\boldsymbol b\Omega t/2}\,\boldsymbol s(0)\,e^{\omega\boldsymbol b\Omega t/2}$で、$\boldsymbol b$を軸として角速度$\Omega$で回る。
 &&&
 
 回転子$e^{-\omega\boldsymbol b\theta/2}$は、$\boldsymbol b$に垂直な面$\omega\boldsymbol b$の中で角$\theta$の回転を与えます（ローレンツ変換の記事における$e^{-\omega\sigma_3\theta/2}$が$x_1$軸を$x_2$軸へ回す向き）。スピンの向きが磁場のまわりを一定の角速度で回るこの運動を、**歳差**と呼びます。電子（$q=-e$）では$\Omega=geB/2m>0$で、$\boldsymbol B$の矢の先の側から見て反時計回りです。[[7shi-em5]]
 
 &&&ex $\boldsymbol b=\sigma_3$の場合
-$\boldsymbol s(0)=\sigma_1$から出発すると、$\boldsymbol s(t)=\sigma_1\cos\Omega t+\sigma_2\sin\Omega t$です。行列形式では$\Psi(t)=\operatorname{diag}(e^{-i\Omega t/2},e^{i\Omega t/2})\Psi(0)$となり、2つの成分の位相差が$\Omega t$の速さで進みます。$\Psi^\dagger\hat\sigma_1\Psi$と$\Psi^\dagger\hat\sigma_2\Psi$がこの位相差の余弦と正弦を与えます。ヘステネス形式では、この位相差の進行が、そのままスピンの向きの回転として読めます。
+$\boldsymbol s(0)=\sigma_1$から出発すると、$\boldsymbol s(t)=\sigma_1\cos\Omega t+\sigma_2\sin\Omega t$である。行列形式では$\Psi(t)=\operatorname{diag}(e^{-i\Omega t/2},e^{i\Omega t/2})\Psi(0)$となり、2つの成分の位相差が$\Omega t$の速さで進む。$\Psi^\dagger\hat\sigma_1\Psi$と$\Psi^\dagger\hat\sigma_2\Psi$がこの位相差の余弦と正弦を与える。ヘステネス形式では、この位相差の進行が、そのままスピンの向きの回転として読める。
 &&&
 
 ## 固有速度の回転との比較
@@ -316,14 +316,14 @@ $$
 - **パウリ方程式**：$\hbar\,\partial_t\psi\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi+q\varphi\psi-\frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3$と書けます。スピン部分の時間発展は$\partial_t\psi=\frac{gq}{4m}\omega\boldsymbol B\psi$となり、スピンは角速度$-gqB/2m$で磁場のまわりを歳差運動します。$g=2$なら、固有速度の回転子の方程式と同じ形です。
 
 &&& スピノルの対応
-列ベクトル$\Psi=(a_0+ia_3,-a_2+ia_1)^T$に偶部分代数の元$\psi$を対応させると、作用は次のように対応します。
+列ベクトル$\Psi=(a_0+ia_3,-a_2+ia_1)^T$に偶部分代数の元$\psi$を対応させると、作用は次のように対応する。
 $$
 \psi=a_0+\sum_ka_k\,\omega\sigma_k,\qquad\hat\sigma_k\Psi\leftrightarrow\sigma_k\psi\sigma_3,\qquad i\Psi\leftrightarrow\psi\,\omega\sigma_3
 $$
 &&&
 
 &&& 確率密度とスピンの向き
-$\psi=\sqrt\rho\,R$と分解すると、次のようになります。
+$\psi=\sqrt\rho\,R$と分解すると、次のようになる。
 $$
 \rho=\psi\tilde\psi,\qquad\psi\sigma_3\tilde\psi=\rho\,\boldsymbol s,\qquad\boldsymbol s=R\sigma_3\tilde R
 $$
@@ -336,7 +336,7 @@ $$
 &&&
 
 &&& 一様な磁場の中の歳差運動
-一様な磁場の中で、スピンの向きの変化を与える磁場の項だけを残すと、次の式になります。
+一様な磁場の中で、スピンの向きの変化を与える磁場の項だけを残すと、次の式になる。
 $$
 \partial_t\psi=\frac{gq}{4m}\,\omega\boldsymbol B\,\psi
 $$

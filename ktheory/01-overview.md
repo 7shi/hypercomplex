@@ -21,9 +21,9 @@ K理論は、このような並べ方のねじれを、足し算と引き算が�
 この議論を一般の空間の上で、また高い次元のベクトル空間について行うには、「連続に並べる」「連続に選ぶ」「2つの並べ方が同じ」という言葉を定める必要があります。
 
 &&&def ベクトル束
-空間$X$の各点$x$に$n$次元の実ベクトル空間$E_x$を連続に割り当てたものを、$X$上の階数$n$の**ベクトル束**と呼び、$E$と書きます。各点の近くでは、$E$は各ファイバーの線形構造を保って積$U\times\mathbb R^n$（$U$は$x$の近傍）と連続に同一視できるものとします。複素ベクトル空間$\mathbb C^n$を割り当てたものを複素ベクトル束と呼びます。
+空間$X$の各点$x$に$n$次元の実ベクトル空間$E_x$を連続に割り当てたものを、$X$上の階数$n$の**ベクトル束**と呼び、$E$と書く。各点の近くでは、$E$は各ファイバーの線形構造を保って積$U\times\mathbb R^n$（$U$は$x$の近傍）と連続に同一視できるものとする。複素ベクトル空間$\mathbb C^n$を割り当てたものを複素ベクトル束と呼ぶ。
 
-各点$x$に$E_x$の元$s(x)$を連続に対応させるものを$E$の**切断**と呼びます。2つのベクトル束$E,F$の間に、各点で線形同型$E_x\to F_x$を与え、$x$について連続に変わる写像があるとき、$E$と$F$は**同型**であると言い、$E\cong F$と書きます。$X$全体で積$X\times\mathbb R^n$になっているものを**自明束**と呼び、$\underline{\mathbb R}^n$と書きます。
+各点$x$に$E_x$の元$s(x)$を連続に対応させるものを$E$の**切断**と呼ぶ。2つのベクトル束$E,F$の間に、各点で線形同型$E_x\to F_x$を与え、$x$について連続に変わる写像があるとき、$E$と$F$は**同型**であると言い、$E\cong F$と書く。$X$全体で積$X\times\mathbb R^n$になっているものを**自明束**と呼び、$\underline{\mathbb R}^n$と書く。
 &&&
 
 「各点の近くでは積の形をしている」という条件は、円柱とメビウスの帯が局所的には区別できないことを、定義に取り込んだものです。ねじれは局所的には現れず、全体のつながり方にだけ現れます。形式的な定義には立ち入らず、以下では例を通して具体的に扱います。円柱は自明束$\underline{\mathbb R}$で、ねじれのない並べ方を自明束と呼ぶわけです。
@@ -45,11 +45,11 @@ $$
 を満たすものです。$g=I_n$なら$s(0)=s(2\pi)$となり、$E_{I_n}$は自明束$\underline{\mathbb R}^n$です。
 
 &&&ex 円柱とメビウスの帯 [ex-moebius]
-階数1の場合、貼り合わせ行列は$0$でない実数です。$g=1$で貼り合わせたものが円柱$\underline{\mathbb R}$、$g=-1$で貼り合わせたものが**メビウスの帯**$M$です。$M$の切断は$s(0)=-s(2\pi)$を満たす関数で、$\mathbb R$全体に延長すれば$s(\theta+2\pi)=-s(\theta)$と書けます。たとえば$s(\theta)=\cos(\theta/2)$は$M$の切断です。
+階数1の場合、貼り合わせ行列は$0$でない実数である。$g=1$で貼り合わせたものが円柱$\underline{\mathbb R}$、$g=-1$で貼り合わせたものが**メビウスの帯**$M$である。$M$の切断は$s(0)=-s(2\pi)$を満たす関数で、$\mathbb R$全体に延長すれば$s(\theta+2\pi)=-s(\theta)$と書ける。たとえば$s(\theta)=\cos(\theta/2)$は$M$の切断である。
 &&&
 
 &&&prop メビウスの帯は自明でない [prop-moebius]
-$M$の切断は必ず零点を持ちます。したがって$M\not\cong\underline{\mathbb R}$です。
+$M$の切断は必ず零点を持つ。したがって$M\not\cong\underline{\mathbb R}$である。
 &&&
 
 &&&prf
@@ -65,7 +65,7 @@ $$
 が同型の条件です。
 
 &&&prop 貼り合わせ行列の変形 [prop-homotopy]
-$g$から$g'$へ$\operatorname{GL}(n,\mathbb R)$の中で連続に変形できるなら、$E_g\cong E_{g'}$です。複素ベクトル束でも同様です。
+$g$から$g'$へ$\operatorname{GL}(n,\mathbb R)$の中で連続に変形できるなら、$E_g\cong E_{g'}$である。複素ベクトル束でも同様である。
 &&&
 
 &&&prf
@@ -81,23 +81,23 @@ $g$から$g'$への変形を$g_t$（$0\le t\le1$、$g_0=g$、$g_1=g'$）とし�
 球面$S^k$も同じ方法で扱えます。$S^k$を北半球$D_+$と南半球$D_-$に分け、それぞれの上の自明束を、赤道$S^{k-1}$の各点$\boldsymbol x$で可逆行列$g(\boldsymbol x)$により貼り合わせます。$g:S^{k-1}\to\operatorname{GL}(n,\mathbb R)$を**貼り合わせ関数**と呼びます。$k=1$では赤道が2点$S^0=\{\pm1\}$からなり、一方の点での貼り合わせを$1$に揃えれば、円周の場合の貼り合わせ行列に戻ります。
 
 &&&ex 球面の接束 [ex-tangent]
-$S^2$の各点$\boldsymbol x$に接平面$T_{\boldsymbol x}S^2=\{\boldsymbol v\in\mathbb R^3\mid\boldsymbol v\perp\boldsymbol x\}$を割り当てたものは、階数2の実ベクトル束です。これを**接束**と呼び、$TS^2$と書きます。$TS^2$の切断は$S^2$上の接ベクトル場です。
+$S^2$の各点$\boldsymbol x$に接平面$T_{\boldsymbol x}S^2=\{\boldsymbol v\in\mathbb R^3\mid\boldsymbol v\perp\boldsymbol x\}$を割り当てたものは、階数2の実ベクトル束である。これを**接束**と呼び、$TS^2$と書く。$TS^2$の切断は$S^2$上の接ベクトル場である。
 
-$S^2$上には、どこでも$0$にならない連続な接ベクトル場が存在しないことが知られています（毛玉の定理）。したがって$TS^2$は自明束$\underline{\mathbb R}^2$と同型ではありません。毛玉の定理の証明は本記事では扱いません。
+$S^2$上には、どこでも$0$にならない連続な接ベクトル場が存在しないことが知られている（毛玉の定理）。したがって$TS^2$は自明束$\underline{\mathbb R}^2$と同型ではない。毛玉の定理の証明は本記事では扱わない。
 &&&
 
 &&&ex ホップ束 [ex-hopf]
-$\mathbb C^2$の原点を通る複素直線$L$全体は、同次座標$[\alpha:\beta]$で表され、$z=\alpha/\beta$により球面$S^2$と同一視されます（[[7shi-homog]]・[[7shi-c2s2]]）。各点$L$に、その直線$L$自身を1次元の複素ベクトル空間として割り当てたものが、$S^2$上の複素ベクトル束になります。これを**ホップ束**と呼び、$H$と書きます。
+$\mathbb C^2$の原点を通る複素直線$L$全体は、同次座標$[\alpha:\beta]$で表され、$z=\alpha/\beta$により球面$S^2$と同一視される（[[7shi-homog]]・[[7shi-c2s2]]）。各点$L$に、その直線$L$自身を1次元の複素ベクトル空間として割り当てたものが、$S^2$上の複素ベクトル束になる。これを**ホップ束**と呼び、$H$と書く。
 
-$\beta\ne0$の範囲では$L$は$(z,1)$で張られ、ファイバーの元は$\lambda(z,1)$と書けます。$\alpha\ne0$の範囲では$w=\beta/\alpha$として$\mu(1,w)$と書けます。両方の範囲が重なるところで$\lambda(z,1)=\mu(1,w)$を比べると
+$\beta\ne0$の範囲では$L$は$(z,1)$で張られ、ファイバーの元は$\lambda(z,1)$と書ける。$\alpha\ne0$の範囲では$w=\beta/\alpha$として$\mu(1,w)$と書ける。両方の範囲が重なるところで$\lambda(z,1)=\mu(1,w)$を比べると
 
 $$
 \mu=z\lambda
 $$
 
-です。赤道$|z|=1$で2つの座標$\lambda,\mu$が単位複素数$z$を掛けることで移り合うので、$H$は貼り合わせ関数$g(z)=z$で作ったベクトル束です。
+である。赤道$|z|=1$で2つの座標$\lambda,\mu$が単位複素数$z$を掛けることで移り合うので、$H$は貼り合わせ関数$g(z)=z$で作ったベクトル束である。
 
-ファイバーの中の長さ1のベクトルだけを集めると、$\mathbb C^2$の単位ベクトル全体、すなわち$S^3$になります。各ベクトルをそれが属する直線$L\in S^2$に送る写像が、ホップファイブレーション$S^3\to S^2$です。$H$が自明でないことは知られていますが、本記事では主張に留めます。
+ファイバーの中の長さ1のベクトルだけを集めると、$\mathbb C^2$の単位ベクトル全体、すなわち$S^3$になる。各ベクトルをそれが属する直線$L\in S^2$に送る写像が、ホップファイブレーション$S^3\to S^2$である。$H$が自明でないことは知られているが、本記事では主張に留める。
 &&&
 
 # ねじれを足す
@@ -113,17 +113,17 @@ $$
 2つのベクトル束$E,F$の**直和**$E\oplus F$は、各点のベクトル空間の直和$E_x\oplus F_x$を割り当てたベクトル束です。階数は足し算になります。$S^1$上では、貼り合わせ行列がブロック対角行列$\operatorname{diag}(g,g')$になり、$E_g\oplus E_{g'}=E_{\operatorname{diag}(g,g')}$です。
 
 &&&ex 接束と法線 [ex-tangent-normal]
-$S^2$の各点$\boldsymbol x$で、$\mathbb R^3$は接平面と法線の直和$\mathbb R^3=T_{\boldsymbol x}S^2\oplus\mathbb R\boldsymbol x$に分かれます。$(\boldsymbol v,t)\mapsto\boldsymbol v+t\boldsymbol x$は各点で線形同型で、$\boldsymbol x$について連続なので
+$S^2$の各点$\boldsymbol x$で、$\mathbb R^3$は接平面と法線の直和$\mathbb R^3=T_{\boldsymbol x}S^2\oplus\mathbb R\boldsymbol x$に分かれる。$(\boldsymbol v,t)\mapsto\boldsymbol v+t\boldsymbol x$は各点で線形同型で、$\boldsymbol x$について連続なので
 
 $$
 TS^2\oplus\underline{\mathbb R}\cong\underline{\mathbb R}^3
 $$
 
-です。自明でない$TS^2$に自明束を1つ足すと、自明束になります。
+である。自明でない$TS^2$に自明束を1つ足すと、自明束になる。
 &&&
 
 &&&prop メビウスの帯2枚 [prop-mm]
-$M\oplus M\cong\underline{\mathbb R}^2$です。
+$M\oplus M\cong\underline{\mathbb R}^2$である。
 &&&
 
 &&&prf
@@ -145,7 +145,7 @@ $M$は1枚では自明でないのに、2枚重ねると自明になります。
 ねじれを足し算のできる量として扱うなら、自明束を足しただけで消える違いは、量としては$0$と見るのが自然です。この要請を定義にしたものが安定同値です。
 
 &&&def 安定同値
-ベクトル束$E,F$が、ある$k$について$E\oplus\underline{\mathbb R}^k\cong F\oplus\underline{\mathbb R}^k$を満たすとき、$E$と$F$は**安定同値**であると言います。
+ベクトル束$E,F$が、ある$k$について$E\oplus\underline{\mathbb R}^k\cong F\oplus\underline{\mathbb R}^k$を満たすとき、$E$と$F$は**安定同値**であると言う。
 &&&
 
 [[ex-tangent-normal]]から、$TS^2$は$\underline{\mathbb R}^2$と安定同値です。安定同値は同型より粗い見方で、接ベクトル場の有無のような違いを捨てています。この違いを捨てたうえで、次節のように形式的な差を導入すると、足し算と引き算ができる群が得られます。
@@ -165,7 +165,7 @@ $$
 (E,F)\sim(E',F')\iff\text{あるベクトル束}G\text{について}\ E\oplus F'\oplus G\cong E'\oplus F\oplus G
 $$
 
-で同一視したものの全体を$KO(X)$と書き、$(E,F)$の類を$[E]-[F]$と書きます。演算は$([E]-[F])+([E']-[F'])=[E\oplus E']-[F\oplus F']$で、$KO(X)$は可換群になります。複素ベクトル束から同じように作った群を$K(X)$と書きます。
+で同一視したものの全体を$KO(X)$と書き、$(E,F)$の類を$[E]-[F]$と書く。演算は$([E]-[F])+([E']-[F'])=[E\oplus E']-[F\oplus F']$で、$KO(X)$は可換群になる。複素ベクトル束から同じように作った群を$K(X)$と書く。
 &&&
 
 自然数の場合は$(a,b)\sim(c,d)\iff a+d=b+c$で十分ですが、ベクトル束では$G$を足してから比べる必要があります。[[ex-tangent-normal]]のように$TS^2\oplus\underline{\mathbb R}\cong\underline{\mathbb R}^2\oplus\underline{\mathbb R}$でありながら$TS^2\not\cong\underline{\mathbb R}^2$となり、両辺から同じものを取り除く簡約律が成り立たないためです。$KO(S^2)$では$[TS^2]-[\underline{\mathbb R}^2]=0$で、K群は$TS^2$と自明束を区別しません。
@@ -179,17 +179,17 @@ $X$が連結なら、$[E]-[F]$に階数の差$\operatorname{rank}E-\operatorname
 この定義が狙いどおりにねじれを数えているかを、最も簡単な2つの空間で確かめます。1点の上ではねじれようがないので、K群は次元の差だけを記録するはずです。円周の上では、メビウスの帯のねじれが、位数2の量として現れるはずです。
 
 &&&ex 1点 [ex-point]
-$X$が1点$\mathrm{pt}$なら、ベクトル束は1つのベクトル空間で、同型類は次元で決まります。$[\mathbb R^m]-[\mathbb R^n]$は整数$m-n$と同一視され
+$X$が1点$\mathrm{pt}$なら、ベクトル束は1つのベクトル空間で、同型類は次元で決まる。$[\mathbb R^m]-[\mathbb R^n]$は整数$m-n$と同一視され
 
 $$
 KO(\mathrm{pt})\cong\mathbb Z,\qquad\widetilde{KO}(\mathrm{pt})=0
 $$
 
-です。複素でも$K(\mathrm{pt})\cong\mathbb Z$です。K群の元は、1点の上では「ベクトル空間の次元の差」です。一般の空間$X$の上のK群は、次元の差という考え方を、$X$の上に連続に広げたものと見ることができます。
+である。複素でも$K(\mathrm{pt})\cong\mathbb Z$である。K群の元は、1点の上では「ベクトル空間の次元の差」である。一般の空間$X$の上のK群は、次元の差という考え方を、$X$の上に連続に広げたものと見ることができる。
 &&&
 
 &&&thm 円周のK群 [thm-circle]
-$\widetilde{KO}(S^1)\cong\mathbb Z_2$で、生成元は$[M]-1$です。
+$\widetilde{KO}(S^1)\cong\mathbb Z_2$で、生成元は$[M]-1$である。
 &&&
 
 &&&prf
@@ -221,7 +221,7 @@ $$
 \tilde K(S^n)\cong\begin{cases}\mathbb Z&(n\text{が偶数})\\0&(n\text{が奇数})\end{cases}
 $$
 
-で、周期2で繰り返します。実K群は周期8で繰り返し、$n=1,\dots,8$では次のとおりです。
+で、周期2で繰り返す。実K群は周期8で繰り返し、$n=1,\dots,8$では次のとおりである。
 
 $$
 \begin{array}{c|cccccccc}
@@ -260,12 +260,12 @@ $$
 です。したがって$g(\boldsymbol x)$は可逆です。代数の元が線形変換として作用するベクトル空間を、その代数の**加群**と呼びます。$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群$W$に作用させれば$g:S^{k-1}\to\operatorname{GL}(W)$が得られます。可逆性は、生成元の1次結合の2乗が2次形式$-|\boldsymbol v|^2$になること、すなわちクリフォード代数が2次形式の平方根を与えることから来ています。
 
 &&&ex 実数・複素数・四元数・八元数
-$k=1,2,4,8$で$W$を次のように取ると、$g(\boldsymbol x)$は長さ1の数（単位数）を掛ける写像になります。
+$k=1,2,4,8$で$W$を次のように取ると、$g(\boldsymbol x)$は長さ1の数（単位数）を掛ける写像になる。
 
-- **$k=1$**：$\operatorname{Cl}_{0,0}(\mathbb R)=\mathbb R$、$W=\mathbb R$で、$g(x_0)=x_0=\pm1$です。2点$S^0$での貼り合わせが$+1$と$-1$なので、メビウスの帯$M$が得られます。
-- **$k=2$**：$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$、$W=\mathbb C$で、$e_1=i$とすれば$g=x_0+x_1i$は単位複素数を掛ける写像です。[[ex-hopf]]のホップ束が得られます。
-- **$k=4$**：$\operatorname{Cl}_{0,3}(\mathbb R)$は四元数$\mathbb H$の$\mathbf i,\mathbf j,\mathbf k$の左からの積で$W=\mathbb H$に作用し、$g$は単位四元数を掛ける写像です。得られるのは四元数のホップ束です（[[7shi-hopfext]]）。
-- **$k=8$**：$\operatorname{Cl}_{0,7}(\mathbb R)$は八元数$\mathbb O$の7つの虚数単位の左からの積で$W=\mathbb O$に作用し、$g$は単位八元数を左から掛ける写像です。八元数の積は結合的ではありませんが、虚数単位$u,v$を左から掛ける線形写像$L_u,L_v$は$L_uL_v+L_vL_u=-2\langle u,v\rangle$を満たすので、クリフォード代数の作用になります。得られるのは八元数のホップ束です（[[7shi-hopfext]]）。
+- **$k=1$**：$\operatorname{Cl}_{0,0}(\mathbb R)=\mathbb R$、$W=\mathbb R$で、$g(x_0)=x_0=\pm1$である。2点$S^0$での貼り合わせが$+1$と$-1$なので、メビウスの帯$M$が得られる。
+- **$k=2$**：$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$、$W=\mathbb C$で、$e_1=i$とすれば$g=x_0+x_1i$は単位複素数を掛ける写像である。[[ex-hopf]]のホップ束が得られる。
+- **$k=4$**：$\operatorname{Cl}_{0,3}(\mathbb R)$は四元数$\mathbb H$の$\mathbf i,\mathbf j,\mathbf k$の左からの積で$W=\mathbb H$に作用し、$g$は単位四元数を掛ける写像である。得られるのは四元数のホップ束である（[[7shi-hopfext]]）。
+- **$k=8$**：$\operatorname{Cl}_{0,7}(\mathbb R)$は八元数$\mathbb O$の7つの虚数単位の左からの積で$W=\mathbb O$に作用し、$g$は単位八元数を左から掛ける写像である。八元数の積は結合的ではないが、虚数単位$u,v$を左から掛ける線形写像$L_u,L_v$は$L_uL_v+L_vL_u=-2\langle u,v\rangle$を満たすので、クリフォード代数の作用になる。得られるのは八元数のホップ束である（[[7shi-hopfext]]）。
 &&&
 
 これらはそれぞれ$\widetilde{KO}(S^1)$、$\tilde K(S^2)$、$\widetilde{KO}(S^4)$、$\widetilde{KO}(S^8)$の生成元を、階数$n$を引いた$[E]-n$の形の類として与えることが知られています（$\widetilde{KO}(S^2)$の生成元も、ホップ束を実ベクトル束と見たものから得られます）。一般の$k$についても、$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群から上の$g$で作ったベクトル束が$\widetilde{KO}(S^k)$を生成し、$\widetilde{KO}(S^k)$そのものがクリフォード加群の分類から計算できます。すなわち、$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群に形式的な差を導入した群で、$\operatorname{Cl}_{0,k}(\mathbb R)$の加群を制限して得られるものを$0$と見なすと、$\widetilde{KO}(S^k)$が得られます。これを**アティヤ＝ボット＝シャピロの定理**と呼びます。証明は本記事では扱いません。

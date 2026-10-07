@@ -68,7 +68,7 @@ $x$方向の微分は左右の辺に、$y$方向の微分は上下の辺に対�
 これで、有限個の長方形の和で表せる領域について定理が示されます。境界が曲線の場合は長方形に有限分割できないため、近似した領域をとって極限を取る必要があり、体積積分だけでなく、法線を掛けた境界積分の収束も示さなければなりません。この部分の詳細には立ち入らず、一般の領域については証明の概略にとどめます。
 
 &&&ex 円板と位置ベクトル
-単位円板$M$で$F=\boldsymbol x=xe_1+ye_2$とします。$D\boldsymbol x=e_1e_1+e_2e_2=2$なので、左辺は$2\times\pi=2\pi$です。境界の単位円上では外向きの法線が$\boldsymbol n=\boldsymbol x$なので、$\boldsymbol n\boldsymbol x=\boldsymbol x^2=|\boldsymbol x|^2=1$となり、右辺は円周の長さ$2\pi$です。
+単位円板$M$で$F=\boldsymbol x=xe_1+ye_2$とする。$D\boldsymbol x=e_1e_1+e_2e_2=2$なので、左辺は$2\times\pi=2\pi$である。境界の単位円上では外向きの法線が$\boldsymbol n=\boldsymbol x$なので、$\boldsymbol n\boldsymbol x=\boldsymbol x^2=|\boldsymbol x|^2=1$となり、右辺は円周の長さ$2\pi$である。
 &&&
 
 # 有向線素
@@ -82,7 +82,7 @@ $$
 d\boldsymbol x=e_1\,dx+e_2\,dy
 $$
 
-で表し、**有向線素**と呼びます。長さは$|d\boldsymbol x|=ds$で、向きが境界のたどる向きを表します。
+で表し、**有向線素**と呼ぶ。長さは$|d\boldsymbol x|=ds$で、向きが境界のたどる向きを表す。
 &&&
 
 外向きの法線は接線を時計回りに$90^\circ$回したものです。領域を左手に見てたどると、進行方向の右手が外側だからです。この回転は$\omega$を左から掛ける操作で表せます。
@@ -171,7 +171,7 @@ $$
 証明は2次元と同じです。直方体では、$e_k\partial_kF$の項が$x_k$方向に向かい合う2つの面での$\pm e_kF$の積分を与えます。一般の領域へは、2次元と同じく分割と近似によって広げます（概略）。
 
 &&&ex 球と位置ベクトル
-単位球$V$で$F=\boldsymbol x$とすると、$D\boldsymbol x=e_1e_1+e_2e_2+e_3e_3=3$なので、左辺は$3\times\frac43\pi=4\pi$です。境界の単位球面上では$\boldsymbol n\boldsymbol x=\boldsymbol x^2=1$なので、右辺は球面の面積$4\pi$です。
+単位球$V$で$F=\boldsymbol x$とすると、$D\boldsymbol x=e_1e_1+e_2e_2+e_3e_3=3$なので、左辺は$3\times\frac43\pi=4\pi$である。境界の単位球面上では$\boldsymbol n\boldsymbol x=\boldsymbol x^2=1$なので、右辺は球面の面積$4\pi$である。
 &&&
 
 ベクトル値の関数$F$に当てはめます。3次元では擬スカラー$\omega=e_1e_2e_3$がすべての元と可換で$\omega^2=-1$を満たし、2ベクトルとベクトル積が次のように対応します。
@@ -213,7 +213,7 @@ $$
 d\boldsymbol X=\boldsymbol r_u\wedge\boldsymbol r_v\,du\,dv
 $$
 
-と書き、**有向面素**と呼びます。境界は、パラメーターの正方形を反時計回りにたどる向きに合わせます。
+と書き、**有向面素**と呼ぶ。境界は、パラメーターの正方形を反時計回りにたどる向きに合わせる。
 &&&
 
 2ベクトルを積分に組み込むために、ベクトル$\boldsymbol a$と2ベクトル$B$の内積を次で定めます。
@@ -352,7 +352,7 @@ $$
 &&&
 
 &&& 両側形式
-右からの作用を$GD=\sum_k(\partial_kG)e_k$とすると、次が成り立ちます。
+右からの作用を$GD=\sum_k(\partial_kG)e_k$とすると、次が成り立つ。
 $$
 \int_M\bigl((GD)F+G(DF)\bigr)dV=\oint_{\partial M}G\,\boldsymbol nF\,dS
 $$

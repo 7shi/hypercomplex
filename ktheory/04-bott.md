@@ -37,13 +37,13 @@ $g:S^{k-1}\to\operatorname{GL}(n,\mathbb C)$と$g':S^{k-1}\to\operatorname{GL}(n
 $$
 \operatorname{diag}(g,I_a)\simeq\operatorname{diag}(g',I_b)
 $$
-となるものがあるとき、$g$と$g'$は**安定にホモトピック**であると言います。
+となるものがあるとき、$g$と$g'$は**安定にホモトピック**であると言う。
 &&&
 
 自明束を足して同型になることを、単位行列を並べてホモトピックになることに置き換えたものです。$\operatorname{diag}(g,I_a)\simeq\operatorname{diag}(g',I_b)$なら、両方にさらに$I_c$を並べても同じホモトピーが使えるので、$a,b$はいくらでも大きく取り直せます。
 
 &&&prop 簡約K群と安定なホモトピー [prop-stable]
-$S^k$上の複素ベクトル束$E_g,E_{g'}$（階数$n,n'$）について、$\tilde K(S^k)$の中で$[E_g]-n=[E_{g'}]-n'$となることと、$g$と$g'$が安定にホモトピックであることは同値です。
+$S^k$上の複素ベクトル束$E_g,E_{g'}$（階数$n,n'$）について、$\tilde K(S^k)$の中で$[E_g]-n=[E_{g'}]-n'$となることと、$g$と$g'$が安定にホモトピックであることは同値である。
 &&&
 
 &&&prf
@@ -69,7 +69,7 @@ $$
 $R(0)$は単位行列で、$R(\pi/2)$は2つのブロックを入れ替えます。
 
 &&&lem 回転による変形 [lem-rotation]
-$g,h:S^{k-1}\to\operatorname{GL}(n,\mathbb F)$（$\mathbb F=\mathbb R$または$\mathbb C$）について、次のホモトピーがあります。
+$g,h:S^{k-1}\to\operatorname{GL}(n,\mathbb F)$（$\mathbb F=\mathbb R$または$\mathbb C$）について、次のホモトピーがある。
 
 $$
 \operatorname{diag}(g,h)\simeq\operatorname{diag}(gh,I)
@@ -89,13 +89,13 @@ $$
 $R(t)$は実の行列で、行列式は$1$です。$h$の入ったブロックを、回転で$g$の隣へ運んで掛け合わせています。
 
 &&&cor K群の和と貼り合わせ関数の積 [cor-product]
-$g,h:S^{k-1}\to\operatorname{GL}(n,\mathbb C)$について、次が成り立ちます。
+$g,h:S^{k-1}\to\operatorname{GL}(n,\mathbb C)$について、次が成り立つ。
 
 $$
 ([E_g]-n)+([E_h]-n)=[E_{gh}]-n,\qquad-([E_g]-n)=[E_{g^{-1}}]-n
 $$
 
-実ベクトル束の$\widetilde{KO}(S^k)$でも同じです。
+実ベクトル束の$\widetilde{KO}(S^k)$でも同じである。
 &&&
 
 &&&prf
@@ -111,13 +111,13 @@ $$
 $S^2$では赤道が円周で、前回の記事で複素直線束を$H^m=E_{z^m}$（$m\in\mathbb Z$）に分類しました。直線束の貼り合わせ関数は$\mathbb C^\times$に値を取るので、[[lem-rotation]]を$n=1$で使えます。[[7shi-kth3]]
 
 &&&ex ホップ束の2つの和 [ex-hopf-sums]
-$g=h=z$とすると、[[lem-rotation]]は$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$を与えます。したがって次のようになります。
+$g=h=z$とすると、[[lem-rotation]]は$\operatorname{diag}(z,z)\simeq\operatorname{diag}(z^2,1)$を与える。したがって次のようになる。
 
 $$
 H\oplus H\cong H^2\oplus\underline{\mathbb C}
 $$
 
-$g=z$、$h=z^{-1}$とすると$\operatorname{diag}(z,z^{-1})\simeq I_2$で、$H\oplus H^{-1}\cong\underline{\mathbb C}^2$です。
+$g=z$、$h=z^{-1}$とすると$\operatorname{diag}(z,z^{-1})\simeq I_2$で、$H\oplus H^{-1}\cong\underline{\mathbb C}^2$である。
 &&&
 
 1つ目の同型の両辺は、どちらも行列式が$z^2$で、行列式の回転数は$2$です。前回の記事では、同じ階数で行列式の回転数が等しい束は同型であることを主張に留めました。[[ex-hopf-sums]]は、その具体例を回転で示したものにあたります。[[7shi-kth3]]
@@ -125,7 +125,7 @@ $g=z$、$h=z^{-1}$とすると$\operatorname{diag}(z,z^{-1})\simeq I_2$で、$H\
 同じ議論を繰り返すと、直線束の直和は、行列式の回転数だけで決まります。
 
 &&&prop 直線束の直和 [prop-line-sums]
-$S^2$上の複素直線束$L_1,\dots,L_n$の回転数を$m_1,\dots,m_n$とし、$m=m_1+\dots+m_n$と置きます。このとき次が成り立ちます。
+$S^2$上の複素直線束$L_1,\dots,L_n$の回転数を$m_1,\dots,m_n$とし、$m=m_1+\dots+m_n$と置く。このとき次が成り立つ。
 
 $$
 L_1\oplus\dots\oplus L_n\cong H^m\oplus\underline{\mathbb C}^{n-1},\qquad[H^m]-1=m([H]-1)
@@ -143,7 +143,7 @@ $$
 直線束の直和では、K群の元が行列式の回転数で決まることが分かりました。行列式の回転数そのものは、どの束についても定義できます。これがK群の上の関数になるかを確かめます。
 
 &&&thm S²のK群と行列式の回転数 [thm-s2]
-$\tilde K(S^2)$の元$[E_g]-n$に$\operatorname{wind}(\det g)$を対応させる写像$φ:\tilde K(S^2)\to\mathbb Z$は、全射な準同型です。直線束の直和から作られる元$[L_1\oplus\dots\oplus L_n]-n$は$(m_1+\dots+m_n)([H]-1)$に等しく、$φ$の値で決まります。
+$\tilde K(S^2)$の元$[E_g]-n$に$\operatorname{wind}(\det g)$を対応させる写像$φ:\tilde K(S^2)\to\mathbb Z$は、全射な準同型である。直線束の直和から作られる元$[L_1\oplus\dots\oplus L_n]-n$は$(m_1+\dots+m_n)([H]-1)$に等しく、$φ$の値で決まる。
 &&&
 
 &&&prf
@@ -155,13 +155,13 @@ $φ$が単射であること、すなわち$\tilde K(S^2)\cong\mathbb Z$を言�
 $\operatorname{SL}(n,\mathbb C)$（行列式が$1$の複素行列の全体）の中の閉曲線は、$\operatorname{SL}(n,\mathbb C)$の中で$I$に連続に縮められることが知られています（$\operatorname{SL}(n,\mathbb C)$が単連結であること）。単連結性の証明は本記事では扱いません。これを認めると、前回の記事で主張に留めた分類が得られます。[[7shi-kth3]]
 
 &&&prop S²上の複素ベクトル束 [prop-s2-classify]
-$\operatorname{SL}(n,\mathbb C)$の単連結性を認めると、$g:S^1\to\operatorname{GL}(n,\mathbb C)$について、$m=\operatorname{wind}(\det g)$として次が成り立ちます。
+$\operatorname{SL}(n,\mathbb C)$の単連結性を認めると、$g:S^1\to\operatorname{GL}(n,\mathbb C)$について、$m=\operatorname{wind}(\det g)$として次が成り立つ。
 
 $$
 E_g\cong H^m\oplus\underline{\mathbb C}^{n-1}
 $$
 
-とくに、同じ階数の$S^2$上の複素ベクトル束は、行列式の回転数が等しければ同型です。また、[[thm-s2]]の$φ$は同型で、$\tilde K(S^2)\cong\mathbb Z$の生成元は$[H]-1$です。
+とくに、同じ階数の$S^2$上の複素ベクトル束は、行列式の回転数が等しければ同型である。また、[[thm-s2]]の$φ$は同型で、$\tilde K(S^2)\cong\mathbb Z$の生成元は$[H]-1$である。
 &&&
 
 &&&prf
@@ -171,7 +171,7 @@ $\tilde K(S^2)$の元は$[E_g]-n=[H^m]-1=m([H]-1)$（[[prop-line-sums]]）と書
 &&&
 
 &&&ex 接束の類
-前回の記事では、複素直線束として$TS^2\cong H^{-2}$であることを見ました。[[prop-line-sums]]から、$\tilde K(S^2)$の中で$[TS^2]-1=-2([H]-1)$です。実ベクトル束としては$TS^2\oplus\underline{\mathbb R}\cong\underline{\mathbb R}^3$で、$\widetilde{KO}(S^2)$の中では$[TS^2]-2=0$でした。同じ束が、複素のK群では生成元の$-2$倍として残り、実のK群では消えます。[[7shi-kth3]]
+前回の記事では、複素直線束として$TS^2\cong H^{-2}$であることを見た。[[prop-line-sums]]から、$\tilde K(S^2)$の中で$[TS^2]-1=-2([H]-1)$である。実ベクトル束としては$TS^2\oplus\underline{\mathbb R}\cong\underline{\mathbb R}^3$で、$\widetilde{KO}(S^2)$の中では$[TS^2]-2=0$であった。同じ束が、複素のK群では生成元の$-2$倍として残り、実のK群では消える。[[7shi-kth3]]
 &&&
 
 &&&rem テンソル積と積
@@ -193,7 +193,7 @@ $$
 g_W(\boldsymbol x)=x_0I+x_1J_1+\dots+x_{k-1}J_{k-1}
 $$
 
-と置き、$g_W:S^{k-1}\to\operatorname{GL}(W)$を貼り合わせ関数とする$S^k$上の実ベクトル束を$E_W$と書きます。$W$が複素ベクトル空間で、$J_l$が複素線形なら、$E_W$は複素ベクトル束です。
+と置き、$g_W:S^{k-1}\to\operatorname{GL}(W)$を貼り合わせ関数とする$S^k$上の実ベクトル束を$E_W$と書く。$W$が複素ベクトル空間で、$J_l$が複素線形なら、$E_W$は複素ベクトル束である。
 &&&
 
 $g_W(\boldsymbol x)$が可逆であることは、以前の記事で見たとおり、$\boldsymbol v=\sum_lx_lJ_l$について$\boldsymbol v^2=-\sum_lx_l^2I$となることから従います。$(x_0I+\boldsymbol v)(x_0I-\boldsymbol v)=|\boldsymbol x|^2I=I$です。[[7shi-kth1]]
@@ -201,7 +201,7 @@ $g_W(\boldsymbol x)$が可逆であることは、以前の記事で見たとお
 複素の場合の加群は、生成元が複素線形に作用するものです。これは複素クリフォード代数$\operatorname{Cl}_{k-1}(\mathbb C)\cong\operatorname{Cl}_{0,k-1}(\mathbb R)\otimes_{\mathbb R}\mathbb C$の加群と同じものです。以下、$\dim W$は、実の加群では実次元、複素の加群では複素次元を表します。[[7shi-clif1]]
 
 &&&prop 加群の同型と直和 [prop-module-sum]
-$W\cong W'$（加群として同型）なら$E_W\cong E_{W'}$です。また、$E_{W\oplus W'}=E_W\oplus E_{W'}$です。
+$W\cong W'$（加群として同型）なら$E_W\cong E_{W'}$である。また、$E_{W\oplus W'}=E_W\oplus E_{W'}$である。
 &&&
 
 &&&prf
@@ -213,7 +213,7 @@ $W\cong W'$（加群として同型）なら$E_W\cong E_{W'}$です。また、$
 $W$の上に、もう1つの生成元の作用$J_k$（$J_k^2=-I$で、$J_1,\dots,J_{k-1}$と反交換する）があるとします。このとき$W$は$\operatorname{Cl}_{0,k}(\mathbb R)$の加群で、その作用を$\operatorname{Cl}_{0,k-1}(\mathbb R)$に制限したものが元の$W$です。このような$W$を、$\operatorname{Cl}_{0,k}(\mathbb R)$の加群に**延長できる**と言います。
 
 &&&prop 延長できる加群は自明な束を与える [prop-extend]
-$W$が$\operatorname{Cl}_{0,k}(\mathbb R)$の加群に延長できるなら、$E_W$は自明束です。複素の場合も同様です。
+$W$が$\operatorname{Cl}_{0,k}(\mathbb R)$の加群に延長できるなら、$E_W$は自明束である。複素の場合も同様である。
 &&&
 
 &&&prf
@@ -237,13 +237,13 @@ $g_t$は、赤道の点$\boldsymbol x\in S^{k-1}$を1つ大きい球面$S^k$の�
 [[prop-module-sum]]と[[prop-extend]]から、K群の元$[E_W]-\dim W$は加群の直和について足し算になり、延長できる加群では$0$になります。低い次元で確かめます。
 
 &&&ex メビウスの帯（k=1）
-$\operatorname{Cl}_{0,0}(\mathbb R)=\mathbb R$で、生成元はありません。$W=\mathbb R$なら$g_W(x_0)=x_0=\pm1$で、$E_W$はメビウスの帯$M$です。$W=\mathbb R^2$に$J_1=\begin{pmatrix}0&-1\\1&0\end{pmatrix}$を作用させると$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$の加群になるので、$E_{\mathbb R^2}=M\oplus M$は自明です。[[prop-extend]]の$g_t$は、$x_0=1$では$R(t)$、$x_0=-1$では$R(\pi-t)$で、以前の記事でメビウスの帯2枚をほどいた回転と同じものです。[[7shi-kth1]]
+$\operatorname{Cl}_{0,0}(\mathbb R)=\mathbb R$で、生成元はない。$W=\mathbb R$なら$g_W(x_0)=x_0=\pm1$で、$E_W$はメビウスの帯$M$である。$W=\mathbb R^2$に$J_1=\begin{pmatrix}0&-1\\1&0\end{pmatrix}$を作用させると$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$の加群になるので、$E_{\mathbb R^2}=M\oplus M$は自明である。[[prop-extend]]の$g_t$は、$x_0=1$では$R(t)$、$x_0=-1$では$R(\pi-t)$で、以前の記事でメビウスの帯2枚をほどいた回転と同じものである。[[7shi-kth1]]
 &&&
 
 &&&ex 複素数のホップ束（k=2）
-$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$の加群$W=\mathbb C$（$J_1=i$）では$g_W(x_0,x_1)=x_0+x_1i$で、$E_W$はホップ束$H$を実ベクトル束と見たものです。$\mathbb C^2=\mathbb H$は$\mathbf i,\mathbf j$の左からの積で$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$の加群になるので、$E_{\mathbb C^2}=H\oplus H$は実ベクトル束として自明で、$\widetilde{KO}(S^2)$の中で$2([H]-2)=0$です。
+$\operatorname{Cl}_{0,1}(\mathbb R)\cong\mathbb C$の加群$W=\mathbb C$（$J_1=i$）では$g_W(x_0,x_1)=x_0+x_1i$で、$E_W$はホップ束$H$を実ベクトル束と見たものである。$\mathbb C^2=\mathbb H$は$\mathbf i,\mathbf j$の左からの積で$\operatorname{Cl}_{0,2}(\mathbb R)\cong\mathbb H$の加群になるので、$E_{\mathbb C^2}=H\oplus H$は実ベクトル束として自明で、$\widetilde{KO}(S^2)$の中で$2([H]-2)=0$である。
 
-複素の加群としては、$\operatorname{Cl}_1(\mathbb C)\cong2\mathbb C$に既約加群が2つあり、$J_1=i$のもの$W$と$J_1=-i$のもの$\overline W$です。赤道の点を$z=x_0+x_1i$と書くと$g_W=z$、$g_{\overline W}=\bar z=z^{-1}$なので、$E_W=H$、$E_{\overline W}=H^{-1}$です。$W\oplus\overline W=\mathbb C^2$は$J_1=\operatorname{diag}(i,-i)$、$J_2=\begin{pmatrix}0&-1\\1&0\end{pmatrix}$で$\operatorname{Cl}_2(\mathbb C)\cong M_2(\mathbb C)$の加群に延長できるので、$H\oplus H^{-1}$は自明です。これは[[ex-hopf-sums]]で回転から得た同型と一致します。
+複素の加群としては、$\operatorname{Cl}_1(\mathbb C)\cong2\mathbb C$に既約加群が2つあり、$J_1=i$のもの$W$と$J_1=-i$のもの$\overline W$である。赤道の点を$z=x_0+x_1i$と書くと$g_W=z$、$g_{\overline W}=\bar z=z^{-1}$なので、$E_W=H$、$E_{\overline W}=H^{-1}$である。$W\oplus\overline W=\mathbb C^2$は$J_1=\operatorname{diag}(i,-i)$、$J_2=\begin{pmatrix}0&-1\\1&0\end{pmatrix}$で$\operatorname{Cl}_2(\mathbb C)\cong M_2(\mathbb C)$の加群に延長できるので、$H\oplus H^{-1}$は自明である。これは[[ex-hopf-sums]]で回転から得た同型と一致する。
 &&&
 
 ## 直和型の2つの既約加群
@@ -253,21 +253,21 @@ $\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H$と$\operatorname{Cl}_{0,7}(\
 一般に、既約加群$W$の生成元の作用$J_l$の符号をすべて反転した$-J_l$も同じクリフォード関係を満たし、加群になります。これを$\overline W$と書きます。擬スカラー$ω=J_1\cdots J_{k-1}$は$(-1)^{k-1}ω$に変わります。$\operatorname{Cl}_{0,3}(\mathbb R)$や$\operatorname{Cl}_{0,7}(\mathbb R)$のような直和型（$k-1\equiv3,7\pmod8$）では、既約加群の上で擬スカラーが$\pm I$として作用し、その符号が反転するので、$\overline W$は$W$と異なる既約加群です。$\operatorname{Cl}_{0,3}(\mathbb R)$と$\operatorname{Cl}_{0,7}(\mathbb R)$の2つの既約加群は$W$と$\overline W$で尽くされます。
 
 &&&ex 四元数・八元数のホップ束の共役（k=4, 8）
-$W=\mathbb H$（$J_l=L_{\mathbf i},L_{\mathbf j},L_{\mathbf k}$）では$g_W(c)=L_c$で、$E_W$は前回の記事の四元数のホップ束です。$\overline W$では、$c=x_0+x_1\mathbf i+x_2\mathbf j+x_3\mathbf k$の共役$c^*$を使って$g_{\overline W}(c)=L_{c^*}$です。八元数の$W=\mathbb O$と$\overline W$でも、$g_W(c)=L_c$、$g_{\overline W}(c)=L_{c^*}$です。[[7shi-kth3]]
+$W=\mathbb H$（$J_l=L_{\mathbf i},L_{\mathbf j},L_{\mathbf k}$）では$g_W(c)=L_c$で、$E_W$は前回の記事の四元数のホップ束である。$\overline W$では、$c=x_0+x_1\mathbf i+x_2\mathbf j+x_3\mathbf k$の共役$c^*$を使って$g_{\overline W}(c)=L_{c^*}$である。八元数の$W=\mathbb O$と$\overline W$でも、$g_W(c)=L_c$、$g_{\overline W}(c)=L_{c^*}$である。[[7shi-kth3]]
 
-$W\oplus\overline W$は、次の作用で1つ多い生成元の加群に延長できます。
+$W\oplus\overline W$は、次の作用で1つ多い生成元の加群に延長できる。
 
 $$
 J_l\mapsto\begin{pmatrix}J_l&0\\0&-J_l\end{pmatrix}\ (l=1,\dots,k-1),\qquad J_k=\begin{pmatrix}0&-I\\I&0\end{pmatrix}
 $$
 
-$J_k^2=-I$で、ブロックを計算すると$\operatorname{diag}(J_l,-J_l)J_k=-J_k\operatorname{diag}(J_l,-J_l)$です。$k=8$の場合は、以前の記事で$\operatorname{Cl}_{0,8}(\mathbb R)$の既約加群を作った倍加そのものです。[[prop-extend]]から$E_W\oplus E_{\overline W}$は自明で、K群の中で次が成り立ちます。[[7shi-kth2]]
+$J_k^2=-I$で、ブロックを計算すると$\operatorname{diag}(J_l,-J_l)J_k=-J_k\operatorname{diag}(J_l,-J_l)$である。$k=8$の場合は、以前の記事で$\operatorname{Cl}_{0,8}(\mathbb R)$の既約加群を作った倍加そのものである。[[prop-extend]]から$E_W\oplus E_{\overline W}$は自明で、K群の中で次が成り立つ。[[7shi-kth2]]
 
 $$
 [E_{\overline W}]-\dim W=-([E_W]-\dim W)
 $$
 
-共役を取る貼り合わせ関数は、符号が逆の元を与えます。$S^2$の$H^{-1}$と$H$の関係と同じです。
+共役を取る貼り合わせ関数は、符号が逆の元を与える。$S^2$の$H^{-1}$と$H$の関係と同じである。
 &&&
 
 # 分類表からの計算
@@ -281,12 +281,12 @@ $\operatorname{Cl}_{0,j}(\mathbb R)$の有限次元の加群の同型類は、�
 $\operatorname{Cl}_{0,k}(\mathbb R)$の加群を、$J_k$を忘れて$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群と見る操作を**制限**と呼び、それが定める準同型を$r:\mathfrak M_k\to\mathfrak M_{k-1}$と書きます。$r$の像が、延長できる加群の差で書ける元の全体です。
 
 &&&def 制限で割った群
-制限の像で割った次の群を考えます。
+制限の像で割った次の群を考える。
 
 $$
 \mathcal A_k=\mathfrak M_{k-1}/r(\mathfrak M_k)
 $$
-複素クリフォード代数の加群から同じように作った群を$\mathcal A_k^{\mathbb C}$と書きます。
+複素クリフォード代数の加群から同じように作った群を$\mathcal A_k^{\mathbb C}$と書く。
 &&&
 
 [[prop-extend]]により、$[W]\mapsto[E_W]-\dim W$は準同型$\mathcal A_k\to\widetilde{KO}(S^k)$（複素では$\mathcal A_k^{\mathbb C}\to\tilde K(S^k)$）を定めます。以前の記事で述べたアティヤ＝ボット＝シャピロの定理は、これが同型であることを主張しています。[[7shi-kth1]]
@@ -296,7 +296,7 @@ $$
 $\mathcal A_k$を計算するには、$\operatorname{Cl}_{0,k}(\mathbb R)$の各既約加群を制限したとき、$\operatorname{Cl}_{0,k-1}(\mathbb R)$の既約加群がいくつ現れるかが分かればよいです。$\operatorname{Cl}_{0,k-1}(\mathbb R)$が単純型なら既約加群は1つなので、次元の比$a_k/a_{k-1}$がそのまま個数です。直和型なら、2つの既約加群$W,\overline W$の個数を区別する必要があります。
 
 &&&lem 直和型への制限 [lem-restrict]
-$\operatorname{Cl}_{0,k-1}(\mathbb R)$が直和型（$k-1\equiv3,7\pmod8$）とします。$\operatorname{Cl}_{0,k}(\mathbb R)$の加群を$\operatorname{Cl}_{0,k-1}(\mathbb R)$に制限すると、$W$と$\overline W$は同じ個数ずつ現れます。
+$\operatorname{Cl}_{0,k-1}(\mathbb R)$が直和型（$k-1\equiv3,7\pmod8$）とする。$\operatorname{Cl}_{0,k}(\mathbb R)$の加群を$\operatorname{Cl}_{0,k-1}(\mathbb R)$に制限すると、$W$と$\overline W$は同じ個数ずつ現れる。
 &&&
 
 &&&prf
@@ -337,7 +337,7 @@ $$
 以前の記事では、$\mathbb Z$が現れる$k=4,8$は$\operatorname{Cl}_{0,k-1}(\mathbb R)$が直和型になる位置であることを見て、$k=1,2$の$\mathbb Z_2$の現れ方には既約加群の次元が関わると述べるに留めました。表から、その仕組みが読み取れます。$\mathbb Z$は、直和型の2つの既約加群のうち、制限で打ち消されない片方の向きとして現れます。$\mathbb Z_2$は、1つ多い生成元を加えたときに既約加群の次元が2倍になり、制限で2個ずつしか消えないことから現れます。$k=5,6,7$で次元が変わらないときは、どの既約加群も延長でき、何も残りません。[[7shi-kth1]]
 
 &&&thm アティヤ＝ボット＝シャピロの定理
-$[W]\mapsto[E_W]-\dim W$は、同型$\mathcal A_k\cong\widetilde{KO}(S^k)$と$\mathcal A_k^{\mathbb C}\cong\tilde K(S^k)$を与えます。
+$[W]\mapsto[E_W]-\dim W$は、同型$\mathcal A_k\cong\widetilde{KO}(S^k)$と$\mathcal A_k^{\mathbb C}\cong\tilde K(S^k)$を与える。
 &&&
 
 本記事で示したのは、この写像が矛盾なく定まることと、延長できる加群が$0$になることです。写像が同型であること、とくに$k=4,8$で四元数・八元数のホップ束の類が$0$でないこと（自明束を足しても自明にならないこと）は、本記事では扱いません。$k=1$の同型は、以前の記事で示した$\widetilde{KO}(S^1)\cong\mathbb Z_2$です。[[7shi-kth1]]
@@ -376,7 +376,7 @@ $$
 アティヤ＝ボット＝シャピロの定理を認めると、代数の側の周期がそのまま球面のK群に移ります。
 
 &&&thm ボット周期性
-$k\ge1$について、次の同型があります。
+$k\ge1$について、次の同型がある。
 
 $$
 \widetilde{KO}(S^{k+8})\cong\widetilde{KO}(S^k),\qquad\tilde K(S^{k+2})\cong\tilde K(S^k)
@@ -394,33 +394,33 @@ $$
 球面の複素K群の元を、貼り合わせ関数の安定なホモトピー類として表しました。実の場合にも、ホモトピックな貼り合わせ関数は同じK群の元を与えます。平面の回転によって、K群の和は貼り合わせ関数の積にあたります。$S^2$では、行列式の回転数が$\tilde K(S^2)$から$\mathbb Z$への全射な準同型を与え、直線束の直和の類はこの値で決まります。$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群$W$から貼り合わせ関数$g_W$を作ると、1つ多い生成元まで延長できる加群は自明な束を与えます。加群の群を延長できる加群の制限で割った群を分類表から計算すると、実では$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$、複素では$0,\mathbb Z$の繰り返しとなり、球面のK群の表と一致します。
 
 &&& 回転による変形
-$R(t)$をブロックの回転として、次のホモトピーがあります。
+$R(t)$をブロックの回転として、次のホモトピーがある。
 
 $$
 \operatorname{diag}(g,h)\simeq\operatorname{diag}(gh,I)
 $$
 
-K群では$([E_g]-n)+([E_h]-n)=[E_{gh}]-n$です。$S^2$では$H\oplus H\cong H^2\oplus\underline{\mathbb C}$、$[H^m]-1=m([H]-1)$です。
+K群では$([E_g]-n)+([E_h]-n)=[E_{gh}]-n$である。$S^2$では$H\oplus H\cong H^2\oplus\underline{\mathbb C}$、$[H^m]-1=m([H]-1)$である。
 &&&
 
 &&& 加群が与える貼り合わせ関数
-$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群$W$の生成元の作用$J_l$から、次の貼り合わせ関数を作ります。
+$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群$W$の生成元の作用$J_l$から、次の貼り合わせ関数を作る。
 
 $$
 g_W(\boldsymbol x)=x_0I+x_1J_1+\dots+x_{k-1}J_{k-1}
 $$
 
-$J_k$まで延長できれば、$\cos t\,g_W+\sin t\,J_k$により$g_W$は定数にホモトピックです。
+$J_k$まで延長できれば、$\cos t\,g_W+\sin t\,J_k$により$g_W$は定数にホモトピックである。
 &&&
 
 &&& 制限で割った群
-$\mathfrak M_j$を$\operatorname{Cl}_{0,j}(\mathbb R)$の加群の群、$r$を制限として、次のように定めます。
+$\mathfrak M_j$を$\operatorname{Cl}_{0,j}(\mathbb R)$の加群の群、$r$を制限として、次のように定める。
 
 $$
 \mathcal A_k=\mathfrak M_{k-1}/r(\mathfrak M_k)
 $$
 
-$k=1,\dots,8$で$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$です。
+$k=1,\dots,8$で$\mathbb Z_2,\mathbb Z_2,0,\mathbb Z,0,0,0,\mathbb Z$である。
 &&&
 
 K群の側と加群の側の対応を並べます。

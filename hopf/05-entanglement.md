@@ -15,11 +15,11 @@ $\Phi_A=(a,b)^T$と$\Phi_B=(c,d)^T$のテンソル積を
 $$
 \Phi_A\otimes\Phi_B=(ac,\ ad,\ bc,\ bd)^T
 $$
-と定めます。一般の2量子ビットの状態ベクトルは、この形とは限らない$\mathbb{C}^4$の単位ベクトル
+と定める。一般の2量子ビットの状態ベクトルは、この形とは限らない$\mathbb{C}^4$の単位ベクトル
 $$
 \Psi=(\alpha,\beta,\gamma,\delta)^T,\quad |\alpha|^2+|\beta|^2+|\gamma|^2+|\delta|^2=1
 $$
-です。実8成分と見なせば、$\Psi$は$S^7$上の点です。
+である。実8成分と見なせば、$\Psi$は$S^7$上の点である。
 &&&
 
 &&&rem 状態空間と全体位相
@@ -38,7 +38,7 @@ $$
 &&&
 
 &&&def 分離可能ともつれ
-$\Psi=\Phi_A\otimes\Phi_B$と書ける状態を**分離可能**（積状態）、書けない状態を**もつれた状態**と呼びます。
+$\Psi=\Phi_A\otimes\Phi_B$と書ける状態を**分離可能**（積状態）、書けない状態を**もつれた状態**と呼ぶ。
 &&&
 
 &&&rem 分解の非一意性
@@ -58,7 +58,7 @@ $$
 となり、$M$の階数は1です。逆に階数1なら列ベクトル2本の積に分解できるため、分離可能性は$M$の階数、すなわち行列式で判定できます。
 
 &&&thm 分離可能性の判定
-$\Psi=(\alpha,\beta,\gamma,\delta)^T$が分離可能であることと、$\alpha\delta-\beta\gamma=0$は同値です。
+$\Psi=(\alpha,\beta,\gamma,\delta)^T$が分離可能であることと、$\alpha\delta-\beta\gamma=0$は同値である。
 &&&
 
 &&&prf
@@ -72,16 +72,16 @@ $$
 &&&
 
 &&&ex ベル状態
-もつれた状態の代表例が**ベル状態**です。
+もつれた状態の代表例が**ベル状態**である。
 $$
 \Phi_\pm=\frac{|00\rangle\pm|11\rangle}{\sqrt2},\quad
 \Psi_\pm=\frac{|01\rangle\pm|10\rangle}{\sqrt2}
 $$
-例えば$\Phi_+$は$\alpha=\delta=\frac1{\sqrt2}$より$\alpha\delta-\beta\gamma=\frac12\neq0$で、もつれています。一方
+例えば$\Phi_+$は$\alpha=\delta=\frac1{\sqrt2}$より$\alpha\delta-\beta\gamma=\frac12\neq0$で、もつれている。一方
 $$
 \frac{|00\rangle+|01\rangle+|10\rangle+|11\rangle}{2}=\frac{(1,1)^T}{\sqrt2}\otimes\frac{(1,1)^T}{\sqrt2}
 $$
-は$\alpha\delta-\beta\gamma=\frac14-\frac14=0$で、分離可能です。
+は$\alpha\delta-\beta\gamma=\frac14-\frac14=0$で、分離可能である。
 &&&
 
 # 四元数への埋め込み
@@ -102,11 +102,11 @@ $$
 $$
 
 &&&def 四元数への詰め込み
-2量子ビットの状態ベクトル$\Psi=(\alpha,\beta,\gamma,\delta)^T$に対し、成分を2つずつ四元数に詰めます。
+2量子ビットの状態ベクトル$\Psi=(\alpha,\beta,\gamma,\delta)^T$に対し、成分を2つずつ四元数に詰める。
 $$
 q_1=\alpha+\mathbf j\beta,\quad q_2=\gamma+\mathbf j\delta
 $$
-$|q_1|^2+|q_2|^2=|\alpha|^2+|\beta|^2+|\gamma|^2+|\delta|^2=1$より、$(q_1,q_2)$は四元数ホップ写像$H_{\mathbb{H}}$の定義域$S^7$の点です。
+$|q_1|^2+|q_2|^2=|\alpha|^2+|\beta|^2+|\gamma|^2+|\delta|^2=1$より、$(q_1,q_2)$は四元数ホップ写像$H_{\mathbb{H}}$の定義域$S^7$の点である。
 &&&
 
 &&&rem 前回の記法との対応
@@ -144,7 +144,7 @@ $$
 となります。$\mathbf j,\mathbf k$成分の係数として、分離可能性を判定する行列式$\alpha\delta-\beta\gamma$がそのまま現れました。
 
 &&&thm もつれとホップ像
-2量子ビットの状態$\Psi$について、次の3条件は同値です。
+2量子ビットの状態$\Psi$について、次の3条件は同値である。
 1. $\Psi$は分離可能
 2. $\alpha\delta-\beta\gamma=0$
 3. ホップ像の$\mathbf j,\mathbf k$成分が消える
@@ -270,7 +270,7 @@ $$
 $\Psi_0,\Psi_1$は$BC$の2量子ビット分の成分です。
 
 &&&def A|BC分離可能
-$\Psi=\Phi_A\otimes X$（$X\in\mathbb{C}^4$は$BC$の合成状態）と書ける状態を**A|BC分離可能**と呼びます。これはブロックが複素数倍$\Psi_1=\lambda\Psi_0$（または$\Psi_0=0$）であることと同値です（2量子ビットの行列式判定と同じ論法を$2\times4$行列に適用）。$BC$の内部にもつれがあってもかまいません。
+$\Psi=\Phi_A\otimes X$（$X\in\mathbb{C}^4$は$BC$の合成状態）と書ける状態を**A|BC分離可能**と呼ぶ。これはブロックが複素数倍$\Psi_1=\lambda\Psi_0$（または$\Psi_0=0$）であることと同値である（2量子ビットの行列式判定と同じ論法を$2\times4$行列に適用）。$BC$の内部にもつれがあってもかまわない。
 &&&
 
 次に$\mathbb{C}^4\cong\mathbb{O}$の同一視を作ります。四元数のときは$\mathbb{H}=\mathbb{C}+\mathbf j\mathbb{C}$という分解を使いましたが、八元数では虚数単位$e_1$の右乗算を複素数の$i$と見なし、$\mathbb{C}$上の基底$\{1,e_2,e_4,e_6\}$への係数として定義します。
@@ -280,14 +280,14 @@ $X=(z_1,z_2,z_3,z_4)^T\in\mathbb{C}^4$を八元数
 $$
 x=1\cdot z_1+e_2z_2+e_4z_3+e_6z_4
 $$
-に対応させます。ここで複素係数$z=\operatorname{Re}z+\operatorname{Im}z\,e_1$は、四元数のときと同じく右から掛けます。三つ組$123,145,176$より$e_2e_1=-e_3,\ e_4e_1=-e_5,\ e_6e_1=e_7$なので、成分で書くと次のようになります。[[7shi-oct1]]
+に対応させる。ここで複素係数$z=\operatorname{Re}z+\operatorname{Im}z\,e_1$は、四元数のときと同じく右から掛ける。三つ組$123,145,176$より$e_2e_1=-e_3,\ e_4e_1=-e_5,\ e_6e_1=e_7$なので、成分で書くと次のようになる。[[7shi-oct1]]
 $$
 x=\operatorname{Re}z_1+\operatorname{Im}z_1\,e_1
 +\operatorname{Re}z_2\,e_2-\operatorname{Im}z_2\,e_3
 +\operatorname{Re}z_3\,e_4-\operatorname{Im}z_3\,e_5
 +\operatorname{Re}z_4\,e_6+\operatorname{Im}z_4\,e_7
 $$
-です。8つの実成分がちょうど1回ずつ現れるため、これは実線形同型です。
+である。8つの実成分がちょうど1回ずつ現れるため、これは実線形同型である。
 &&&
 
 &&&rem 符号の注意
@@ -315,7 +315,7 @@ $$
 2量子ビットの定理を八元数で再現します。今回は成分計算の代わりに、以前の記事で使った合成代数の恒等式$x^*(xy)=|x|^2y,\ x(x^*y)=|x|^2y$を使います。これらは結合法則を使わずに成り立つ恒等式です。[[7shi-hopfext]]
 
 &&&thm A|BCもつれとホップ像
-3量子ビットの状態$\Psi$について、次の3条件は同値です。
+3量子ビットの状態$\Psi$について、次の3条件は同値である。
 1. $\Psi$はA|BC分離可能
 2. $o_1^*o_2\in\mathbb{C}$（$1,e_1$成分のみ）
 3. ホップ像$H_{\mathbb{O}}(o_1,o_2)$の$e_2,\dots,e_7$成分が消える
@@ -417,7 +417,7 @@ $$
 八元数の**自己同型**、すなわち乗法を保つ実線形全単射$\varphi(xy)=\varphi(x)\varphi(y)$のうち、$e_1$を固定するものを考えます。$\varphi(xe_1)=\varphi(x)e_1$となるため、$\varphi$は複素構造と両立し、$\mathbb{C}^3$に$\mathbb{C}$-線形に作用します。この作用がどんな行列になるかを、対角的な場合で計算してみます。
 
 &&&ex 対角位相と行列式
-基底に位相を掛ける写像$\varphi\colon e_2\mapsto e_2e^{i\theta_1},\ e_4\mapsto e_4e^{i\theta_2},\ e_6\mapsto e_6e^{i\theta_3}$が自己同型になるための必要条件を求めます。$e_2e_4=e_6$（三つ組$246$）を保つ必要があるので、左辺の像を計算すると
+基底に位相を掛ける写像$\varphi\colon e_2\mapsto e_2e^{i\theta_1},\ e_4\mapsto e_4e^{i\theta_2},\ e_6\mapsto e_6e^{i\theta_3}$が自己同型になるための必要条件を求める。$e_2e_4=e_6$（三つ組$246$）を保つ必要があるので、左辺の像を計算すると
 $$
 \begin{aligned}
 (e_2e^{i\theta_1})(e_4e^{i\theta_2})
@@ -427,11 +427,11 @@ $$
 &=e_6e^{-i(\theta_1+\theta_2)}
 \end{aligned}
 $$
-となります（三つ組$257,347,365$より$e_2e_5=e_7,\ e_3e_4=e_7,\ e_3e_5=-e_6$。最後の等号は$e_6e_1=e_7$による）。これが$\varphi(e_6)=e_6e^{i\theta_3}$と一致する条件は
+となる（三つ組$257,347,365$より$e_2e_5=e_7,\ e_3e_4=e_7,\ e_3e_5=-e_6$。最後の等号は$e_6e_1=e_7$による）。これが$\varphi(e_6)=e_6e^{i\theta_3}$と一致する条件は
 $$
 \theta_1+\theta_2+\theta_3\equiv0\pmod{2\pi}
 $$
-すなわち、対角行列の行列式$e^{i(\theta_1+\theta_2+\theta_3)}$が1であることです。この条件は十分でもありますが、他の乗法関係の保存の確認は省略します。
+すなわち、対角行列の行列式$e^{i(\theta_1+\theta_2+\theta_3)}$が1であることである。この条件は十分でもあるが、他の乗法関係の保存の確認は省略する。
 &&&
 
 位相を勝手に掛けるだけでは乗法が壊れ、行列式1という制約が乗法の保存から現れました。これは一般に成り立つ事実の対角的な断面です。$e_1$を固定する自己同型の全体は、$\mathbb{C}^3$へのユニタリかつ行列式1の作用、すなわち$\operatorname{SU}(3)$とちょうど一致します（一般の場合の証明は省略します）。数体系の単位球面からは決して得られなかった$\operatorname{SU}(3)$が、八元数の対称性として現れる場面です。なお八元数の自己同型全体は例外型リー群$G_2$と呼ばれる14次元の群で、$\operatorname{SU}(3)$はその中で$e_1$を固定する部分群です。$G_2$自体の構造には、本記事では立ち入りません。[[7shi-lie6]]
@@ -488,7 +488,7 @@ $BC$の内部のもつれはファイバー内の自由度であり、像には�
 - 非結合性は「$BC$の状態の左乗算による取り替え」の群構造喪失として現れ、ファイバー$S^7$は外部の対称性$\operatorname{Spin}(8)$と右乗算構成に委ねられる
 
 &&& ブロッホベクトルともつれ
-2量子ビットの状態$\Psi=\alpha|00\rangle+\beta|01\rangle+\gamma|10\rangle+\delta|11\rangle$について、次が成り立ちます。
+2量子ビットの状態$\Psi=\alpha|00\rangle+\beta|01\rangle+\gamma|10\rangle+\delta|11\rangle$について、次が成り立つ。
 $$
 x_A^2+y_A^2+z_A^2+C^2=1,\qquad C=2|\alpha\delta-\beta\gamma|
 $$

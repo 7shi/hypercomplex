@@ -215,7 +215,7 @@ $$
 $$
 u = i,\ v = j,\ \alpha = \beta = 1
 $$
-に当てはめると、$u \cdot v = 0,\ u \times v = k$より実部は$\cos^2 1$、虚部は$(i+j)\sin1\cos1 + k\sin^2 1$となり、直接計算した結果と一致します。
+に当てはめると、$u \cdot v = 0,\ u \times v = k$より実部は$\cos^2 1$、虚部は$(i+j)\sin1\cos1 + k\sin^2 1$となり、直接計算した結果と一致する。
 &&&
 
 積は再び単位四元数なので、実部を$a$、虚部を$V$として$a + V = \cos\gamma + w\sin\gamma$の形で書けます。ここから合成後の角度$\gamma$と方向$w$を取り出すには、次のように選べます。
@@ -296,7 +296,7 @@ $$
 [z,[x,y]] &= zxy - zyx - xyz + yxz
 \end{aligned}
 $$
-となります。3つの和を項ごとに見ると、すべての項が符号違いの相手と対になって打ち消し合います。
+となる。3つの和を項ごとに見ると、すべての項が符号違いの相手と対になって打ち消し合う。
 &&&
 
 この証明は、$xyz$のような3文字の積が括弧の付け方によらず1通りに定まる、つまり積の**結合法則**に依存しています。結合法則が崩れる代数では、この証明は足場ごと崩れます。
@@ -437,15 +437,15 @@ F(t) = \exp(t\operatorname{ad}_z)\,x
 $$
 
 &&&prf 解の形が正しいことの確認
-$\operatorname{ad}_z$はリー代数上の線形写像（リー代数からリー代数自身への線形変換）なので、行列と同じように和・スカラー倍・合成（べき乗）が定義できます。そこで$\exp(t\operatorname{ad}_z)$を、行列の指数関数と同じ級数
+$\operatorname{ad}_z$はリー代数上の線形写像（リー代数からリー代数自身への線形変換）なので、行列と同じように和・スカラー倍・合成（べき乗）が定義できる。そこで$\exp(t\operatorname{ad}_z)$を、行列の指数関数と同じ級数
 $$
 \exp(t\operatorname{ad}_z) = \operatorname{id}_{\mathfrak{g}} + t\operatorname{ad}_z + \frac{t^2}{2}\operatorname{ad}_z^2 + \cdots
 $$
-で定義します（$\operatorname{id}_{\mathfrak{g}}$は$\mathfrak{g}$上の恒等写像、$\operatorname{ad}_z^2$は$\operatorname{ad}_z$を2回合成する意味）。この級数を項別に$t$で微分すると
+で定義する（$\operatorname{id}_{\mathfrak{g}}$は$\mathfrak{g}$上の恒等写像、$\operatorname{ad}_z^2$は$\operatorname{ad}_z$を2回合成する意味）。この級数を項別に$t$で微分すると
 $$
 \frac{d}{dt}\exp(t\operatorname{ad}_z) = \operatorname{ad}_z + t\operatorname{ad}_z^2 + \cdots = \operatorname{ad}_z\exp(t\operatorname{ad}_z)
 $$
-となるので、$F(t) = \exp(t\operatorname{ad}_z)\,x$は確かに$F'(t) = \operatorname{ad}_z F(t)$と$F(0) = x$を満たします。線形常微分方程式の解の一意性により、これが$F(t)$に一致します。
+となるので、$F(t) = \exp(t\operatorname{ad}_z)\,x$は確かに$F'(t) = \operatorname{ad}_z F(t)$と$F(0) = x$を満たす。線形常微分方程式の解の一意性により、これが$F(t)$に一致する。
 &&&
 
 $t = 1$と置けば、次の関係が得られます。

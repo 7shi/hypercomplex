@@ -164,7 +164,7 @@ $$
 =\oint_{r=R}G\boldsymbol nF\,ds-\oint_{r=\varepsilon}G\boldsymbol nF\,ds
 $$
 
-ここで$\boldsymbol n$はどちらの円でも中心から外向きの法線、$ds=r\,d\theta$とします。
+ここで$\boldsymbol n$はどちらの円でも中心から外向きの法線、$ds=r\,d\theta$とする。
 &&&
 
 内側の円では、円環から見た外向きの法線は$-\boldsymbol n$なので、これは両側形式を円環に当てはめたものと一致します。$F,G$は閉円環を含む開集合上で$C^1$級であれば十分で、中心$\boldsymbol a$で定義されている必要はありません。$G=1$、$DF=0$とすると、$\oint_{r=\rho}\boldsymbol nF\,ds$が半径$\rho$によらないことがわかります。
@@ -311,7 +311,7 @@ $$
 \operatorname{Res}_{\boldsymbol a}F=\frac1{2\pi}\oint_{|\boldsymbol x-\boldsymbol a|=\varepsilon}\boldsymbol nF\,ds
 $$
 
-を$\boldsymbol a$における$F$の**留数**と定めます。値は$\varepsilon$によりません。
+を$\boldsymbol a$における$F$の**留数**と定める。値は$\varepsilon$によらない。
 &&&
 
 複素解析では留数をローラン展開の係数として導入するのが通例ですが、ここでは小円上の積分そのものを定義とします。冪級数を使わないため、級数展開を前提としません。
@@ -319,7 +319,7 @@ $$
 この留数はクリフォード代数に値を取ります。偶部分に値を取る関数でも、法線を左から掛けるため留数は奇部分に入り、複素解析の留数とは$e_1$による対応を介して一致します（後述）。
 
 &&&thm 留数定理
-$M$とその境界を含む開集合$U$と、$M$の内部の相異なる有限個の点$\boldsymbol a_1,\dots,\boldsymbol a_m$を取ります。$F$が$U\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上の$C^1$級関数で、$M\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上でモノジェニックなら
+$M$とその境界を含む開集合$U$と、$M$の内部の相異なる有限個の点$\boldsymbol a_1,\dots,\boldsymbol a_m$を取る。$F$が$U\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上の$C^1$級関数で、$M\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上でモノジェニックなら
 
 $$
 \oint_{\partial M}\boldsymbol nF\,ds=2\pi\sum_{k=1}^m\operatorname{Res}_{\boldsymbol a_k}F
@@ -375,22 +375,22 @@ $$
 であり、複素解析の留数に$e_1$を左から掛けたものになります。たとえば$1/z=\boldsymbol x^{-1}e_1$の留数は、核の係数を読み取って$e_1$です。複素解析での値$1$と$e_1$だけ違うのは、偶部分の関数を核（ベクトル）の係数として書いたためであり、以前の記事で見た$e_1$による偶部分と奇部分の対応と同じものです。[[7shi-cla1]]
 
 &&&ex 有理関数の留数
-偶部分の関数$F=1/(1+z^2)$の特異点は$z=\pm \omega$、すなわち$\boldsymbol x=e_1(\pm \omega)=\pm e_2$です。$z\mp \omega=e_1(\boldsymbol x\mp e_2)$より$(z\mp \omega)^{-1}=(\boldsymbol x\mp e_2)^{-1}e_1$なので、部分分数分解は
+偶部分の関数$F=1/(1+z^2)$の特異点は$z=\pm \omega$、すなわち$\boldsymbol x=e_1(\pm \omega)=\pm e_2$である。$z\mp \omega=e_1(\boldsymbol x\mp e_2)$より$(z\mp \omega)^{-1}=(\boldsymbol x\mp e_2)^{-1}e_1$なので、部分分数分解は
 
 $$
 F=\frac1{2\omega}\left(\frac1{z-\omega}-\frac1{z+\omega}\right)
 =(\boldsymbol x-e_2)^{-1}e_1\frac1{2\omega}-(\boldsymbol x+e_2)^{-1}e_1\frac1{2\omega}
 $$
 
-となります。核の係数を読み取ると
+となる。核の係数を読み取ると
 
 $$
 \operatorname{Res}_{e_2}F=-\frac{e_1\omega}2,\qquad\operatorname{Res}_{-e_2}F=\frac{e_1\omega}2
 $$
 
-です。複素解析の値$\mp \omega/2$に$e_1$を左から掛けたものになっています。
+である。複素解析の値$\mp \omega/2$に$e_1$を左から掛けたものになっている。
 
-原点を中心とする半径$R>1$の円の上の$\oint\boldsymbol nF\,ds$は、留数定理により$2\pi\times$（留数の和）$=0$です。一方、この積分は$R$によらず、$|F|$は$1/R^2$程度で減衰するので積分は$1/R$程度で$0$に近づきます。どちらの見方でも$0$になります。
+原点を中心とする半径$R>1$の円の上の$\oint\boldsymbol nF\,ds$は、留数定理により$2\pi\times$（留数の和）$=0$である。一方、この積分は$R$によらず、$|F|$は$1/R^2$程度で減衰するので積分は$1/R$程度で$0$に近づく。どちらの見方でも$0$になる。
 &&&
 
 # まとめ
@@ -409,21 +409,21 @@ $$
 対数の枝や多価性は、定義域の位相を含む追加の議論になるため、本記事では扱いません。
 
 &&& コーシーの積分定理
-$M$上で$DF=0$なら、次が成り立ちます。
+$M$上で$DF=0$なら、次が成り立つ。
 $$
 \oint_{\partial M}\boldsymbol nF\,ds=0
 $$
 &&&
 
 &&& コーシーの積分公式
-$M$上で$DF=0$なら、$M$の内部の点$\boldsymbol a$で次が成り立ちます。
+$M$上で$DF=0$なら、$M$の内部の点$\boldsymbol a$で次が成り立つ。
 $$
 F(\boldsymbol a)=\frac1{2\pi}\oint_{\partial M}(\boldsymbol x-\boldsymbol a)^{-1}\boldsymbol nF\,ds
 $$
 &&&
 
 &&& 留数定理
-$M$の内部の相異なる点$\boldsymbol a_1,\dots,\boldsymbol a_m$を除いて$M$上でモノジェニックなら、次が成り立ちます。
+$M$の内部の相異なる点$\boldsymbol a_1,\dots,\boldsymbol a_m$を除いて$M$上でモノジェニックなら、次が成り立つ。
 $$
 \oint_{\partial M}\boldsymbol nF\,ds=2\pi\sum_{k=1}^m\operatorname{Res}_{\boldsymbol a_k}F
 $$

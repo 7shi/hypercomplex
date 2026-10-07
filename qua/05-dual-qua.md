@@ -95,7 +95,7 @@ $$
 z = x + \varepsilon y
 $$
 
-と表される数を**二重数** (dual number) と呼び、その全体を$\mathbb D$と書きます。積は分配法則と$\varepsilon^2=0$から定まります。
+と表される数を**二重数** (dual number) と呼び、その全体を$\mathbb D$と書く。積は分配法則と$\varepsilon^2=0$から定まる。
 
 $$
 (x_1 + \varepsilon y_1)(x_2 + \varepsilon y_2) = x_1 x_2 + \varepsilon (x_1 y_2 + y_1 x_2)
@@ -165,7 +165,7 @@ $$
 \sigma = p + \varepsilon q
 $$
 
-と表される数を**二重四元数** (dual quaternion) と呼びます。実ベクトル空間としては8次元で、テンソル積として$\mathbb H \otimes \mathbb D$と書けます。$p$を**実部分**、$q$を**二重部分**と呼びます。
+と表される数を**二重四元数** (dual quaternion) と呼ぶ。実ベクトル空間としては8次元で、テンソル積として$\mathbb H \otimes \mathbb D$と書ける。$p$を**実部分**、$q$を**二重部分**と呼ぶ。
 &&&
 
 これは、四元数の係数を別の2次元代数に取り替える系列の3つ目にあたります。
@@ -217,13 +217,13 @@ $$
 結果は実数ではなく**二重数**になることに注意してください。$\tau\tau^*$が中心的な二重数スカラーであることから、乗法性$(\sigma\tau)(\sigma\tau)^* = \sigma(\tau\tau^*)\sigma^* = (\sigma\sigma^*)(\tau\tau^*)$が成り立ちます。
 
 &&&def 単位二重四元数
-$\sigma\sigma^* = 1$を満たす二重四元数を**単位二重四元数**と呼びます。上の計算から、この条件は2つの実条件
+$\sigma\sigma^* = 1$を満たす二重四元数を**単位二重四元数**と呼ぶ。上の計算から、この条件は2つの実条件
 
 $$
 |p| = 1, \quad \langle p, q \rangle = 0
 $$
 
-と同値です。このとき$\sigma^{-1} = \sigma^*$となります。
+と同値である。このとき$\sigma^{-1} = \sigma^*$となる。
 &&&
 
 8次元から2つの条件で絞られるため、単位二重四元数のなす群は$8-2=6$次元です。これは3次元の剛体変換のなす群$\mathrm{SE}(3)$の次元（回転3＋並進3）と一致します。次節でこの一致が偶然でないことを見ます。
@@ -290,7 +290,7 @@ $$
 \sigma (1 + \varepsilon x) \overline\sigma^* = 1 + \varepsilon (r x r^* + t) \tag{1}
 $$
 
-すなわち「$r$で回転してから$t$だけ並進する」剛体変換を表します。
+すなわち「$r$で回転してから$t$だけ並進する」剛体変換を表す。
 &&&
 
 &&&prf
@@ -329,7 +329,7 @@ $$
 \sigma = \left(1 + \frac\varepsilon2 t\right) r, \quad r := p, \quad t := 2qp^*
 $$
 
-と一意に書けます。
+と一意に書ける。
 &&&
 
 &&&prf
@@ -361,17 +361,17 @@ $$
 剛体変換の表示$\sigma = (1 + \frac\varepsilon2 t) r$は「回転してから並進」という分解でした。一方、通常の回転子が軸と角度によって$e^{l\theta/2}$と1本の指数関数で書けたように、剛体変換も1本の指数関数で書けます。その幾何学的な意味が**ねじ運動** (screw motion)、すなわち「1本の直線を軸として回転しながら、軸方向に滑る」運動です。
 
 &&&def 二重角とねじ軸
-実数$\theta, d$に対して$\hat\theta := \theta + \varepsilon d$を**二重角**と呼びます。また、単位純虚四元数$l$と、$\langle l, m \rangle = 0$を満たす純虚四元数$m$に対して
+実数$\theta, d$に対して$\hat\theta := \theta + \varepsilon d$を**二重角**と呼ぶ。また、単位純虚四元数$l$と、$\langle l, m \rangle = 0$を満たす純虚四元数$m$に対して
 
 $$
 L := l + \varepsilon m
 $$
 
-を**ねじ軸**と呼びます。$L^2 = l^2 + \varepsilon(lm + ml) = -1 - 2\varepsilon\langle l,m \rangle = -1$となり、$L$は虚数単位と同じ平方を持ちます。
+を**ねじ軸**と呼ぶ。$L^2 = l^2 + \varepsilon(lm + ml) = -1 - 2\varepsilon\langle l,m \rangle = -1$となり、$L$は虚数単位と同じ平方を持つ。
 &&&
 
 &&&def プリュッカー座標
-組$(l, m)$は空間内の直線を表します。点$x_0$を通り方向$l$を向く直線に対して$m := x_0 \times l$とおくと、$m$は直線上の点の取り方によりません（$(x_0 + sl) \times l = x_0 \times l$）。$l$は直線の方向、$m$は原点から見た直線の「モーメント」で、この表し方は直線のプリュッカー座標と呼ばれます。逆に$\langle l,m \rangle = 0$なら$x_0 = l \times m$がこの直線上の点（原点からの垂線の足）を与えます。
+組$(l, m)$は空間内の直線を表す。点$x_0$を通り方向$l$を向く直線に対して$m := x_0 \times l$とおくと、$m$は直線上の点の取り方によらない（$(x_0 + sl) \times l = x_0 \times l$）。$l$は直線の方向、$m$は原点から見た直線の「モーメント」で、この表し方は直線のプリュッカー座標と呼ばれる。逆に$\langle l,m \rangle = 0$なら$x_0 = l \times m$がこの直線上の点（原点からの垂線の足）を与える。
 &&&
 
 &&&thm ねじ運動の指数表示
@@ -381,7 +381,7 @@ $$
 \exp\left(\frac{\hat\theta}2 L\right) = \cos\frac{\hat\theta}2 + L \sin\frac{\hat\theta}2 \tag{3}
 $$
 
-が成り立ちます。二重角の三角関数を$f(x + \varepsilon y) = f(x) + \varepsilon y f'(x)$で展開すると
+が成り立つ。二重角の三角関数を$f(x + \varepsilon y) = f(x) + \varepsilon y f'(x)$で展開すると
 
 $$
 \exp\left(\frac{\hat\theta}2 L\right)
@@ -389,7 +389,7 @@ $$
 + \varepsilon \underbrace{\left(-\frac d2 \sin\frac\theta2 + \frac d2 \cos\frac\theta2\, l + \sin\frac\theta2\, m\right)}_{\text{二重部分}}
 $$
 
-これは、直線$(l, m)$を軸とする角$\theta$の回転と、軸方向への距離$d$の滑りを合成した剛体変換（ねじ運動）を表します。
+これは、直線$(l, m)$を軸とする角$\theta$の回転と、軸方向への距離$d$の滑りを合成した剛体変換（ねじ運動）を表す。
 &&&
 
 &&&prf
@@ -426,7 +426,7 @@ $$
 と、方向$l$への距離$d$の純並進が得られます。ここで$m$の項は$\varepsilon^2 = 0$によって消えるため、方向が$l$でありさえすれば、軸の位置によらず同じ純並進になります。すなわち純並進は「回転角$0$のねじ運動」であり、軸の位置は定まりません。これは、回転軸を遠ざけながら回転角を$0$に近づけて純回転の極限として得る見方とは別のもので、軸を無限遠に飛ばす必要はありません。
 
 &&&thm 剛体変換のねじ表示（シャールの定理）
-任意の単位二重四元数$\sigma = p + \varepsilon q$は、符号$\pm$を除いて(3)の形に書けます。したがって、任意の3次元剛体変換はあるねじ運動として実現できます。
+任意の単位二重四元数$\sigma = p + \varepsilon q$は、符号$\pm$を除いて(3)の形に書ける。したがって、任意の3次元剛体変換はあるねじ運動として実現できる。
 &&&
 
 &&&prf
@@ -441,21 +441,21 @@ $$
 &&&
 
 &&&ex 回転と並進の合成のねじ軸
-$k$軸回りの角$\theta$の回転と、それに垂直な並進$t = ai$の合成を考えます（$a \neq 0$、$\theta \notin 2\pi\mathbb Z$とします）。
+$k$軸回りの角$\theta$の回転と、それに垂直な並進$t = ai$の合成を考える（$a \neq 0$、$\theta \notin 2\pi\mathbb Z$とする）。
 
 $$
 \sigma = \left(1 + \frac\varepsilon2 ai\right) e^{k\theta/2}
 = e^{k\theta/2} + \varepsilon\, \frac a2 \left(\cos\frac\theta2\, i - \sin\frac\theta2\, j\right)
 $$
 
-（$ik = -j$を使いました。）二重部分の実部（スカラー部）は$0$なので$d = 0$、すなわち滑りのない純粋な回転です。ねじ軸は
+（$ik = -j$を使った。）二重部分の実部（スカラー部）は$0$なので$d = 0$、すなわち滑りのない純粋な回転である。ねじ軸は
 
 $$
 m = \frac a2 \left(\cot\frac\theta2\, i - j\right), \quad
 x_0 = l \times m = k \times m = \frac a2\, i + \frac a2 \cot\frac\theta2\, j
 $$
 
-つまりこの変換は、原点からずれた点$x_0$を通る鉛直軸回りの、角$\theta$の回転です。「平面上の回転と並進の合成は、中心をずらした回転になる」という初等幾何の事実が、ねじ軸の抽出として機械的に再現されました。$a$を固定して$\theta \to 0$とすると$\cot\frac\theta2 \to \infty$で軸は無限遠に逃げ、純並進に退化します。
+つまりこの変換は、原点からずれた点$x_0$を通る鉛直軸回りの、角$\theta$の回転である。「平面上の回転と並進の合成は、中心をずらした回転になる」という初等幾何の事実が、ねじ軸の抽出として機械的に再現された。$a$を固定して$\theta \to 0$とすると$\cot\frac\theta2 \to \infty$で軸は無限遠に逃げ、純並進に退化する。
 &&&
 
 &&&rem
@@ -467,13 +467,13 @@ $$
 四元数のテンソル積の記事では、非退化な計量（生成元の平方が$\pm1$）を持つクリフォード代数を構成しました。二重四元数の$\varepsilon^2 = 0$は、平方が$0$になる生成元、すなわち**退化した計量**を許すことに対応します。[[7shi-qt]]
 
 &&&def 退化クリフォード代数 $\operatorname{Cl}_{3,0,1}(\mathbb R)$
-生成元$e_1, e_2, e_3$（$e_a^2 = +1$）と$e_0$（$e_0^2 = 0$）が互いに反交換するとして生成される$2^4 = 16$次元の代数を$\operatorname{Cl}_{3,0,1}(\mathbb R)$と書きます。符号数の3つ組$(p,q,r) = (3,0,1)$は、平方が$+1, -1, 0$となる生成元の個数を表します。非退化な$\operatorname{Cl}_{p,q}(\mathbb R)$は$r=0$の場合、すなわち$\operatorname{Cl}_{p,q,0}(\mathbb R)$の略記です。
+生成元$e_1, e_2, e_3$（$e_a^2 = +1$）と$e_0$（$e_0^2 = 0$）が互いに反交換するとして生成される$2^4 = 16$次元の代数を$\operatorname{Cl}_{3,0,1}(\mathbb R)$と書く。符号数の3つ組$(p,q,r) = (3,0,1)$は、平方が$+1, -1, 0$となる生成元の個数を表す。非退化な$\operatorname{Cl}_{p,q}(\mathbb R)$は$r=0$の場合、すなわち$\operatorname{Cl}_{p,q,0}(\mathbb R)$の略記である。
 &&&
 
 偶数個の生成元の積が張る偶部分代数$\operatorname{Cl}_{3,0,1}^0(\mathbb R)$は、スカラー$1$、6つの2ベクトル$e_ae_b$、擬スカラー$e_0e_1e_2e_3$の8次元です。これが二重四元数と同型になります。
 
 &&&thm 偶部分代数と二重四元数の同型
-次の対応は代数の同型$\mathbb H \otimes \mathbb D \cong \operatorname{Cl}_{3,0,1}^0(\mathbb R)$を与えます。
+次の対応は代数の同型$\mathbb H \otimes \mathbb D \cong \operatorname{Cl}_{3,0,1}^0(\mathbb R)$を与える。
 
 $$
 \begin{array}{c|cccc}
@@ -539,7 +539,7 @@ $\varepsilon$に対応する擬スカラー$E = e_0e_1e_2e_3$が二重四元数�
 - 二重四元数は退化クリフォード代数の偶部分代数$\operatorname{Cl}_{3,0,1}^0(\mathbb R)$と同型であり、$e_1, e_2, e_3$に加える第4の生成元の平方$-1, +1, 0$に応じて双四元数・分解型双四元数・二重四元数が現れるという三分法が成り立ちます。これはPGA・CGAへの入り口です。
 
 &&& 剛体変換のサンドイッチ公式
-単位回転子$r$と純虚四元数$t$に対して$\sigma = \left(1 + \frac\varepsilon2 t\right) r$とすると、次が成り立ちます。
+単位回転子$r$と純虚四元数$t$に対して$\sigma = \left(1 + \frac\varepsilon2 t\right) r$とすると、次が成り立つ。
 $$
 \sigma (1 + \varepsilon x) \overline\sigma^* = 1 + \varepsilon (r x r^* + t)
 $$

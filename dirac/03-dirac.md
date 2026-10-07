@@ -47,7 +47,7 @@ $$
 右から掛かる$\omega\sigma_3=\gamma_2\gamma_1$と$\gamma_0$は可換です。この方程式を満たす$\psi$は、クライン＝ゴルドン方程式も満たします。
 
 &&&prop クライン＝ゴルドン方程式との関係
-ディラック方程式の解$\psi$は、$\bigl(\square+m^2c^2/\hbar^2\bigr)\psi=0$を満たします。
+ディラック方程式の解$\psi$は、$\bigl(\square+m^2c^2/\hbar^2\bigr)\psi=0$を満たす。
 &&&
 
 &&&prf
@@ -100,9 +100,9 @@ $$
 実8次元の偶部分代数と、実8次元の$\mathbb C^4$の間の実線形な全単射です。
 
 &&&prop 作用の翻訳 [prop-dirac-action]
-1. $\hat\gamma_\mu\Psi$には$\gamma_\mu\psi\gamma_0$が対応します（$\hat\gamma^\mu\Psi$には$\gamma^\mu\psi\gamma_0$）。
-2. $i\Psi$には$\psi\,\omega\sigma_3$が対応します。
-3. $\hat\gamma_5\Psi$には$\psi\sigma_3$が対応します。
+1. $\hat\gamma_\mu\Psi$には$\gamma_\mu\psi\gamma_0$が対応する（$\hat\gamma^\mu\Psi$には$\gamma^\mu\psi\gamma_0$）。
+2. $i\Psi$には$\psi\,\omega\sigma_3$が対応する。
+3. $\hat\gamma_5\Psi$には$\psi\sigma_3$が対応する。
 &&&
 
 &&&prf
@@ -116,7 +116,7 @@ $$
 &&&
 
 &&&thm 行列形式との同値性
-$\psi\mapsto\Psi$のもとで、$i\hbar\sum_\mu\hat\gamma^\mu\partial_\mu\Psi=mc\Psi$と$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$は同値です。
+$\psi\mapsto\Psi$のもとで、$i\hbar\sum_\mu\hat\gamma^\mu\partial_\mu\Psi=mc\Psi$と$\hbar D\psi\,\omega\sigma_3=mc\,\psi\gamma_0$は同値である。
 &&&
 
 &&&prf
@@ -149,7 +149,7 @@ $$
 \psi'(x)=R\,\psi(\tilde RxR)
 $$
 
-も解です。
+も解である。
 &&&
 
 &&&prf
@@ -195,13 +195,13 @@ $$
 になります。$\psi_0\ne0$なら、左から$p$を掛けて$p^2\psi_0=mc\,p\psi_0\gamma_0=m^2c^2\psi_0\gamma_0^2=m^2c^2\psi_0$より、$p^2$は実数なので$p^2=m^2c^2$で、エネルギーと運動量の関係が得られます。
 
 &&&ex 静止した解
-$p=mc\gamma_0$（$E=mc^2$、$\boldsymbol p=0$）なら、条件は$\gamma_0\psi_0=\psi_0\gamma_0$で、$\psi_0$は$\gamma_0$と可換、すなわちパウリスピノルです。解は
+$p=mc\gamma_0$（$E=mc^2$、$\boldsymbol p=0$）なら、条件は$\gamma_0\psi_0=\psi_0\gamma_0$で、$\psi_0$は$\gamma_0$と可換、すなわちパウリスピノルである。解は
 
 $$
 \psi=\psi_0\,e^{-\omega\sigma_3mc^2t/\hbar}
 $$
 
-で、行列形式では下の2成分が$0$の$\Psi=(|\psi_0\rangle,0)^T e^{-imc^2t/\hbar}$です。$\psi_0$の4つの実数の自由度が、静止した粒子のスピンの状態（2つの複素数）にあたります。[[7shi-dirac1]]
+で、行列形式では下の2成分が$0$の$\Psi=(|\psi_0\rangle,0)^T e^{-imc^2t/\hbar}$である。$\psi_0$の4つの実数の自由度が、静止した粒子のスピンの状態（2つの複素数）にあたる。[[7shi-dirac1]]
 &&&
 
 運動する解は、静止した解をブーストして得られます。ブーストの回転子$L$について$p=L(mc\gamma_0)\tilde L$と置き、$\psi_0=L\phi_0$（$\phi_0$は$\gamma_0$と可換）とすると
@@ -243,7 +243,7 @@ $m=0$ではディラック方程式は$D\psi=0$となり、右からの因子は
 $\hat\gamma_5$は右からの$\sigma_3$に対応するので、行列形式のカイラリティの射影$(1\pm\hat\gamma_5)/2$は右からの$P_\pm=(1\pm\sigma_3)/2$です。$D$は左から作用するので$D(\psi P_\pm)=(D\psi)P_\pm$で、$m=0$の方程式$D\psi=0$は$\psi P_+$と$\psi P_-$に分かれます。
 
 &&&def ワイルスピノル
-$\psi P_+$または$\psi P_-$の形のスピノルを**ワイルスピノル**と呼びます。
+$\psi P_+$または$\psi P_-$の形のスピノルを**ワイルスピノル**と呼ぶ。
 &&&
 
 質量の項$\psi\gamma_0$は$\gamma_0P_\pm=P_\mp\gamma_0$より2つを混ぜます。また$\widetilde{P_\pm}=P_\mp$より$(\psi P_\pm)\widetilde{(\psi P_\pm)}=\psi P_\pm P_\mp\tilde\psi=0$なので、非零のワイルスピノルは前回の密度・角・回転子への分解の対象外です。
@@ -269,14 +269,14 @@ $$
 &&&
 
 &&& 行列形式との対応
-$\psi=\phi+\eta\sigma_3$を$\Psi=(|\phi\rangle,|\eta\rangle)^T$に移すと、次のように対応します。
+$\psi=\phi+\eta\sigma_3$を$\Psi=(|\phi\rangle,|\eta\rangle)^T$に移すと、次のように対応する。
 $$
 \hat\gamma_\mu\Psi\leftrightarrow\gamma_\mu\psi\gamma_0,\qquad i\Psi\leftrightarrow\psi\,\omega\sigma_3,\qquad\hat\gamma_5\Psi\leftrightarrow\psi\sigma_3
 $$
 &&&
 
 &&& 平面波解
-$\psi=\psi_0e^{-\omega\sigma_3p\cdot x/\hbar}$は次の代数方程式に帰着し、$\psi_0\ne0$なら$p^2=m^2c^2$が従います。
+$\psi=\psi_0e^{-\omega\sigma_3p\cdot x/\hbar}$は次の代数方程式に帰着し、$\psi_0\ne0$なら$p^2=m^2c^2$が従う。
 $$
 p\psi_0=mc\,\psi_0\gamma_0
 $$

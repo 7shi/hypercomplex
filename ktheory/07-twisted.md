@@ -45,26 +45,26 @@ $$
 $ω$は$\operatorname{Cl}_{3,0}(\mathbb R)$のすべての元と可換なので、$(ω\boldsymbol x)^2=ω^2\boldsymbol x^2=-1$です。2乗が$-1$なので、そのままでは固有値$\pm1$で空間を分けられません。そこで虚数単位を掛けます。前回の記事の例「2次元の球面の固有値」で見たとおり、右から$J=e_0e_1$を掛ける演算は$D_S$と可換で、偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)$を複素2次元の空間$\mathbb C^2$にします。以下、この複素構造を使い、複素数$a+bi$を右から掛けることを$ψ\mapstoψ(a+bJ)$とします。$1$と$J$が張る部分を$\mathbb C_J$と書きます。[[7shi-kth6]]
 
 &&&def カイラリティ
-スピノル$ψ$に対して、次のように定めます。
+スピノル$ψ$に対して、次のように定める。
 
 $$
 γψ=ω\boldsymbol x\,ψJ
 $$
 
-$γψ=ψ$となるスピノルを**正のカイラリティ**、$γψ=-ψ$となるスピノルを**負のカイラリティ**と呼び、各点でそれぞれの値の空間を$S^+_{\boldsymbol x}$、$S^-_{\boldsymbol x}$と書きます。
+$γψ=ψ$となるスピノルを**正のカイラリティ**、$γψ=-ψ$となるスピノルを**負のカイラリティ**と呼び、各点でそれぞれの値の空間を$S^+_{\boldsymbol x}$、$S^-_{\boldsymbol x}$と書く。
 &&&
 
 $γ$は前回の記事のガンマ作用素$Γ$とは別のものです。$S^\pm$は、以前の記事の片側のずらし$S$とも関係ありません。[[7shi-kth5]]
 
 &&&prop カイラリティの性質 [prop-chirality]
-球面上の接ベクトル$X$とスピノル$ψ,χ$について、次が成り立ちます。
+球面上の接ベクトル$X$とスピノル$ψ,χ$について、次が成り立つ。
 
 1. $γ^2ψ=ψ$
 2. $γ(X\bulletψ)=-X\bulletγψ$
 3. $\nabla_X(γψ)=γ\nabla_Xψ$
 4. $γ(ψJ)=(γψ)J$、$\langle γψ,χ\rangle=\langle ψ,γχ\rangle$
 
-したがって$D_Sγ=-γD_S$です。
+したがって$D_Sγ=-γD_S$である。
 &&&
 
 &&&prf
@@ -88,7 +88,7 @@ $γ$は対称で$γ^2=1$なので、$S^+_{\boldsymbol x}$と$S^-_{\boldsymbol x}
 [[prop-chirality]]の$D_Sγ=-γD_S$により、$D_S$は正のカイラリティのスピノルを負のカイラリティのスピノルに、負を正に写します。
 
 &&&def ディラック作用素の指数
-ディラック作用素$D$が$γ$と反交換するとき、正のカイラリティのスピノルに制限したものを$D^+$、負のカイラリティのスピノルに制限したものを$D^-$と書きます。核が有限次元なら、次の整数を$D$の**指数**と呼びます。
+ディラック作用素$D$が$γ$と反交換するとき、正のカイラリティのスピノルに制限したものを$D^+$、負のカイラリティのスピノルに制限したものを$D^-$と書く。核が有限次元なら、次の整数を$D$の**指数**と呼ぶ。
 
 $$
 \operatorname{ind}D=\dim_{\mathbb C}\ker D^+-\dim_{\mathbb C}\ker D^-
@@ -112,7 +112,7 @@ $$
 $1,J,f_1,f_2$は偶部分代数の基底なので、$Φ$は$\mathbb C_J^2$から偶部分代数への同型で、右からの積$Φ(α,β)c=Φ(αc,βc)$（$c\in\mathbb C_J$）について複素線形です。以前の記事のホップ写像は、$\mathbb C_J$を$\mathbb C$とみなし、球面の点$\boldsymbol x$を$(x_0+x_1J,\ x_2)$と表すと、$h(α,β)=(2αβ^*,\ |α|^2-|β|^2)$です。$|α|^2+|β|^2=1$で$h(α,β)=\boldsymbol x$となる$(α,β)$の全体は、$\boldsymbol x$の上のホップ束のファイバー$E_{\boldsymbol x}$の単位ベクトルです。[[7shi-kth3]][[7shi-homog]]
 
 &&&prop 正のカイラリティとホップ束 [prop-hopf-chirality]
-$E_{\boldsymbol x}$の元$(α,β)$について$γΦ(α,β)=Φ(α,β)$です。したがって$S^+_{\boldsymbol x}=Φ(E_{\boldsymbol x})$、$S^-_{\boldsymbol x}=Φ(E_{-\boldsymbol x})$です。
+$E_{\boldsymbol x}$の元$(α,β)$について$γΦ(α,β)=Φ(α,β)$である。したがって$S^+_{\boldsymbol x}=Φ(E_{\boldsymbol x})$、$S^-_{\boldsymbol x}=Φ(E_{-\boldsymbol x})$である。
 &&&
 
 &&&prf
@@ -144,7 +144,7 @@ $$
 $β_-$は正の実数で、$(α_-,β_-)$は以前の記事の南半球の座標$λ=β$が正になる単位ベクトルです。同様に$(α_+,β_+)$は北半球の座標$μ=α$が正になる単位ベクトルです。[[7shi-kth3]]
 
 &&&cor カイラリティの空間の貼り合わせ関数 [cor-spinor-hopf]
-複素直線束として、正のカイラリティのスピノルの束は$H$、負のカイラリティのスピノルの束は$H^{-1}$と同型です。
+複素直線束として、正のカイラリティのスピノルの束は$H$、負のカイラリティのスピノルの束は$H^{-1}$と同型である。
 &&&
 
 &&&prf
@@ -162,7 +162,7 @@ $β_-$は正の実数で、$(α_-,β_-)$は以前の記事の南半球の座標$
 前回の記事のスピノルは、球面全体で定義された関数です。共変微分に零階の項を加えれば作用素は変わりますが、関数の空間は自明な束の切断のままです。貼り合わせ関数のねじれを取り込むには、関数の空間そのものを変える必要があります。そこで、以前の記事の貼り合わせをスピノルに施します。[[7shi-kth3]]
 
 &&&def 捩ったスピノル
-$n\in\mathbb Z$とします。$U_+$と$U_-$の上で定義された、偶部分代数に値を取る滑らかな関数の組$ψ=(ψ_+,ψ_-)$で、両方の領域が重なる部分（両極を除いた部分）で次を満たすものを、$H^n$で**捩ったスピノル**と呼びます。
+$n\in\mathbb Z$とする。$U_+$と$U_-$の上で定義された、偶部分代数に値を取る滑らかな関数の組$ψ=(ψ_+,ψ_-)$で、両方の領域が重なる部分（両極を除いた部分）で次を満たすものを、$H^n$で**捩ったスピノル**と呼ぶ。
 
 $$
 ψ_+=ψ_-e^{nJφ}
@@ -186,13 +186,13 @@ $\partial_Xφ=\nablaφ\cdot X$と書くと、$φ$の勾配は$\nablaφ=\boldsymb
 右から$J$を掛ける演算は、接ベクトルの掛け算と可換で、内積について反対称です。前回の記事の注意「標準的なスピン接続との関係」で、共変微分に加える余地があると述べた零階の項は、ちょうどこの性質を持つものでした。[[7shi-kth6]]
 
 &&&def 捩った共変微分とディラック作用素
-$U_\pm$上の接ベクトル場$\boldsymbol a_\pm$で、両極を除いた部分で次を満たすものを取ります。
+$U_\pm$上の接ベクトル場$\boldsymbol a_\pm$で、両極を除いた部分で次を満たすものを取る。
 
 $$
 \boldsymbol a_+-\boldsymbol a_-=-n\nablaφ
 $$
 
-$U_\pm$の上で、捩った共変微分とディラック作用素を次のように定めます。
+$U_\pm$の上で、捩った共変微分とディラック作用素を次のように定める。
 
 $$
 \nabla^{\boldsymbol a}_Xψ_\pm=\nabla_Xψ_\pm+(\boldsymbol a_\pm\cdot X)\,ψ_\pmJ,\qquad
@@ -228,7 +228,7 @@ $a<b$で和を取ると、前回の記事で見た$\sum_{a<b}\nabla_{\boldsymbol
 $\boldsymbol a$の符号を反転すると捩りの向きが逆になります。これを右からの積で表しておきます。$K=f_2$と置きます。$K$は長さ$1$の2ベクトルで、$K^2=-1$、$KJ=-JK$を満たします。
 
 &&&prop 捩りの向きの反転 [prop-flip]
-$\boldsymbol a_\pm$が$H^n$の捩りの条件を満たすとき、$ψ\mapstoψK$は$H^n$で捩ったスピノルを$H^{-n}$で捩ったスピノルに写し、正負のカイラリティを入れ替えます。$H^{-n}$の側の接続を$-\boldsymbol a_\pm$とすると、$D_{-\boldsymbol a}(ψK)=(D_{\boldsymbol a}ψ)K$が成り立ちます。
+$\boldsymbol a_\pm$が$H^n$の捩りの条件を満たすとき、$ψ\mapstoψK$は$H^n$で捩ったスピノルを$H^{-n}$で捩ったスピノルに写し、正負のカイラリティを入れ替える。$H^{-n}$の側の接続を$-\boldsymbol a_\pm$とすると、$D_{-\boldsymbol a}(ψK)=(D_{\boldsymbol a}ψ)K$が成り立つ。
 &&&
 
 &&&prf
@@ -242,7 +242,7 @@ $ψ\mapstoψK$は$(ψc)K=(ψK)c^*$（$c\in\mathbb C_J$）を満たすので、�
 接続$\boldsymbol a_\pm$は、貼り合わせの条件だけでは決まりません。どの選び方にもよらない量を探します。
 
 &&&def 曲率
-$\boldsymbol t_1\boldsymbol t_2\boldsymbol x=ω$となる正規直交な接ベクトル$\boldsymbol t_1,\boldsymbol t_2$について、次の関数$F$を接続の**曲率**と呼びます。
+$\boldsymbol t_1\boldsymbol t_2\boldsymbol x=ω$となる正規直交な接ベクトル$\boldsymbol t_1,\boldsymbol t_2$について、次の関数$F$を接続の**曲率**と呼ぶ。
 
 $$
 F=\boldsymbol t_2\cdot\partial_{\boldsymbol t_1}\boldsymbol a-\boldsymbol t_1\cdot\partial_{\boldsymbol t_2}\boldsymbol a
@@ -252,7 +252,7 @@ $$
 $F$は$\sum_i\boldsymbol t_i\wedge\partial_{\boldsymbol t_i}\boldsymbol a$の面積要素$\boldsymbol t_1\wedge\boldsymbol t_2=ω\boldsymbol x$の係数なので、接平面の中での$\boldsymbol t_1,\boldsymbol t_2$の回転によりません。$\boldsymbol a$を球面の外に延長して3次元の回転$\nabla\times\boldsymbol a$を取ると、定ベクトル$\boldsymbol u,\boldsymbol w$について$(\nabla\times\boldsymbol a)\cdot(\boldsymbol u\times\boldsymbol w)=\boldsymbol w\cdot\partial_{\boldsymbol u}\boldsymbol a-\boldsymbol u\cdot\partial_{\boldsymbol w}\boldsymbol a$なので、$\boldsymbol t_1\times\boldsymbol t_2=\boldsymbol x$より$F=(\nabla\times\boldsymbol a)\cdot\boldsymbol x$です。勾配$\nablaφ$や回転$\nabla\times$の$\nabla$はベクトル解析の記号で、共変微分とは別のものです。右辺には球面に沿った方向の微分だけが現れるので、延長の仕方によりません。両極を除いた部分では$\boldsymbol a_+-\boldsymbol a_-$が関数$φ$の勾配で、勾配の回転は$0$なので、$\boldsymbol a_+$から計算した$F$と$\boldsymbol a_-$から計算した$F$は一致し、$F$は球面全体の関数です。
 
 &&&prop 曲率の積分 [prop-curvature-integral]
-$H^n$の捩りの条件を満たす任意の接続について、次が成り立ちます。
+$H^n$の捩りの条件を満たす任意の接続について、次が成り立つ。
 
 $$
 \int_{S^2}F\,dΩ=-2\pi n=-2\pi\operatorname{wind}(z^n)
@@ -331,13 +331,13 @@ $$
 捩った接続ラプラシアン$\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}$を、前回の記事と同じく局所的な正規直交枠で定めます。前回の記事の命題「回転の場による接続ラプラシアン」の証明は共変微分の線形性だけを使っているので、$\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}=-\sum_{a<b}\nabla^{\boldsymbol a}_{\boldsymbol v_{ab}}\nabla^{\boldsymbol a}_{\boldsymbol v_{ab}}$も成り立ちます。
 
 &&&thm 捩ったディラック作用素のリヒネロビッチの公式 [thm-lich-twisted]
-$H^n$の捩りの条件を満たす任意の接続について、次が成り立ちます。
+$H^n$の捩りの条件を満たす任意の接続について、次が成り立つ。
 
 $$
 D_{\boldsymbol a}^2=\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}+\frac12-Fγ
 $$
 
-とくに曲率が一定の接続では$D_n^2=\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}+\frac12+\frac n2γ$です。
+とくに曲率が一定の接続では$D_n^2=\nabla^{\boldsymbol a*}\nabla^{\boldsymbol a}+\frac12+\frac n2γ$である。
 &&&
 
 &&&prf
@@ -381,10 +381,10 @@ $$
 片方のカイラリティでは曲率の項が$\frac R4=\frac12$に加わり、もう片方では$\frac12$から差し引かれます。
 
 &&&prop 片側での核の消失 [prop-vanish]
-$ψ$が$H^n$で捩ったスピノルで$D_nψ=0$とします。
+$ψ$が$H^n$で捩ったスピノルで$D_nψ=0$とする。
 
-1. $n\ge0$なら$ψ$は負のカイラリティで、$n\le0$なら正のカイラリティです。$n=0$なら$ψ=0$です。
-2. $n=-1$なら$ψ$は平行（すべての接ベクトル$X$で$\nabla^{\boldsymbol a}_Xψ=0$）で、$\ker D_{-1}$は複素1次元以下です。$n=1$についても同様です。
+1. $n\ge0$なら$ψ$は負のカイラリティで、$n\le0$なら正のカイラリティである。$n=0$なら$ψ=0$である。
+2. $n=-1$なら$ψ$は平行（すべての接ベクトル$X$で$\nabla^{\boldsymbol a}_Xψ=0$）で、$\ker D_{-1}$は複素1次元以下である。$n=1$についても同様である。
 &&&
 
 &&&prf
@@ -420,13 +420,13 @@ g'+\frac{\cotθ}2g+\frac{μ+A(θ)}{\sinθ}g=0
 $$
 
 &&&prop モードの解 [prop-modes]
-上の方程式の解は、定数倍を除いて次の関数です。
+上の方程式の解は、定数倍を除いて次の関数である。
 
 $$
 g_μ(θ)=\sin^{-μ-\frac12}\fracθ2\,\cos^{μ-\frac12-n}\fracθ2
 $$
 
-$g_μ$が$0<θ<π$で有界であるのは、$n+\frac12\leμ\le-\frac12$のときに限ります。そのような半整数$μ$の個数は、$n\le-1$なら$-n$、$n\ge0$なら$0$です。
+$g_μ$が$0<θ<π$で有界であるのは、$n+\frac12\leμ\le-\frac12$のときに限る。そのような半整数$μ$の個数は、$n\le-1$なら$-n$、$n\ge0$なら$0$である。
 &&&
 
 &&&prf
@@ -442,13 +442,13 @@ $$
 $$
 
 &&&thm 捩ったディラック作用素の核 [thm-kernel]
-$n=-m$（$m\ge1$）とします。$P(α,β)$を$\mathbb C_J$係数の次数$m-1$の同次多項式として、次の組は$D_n$の核に入る正のカイラリティのスピノルです。
+$n=-m$（$m\ge1$）とする。$P(α,β)$を$\mathbb C_J$係数の次数$m-1$の同次多項式として、次の組は$D_n$の核に入る正のカイラリティのスピノルである。
 
 $$
 ψ_\pm=Φ(α_\pm,β_\pm)\,P(α_\pm,β_\pm)
 $$
 
-$\ker D_n^+$の元はすべてこの形で、$\ker D_n^-=0$です。$H^n$で捩った場合のそれぞれの複素次元は次のとおりです。
+$\ker D_n^+$の元はすべてこの形で、$\ker D_n^-=0$である。$H^n$で捩った場合のそれぞれの複素次元は次のとおりである。
 
 $$
 \dim_{\mathbb C}\ker D_n^+=\max(-n,0),\qquad\dim_{\mathbb C}\ker D_n^-=\max(n,0)
@@ -523,7 +523,7 @@ $D_n$と$T_{z^n}$は、球面上の微分作用素と円周上のハーディ空
 $$
 γψ=ω\boldsymbol xψJ,\qquad γ^2=1,\qquad D_Sγ=-γD_S
 $$
-正のカイラリティの空間は$Φ(E_{\boldsymbol x})$で、束として$H$と同型です。負のカイラリティは$H^{-1}$と同型です。
+正のカイラリティの空間は$Φ(E_{\boldsymbol x})$で、束として$H$と同型である。負のカイラリティは$H^{-1}$と同型である。
 &&&
 
 &&& 捩ったスピノルと接続
@@ -533,7 +533,7 @@ $$
 &&&
 
 &&& 曲率
-曲率の積分は接続によりません。曲率が一定の接続では$F=-\frac n2$です。
+曲率の積分は接続によらない。曲率が一定の接続では$F=-\frac n2$である。
 $$
 \int_{S^2}F\,dΩ=-2\pi n
 $$
@@ -546,11 +546,11 @@ $$
 &&&
 
 &&& 核と指数
-曲率が一定の接続で考えます。$n=-m\le-1$では、$P$を次数$m-1$の同次多項式として、核は次の形のスピノルです。
+曲率が一定の接続で考える。$n=-m\le-1$では、$P$を次数$m-1$の同次多項式として、核は次の形のスピノルである。
 $$
 ψ=Φ(α,β)P(α,β)
 $$
-$n\ge1$では核は負のカイラリティにあり、指数は次のとおりです。
+$n\ge1$では核は負のカイラリティにあり、指数は次のとおりである。
 $$
 \operatorname{ind}D_n=-n=\operatorname{ind}T_{z^n}
 $$

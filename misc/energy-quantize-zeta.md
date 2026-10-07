@@ -323,7 +323,7 @@ $$
 ここでリーマンゼータ関数が現れました。
 
 &&&def リーマンゼータ関数
-実数$s>1$に対して、次のように定めます。
+実数$s>1$に対して、次のように定める。
 $$
 \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
 $$
@@ -368,7 +368,7 @@ a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\cos(nt)\,dt, \qquad
 b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sin(nt)\,dt
 $$
 
-とし、フーリエ級数を$\dfrac{a_0}{2} + \displaystyle\sum_{n=1}^\infty \bigl(a_n\cos(nx) + b_n\sin(nx)\bigr)$とすると、次が成り立ちます。
+とし、フーリエ級数を$\dfrac{a_0}{2} + \displaystyle\sum_{n=1}^\infty \bigl(a_n\cos(nx) + b_n\sin(nx)\bigr)$とすると、次が成り立つ。
 
 $$
 \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)^2\,dx

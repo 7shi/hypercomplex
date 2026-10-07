@@ -50,7 +50,7 @@ $$
 Γ=\sum_{a<b}e_ae_b\,L_{ab}
 $$
 
-と置くと、次が成り立ちます。
+と置くと、次が成り立つ。
 
 $$
 \boldsymbol xD=E+Γ
@@ -139,7 +139,7 @@ $$
 $$
 
 &&&prop ガンマ作用素の対称性 [prop-symm]
-球面上の滑らかな関数$F,G$について、$(F,ΓG)=(ΓF,G)$です。
+球面上の滑らかな関数$F,G$について、$(F,ΓG)=(ΓF,G)$である。
 &&&
 
 &&&prf
@@ -159,11 +159,11 @@ $Γ$の固有値は実数で、異なる固有値の固有関数は直交しま�
 $Γ$は同次多項式の次数を変えないので、固有関数は同次多項式の中から探せます。[[prop-decomp]]によれば、$D=0$と$E=k$から$Γ=-k$が従います。以前の記事で扱わなかった次の対象が、ちょうどその条件を満たします。[[7shi-cla5]]
 
 &&&def 球面モノジェニックス
-$\operatorname{Cl}_{n,0}(\mathbb R)$に値を取る次数$k$の同次多項式$P$で、$DP=0$を満たすものの全体を$M_k$と書きます。$M_k$の元を単位球面$S^{n-1}$に制限したものを、次数$k$の**球面モノジェニックス**と呼びます。
+$\operatorname{Cl}_{n,0}(\mathbb R)$に値を取る次数$k$の同次多項式$P$で、$DP=0$を満たすものの全体を$M_k$と書く。$M_k$の元を単位球面$S^{n-1}$に制限したものを、次数$k$の**球面モノジェニックス**と呼ぶ。
 &&&
 
 &&&prop 球面モノジェニックスの固有値 [prop-eigen]
-$P\in M_k$なら、次が成り立ちます。
+$P\in M_k$なら、次が成り立つ。
 
 $$
 ΓP=-kP,\qquad Γ(\boldsymbol xP)=(k+n-1)\,\boldsymbol xP
@@ -181,13 +181,13 @@ $P\ne0$なら、$\boldsymbol x$は$\boldsymbol x\ne0$で可逆なので$\boldsym
 $M_k$の次元は、$x_0=0$の超平面への制限から数えられます。
 
 &&&prop 球面モノジェニックスの次元 [prop-dim]
-$M_k$の実次元は、次のとおりです。
+$M_k$の実次元は、次のとおりである。
 
 $$
 \dim M_k=2^n\binom{k+n-2}{n-2}
 $$
 
-偶部分代数$\operatorname{Cl}_{n,0}^0(\mathbb R)$に値を取るものに限った$M_k^0$の実次元は、その半分の$2^{n-1}\binom{k+n-2}{n-2}$です。
+偶部分代数$\operatorname{Cl}_{n,0}^0(\mathbb R)$に値を取るものに限った$M_k^0$の実次元は、その半分の$2^{n-1}\binom{k+n-2}{n-2}$である。
 &&&
 
 &&&prf
@@ -213,13 +213,13 @@ $D^2=\Delta$より、$M_k$の元は調和多項式です。$\operatorname{Cl}_{n
 球面上の作用素を、球面自身の言葉で書き直します。単位球面上の点$\boldsymbol x$で、$\boldsymbol x$と直交する正規直交なベクトル$\boldsymbol t_1,\dots,\boldsymbol t_{n-1}$（接空間の正規直交基底）を取ります。
 
 &&&prop 接方向による表示 [prop-tangent]
-単位球面上で、次が成り立ちます。
+単位球面上で、次が成り立つ。
 
 $$
 Γ=-\sum_{i=1}^{n-1}(\boldsymbol t_i\boldsymbol x)\,\partial_{\boldsymbol t_i}
 $$
 
-$\partial_{\boldsymbol t}$は$\boldsymbol t$方向の微分です。
+$\partial_{\boldsymbol t}$は$\boldsymbol t$方向の微分である。
 &&&
 
 &&&prf
@@ -255,7 +255,7 @@ $$
 最後の項$Y\wedge X$がライプニッツ則からのずれです。スピノルの微分には、ベクトル場の微分とライプニッツ則で結びつくこと、すなわち$\nabla_X(Y\bulletψ)=(\nabla_XY)\bulletψ+Y\bullet\nabla_Xψ$を要請します。$\partial_X$に補正$cX\boldsymbol x$を加えると、ずれは$Y\wedge X+c(X\boldsymbol xY\boldsymbol x-Y\boldsymbol xX\boldsymbol x)=Y\wedge X+c(YX-XY)=(1+2c)\,Y\wedge X$となり、$c=-\frac12$で消えます。ただし$n=2$では接空間が1次元で$Y\wedge X=0$となり、この要請では$c$が決まりません。$n=2$でも一般の$n$と同じ$c=-\frac12$を採ります。
 
 &&&def スピノルの共変微分
-球面上の点$\boldsymbol x$での接ベクトル$X$について、次のように定めます。
+球面上の点$\boldsymbol x$での接ベクトル$X$について、次のように定める。
 
 $$
 \nabla_Xψ=\partial_Xψ-\frac12X\boldsymbol x\,ψ
@@ -263,7 +263,7 @@ $$
 &&&
 
 &&&prop 共変微分の性質 [prop-compat]
-球面上の接ベクトル場$X,Y$とスピノル$ψ,χ$について、次が成り立ちます。
+球面上の接ベクトル場$X,Y$とスピノル$ψ,χ$について、次が成り立つ。
 
 1. $\nabla_X(Y\bulletψ)=(\nabla_XY)\bulletψ+Y\bullet\nabla_Xψ$
 2. $\partial_X\langle ψ,χ\rangle=\langle\nabla_Xψ,χ\rangle+\langle ψ,\nabla_Xχ\rangle$
@@ -288,7 +288,7 @@ $$
 D_Sψ=\sum_{i=1}^{n-1}\boldsymbol t_i\bullet\nabla_{\boldsymbol t_i}ψ
 $$
 
-右辺は正規直交基底$\boldsymbol t_i$の取り方によりません。
+右辺は正規直交基底$\boldsymbol t_i$の取り方によらない。
 &&&
 
 以前の記事ではパラベクトル変数の作用素を$\mathcal D$と書きましたが、本記事では混同を避けて$D_S$と書きます。[[7shi-cla5]]
@@ -308,13 +308,13 @@ $Γ$から$D_S$へのずれ$\frac{n-1}2$は、共変微分の補正$-\frac12X\bo
 $D_S$の1階の部分は$\sum_i\boldsymbol t_i\boldsymbol x\,\partial_{\boldsymbol t_i}$です。計量で余接ベクトルを接ベクトルと同一視し、$\partial_{\boldsymbol t_i}$を接ベクトル$\boldsymbol\xi$の成分$\boldsymbol\xi\cdot\boldsymbol t_i$に置き換えると、$\boldsymbol\xi\mapsto\boldsymbol\xi\boldsymbol x=\boldsymbol\xi\bullet$になります。以前の記事で平坦な$D$の主表象として見たベクトルを掛ける写像は、球面の上では接ベクトルを掛ける演算として現れます。[[7shi-kth1]]
 
 &&&thm 球面上のディラック作用素の固有値 [thm-spectrum]
-$P\in M_k^0$（偶部分代数に値を取る次数$k$のモノジェニックな同次多項式）について、次が成り立ちます。
+$P\in M_k^0$（偶部分代数に値を取る次数$k$のモノジェニックな同次多項式）について、次が成り立つ。
 
 $$
 D_SP=\left(k+\frac{n-1}2\right)P,\qquad D_S(\boldsymbol xPe_0)=-\left(k+\frac{n-1}2\right)\boldsymbol xPe_0
 $$
 
-固有関数の完全性を認めると、$D_S$の固有値は$\pm\bigl(k+\frac{n-1}2\bigr)$（$k=0,1,2,\dots$）で尽き、各固有値の固有空間の実次元は$2^{n-1}\binom{k+n-2}{n-2}$です。
+固有関数の完全性を認めると、$D_S$の固有値は$\pm\bigl(k+\frac{n-1}2\bigr)$（$k=0,1,2,\dots$）で尽き、各固有値の固有空間の実次元は$2^{n-1}\binom{k+n-2}{n-2}$である。
 &&&
 
 &&&prf
@@ -334,13 +334,13 @@ $Γ$の2系列$-k$と$k+n-1$は、$\frac{n-1}2$だけずらすことで、原点
 $n=2$では$S^1$上の作用素になります。$\boldsymbol x=\cosφ\,e_0+\sinφ\,e_1$、$J=e_0e_1$（$J^2=-1$）とすると、$L_{01}=\partial_φ$なので$Γ=J\partial_φ$です。偶部分代数は$1$と$J$で張られ、複素数と同型です。
 
 &&&ex 円周上のディラック作用素
-[[prop-dirac]]より、次のようになります。
+[[prop-dirac]]より、次のようになる。
 
 $$
 D_S=\frac12-J\partial_φ
 $$
 
-$ψ=e^{Jmφ}c$（$m$は整数、$c$は偶部分代数の定数）について$D_Sψ=\bigl(m+\frac12\bigr)ψ$です。固有値$m+\frac12$の全体は、$m\ge0$の$k+\frac12$と、$m=-(k+1)$の$-\bigl(k+\frac12\bigr)$に分かれ、[[thm-spectrum]]の$n=2$の場合にあたります。
+$ψ=e^{Jmφ}c$（$m$は整数、$c$は偶部分代数の定数）について$D_Sψ=\bigl(m+\frac12\bigr)ψ$である。固有値$m+\frac12$の全体は、$m\ge0$の$k+\frac12$と、$m=-(k+1)$の$-\bigl(k+\frac12\bigr)$に分かれ、[[thm-spectrum]]の$n=2$の場合にあたる。
 &&&
 
 円周では、フーリエ級数の完全性から、固有関数はこれで尽きます。核についても直接確かめられます。$D_Sψ=0$に左から$J$を掛けると$\partial_φψ=-\frac12Jψ$となり、解は$ψ=e^{-Jφ/2}c$です。$φ$が$2\pi$進むと$e^{-Jπ}=-1$が掛かるので、$c\ne0$なら$ψ$は円周上の1価の関数になりません。したがって核は$0$です。[[7shi-leb2]]
@@ -358,7 +358,7 @@ $$
 $U$は$e_2e_0$平面で$θ$、$e_0e_1$平面で$φ$の回転を表し、$Ue_0\tilde U=\hatθ$、$Ue_1\tilde U=\hatφ$、$Ue_2\tilde U=\boldsymbol x$を満たします。$ψ=Uψ_f$と置き、極を除いた範囲で、枠$(\hatθ,\hatφ)$の側の成分$ψ_f$で$D_S$を書き直します。
 
 &&&prop 2次元の球面の枠による表示 [prop-frame]
-$f_1=e_0e_2$、$f_2=e_1e_2$とすると、枠の側では共変微分とディラック作用素が次の形になります。
+$f_1=e_0e_2$、$f_2=e_1e_2$とすると、枠の側では共変微分とディラック作用素が次の形になる。
 
 $$
 \tilde U\nabla_{\hatθ}U=\partial_θ,\qquad
@@ -369,7 +369,7 @@ $$
 \tilde UD_SU=f_1\left(\partial_θ+\frac{\cotθ}2\right)+\frac{f_2}{\sinθ}\partial_φ
 $$
 
-$\nabla_{\partial_φ}=\sinθ\,\nabla_{\hatφ}$は座標$φ$の方向の共変微分です。
+$\nabla_{\partial_φ}=\sinθ\,\nabla_{\hatφ}$は座標$φ$の方向の共変微分である。
 &&&
 
 &&&prf
@@ -396,7 +396,7 @@ $$
 回転子$U$は$φ$の1周で$e^{-e_0e_1π}=-1$を掛けられます。単位四元数が回転の1周で$-1$までしか進まないのと同じ事情です。$ψ$が1価なら、枠の側の成分$ψ_f=\tilde Uψ$は$φ$の1周で符号を変えます。スピノル自体が2価なのではなく、枠を持ち上げた回転子の符号の変化を、成分の反周期性が補っています。正規直交枠で書いたスピノルに現れる符号の2価性は、平坦な空間の基底から動く枠に乗り換えるときに生じます。[[7shi-cover]]
 
 &&&ex 2次元の球面の固有値
-[[thm-spectrum]]で$n=3$とすると、固有値は$\pm(k+1)$（$k\ge0$）で、固有空間の実次元は$4(k+1)$です。偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)$は四元数と同型で、$\operatorname{Cl}_{0,2}(\mathbb R)$の既約加群そのものです。右から$e_0e_1$を掛ける演算を虚数単位とみなすと、これは$D_S$と可換で、偶部分代数は$\mathbb C^2$になります。複素次元で数えた重複度は$2(k+1)$です。$j=k+\frac12$と置くと、固有値は$\pm\bigl(j+\frac12\bigr)$、重複度は$2j+1$となり、$j$は半整数です。
+[[thm-spectrum]]で$n=3$とすると、固有値は$\pm(k+1)$（$k\ge0$）で、固有空間の実次元は$4(k+1)$である。偶部分代数$\operatorname{Cl}_{3,0}^0(\mathbb R)$は四元数と同型で、$\operatorname{Cl}_{0,2}(\mathbb R)$の既約加群そのものである。右から$e_0e_1$を掛ける演算を虚数単位とみなすと、これは$D_S$と可換で、偶部分代数は$\mathbb C^2$になる。複素次元で数えた重複度は$2(k+1)$である。$j=k+\frac12$と置くと、固有値は$\pm\bigl(j+\frac12\bigr)$、重複度は$2j+1$となり、$j$は半整数である。
 &&&
 
 # リヒネロビッチの公式
@@ -406,13 +406,13 @@ $$
 平坦な場合は$D^2=\Delta$でした。球面上では、$D_S^2$を共変微分の2階の和と比べます。接空間の正規直交基底は、一般には球面全体で連続に取れません（$S^2$では毛玉の定理による）。そこで代わりに、球面全体で定義された回転の場$\boldsymbol v_{ab}=x_ae_b-x_be_a$を使います。[[7shi-kth3]]
 
 &&&lem 回転の場の和 [lem-rot]
-単位球面上で、ベクトル$\boldsymbol u,\boldsymbol w$について次が成り立ちます。
+単位球面上で、ベクトル$\boldsymbol u,\boldsymbol w$について次が成り立つ。
 
 $$
 \sum_{a<b}(\boldsymbol v_{ab}\cdot\boldsymbol u)(\boldsymbol v_{ab}\cdot\boldsymbol w)=\boldsymbol u\cdot\boldsymbol w-(\boldsymbol x\cdot\boldsymbol u)(\boldsymbol x\cdot\boldsymbol w)
 $$
 
-したがって、接ベクトルについて双線形な式$B$に対して$\sum_{a<b}B(\boldsymbol v_{ab},\boldsymbol v_{ab})=\sum_iB(\boldsymbol t_i,\boldsymbol t_i)$です。
+したがって、接ベクトルについて双線形な式$B$に対して$\sum_{a<b}B(\boldsymbol v_{ab},\boldsymbol v_{ab})=\sum_iB(\boldsymbol t_i,\boldsymbol t_i)$である。
 &&&
 
 &&&prf
@@ -460,7 +460,7 @@ $a<b$で和を取る。第1項は$Δ_S$、第3項は[[lem-rot]]の後の式か�
 ## 公式
 
 &&&thm リヒネロビッチの公式 [thm-lich]
-単位球面$S^{n-1}$上で、次が成り立ちます。
+単位球面$S^{n-1}$上で、次が成り立つ。
 
 $$
 D_S^2=\nabla^*\nabla+\frac{(n-1)(n-2)}4
@@ -482,7 +482,7 @@ $$
 ## 核の消失
 
 &&&prop 核の消失 [prop-kernel]
-$n\ge3$とします。$S^{n-1}$上の滑らかなスピノル$ψ$が$D_Sψ=0$を満たすなら、$ψ=0$です。
+$n\ge3$とする。$S^{n-1}$上の滑らかなスピノル$ψ$が$D_Sψ=0$を満たすなら、$ψ=0$である。
 &&&
 
 &&&prf
@@ -516,33 +516,33 @@ $$
 &&&
 
 &&& 球面モノジェニックス
-$P$が次数$k$のモノジェニックな同次多項式なら、次が成り立ちます。
+$P$が次数$k$のモノジェニックな同次多項式なら、次が成り立つ。
 $$
 ΓP=-kP,\qquad Γ(\boldsymbol xP)=(k+n-1)\,\boldsymbol xP,\qquad\dim M_k=2^n\binom{k+n-2}{n-2}
 $$
 &&&
 
 &&& 球面上のディラック作用素
-接ベクトルの掛け算を$X\bulletψ=X\boldsymbol xψ$、共変微分を$\nabla_Xψ=\partial_Xψ-\frac12X\boldsymbol xψ$とすると、次のようになります。
+接ベクトルの掛け算を$X\bulletψ=X\boldsymbol xψ$、共変微分を$\nabla_Xψ=\partial_Xψ-\frac12X\boldsymbol xψ$とすると、次のようになる。
 $$
 D_S=\sum_i\boldsymbol t_i\bullet\nabla_{\boldsymbol t_i}=\frac{n-1}2-Γ
 $$
-固有値は$\pm\bigl(k+\frac{n-1}2\bigr)$（$k\ge0$）です。
+固有値は$\pm\bigl(k+\frac{n-1}2\bigr)$（$k\ge0$）である。
 &&&
 
 &&& 2次元の球面
-枠$(\hatθ,\hatφ)$に移すと、次の形になります。
+枠$(\hatθ,\hatφ)$に移すと、次の形になる。
 $$
 D_S=f_1\left(\partial_θ+\frac{\cotθ}2\right)+\frac{f_2}{\sinθ}\partial_φ
 $$
-固有値は$\pm(k+1)$、複素の重複度は$2(k+1)$です。
+固有値は$\pm(k+1)$、複素の重複度は$2(k+1)$である。
 &&&
 
 &&& リヒネロビッチの公式
 $$
 D_S^2=\nabla^*\nabla+\frac R4,\qquad R=(n-1)(n-2)
 $$
-$n\ge3$では$R>0$から$D_S$の核は$0$です。
+$n\ge3$では$R>0$から$D_S$の核は$0$である。
 &&&
 
 | 項目 | 平坦な空間から取り出した形 | 正規直交枠の形（$n=3$） |

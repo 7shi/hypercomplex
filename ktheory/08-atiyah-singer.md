@@ -47,25 +47,25 @@ $$
 前回の記事の$D_n$は、どの$n$でも$D_S$に零階の項$\boldsymbol a\boldsymbol xψJ$を加えたものでした。零階の項は、接続の選び方によっても変わります。指数がこれらの細部によらず束のねじれだけで決まるなら、作用素の側で指数に関わるのは、最高階の部分だけのはずです。そこで、1階の微分作用素から最高階の部分を取り出します。[[7shi-kth7]]
 
 &&&def 主表象
-多様体上の1階の微分作用素$P$が、各点の近くで、接空間の正規直交基底$\boldsymbol t_i$と線形写像$A_i$を使って次の形に書けるとします。
+多様体上の1階の微分作用素$P$が、各点の近くで、接空間の正規直交基底$\boldsymbol t_i$と線形写像$A_i$を使って次の形に書けるとする。
 
 $$
 Pψ=\sum_iA_i\,\partial_{\boldsymbol t_i}ψ+(\text{零階の項})
 $$
 
-計量で余接ベクトルを接ベクトルと同一視し、接ベクトル$\boldsymbol\xi$に対して次の線形写像を$P$の**主表象**と呼びます。
+計量で余接ベクトルを接ベクトルと同一視し、接ベクトル$\boldsymbol\xi$に対して次の線形写像を$P$の**主表象**と呼ぶ。
 
 $$
 σ_P(\boldsymbol\xi)=\sum_i(\boldsymbol\xi\cdot\boldsymbol t_i)\,A_i
 $$
 
-$\boldsymbol\xi\ne0$で$σ_P(\boldsymbol\xi)$が可逆なとき、$P$を**楕円型**と呼びます。
+$\boldsymbol\xi\ne0$で$σ_P(\boldsymbol\xi)$が可逆なとき、$P$を**楕円型**と呼ぶ。
 &&&
 
 微分$\partial_{\boldsymbol t_i}$を成分$\boldsymbol\xi\cdot\boldsymbol t_i$に置き換えたもので、以前の記事の規約（$i\xi_a$ではなく$\xi_a$に置き換える）に合わせています。$i\xi_a$に置き換える通常の規約との違いは主表象を定数$i$倍することだけで、以下で扱うK群の元は変わりません。零階の項は主表象に現れません。[[7shi-kth1]]
 
 &&&ex 球面上のディラック作用素
-以前の記事で見たとおり、$D_S=\sum_i\boldsymbol t_i\bullet\nabla_{\boldsymbol t_i}$の主表象は$σ(\boldsymbol\xi)=\boldsymbol\xi\bullet$です。$(\boldsymbol\xi\bullet)^2=(\boldsymbol\xi\boldsymbol x)^2=-|\boldsymbol\xi|^2$なので、$\boldsymbol\xi\ne0$なら可逆で、$D_S$は楕円型です。前回の記事の$D_{\boldsymbol a}=D_S+\boldsymbol a\boldsymbol xR_J$は零階の項だけが異なるので、どの$n$、どの接続でも主表象は$\boldsymbol\xi\bullet$です。[[7shi-kth6]][[7shi-kth7]]
+以前の記事で見たとおり、$D_S=\sum_i\boldsymbol t_i\bullet\nabla_{\boldsymbol t_i}$の主表象は$σ(\boldsymbol\xi)=\boldsymbol\xi\bullet$である。$(\boldsymbol\xi\bullet)^2=(\boldsymbol\xi\boldsymbol x)^2=-|\boldsymbol\xi|^2$なので、$\boldsymbol\xi\ne0$なら可逆で、$D_S$は楕円型である。前回の記事の$D_{\boldsymbol a}=D_S+\boldsymbol a\boldsymbol xR_J$は零階の項だけが異なるので、どの$n$、どの接続でも主表象は$\boldsymbol\xi\bullet$である。[[7shi-kth6]][[7shi-kth7]]
 &&&
 
 ## カイラリティとの関係
@@ -73,7 +73,7 @@ $\boldsymbol\xi\ne0$で$σ_P(\boldsymbol\xi)$が可逆なとき、$P$を**楕円
 前回の記事の命題「カイラリティの性質」により、接ベクトルの掛け算はカイラリティ$γ$と反交換します。したがって$\boldsymbol\xi\bullet$は、各点で正のカイラリティの空間$S^+_{\boldsymbol x}$を負のカイラリティの空間$S^-_{\boldsymbol x}$に写します。どちらも複素1次元なので、$\boldsymbol\xi$を接空間の単位円の上で動かすと、$S^+_{\boldsymbol x}$から$S^-_{\boldsymbol x}$への線形同型の族、すなわち単位円から$\mathbb C^\times$への写像が得られます。その回転数を調べます。[[7shi-kth7]]
 
 &&&prop 主表象の回転数 [prop-symbol-wind]
-$S^2$の点$\boldsymbol x$で、$\boldsymbol t_1\boldsymbol t_2\boldsymbol x=ω$となる正規直交な接ベクトルを取り、$\boldsymbol\xi=\cos t\,\boldsymbol t_1+\sin t\,\boldsymbol t_2$とします。$S^\pm_{\boldsymbol x}$の単位ベクトル$u_\pm$を1つずつ選ぶと、$c(t)\in\mathbb C_J$によって$\boldsymbol\xi\bullet u_+=u_-\,c(t)$と書け、$|c(t)|=1$で、$t\mapsto c(t)$の回転数は$-1$です。
+$S^2$の点$\boldsymbol x$で、$\boldsymbol t_1\boldsymbol t_2\boldsymbol x=ω$となる正規直交な接ベクトルを取り、$\boldsymbol\xi=\cos t\,\boldsymbol t_1+\sin t\,\boldsymbol t_2$とする。$S^\pm_{\boldsymbol x}$の単位ベクトル$u_\pm$を1つずつ選ぶと、$c(t)\in\mathbb C_J$によって$\boldsymbol\xi\bullet u_+=u_-\,c(t)$と書け、$|c(t)|=1$で、$t\mapsto c(t)$の回転数は$-1$である。
 &&&
 
 &&&prf
@@ -97,7 +97,7 @@ $$
 以前の記事では、$S^k$上の束を、$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群$W$の上のパラベクトル$g_W(\boldsymbol x)=x_0I+x_1J_1+\dots+x_{k-1}J_{k-1}$を貼り合わせ関数として作りました。一方、ディラック作用素のスピノルは、カイラリティで2つに分かれ、接ベクトルの掛け算は一方を他方に写します。そこで、$\operatorname{Cl}_{0,k}(\mathbb R)$の生成元$e_1,\dots,e_k$（$e_a^2=-1$、互いに反交換する）が、ベクトル空間$S=S^+\oplus S^-$の上で、$S^+$と$S^-$を入れ替える線形写像として作用しているとします。これが、$k$次元の接空間の上の接ベクトルの掛け算とカイラリティの代数的なモデルです。[[7shi-kth4]]
 
 &&&prop 主表象と貼り合わせ関数 [prop-symbol-clutching]
-$h_l=e_1^{-1}e_l$（$l=2,\dots,k$）は$S^+$を保ち、$h_l^2=-1$を満たして互いに反交換します。したがって$S^+$は、$h_l$を生成元の作用とする$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群です。$\boldsymbol\xi=\sum_a\xi_ae_a$について、次が成り立ちます。
+$h_l=e_1^{-1}e_l$（$l=2,\dots,k$）は$S^+$を保ち、$h_l^2=-1$を満たして互いに反交換する。したがって$S^+$は、$h_l$を生成元の作用とする$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群である。$\boldsymbol\xi=\sum_a\xi_ae_a$について、次が成り立つ。
 
 $$
 e_1^{-1}\boldsymbol\xi\big|_{S^+}=\xi_1+\xi_2h_2+\dots+\xi_kh_k=g_{S^+}(\xi_1,\dots,\xi_k)
@@ -137,8 +137,8 @@ $$
 一般の楕円型微分作用素$P$の解析的指数は$\dim\ker P-\dim\ker P^*$（$P^*$は随伴）で、閉多様体の上ではどちらの核も有限次元であることが知られています。$D_E^+$では、これが上の指数になります。
 
 &&&thm アティヤ＝シンガーの指数定理
-1. 閉多様体上の楕円型微分作用素について、解析的指数は位相的指数に等しくなります。
-2. 上の設定で、次が成り立ちます。
+1. 閉多様体上の楕円型微分作用素について、解析的指数は位相的指数に等しくなる。
+2. 上の設定で、次が成り立つ。
 
 $$
 \operatorname{ind}D_E=\int_M\hat A(M)\operatorname{ch}(E)
@@ -205,15 +205,15 @@ $$
 $$
 
 &&&ex 四元数のホップ束で捩る [ex-quaternion]
-以前の記事の$W=\mathbb H$（$\mathbf i,\mathbf j,\mathbf k$を左から掛ける作用）の束$E_W$は、四元数のホップ束です。右から$i$を掛ける演算は左からの積と可換なので、$E_W$は複素2次元の束と見なせます。この束は$c_1=0$、$\int c_2=\pm1$（符号は向きによる）を満たすことが知られています。したがって、指数定理を認めると、四元数のホップ束で捩ったディラック作用素の指数は$\pm1$です。$S^2$で$H$に捩った場合の指数$-1$と同じく、K群の生成元に絶対値$1$の指数が対応します。[[7shi-kth4]]
+以前の記事の$W=\mathbb H$（$\mathbf i,\mathbf j,\mathbf k$を左から掛ける作用）の束$E_W$は、四元数のホップ束である。右から$i$を掛ける演算は左からの積と可換なので、$E_W$は複素2次元の束と見なせる。この束は$c_1=0$、$\int c_2=\pm1$（符号は向きによる）を満たすことが知られている。したがって、指数定理を認めると、四元数のホップ束で捩ったディラック作用素の指数は$\pm1$である。$S^2$で$H$に捩った場合の指数$-1$と同じく、K群の生成元に絶対値$1$の指数が対応する。[[7shi-kth4]]
 
-向きを固定した$S^4$上で、第2チャーン数が$k\ge1$の$\operatorname{SU}(2)$の束を考えます。曲率が反自己双対という方程式を満たす接続（物理ではインスタントンと呼ばれる）をゲージ同値で割ったモジュライ空間の次元$8k-3$も、線形化した方程式の作用素に指数定理を当てはめて計算されることが知られています。本記事では扱いません。
+向きを固定した$S^4$上で、第2チャーン数が$k\ge1$の$\operatorname{SU}(2)$の束を考える。曲率が反自己双対という方程式を満たす接続（物理ではインスタントンと呼ばれる）をゲージ同値で割ったモジュライ空間の次元$8k-3$も、線形化した方程式の作用素に指数定理を当てはめて計算されることが知られている。本記事では扱わない。
 &&&
 
 以前の記事では、四元数のホップ束が自明束を足しても自明にならないことを、主張に留めました。複素ベクトル束として（$\tilde K(S^4)$の中で）のこの性質は、指数でも検出できます。[[7shi-kth4]]
 
 &&&prop 四元数のホップ束の安定な非自明性 [prop-stable-quaternion]
-指数定理と[[ex-quaternion]]の値$\int c_2(E_W)=\pm1$を認めると、どの$k\ge0$についても、$E_W\oplus\underline{\mathbb C}^k$は自明束ではありません。
+指数定理と[[ex-quaternion]]の値$\int c_2(E_W)=\pm1$を認めると、どの$k\ge0$についても、$E_W\oplus\underline{\mathbb C}^k$は自明束ではない。
 &&&
 
 &&&prf
@@ -268,7 +268,7 @@ $$
 $\boldsymbol x\times\nabla g$は$\nabla g$を接平面の中で直角に回したもので、$|\boldsymbol x\times\nabla g|=|\nabla g|$です。以前の記事の球面のラプラシアン$Δ_S$は$\operatorname{div}\nabla$に等しく、部分積分により$(f,Δ_Sf)=-\|\nabla f\|^2$です。[[7shi-kth6]]
 
 &&&prop 2次元の球面のオイラー標数 [prop-euler-s2]
-$S^2$上の$d+δ$の、偶数次の形式から奇数次の形式への部分を$P^+$、その逆を$P^-$とします。$\ker P^+$は定数関数と$dΩ$の定数倍で張られる2次元の空間で、$\ker P^-=0$です。したがって$\operatorname{ind}(d+δ)=2$です。
+$S^2$上の$d+δ$の、偶数次の形式から奇数次の形式への部分を$P^+$、その逆を$P^-$とする。$\ker P^+$は定数関数と$dΩ$の定数倍で張られる2次元の空間で、$\ker P^-=0$である。したがって$\operatorname{ind}(d+δ)=2$である。
 &&&
 
 &&&prf
@@ -296,7 +296,7 @@ $$
 $Φ(α_-,β_-)$は各点で$S^+_{\boldsymbol x}$を張り、係数は正の関数なので、この書き方は一意です。$z=α_-/β_-$は、前回の記事の南側の座標です。
 
 &&&prop 核の方程式とコーシー＝リーマン方程式 [prop-dbar]
-$U_-$の上で、$D_nψ=0$は$\dfrac{\partial q}{\partial\bar z}=0$と同値です。ここで$\dfrac{\partial}{\partial\bar z}=\dfrac12\left(\dfrac{\partial}{\partial(\operatorname{Re}z)}+J\dfrac{\partial}{\partial(\operatorname{Im}z)}\right)$です。
+$U_-$の上で、$D_nψ=0$は$\dfrac{\partial q}{\partial\bar z}=0$と同値である。ここで$\dfrac{\partial}{\partial\bar z}=\dfrac12\left(\dfrac{\partial}{\partial(\operatorname{Re}z)}+J\dfrac{\partial}{\partial(\operatorname{Im}z)}\right)$である。
 &&&
 
 &&&prf
@@ -340,7 +340,7 @@ $n\le-1$では、ここでは$m=-n$と置くと、正則な切断は次数$m-1$�
 以前の記事では、球面上のディラック作用素について、リヒネロビッチの公式$D_S^2=\nabla^*\nabla+\frac R4$とスカラー曲率$R>0$から、核が$0$になることを示しました。一般の閉スピン多様体でも、同じ形の公式$D^2=\nabla^*\nabla+\frac R4$が成り立つことが知られています。これを指数定理と組み合わせます。[[7shi-kth6]]
 
 &&&prop 正のスカラー曲率と$\hat A$種数 [prop-ahat]
-一般の閉スピン多様体でのリヒネロビッチの公式と指数定理を認めます。$M$が偶数次元の閉スピン多様体で、スカラー曲率が至るところ正の計量を持つなら、$\int_M\hat A(M)=0$です。
+一般の閉スピン多様体でのリヒネロビッチの公式と指数定理を認める。$M$が偶数次元の閉スピン多様体で、スカラー曲率が至るところ正の計量を持つなら、$\int_M\hat A(M)=0$である。
 &&&
 
 &&&prf
@@ -350,13 +350,13 @@ $n\le-1$では、ここでは$m=-n$と置くと、正則な切断は次数$m-1$�
 球面ではスカラー曲率が正なので$\int\hat A(S^{2m})=0$で、これは球面のポントリャーギン形式の積分が$0$であることとも整合します。この命題の価値は対偶にあります。
 
 &&&ex K3曲面
-K3曲面と呼ばれる4次元の閉スピン多様体は、符号数$τ=-16$を持つことが知られています。4次元では、符号数定理から$τ=\frac13\int p_1$なので$\int p_1=-48$で、$\int\hat A=-\frac1{24}\int p_1=2$です。$0$でないので、[[prop-ahat]]により、K3曲面にはスカラー曲率が至るところ正の計量が入りません。
+K3曲面と呼ばれる4次元の閉スピン多様体は、符号数$τ=-16$を持つことが知られている。4次元では、符号数定理から$τ=\frac13\int p_1$なので$\int p_1=-48$で、$\int\hat A=-\frac1{24}\int p_1=2$である。$0$でないので、[[prop-ahat]]により、K3曲面にはスカラー曲率が至るところ正の計量が入らない。
 &&&
 
 指数は整数なので、閉スピン多様体では$\int\hat A(M)$は整数でなければなりません。これも位相への制約になります。
 
 &&&ex 複素射影平面
-複素射影平面$\mathbb CP^2$は$\int p_1=3$を持ち、符号数定理から$τ=1$です。$\int\hat A=-\frac18$は整数でないので、$\mathbb CP^2$はスピン構造を持ちません。4次元の閉スピン多様体では、同じ計算から$\int\hat A=-\frac τ8$が整数なので、符号数は$8$で割り切れます。さらに、4次元のスピノルの四元数構造から指数が偶数になることも使うと、$16$で割り切れること（ロホリンの定理）が導けることが知られています。
+複素射影平面$\mathbb CP^2$は$\int p_1=3$を持ち、符号数定理から$τ=1$である。$\int\hat A=-\frac18$は整数でないので、$\mathbb CP^2$はスピン構造を持たない。4次元の閉スピン多様体では、同じ計算から$\int\hat A=-\frac τ8$が整数なので、符号数は$8$で割り切れる。さらに、4次元のスピノルの四元数構造から指数が偶数になることも使うと、$16$で割り切れること（ロホリンの定理）が導けることが知られている。
 &&&
 
 # 毛玉の定理
@@ -376,10 +376,10 @@ $$
 どちらの側も$2^{2m}$次元で、この対応は各点で線形同型です。以下、形式の係数を複素数に広げます。[[7shi-kth6]]
 
 &&&lem 形式の上の演算 [lem-forms]
-上の同一視のもとで、次が成り立ちます。
+上の同一視のもとで、次が成り立つ。
 
-1. 接ベクトル$\boldsymbol\xi$の掛け算$ψ\mapsto\boldsymbol\xi\boldsymbol xψ$は、外積から内部積を引いた$\boldsymbol\xi\wedge-ι_{\boldsymbol\xi}$です。
-2. $εψ=\boldsymbol xψ\boldsymbol x$は、$p$次の形式に$(-1)^p$を掛ける演算です。
+1. 接ベクトル$\boldsymbol\xi$の掛け算$ψ\mapsto\boldsymbol\xi\boldsymbol xψ$は、外積から内部積を引いた$\boldsymbol\xi\wedge-ι_{\boldsymbol\xi}$である。
+2. $εψ=\boldsymbol xψ\boldsymbol x$は、$p$次の形式に$(-1)^p$を掛ける演算である。
 &&&
 
 &&&prf
@@ -401,11 +401,11 @@ $$
 $ψ$が偶部分代数に値を取るので、$\boldsymbol xψ\boldsymbol v$も偶部分代数に値を取ります。$B_{\boldsymbol v}=i\,εR_{\boldsymbol v\boldsymbol x}$（$R_{\boldsymbol v\boldsymbol x}$は右から$\boldsymbol v\boldsymbol x$を掛ける演算）であり、左からの積$\boldsymbol\xi\bullet$とは別の側から作用します。
 
 &&&prop ベクトル場による主表象の変形 [prop-deform]
-接ベクトル$\boldsymbol\xi$と$0\le t\le1$について、次が成り立ちます。
+接ベクトル$\boldsymbol\xi$と$0\le t\le1$について、次が成り立つ。
 
-1. $B_{\boldsymbol v}$は$ε$と反交換し、偶数次の形式と奇数次の形式を入れ替えます。
-2. $B_{\boldsymbol v}$は$\boldsymbol\xi\bullet$と反交換し、$B_{\boldsymbol v}^2=-|\boldsymbol v|^2$です。
-3. $(\boldsymbol\xi\bullet+tB_{\boldsymbol v})^2=-(|\boldsymbol\xi|^2+t^2|\boldsymbol v|^2)$です。とくに$σ_t(\boldsymbol\xi)=\boldsymbol\xi\bullet+tB_{\boldsymbol v}$は、$\boldsymbol\xi\ne0$ならどの$t$でも可逆で、$t=1$では$\boldsymbol\xi=0$でも可逆です。
+1. $B_{\boldsymbol v}$は$ε$と反交換し、偶数次の形式と奇数次の形式を入れ替える。
+2. $B_{\boldsymbol v}$は$\boldsymbol\xi\bullet$と反交換し、$B_{\boldsymbol v}^2=-|\boldsymbol v|^2$である。
+3. $(\boldsymbol\xi\bullet+tB_{\boldsymbol v})^2=-(|\boldsymbol\xi|^2+t^2|\boldsymbol v|^2)$である。とくに$σ_t(\boldsymbol\xi)=\boldsymbol\xi\bullet+tB_{\boldsymbol v}$は、$\boldsymbol\xi\ne0$ならどの$t$でも可逆で、$t=1$では$\boldsymbol\xi=0$でも可逆である。
 &&&
 
 &&&prf
@@ -421,7 +421,7 @@ $B_{\boldsymbol v}$は零階の項なので、$d+δ+tB_{\boldsymbol v}$は$d+δ$
 これは、以前の記事の命題「延長できる加群は自明な束を与える」と同じ形をしています。そこでは、加群の上に1つ多い生成元$J_k$があれば、$\cos t\,g_W+\sin t\,J_k$によって赤道全体を1点に寄せられ、貼り合わせ関数から作った束は自明になりました。ここでは、各点で$\boldsymbol v/|\boldsymbol v|$から作った$B$が、2乗が$-1$で$\boldsymbol\xi\bullet$と反交換する1つ多い生成元にあたります。単位ベクトル$\boldsymbol\xi$について$\cos s\,\boldsymbol\xi\bullet+\sin s\,B_{\boldsymbol v/|\boldsymbol v|}$は2乗が$-1$で、$s=0$の主表象から$s=\frac\pi2$の$\boldsymbol\xi$によらない写像に変形されます。以前の記事では、クリフォード代数$\operatorname{Cl}_{0,k}(\mathbb R)$の加群から$k$本の正規直交な接ベクトル場を構成しましたが、ここでは逆に、接ベクトル場が生成元として現れています。[[7shi-kth4]][[7shi-kth2]]
 
 &&&thm 毛玉の定理 [thm-hairy-ball]
-$m\ge1$とします。$S^{2m}$上には、どこでも$0$にならない連続な接ベクトル場は存在しません。
+$m\ge1$とする。$S^{2m}$上には、どこでも$0$にならない連続な接ベクトル場は存在しない。
 &&&
 
 &&&prf
@@ -437,37 +437,37 @@ $B_{\boldsymbol v}$は形式の上では$B_{\boldsymbol v}=-i(\boldsymbol v^\fla
 アティヤ＝シンガーの指数定理を主張として述べ、これまで球面で計算してきた結果がその特殊な場合にあたることを確かめました。ディラック作用素の主表象$\boldsymbol\xi\bullet$は、正のカイラリティから負のカイラリティへの写像と見ると、各点で正のカイラリティの空間を加群とする貼り合わせ関数そのもので、既約なスピノルでは球面のK群の生成元を与えます。$S^2$では、前回の記事の$γ$が$z$を複素座標とする向きでの標準的なカイラリティであることを確かめ、指数$-n$が$H^n$の第1チャーン数に一致することを見ました。指数定理を認めると、四元数のホップ束の複素ベクトル束としての安定な非自明性が指数で検出でき、正のスカラー曲率と$\hat A$種数の関係、偶数次元の球面の毛玉の定理が導けます。$S^2$では、オイラー標数$2$を調和形式から数え、捩ったディラック作用素の核の方程式がコーシー＝リーマン方程式になることを示して、前回の記事の結果をリーマン＝ロッホの定理として読みました。
 
 &&& 主表象と貼り合わせ関数
-主表象は各点で次の形になり、$S^+$を$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群とする貼り合わせ関数に一致します。
+主表象は各点で次の形になり、$S^+$を$\operatorname{Cl}_{0,k-1}(\mathbb R)$の加群とする貼り合わせ関数に一致する。
 $$
 σ(\boldsymbol\xi)=\boldsymbol\xi\bullet,\qquad e_1^{-1}\boldsymbol\xi\big|_{S^+}=g_{S^+}(\boldsymbol\xi)
 $$
 &&&
 
 &&& 指数定理
-偶数次元の閉スピン多様体$M$と、エルミート計量を保つ接続を持つ複素ベクトル束$E$について、次が成り立ちます。
+偶数次元の閉スピン多様体$M$と、エルミート計量を保つ接続を持つ複素ベクトル束$E$について、次が成り立つ。
 $$
 \operatorname{ind}D_E=\int_M\hat A(M)\operatorname{ch}(E)
 $$
 &&&
 
 &&& 2次元の球面
-$c_1$を$z$を複素座標とする向きで積分し、中辺の$dΩ$は外向きとすると、次が成り立ちます。
+$c_1$を$z$を複素座標とする向きで積分し、中辺の$dΩ$は外向きとすると、次が成り立つ。
 $$
 \operatorname{ind}D_n=\int_{S^2}c_1(H^n)=\frac1{2\pi}\int_{S^2}F\,dΩ=-n
 $$
-正のカイラリティでは、核の方程式は$\partial q/\partial\bar z=0$で、指数はリーマン＝ロッホの定理の$\deg H^{n+1}+1=-n$です。
+正のカイラリティでは、核の方程式は$\partial q/\partial\bar z=0$で、指数はリーマン＝ロッホの定理の$\deg H^{n+1}+1=-n$である。
 &&&
 
 &&& 特殊化
-$S^2$の調和形式は定数関数と面積要素で、$\operatorname{ind}(d+δ)=\chi(S^2)=2$です。スカラー曲率が正の閉スピン多様体では$\int\hat A(M)=0$です。
+$S^2$の調和形式は定数関数と面積要素で、$\operatorname{ind}(d+δ)=\chi(S^2)=2$である。スカラー曲率が正の閉スピン多様体では$\int\hat A(M)=0$である。
 &&&
 
 &&& 毛玉の定理
-消えない接ベクトル場$\boldsymbol v$は、主表象と反交換する生成元$B_{\boldsymbol v}ψ=i\,\boldsymbol xψ\boldsymbol v$を与えます。
+消えない接ベクトル場$\boldsymbol v$は、主表象と反交換する生成元$B_{\boldsymbol v}ψ=i\,\boldsymbol xψ\boldsymbol v$を与える。
 $$
 (\boldsymbol\xi\bullet+tB_{\boldsymbol v})^2=-(|\boldsymbol\xi|^2+t^2|\boldsymbol v|^2)
 $$
-$\chi(S^{2m})=2\ne0$なので、$S^{2m}$にはそのような$\boldsymbol v$がありません。
+$\chi(S^{2m})=2\ne0$なので、$S^{2m}$にはそのような$\boldsymbol v$がない。
 &&&
 
 K理論と指数定理を扱った一連の記事では、ベクトルをクリフォード積で掛ける写像$\boldsymbol x\mapsto\boldsymbol x\cdot$が、次の4つの場面に同じ形で現れました。

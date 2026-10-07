@@ -29,11 +29,11 @@ $$
 $\sigma_k\mapsto\hat\sigma_k$（パウリ行列）、$\omega\mapsto iI$により、偶部分代数は$M_2(\mathbb C)$と同型です。双四元数の記事では、$M_2(\mathbb C)$を四元数の係数を複素数に広げた双四元数として扱いました。偶部分代数は実8次元で、その元は双四元数1つにあたります。[[7shi-bq]]
 
 &&&prop 反転と行列 [prop-rev]
-偶部分代数の元$X$について、次が成り立ちます。
+偶部分代数の元$X$について、次が成り立つ。
 
-1. $\tilde X$は余因子行列$\operatorname{adj}\hat X$に対応します。
-2. $X\tilde X$はスカラーと擬スカラーの和で、$\det\hat X$に対応します（$\omega\leftrightarrow i$）。
-3. $\gamma_0\tilde X\gamma_0$はエルミート共役$\hat X^\dagger$に対応します。
+1. $\tilde X$は余因子行列$\operatorname{adj}\hat X$に対応する。
+2. $X\tilde X$はスカラーと擬スカラーの和で、$\det\hat X$に対応する（$\omega\leftrightarrow i$）。
+3. $\gamma_0\tilde X\gamma_0$はエルミート共役$\hat X^\dagger$に対応する。
 &&&
 
 &&&prf
@@ -77,14 +77,14 @@ $$
 \operatorname{Spin}^+(1,3)=\{R\in\operatorname{Cl}_{1,3}^0(\mathbb R)\mid R\tilde R=1\}
 $$
 
-を$\operatorname{Spin}^+(1,3)$と書きます。
+を$\operatorname{Spin}^+(1,3)$と書く。
 &&&
 
 $R\tilde R=1$なら$R^{-1}=\tilde R$で、$\widetilde{RS}=\tilde S\tilde R$より回転子の積は回転子なので、$\operatorname{Spin}^+(1,3)$は群です。一方、空間の向きと時間の向きを保つローレンツ変換（行列式$1$で、未来向きの時間的ベクトルを未来向きに移す線形変換）の群を$\operatorname{SO}^+(1,3)$と書きます。
 
 &&&thm 二重被覆
-1. $R\mapsto\hat R$は$\operatorname{Spin}^+(1,3)$から$\operatorname{SL}(2,\mathbb C)$への群同型です。
-2. $R\mapsto(x\mapsto Rx\tilde R)$は$\operatorname{Spin}^+(1,3)$から$\operatorname{SO}^+(1,3)$への全射な準同型で、核は$\{1,-1\}$です。
+1. $R\mapsto\hat R$は$\operatorname{Spin}^+(1,3)$から$\operatorname{SL}(2,\mathbb C)$への群同型である。
+2. $R\mapsto(x\mapsto Rx\tilde R)$は$\operatorname{Spin}^+(1,3)$から$\operatorname{SO}^+(1,3)$への全射な準同型で、核は$\{1,-1\}$である。
 &&&
 
 &&&prf
@@ -126,7 +126,7 @@ $\operatorname{Spin}^+(1,3)$と$\operatorname{SO}^+(1,3)$はどちらもリー�
 前回の記事では、パウリスピノル$\psi$に左から空間の回転子を掛けました。時空代数では、ローレンツ変換の回転子を左から掛けます。ここでは基底$\gamma_\mu$を固定し、スピノルを能動的に変換します。[[7shi-dirac1]]
 
 &&&def ディラックスピノル
-偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の元$\psi$を**ディラックスピノル**と呼び、回転子$R$によるローレンツ変換は$\psi\mapsto R\psi$として作用するものとします。
+偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の元$\psi$を**ディラックスピノル**と呼び、回転子$R$によるローレンツ変換は$\psi\mapsto R\psi$として作用するものとする。
 &&&
 
 偶部分代数は実8次元で、行列形式のディラックスピノル（複素4成分）と同じ自由度を持ちます。ベクトルが両側から$x\mapsto Rx\tilde R$の変換を受けるのに対し、スピノルは片側からだけ変換を受けます。$R$と$-R$はベクトルに同じ変換を与えますが、スピノルには符号の違う変換を与えます。スピノルはローレンツ変換の群$\operatorname{SO}^+(1,3)$でなく、それを二重に覆う$\operatorname{Spin}^+(1,3)$の作用を受ける量です。
@@ -136,13 +136,13 @@ $\operatorname{Spin}^+(1,3)$と$\operatorname{SO}^+(1,3)$はどちらもリー�
 ## 密度・角・回転子への分解
 
 &&&prop スピノルの分解 [prop-decomp]
-ディラックスピノル$\psi$について$\psi\tilde\psi$はスカラーと擬スカラーの和です。$\psi\tilde\psi\ne0$なら、$\rho>0$と実数$\beta$により$\psi\tilde\psi=\rho e^{\omega\beta}$と書け
+ディラックスピノル$\psi$について$\psi\tilde\psi$はスカラーと擬スカラーの和である。$\psi\tilde\psi\ne0$なら、$\rho>0$と実数$\beta$により$\psi\tilde\psi=\rho e^{\omega\beta}$と書け
 
 $$
 \psi=\sqrt\rho\,e^{\omega\beta/2}R,\qquad R\tilde R=1
 $$
 
-と分解されます。
+と分解される。
 &&&
 
 &&&prf
@@ -226,14 +226,14 @@ $$
 &&&
 
 &&& スピノルの分解
-$\psi\tilde\psi\ne0$なら、$\rho>0$と実数$\beta$により次のように書けます。
+$\psi\tilde\psi\ne0$なら、$\rho>0$と実数$\beta$により次のように書ける。
 $$
 \psi\tilde\psi=\rho e^{\omega\beta},\qquad\psi=\sqrt\rho\,e^{\omega\beta/2}R,\qquad R\tilde R=1
 $$
 &&&
 
 &&& 枠
-分解の回転子$R$により、次が成り立ちます。
+分解の回転子$R$により、次が成り立つ。
 $$
 \psi\gamma_\mu\tilde\psi=\rho\,e_\mu,\qquad e_\mu=R\gamma_\mu\tilde R\qquad(\mu=0,1,2,3)
 $$

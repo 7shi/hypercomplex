@@ -53,7 +53,7 @@ $$
 ## 積の微分とライプニッツ則
 
 &&&ex
-$f(x,y) = xy$、$y=x^2$とします。
+$f(x,y) = xy$、$y=x^2$とする。
 
 **先に代入する場合**
 
@@ -70,7 +70,7 @@ $$
 df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy = y\,dx + x\,dy
 $$
 
-$y=x^2,\ dy = 2x\,dx$ を代入します。
+$y=x^2,\ dy = 2x\,dx$ を代入する。
 
 $$
 \begin{aligned}
@@ -91,7 +91,7 @@ $$
 ## 指数関数と合成関数の微分
 
 &&&ex
-$f(x,y) = \sin(xy)$、$y = e^x$とします。
+$f(x,y) = \sin(xy)$、$y = e^x$とする。
 
 **先に代入する場合**
 
@@ -108,7 +108,7 @@ $$
 df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy = y\cos(xy)\,dx + x\cos(xy)\,dy
 $$
 
-$y=e^x,\ dy = e^xdx$ を代入します。
+$y=e^x,\ dy = e^xdx$ を代入する。
 
 $$
 \begin{aligned}
@@ -123,7 +123,7 @@ $$
 ## 平方和と三角関数の微分
 
 &&&ex
-$f(x,y) = x^2 + y^2$、$y = \sin x$とします。
+$f(x,y) = x^2 + y^2$、$y = \sin x$とする。
 
 **先に代入する場合**
 
@@ -140,7 +140,7 @@ $$
 df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy = 2x\,dx + 2y\,dy
 $$
 
-$y=\sin x,\ dy = \cos x\,dx$ を代入します。
+$y=\sin x,\ dy = \cos x\,dx$ を代入する。
 
 $$
 \begin{aligned}

@@ -35,7 +35,7 @@ $$
 この表し方は一意です。
 
 &&&prop 表し方の一意性 [prop-unique]
-実数$a,b,c,d$について$a+bi+cj+dij=0$ならば、$a=b=c=d=0$です。
+実数$a,b,c,d$について$a+bi+cj+dij=0$ならば、$a=b=c=d=0$である。
 &&&
 
 &&&prf
@@ -47,7 +47,7 @@ $$
 &&&
 
 &&&def 双複素数
-$i^2=j^2=-1$、$ij=ji$、$i\ne\pm j$を満たす$i,j$を用いて、実数$a,b,c,d$により$a+bi+cj+dij$と表される数の体系を**双複素数** (bicomplex number) と呼びます。[[wiki-bc]][[wiki-bc-en]]
+$i^2=j^2=-1$、$ij=ji$、$i\ne\pm j$を満たす$i,j$を用いて、実数$a,b,c,d$により$a+bi+cj+dij$と表される数の体系を**双複素数** (bicomplex number) と呼ぶ。[[wiki-bc]][[wiki-bc-en]]
 &&&
 
 &&&rem 三元数・四元数との違い
@@ -76,7 +76,7 @@ $$
 ここで$1+ij$と$1-ij$は、どちらも$0$ではありません。$1+ij=0$なら$ij=-1$で、両辺に左から$i$を掛けると$-j=-i$、つまり$j=i$となります。同様に$1-ij=0$なら$j=-i$となります。どちらも前提$i\ne\pm j$に反します。
 
 &&&def 零因子
-$x\ne0$に対して、ある$y\ne0$が存在して$xy=0$となるとき、$x$を**零因子**と呼びます。[[wiki-0d]]
+$x\ne0$に対して、ある$y\ne0$が存在して$xy=0$となるとき、$x$を**零因子**と呼ぶ。[[wiki-0d]]
 &&&
 
 双複素数は可換なので、左右の区別は要りません。$1+ij$と$1-ij$は、どちらも零因子です。
@@ -133,7 +133,7 @@ $$
 2つの展開を比べると、双複素数の4つの基底$1,j,i,ij$と、$\otimes$による4つの元$1\otimes1,\ 1\otimes i,\ i\otimes1,\ i\otimes i$が同じ係数で現れています。そこで、この4つの元を基底とする空間を考えます。
 
 &&&def 実数上のテンソル積
-4つの元$1\otimes1,\ i\otimes1,\ 1\otimes i,\ i\otimes i$を独立な基底とする実ベクトル空間を$\mathbb C\otimes_{\mathbb R}\mathbb C$と書きます。複素数$a+bi,\ c+di$（$a,b,c,d$は実数）の**テンソル積**を、その元として次のように定めます。
+4つの元$1\otimes1,\ i\otimes1,\ 1\otimes i,\ i\otimes i$を独立な基底とする実ベクトル空間を$\mathbb C\otimes_{\mathbb R}\mathbb C$と書く。複素数$a+bi,\ c+di$（$a,b,c,d$は実数）の**テンソル積**を、その元として次のように定める。
 $$
 (a+bi)\otimes(c+di)=ac(1\otimes1)+ad(1\otimes i)+bc(i\otimes1)+bd(i\otimes i)
 $$
@@ -151,14 +151,14 @@ $$
 各因子について分配法則が成り立ち、実数の係数を外に出せる性質を**双線形性**と呼びます。
 
 &&&fml 双線形性
-複素数$x,y,z$と実数$a,b$について、次が成り立ちます。
+複素数$x,y,z$と実数$a,b$について、次が成り立つ。
 $$
 \begin{aligned}
 (ax+by)\otimes z &= a(x\otimes z)+b(y\otimes z) \\
 x\otimes(ay+bz) &= a(x\otimes y)+b(x\otimes z)
 \end{aligned}
 $$
-特に、$ax\otimes y=x\otimes ay=a(x\otimes y)$です。
+特に、$ax\otimes y=x\otimes ay=a(x\otimes y)$である。
 &&&
 
 &&&rem 双線形関数との比較
@@ -196,7 +196,7 @@ $$
 左因子は左因子と、右因子は右因子と積を取れば、これらはすべて満たされます。そこで次のように定義します。
 
 &&&def テンソル積の積
-$\alpha\otimes\beta$の形の元どうしの積を次の式で定め、一般の元どうしの積は分配法則と実数係数に関する双線形性によって定めます。
+$\alpha\otimes\beta$の形の元どうしの積を次の式で定め、一般の元どうしの積は分配法則と実数係数に関する双線形性によって定める。
 $$
 (\alpha \otimes \beta)(\gamma \otimes \delta) = \alpha\gamma \otimes \beta\delta \quad(\alpha,\beta,\gamma,\delta\text{ は複素数})
 $$
@@ -217,7 +217,7 @@ $$
 以上で、双複素数とテンソル積の対応が積も保つことを示せます。
 
 &&&prop 双複素数とテンソル積の同型 [prop-iso]
-双複素数$a+bi+cj+dij$を$a(1\otimes1)+b(i\otimes1)+c(1\otimes i)+d(i\otimes i)$に移す写像$\Phi$は、実代数としての同型です。
+双複素数$a+bi+cj+dij$を$a(1\otimes1)+b(i\otimes1)+c(1\otimes i)+d(i\otimes i)$に移す写像$\Phi$は、実代数としての同型である。
 &&&
 
 &&&prf
@@ -266,18 +266,18 @@ $$
 本記事では、複素数に可換な虚数単位を追加して得られる双複素数を通じて、零因子の性質と、実数上のテンソル積による双複素数の構成を確認しました。
 
 &&& 双複素数とテンソル積の同型
-複素数体$\mathbb{C}$に$i$と可換な虚数単位$j\ (j^2=-1)$を付加した双複素数は、実数上のテンソル積$\mathbb{C} \otimes_{\mathbb R} \mathbb{C}$と実代数として同型です。
+複素数体$\mathbb{C}$に$i$と可換な虚数単位$j\ (j^2=-1)$を付加した双複素数は、実数上のテンソル積$\mathbb{C} \otimes_{\mathbb R} \mathbb{C}$と実代数として同型である。
 $$
 a + bi + cj + dij \cong a(1 \otimes 1) + b(i \otimes 1) + c(1 \otimes i) + d(i \otimes i)
 $$
-積は左右の因子ごとに取ります。
+積は左右の因子ごとに取る。
 $$
 (\alpha \otimes \beta)(\gamma \otimes \delta) = \alpha\gamma \otimes \beta\delta
 $$
 &&&
 
 &&& 零因子
-双複素数には$0$でない元の積が$0$となる零因子が存在し、体の構造を持ちません。
+双複素数には$0$でない元の積が$0$となる零因子が存在し、体の構造を持たない。
 $$
 (1 + ij)(1 - ij) = 1 - (ij)^2 = 1 - (-1)(-1) = 0
 $$

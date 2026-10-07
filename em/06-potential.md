@@ -27,7 +27,7 @@ $$
 A=\varphi\,\gamma_0+c\sum_kA_k\gamma_k
 $$
 
-を作ります。
+を作る。
 &&&
 
 $\gamma_0$を掛けると$\gamma_0A=\varphi+c\sum_kA_k\gamma_0\gamma_k=\varphi-c\boldsymbol A$であり、以前の記事の$P$が現れます。電流$J$と$\gamma_0J=c(\rho-\boldsymbol J/c)$の関係と同じ形です。
@@ -120,14 +120,14 @@ $$
 \square A=\mu_0cJ
 $$
 
-と同値です。成分では
+と同値である。成分では
 
 $$
 \Bigl(\frac1{c^2}\partial_t^2-\Delta\Bigr)\varphi=\frac\rho{\varepsilon_0},\qquad
 \Bigl(\frac1{c^2}\partial_t^2-\Delta\Bigr)\boldsymbol A=\mu_0\boldsymbol J
 $$
 
-です。
+である。
 &&&
 
 &&&prf
@@ -155,9 +155,9 @@ $$
 &&&
 
 &&&prop エネルギー運動量の性質
-(1) ベクトル$a$に対して$T(a)$はベクトルで、$a\cdot T(b)=b\cdot T(a)$が成り立ちます。
+(1) ベクトル$a$に対して$T(a)$はベクトルで、$a\cdot T(b)=b\cdot T(a)$が成り立つ。
 
-(2) $T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$、すなわち$T(\gamma_0)=u\gamma_0+\sum_k\frac{S_k}c\gamma_k$です。
+(2) $T(\gamma_0)\gamma_0=\frac{\varepsilon_0}2FF^\dagger=u+\boldsymbol S/c$、すなわち$T(\gamma_0)=u\gamma_0+\sum_k\frac{S_k}c\gamma_k$である。
 &&&
 
 &&&prf
@@ -176,7 +176,7 @@ T^{kl}=-\tau_{kl},\qquad
 \tau_{kl}=\varepsilon_0\Bigl(E_kE_l+c^2B_kB_l-\frac12\delta_{kl}\bigl(|\boldsymbol E|^2+c^2|\boldsymbol B|^2\bigr)\Bigr)
 $$
 
-ここで$\tau_{kl}$はマクスウェルの応力テンソルです。
+ここで$\tau_{kl}$はマクスウェルの応力テンソルである。
 &&&
 
 ## 保存則
@@ -188,13 +188,13 @@ $$
 \sum_\mu\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J
 $$
 
-が成り立ちます。ここで$F\cdot J=\frac12(FJ-JF)$で、
+が成り立つ。ここで$F\cdot J=\frac12(FJ-JF)$で、
 
 $$
 \frac1cF\cdot J=\frac1c(\boldsymbol J\cdot\boldsymbol E)\,\gamma_0+\sum_k\bigl(\rho\boldsymbol E+\boldsymbol J\times\boldsymbol B\bigr)_k\gamma_k
 $$
 
-です。
+である。
 &&&
 
 &&&prf
@@ -205,7 +205,7 @@ $$
 =-\frac{\varepsilon_0\mu_0c}2(-JF+FJ)
 $$
 
-となり、$\varepsilon_0\mu_0c=1/c$から第1式を得る。第2式は、$F\cdot J$の成分を内積の規約に従って計算すれば得られます（ローレンツ力の計算で$U$を$J$に替えたものです）。[[7shi-cla2]][[7shi-em5]]
+となり、$\varepsilon_0\mu_0c=1/c$から第1式を得る。第2式は、$F\cdot J$の成分を内積の規約に従って計算すれば得られる（ローレンツ力の計算で$U$を$J$に替えたものである）。[[7shi-cla2]][[7shi-em5]]
 &&&
 
 $\gamma_0$成分は$\partial_0u+\frac1c\nabla\cdot\boldsymbol S=-\frac1c\boldsymbol J\cdot\boldsymbol E$であり、以前導いたポインティングの定理です。$\gamma_k$成分は運動量の保存則で、[エネルギー運動量テンソルの空間成分](#fml-stress)を使うと
@@ -219,7 +219,7 @@ $$
 電荷が場から受け取る運動量は右辺に現れ、領域内の場の運動量は境界を通る運動量の流れによっても変わります。外部との受け渡しがない系では、物質と場を合わせた全運動量が保存され、電磁場は物体と同じく運動量を持って運ぶ存在です。
 
 &&&ex 放射圧
-静止した壁に$\hat{\boldsymbol k}$の向きの平面波が垂直に入射するとし、入射波のエネルギー密度を$u$とします。平面波では$\boldsymbol S=cu\,\hat{\boldsymbol k}$なので、運動量密度は$\boldsymbol S/c^2=(u/c)\hat{\boldsymbol k}$で、それが速さ$c$で壁に流れ込みます。進行方向の運動量が進行方向へ運ばれることは、平面波で$T^{kl}=u\hat k_k\hat k_l$となることに表れています。波が完全に吸収されるとき、壁が単位面積・単位時間あたりに受け取る、壁に垂直な運動量、すなわち壁が受ける圧力は$c\cdot u/c=u$です。完全に反射される場合は運動量の向きが反転するので、圧力は入射波のエネルギー密度の2倍の$2u$になります。以前の太陽光の例では、完全に吸収される場合の時間平均の圧力は$1.4\times10^3/(3.0\times10^8)\approx4.7\times10^{-6}\ \mathrm{Pa}$です。日常では感じられないほど小さい力ですが、宇宙空間の探査機の軌道には影響し、太陽光を大きな帆で受けて進む実験も行われています。
+静止した壁に$\hat{\boldsymbol k}$の向きの平面波が垂直に入射するとし、入射波のエネルギー密度を$u$とする。平面波では$\boldsymbol S=cu\,\hat{\boldsymbol k}$なので、運動量密度は$\boldsymbol S/c^2=(u/c)\hat{\boldsymbol k}$で、それが速さ$c$で壁に流れ込む。進行方向の運動量が進行方向へ運ばれることは、平面波で$T^{kl}=u\hat k_k\hat k_l$となることに表れている。波が完全に吸収されるとき、壁が単位面積・単位時間あたりに受け取る、壁に垂直な運動量、すなわち壁が受ける圧力は$c\cdot u/c=u$である。完全に反射される場合は運動量の向きが反転するので、圧力は入射波のエネルギー密度の2倍の$2u$になる。以前の太陽光の例では、完全に吸収される場合の時間平均の圧力は$1.4\times10^3/(3.0\times10^8)\approx4.7\times10^{-6}\ \mathrm{Pa}$である。日常では感じられないほど小さい力であるが、宇宙空間の探査機の軌道には影響し、太陽光を大きな帆で受けて進む実験も行われている。
 &&&
 
 # まとめ
@@ -237,14 +237,14 @@ $$
 &&&
 
 &&& ローレンスゲージ
-$D\cdot A=0$のもとで、マクスウェル方程式は次と同値です。
+$D\cdot A=0$のもとで、マクスウェル方程式は次と同値である。
 $$
 \square A=\mu_0cJ
 $$
 &&&
 
 &&& エネルギー運動量の保存
-$T(a)=-\frac{\varepsilon_0}2FaF$とすると、マクスウェル方程式の解について次が成り立ちます。
+$T(a)=-\frac{\varepsilon_0}2FaF$とすると、マクスウェル方程式の解について次が成り立つ。
 $$
 \sum_\mu\partial_\mu T(\gamma^\mu)=-\frac1cF\cdot J
 $$

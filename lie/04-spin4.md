@@ -40,7 +40,7 @@ $$
 一般の$p, q$についても、四元数の絶対値の乗法性（$|ab| = |a||b|$）より、$|p| = |q| = 1$ならば$|pxq^{-1}| = |x|$となり、4次元空間でのベクトルの長さが保たれます。次元を数えても、4次元の回転の自由度（座標平面の数）は$\binom{4}{2} = 6$で、$(p, q) \in S^3 \times S^3$の次元$3 + 3 = 6$と一致します。
 
 &&&thm 両側作用と$\operatorname{SO}(4)$
-単位四元数$p, q$による両側作用$x \mapsto pxq^{-1}$は4次元の回転$\operatorname{SO}(4)$の元を与え、逆に$\operatorname{SO}(4)$のすべての元がこの形に書けます。$(p, q)$と$(-p, -q)$が同じ回転を与えるため対応は2対1であり、単位四元数の対のなす群$\operatorname{Sp}(1) \times \operatorname{Sp}(1)$は$\operatorname{SO}(4)$の**二重被覆**です。
+単位四元数$p, q$による両側作用$x \mapsto pxq^{-1}$は4次元の回転$\operatorname{SO}(4)$の元を与え、逆に$\operatorname{SO}(4)$のすべての元がこの形に書ける。$(p, q)$と$(-p, -q)$が同じ回転を与えるため対応は2対1であり、単位四元数の対のなす群$\operatorname{Sp}(1) \times \operatorname{Sp}(1)$は$\operatorname{SO}(4)$の**二重被覆**である。
 &&&
 
 &&&prf
@@ -237,7 +237,7 @@ $$
 体積要素が$\pm I$に潰れず、$2^4 = 16$個の基底が一次独立に揃うので、次元勘定から$M_4(\mathbb{R})$全体と一致します。
 
 &&&thm $M_4(\mathbb{R})$のクリフォード代数構造
-$e_1 = L_iR_i$、$e_2 = L_jR_i$、$e_3 = L_kR_i$、$e_4 = R_j$は計量$(+,+,+,-)$の生成関係を満たし、これらが生成する代数は$4 \times 4$実行列全体と一致します。
+$e_1 = L_iR_i$、$e_2 = L_jR_i$、$e_3 = L_kR_i$、$e_4 = R_j$は計量$(+,+,+,-)$の生成関係を満たし、これらが生成する代数は$4 \times 4$実行列全体と一致する。
 
 $$
 \operatorname{Cl}_{3,1}(\mathbb{R}) \cong M_4(\mathbb{R})
@@ -245,7 +245,7 @@ $$
 &&&
 
 &&&ex $\operatorname{Cl}_{2,2}(\mathbb{R})$としての表示
-5個の組のどの4個を生成元に選ぶかで計量が変わります。$R_j, R_k$の両方を含む4個（たとえば$L_iR_i,\ L_jR_i,\ R_j,\ R_k$）を選ぶと計量は$(+,+,-,-)$の中立型となり、$\operatorname{Cl}_{2,2}(\mathbb{R}) \cong M_4(\mathbb{R})$という表示も得られます。
+5個の組のどの4個を生成元に選ぶかで計量が変わる。$R_j, R_k$の両方を含む4個（たとえば$L_iR_i,\ L_jR_i,\ R_j,\ R_k$）を選ぶと計量は$(+,+,-,-)$の中立型となり、$\operatorname{Cl}_{2,2}(\mathbb{R}) \cong M_4(\mathbb{R})$という表示も得られる。
 &&&
 
 &&&rem 生成元の計量
@@ -291,7 +291,7 @@ $\operatorname{Cl}_{3,1}(\mathbb{R})$本来の枠組みで回転子$r$（2ベク
 そこで、成分に四元数を許した$2 \times 2$行列環$M_2(\mathbb{H})$（実次元$2^2 \times 4 = 16$）を舞台にします。
 
 &&&def ベクトルの反対角表現
-4次元のベクトル$v$（実部も含む四元数）に対して、**反対角**に配置した行列を対応させます。
+4次元のベクトル$v$（実部も含む四元数）に対して、**反対角**に配置した行列を対応させる。
 
 $$
 \gamma(v) = \begin{pmatrix} 0 & v \\ v^* & 0 \end{pmatrix} \in M_2(\mathbb{H})
@@ -383,7 +383,7 @@ $$
 \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} \mapsto \begin{pmatrix} p\,\psi_1 \\ q\,\psi_2 \end{pmatrix}
 $$
 
-この$\psi_1, \psi_2$を**半スピノル**（ワイルスピノル）と呼びます。片方は$p$だけ、もう片方は$q$だけの左掛け算を受けます。
+この$\psi_1, \psi_2$を**半スピノル**（ワイルスピノル）と呼ぶ。片方は$p$だけ、もう片方は$q$だけの左掛け算を受ける。
 &&&
 
 &&&rem 半スピノルの次元
@@ -426,7 +426,7 @@ $M_4(\mathbb{R})$は、基底$L_uR_v$の2乗と反交換関係を数え上げる
 四元数の左右から挟む作用が$M_4(\mathbb{R})\cong\mathbb H\otimes\mathbb H\cong \operatorname{Cl}_{3,1}(\mathbb{R})$と$M_2(\mathbb{H})\cong \operatorname{Cl}_{4,0}(\mathbb{R})$という異なる2つのクリフォード代数の中に現れます。前者では同じ行列環に含まれる$\operatorname{SO}(4)$の回転行列として、後者ではスピン群の共役作用として実現されます。
 
 &&& 両側作用と二重被覆
-単位四元数の対$(p, q)$による両側作用$x \mapsto pxq^{-1}$は、次の2対1の全射を与えます。
+単位四元数の対$(p, q)$による両側作用$x \mapsto pxq^{-1}$は、次の2対1の全射を与える。
 $$
 \operatorname{Spin}(4) \cong \operatorname{Sp}(1) \times \operatorname{Sp}(1) \to \operatorname{SO}(4), \qquad \ker = \{\pm(1, 1)\}
 $$

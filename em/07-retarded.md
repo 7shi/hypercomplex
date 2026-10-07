@@ -15,7 +15,7 @@
 ## 遅延基本解
 
 &&&prop 球面波
-任意の$C^2$級の関数$f$について、$\psi=f(x_0-r)/r$は$r>0$で$\square\psi=0$を満たします。
+任意の$C^2$級の関数$f$について、$\psi=f(x_0-r)/r$は$r>0$で$\square\psi=0$を満たす。
 &&&
 
 &&&prf
@@ -49,14 +49,14 @@ $$
 A(x_0,\boldsymbol x)=\frac{\mu_0c}{4\pi}\int\frac{J(x_0-R,\boldsymbol y)}R\,dV
 $$
 
-は$\square A=\mu_0cJ$とローレンス条件$D\cdot A=0$を満たします。成分では
+は$\square A=\mu_0cJ$とローレンス条件$D\cdot A=0$を満たす。成分では
 
 $$
 \varphi=\frac1{4\pi\varepsilon_0}\int\frac{\rho(x_0-R,\boldsymbol y)}R\,dV,\qquad
 \boldsymbol A=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol J(x_0-R,\boldsymbol y)}R\,dV
 $$
 
-です。
+である。
 &&&
 
 &&&prf
@@ -103,7 +103,7 @@ $\gamma_0^2=1$、$\boldsymbol n^2=-1$、$\gamma_0\boldsymbol n=-\boldsymbol n\ga
 放射の部分は、局所的には平面波と同じ代数的な形をしています。
 
 &&&prop 放射の部分はヌル場
-有界な領域にある源の遅延ポテンシャルについて、源から遠い点での$F=DA$の$1/r$の項$F_{\mathrm{rad}}$は$F_{\mathrm{rad}}^2=0$を満たします。
+有界な領域にある源の遅延ポテンシャルについて、源から遠い点での$F=DA$の$1/r$の項$F_{\mathrm{rad}}$は$F_{\mathrm{rad}}^2=0$を満たす。
 &&&
 
 &&&prf
@@ -134,7 +134,7 @@ $$
 \psi(t,\boldsymbol x)=\partial_t\bigl(t\,M_{ct}[g](\boldsymbol x)\bigr)+t\,M_{ct}[h](\boldsymbol x)
 $$
 
-です。
+である。
 &&&
 
 証明は本記事では扱いません。多項式の初期値では、3次元の球面平均が$M_R[p]=\sum_kR^{2k}\Delta^kp/(2k+1)!$と書けることから、右辺が波動方程式と初期条件を満たすことを直接確かめられます。
@@ -198,7 +198,7 @@ $$
 &&&
 
 &&& キルヒホッフの公式
-$\partial_t^2\psi=c^2\Delta\psi$、$\psi|_{t=0}=g$、$\partial_t\psi|_{t=0}=h$の解は、$\boldsymbol x$を中心とする半径$ct$の球面上の平均$M_{ct}$を用いて次のように書けます。
+$\partial_t^2\psi=c^2\Delta\psi$、$\psi|_{t=0}=g$、$\partial_t\psi|_{t=0}=h$の解は、$\boldsymbol x$を中心とする半径$ct$の球面上の平均$M_{ct}$を用いて次のように書ける。
 $$
 \psi(t,\boldsymbol x)=\partial_t\bigl(t\,M_{ct}[g](\boldsymbol x)\bigr)+t\,M_{ct}[h](\boldsymbol x)
 $$

@@ -11,7 +11,7 @@
 前回の記号をそのまま使います。$\operatorname{Cl}_{1,3}(\mathbb R)$の生成元を$\gamma_0,\gamma_1,\gamma_2,\gamma_3$（$\gamma_0^2=1$、$\gamma_k^2=-1$）、擬スカラーを$i=\gamma_0\gamma_1\gamma_2\gamma_3$、相対ベクトルを$\sigma_k=\gamma_k\gamma_0$とします。時空の元$X$の反転$\tilde X$は、基底の積の順序を逆にする操作です。ベクトルは変えず、2ベクトルの符号を変え、$\widetilde{XY}=\tilde Y\tilde X$を満たします。
 
 &&&def 回転子
-偶部分代数の元$R$で$R\tilde R=1$を満たすものを**回転子**と呼びます。
+偶部分代数の元$R$で$R\tilde R=1$を満たすものを**回転子**と呼ぶ。
 &&&
 
 回転子$R$と時空のベクトル$x$について、$Rx\tilde R$の2乗は
@@ -23,7 +23,7 @@ $$
 です。$x^2$はスカラーなので$R$と可換です。さらに$Rx\tilde R$はベクトルになります。
 
 &&&prop 回転子の作用
-回転子$R$と時空のベクトル$x$について、$Rx\tilde R$はベクトルです。したがって写像$x\mapsto Rx\tilde R$は線形でミンコフスキー計量を保ち、ローレンツ変換になります。
+回転子$R$と時空のベクトル$x$について、$Rx\tilde R$はベクトルである。したがって写像$x\mapsto Rx\tilde R$は線形でミンコフスキー計量を保ち、ローレンツ変換になる。
 &&&
 
 &&&prf
@@ -174,7 +174,7 @@ $$
 \boldsymbol B'_\perp=\gamma\Bigl(\boldsymbol B-\frac1{c^2}\boldsymbol v\times\boldsymbol E\Bigr)_\perp
 $$
 
-ここで$\parallel$は$\sigma_1$方向の成分、$\perp$はそれに垂直な成分です。
+ここで$\parallel$は$\sigma_1$方向の成分、$\perp$はそれに垂直な成分である。
 &&&
 
 &&&prf
@@ -208,19 +208,19 @@ $$
 です。$|\boldsymbol E|^2-c^2|\boldsymbol B|^2$と$\boldsymbol E\cdot\boldsymbol B$は、回転子で結ばれた観測者、すなわち空間と時間の向きの規約を共有する観測者に共通の量です（$\boldsymbol E\cdot\boldsymbol B$は空間反転で符号を変えます）。とくにヌル場（$F^2=0$）は、どの観測者から見てもヌル場です。[[7shi-em3]]
 
 &&&ex 平面波のドップラー効果
-$\sigma_1$方向に進む平面波$F=(1+\sigma_1)\boldsymbol E(\xi)$（$\boldsymbol E\perp\sigma_1$、$\xi=x_0-x_1$）を、同じ向きに動く観測者から見ます。$(1+\sigma_1)\sigma_1=1+\sigma_1$と、$\boldsymbol E$が$\sigma_1$と反可換であることから
+$\sigma_1$方向に進む平面波$F=(1+\sigma_1)\boldsymbol E(\xi)$（$\boldsymbol E\perp\sigma_1$、$\xi=x_0-x_1$）を、同じ向きに動く観測者から見る。$(1+\sigma_1)\sigma_1=1+\sigma_1$と、$\boldsymbol E$が$\sigma_1$と反可換であることから
 
 $$
 \tilde RFR=(1+\sigma_1)\boldsymbol E\,e^{\sigma_1\eta}=(1+\sigma_1)e^{-\sigma_1\eta}\boldsymbol E=e^{-\eta}(1+\sigma_1)\boldsymbol E
 $$
 
-となります。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$で位相を書くと、[ブースト](#fml-boost)から$x_0-x_1=e^{-\eta}(x_0'-x_1')$です。したがって観測者の見る場は
+となる。観測者の座標$x_0'=x\cdot\gamma_0'$、$x_1'=-x\cdot\gamma_1'$で位相を書くと、[ブースト](#fml-boost)から$x_0-x_1=e^{-\eta}(x_0'-x_1')$である。したがって観測者の見る場は
 
 $$
 F'(x_0',x_1')=e^{-\eta}(1+\sigma_1)\boldsymbol E\bigl(e^{-\eta}(x_0'-x_1')\bigr)
 $$
 
-であり、外側の因子が振幅を、引数の因子が振動数を、ともに$e^{-\eta}=\sqrt{(1-v/c)/(1+v/c)}$倍にします。これは光の縦方向のドップラー効果の因子です。ブーストで光の向き$\gamma_0\pm\gamma_1$が$e^{\pm\eta}$倍に伸び縮みするのと同じラピディティによる指数因子が、場の振幅と位相の変換にも現れています。
+であり、外側の因子が振幅を、引数の因子が振動数を、ともに$e^{-\eta}=\sqrt{(1-v/c)/(1+v/c)}$倍にする。これは光の縦方向のドップラー効果の因子である。ブーストで光の向き$\gamma_0\pm\gamma_1$が$e^{\pm\eta}$倍に伸び縮みするのと同じラピディティによる指数因子が、場の振幅と位相の変換にも現れている。
 &&&
 
 ## 場の標準形
@@ -236,7 +236,7 @@ $$
 F'=(a+ib)\hat{\boldsymbol m},\qquad(a+ib)^2=F^2
 $$
 
-と書けます。とくに$\boldsymbol E\cdot\boldsymbol B=0$なら、$|\boldsymbol E|>c|\boldsymbol B|$のとき純粋な電場、$|\boldsymbol E|<c|\boldsymbol B|$のとき純粋な磁場として見る観測者がいます。
+と書ける。とくに$\boldsymbol E\cdot\boldsymbol B=0$なら、$|\boldsymbol E|>c|\boldsymbol B|$のとき純粋な電場、$|\boldsymbol E|<c|\boldsymbol B|$のとき純粋な磁場として見る観測者がいる。
 &&&
 
 &&&prf
@@ -295,7 +295,7 @@ $$
 \frac d{d\tau}(\gamma m\boldsymbol u)=\gamma q(\boldsymbol E+\boldsymbol u\times\boldsymbol B)
 $$
 
-です。
+である。
 &&&
 
 &&&prf
@@ -343,7 +343,7 @@ $$
 \frac{dR}{d\tau}=\frac q{2mc}FR
 $$
 
-を満たせば、$U$はローレンツ力の運動方程式$m\,dU/d\tau=(q/c)F\cdot U$を満たします。
+を満たせば、$U$はローレンツ力の運動方程式$m\,dU/d\tau=(q/c)F\cdot U$を満たす。
 &&&
 
 &&&prf
@@ -365,15 +365,15 @@ $$
 U=c\bigl(\gamma_0\cosh(\alpha\tau)+\gamma_1\sinh(\alpha\tau)\bigr),\qquad\alpha=\frac{qE}{mc}
 $$
 
-です。一定の力がラピディティを固有時に比例して増やし（双曲運動）、速さ$c\tanh(\alpha\tau)$は$c$に漸近します。
+である。一定の力がラピディティを固有時に比例して増やし（双曲運動）、速さ$c\tanh(\alpha\tau)$は$c$に漸近する。
 
-一様な磁場$F=icB\sigma_3$では$R=e^{qBi\sigma_3\tau/2m}$で、空間の回転を生成します。ラピディティ$\eta$で$\sigma_1$方向に動き出した正の電荷について
+一様な磁場$F=icB\sigma_3$では$R=e^{qBi\sigma_3\tau/2m}$で、空間の回転を生成する。ラピディティ$\eta$で$\sigma_1$方向に動き出した正の電荷について
 
 $$
 U=c\bigl(\gamma_0\cosh\eta+\sinh\eta\,(\gamma_1\cos\omega\tau-\gamma_2\sin\omega\tau)\bigr),\qquad\omega=\frac{qB}m
 $$
 
-です。速さは変わらず、運動の向きが$\boldsymbol B$の矢の先の側から見て時計回り（$\gamma_1$から$-\gamma_2$へ）に回ります（サイクロトロン運動）。座標時での角速度は$d\tau/dt=1/\gamma$より$qB/\gamma m$で、速い粒子ほどゆっくり回ります。
+である。速さは変わらず、運動の向きが$\boldsymbol B$の矢の先の側から見て時計回り（$\gamma_1$から$-\gamma_2$へ）に回る（サイクロトロン運動）。座標時での角速度は$d\tau/dt=1/\gamma$より$qB/\gamma m$で、速い粒子ほどゆっくり回る。
 &&&
 
 最後に、運動方程式の形が変わらないことを確かめます。ここでは観測者の基底を取り替えるのではなく、場と粒子の運動をともに能動的に変換します。一定の回転子$R$で$F\mapsto RF\tilde R$、$U\mapsto RU\tilde R$と変換しても$F\cdot U\mapsto R(F\cdot U)\tilde R$なので、方程式の形は変わりません。
@@ -391,7 +391,7 @@ $$
 - **場は固有速度を回す**：固有速度の大きさは常に$c$で、速さは時間軸からの双曲角（ラピディティ）です。運動方程式は$U=cR\gamma_0\tilde R$、$dR/d\tau=\frac q{2mc}FR$と書け、電場がブースト（双曲運動）を、磁場が空間の回転（サイクロトロン運動）を生成します。
 
 &&& 回転子によるローレンツ変換
-偶部分の元$R$で$R\tilde R=1$を満たすものについて、次の写像はローレンツ変換です。
+偶部分の元$R$で$R\tilde R=1$を満たすものについて、次の写像はローレンツ変換である。
 $$
 x\mapsto Rx\tilde R
 $$
@@ -404,7 +404,7 @@ $$
 &&&
 
 &&& 観測者の見る場
-新しい観測者の基底が$\sigma_k'=R\sigma_k\tilde R$のとき、その観測者の見る電場と磁場は、次の元を元の$\sigma_k$で分けた成分です。
+新しい観測者の基底が$\sigma_k'=R\sigma_k\tilde R$のとき、その観測者の見る電場と磁場は、次の元を元の$\sigma_k$で分けた成分である。
 $$
 F'=\tilde RFR
 $$
@@ -414,7 +414,7 @@ $$
 $$
 m\frac{dU}{d\tau}=\frac qcF\cdot U
 $$
-$U=cR\gamma_0\tilde R$とし、$R$が次を満たせば、$U$はこの運動方程式を満たします。
+$U=cR\gamma_0\tilde R$とし、$R$が次を満たせば、$U$はこの運動方程式を満たす。
 $$
 \frac{dR}{d\tau}=\frac q{2mc}FR
 $$

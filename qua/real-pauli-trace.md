@@ -107,7 +107,7 @@ $$
 単位行列$I$と実パウリ行列$\tau_1, \tau_2, \tau_3$を適切に線形結合することで、任意の2次正方実行列を表現できます。
 
 &&&prop 実行列空間の基底
-$\{I, \tau_1, \tau_2, \tau_3\}$は2次正方実行列の空間$M_2(\mathbb R)$の**基底**をなします。
+$\{I, \tau_1, \tau_2, \tau_3\}$は2次正方実行列の空間$M_2(\mathbb R)$の**基底**をなす。
 &&&
 
 &&&prf
@@ -171,7 +171,7 @@ $$
 2次正方実行列の成分を並べたベクトルの内積は、トレースで書けます。
 
 &&&def フロベニウス内積
-実行列$A,B\in M_2(\mathbb R)$に対して、次の量を**フロベニウス内積**と呼びます。
+実行列$A,B\in M_2(\mathbb R)$に対して、次の量を**フロベニウス内積**と呼ぶ。
 $$
 \langle A,B\rangle_F
 :=\operatorname{tr}(A^\mathsf TB)
@@ -219,13 +219,13 @@ $$
 直交性から、各係数を内積で取り出せます。
 
 &&&fml 係数の抽出
-$A=a_0I+a_1\tau_1+a_2\tau_2+a_3\tau_3$に対して、次が成り立ちます。
+$A=a_0I+a_1\tau_1+a_2\tau_2+a_3\tau_3$に対して、次が成り立つ。
 $$
 a_0=\frac12\operatorname{tr}(A),\qquad
 a_r=\frac12\operatorname{tr}(\tau_r^\mathsf{T}A)
 \quad(r=1,2,3)
 $$
-特に$\tau_2^\mathsf T=-\tau_2$なので、$a_2=-\frac12\operatorname{tr}(\tau_2A)$です。転置を付けることで、3つの係数の抽出式を同じ形にできます。
+特に$\tau_2^\mathsf T=-\tau_2$なので、$a_2=-\frac12\operatorname{tr}(\tau_2A)$である。転置を付けることで、3つの係数の抽出式を同じ形にできる。
 &&&
 
 &&&rem ベクトルの内積
@@ -246,7 +246,7 @@ $$
 \tau_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
 \tau_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
 $$
-これらは次の関係を満たします。
+これらは次の関係を満たす。
 $$
 \tau_1^2 = I, \quad \tau_2^2 = -I, \quad \tau_3^2 = I
 $$
@@ -258,7 +258,7 @@ $$
 &&&
 
 &&& トレースと内積
-$A = a_0 I + a_1 \tau_1 + a_2 \tau_2 + a_3 \tau_3,\ B = b_0 I + b_1 \tau_1 + b_2 \tau_2 + b_3 \tau_3$とすると、次のようになります。
+$A = a_0 I + a_1 \tau_1 + a_2 \tau_2 + a_3 \tau_3,\ B = b_0 I + b_1 \tau_1 + b_2 \tau_2 + b_3 \tau_3$とすると、次のようになる。
 $$
 \operatorname{tr}(A) = 2a_0, \quad
 \operatorname{tr}(A^\mathsf{T}B) = 2(a_0b_0 + a_1b_1 + a_2b_2 + a_3b_3)

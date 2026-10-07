@@ -21,7 +21,7 @@ $$
 とします。添字を$0$から振るのは、後で前回の四元数解析と同じく$e_0$を特別な方向として使うためです。$D^2=\Delta$（$n$次元のラプラシアン）は以前の記事と同じ計算で成り立ちます。[[7shi-cla1]][[7shi-cla4]]
 
 &&&def モノジェニック関数
-$\mathbb R^n$の開集合上の$\operatorname{Cl}_{n,0}(\mathbb R)$値の$C^1$級関数$F$が$DF=0$を満たすとき、$F$を**左モノジェニック**と呼びます。右からの作用を$FD=\sum_a(\partial_aF)e_a$とし、$FD=0$を満たすとき**右モノジェニック**と呼びます。単にモノジェニックと言えば左モノジェニックを指します。
+$\mathbb R^n$の開集合上の$\operatorname{Cl}_{n,0}(\mathbb R)$値の$C^1$級関数$F$が$DF=0$を満たすとき、$F$を**左モノジェニック**と呼ぶ。右からの作用を$FD=\sum_a(\partial_aF)e_a$とし、$FD=0$を満たすとき**右モノジェニック**と呼ぶ。単にモノジェニックと言えば左モノジェニックを指す。
 &&&
 
 $D^2=\Delta$より、$C^2$級のモノジェニック関数の各成分は$n$次元の調和関数です。
@@ -57,7 +57,7 @@ $$
 E(\boldsymbol x)=\frac{\boldsymbol x}{|\boldsymbol x|^n}
 $$
 
-は$\mathbb R^n\setminus\{0\}$で左右ともにモノジェニックです。
+は$\mathbb R^n\setminus\{0\}$で左右ともにモノジェニックである。
 &&&
 
 &&&prf
@@ -84,7 +84,7 @@ D|\boldsymbol x|^{2-n}=(2-n)\frac{\boldsymbol x}{|\boldsymbol x|^n}\quad(n\ge3),
 D\log|\boldsymbol x|=\frac{\boldsymbol x}{|\boldsymbol x|^2}\quad(n=2)
 $$
 
-$|\boldsymbol x|^{2-n}$と$\log|\boldsymbol x|$は、それぞれ$\mathbb R^n\setminus\{0\}$、$\mathbb R^2\setminus\{0\}$の調和関数です。
+$|\boldsymbol x|^{2-n}$と$\log|\boldsymbol x|$は、それぞれ$\mathbb R^n\setminus\{0\}$、$\mathbb R^2\setminus\{0\}$の調和関数である。
 &&&
 
 &&&prf
@@ -144,7 +144,7 @@ $$
 | 5 | $8\pi^2/3$ | $8\pi^2/15$ |
 | 6 | $\pi^3$ | $\pi^3/6$ |
 
-$n=2$が以前の記事の$2\pi$、$n=4$が前回の$2\pi^2$にあたります。[[7shi-cla3]][[7shi-cla4]]
+$n=2$が以前の記事の$2\pi$、$n=4$が前回の$2\pi^2$にあたる。[[7shi-cla3]][[7shi-cla4]]
 &&&
 
 # 積分公式
@@ -255,7 +255,7 @@ $$
 d\boldsymbol X=\boldsymbol r_{u_1}\wedge\dots\wedge\boldsymbol r_{u_{n-1}}\,du_1\cdots du_{n-1}
 $$
 
-とします。パラメーターの順序は、外向きの法線を先頭に置いた$\boldsymbol n\wedge d\boldsymbol X$が擬スカラー$\omega=e_0e_1\cdots e_{n-1}$の正の倍になるように選びます。
+とする。パラメーターの順序は、外向きの法線を先頭に置いた$\boldsymbol n\wedge d\boldsymbol X$が擬スカラー$\omega=e_0e_1\cdots e_{n-1}$の正の倍になるように選ぶ。
 &&&
 
 2次元では、境界を領域を左手に見る向きにたどるという以前の記事の規約がこれにあたります。たとえば単位円の点$e_0$では$\boldsymbol n=e_0$、左手に領域を見る向きの接線は$e_1$で、$\boldsymbol n\wedge e_1=\omega$です。[[7shi-cla2]]
@@ -308,7 +308,7 @@ $$
 \operatorname{Res}_{\boldsymbol a}F=\frac1{|S^{n-1}|}\oint_{|\boldsymbol x-\boldsymbol a|=\varepsilon}\boldsymbol nF\,dS
 $$
 
-を$\boldsymbol a$における$F$の**留数**と定めます。
+を$\boldsymbol a$における$F$の**留数**と定める。
 &&&
 
 留数定理も以前の記事と同じ形で成り立ちます。$M$とその境界を含む開集合$U$と、$M$の内部の相異なる有限個の点$\boldsymbol a_1,\dots,\boldsymbol a_m$を取り、$F$が$U\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上の$C^1$級関数で、$M\setminus\{\boldsymbol a_1,\dots,\boldsymbol a_m\}$上でモノジェニックなら、$\oint_{\partial M}\boldsymbol nF\,dS=|S^{n-1}|\sum_k\operatorname{Res}_{\boldsymbol a_k}F$です。特異点の周りの小球を除いた領域に基本定理を当てはめれば得られます。[[7shi-cla3]]
@@ -347,7 +347,7 @@ $$
 q=e_0\boldsymbol x=x_0+\sum_{l=1}^{n-1}x_lh_l,\qquad\mathcal D=e_0D=\partial_0+\sum_{l=1}^{n-1}h_l\partial_l
 $$
 
-とし、右からの作用を$F\mathcal D=\partial_0F+\sum_l(\partial_lF)h_l$とします。前回の記事と同じく、$\mathcal DF=0$を満たす$F$を**左正則**、$F\mathcal D=0$を満たす$F$を**右正則**と呼びます。[[7shi-cla4]]
+とし、右からの作用を$F\mathcal D=\partial_0F+\sum_l(\partial_lF)h_l$とする。前回の記事と同じく、$\mathcal DF=0$を満たす$F$を**左正則**、$F\mathcal D=0$を満たす$F$を**右正則**と呼ぶ。[[7shi-cla4]]
 &&&
 
 $h_l^2=-1$で、$h_l$どうしは反交換します。前回の記事と同じく、これは以前の記事の同型$\operatorname{Cl}_{n,0}^0(\mathbb R)\cong\operatorname{Cl}_{0,n-1}(\mathbb R)$で$h_l$が生成元になる構成です。スカラーと$h_l$の1次結合$q$は**パラベクトル**と呼ばれます。$n=2$では$q$は複素変数$z$に対応し、$n=4$では前回の記事と同じく$P_+$の成分に射影すると四元数の変数になります。[[7shi-cla4]][[7shi-clif1]]
@@ -390,7 +390,7 @@ $$
 ## 定理
 
 &&&thm フューター＝ソーの定理
-$n$が偶数なら、上の条件を満たす正則関数$f$に対して、$\Delta^{(n-2)/2}\tilde f$は左右ともに正則です。
+$n$が偶数なら、上の条件を満たす正則関数$f$に対して、$\Delta^{(n-2)/2}\tilde f$は左右ともに正則である。
 &&&
 
 $n=4$では前回のフューターの定理、$n=2$では$\tilde f=f$そのものです。一般の偶数$n$での証明は本記事では扱いません。[[7shi-cla4]]
@@ -418,7 +418,7 @@ $$
 \Delta^kq^{-1}=(-4)^k(k!)^2\,\frac{\bar q}{|q|^n}
 $$
 
-ここで$\bar q=\boldsymbol xe_0$であり、$\bar q/|q|^n=E(\boldsymbol x)\,e_0$は左右ともに正則です。
+ここで$\bar q=\boldsymbol xe_0$であり、$\bar q/|q|^n=E(\boldsymbol x)\,e_0$は左右ともに正則である。
 &&&
 
 &&&prf
@@ -454,14 +454,14 @@ $n=4$（$k=1$）では$\Delta q^{-1}=-4\bar q/|q|^4$となり、前回の結果�
 球面モノジェニックス（球面調和関数のモノジェニック版）による展開、$n$が奇数の場合のフューター＝ソーの定理は、本記事では扱いません。
 
 &&& コーシー＝ポンペイウの公式
-$\boldsymbol a$が$M$の内部の点なら、次が成り立ちます。
+$\boldsymbol a$が$M$の内部の点なら、次が成り立つ。
 $$
 F(\boldsymbol a)=\frac1{|S^{n-1}|}\left(\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,\boldsymbol nF\,dS-\int_ME(\boldsymbol x-\boldsymbol a)\,DF\,dV\right)
 $$
 &&&
 
 &&& コーシーの積分公式
-$M$上で$DF=0$なら、$M$の内部の点$\boldsymbol a$で次が成り立ちます。
+$M$上で$DF=0$なら、$M$の内部の点$\boldsymbol a$で次が成り立つ。
 $$
 F(\boldsymbol a)=\frac1{|S^{n-1}|}\oint_{\partial M}E(\boldsymbol x-\boldsymbol a)\,\boldsymbol nF\,dS
 $$
@@ -471,7 +471,7 @@ $$
 &&&
 
 &&& フューター＝ソーの定理（偶数次元）
-$n=2k+2$のとき、$f(\bar z)=\overline{f(z)}$を満たす正則関数$f$から作った$\tilde f$に対して、$\Delta^k\tilde f$は左右ともに正則です。
+$n=2k+2$のとき、$f(\bar z)=\overline{f(z)}$を満たす正則関数$f$から作った$\tilde f$に対して、$\Delta^k\tilde f$は左右ともに正則である。
 $$
 \mathcal D\Delta^k\tilde f=\Delta^k\tilde f\,\mathcal D=0
 $$

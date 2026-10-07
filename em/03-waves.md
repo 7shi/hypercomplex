@@ -48,7 +48,7 @@ $$
 \hat{\boldsymbol k}\cdot\boldsymbol E=0,\qquad c\boldsymbol B=\hat{\boldsymbol k}\times\boldsymbol E
 $$
 
-と同値で、このとき$F=(1+\hat{\boldsymbol k})\boldsymbol E$です。
+と同値で、このとき$F=(1+\hat{\boldsymbol k})\boldsymbol E$である。
 &&&
 
 &&&prf
@@ -94,7 +94,7 @@ $$
 です。スカラー部が$0$であることが$|\boldsymbol E|=c|\boldsymbol B|$に、擬スカラー部が$0$であることが$\boldsymbol E\perp\boldsymbol B$にあたります。$F^2=0$を満たす$0$でない$F$を**ヌル場**（null field）と呼びます。
 
 &&&prop ヌル場の点ごとの形
-$F=\boldsymbol E+ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\boldsymbol k}=\boldsymbol E\times c\boldsymbol B/|\boldsymbol E|^2$は単位ベクトルで、$F=(1+\hat{\boldsymbol k})\boldsymbol E$です。
+$F=\boldsymbol E+ic\boldsymbol B\ne0$が$F^2=0$を満たすなら、$\hat{\boldsymbol k}=\boldsymbol E\times c\boldsymbol B/|\boldsymbol E|^2$は単位ベクトルで、$F=(1+\hat{\boldsymbol k})\boldsymbol E$である。
 &&&
 
 &&&prf
@@ -201,11 +201,11 @@ $FF^\dagger=(\boldsymbol E+ic\boldsymbol B)(\boldsymbol E-ic\boldsymbol B)=|\bol
 $u$は電磁場のエネルギー密度で、電場と磁場が存在する空間には単位体積あたり$u$のエネルギーが蓄えられていると考えます。$c^2\varepsilon_0=1/\mu_0$より$u=\frac{\varepsilon_0}2|\boldsymbol E|^2+\frac1{2\mu_0}|\boldsymbol B|^2$で、第1項が電場の、第2項が磁場のエネルギーです。単位は$\mathrm{J/m^3}$です。この解釈は、下のコンデンサーの例とポインティングの定理によって裏付けられます。
 
 &&&ex 平行板コンデンサーのエネルギー
-変位電流を考えた平行板コンデンサーについて、充電に要する仕事を調べます。面積$A$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与えます。板の端の効果を無視すると、板の間の電場は一様で大きさ$E=Q/\varepsilon_0A$、板の外では$0$です。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0A$です。ゆっくり充電し、抵抗や放射による損失は無視します。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0A}dq$が要ります。$0$から$Q$まで積分すると、充電に要する仕事は
+変位電流を考えた平行板コンデンサーについて、充電に要する仕事を調べる。面積$A$の2枚の金属板を間隔$d$で平行に置き、電荷$+Q$と$-Q$を与える。板の端の効果を無視すると、板の間の電場は一様で大きさ$E=Q/\varepsilon_0A$、板の外では$0$である。2枚の板の電位差は$V=Ed=Qd/\varepsilon_0A$である。ゆっくり充電し、抵抗や放射による損失は無視する。電荷が$q$まで充電された状態から、さらに$dq$を負の板から正の板へ運ぶには、電場に逆らって仕事$\frac{qd}{\varepsilon_0A}dq$が要る。$0$から$Q$まで積分すると、充電に要する仕事は
 $$
 W=\frac{Q^2d}{2\varepsilon_0A}=\frac{\varepsilon_0}2E^2\cdot Ad
 $$
-です。$Ad$は電場のある領域の体積なので、この仕事はエネルギー密度$\frac{\varepsilon_0}2E^2$の電場として板の間に蓄えられていると読めます。
+である。$Ad$は電場のある領域の体積なので、この仕事はエネルギー密度$\frac{\varepsilon_0}2E^2$の電場として板の間に蓄えられていると読める。
 &&&
 
 $\boldsymbol S$はポインティングベクトルで、エネルギーの流れの密度を表します。$\boldsymbol S$に垂直な単位面積を単位時間に通過するエネルギーが$|\boldsymbol S|$で、単位は$\mathrm{W/m^2}$です。$FF^\dagger$はスカラーとベクトルの和、つまりパラベクトルです。[場の2乗](#fml-square)$F^2$はスカラー部が正とは限らないのに対し、$FF^\dagger$のスカラー部は$\boldsymbol E$と$c\boldsymbol B$の長さの2乗の和で、つねに$0$以上です。
@@ -225,7 +225,7 @@ $$
 u^2-\frac{|\boldsymbol S|^2}{c^2}=\Bigl(\frac{\varepsilon_0}2\Bigr)^2\Bigl(\bigl(|\boldsymbol E|^2-c^2|\boldsymbol B|^2\bigr)^2+4c^2(\boldsymbol E\cdot\boldsymbol B)^2\Bigr)\ge0
 $$
 
-です。したがって$|\boldsymbol S|\le cu$であり、等号は$F^2=0$、すなわち$F=0$かヌル場のときに限ります。
+である。したがって$|\boldsymbol S|\le cu$であり、等号は$F^2=0$、すなわち$F=0$かヌル場のときに限る。
 &&&
 
 &&&prf
@@ -235,7 +235,7 @@ $\boldsymbol S/c=\varepsilon_0c\,\boldsymbol E\times\boldsymbol B$と$|\boldsymb
 右辺の括弧は、[場の2乗](#fml-square)$F^2=\alpha+i\beta$の実部と虚部の2乗和$\alpha^2+\beta^2$です。パラベクトル$u+\boldsymbol S/c$のノルム$u^2-|\boldsymbol S|^2/c^2$（パラベクトルとその共役$u-\boldsymbol S/c$の積）は、$F^2$の「絶対値の2乗」の$(\varepsilon_0/2)^2$倍に等しくなります。$u>0$の点で$\boldsymbol S/u$を局所的なエネルギーの流れの速度と読むと、その速さが$c$を超えないことは、代数の恒等式から出ます。$c$に達するのは、平面波と同じ代数的な形をしたヌル場だけです。
 
 &&&ex 太陽光の電場
-地球軌道付近の大気圏外で、太陽光に垂直な面が受けるエネルギーは、およそ$1.4\times10^3\ \mathrm{W/m^2}$です。これを振幅$E_0$の直線偏光の正弦波と見なすと、$|\boldsymbol E|^2=E_0^2\cos^2\theta$の時間平均は$E_0^2/2$なので、$|\boldsymbol S|$の時間平均は$c\varepsilon_0E_0^2/2$です。これを$1.4\times10^3\ \mathrm{W/m^2}$と等しいと置くと$E_0\approx1.0\times10^3\ \mathrm{V/m}$、磁場の振幅は$E_0/c\approx3.4\times10^{-6}\ \mathrm T$となります。実際の太陽光はさまざまな振動数と偏光の混ざったものなので、これは同じ平均エネルギー流束を持つ正弦波の振幅としての目安です。
+地球軌道付近の大気圏外で、太陽光に垂直な面が受けるエネルギーは、およそ$1.4\times10^3\ \mathrm{W/m^2}$である。これを振幅$E_0$の直線偏光の正弦波と見なすと、$|\boldsymbol E|^2=E_0^2\cos^2\theta$の時間平均は$E_0^2/2$なので、$|\boldsymbol S|$の時間平均は$c\varepsilon_0E_0^2/2$である。これを$1.4\times10^3\ \mathrm{W/m^2}$と等しいと置くと$E_0\approx1.0\times10^3\ \mathrm{V/m}$、磁場の振幅は$E_0/c\approx3.4\times10^{-6}\ \mathrm T$となる。実際の太陽光はさまざまな振動数と偏光の混ざったものなので、これは同じ平均エネルギー流束を持つ正弦波の振幅としての目安である。
 &&&
 
 ## ポインティングの定理
@@ -249,7 +249,7 @@ $$
 \partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
 $$
 
-が成り立ちます。
+が成り立つ。
 &&&
 
 &&&prf
@@ -296,7 +296,7 @@ $$
 &&&
 
 &&& 平面波
-$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数で$F=P_+F$を満たす場は、次の形に限られます。
+$\xi=x_0-\hat{\boldsymbol k}\cdot\boldsymbol x$の関数で$F=P_+F$を満たす場は、次の形に限られる。
 $$
 F=(1+\hat{\boldsymbol k})\boldsymbol E,\qquad\hat{\boldsymbol k}\cdot\boldsymbol E=0,\qquad F^2=0
 $$
@@ -309,7 +309,7 @@ $$
 &&&
 
 &&& エネルギー密度とポインティングの定理
-マクスウェル方程式の解について、次が成り立ちます。
+マクスウェル方程式の解について、次が成り立つ。
 $$
 \frac{\varepsilon_0}2FF^\dagger=u+\frac{\boldsymbol S}c,\qquad\partial_tu+\nabla\cdot\boldsymbol S=-\boldsymbol J\cdot\boldsymbol E
 $$

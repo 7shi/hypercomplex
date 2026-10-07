@@ -45,7 +45,7 @@ $$
 \hbar\,D\psi\,\omega\sigma_3-\frac qcA\psi=mc\,\psi\gamma_0
 $$
 
-と同値です。[[7shi-dirac3]]
+と同値である。[[7shi-dirac3]]
 &&&
 
 &&&prf
@@ -67,7 +67,7 @@ $$
 \psi\mapsto\psi\,e^{\omega\sigma_3\alpha},\qquad\alpha=-\frac{q\chi}{\hbar c}
 $$
 
-と変換すると、電磁場の中のディラック方程式は保たれます。
+と変換すると、電磁場の中のディラック方程式は保たれる。
 &&&
 
 &&&prf
@@ -115,7 +115,7 @@ $$
 D\cdot J=0,\qquad J=\psi\gamma_0\tilde\psi
 $$
 
-が成り立ちます。
+が成り立つ。
 &&&
 
 &&&prf
@@ -145,7 +145,7 @@ $$
 自由粒子の方程式の解に右から$\sigma_1$を掛けると、正のエネルギーの解が負のエネルギーの解に移ることを見ました。電磁場がある場合、同じ操作は電荷の符号を変えます。[[7shi-dirac3]]
 
 &&&prop 電荷の反転
-$\psi$が電荷$q$の方程式$\hbar D\psi\,\omega\sigma_3-\frac qcA\psi=mc\,\psi\gamma_0$の解なら、$\psi\sigma_1$は電荷$-q$の方程式の解です。流れは$\psi\sigma_1\gamma_0\widetilde{\psi\sigma_1}=J$で変わりません。
+$\psi$が電荷$q$の方程式$\hbar D\psi\,\omega\sigma_3-\frac qcA\psi=mc\,\psi\gamma_0$の解なら、$\psi\sigma_1$は電荷$-q$の方程式の解である。流れは$\psi\sigma_1\gamma_0\widetilde{\psi\sigma_1}=J$で変わらない。
 &&&
 
 &&&prf
@@ -178,14 +178,14 @@ $$
 &&&
 
 &&& ゲージ変換
-$A\mapsto A+D\chi$に対して、次の変換で方程式は保たれます。
+$A\mapsto A+D\chi$に対して、次の変換で方程式は保たれる。
 $$
 \psi\mapsto\psi\,e^{\omega\sigma_3\alpha},\qquad\alpha=-\frac{q\chi}{\hbar c}
 $$
 &&&
 
 &&& 流れの保存
-電磁場の中のディラック方程式の解について、次が成り立ちます。
+電磁場の中のディラック方程式の解について、次が成り立つ。
 $$
 D\cdot J=0,\qquad J=\psi\gamma_0\tilde\psi
 $$

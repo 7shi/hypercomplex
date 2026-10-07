@@ -66,13 +66,13 @@ $$
 を**アンペール＝マクスウェルの法則**と呼びます。電流がなくても、電場が時間変化すれば磁場の渦が生じます。この修正は電荷の保存と整合しますが、電荷の保存だけで修正項の形が決まるわけではなく、法則としては実験に支えられています。
 
 &&&ex 充電中のコンデンサー
-面積$A$の2枚の平行な板に電荷$Q$と$-Q$がたまっているとし、端の効果は無視します。充電は十分ゆっくりで、各時刻の板の間の電場は静電場の式で近似できるとします。一様な面電荷の例より、板の間の電場は板に垂直で、大きさは$E=\sigma/\varepsilon_0=Q/\varepsilon_0A$です。板の間を通る曲面を貫く変位電流は
+面積$A$の2枚の平行な板に電荷$Q$と$-Q$がたまっているとし、端の効果は無視する。充電は十分ゆっくりで、各時刻の板の間の電場は静電場の式で近似できるとする。一様な面電荷の例より、板の間の電場は板に垂直で、大きさは$E=\sigma/\varepsilon_0=Q/\varepsilon_0A$である。板の間を通る曲面を貫く変位電流は
 
 $$
 I_{\mathrm d}=\varepsilon_0A\frac{dE}{dt}=\frac{dQ}{dt}=I
 $$
 
-で、導線の電流に等しくなります。これは電荷が隙間を横切って流れるということではありません。時間変化する電場が、磁場の回転の式で電流密度と同じ位置に入るということです。[[7shi-em1]]
+で、導線の電流に等しくなる。これは電荷が隙間を横切って流れるということではない。時間変化する電場が、磁場の回転の式で電流密度と同じ位置に入るということである。[[7shi-em1]]
 &&&
 
 ## 電磁誘導
@@ -129,7 +129,7 @@ $$
 \mathcal DF=\frac1{\varepsilon_0}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
 $$
 
-は[マクスウェル方程式](#fml-maxwell)の4本の式と同値です。
+は[マクスウェル方程式](#fml-maxwell)の4本の式と同値である。
 &&&
 
 &&&prf
@@ -191,7 +191,7 @@ $$
 \Bigl(\partial_0-\sum_la_l\partial_l\Bigr)\Bigl(\partial_0+\sum_la_l\partial_l\Bigr)=\partial_0^2-\sum_la_l^2\,\partial_l^2
 $$
 
-です。
+である。
 &&&
 
 &&&prf
@@ -277,21 +277,21 @@ $$
 - **連続の式と波動方程式**：$\bar{\mathcal D}$を掛けると、左辺にスカラー部がないことから連続の式が、ベクトル部と2ベクトル部から$\boldsymbol E$と$\boldsymbol B$の波動方程式が出ます。
 
 &&& マクスウェル方程式
-$\mathcal D=\partial_0+D$、$F=\boldsymbol E+ic\boldsymbol B$とすると、マクスウェル方程式の4本の式は次の1本の式と同値です。
+$\mathcal D=\partial_0+D$、$F=\boldsymbol E+ic\boldsymbol B$とすると、マクスウェル方程式の4本の式は次の1本の式と同値である。
 $$
 \mathcal DF=\frac1{\varepsilon_0}\Bigl(\rho-\frac{\boldsymbol J}c\Bigr)
 $$
 &&&
 
 &&& 波動作用素
-$\bar{\mathcal D}=\partial_0-D$との積は、速さ$c$の波動作用素になります。
+$\bar{\mathcal D}=\partial_0-D$との積は、速さ$c$の波動作用素になる。
 $$
 \bar{\mathcal D}\mathcal D=\mathcal D\bar{\mathcal D}=\partial_0^2-\Delta
 $$
 &&&
 
 &&& 連続の式
-1本の式に$\bar{\mathcal D}$を掛けたスカラー部から、次が従います。
+1本の式に$\bar{\mathcal D}$を掛けたスカラー部から、次が従う。
 $$
 \partial_t\rho+\nabla\cdot\boldsymbol J=0
 $$

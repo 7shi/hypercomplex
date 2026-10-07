@@ -27,7 +27,7 @@ x_0'=\gamma(x_0-\beta x_1),\qquad x_1'=\gamma(x_1-\beta x_0),\qquad x_2'=x_2,\qq
 \beta=\frac vc,\quad\gamma=\frac1{\sqrt{1-\beta^2}}
 $$
 
-で与えられます（$x_0=ct$）。本記事では導出は省きます。$v$が$c$より十分小さければ、$\gamma\approx1$で$x_1'\approx x_1-vt$となり、ガリレイ変換に近づきます。静止した観測者にとって同時（$\Delta x_0=0$）で、$x_1$の向きに$\Delta x_1$だけ離れた2つの事象は、動く観測者にとっては$\Delta x_0'=-\gamma\beta\Delta x_1\ne0$で、同時ではありません。$\Delta x_1>0$なら$\Delta x_0'<0$で、進行方向の前方にある事象のほうが先に起きたと判断されます。慣性系を替えると時間と空間の座標が混ざるので、両者をまとめて扱う必要があります。
+で与えられる（$x_0=ct$）。本記事では導出は省く。$v$が$c$より十分小さければ、$\gamma\approx1$で$x_1'\approx x_1-vt$となり、ガリレイ変換に近づく。静止した観測者にとって同時（$\Delta x_0=0$）で、$x_1$の向きに$\Delta x_1$だけ離れた2つの事象は、動く観測者にとっては$\Delta x_0'=-\gamma\beta\Delta x_1\ne0$で、同時ではない。$\Delta x_1>0$なら$\Delta x_0'<0$で、進行方向の前方にある事象のほうが先に起きたと判断される。慣性系を替えると時間と空間の座標が混ざるので、両者をまとめて扱う必要がある。
 &&&
 
 ## 不変な間隔
@@ -51,7 +51,7 @@ $$
 \gamma_0^2=1,\qquad\gamma_k^2=-1\ (k=1,2,3),\qquad\mu\ne\nu\text{ なら }\gamma_\mu\gamma_\nu=-\gamma_\nu\gamma_\mu
 $$
 
-で生成される実クリフォード代数$\operatorname{Cl}_{1,3}(\mathbb R)$を**時空代数**と呼びます。
+で生成される実クリフォード代数$\operatorname{Cl}_{1,3}(\mathbb R)$を**時空代数**と呼ぶ。
 &&&
 
 時空の点を$x_0=ct$と空間座標$x_1,x_2,x_3$で
@@ -106,7 +106,7 @@ $$
 $\sigma_k$は、観測者の時間軸$\gamma_0$と空間の軸$\gamma_k$が張る面です。観測者が「空間の方向$\gamma_k$」として見るものを、自分の時間軸と組にした面として偶部分に持ち込んでいます。
 
 &&&prop 偶部分代数と$\operatorname{Cl}_{3,0}(\mathbb R)$
-$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma_1\sigma_2\sigma_3=\gamma_0\gamma_1\gamma_2\gamma_3$です。$1,\sigma_k,\sigma_k\sigma_l\ (k<l),\sigma_1\sigma_2\sigma_3$は偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の基底をなし、$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)$です。
+$\sigma_k^2=1$、$k\ne l$なら$\sigma_k\sigma_l=-\sigma_l\sigma_k$で、$\sigma_1\sigma_2\sigma_3=\gamma_0\gamma_1\gamma_2\gamma_3$である。$1,\sigma_k,\sigma_k\sigma_l\ (k<l),\sigma_1\sigma_2\sigma_3$は偶部分代数$\operatorname{Cl}_{1,3}^0(\mathbb R)$の基底をなし、$\operatorname{Cl}_{1,3}^0(\mathbb R)\cong\operatorname{Cl}_{3,0}(\mathbb R)$である。
 &&&
 
 &&&prf
@@ -204,7 +204,7 @@ $$
 DF=\mu_0cJ
 $$
 
-は前回の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値です。
+は前回の$\mathcal DF=(\rho-\boldsymbol J/c)/\varepsilon_0$と同値である。
 &&&
 
 &&&prf
@@ -255,7 +255,7 @@ $$
 電流の発散は$D\cdot J=\partial_0(c\rho)+\sum_k\partial_kJ_k=\partial_t\rho+\nabla\cdot\boldsymbol J$です。
 
 &&&prop 連続の式
-$D\cdot F=\mu_0cJ$の解について$D\cdot J=0$、すなわち$\partial_t\rho+\nabla\cdot\boldsymbol J=0$が成り立ちます。
+$D\cdot F=\mu_0cJ$の解について$D\cdot J=0$、すなわち$\partial_t\rho+\nabla\cdot\boldsymbol J=0$が成り立つ。
 &&&
 
 &&&prf
@@ -288,7 +288,7 @@ $$
 \gamma(p)=\begin{pmatrix}0&p\\\bar p&0\end{pmatrix}
 $$
 
-と4次の行列に置きます。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）です。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)i_4$です。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=i_4$、$\gamma(\sigma_k)^2=-i_4$から符号数$(+,-,-,-)$が出ます。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要ります。[[7shi-bq]][[7shi-lie3]]
+と4次の行列に置く。$\bar p$は複素共役やエルミート共役ではなく、パラベクトルの共役（ベクトル部の符号の反転）である。$p\bar p=\bar pp$はスカラーなので、$\gamma(p)^2=(p\bar p)i_4$である。$p=1,\sigma_k$の像はワイル表現のガンマ行列そのもので、$\gamma(1)^2=i_4$、$\gamma(\sigma_k)^2=-i_4$から符号数$(+,-,-,-)$が出る。$\operatorname{Cl}_{3,1}(\mathbb R)$にするには、下のブロックを$-\bar p$に変える符号が1つ要る。[[7shi-bq]][[7shi-lie3]]
 &&&
 
 $\operatorname{Cl}_{1,3}(\mathbb R)$の代償は、時空のベクトルとしての$\gamma_k$の2乗が$-1$で、空間の規約$\boldsymbol x^2=|\boldsymbol x|^2$から外れることです。空間のベクトルは相対ベクトル$\sigma_k$（2乗$+1$）として保たれるので、$\operatorname{Cl}_{3,0}(\mathbb R)$での計算はそのまま使えます。
@@ -316,7 +316,7 @@ $$
 &&&
 
 &&& 作用素の分割
-$\sigma_k=\gamma_k\gamma_0$とすると、次のようになります。
+$\sigma_k=\gamma_k\gamma_0$とすると、次のようになる。
 $$
 \gamma_0D=\mathcal D,\qquad D(\gamma_0H)=\bar{\mathcal D}H
 $$

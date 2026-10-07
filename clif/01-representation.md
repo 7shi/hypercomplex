@@ -170,7 +170,7 @@ $$
 $$
 M_m(\mathbb{F}) \otimes M_n(\mathbb{G}) \cong M_{mn}(\mathbb{F} \otimes \mathbb{G})
 $$
-特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$M_m(\mathbb{F}) \otimes M_n(\mathbb{R}) \cong M_{mn}(\mathbb{F})$となるため、$\mathbb H' \cong M_2(\mathbb R)$とのテンソル積は行列表現の次数を2倍にします。
+特に$\mathbb F \otimes \mathbb R \cong \mathbb F$より$M_m(\mathbb{F}) \otimes M_n(\mathbb{R}) \cong M_{mn}(\mathbb{F})$となるため、$\mathbb H' \cong M_2(\mathbb R)$とのテンソル積は行列表現の次数を2倍にする。
 &&&
 
 &&&fml 直和との分配性
@@ -386,7 +386,7 @@ $$
 分類表の型の並びには、$2\mathbb R,2\mathbb H$（直和型）が$p-q\equiv1\pmod4$に、$\mathbb C$型が$p-q\equiv3\pmod4$に現れるという規則性があります。これは最高グレードの基底の性質から説明できます。
 
 &&&def 擬スカラー
-クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$の生成元をすべて掛け合わせた最高グレードの基底を**擬スカラー**と呼びます。
+クリフォード代数$\operatorname{Cl}_{p,q}(\mathbb R)$の生成元をすべて掛け合わせた最高グレードの基底を**擬スカラー**と呼ぶ。
 $$\omega = e_1e_2\cdots e_n \quad (n=p+q)$$
 &&&
 
@@ -434,9 +434,9 @@ p-q \pmod 8 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 $$
 
 &&&ex 冪等元による直和分解
-最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$です。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=(1+j)/2,\ e^*=(1-j)/2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れです。
+最小の例は$\mathbb C'\cong\operatorname{Cl}_{1,0}(\mathbb R)$である。擬スカラー$\omega=j$は$\omega^2=+1$を満たし、冒頭で確認した冪等元$e=(1+j)/2,\ e^*=(1-j)/2$による直和分解$\mathbb C'\cong2\mathbb R$は、この仕組みの現れである。
 
-次の例は$\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H\ \bigl(p-q\equiv5\pmod8\bigr)$です。擬スカラー$\omega=e_1e_2e_3$は中心的で$\omega^2=+1$となり、冪等元$(1\pm\omega)/2$によって$\mathbb H\oplus\mathbb H$へ直和分解されます。
+次の例は$\operatorname{Cl}_{0,3}(\mathbb R)\cong2\mathbb H\ \bigl(p-q\equiv5\pmod8\bigr)$である。擬スカラー$\omega=e_1e_2e_3$は中心的で$\omega^2=+1$となり、冪等元$(1\pm\omega)/2$によって$\mathbb H\oplus\mathbb H$へ直和分解される。
 &&&
 
 # 偶部分代数
@@ -575,7 +575,7 @@ $$
 - **直和型 $2M_n(\mathbb F)$**：2つの直和成分がそれぞれ$\mathbb F^n$に作用するため、既約表現は2つあります。両者は中心的な擬スカラーが$\omega=+1,-1$のどちらとして作用するか（冪等元$(1\pm\omega)/2$のどちらの成分か）で区別されます。
 
 &&&def ピノルとスピノル
-本記事では、クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分けます。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来します。不定符号では、$\mathrm{SO}(p,q)$の恒等成分$\mathrm{SO}_0(p,q)$の二重被覆を$\operatorname{Spin}(p,q)$とする規約もあります。
+本記事では、クリフォード代数全体の既約表現の空間の元を**ピノル**、偶部分代数の既約表現の空間の元を**スピノル**と呼び分ける。名称は、鏡映を含む直交群$\mathrm O(p,q)$の二重被覆である$\operatorname{Pin}(p,q)$群と、回転群$\mathrm{SO}(p,q)$の二重被覆である$\operatorname{Spin}(p,q)$群に由来する。不定符号では、$\mathrm{SO}(p,q)$の恒等成分$\mathrm{SO}_0(p,q)$の二重被覆を$\operatorname{Spin}(p,q)$とする規約もある。
 &&&
 
 &&&rem 用語の慣習
@@ -615,7 +615,7 @@ $$
 &&&
 
 &&& 偶部分代数
-$p,q\ge1$のとき、次の同型が成り立ちます。
+$p,q\ge1$のとき、次の同型が成り立つ。
 $$
 \operatorname{Cl}_{p,q}^0(\mathbb R)
 \cong\operatorname{Cl}_{p,q-1}(\mathbb R)

@@ -579,7 +579,7 @@ AB
 この構造により、偶数グレード部分を取り出すことで、2次元では複素数（$i \cong e_2e_1$）、3次元では四元数（$i \cong e_3e_2,\ j \cong e_1e_3,\ k \cong e_2e_1$）の代数構造が幾何積の中に現れることを確認しました。
 
 &&& 幾何積の分解と指数関数表示
-$\theta$をなす角、$p = \dfrac{a \wedge b}{|a \wedge b|}\ (p^2=-1)$とすると、次のようになります（$a,b$が平行でない場合）。
+$\theta$をなす角、$p = \dfrac{a \wedge b}{|a \wedge b|}\ (p^2=-1)$とすると、次のようになる（$a,b$が平行でない場合）。
 $$
 \begin{aligned}
 ab &= a \cdot b + a \wedge b \\

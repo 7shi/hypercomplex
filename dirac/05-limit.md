@@ -103,13 +103,13 @@ $$
 です。$\Pi$は微分作用素ですが、典型的な運動学的運動量を$p\sim mv$とすれば、$\psi_-$の大きさの目安は$\psi_+$の$p/2mc\sim v/2c$倍です。$\psi_+$を**大きい成分**、$\psi_-$を**小さい成分**と呼びます。
 
 &&&ex 自由粒子の平面波
-正のエネルギーの平面波$\psi_0=L\phi_0$（$L=e^{\sigma_1\eta/2}$、$\phi_0$は$\gamma_0$と可換）では、$L=\cosh\frac\eta2+\sigma_1\sinh\frac\eta2$の$\cosh\frac\eta2$の項が大きい成分、$\sigma_1\sinh\frac\eta2$の項が小さい成分を与えます。大きさの比は$\tanh\frac\eta2$で、運動量$p=mc\sinh\eta$、エネルギー$E=mc^2\cosh\eta$で書けば
+正のエネルギーの平面波$\psi_0=L\phi_0$（$L=e^{\sigma_1\eta/2}$、$\phi_0$は$\gamma_0$と可換）では、$L=\cosh\frac\eta2+\sigma_1\sinh\frac\eta2$の$\cosh\frac\eta2$の項が大きい成分、$\sigma_1\sinh\frac\eta2$の項が小さい成分を与える。大きさの比は$\tanh\frac\eta2$で、運動量$p=mc\sinh\eta$、エネルギー$E=mc^2\cosh\eta$で書けば
 
 $$
 \tanh\frac\eta2=\frac{\sinh\eta}{1+\cosh\eta}=\frac p{mc+E/c}
 $$
 
-です。$p\ll mc$では$E\approx mc^2$で、比は$p/2mc\approx v/2c$になります。[[7shi-dirac3]]
+である。$p\ll mc$では$E\approx mc^2$で、比は$p/2mc\approx v/2c$になる。[[7shi-dirac3]]
 &&&
 
 ## パウリ方程式の回収
@@ -129,7 +129,7 @@ $$
 \Pi^2X=\sum_k\pi_k^2X-q\hbar\,\boldsymbol BX\sigma_3,\qquad\boldsymbol B=\nabla\times\boldsymbol A
 $$
 
-が成り立ちます。ここで$\pi_kX=-\hbar\,\partial_kX\,\omega\sigma_3-qA_kX$です。
+が成り立つ。ここで$\pi_kX=-\hbar\,\partial_kX\,\omega\sigma_3-qA_kX$である。
 &&&
 
 &&&prf
@@ -155,7 +155,7 @@ $$
 \hbar\,\partial_t\psi_+\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi_++q\varphi\,\psi_+-\frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
 $$
 
-に従います。これはパウリ方程式で$g=2$と置いたものです。[[7shi-dirac1]]
+に従う。これはパウリ方程式で$g=2$と置いたものである。[[7shi-dirac1]]
 &&&
 
 パウリ方程式の磁場の項は$-\frac{gq\hbar}{4m}\boldsymbol B\psi\sigma_3$でした。$g=2$でこれが$-\frac{q\hbar}{2m}\boldsymbol B\psi\sigma_3$になります。現象論的に置いた係数が、ディラック方程式から決まりました。[[7shi-dirac1]]
@@ -209,14 +209,14 @@ $$
 &&&
 
 &&& 小さい成分
-$\Pi X=-\hbar\,D_3X\,\omega\sigma_3-q\boldsymbol AX$とすると、非相対論極限では次のようになります。
+$\Pi X=-\hbar\,D_3X\,\omega\sigma_3-q\boldsymbol AX$とすると、非相対論極限では次のようになる。
 $$
 \psi_-\approx\frac1{2mc}\Pi\psi_+
 $$
 &&&
 
 &&& パウリ方程式（$g=2$）
-非相対論的な最低次の近似で小さい成分を消去すると、$\psi_+$について次の式が得られます。
+非相対論的な最低次の近似で小さい成分を消去すると、$\psi_+$について次の式が得られる。
 $$
 \hbar\,\partial_t\psi_+\,\omega\sigma_3=\frac1{2m}\sum_k\pi_k^2\psi_++q\varphi\,\psi_+-\frac{q\hbar}{2m}\boldsymbol B\psi_+\sigma_3
 $$
