@@ -13,6 +13,7 @@ dependencies = [
 
 [project.scripts]
 articles = "articles.__main__:main"
+md2tex = "md2tex.__main__:main"
 reftools = "reftools.__main__:main"
 review = "review.__main__:main"
 
@@ -21,7 +22,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/articles", "src/common", "src/reftools", "src/review"]
+packages = ["src/articles", "src/common", "src/md2tex", "src/reftools", "src/review"]
 
 [tool.uv.sources]
 llm7shi = { git = "https://github.com/7shi/llm7shi.git" }

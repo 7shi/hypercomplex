@@ -4,6 +4,7 @@
 
 - [articles/](articles/) — Mathlog記事とREADMEリンクを突き合わせるツール。詳細は[articles/README.md](articles/README.md)参照。
 - [common/](common/) — 各記事の検証コードから共有されるPythonモジュール（`octonion.py`など）。
+- [md2tex/](md2tex/) — Mathlog記法のMarkdown記事をLaTeXに変換し、PDFで確認するツール。詳細は[md2tex/README.md](md2tex/README.md)参照。
 - [reftools/](reftools/) — 参考文献slugの集約・整合性チェックツール。詳細は[reftools/README.md](reftools/README.md)参照。
 - [review/](review/) — 記事をLLMにレビューさせるツール。詳細は[review/README.md](review/README.md)参照。
 - LLMのトークン使用量を`usage.jsonl`に記録・集計するツールは[llm7shi](https://github.com/7shi/llm7shi)に統合され、`uv run usage`で使えます。
