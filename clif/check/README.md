@@ -7,4 +7,5 @@
 - [03-gpm-gca.py](03-gpm-gca.py)
 - [04-weyl-algebra.py](04-weyl-algebra.py)
 - [05-schrodinger.py](05-schrodinger.py)
+- [gca-schrodinger.py](gca-schrodinger.py)
 - [pga-cga.py](pga-cga.py)

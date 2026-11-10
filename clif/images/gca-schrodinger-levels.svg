@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="270" viewBox="0 0 400 270" font-family="Noto Serif, BIZ UDPMincho, serif" font-size="15" fill="#333333">
+<rect width="400" height="270" fill="#ffffff"/>
+<line x1="70.00" y1="244.00" x2="70.00" y2="28.20" stroke="#888888" stroke-width="1"/>
+<text x="70.00" y="20.20" text-anchor="middle" font-size="14" fill="#888888" font-style="italic">E</text>
+<line x1="66.00" y1="244.00" x2="70.00" y2="244.00" stroke="#888888" stroke-width="1"/>
+<text x="61.00" y="249.00" text-anchor="end" font-size="13" fill="#888888">0</text>
+<line x1="66.00" y1="192.00" x2="70.00" y2="192.00" stroke="#888888" stroke-width="1"/>
+<text x="61.00" y="197.00" text-anchor="end" font-size="13" fill="#888888">ℏ</text>
+<line x1="66.00" y1="140.00" x2="70.00" y2="140.00" stroke="#888888" stroke-width="1"/>
+<text x="61.00" y="145.00" text-anchor="end" font-size="13" fill="#888888">2ℏ</text>
+<line x1="66.00" y1="88.00" x2="70.00" y2="88.00" stroke="#888888" stroke-width="1"/>
+<text x="61.00" y="93.00" text-anchor="end" font-size="13" fill="#888888">3ℏ</text>
+<line x1="66.00" y1="36.00" x2="70.00" y2="36.00" stroke="#888888" stroke-width="1"/>
+<text x="61.00" y="41.00" text-anchor="end" font-size="13" fill="#888888">4ℏ</text>
+<text x="135.00" y="24.00" text-anchor="middle" font-size="15" fill="#333333">古典力学</text>
+<text x="285.00" y="24.00" text-anchor="middle" font-size="15" fill="#333333">モデル</text>
+<rect x="90.0" y="36.00" width="90" height="208.00" fill="#9db7d5" fill-opacity="0.6"/>
+<line x1="90.00" y1="244.00" x2="180.00" y2="244.00" stroke="#1f5fa8" stroke-width="1.5"/>
+<line x1="240.00" y1="218.08" x2="330.00" y2="218.08" stroke="#1f5fa8" stroke-width="2.5"/>
+<text x="338.00" y="223.08" text-anchor="start" font-size="13" fill="#333333">0.4985 ℏ</text>
+<line x1="240.00" y1="166.40" x2="330.00" y2="166.40" stroke="#1f5fa8" stroke-width="2.5"/>
+<text x="338.00" y="171.40" text-anchor="start" font-size="13" fill="#333333">1.4923 ℏ</text>
+<line x1="240.00" y1="115.03" x2="330.00" y2="115.03" stroke="#1f5fa8" stroke-width="2.5"/>
+<text x="338.00" y="120.03" text-anchor="start" font-size="13" fill="#333333">2.4801 ℏ</text>
+<line x1="240.00" y1="63.99" x2="330.00" y2="63.99" stroke="#1f5fa8" stroke-width="2.5"/>
+<text x="338.00" y="68.99" text-anchor="start" font-size="13" fill="#333333">3.4618 ℏ</text>
+<line x1="240.00" y1="244.00" x2="330.00" y2="244.00" stroke="#888888" stroke-width="1" stroke-dasharray="2 2"/>
+</svg>

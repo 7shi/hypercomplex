@@ -12,3 +12,6 @@ wheels/
 # Generated files
 mathlog_new-refs.html
 refs/*.html
+
+# Images converted for upload
+*/images/*.png

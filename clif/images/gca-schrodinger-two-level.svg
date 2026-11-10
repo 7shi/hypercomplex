@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="502" viewBox="0 0 460 502" font-family="Noto Serif, BIZ UDPMincho, serif" font-size="15" fill="#333333">
+<rect width="460" height="502" fill="#ffffff"/>
+<text x="225.00" y="22.00" text-anchor="middle" font-size="15" fill="#333333" font-style="italic">ψ<tspan dy="4" font-size="11" font-style="normal">0</tspan></text>
+<text x="375.00" y="22.00" text-anchor="middle" font-size="15" fill="#333333" font-style="italic">ψ<tspan dy="4" font-size="11" font-style="normal">1</tspan></text>
+<text x="128.00" y="99.00" text-anchor="end" font-size="15" fill="#333333">元の状態</text>
+<line x1="171.00" y1="94.00" x2="279.00" y2="94.00" stroke="#888888" stroke-width="1"/>
+<line x1="225.00" y1="148.00" x2="225.00" y2="40.00" stroke="#888888" stroke-width="1"/>
+<circle cx="225.00" cy="94.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="225.00" y1="94.00" x2="249.08" y2="80.10" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="256.87,75.60 247.08,76.64 251.08,83.56" fill="#1f5fa8"/>
+<text x="225.00" y="168.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.64</text>
+<line x1="321.00" y1="94.00" x2="429.00" y2="94.00" stroke="#888888" stroke-width="1"/>
+<line x1="375.00" y1="148.00" x2="375.00" y2="40.00" stroke="#888888" stroke-width="1"/>
+<circle cx="375.00" cy="94.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="375.00" y1="94.00" x2="391.11" y2="84.70" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="398.90,80.20 389.11,81.24 393.11,88.16" fill="#1f5fa8"/>
+<text x="375.00" y="168.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.36</text>
+<text x="128.00" y="255.00" text-anchor="end" font-size="15" fill="#333333">成分間の回転</text>
+<line x1="10.00" y1="180.00" x2="450.00" y2="180.00" stroke="#dddddd" stroke-width="1"/>
+<line x1="171.00" y1="250.00" x2="279.00" y2="250.00" stroke="#888888" stroke-width="1"/>
+<line x1="225.00" y1="304.00" x2="225.00" y2="196.00" stroke="#888888" stroke-width="1"/>
+<circle cx="225.00" cy="250.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="225.00" y1="250.00" x2="249.08" y2="236.10" stroke="#aaaaaa" stroke-width="2.5"/>
+<polygon points="256.87,231.60 247.08,232.64 251.08,239.56" fill="#aaaaaa"/>
+<line x1="225.00" y1="250.00" x2="232.85" y2="245.47" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="240.65,240.97 230.85,242.00 234.85,248.93" fill="#1f5fa8"/>
+<text x="225.00" y="324.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.15</text>
+<line x1="321.00" y1="250.00" x2="429.00" y2="250.00" stroke="#888888" stroke-width="1"/>
+<line x1="375.00" y1="304.00" x2="375.00" y2="196.00" stroke="#888888" stroke-width="1"/>
+<circle cx="375.00" cy="250.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="375.00" y1="250.00" x2="403.84" y2="233.35" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="411.63,228.85 401.84,229.88 405.84,236.81" fill="#1f5fa8"/>
+<line x1="375.00" y1="250.00" x2="391.11" y2="240.70" stroke="#aaaaaa" stroke-width="2.5"/>
+<polygon points="398.90,236.20 389.11,237.24 393.11,244.16" fill="#aaaaaa"/>
+<text x="375.00" y="324.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.85</text>
+<text x="128.00" y="411.00" text-anchor="end" font-size="15" fill="#333333">成分内の回転</text>
+<line x1="10.00" y1="336.00" x2="450.00" y2="336.00" stroke="#dddddd" stroke-width="1"/>
+<line x1="171.00" y1="406.00" x2="279.00" y2="406.00" stroke="#888888" stroke-width="1"/>
+<line x1="225.00" y1="460.00" x2="225.00" y2="352.00" stroke="#888888" stroke-width="1"/>
+<circle cx="225.00" cy="406.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="225.00" y1="406.00" x2="238.90" y2="381.92" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="243.40,374.13 235.44,379.92 242.36,383.92" fill="#1f5fa8"/>
+<line x1="225.00" y1="406.00" x2="249.08" y2="392.10" stroke="#aaaaaa" stroke-width="2.5"/>
+<polygon points="256.87,387.60 247.08,388.64 251.08,395.56" fill="#aaaaaa"/>
+<text x="225.00" y="480.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.64</text>
+<line x1="321.00" y1="406.00" x2="429.00" y2="406.00" stroke="#888888" stroke-width="1"/>
+<line x1="375.00" y1="460.00" x2="375.00" y2="352.00" stroke="#888888" stroke-width="1"/>
+<circle cx="375.00" cy="406.00" r="46" fill="none" stroke="#9db7d5" stroke-width="1"/>
+<line x1="375.00" y1="406.00" x2="393.60" y2="406.00" stroke="#1f5fa8" stroke-width="2.5"/>
+<polygon points="402.60,406.00 393.60,402.00 393.60,410.00" fill="#1f5fa8"/>
+<line x1="375.00" y1="406.00" x2="391.11" y2="396.70" stroke="#aaaaaa" stroke-width="2.5"/>
+<polygon points="398.90,392.20 389.11,393.24 393.11,400.16" fill="#aaaaaa"/>
+<text x="375.00" y="480.00" text-anchor="middle" font-size="13" fill="#888888">割合 0.36</text>
+</svg>
